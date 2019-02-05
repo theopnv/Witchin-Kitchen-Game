@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This Code snippet was taken from a Unity Tutorial, credits go to Sebastian Lague 
+
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 2;
