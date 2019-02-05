@@ -1,4 +1,4 @@
-This is the repository for the main game.
+This is the repository for the main game (desktop).
 
 # Git rules
 
@@ -18,3 +18,4 @@ From the root (`Assets/`):
 - **Scenes**: Unity Scenes of the game.
 - **Scripts**: Various scripts attached to game objects. Please, try to categorize them into sub-folders.
 - **Prefabs**: Prefabs folder. Please try to categorize them into sub-folders.
+- **Models**: Where all the "raw" models are stored. Please, try to categorize them into sub-folders. When a model needs several files (UV, Height maps, textures...), put them in a folder with the associated model.
