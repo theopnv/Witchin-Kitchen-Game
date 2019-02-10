@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace con2.lobby
 {
@@ -13,6 +14,8 @@ namespace con2.lobby
 
         [Tooltip("Position of players' UIs")]
         public Transform[] PlayerUiPositions;
+
+        public const string GAME_SCENE_NAME = "Game";
 
         #region Private Variables
 
@@ -48,6 +51,12 @@ namespace con2.lobby
         void Update()
         {
             DevMode();
+
+            if (Input.GetKeyDown(KeyCode.Return)
+                || Input.GetKeyDown("joystick button 0"))
+            {
+                SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
+            }
         }
 
         void OnDestroy()
