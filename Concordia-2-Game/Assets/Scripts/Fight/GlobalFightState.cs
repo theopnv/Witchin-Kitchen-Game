@@ -6,14 +6,16 @@ public class GlobalFightState : MonoBehaviour
 {
     // Public
 
+    public static string PLAYER_CAPSULE_TAG = "PlayerCapsule";
+
     public static GlobalFightState get()
     {
         return instance;
     }
 
-    public void AddFighter(Fighter fighter)
+    public void AddFighter(GameObject fighter)
     {
-        fighters.Add(fighter.gameObject);
+        fighters.Add(fighter);
     }
 
     public float PunchUpwardsForce = 1.0f;
@@ -34,6 +36,11 @@ public class GlobalFightState : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        foreach (var fighter in GameObject.FindGameObjectsWithTag(PLAYER_CAPSULE_TAG))
+        {
+            AddFighter(fighter);
+        }
     }
 
     // Start is called before the first frame update

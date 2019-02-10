@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &85119895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9017638658279021675, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 9017638660191363091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &133730155
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a067c11f086ed488eb7a74e43eece3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 9017638660191363093}
+  Target: {fileID: 85119895}
   Distance: 23.3
   smoothTime: 0.3
 --- !u!1 &784017811
@@ -259,6 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca23126d3b39444aa30e35308ebb724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PunchUpwardsForce: 1
+  PunchForceMultiplier: 5
 --- !u!1 &837676908
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +613,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter_2
       objectReference: {fileID: 0}
+    - target: {fileID: 9017638658279021675, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerCapsule
+      objectReference: {fileID: 0}
     - target: {fileID: 9017638658279021679, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -695,6 +708,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter_1
       objectReference: {fileID: 0}
+    - target: {fileID: 9017638658279021675, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017638658279021675, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerCapsule
+      objectReference: {fileID: 0}
     - target: {fileID: 9017638658279021679, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -765,20 +788,13 @@ PrefabInstance:
       propertyPath: Distance
       value: 25.4
       objectReference: {fileID: 0}
+    - target: {fileID: 463632441016446814, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce, type: 3}
---- !u!114 &9017638660191363093 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8474481521776971511, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 9017638660191363091}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d3d36800888a8f418ff308e3c557f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &9017638660191363099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9017638658279021679, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,

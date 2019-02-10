@@ -18,7 +18,11 @@ public class FightControls : MonoBehaviour
     void Start()
     {
         target = gameObject;
-}
+
+        // Snap to initial object rotation
+        facingDirection.x = target.transform.forward.x;
+        facingDirection.z = target.transform.forward.z;
+    }
 
     // Update is called once per frame
     void Update()

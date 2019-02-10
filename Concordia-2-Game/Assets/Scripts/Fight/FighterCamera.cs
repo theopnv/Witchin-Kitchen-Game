@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FighterCamera : MonoBehaviour
 {
-    public Fighter Target;
+    public GameObject Target;
 
     [Range(0.0f, 100.0f)] 
     public float Distance;

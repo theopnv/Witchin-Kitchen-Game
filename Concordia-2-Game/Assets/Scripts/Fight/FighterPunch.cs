@@ -38,14 +38,11 @@ public class FighterPunch : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        // Ignore parent collision
-        if (punched && other.gameObject != gameObject)
+        // Ignore parent collision and only consider player capsule tag
+        if (punched && other.gameObject != gameObject &&
+            other.gameObject.tag == GlobalFightState.PLAYER_CAPSULE_TAG)
         {
-            // If it's another player
-            if (other.gameObject.GetComponent<Fighter>() != null)
-            {
-                GlobalFightState.get().Punches.Add(new PunchEvent(gameObject, other.gameObject));
-            }
+            GlobalFightState.get().Punches.Add(new PunchEvent(gameObject, other.gameObject));
         }
     }
 }
