@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour {
 
-    public const string GAME_SCENE_NAME = "TheGame";
+    public const string LOBBY_SCENE_NAME = "Lobby";
 
     public void LoadMainScene(bool isHost)
     {
-        SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
+        SceneManager.LoadSceneAsync(LOBBY_SCENE_NAME);
     }
 
 	public void LoadScene(string sceneName)
