@@ -267,6 +267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PunchUpwardsForce: 0.5
   PunchForceMultiplier: 10
+  PunchStunSeconds: 1
+  PunchReloadSeconds: 1.33
 --- !u!1 &837676908
 GameObject:
   m_ObjectHideFlags: 0
