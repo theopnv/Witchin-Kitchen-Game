@@ -20,6 +20,7 @@ public class GlobalFightState : MonoBehaviour
 
     public float PunchUpwardsForce = 1.0f;
     public float PunchForceMultiplier = 5.0f;
+    public float PunchStunSeconds = 1.0f;
 
     public List<FighterPunch.PunchEvent> Punches = new List<FighterPunch.PunchEvent>();
 
@@ -59,13 +60,16 @@ public class GlobalFightState : MonoBehaviour
     {
         foreach (var punch in Punches)
         {
-            var knockDirection = punch.TargetPosition - punch.SourcePosition;
-            knockDirection.y = PunchUpwardsForce;
-            knockDirection.Normalize();
-            knockDirection *= PunchForceMultiplier;
+            var knockVelocity = punch.TargetPosition - punch.SourcePosition;
+            knockVelocity.y = PunchUpwardsForce;
+            knockVelocity.Normalize();
+            knockVelocity *= PunchForceMultiplier;
 
             var targetBody = punch.Target.GetComponent<Rigidbody>();
-            targetBody.AddForce(knockDirection, ForceMode.Impulse);
+            targetBody.velocity = knockVelocity;
+
+            var stun = punch.Target.GetComponent<FightStun>();
+            stun.Stun(PunchStunSeconds);
         }
 
         // Setup for next frame

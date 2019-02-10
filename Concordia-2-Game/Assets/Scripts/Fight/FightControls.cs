@@ -60,6 +60,10 @@ public class FightControls : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Apply stun factor
+        var stun = target.GetComponent<FightStun>();
+        movementDirection *= stun.getMovementModifier();
+
         var body = target.GetComponent<Rigidbody>();
         var bodyVelocityXZ = body.velocity;
         bodyVelocityXZ.y = 0.0f;
