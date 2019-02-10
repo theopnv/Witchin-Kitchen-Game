@@ -20,6 +20,7 @@ public class FightControls : MonoBehaviour
     public float RotationSpeed;
 
     private GameObject target;
+    private FighterPunch punch;
 
     private Vector3 movementDirection = new Vector3();
     private Vector3 facingDirection = new Vector3();
@@ -28,6 +29,7 @@ public class FightControls : MonoBehaviour
     void Start()
     {
         target = gameObject;
+        punch = target.GetComponentInChildren<FighterPunch>();
 
         // Snap to initial object rotation
         facingDirection.x = target.transform.forward.x;
@@ -56,6 +58,12 @@ public class FightControls : MonoBehaviour
         facingDirection.Normalize();
         facingDirection.z = facingDirection.y;
         facingDirection.y = 0.0f;
+
+        // Punch
+        if (Input.GetButtonDown("Fire1"))
+        {
+            punch.RequestPunch();
+        }
     }
 
     private void FixedUpdate()

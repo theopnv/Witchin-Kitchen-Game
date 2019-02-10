@@ -6,6 +6,9 @@ public class FighterPunch : MonoBehaviour
 {
     private float timerLeft = 0.0f;
 
+    private bool punchRequested = false;
+    private bool punchAccepted = false;
+
     private Color startColor;
     private Color noPunchColor = new Color(1.0f, 1.0f, 1.0f);
 
@@ -27,8 +30,6 @@ public class FighterPunch : MonoBehaviour
         }
     }
 
-    private bool punched = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -41,22 +42,31 @@ public class FighterPunch : MonoBehaviour
         // Update reload timer
         timerLeft = Mathf.Max(0.0f, timerLeft - Time.deltaTime);
 
-        // Check input
-        if (timerLeft == 0.0f && Input.GetButtonDown("Fire1"))
-        {
-            timerLeft = GlobalFightState.get().PunchReloadSeconds;
-
-            punched = true;
-        }
-        else
-        {
-            punched = false;
-        }
-
         // Visualize the reload timer
         float lerp = GetReloadProgress();
         var renderer = GetComponent<MeshRenderer>();
         renderer.material.color = startColor * lerp + noPunchColor * (1.0f - lerp);
+    }
+
+    private void LateUpdate()
+    {
+        // Check timer
+        if (punchRequested && timerLeft == 0.0f)
+        {
+            timerLeft = GlobalFightState.get().PunchReloadSeconds;
+            punchAccepted = true;
+        }
+        else
+        {
+            punchAccepted = false;
+        }
+
+        punchRequested = false;
+    }
+
+    public void RequestPunch()
+    {
+        punchRequested = true;
     }
 
     public float GetReloadProgress()
@@ -67,7 +77,7 @@ public class FighterPunch : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // Ignore parent collision and only consider player capsule tag
-        if (punched && other.gameObject != gameObject &&
+        if (punchAccepted && other.gameObject != gameObject &&
             other.gameObject.tag == GlobalFightState.PLAYER_CAPSULE_TAG)
         {
             GlobalFightState.get().Punches.Add(new PunchEvent(gameObject, other.gameObject));
