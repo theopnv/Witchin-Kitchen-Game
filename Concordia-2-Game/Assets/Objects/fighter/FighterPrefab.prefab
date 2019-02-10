@@ -227,5 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49b7c51babe1ef45bb51268a466c28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 25
+  MovementSpeed: 37
+  MaxMovementSpeed: 5
+  MovementFriction: 2
+  Gravity: 19.3
   RotationSpeed: 0.169

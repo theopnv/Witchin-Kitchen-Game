@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class FightControls : MonoBehaviour
 {
+    [Range(0.0f, 300.0f)]
     public float MovementSpeed;
+
+    [Range(0.0f, 50.0f)]
+    public float MaxMovementSpeed;
+
+    [Range(0.0f, 50.0f)]
+    public float MovementFriction;
+
+    [Range(0.0f, 50.0f)]
+    public float Gravity;
 
     [Range(0.0f, 1.0f)]
     public float RotationSpeed;
@@ -28,11 +38,14 @@ public class FightControls : MonoBehaviour
     void Update()
     {
         // Movement
-        movementDirection.x = Input.GetAxis("Horizontal");
+        movementDirection.x = Input.GetAxisRaw("Horizontal");
         movementDirection.y = 0.0f;
-        movementDirection.z = Input.GetAxis("Vertical");
+        movementDirection.z = Input.GetAxisRaw("Vertical");
 
-        movementDirection.Normalize();
+        if (movementDirection.sqrMagnitude > 1)
+        {
+            movementDirection.Normalize();
+        }
         movementDirection *= MovementSpeed;
 
         // Rotation
@@ -48,8 +61,30 @@ public class FightControls : MonoBehaviour
     private void FixedUpdate()
     {
         var body = target.GetComponent<Rigidbody>();
+        var bodyVelocityXZ = body.velocity;
+        bodyVelocityXZ.y = 0.0f;
 
-        body.velocity += movementDirection * Time.fixedDeltaTime;
+        // Friction in XZ only
+        body.velocity -= MovementFriction * Time.deltaTime * bodyVelocityXZ;
+
+        // If player asked for input
+        if (!Mathf.Approximately(movementDirection.magnitude, 0.0f))
+        {
+            // Cap movement speed
+            var requestedMovement = body.velocity + movementDirection * Time.fixedDeltaTime;
+            var requestedMovementXZ = bodyVelocityXZ + movementDirection * Time.fixedDeltaTime;
+            var projected = Vector3.Project(requestedMovementXZ, body.velocity);
+            if (projected.magnitude > MaxMovementSpeed)
+            {
+                var acceptableFraction = Mathf.Max(0.0f, MaxMovementSpeed - projected.magnitude);
+                requestedMovement = body.velocity + movementDirection.normalized * acceptableFraction;
+            }
+
+            body.velocity = requestedMovement;
+        }
+
+        // Gravity
+        body.AddForce(Vector3.down * Gravity, ForceMode.Acceleration);
 
         // Smooth rotation
         Quaternion facing = new Quaternion();
