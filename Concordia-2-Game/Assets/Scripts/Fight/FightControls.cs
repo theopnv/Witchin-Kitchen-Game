@@ -97,6 +97,9 @@ public class FightControls : MonoBehaviour
         var bodyVelocityXZ = body.velocity;
         bodyVelocityXZ.y = 0.0f;
 
+        // Force wake-up rigid body
+        body.WakeUp();
+
         // Friction in XZ only
         body.velocity -= MovementFriction * Time.deltaTime * bodyVelocityXZ;
 
