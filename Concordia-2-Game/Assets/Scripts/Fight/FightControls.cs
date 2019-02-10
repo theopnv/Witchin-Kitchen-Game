@@ -19,11 +19,22 @@ public class FightControls : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float RotationSpeed;
 
+    [Range(0, 3)]
+    public int PlayerIndex;
+
+    public bool UseMouse = true;
+
     private GameObject target;
     private FighterPunch punch;
 
     private Vector3 movementDirection = new Vector3();
     private Vector3 facingDirection = new Vector3();
+
+    private static string INPUT_HORIZONTAL = "Horizontal";
+    private static string INPUT_VERTICAL   = "Vertical";
+    private static string INPUT_HORIZONTAL_RIGHT = "Horizontal Right";
+    private static string INPUT_VERTICAL_RIGHT = "Vertical Right";
+    private static string INPUT_PUNCH      = "Punch";
 
     // Start is called before the first frame update
     void Start()
@@ -40,9 +51,9 @@ public class FightControls : MonoBehaviour
     void Update()
     {
         // Movement
-        movementDirection.x = Input.GetAxisRaw("Horizontal");
+        movementDirection.x = Input.GetAxisRaw(getInputStringForPlayer(INPUT_HORIZONTAL, PlayerIndex));
         movementDirection.y = 0.0f;
-        movementDirection.z = Input.GetAxisRaw("Vertical");
+        movementDirection.z = Input.GetAxisRaw(getInputStringForPlayer(INPUT_VERTICAL, PlayerIndex));
 
         if (movementDirection.sqrMagnitude > 1)
         {
@@ -51,16 +62,26 @@ public class FightControls : MonoBehaviour
         movementDirection *= MovementSpeed;
 
         // Rotation
-        var playerOnScreen = Camera.main.WorldToScreenPoint(target.transform.position);
-        var mouseOnScreen = Input.mousePosition;
+        if (UseMouse)
+        {
+            var playerOnScreen = Camera.main.WorldToScreenPoint(target.transform.position);
+            var mouseOnScreen = Input.mousePosition;
 
-        facingDirection = mouseOnScreen - playerOnScreen;
-        facingDirection.Normalize();
-        facingDirection.z = facingDirection.y;
-        facingDirection.y = 0.0f;
+            facingDirection = mouseOnScreen - playerOnScreen;
+            facingDirection.Normalize();
+            facingDirection.z = facingDirection.y;
+            facingDirection.y = 0.0f;
+        }
+        else
+        {
+            facingDirection.x = Input.GetAxisRaw(getInputStringForPlayer(INPUT_HORIZONTAL_RIGHT, PlayerIndex));
+            facingDirection.y = 0.0f;
+            facingDirection.z = Input.GetAxisRaw(getInputStringForPlayer(INPUT_VERTICAL_RIGHT, PlayerIndex));
+            facingDirection.Normalize();
+        }
 
         // Punch
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown(getInputStringForPlayer(INPUT_PUNCH, PlayerIndex)))
         {
             punch.RequestPunch();
         }
@@ -99,10 +120,19 @@ public class FightControls : MonoBehaviour
         body.AddForce(Vector3.down * Gravity, ForceMode.Acceleration);
 
         // Smooth rotation
-        Quaternion facing = new Quaternion();
-        facing.SetLookRotation(facingDirection);
-        facing = Quaternion.Slerp(target.transform.rotation, facing, RotationSpeed);
+        if (!Mathf.Approximately(0.0f, facingDirection.magnitude))
+        {
+            Quaternion facing = new Quaternion();
+            facing.SetLookRotation(facingDirection);
+            facing = Quaternion.Slerp(target.transform.rotation, facing, RotationSpeed);
 
-        target.transform.rotation = facing;
+            target.transform.rotation = facing;
+        }
+    }
+
+    private string getInputStringForPlayer(string input, int idx)
+    {
+        // Idx is 0-based at runtime but 1-based in project settings
+        return input + " P" + (idx + 1);
     }
 }
