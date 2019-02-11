@@ -87,9 +87,10 @@ namespace con2.lobby
             _playerUiManagers[i] = instance.GetComponent<PlayerUiManager>();
             _playerUiManagers[i].SetActiveCanvas(false);
             _playerUiManagers[i].Label.text = name;
-         
+
             // TODO: Temporary hard coding the colors for each player. Make that dynamic.
             _playerUiManagers[i].Color = color;
+            PlayersInfo.Color[i] = color;
         }
 
         void SetPlayerUiVisibility(bool inLobby, int i)
