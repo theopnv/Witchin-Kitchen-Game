@@ -22,6 +22,7 @@ public class GlobalFightState : MonoBehaviour
     public float PunchForceMultiplier = 5.0f;
     public float PunchStunSeconds = 1.0f;
     public float PunchReloadSeconds = 1.33f;
+    public float PunchLingerSeconds = 0.33f;
 
     public List<FighterPunch.PunchEvent> Punches = new List<FighterPunch.PunchEvent>();
 

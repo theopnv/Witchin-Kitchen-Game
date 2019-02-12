@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class FighterPunch : MonoBehaviour
 {
-    private float timerLeft = 0.0f;
-
     private bool punchRequested = false;
-    private bool punchAccepted = false;
+    private bool punchOverlapping = false;
+    private GameObject punchTarget;
 
     private Color startColor;
     private Color noPunchColor = new Color(1.0f, 1.0f, 1.0f);
@@ -35,33 +34,13 @@ public class FighterPunch : MonoBehaviour
     {
         startColor = GetComponent<MeshRenderer>().material.color;
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void SetReloadProgress(float progress)
     {
-        // Update reload timer
-        timerLeft = Mathf.Max(0.0f, timerLeft - Time.deltaTime);
-
         // Visualize the reload timer
-        float lerp = GetReloadProgress();
+        float lerp = progress;
         var renderer = GetComponent<MeshRenderer>();
         renderer.material.color = startColor * lerp + noPunchColor * (1.0f - lerp);
-    }
-
-    private void LateUpdate()
-    {
-        // Check timer
-        if (punchRequested && timerLeft == 0.0f)
-        {
-            timerLeft = GlobalFightState.get().PunchReloadSeconds;
-            punchAccepted = true;
-        }
-        else
-        {
-            punchAccepted = false;
-        }
-
-        punchRequested = false;
     }
 
     public void RequestPunch()
@@ -69,18 +48,42 @@ public class FighterPunch : MonoBehaviour
         punchRequested = true;
     }
 
-    public float GetReloadProgress()
+    public void CancelPunch()
     {
-        return 1.0f - (timerLeft / GlobalFightState.get().PunchReloadSeconds);
+        punchRequested = false;
     }
 
-    private void OnTriggerStay(Collider other)
+    private bool isTarget(Collider other)
     {
         // Ignore parent collision and only consider player capsule tag
-        if (punchAccepted && other.gameObject != gameObject &&
-            other.gameObject.tag == GlobalFightState.PLAYER_CAPSULE_TAG)
+        return other.gameObject != gameObject &&
+               other.gameObject.tag == GlobalFightState.PLAYER_CAPSULE_TAG;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isTarget(other))
         {
-            GlobalFightState.get().Punches.Add(new PunchEvent(gameObject, other.gameObject));
+            punchOverlapping = true;
+            punchTarget = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (isTarget(other))
+        {
+            punchOverlapping = false;
+            punchTarget = null;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (punchOverlapping && punchRequested)
+        {
+            punchRequested = false;
+            GlobalFightState.get().Punches.Add(new PunchEvent(gameObject, punchTarget));
         }
     }
 }

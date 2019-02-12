@@ -26,6 +26,7 @@ public class FightControls : MonoBehaviour
 
     private GameObject target;
     private FighterPunch punch;
+    private bool canPunch = true;
 
     private Vector3 movementDirection = new Vector3();
     private Vector3 facingDirection = new Vector3();
@@ -81,10 +82,29 @@ public class FightControls : MonoBehaviour
         }
 
         // Punch
-        if (Input.GetButtonDown(getInputStringForPlayer(INPUT_PUNCH, PlayerIndex)))
+        if (canPunch && Input.GetButtonDown(getInputStringForPlayer(INPUT_PUNCH, PlayerIndex)))
         {
+            canPunch = false;
             punch.RequestPunch();
+
+            // Cancel punch after some time
+            StartCoroutine(StopPunch());
+
+            // Reload punch after some time
+            StartCoroutine(ReloadPunch());
         }
+    }
+
+    IEnumerator StopPunch()
+    {
+        yield return new WaitForSeconds(GlobalFightState.get().PunchLingerSeconds);
+        punch.CancelPunch();
+    }
+
+    IEnumerator ReloadPunch()
+    {
+        yield return new WaitForSeconds(GlobalFightState.get().PunchReloadSeconds);
+        canPunch = true;
     }
 
     private void FixedUpdate()
