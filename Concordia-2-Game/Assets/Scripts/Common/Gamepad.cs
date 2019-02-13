@@ -6,64 +6,123 @@ public class Gamepad
 {
     public class InputID
     {
-        public const string HORIZONTAL = "Horizontal";
-        public const string VERTICAL   = "Vertical";
-        public const string PUNCH      = "Punch";
+        private string ID;
+
+        public InputID(string ID)
+        {
+            this.ID = ID;
+        }
+
+        public string Value {
+            get { return ID; }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            InputID otherID = obj as InputID;
+
+            return otherID.Value == this.Value;
+        }
+
+        public override int GetHashCode()
+        {
+            return ID.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return ID;
+        }
     }
 
-    private Dictionary<GamepadAction.ID, GamepadAction> actions;
-    private Dictionary<string, GamepadAction.ID> inputToAction;
+    public static readonly InputID INP_HORIZONTAL   = new InputID("Horizontal");
+    public static readonly InputID INP_VERTICAL     = new InputID("Vertical");
+    public static readonly InputID INP_PUNCH        = new InputID("Punch");
+
+    private Dictionary<GamepadAction.ID, GamepadAction> actions;      // One to one
+    private Dictionary<InputID, List<GamepadAction.ID>> inputToAction; // One to many
     private Vector2 movementDirection;
     private Vector2 movementDirectionRaw;
 
     public Gamepad()
     {
         actions = new Dictionary<GamepadAction.ID, GamepadAction>();
-        for (GamepadAction.ID id = 0; id < GamepadAction.ID.MAX_ID; ++id)
+        for (GamepadAction.ID actionID = 0; actionID < GamepadAction.ID.MAX_ID; ++actionID)
         {
-            actions.Add(id, new GamepadAction());
+            actions.Add(actionID, new GamepadAction());
         }
 
-        inputToAction = new Dictionary<string, GamepadAction.ID>();
+        inputToAction = new Dictionary<InputID, List<GamepadAction.ID>>();
         setupDefaultMappings();
-        foreach (string input in inputToAction.Keys)
+        foreach (InputID inputID in inputToAction.Keys)
         {
-            var action = actions[inputToAction[input]];
-            action.mappedInput = input;
+            // Save default mapping
+            var list = inputToAction[inputID];
+            foreach (var actionID in list)
+            {
+                var action = actions[actionID];
+                action.defaultInputID = inputID;
+            }
         }
     }
 
     // DEFINE DEFAULT CONTROLS HERE!
     private void setupDefaultMappings()
     {
-        inputToAction.Add(InputID.PUNCH, GamepadAction.ID.PUNCH);
+        addMapping(INP_PUNCH, GamepadAction.ID.PUNCH);
+    }
+
+    private void addMapping(InputID inputID, GamepadAction.ID actionID)
+    {
+        var action = actions[actionID];
+        action.currentInputID = inputID;
+
+        if (inputToAction.ContainsKey(inputID))
+        {
+            var list = inputToAction[inputID];
+            list.Add(actionID);
+        }
+        else
+        {
+            var list = new List<GamepadAction.ID>();
+            list.Add(actionID);
+            inputToAction.Add(inputID, list);
+        }
     }
 
     private string getInputForPlayerIdx(string input, int playerIdx)
     {
-        return input + " " + playerIdx;
+        return input + " P" + (playerIdx + 1);
     }
 
     // Internal use only
     public void Poll(int playerIdx)
     {
         // Buttons
-        foreach (string input in inputToAction.Keys)
+        foreach (InputID inputID in inputToAction.Keys)
         {
-            var action = actions[inputToAction[input]];
+            var list = inputToAction[inputID];
 
-            var justPressed = Input.GetButtonDown(getInputForPlayerIdx(input, playerIdx));
-            var pressed = Input.GetButton(getInputForPlayerIdx(input, playerIdx));
-            var justReleased = Input.GetButtonUp(getInputForPlayerIdx(input, playerIdx));
+            foreach (var actionID in list)
+            {
+                var action = actions[actionID];
 
-            action.SetNew(justPressed, pressed, justReleased);
+                var justPressed = Input.GetButtonDown(getInputForPlayerIdx(inputID.Value, playerIdx));
+                var pressed = Input.GetButton(getInputForPlayerIdx(inputID.Value, playerIdx));
+                var justReleased = Input.GetButtonUp(getInputForPlayerIdx(inputID.Value, playerIdx));
+
+                action.SetNew(justPressed, pressed, justReleased);
+            }
         }
 
         // Axes
-        movementDirection.x = Input.GetAxis(getInputForPlayerIdx(InputID.HORIZONTAL, playerIdx));
-        movementDirection.y = Input.GetAxis(getInputForPlayerIdx(InputID.VERTICAL, playerIdx));
-        movementDirectionRaw.x = Input.GetAxisRaw(getInputForPlayerIdx(InputID.HORIZONTAL, playerIdx));
-        movementDirectionRaw.y = Input.GetAxisRaw(getInputForPlayerIdx(InputID.VERTICAL, playerIdx));
+        movementDirection.x = Input.GetAxis(getInputForPlayerIdx(INP_HORIZONTAL.Value, playerIdx));
+        movementDirection.y = Input.GetAxis(getInputForPlayerIdx(INP_VERTICAL.Value, playerIdx));
+        movementDirectionRaw.x = Input.GetAxisRaw(getInputForPlayerIdx(INP_HORIZONTAL.Value, playerIdx));
+        movementDirectionRaw.y = Input.GetAxisRaw(getInputForPlayerIdx(INP_VERTICAL.Value, playerIdx));
     }
 
 
@@ -72,9 +131,9 @@ public class Gamepad
     // Public API
     public bool InvertMovement;
 
-    public GamepadAction Action(GamepadAction.ID id)
+    public GamepadAction Action(GamepadAction.ID actionID)
     {
-        return actions[id];
+        return actions[actionID];
     }
 
     public Vector2 MovementDirection()
@@ -93,24 +152,29 @@ public class Gamepad
         return movementDirectionRaw;
     }
 
-    public void RemapAction(GamepadAction.ID id, string input)
+    public void RemapAction(GamepadAction.ID actionID, InputID inputID)
     {
-        // Remove old mapping
-        var action = actions[id];
-        inputToAction.Remove(action.mappedInput);
+        var action = actions[actionID];
 
-        inputToAction.Add(input, id);
+        // Remove old mapping
+        var list = inputToAction[action.currentInputID];
+        list.Remove(actionID);
+        if (list.Count == 0)
+        {
+            inputToAction.Remove(inputID);
+        }
+
+        addMapping(inputID, actionID);
     }
 
     public void ResetMappings()
     {
         inputToAction.Clear();
 
-        for (GamepadAction.ID id = 0; id < GamepadAction.ID.MAX_ID; ++id)
+        for (GamepadAction.ID actionID = 0; actionID < GamepadAction.ID.MAX_ID; ++actionID)
         {
-            var action = actions[id];
-
-            inputToAction.Add(action.mappedInput, id);
+            var action = actions[actionID];
+            addMapping(action.defaultInputID, actionID);
         }
     }
 }

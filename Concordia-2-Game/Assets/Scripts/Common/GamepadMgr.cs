@@ -8,7 +8,7 @@ public class GamepadMgr : MonoBehaviour
 
     public const int NUM_PADS = 2;
 
-    private List<Gamepad> gamepads;
+    private List<Gamepad> gamepads = new List<Gamepad>();
 
     void Awake()
     {

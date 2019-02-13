@@ -35,5 +35,6 @@ public class GamepadAction
         justReleased = newJustReleased;
     }
 
-    public string mappedInput;
+    public Gamepad.InputID defaultInputID;
+    public Gamepad.InputID currentInputID;
 }
