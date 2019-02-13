@@ -26,6 +26,10 @@ namespace con2
         private bool pressed;
         private bool justReleased;
 
+        public event System.Action JustPressedEvent;
+        public event System.Action PressedEvent;
+        public event System.Action JustReleasedEvent;
+
 
 
 
@@ -35,6 +39,19 @@ namespace con2
             justPressed = newJustPressed;
             pressed = newPressed;
             justReleased = newJustReleased;
+
+            if (justPressed && JustPressedEvent != null)
+            {
+                JustPressedEvent();
+            }
+            if (pressed && PressedEvent != null)
+            {
+                PressedEvent();
+            }
+            if (justReleased && JustReleasedEvent != null)
+            {
+                JustReleasedEvent();
+            }
         }
 
         public Gamepad.InputID defaultInputID;
