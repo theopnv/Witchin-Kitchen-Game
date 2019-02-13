@@ -2,35 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GamepadMgr : MonoBehaviour
+namespace con2
 {
-    public static GamepadMgr instance;
-
-    public const int NUM_PADS = 2;
-
-    private List<Gamepad> gamepads = new List<Gamepad>();
-
-    void Awake()
+    public class GamepadMgr : MonoBehaviour
     {
-        instance = this;
+        public static GamepadMgr instance;
 
-        for (int i = 0; i < NUM_PADS; ++i)
+        public const int NUM_PADS = 2;
+
+        private List<Gamepad> gamepads = new List<Gamepad>();
+
+        void Awake()
         {
-            gamepads.Add(new Gamepad());
-        }
-    }
+            instance = this;
 
-    // Update is called once per frame
-    void Update()
-    {
-        for (int i = 0; i < NUM_PADS; ++i)
+            for (int i = 0; i < NUM_PADS; ++i)
+            {
+                gamepads.Add(new Gamepad());
+            }
+        }
+
+        void OnEnable()
         {
-            gamepads[i].Poll(i);
+            EarlyUpdate.EarlyUpdateEvent += EarlyUpdateCallback;
         }
-    }
 
-    public static Gamepad Pad(int playerIdx)
-    {
-        return instance.gamepads[playerIdx];
+        void OnDisable()
+        {
+            EarlyUpdate.EarlyUpdateEvent -= EarlyUpdateCallback;
+        }
+
+        // Will be called before any other component is Update()'d,
+        // to avoid possible 1-frame delay
+        private void EarlyUpdateCallback()
+        {
+            for (int i = 0; i < NUM_PADS; ++i)
+            {
+                gamepads[i].Poll(i);
+            }
+        }
+
+        public static Gamepad Pad(int playerIdx)
+        {
+            return instance.gamepads[playerIdx];
+        }
     }
 }
