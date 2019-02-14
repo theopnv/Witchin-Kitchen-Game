@@ -211,13 +211,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 15
-  SpawnableItems:
-  - Prefab: {fileID: 8485904507461838214, guid: db720e3a2ad178b478d8fc95fe533e66,
+  UseTimerMode: 0
+  SpawnableItemsList:
+  - Name: SomeSpawnableItem
+    Prefab: {fileID: 8485904507461838214, guid: db720e3a2ad178b478d8fc95fe533e66,
       type: 3}
     SpawnDelay: 2
-    InstantiationTrigger: 0
     TimeSinceSpawn: 0
-  UseTimerMode: 1
+  - Name: AnotherSpawnableItem
+    Prefab: {fileID: 5521591064704325135, guid: c1ba1f2420d040c4b8fbb0410364671f,
+      type: 3}
+    SpawnDelay: 2
+    TimeSinceSpawn: 0
 --- !u!4 &40057973
 Transform:
   m_ObjectHideFlags: 0
@@ -314,6 +319,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &870007062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 870007063}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &870007063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870007062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.198597, y: -0.99715996, z: 0.16283678}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1242719703}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1117176693
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,3 +441,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1242719702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242719703}
+  - component: {fileID: 1242719704}
+  m_Layer: 0
+  m_Name: FakeSpawnRequestController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1242719703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242719702}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 870007063}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1242719704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242719702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41c0f6c25e598942a22755cc3d5babc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemSpawner: {fileID: 40057972}

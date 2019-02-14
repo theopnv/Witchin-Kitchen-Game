@@ -27,7 +27,7 @@ namespace con2.game
                 true);
             EditorGUILayout.PropertyField(
                 serializedObject.FindProperty(
-                    "SpawnableItems"),
+                    "SpawnableItemsList"),
                 true);
             serializedObject.ApplyModifiedProperties();
         }

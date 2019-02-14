@@ -6,16 +6,22 @@ using UnityEngine;
 namespace con2.game
 {
 
-    [System.Serializable]
+    [Serializable]
     public class SpawnableItem
     {
+        [Tooltip("[TIMER MODE] Used to retrieve the item in the list")]
+        public string Name;
+
         public GameObject Prefab;
 
         [Tooltip("[TIMER MODE]Delay between two respawns of this item")]
         public float SpawnDelay;
 
-        [Tooltip("[TRIGGER MODE] If true, will trigger the item's instantiation")]
-        public bool InstantiationTrigger;
+        /// <summary>
+        /// [TRIGGER MODE] This event will trigger the instantiation of the item upon invocation.
+        /// </summary>
+        [HideInInspector]
+        public Action AskToInstantiate;
 
         [HideInInspector]
         public float TimeSinceSpawn;
