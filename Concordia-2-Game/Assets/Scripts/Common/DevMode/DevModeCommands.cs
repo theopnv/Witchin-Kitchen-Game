@@ -32,8 +32,8 @@ namespace con2
                 "",
                 "List of available commands for all scenes:",
                 "- 'reload': Reloads the current scene",
-                "- 'game1': Starts Game scene with 1 player (red)",
-                "- 'game2': Starts Game scene with 2 players (red and blue)");
+                "- 'game1': Starts Game scene with 1 player (red) and with no communication with the server",
+                "- 'game2': Starts Game scene with 2 players (red and blue) and with no communication with the server");
             var help = commonMessage;
             var currentSceneName = GetCurrentSceneName();
 
