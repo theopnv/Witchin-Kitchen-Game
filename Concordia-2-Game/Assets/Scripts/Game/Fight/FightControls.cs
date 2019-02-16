@@ -28,12 +28,6 @@ public class FightControls : MonoBehaviour
 
     private Vector3 movementDirection = new Vector3();
 
-    private static string INPUT_HORIZONTAL = "Horizontal";
-    private static string INPUT_VERTICAL   = "Vertical";
-    private static string INPUT_HORIZONTAL_RIGHT = "Horizontal Right";
-    private static string INPUT_VERTICAL_RIGHT = "Vertical Right";
-    private static string INPUT_PUNCH      = "Punch";
-
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +39,10 @@ public class FightControls : MonoBehaviour
     void Update()
     {
         // Movement
-        movementDirection.x = Input.GetAxisRaw(getInputStringForPlayer(INPUT_HORIZONTAL, PlayerIndex));
+        var joystick = con2.GamepadMgr.Pad(PlayerIndex).MovementDirectionRaw();
+        movementDirection.x = joystick.x;
         movementDirection.y = 0.0f;
-        movementDirection.z = Input.GetAxisRaw(getInputStringForPlayer(INPUT_VERTICAL, PlayerIndex));
+        movementDirection.z = joystick.y;
 
         if (movementDirection.sqrMagnitude > 1)
         {
@@ -56,7 +51,7 @@ public class FightControls : MonoBehaviour
         movementDirection *= MovementSpeed;
 
         // Punch
-        if (canPunch && Input.GetButtonDown(getInputStringForPlayer(INPUT_PUNCH, PlayerIndex)))
+        if (canPunch && con2.GamepadMgr.Pad(PlayerIndex).Action(con2.GamepadAction.ID.PUNCH).JustPressed)
         {
             canPunch = false;
             punch.RequestPunch();
@@ -138,11 +133,5 @@ public class FightControls : MonoBehaviour
 
             target.transform.rotation = facing;
         }
-    }
-
-    private string getInputStringForPlayer(string input, int idx)
-    {
-        // Idx is 0-based at runtime but 1-based in project settings
-        return input + " P" + (idx + 1);
     }
 }
