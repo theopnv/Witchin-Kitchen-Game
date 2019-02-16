@@ -233,6 +233,7 @@ MonoBehaviour:
   MovementFriction: 2
   Gravity: 19.3
   RotationSpeed: 0.169
+  PlayerIndex: 0
 --- !u!114 &6814985585712028918
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -62,7 +62,7 @@ namespace con2
                         if (!ControllersState[i])
                         {
                             Debug.Log("Controller " + i + " was connected");
-                            OnConnected.Invoke(i);
+                            OnConnected?.Invoke(i);
                         }
                         ControllersState[i] = true;
                     }
@@ -73,7 +73,7 @@ namespace con2
                         if (ControllersState[i])
                         {
                             Debug.Log("Controller " + i + " was disconnected");
-                            OnDisconnected.Invoke(i);
+                            OnDisconnected?.Invoke(i);
                         }
                         ControllersState[i] = false;
                     }
