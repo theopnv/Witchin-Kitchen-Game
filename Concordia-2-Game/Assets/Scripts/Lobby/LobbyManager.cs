@@ -14,9 +14,7 @@ namespace con2.lobby
 
         [Tooltip("Position of players' UIs")]
         public Transform[] PlayerUiPositions;
-
-        public const string GAME_SCENE_NAME = "Game";
-
+        
         #region Private Variables
 
         [Tooltip("Controllers detector")]
@@ -24,6 +22,9 @@ namespace con2.lobby
         private DetectController _detectController;
 
         private PlayerUiManager[] _playerUiManagers;
+
+        [SerializeField]
+        private AudienceInteractionManager AudienceInteractionManager;
 
         #endregion
 
@@ -55,7 +56,7 @@ namespace con2.lobby
             if (Input.GetKeyDown(KeyCode.Return)
                 || Input.GetKeyDown("joystick button 0"))
             {
-                SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
+                ReadyToStartGame();
             }
         }
 
@@ -96,6 +97,11 @@ namespace con2.lobby
         void SetPlayerUiVisibility(bool inLobby, int i)
         {
             _playerUiManagers[i].SetActiveCanvas(inLobby);
+        }
+
+        private void ReadyToStartGame()
+        {
+            AudienceInteractionManager.SendPlayerCharacteristics();
         }
 
         #endregion
