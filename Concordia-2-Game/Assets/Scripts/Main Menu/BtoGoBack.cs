@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BtoGoBack : MonoBehaviour {
+namespace con2.main_menu
+{
 
-    public Button back;
+    public class BtoGoBack : MonoBehaviour
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown("joystick button 1"))
-            back.onClick.Invoke();
+        public Button back;
+
+        // Use this for initialization
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetKeyDown("joystick button 1"))
+                back.onClick.Invoke();
+        }
     }
 }
+

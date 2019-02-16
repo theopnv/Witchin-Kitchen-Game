@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonFunctions : MonoBehaviour {
+namespace con2.main_menu
+{
 
-    public const string LOBBY_SCENE_NAME = "Lobby";
-
-    public void LoadMainScene(bool isHost)
+    public class ButtonFunctions : MonoBehaviour
     {
-        SceneManager.LoadSceneAsync(LOBBY_SCENE_NAME);
+
+        public const string LOBBY_SCENE_NAME = "Lobby";
+
+        public void LoadMainScene(bool isHost)
+        {
+            SceneManager.LoadSceneAsync(LOBBY_SCENE_NAME);
+        }
+
+        public void LoadScene(string sceneName)
+        {
+            SceneManager.LoadSceneAsync(sceneName);
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 
-	public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadSceneAsync(sceneName);
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 }
