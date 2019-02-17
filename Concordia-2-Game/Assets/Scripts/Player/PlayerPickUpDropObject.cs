@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-// Author: Tri-Luong Steven Dien
-public class Player_PickUpDropObject : MonoBehaviour
+public class PlayerPickUpDropObject : MonoBehaviour
 {
     [Header("Player Hands")]
     public Transform mCharacterHands;

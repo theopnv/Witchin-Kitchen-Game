@@ -12,13 +12,13 @@ namespace con2
 
         private List<Gamepad> gamepads = new List<Gamepad>();
 
-        void Awake()
+        public void InitializeGampads()
         {
             instance = this;
 
             for (int i = 0; i < NUM_PADS; ++i)
             {
-                gamepads.Add(new Gamepad());
+                gamepads.Add(new Gamepad(i));
             }
         }
 
@@ -36,9 +36,9 @@ namespace con2
         // to avoid possible 1-frame delay
         private void EarlyUpdateCallback()
         {
-            for (int i = 0; i < NUM_PADS; ++i)
+            foreach (Gamepad pad in gamepads)
             {
-                gamepads[i].Poll(i);
+                pad.Poll();
             }
         }
 
