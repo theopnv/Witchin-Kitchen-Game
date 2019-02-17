@@ -22,12 +22,10 @@ namespace con2.game
         [Range(0.0f, 1.0f)]
         public float RotationSpeed;
 
-        [Range(0, 3)]
-        public int PlayerIndex;
-
         private GameObject target;
         private FighterPunch punch;
         private bool canPunch = true;
+        private int playerIndex;
 
         private Vector3 movementDirection = new Vector3();
 
@@ -42,7 +40,7 @@ namespace con2.game
         void Update()
         {
             // Movement
-            var joystick = con2.GamepadMgr.Pad(PlayerIndex).MovementDirectionRaw();
+            var joystick = con2.GamepadMgr.Pad(playerIndex).MovementDirectionRaw();
             movementDirection.x = joystick.x;
             movementDirection.y = 0.0f;
             movementDirection.z = joystick.y;
@@ -54,7 +52,7 @@ namespace con2.game
             movementDirection *= MovementSpeed;
 
             // Punch
-            if (canPunch && con2.GamepadMgr.Pad(PlayerIndex).Action(con2.GamepadAction.ID.PUNCH).JustPressed)
+            if (canPunch && con2.GamepadMgr.Pad(playerIndex).Action(con2.GamepadAction.ID.PUNCH).JustPressed)
             {
                 canPunch = false;
                 punch.RequestPunch();
@@ -136,6 +134,11 @@ namespace con2.game
 
                 target.transform.rotation = facing;
             }
+        }
+
+        public void SetPlayerIndex(int newIndex)
+        {
+            playerIndex = newIndex;
         }
     }
 
