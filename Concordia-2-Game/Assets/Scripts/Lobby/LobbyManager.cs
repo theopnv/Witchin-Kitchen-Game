@@ -115,6 +115,12 @@ namespace con2.lobby
             }
         }
 
+        public void BackToMenu()
+        {
+            _AudienceInteractionManager.ExitRoom();
+            SceneManager.LoadSceneAsync(SceneNames.MainMenu);
+        }
+
         #endregion
 
         #region Dev Mode

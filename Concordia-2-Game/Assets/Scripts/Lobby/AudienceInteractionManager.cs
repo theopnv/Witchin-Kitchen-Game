@@ -14,8 +14,6 @@ namespace con2.lobby
 
     public class AudienceInteractionManager : MonoBehaviour
     {
-        private const string GAME_SCENE_NAME = "Game";
-
         private SocketIOComponent _Socket;
 
         [SerializeField]
@@ -48,25 +46,45 @@ namespace con2.lobby
         /// <returns></returns>
         public bool SendPlayerCharacteristics()
         {
-            if (_Socket.sid == null)
+            if (!IsConnectedToServer())
             {
                 return false;
             }
 
+            var playerList = new List<Player>();
+            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
+            {
+                var player = new Player
+                {
+                    name = PlayersInfo.Name[i],
+                    color = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
+                };
+                playerList.Add(player);
+            }
+
             var players = new Players
             {
-                name1 = PlayersInfo.Name[0],
-                color1 = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[0]),
-
-                name2 = PlayersInfo.Name[1],
-                color2 = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[1]),
+                players = playerList,
             };
+
             var serialized = JsonConvert.SerializeObject(players);
             _Socket.Emit(
                 Command.REGISTER_PLAYERS, 
                 new JSONObject(serialized));
 
             return true;
+        }
+
+        /// <summary>
+        /// Teel the server that we exited the room and that it can be deleted.
+        /// </summary>
+        /// <returns></returns>
+        public void ExitRoom()
+        {
+            if (IsConnectedToServer())
+            {
+                _Socket.Emit(Command.QUIT_GAME);
+            }
         }
 
         #endregion
@@ -76,20 +94,20 @@ namespace con2.lobby
         private void OnMessage(SocketIOEvent e)
         {
             var content = JsonConvert.DeserializeObject<Base>(e.data.ToString());
-            if ((int)content.Code % 10 == 0) // Success codes always have their unit number equal to 0 (cf. protocol)
+            if ((int)content.code % 10 == 0) // Success codes always have their unit number equal to 0 (cf. protocol)
             {
-                Debug.Log(content.Content);
-                switch (content.Code)
+                Debug.Log(content.content);
+                switch (content.code)
                 {
                     case Code.register_players_success:
-                        SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
+                        SceneManager.LoadSceneAsync(SceneNames.Game);
                         break;
                     default: break;
                 }
             }
             else
             {
-                Debug.LogError(content.Content);
+                Debug.LogError(content.content);
             }
         }
 
@@ -97,7 +115,16 @@ namespace con2.lobby
         {
             Debug.Log("OnGameCreated");
             var game = JsonConvert.DeserializeObject<Game>(e.data.ToString());
-            _RoomId.text = "Room's PIN: " + game.Id;
+            _RoomId.text = "Room's PIN: " + game.id;
+        }
+
+        #endregion
+
+        #region Custom Methods
+
+        private bool IsConnectedToServer()
+        {
+            return _Socket.sid != null;
         }
 
         #endregion

@@ -7,39 +7,54 @@ using UnityEngine.Networking;
 public class PauseMenuController : NetworkBehaviour
 {
 
-    public static bool isPaused = false;
-    public GameObject pauseMenuUI;
-    public Button resume, reset;
-    private Text resetText;
+    #region Public Variables
+
+    public static bool IsPaused;
+    public GameObject PauseMenuUIPrefab;
+    private Text ResetText;
+
+    #endregion
+
+    #region Unity API
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Pause") || Input.GetKeyDown("escape"))   //start
         {
-            if (isPaused)   //the player is trying to leave the pause menu
+            if (IsPaused)   //the player is trying to leave the pause menu
                 Resume();
             else
                 Pause();
-            Debug.Log("Paused: " + isPaused);
+            Debug.Log("Paused: " + IsPaused);
         }
     }
 
+    #endregion
+
+    #region Custom Methods
+
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
-        isPaused = false;
+        IsPaused = false;
+        PauseMenuUIPrefab.SetActive(false);
     }
 
     public void Pause()
     {
-        pauseMenuUI.SetActive(true);
-        isPaused = true;
-        resume.Select();
-        if (!isServer)
-        {
-            reset.interactable = false;
-            resetText.text = "Ask host to reset";
-        }
+        IsPaused = true;
+        PauseMenuUIPrefab.SetActive(true);
     }
+
+    public void OnResumeClick()
+    {
+        Resume();
+    }
+
+    public void OnExitClick()
+    {
+        Debug.Log("EXITING");
+    }
+
+    #endregion
 }
