@@ -9,6 +9,7 @@ namespace con2
         public enum ID
         {
             PUNCH,
+            INTERACT,
             MAX_ID,
         }
 
