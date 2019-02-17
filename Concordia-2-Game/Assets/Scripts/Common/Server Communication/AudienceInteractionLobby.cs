@@ -9,23 +9,20 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
-namespace con2.lobby
+namespace con2
 {
 
-    public class AudienceInteractionManager : MonoBehaviour
+    /// <summary>
+    /// For communication happening in the lobby
+    /// </summary>
+    public partial class AudienceInteractionManager : MonoBehaviour
     {
-        private SocketIOComponent _Socket;
-
         [SerializeField]
         private Text _RoomId;
 
-        // Start is called before the first frame update
-        void Start()
+        void LobbyStart()
         {
-            _Socket = GetComponent<SocketIOComponent>();
-            
             _Socket.On(Command.GAME_CREATED, OnGameCreated);
-            _Socket.On(Command.MESSAGE, OnMessage);
 
             // Small delay between object instantiation and first use.
             StartCoroutine("Authenticate");
@@ -74,26 +71,13 @@ namespace con2.lobby
 
             return true;
         }
-
-        /// <summary>
-        /// Teel the server that we exited the room and that it can be deleted.
-        /// </summary>
-        /// <returns></returns>
-        public void ExitRoom()
-        {
-            if (IsConnectedToServer())
-            {
-                _Socket.Emit(Command.QUIT_GAME);
-            }
-        }
-
+        
         #endregion
 
         #region Receive
 
-        private void OnMessage(SocketIOEvent e)
+        private void OnLobbyMessage(Base content)
         {
-            var content = JsonConvert.DeserializeObject<Base>(e.data.ToString());
             if ((int)content.code % 10 == 0) // Success codes always have their unit number equal to 0 (cf. protocol)
             {
                 Debug.Log(content.content);
@@ -119,15 +103,7 @@ namespace con2.lobby
         }
 
         #endregion
-
-        #region Custom Methods
-
-        private bool IsConnectedToServer()
-        {
-            return _Socket.sid != null;
-        }
-
-        #endregion
+        
     }
 
 }
