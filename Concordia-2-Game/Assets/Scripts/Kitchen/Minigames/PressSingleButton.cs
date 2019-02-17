@@ -12,20 +12,22 @@ public class PressSingleButton : CookingMinigame
     {
         foreach (PlayerRange player in m_players)
         {
-            m_playerPresses.Add(GamepadMgr.Pad(player.GetPlayer().GetComponent<FightControls>().PlayerIndex).Action(GamepadAction.ID.INTERACT));
+            //m_playerPresses.Add(GamepadMgr.Pad(player.GetPlayer().GetComponent<FightControls>().PlayerIndex).Action(GamepadAction.ID.INTERACT));
         }
+    }
+
+    public override bool ConsumeInput(GamepadAction input)
+    {
+        if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
+        {
+            return true;
+        }
+        return false;
     }
 
     override public void UpdateMinigameSpecifics()
     {
-        foreach (PlayerRange player in m_players)
-        {
-            //Await game input
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                EndMinigame();
-            }
-        }
+
     }
 
     override public void EndMinigameSpecifics()

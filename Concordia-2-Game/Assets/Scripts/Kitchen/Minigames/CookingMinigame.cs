@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CookingMinigame : MonoBehaviour
+public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
 {
     public const float INTERACTION_DISTANCE = 4.0f, FACING_DEGREE = 30.0f;
 
@@ -42,7 +42,7 @@ public abstract class CookingMinigame : MonoBehaviour
                 for (int i = 0; i < players.Length; i++)
                 {
                     m_players[i] = new PlayerRange(players[i]);
-                    m_playerGamepads.Add(GamepadMgr.Pad(players[i].GetComponent<FightControls>().PlayerIndex));
+                   // m_playerGamepads.Add(GamepadMgr.Pad(players[i].GetComponent<FightControls>().PlayerIndex));
                 }
             }
         }
@@ -120,4 +120,6 @@ public abstract class CookingMinigame : MonoBehaviour
             return playerGameObject;
         }
     }
+
+    public abstract bool ConsumeInput(GamepadAction input);
 }

@@ -28,15 +28,13 @@ namespace con2
             m_actionID = actionID;
             m_InputConsumers = new List<IInputConsumer>();
 
-            /*
             GameObject kitchenParent = GameObject.FindGameObjectWithTag(Tags.KITCHEN);
-            CookingMinigame[] kitchenStations = kitchenParent.GetComponentsInChildren<CookingMinigame>());
+            CookingMinigame[] kitchenStations = kitchenParent.GetComponentsInChildren<CookingMinigame>();
 
             foreach (CookingMinigame station in kitchenStations)
             {
                 m_InputConsumers.Add(station);
             }
-            */
 
             GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             SpawnPlayersController playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
