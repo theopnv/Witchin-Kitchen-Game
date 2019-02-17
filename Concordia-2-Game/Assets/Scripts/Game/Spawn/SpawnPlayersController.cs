@@ -26,10 +26,13 @@ namespace con2.game
             {
                 var player = Instantiate(_playerPrefab, _playerSpawnPositions[i]);
                 player.GetComponent<Renderer>().material.color = PlayersInfo.Color[i];
-                player.GetComponent<FightControls>().SetPlayerIndex(i);
+                player.GetComponent<PlayerInputController>().SetPlayerIndex(i);
                 m_players[i] = player;
                 gfs.AddFighter(player);
             }
+
+            GamepadMgr gp = managers.GetComponentInChildren<GamepadMgr>();
+            gp.InitializeGampads();
         }
 
         public GameObject[] GetPlayers()
