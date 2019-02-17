@@ -5,7 +5,7 @@ using UnityEngine;
 namespace con2.game
 {
 
-    public class FighterCamera : MonoBehaviour
+    public class SharedCamera : MonoBehaviour
     {
         public GameObject Target;
 

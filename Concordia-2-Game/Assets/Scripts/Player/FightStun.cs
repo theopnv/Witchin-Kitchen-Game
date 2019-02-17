@@ -12,18 +12,6 @@ namespace con2.game
         private float timerElapsed = 0.0f;
         private float timerMax = 0.0f;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         private void FixedUpdate()
         {
             timerElapsed = Mathf.Min(timerMax, timerElapsed + Time.deltaTime);
