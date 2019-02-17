@@ -8,9 +8,6 @@ namespace con2.game
     public class GlobalFightState : MonoBehaviour
     {
         // Public
-
-        public static string PLAYER_CAPSULE_TAG = "PlayerCapsule";
-
         public static GlobalFightState get()
         {
             return instance;
@@ -42,11 +39,6 @@ namespace con2.game
         private void Awake()
         {
             instance = this;
-
-            foreach (var fighter in GameObject.FindGameObjectsWithTag(PLAYER_CAPSULE_TAG))
-            {
-                AddFighter(fighter);
-            }
         }
 
         // Start is called before the first frame update

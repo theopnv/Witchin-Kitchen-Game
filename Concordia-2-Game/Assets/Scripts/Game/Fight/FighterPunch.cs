@@ -60,7 +60,7 @@ namespace con2.game
         {
             // Ignore parent collision and only consider player capsule tag
             return other.gameObject != gameObject &&
-                   other.gameObject.tag == GlobalFightState.PLAYER_CAPSULE_TAG;
+                   other.gameObject.tag == Tags.PLAYER_TAG;
         }
 
         private void OnTriggerEnter(Collider other)
