@@ -41,8 +41,18 @@ namespace con2.lobby
             _Socket.Emit(Command.MAKE_GAME);
         }
 
-        public void SendPlayerCharacteristics()
+        /// <summary>
+        /// Return true if connected to server
+        /// False otherwise
+        /// </summary>
+        /// <returns></returns>
+        public bool SendPlayerCharacteristics()
         {
+            if (_Socket.sid == null)
+            {
+                return false;
+            }
+
             var players = new Players
             {
                 name1 = PlayersInfo.Name[0],
@@ -55,6 +65,8 @@ namespace con2.lobby
             _Socket.Emit(
                 Command.REGISTER_PLAYERS, 
                 new JSONObject(serialized));
+
+            return true;
         }
 
         #endregion

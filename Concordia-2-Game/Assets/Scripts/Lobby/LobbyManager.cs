@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace con2.lobby
 {
@@ -19,12 +20,15 @@ namespace con2.lobby
 
         [Tooltip("Controllers detector")]
         [SerializeField]
-        private DetectController _detectController;
+        private DetectController _DetectController;
 
-        private PlayerUiManager[] _playerUiManagers;
+        private PlayerUiManager[] _PlayerUiManagers;
 
         [SerializeField]
-        private AudienceInteractionManager AudienceInteractionManager;
+        private AudienceInteractionManager _AudienceInteractionManager;
+
+        [SerializeField]
+        private Text _ServerWarningText;
 
         #endregion
 
@@ -33,16 +37,16 @@ namespace con2.lobby
         void Start()
         {
             // Subscription to controllers events
-            _detectController.OnConnected += OnControllerConnected;
-            _detectController.OnDisconnected += OnControllerDisconnected;
+            _DetectController.OnConnected += OnControllerConnected;
+            _DetectController.OnDisconnected += OnControllerDisconnected;
 
             // Player UIs instantiation
-            _playerUiManagers = new PlayerUiManager[2];
+            _PlayerUiManagers = new PlayerUiManager[2];
             InstantiatePlayerUi(0, "Player 1", Color.red);
             InstantiatePlayerUi(1, "Player 2", Color.blue);
 
             // If controllers are already connected we activate players UIs right from the start
-            var controllerState = _detectController.ControllersState;
+            var controllerState = _DetectController.ControllersState;
             for (var i = 0; i < controllerState.Length; i++)
             {
                 SetPlayerUiVisibility(controllerState[i], i);
@@ -62,8 +66,8 @@ namespace con2.lobby
 
         void OnDestroy()
         {
-            _detectController.OnConnected -= OnControllerConnected;
-            _detectController.OnDisconnected -= OnControllerDisconnected;
+            _DetectController.OnConnected -= OnControllerConnected;
+            _DetectController.OnDisconnected -= OnControllerDisconnected;
         }
 
         #endregion
@@ -85,23 +89,30 @@ namespace con2.lobby
         void InstantiatePlayerUi(int i, string name, Color color)
         {
             var instance = Instantiate(PlayerUiPrefab, PlayerUiPositions[i]);
-            _playerUiManagers[i] = instance.GetComponent<PlayerUiManager>();
-            _playerUiManagers[i].SetActiveCanvas(false);
-            _playerUiManagers[i].Label.text = name;
+            _PlayerUiManagers[i] = instance.GetComponent<PlayerUiManager>();
+            _PlayerUiManagers[i].SetActiveCanvas(false);
+            _PlayerUiManagers[i].Label.text = name;
 
             // TODO: Temporary hard coding the colors for each player. Make that dynamic.
-            _playerUiManagers[i].Color = color;
+            _PlayerUiManagers[i].Color = color;
             PlayersInfo.Color[i] = color;
         }
 
         void SetPlayerUiVisibility(bool inLobby, int i)
         {
-            _playerUiManagers[i].SetActiveCanvas(inLobby);
+            _PlayerUiManagers[i].SetActiveCanvas(inLobby);
         }
 
         private void ReadyToStartGame()
         {
-            AudienceInteractionManager.SendPlayerCharacteristics();
+            if (!_AudienceInteractionManager.SendPlayerCharacteristics())
+            {
+                _ServerWarningText.gameObject.SetActive(true);
+            }
+            else
+            {
+                _ServerWarningText.gameObject.SetActive(false);
+            }
         }
 
         #endregion
