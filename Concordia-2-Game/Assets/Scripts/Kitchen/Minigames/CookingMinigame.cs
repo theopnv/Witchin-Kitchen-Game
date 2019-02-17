@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using con2;
+using con2.game;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +15,7 @@ public abstract class CookingMinigame : MonoBehaviour
     [SerializeField]
     protected bool m_done;
     protected PlayerRange[] m_players;
+    protected List<Gamepad> m_playerGamepads;
 
     public abstract void StartMinigameSpecifics();
     public abstract void UpdateMinigameSpecifics();
@@ -39,6 +42,7 @@ public abstract class CookingMinigame : MonoBehaviour
                 for (int i = 0; i < players.Length; i++)
                 {
                     m_players[i] = new PlayerRange(players[i]);
+                    m_playerGamepads.Add(GamepadMgr.Pad(players[i].GetComponent<FightControls>().PlayerIndex));
                 }
             }
         }
