@@ -16,13 +16,23 @@ namespace con2.game
 
         private AudienceInteractionManager _AudienceInteractionManager;
 
+        private Dictionary<Events.EventID, List<IEventSubscriber>> _EventSubscribers;
+
         #endregion
 
         #region Unity API
 
         private void Start()
         {
+            _EventSubscribers = new Dictionary<Events.EventID, List<IEventSubscriber>>();
+            foreach (Events.EventID id in Enum.GetValues(typeof(Events.EventID)))
+            {
+                _EventSubscribers.Add(id, new List<IEventSubscriber>());
+            }
+
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            _AudienceInteractionManager.EventSubscribers = _EventSubscribers;
+
             StartCoroutine(FakePollStarter());
         }
 
@@ -55,16 +65,28 @@ namespace con2.game
                 day:DateTime.Now.Day, 
                 hour:DateTime.Now.Hour, 
                 minute:DateTime.Now.Minute, 
-                second:pollingTime,
-                DateTimeKind.Utc).ToString("u");
+                second:DateTime.Now.Second).ToUniversalTime();
+            var deadlineAsStr = deadline
+                .Add(new TimeSpan(0, 0, 0, pollingTime))
+                .ToString("u");
             Debug.Log(deadline);
             var poll = new PollChoices()
             {
                 events = new List<Event> { pollEventA, pollEventB},
-                deadline = deadline,
+                deadline = deadlineAsStr,
             };
 
             _AudienceInteractionManager.SendPoll(poll);
+        }
+
+        /// <summary>
+        /// Add a subsystem that will listen to some events
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="subscriber"></param>
+        public void AddSubscriber(Events.EventID id, IEventSubscriber subscriber)
+        {
+            _EventSubscribers[id].Add(subscriber);
         }
 
         #endregion

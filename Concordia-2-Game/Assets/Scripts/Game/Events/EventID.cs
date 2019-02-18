@@ -10,6 +10,8 @@ namespace con2.game
         public enum EventID
         {
             freezing_rain = 0,
+
+            max_id,
         }
 
         public static Dictionary<EventID, string> EventList = new Dictionary<EventID, string>
