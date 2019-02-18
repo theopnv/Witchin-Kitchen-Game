@@ -5,6 +5,7 @@ public class PickableObject : MonoBehaviour
     // The object's rigidbody
     private Rigidbody rb;
     public float m_maxSpeedFractionWhenHolding = .85f;
+    public Ingredient ingredientType = Ingredient.NOT_AN_INGREDIENT;
 
     void Start()
     {

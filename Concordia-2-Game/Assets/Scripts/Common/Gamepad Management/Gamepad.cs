@@ -83,7 +83,7 @@ namespace con2
         private void setupDefaultMappings()
         {
             addMapping(INP_PUNCH, GamepadAction.ButtonID.PUNCH);
-            addMapping(INP_INTERACT, GamepadAction.ButtonID.INTERACT);
+            addMapping(INP_INTERACT, GamepadAction.ButtonID.INTERACT);  
         }
 
         private void addMapping(InputID inputID, GamepadAction.ButtonID actionID)

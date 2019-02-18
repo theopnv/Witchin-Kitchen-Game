@@ -29,15 +29,21 @@ namespace con2
             m_actionID = actionID;
             m_InputConsumers = new List<IInputConsumer>();
 
-            /*
-            GameObject kitchenParent = GameObject.FindGameObjectWithTag(Tags.KITCHEN);
-            CookingMinigame[] kitchenStations = kitchenParent.GetComponentsInChildren<CookingMinigame>());
-
+            GameObject[] kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+            List<CookingMinigame> kitchenStations = new List<CookingMinigame>();
+            foreach (GameObject kitchen in kitchenParents)
+            {
+                CookingMinigame[] stations = kitchen.GetComponentsInChildren<CookingMinigame>();
+                foreach (CookingMinigame station in stations)
+                {
+                    kitchenStations.Add(station);
+                }
+            }
+          
             foreach (CookingMinigame station in kitchenStations)
             {
                 m_InputConsumers.Add(station);
             }
-            */
 
             GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             SpawnPlayersController playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
@@ -93,6 +99,11 @@ namespace con2
         public GamepadAction.ButtonID GetActionID()
         {
             return m_actionID;
+        }
+
+        public GameObject GetPlayer()
+        {
+            return m_player;
         }
     }
 }
