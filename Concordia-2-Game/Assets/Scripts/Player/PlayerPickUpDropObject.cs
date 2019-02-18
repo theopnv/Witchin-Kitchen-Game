@@ -6,13 +6,12 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
     public Transform m_characterHands;
     public Transform m_characterFeet;
     public float m_throwForce = 5;
-    public float m_movementReduction = 1.5f;
     private float m_playerHeight;
     private Rigidbody m_playerRB;
     private PlayerMovement m_playerMovement;
 
     // The actual pickable object
-    private PickableObject m_PickableObject;
+    private PickableObject m_pickableObject;
 
     void Start()
     {
@@ -47,7 +46,7 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
         if (IsHoldingObject())
         {
             // Keeps the object in hands at the same position and orientation
-            m_PickableObject.UpdatePosition(m_characterHands.localPosition);
+            m_pickableObject.UpdatePosition(m_characterHands.localPosition);
         }
     }
 
@@ -58,19 +57,19 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
         // Check if an pickable object is in range
         if (Physics.Raycast(transform.position - new Vector3(0, m_playerHeight / 2.5f, 0), transform.TransformDirection(Vector3.forward), out rayItemHit, 1f))
         {
-            m_PickableObject = rayItemHit.transform.gameObject.GetComponent<PickableObject>();
+            m_pickableObject = rayItemHit.transform.gameObject.GetComponent<PickableObject>();
         }
-        return m_PickableObject;
+        return m_pickableObject;
     }
 
     // Pick up a nearby object
     private void PickUpObject()
     {
         // Slow down the player
-        m_playerMovement.MaxMovementSpeed -= m_movementReduction;
+        m_playerMovement.MaxMovementSpeed *= m_pickableObject.GetMaxSpeedFractionWhenHolding();
 
         // Have the object adjust its physics
-        m_PickableObject.PickUp(transform);
+        m_pickableObject.PickUp(transform);
 
         // Reposition the player hands (location)
         //mCharacterHands.localPosition = new Vector3(0.0f, playerSize.y + objectSize.y / 2.0f, 0.0f);
@@ -80,18 +79,18 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
     private void DropObject()
     {
         // Restore max movement speed
-        m_playerMovement.MaxMovementSpeed += m_movementReduction;
+        m_playerMovement.MaxMovementSpeed /= m_pickableObject.GetMaxSpeedFractionWhenHolding();
 
         // Have the object adjust its physics and get thrown
-        m_PickableObject.Drop(m_playerRB.velocity + (transform.forward*m_throwForce));
+        m_pickableObject.Drop(m_playerRB.velocity + (transform.forward*m_throwForce));
 
         // Reset picked up object
-        m_PickableObject = null;
+        m_pickableObject = null;
     }
 
     // Get the value of mIsHoldingObject
     public bool IsHoldingObject()
     {
-        return m_PickableObject;
+        return m_pickableObject;
     }
 }
