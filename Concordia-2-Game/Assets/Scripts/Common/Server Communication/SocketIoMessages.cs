@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace con2.lobby.messages
+namespace con2.messages
 {
 
     /// <summary>
@@ -17,10 +17,12 @@ namespace con2.lobby.messages
         // Requests
         public const string MAKE_GAME = "makeGame";
         public const string REGISTER_PLAYERS = "registerPlayers";
+        public const string QUIT_GAME = "quitGame";
 
         // Responses
         public const string MESSAGE = "message";
         public const string GAME_CREATED = "gameCreated";
+        public const string GAME_UPDATE = "gameUpdate";
     }
 
     public enum Code
@@ -36,30 +38,26 @@ namespace con2.lobby.messages
 
     public class Base
     {
-        public User User;
-        public Code Code;
-        public string Content;
+        public Code code;
+        public string content;
     }
 
     public class Game
     {
-        public string Id;
-        public string Host;
-        public List<string> Players;
+        public string id;
+        public string mainSocketID;
+        public List<Player> players;
+        public List<string> viewers; // socket IDs
     }
 
-    public class User
+    public class Player
     {
-        public string Name;
+        public string color;
+        public string name;
     }
 
     public class Players
     {
-        // Unfortunately lowercase because JsonConverter literally translates with camel case.
-        public string color1;
-        public string name1;
-
-        public string color2;
-        public string name2;
+        public List<Player> players;
     }
 }

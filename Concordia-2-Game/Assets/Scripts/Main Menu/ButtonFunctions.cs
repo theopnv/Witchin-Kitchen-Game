@@ -8,17 +8,9 @@ namespace con2.main_menu
 
     public class ButtonFunctions : MonoBehaviour
     {
-
-        public const string LOBBY_SCENE_NAME = "Lobby";
-
-        public void LoadMainScene(bool isHost)
+        public void LoadLobby(string sceneName)
         {
-            SceneManager.LoadSceneAsync(LOBBY_SCENE_NAME);
-        }
-
-        public void LoadScene(string sceneName)
-        {
-            SceneManager.LoadSceneAsync(sceneName);
+            SceneManager.LoadSceneAsync(SceneNames.Lobby);
         }
 
         public void QuitGame()
