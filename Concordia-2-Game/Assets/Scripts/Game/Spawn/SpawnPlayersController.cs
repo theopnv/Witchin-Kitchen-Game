@@ -25,7 +25,7 @@ namespace con2.game
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
                 var player = Instantiate(_playerPrefab, _playerSpawnPositions[i]);
-                player.name = "Player" + (i + 1);
+                player.name = "Player " + (i + 1);
                 player.GetComponent<Renderer>().material.color = PlayersInfo.Color[i];
                 player.GetComponent<PlayerInputController>().SetPlayerIndex(i);
                 m_players[i] = player;
