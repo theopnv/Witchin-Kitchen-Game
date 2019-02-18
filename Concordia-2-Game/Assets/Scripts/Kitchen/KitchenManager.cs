@@ -7,14 +7,12 @@ public class KitchenManager : MonoBehaviour
 {
     public int m_ownerId;
 
-    void Start()
+    public void SetOwner(SpawnPlayersController playerSpawner)
     {
-        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        SpawnPlayersController playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
         GameObject owner = playerSpawner.GetPlayerByID(m_ownerId);
         if (owner == null)
         {
-            Debug.LogError("Kitchen owner player " + m_ownerId + "not found!");
+            Debug.LogError("Kitchen owner player " + m_ownerId + " not found!");
         }
         else
         {

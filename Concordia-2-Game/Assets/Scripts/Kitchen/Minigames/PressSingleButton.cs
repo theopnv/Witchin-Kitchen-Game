@@ -17,6 +17,7 @@ public class PressSingleButton : CookingMinigame
     {
         if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
         {
+            EndMinigame();
             return true;
         }
         return false;

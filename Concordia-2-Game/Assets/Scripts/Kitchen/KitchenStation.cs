@@ -30,6 +30,8 @@ public class KitchenStation : MonoBehaviour
         if (m_hasOwner)
         {
             m_miniGame.SetStationOwner(owner);
+
+            //Apply player color to station?
         }
     }
 }

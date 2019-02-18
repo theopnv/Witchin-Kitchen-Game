@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!135 &548584708078030142
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2430807331998601718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.04
+  m_Center: {x: 0, y: 0.035, z: 0}
 --- !u!114 &7427867128298556471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,7 +26,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_prompt: {fileID: 1778595111554836710}
-  m_done: 0
+  m_started: 0
 --- !u!114 &7475065482432403657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +231,7 @@ GameObject:
   - component: {fileID: 3622903940560300039}
   m_Layer: 0
   m_Name: Kitchen base
-  m_TagString: Untagged
+  m_TagString: Kitchen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

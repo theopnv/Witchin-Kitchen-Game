@@ -25,14 +25,24 @@ namespace con2.game
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
                 var player = Instantiate(_playerPrefab, _playerSpawnPositions[i]);
+                player.name = "Player" + (i + 1);
                 player.GetComponent<Renderer>().material.color = PlayersInfo.Color[i];
                 player.GetComponent<PlayerInputController>().SetPlayerIndex(i);
                 m_players[i] = player;
                 gfs.AddFighter(player);
             }
 
+            //Initialize gamepads
             GamepadMgr gp = managers.GetComponentInChildren<GamepadMgr>();
             gp.InitializeGampads();
+
+            //Initialize kitchens
+            GameObject[] kitchens = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+            foreach (GameObject kitchen in kitchens)
+            {
+                KitchenManager km = kitchen.GetComponent<KitchenManager>();
+                km.SetOwner(this);
+            }
         }
 
         public GameObject[] GetPlayers()
