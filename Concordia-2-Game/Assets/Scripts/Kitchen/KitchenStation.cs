@@ -5,7 +5,9 @@ using UnityEngine;
 public class KitchenStation : MonoBehaviour
 {
     private CookingMinigame m_miniGame;
-    private GameObject m_StoredIngredient;
+    private GameObject m_storedIngredient;
+    [SerializeField]
+    private bool m_hasOwner;
 
     private void Start()
     {
@@ -17,9 +19,17 @@ public class KitchenStation : MonoBehaviour
         PickableObject ingredient = collision.gameObject.GetComponent<PickableObject>();
         if (ingredient)
         {
-            m_StoredIngredient = collision.gameObject;
-            m_StoredIngredient.SetActive(false);
-            m_miniGame.StartMinigame(); //coroutine?
+            m_storedIngredient = collision.gameObject;
+            m_storedIngredient.SetActive(false);
+            m_miniGame.StartMinigame();
+        }
+    }
+
+    public void SetOwner(GameObject owner)
+    {
+        if (m_hasOwner)
+        {
+            m_miniGame.SetStationOwner(owner);
         }
     }
 }

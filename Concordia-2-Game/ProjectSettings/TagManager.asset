@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerCapsule
   - Managers
+  - Kitchen
   layers:
   - Default
   - TransparentFX

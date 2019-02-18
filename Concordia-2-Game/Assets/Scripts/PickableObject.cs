@@ -4,6 +4,7 @@ public class PickableObject : MonoBehaviour
 {
     // The object's rigidbody
     private Rigidbody rb;
+    public float m_maxSpeedFractionWhenHolding = .85f;
 
     void Start()
     {
@@ -42,6 +43,11 @@ public class PickableObject : MonoBehaviour
 
         // Unparent the object from the player
         transform.parent = null;
+    }
+
+    public float GetMaxSpeedFractionWhenHolding()
+    {
+        return m_maxSpeedFractionWhenHolding;
     }
 
 }

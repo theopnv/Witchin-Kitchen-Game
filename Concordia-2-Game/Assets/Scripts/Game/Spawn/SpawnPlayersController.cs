@@ -39,5 +39,10 @@ namespace con2.game
         {
             return m_players;
         }
+
+        public GameObject GetPlayerByID(int ID)
+        {
+            return m_players[ID];
+        }
     }
 }

@@ -92,6 +92,11 @@ namespace con2
         {
             return m_actionID;
         }
+
+        public GameObject GetPlayer()
+        {
+            return m_player;
+        }
     }
 }
 

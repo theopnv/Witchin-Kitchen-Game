@@ -10,13 +10,10 @@ public class PressSingleButton : CookingMinigame
 
     override public void StartMinigameSpecifics()
     {
-        foreach (PlayerRange player in m_players)
-        {
-            //m_playerPresses.Add(GamepadMgr.Pad(player.GetPlayer().GetComponent<FightControls>().PlayerIndex).Action(GamepadAction.ID.INTERACT));
-        }
+
     }
 
-    public override bool ConsumeInput(GamepadAction input)
+    public override bool TryToConsumeInput(GamepadAction input)
     {
         if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
         {
