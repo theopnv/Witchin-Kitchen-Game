@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class PressSingleButton : CookingMinigame
 {
-    List<GamepadAction> m_playerPresses;
-
     override public void StartMinigameSpecifics()
     {
 

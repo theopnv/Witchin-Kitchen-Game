@@ -5,13 +5,15 @@ using UnityEngine;
 public class KitchenStation : MonoBehaviour
 {
     private CookingMinigame m_miniGame;
-    private GameObject m_storedIngredient;
+    private Ingredient m_storedIngredient;
     [SerializeField]
     private bool m_hasOwner;
+    private RecipeManager m_recipeManager;
 
     private void Start()
     {
         m_miniGame = GetComponent<CookingMinigame>();
+        m_recipeManager = GetComponent<RecipeManager>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -19,19 +21,39 @@ public class KitchenStation : MonoBehaviour
         PickableObject ingredient = collision.gameObject.GetComponent<PickableObject>();
         if (ingredient)
         {
-            m_storedIngredient = collision.gameObject;
-            m_storedIngredient.SetActive(false);
-            m_miniGame.StartMinigame();
+            if (m_recipeManager == null || m_recipeManager.CollectIngredient(ingredient.ingredientType))    //If is generic station, or is cauldron and needs the ingredient 
+            {
+                m_storedIngredient = ingredient.ingredientType;
+                collision.gameObject.SetActive(false);
+                m_miniGame.StartMinigame();
+            }
         }
     }
 
     public void SetOwner(GameObject owner)
     {
-        if (m_hasOwner)
-        {
-            m_miniGame.SetStationOwner(owner);
+        m_miniGame.SetStationOwner(owner, this);
 
-            //Apply player color to station?
+        //Apply player color to station?
+
+    }
+
+    public void ProcessIngredient()
+    {
+        if (m_recipeManager)    //Is cauldron
+        {
+            m_recipeManager.ProcessIngredient(m_storedIngredient);  //Add to recipe
         }
+        else                //Is some other kitchen station
+        {
+            //Process ingredient (chop, smash, etc.)
+        }
+
+        m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
+    }
+
+    public bool CollectIngredient(Ingredient type)
+    {
+        return m_recipeManager.CollectIngredient(type);
     }
 }
