@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace con2.lobby.messages
+namespace con2.messages
 {
 
     /// <summary>

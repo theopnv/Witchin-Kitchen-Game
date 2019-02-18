@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
-using con2.lobby.messages;
+using con2.messages;
 using Newtonsoft.Json;
 using UnityEngine;
 using SocketIO;
