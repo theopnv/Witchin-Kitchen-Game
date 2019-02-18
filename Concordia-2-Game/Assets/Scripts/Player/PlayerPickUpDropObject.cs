@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
 {
     public Transform m_characterHands;
-    public Transform m_characterFeet;
     public float m_throwForce = 5;
     private float m_playerHeight;
     private Rigidbody m_playerRB;
