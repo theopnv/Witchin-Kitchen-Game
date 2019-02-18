@@ -794,7 +794,6 @@ Transform:
   - {fileID: 253123972}
   - {fileID: 215454029}
   - {fileID: 1943173830}
-  - {fileID: 1237846177}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1116,57 +1115,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054270237}
   m_CullTransparentMesh: 0
---- !u!1 &1237846176
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1237846177}
-  - component: {fileID: 1237846178}
-  m_Layer: 0
-  m_Name: ItemSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1237846177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237846176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 582771356}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1237846178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237846176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3715dcfabd3e92b4790510e3e1651212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Radius: 6
-  UseTimerMode: 1
-  SpawnableItemsList:
-  - Name: GHOST_PEPPER
-    Prefab: {fileID: 3239770806383430194, guid: 9a54a1a458ab3d34492dea0100fe30a4,
-      type: 3}
-    SpawnDelay: 8
-    TimeSinceSpawn: 0
 --- !u!1 &1246012281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,6 +1322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1943173830}
   - component: {fileID: 1943173831}
+  - component: {fileID: 1943173832}
   m_Layer: 0
   m_Name: MainGameManager
   m_TagString: Untagged
@@ -1409,6 +1358,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_winnerText: {fileID: 1054270239}
+--- !u!114 &1943173832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943173829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3715dcfabd3e92b4790510e3e1651212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 6
+  UseTimerMode: 1
+  SpawnableItemsList:
+  - Name: GHOST_PEPPER
+    Prefab: {fileID: 3239770806383430194, guid: 9a54a1a458ab3d34492dea0100fe30a4,
+      type: 3}
+    SpawnDelay: 8
+    TimeSinceSpawn: 0
 --- !u!4 &50838684015822171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 50838684015822171, guid: 077542e5a9665f440b306732bc62295c,
