@@ -22,6 +22,7 @@ namespace con2.messages
         // Responses
         public const string MESSAGE = "message";
         public const string GAME_CREATED = "gameCreated";
+        public const string GAME_UPDATE = "gameUpdate";
     }
 
     public enum Code

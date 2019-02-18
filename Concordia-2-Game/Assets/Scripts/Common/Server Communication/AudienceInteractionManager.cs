@@ -51,6 +51,7 @@ namespace con2
             {
                 _Socket.Emit(Command.QUIT_GAME);
             }
+            Destroy(gameObject);
         }
 
         #endregion

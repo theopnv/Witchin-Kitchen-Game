@@ -635,6 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _RoomId: {fileID: 328034448}
+  _NumberOfViewers: {fileID: 1383379716}
 --- !u!114 &931744694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,8 +986,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
-  m_SizeDelta: {x: 238.4, y: 30}
+  m_AnchoredPosition: {x: 213.8, y: 0}
+  m_SizeDelta: {x: 266.1, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383379716
 MonoBehaviour:

@@ -61,13 +61,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void OnExitClick()
     {
-        // Warn all viewers that the game is about to be finished
         _AudienceInteractionManager.ExitRoom();
-
-        // Destroy the DontDestroyOnLoad objects because they will be re-created
-        // again in the main menu and lobby.
-        Destroy(_AudienceInteractionManager.gameObject);
-        Destroy(FindObjectOfType<DevModeCommands>().gameObject);
 
         SceneManager.LoadSceneAsync(SceneNames.MainMenu);
     }

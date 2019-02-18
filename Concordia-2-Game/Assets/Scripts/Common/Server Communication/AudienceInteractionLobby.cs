@@ -20,9 +20,13 @@ namespace con2
         [SerializeField]
         private Text _RoomId;
 
+        [SerializeField]
+        private Text _NumberOfViewers;
+
         void LobbyStart()
         {
             _Socket.On(Command.GAME_CREATED, OnGameCreated);
+            _Socket.On(Command.GAME_UPDATE, OnGameUpdate);
 
             // Small delay between object instantiation and first use.
             StartCoroutine("Authenticate");
@@ -100,6 +104,13 @@ namespace con2
             Debug.Log("OnGameCreated");
             var game = JsonConvert.DeserializeObject<Game>(e.data.ToString());
             _RoomId.text = "Room's PIN: " + game.id;
+        }
+
+        private void OnGameUpdate(SocketIOEvent e)
+        {
+            Debug.Log("OnGameUpdate");
+            var game = JsonConvert.DeserializeObject<Game>(e.data.ToString());
+            _NumberOfViewers.text = "Number of viewers in the room: " + game.viewers.Count;
         }
 
         #endregion
