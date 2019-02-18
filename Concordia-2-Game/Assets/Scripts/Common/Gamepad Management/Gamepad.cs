@@ -43,6 +43,7 @@ namespace con2
         public static readonly InputID INP_HORIZONTAL = new InputID("Horizontal");
         public static readonly InputID INP_VERTICAL = new InputID("Vertical");
         public static readonly InputID INP_PUNCH = new InputID("Punch");
+        public static readonly InputID INP_INTERACT = new InputID("Interact");
 
         private Dictionary<GamepadAction.ButtonID, GamepadAction> actions;      // One to one
         private Dictionary<InputID, List<GamepadAction.ButtonID>> inputToAction; // One to many
@@ -82,6 +83,7 @@ namespace con2
         private void setupDefaultMappings()
         {
             addMapping(INP_PUNCH, GamepadAction.ButtonID.PUNCH);
+            addMapping(INP_INTERACT, GamepadAction.ButtonID.INTERACT);
         }
 
         private void addMapping(InputID inputID, GamepadAction.ButtonID actionID)

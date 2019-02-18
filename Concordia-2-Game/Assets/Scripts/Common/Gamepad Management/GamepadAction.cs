@@ -10,6 +10,7 @@ namespace con2
         public enum ButtonID
         {
             PUNCH,
+            INTERACT,
             MAX_ID, //Used as a max count and to handle joystick input
         }
 

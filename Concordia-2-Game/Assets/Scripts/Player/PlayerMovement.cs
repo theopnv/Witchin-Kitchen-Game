@@ -111,5 +111,9 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer
 
             transform.rotation = facing;
         }
+
+        movementDirection.x = 0.0f;
+        movementDirection.y = 0.0f;
+        movementDirection.z = 0.0f;
     }
 }
