@@ -19,6 +19,7 @@ namespace con2
 
         private List<IInputConsumer> m_InputConsumers;
         private GamepadAction.ButtonID m_actionID;
+        private GameObject m_player;
 
         //this is shitty code...
         public Vector2 m_movementDirection;
@@ -44,6 +45,7 @@ namespace con2
                 PlayerInputController controller = player.GetComponent<PlayerInputController>();
                 if (controller.GetPlayerIndex() == playerID)
                 {
+                    m_player = player;
                     m_InputConsumers.Add(controller);
                 }
             }
