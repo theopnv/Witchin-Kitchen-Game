@@ -11,71 +11,44 @@ public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
     [SerializeField]
     private Canvas m_prompt;
     private Vector3 stationLocation;
+    private GameObject m_stationOwner;
 
     [SerializeField]
     protected bool m_done;
-    protected PlayerRange[] m_players;
-    protected List<Gamepad> m_playerGamepads;
 
+    //For any extra specifics a minigame requires at start, in update (e.g. a timer), and at end (e.g. spit out some item)
     public abstract void StartMinigameSpecifics();
     public abstract void UpdateMinigameSpecifics();
     public abstract void EndMinigameSpecifics();
+
+    //Pass player input on to the non-abstract minigame if the player is in range and facing the station
+    public abstract bool TryToConsumeInput(GamepadAction input);
 
     // Start is called before the first frame update
     private void Start()
     {
         stationLocation = this.transform.position;
         EndMinigame();
-        FindPlayers();
-    }
-
-    private void FindPlayers()
-    {
-        GameObject managerObject = GameObject.FindGameObjectWithTag("PlayerManager");
-        if (managerObject)
-        {
-            PlayerManager manager = managerObject.GetComponent<PlayerManager>();
-            if (manager)
-            {
-                GameObject[] players = manager.GetPlayers();
-                m_players = new PlayerRange[players.Length];
-                for (int i = 0; i < players.Length; i++)
-                {
-                    m_players[i] = new PlayerRange(players[i]);
-                   // m_playerGamepads.Add(GamepadMgr.Pad(players[i].GetComponent<FightControls>().PlayerIndex));
-                }
-            }
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_players == null)
-        {
-            FindPlayers();
-        }
-        else if (!m_done && CheckPlayersNear())
+        if (!m_done)
         {
             UpdateMinigameSpecifics();
         }
     }
 
-    private bool CheckPlayersNear()
+    protected bool CheckPlayerIsNear(GameObject player)
     {
-        bool playersNear = false;
-        foreach (PlayerRange player in m_players)
+        Transform playerTransform = player.transform;
+        float distanceToKitchenStation = (playerTransform.position - stationLocation).magnitude;
+        if (distanceToKitchenStation <= INTERACTION_DISTANCE && CheckPlayerFacingStation(playerTransform))
         {
-            player.isInRange = false;
-            Transform playerTransform = player.GetPlayer().transform;
-            float distanceToKitchenStation = (playerTransform.position - stationLocation).magnitude;
-            if (distanceToKitchenStation <= INTERACTION_DISTANCE && CheckPlayerFacingStation(playerTransform))
-            {
-                playersNear = true;
-                player.isInRange = true;
-            }
+            return true;
         }
-        return playersNear;
+        return false;
     }
 
     private bool CheckPlayerFacingStation(Transform player)
@@ -104,22 +77,18 @@ public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
         EndMinigameSpecifics();
     }
 
-    public class PlayerRange
+    public bool ConsumeInput(GamepadAction input)
     {
-        private GameObject playerGameObject;
-        public bool isInRange;
-
-        public PlayerRange(GameObject player)
+        GameObject interactingPlayer = input.GetPlayer();
+        if ((m_stationOwner == null || m_stationOwner.Equals(interactingPlayer)) && CheckPlayerIsNear(interactingPlayer))
         {
-            this.playerGameObject = player;
-            isInRange = false;
+            return TryToConsumeInput(input);
         }
-
-        public GameObject GetPlayer()
-        {
-            return playerGameObject;
-        }
+        return false;
     }
 
-    public abstract bool ConsumeInput(GamepadAction input);
+    public void SetStationOwner(GameObject owner)
+    {
+        m_stationOwner = owner;
+    }
 }
