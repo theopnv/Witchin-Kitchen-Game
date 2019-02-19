@@ -79,6 +79,14 @@ namespace con2
             }
         }
 
+        public void SwitchGamepadContext(List<IInputConsumer> inputConsumers)
+        {
+            foreach (KeyValuePair<GamepadAction.ButtonID, GamepadAction> action in actions)
+            {
+                action.Value.SetInputConsumers(inputConsumers);
+            }
+        }
+
         // DEFINE DEFAULT CONTROLS HERE!
         private void setupDefaultMappings()
         {

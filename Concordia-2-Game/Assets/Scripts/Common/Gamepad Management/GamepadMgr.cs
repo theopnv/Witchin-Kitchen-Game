@@ -22,6 +22,14 @@ namespace con2
             }
         }
 
+        public void SwitchGamepadContext(List<IInputConsumer> inputConsumers, int playerId)
+        {
+            foreach (Gamepad pad in gamepads)
+            {
+                pad.SwitchGamepadContext(inputConsumers);
+            }
+        }
+
         void OnEnable()
         {
             EarlyUpdate.EarlyUpdateEvent += EarlyUpdateCallback;
