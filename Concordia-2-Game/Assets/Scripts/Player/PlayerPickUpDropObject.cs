@@ -30,7 +30,7 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
         if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
         {
             if (IsHoldingObject())
-                DropObject();
+                DropObject(m_playerRB.velocity + (transform.forward * m_throwForce));
             else if (GetNearestItem())
                 PickUpObject();
             else
@@ -75,16 +75,24 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
     }
 
     // Drop the object in hands
-    private void DropObject()
+    private void DropObject(Vector3 throwVector)
     {
         // Restore max movement speed
         m_playerMovement.MaxMovementSpeed /= m_pickableObject.GetMaxSpeedFractionWhenHolding();
 
         // Have the object adjust its physics and get thrown
-        m_pickableObject.Drop(m_playerRB.velocity + (transform.forward*m_throwForce));
+        m_pickableObject.Drop(throwVector);
 
         // Reset picked up object
         m_pickableObject = null;
+    }
+
+    public void ForceDropObject(Vector3 knockVector)
+    {
+        if (IsHoldingObject())
+        {
+            DropObject(knockVector * m_throwForce);
+        }
     }
 
     // Get the value of mIsHoldingObject
