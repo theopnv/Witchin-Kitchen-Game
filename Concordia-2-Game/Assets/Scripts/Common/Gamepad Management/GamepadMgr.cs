@@ -12,20 +12,6 @@ namespace con2
 
         private List<Gamepad> gamepads = new List<Gamepad>();
 
-        public void Start()
-        {
-            string[] names = Input.GetJoystickNames();
-            for (int x = 0; x < names.Length; x++)
-            {
-                Debug.Log(names[x].Length);
-                if (names[x].Length == 33)
-                {
-                    Debug.Log("XBOX ONE CONTROLLER IS CONNECTED");
-                }
-            }
-
-        }
-
         public void InitializeGampads()
         {
             instance = this;
