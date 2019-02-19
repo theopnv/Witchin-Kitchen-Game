@@ -10,10 +10,11 @@ public class KitchenStation : MonoBehaviour
     private bool m_hasOwner;
     private RecipeManager m_recipeManager;
 
-    private void Start()
+    private void Awake()
     {
         m_miniGame = GetComponent<CookingMinigame>();
         m_recipeManager = GetComponent<RecipeManager>();
+        m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
     }
 
     private void OnCollisionEnter(Collision collision)

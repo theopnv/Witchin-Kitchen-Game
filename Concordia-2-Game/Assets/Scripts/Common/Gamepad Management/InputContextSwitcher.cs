@@ -58,6 +58,11 @@ public class InputContextSwitcher : MonoBehaviour
     private static List<IInputConsumer> GetGameContext(int playerIndex)
     {
         List<IInputConsumer> inputConsumers = new List<IInputConsumer>();
+
+        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+        MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
+        inputConsumers.Add(mgm);
+
         GameObject[] kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
         List<CookingMinigame> kitchenStations = new List<CookingMinigame>();
         foreach (GameObject kitchen in kitchenParents)
@@ -74,7 +79,6 @@ public class InputContextSwitcher : MonoBehaviour
             inputConsumers.Add(station);
         }
 
-        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
         SpawnPlayersController playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
         GameObject player = playerSpawner.GetPlayerByID(playerIndex);
         inputConsumers.Add(player.GetComponent<PlayerInputController>());
