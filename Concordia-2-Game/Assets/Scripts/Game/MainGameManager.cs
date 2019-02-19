@@ -17,6 +17,7 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
 
         m_winnerText.enabled = false;
         m_rematchText.enabled = false;
+        m_gameOver = false;
     }
 
     #region AudienceEvents
@@ -60,11 +61,13 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
                 || input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
             {
                 SceneManager.LoadScene(SceneNames.Game);
+                m_gameOver = false;
                 return true;
             }
             else if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.PUNCH))
             {
                 SceneManager.LoadScene(SceneNames.MainMenu);
+                m_gameOver = false;
                 return true;
             }
         }
@@ -83,6 +86,7 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
             yield return new WaitForSeconds(1);
         }
 
+        m_gameOver = false;
         SceneManager.LoadScene(SceneNames.MainMenu);
     }
 
