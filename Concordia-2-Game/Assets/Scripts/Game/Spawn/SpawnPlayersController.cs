@@ -32,9 +32,9 @@ namespace con2.game
                 gfs.AddFighter(player);
             }
 
-            //Initialize gamepads
-            GamepadMgr gp = managers.GetComponentInChildren<GamepadMgr>();
-            gp.InitializeGampads();
+            //Switch control context to game once players are spawned
+            InputContextSwitcher contextSwitcher = managers.GetComponentInChildren<InputContextSwitcher>();
+            contextSwitcher.SetToGameContext();
 
             //Initialize kitchens
             GameObject[] kitchens = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
