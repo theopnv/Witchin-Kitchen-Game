@@ -79,6 +79,16 @@ namespace con2
             }
         }
 
+        public void SwitchGamepadContext(List<IInputConsumer> inputConsumers, int playerId)
+        {
+            foreach (KeyValuePair<GamepadAction.ButtonID, GamepadAction> action in actions)
+            {
+                action.Value.SetInputConsumers(inputConsumers, playerId);
+            }
+
+            joystickAction.SetInputConsumers(inputConsumers, playerId);
+        }
+
         // DEFINE DEFAULT CONTROLS HERE!
         private void setupDefaultMappings()
         {

@@ -17,9 +17,9 @@ namespace con2
         public Gamepad.InputID defaultInputID;
         public Gamepad.InputID currentInputID;
 
-        private List<IInputConsumer> m_InputConsumers;
+        private List<IInputConsumer> m_InputConsumers = new List<IInputConsumer>();
         private GamepadAction.ButtonID m_actionID;
-        private GameObject m_player;
+        private int m_playerId;
 
         //this is shitty code...
         public Vector2 m_movementDirection;
@@ -27,36 +27,12 @@ namespace con2
         public GamepadAction(int playerID, GamepadAction.ButtonID actionID)
         {
             m_actionID = actionID;
-            m_InputConsumers = new List<IInputConsumer>();
+        }
 
-            GameObject[] kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
-            List<CookingMinigame> kitchenStations = new List<CookingMinigame>();
-            foreach (GameObject kitchen in kitchenParents)
-            {
-                CookingMinigame[] stations = kitchen.GetComponentsInChildren<CookingMinigame>();
-                foreach (CookingMinigame station in stations)
-                {
-                    kitchenStations.Add(station);
-                }
-            }
-          
-            foreach (CookingMinigame station in kitchenStations)
-            {
-                m_InputConsumers.Add(station);
-            }
-
-            GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            SpawnPlayersController playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
-            GameObject[] players = playerSpawner.GetPlayers();
-            foreach (GameObject player in players)
-            {
-                PlayerInputController controller = player.GetComponent<PlayerInputController>();
-                if (controller.GetPlayerIndex() == playerID)
-                {
-                    m_player = player;
-                    m_InputConsumers.Add(controller);
-                }
-            }
+        public void SetInputConsumers(List<IInputConsumer> inputConsumers, int playerId)
+        {
+            m_InputConsumers = inputConsumers;
+            m_playerId = playerId;
         }
 
         // Internal use only
@@ -101,9 +77,9 @@ namespace con2
             return m_actionID;
         }
 
-        public GameObject GetPlayer()
+        public int GetPlayerId()
         {
-            return m_player;
+            return m_playerId;
         }
     }
 }
