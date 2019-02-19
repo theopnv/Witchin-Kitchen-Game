@@ -10,7 +10,7 @@ namespace con2.game
         [Range(0.0f, 1.0f)]
         public float smoothTime = 0.3f;
 
-        public float m_zoomFactor = 0.01f;
+        public float m_zoomFactor = 0.1f;
 
         private Vector3 velocity = Vector3.zero;
 
@@ -24,7 +24,6 @@ namespace con2.game
         {
             // Snap at start to avoid interpolation
             m_initialDistanceFromCenter = transform.position;
-            transform.position = getNewCamTargetPos();
         }
 
         // Update is called once per frame
