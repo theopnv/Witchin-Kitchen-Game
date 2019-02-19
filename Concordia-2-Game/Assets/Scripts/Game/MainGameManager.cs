@@ -6,14 +6,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainGameManager : MonoBehaviour
+public class MainGameManager : MonoBehaviour, IInputConsumer
 {
+    public static int REMATCH_TIMER = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_winnerText.enabled = false;
         m_itemSpawner = GetComponent<ItemSpawner>();
+
+        m_winnerText.enabled = false;
+        m_rematchText.enabled = false;
     }
 
     #region AudienceEvents
@@ -35,7 +38,7 @@ public class MainGameManager : MonoBehaviour
 
     #region EndGame
 
-    public Text m_winnerText;
+    public Text m_winnerText, m_rematchText;
     private bool m_gameOver = false;
 
     //For MVP, first person to complete a potion wins. Will require serious reworking when win is time&point based
@@ -49,11 +52,37 @@ public class MainGameManager : MonoBehaviour
         }
     }
 
+    public bool ConsumeInput(GamepadAction input)
+    {
+        if (m_gameOver)
+        {
+            if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.START)
+                || input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
+            {
+                SceneManager.LoadScene(SceneNames.Game);
+                return true;
+            }
+            else if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.PUNCH))
+            {
+                SceneManager.LoadScene(SceneNames.MainMenu);
+                return true;
+            }
+        }
+        return false;
+    }
+
     private IEnumerator BackToMainMenuAfterShortPause()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         m_winnerText.enabled = true;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0.5f);
+        m_rematchText.enabled = true;
+        for (int i = REMATCH_TIMER; i >= 0; i--)
+        {
+            m_rematchText.text = "Rematch?\n" + i;
+            yield return new WaitForSeconds(1);
+        }
+
         SceneManager.LoadScene(SceneNames.MainMenu);
     }
 

@@ -11,6 +11,7 @@ namespace con2
         {
             PUNCH,
             INTERACT,
+            START,
             MAX_ID, //Used as a max count and to handle joystick input
         }
 
