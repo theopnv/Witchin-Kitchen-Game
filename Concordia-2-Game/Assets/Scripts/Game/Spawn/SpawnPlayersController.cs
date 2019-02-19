@@ -43,6 +43,10 @@ namespace con2.game
                 KitchenManager km = kitchen.GetComponent<KitchenManager>();
                 km.SetOwner(this);
             }
+
+            //Inform Camera of which players to track
+            GameObject camera = GameObject.FindGameObjectWithTag(Tags.MAIN_CAMERA);
+            camera.GetComponent<SharedCamera>().SetPlayers(m_players);
         }
 
         public GameObject[] GetPlayers()
