@@ -103,7 +103,7 @@ namespace con2
         {
             Debug.Log("OnGameCreated");
             var game = JsonConvert.DeserializeObject<Game>(e.data.ToString());
-            _RoomId.text = "Room's PIN: " + game.id;
+            _RoomId.text = "Room's PIN: " + game.pin;
         }
 
         private void OnGameUpdate(SocketIOEvent e)

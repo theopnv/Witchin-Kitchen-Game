@@ -50,6 +50,7 @@ namespace con2.messages
     public class Game
     {
         public string id;
+        public string pin;
         public string mainSocketID;
         public List<Player> players;
         public List<string> viewers; // socket IDs
