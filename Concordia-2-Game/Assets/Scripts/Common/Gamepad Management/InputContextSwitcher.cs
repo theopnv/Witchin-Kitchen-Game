@@ -1,28 +1,61 @@
 ﻿using con2;
 using con2.game;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputContextSwitcher : MonoBehaviour
 {
-    public void Start()
-    {
-        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        GamepadMgr gamepadManager = managers.GetComponentInChildren<GamepadMgr>();
+    Func<int, List<IInputConsumer>> f_menuContext, f_gameContext;
 
-        //Ask gpm for number of player, use that number to set contexts (with playcercontroller, and only allow menu input for p1)
-        int x = GamepadMgr.NUM_PADS;
-        gamepadManager.SwitchGamepadContext(GetMenuContext(), i);
+     public void Awake()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        f_menuContext = new Func<int, List<IInputConsumer>>(GetMenuContext);
+        f_gameContext = new Func<int, List<IInputConsumer>>(GetGameContext);
+
+        //Initialize gamepads
+        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+        GamepadMgr gp = managers.GetComponentInChildren<GamepadMgr>();
+        gp.InitializeGampads();
     }
 
-    private List<IInputConsumer> GetMenuContext()
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name.Equals(SceneNames.MainMenu))
+        {
+            SetToMenuContext();
+        }
+    }
+
+    public void SetToGameContext()
+    {
+        SwitchContext(f_gameContext);
+    }
+
+    public void SetToMenuContext()
+    {
+        SwitchContext(f_menuContext);
+    }
+
+    private static void SwitchContext(Func<int, List<IInputConsumer>> contextFunction)
+    {
+        //Ask gpm for number of player, use that number to set contexts (with playercontroller, and only allow menu input for p1)
+        for (int i = 0; i < GamepadMgr.NUM_PADS; i++)
+        {
+            GamepadMgr.Pad(i).SwitchGamepadContext(contextFunction(i), i);
+        }
+    }
+
+    private static List<IInputConsumer> GetMenuContext(int playerIndex)
     {
         List<IInputConsumer> inputConsumers = new List<IInputConsumer>();
         return inputConsumers;
     }
 
-    private List<IInputConsumer> GetGameContext()
+    private static List<IInputConsumer> GetGameContext(int playerIndex)
     {
         List<IInputConsumer> inputConsumers = new List<IInputConsumer>();
         GameObject[] kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
@@ -43,16 +76,14 @@ public class InputContextSwitcher : MonoBehaviour
 
         GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
         SpawnPlayersController playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
-        GameObject[] players = playerSpawner.GetPlayers();
-        foreach (GameObject player in players)
-        {
-            PlayerInputController controller = player.GetComponent<PlayerInputController>();
-            if (controller.GetPlayerIndex() == playerID)
-            {
-                m_player = player;
-                inputConsumers.Add(controller);
-            }
-        }
+        GameObject player = playerSpawner.GetPlayerByID(playerIndex);
+        inputConsumers.Add(player.GetComponent<PlayerInputController>());
+        
         return inputConsumers;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

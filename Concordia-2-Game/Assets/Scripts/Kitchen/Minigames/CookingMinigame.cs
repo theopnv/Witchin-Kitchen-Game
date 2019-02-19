@@ -14,6 +14,7 @@ public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
     private Vector3 stationLocation;
     public GameObject m_stationOwner;
     private KitchenStation m_kitchenStation;
+    private SpawnPlayersController m_playerSpawner;
 
     [SerializeField]
     protected bool m_started = false;
@@ -31,6 +32,8 @@ public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
     {
         stationLocation = this.transform.position;
         m_prompt.enabled = false;
+        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+        m_playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
     }
 
     // Update is called once per frame
@@ -85,7 +88,7 @@ public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
 
     public bool ConsumeInput(GamepadAction input)
     {
-        GameObject interactingPlayer = input.GetPlayer();
+        GameObject interactingPlayer = m_playerSpawner.GetPlayerByID(input.GetPlayerId());
         bool noOwner = m_stationOwner == null;
         bool samePlayer = m_stationOwner.Equals(interactingPlayer);
         if (m_started && (noOwner || samePlayer) && CheckPlayerIsNear(interactingPlayer))

@@ -19,7 +19,7 @@ namespace con2
 
         private List<IInputConsumer> m_InputConsumers = new List<IInputConsumer>();
         private GamepadAction.ButtonID m_actionID;
-        private GameObject m_player;
+        private int m_playerId;
 
         //this is shitty code...
         public Vector2 m_movementDirection;
@@ -29,9 +29,10 @@ namespace con2
             m_actionID = actionID;
         }
 
-        public void SetInputConsumers(List<IInputConsumer> inputConsumers)
+        public void SetInputConsumers(List<IInputConsumer> inputConsumers, int playerId)
         {
             m_InputConsumers = inputConsumers;
+            m_playerId = playerId;
         }
 
         // Internal use only
@@ -76,9 +77,9 @@ namespace con2
             return m_actionID;
         }
 
-        public GameObject GetPlayer()
+        public int GetPlayerId()
         {
-            return m_player;
+            return m_playerId;
         }
     }
 }
