@@ -25,16 +25,38 @@ namespace con2.game
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
                 var player = Instantiate(_playerPrefab, _playerSpawnPositions[i]);
+                player.name = "Player " + (i + 1);
                 player.GetComponent<Renderer>().material.color = PlayersInfo.Color[i];
-                player.GetComponent<FightControls>().SetPlayerIndex(i);
+                player.GetComponent<PlayerInputController>().SetPlayerIndex(i);
                 m_players[i] = player;
                 gfs.AddFighter(player);
             }
+
+            //Switch control context to game once players are spawned
+            InputContextSwitcher contextSwitcher = managers.GetComponentInChildren<InputContextSwitcher>();
+            contextSwitcher.SetToGameContext();
+
+            //Initialize kitchens
+            GameObject[] kitchens = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+            foreach (GameObject kitchen in kitchens)
+            {
+                KitchenManager km = kitchen.GetComponent<KitchenManager>();
+                km.SetOwner(this);
+            }
+
+            //Inform Camera of which players to track
+            GameObject camera = GameObject.FindGameObjectWithTag(Tags.MAIN_CAMERA);
+            camera.GetComponent<SharedCamera>().SetPlayers(m_players);
         }
 
         public GameObject[] GetPlayers()
         {
             return m_players;
+        }
+
+        public GameObject GetPlayerByID(int ID)
+        {
+            return m_players[ID];
         }
     }
 }

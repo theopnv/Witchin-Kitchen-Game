@@ -5,6 +5,8 @@ using UnityEngine;
 public static class Tags
 {
     public static string PLAYER_TAG = "Player"
-        , MANAGERS_TAG = "Managers";
+        , MANAGERS_TAG = "Managers"
+        , KITCHEN = "Kitchen"
+        , MAIN_CAMERA = "MainCamera";
 
 }
