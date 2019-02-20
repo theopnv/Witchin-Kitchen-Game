@@ -1,24 +1,76 @@
 fileFormatVersion: 2
-guid: 3445e99d85f913443836bdb919bd7559
+guid: 8bde87d463799b44a92170ac0864116c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Body_Cube_001
-    100002: Lighting_Plane
-    100004: //RootNode
-    400000: Body_Cube_001
-    400002: Lighting_Plane
-    400004: //RootNode
-    2100000: Checkered
-    2100002: Material_001
-    2300000: Body_Cube_001
-    2300002: Lighting_Plane
-    3300000: Body_Cube_001
-    3300002: Lighting_Plane
-    4300000: Body_Cube_001
-    4300002: Lighting_Plane
+    100000: Armature
+    100002: Body
+    100004: Bone
+    100006: Bone_001
+    100008: Bone_002
+    100010: Bone_003
+    100012: Bone_004
+    100014: Bone_005
+    100016: Foot_L
+    100018: Foot_R
+    100020: Hand_L
+    100022: Hand_R
+    100024: Hat
+    100026: Head
+    100028: Hip
+    100030: Lighting
+    100032: lowerArm_L
+    100034: lowerArm_R
+    100036: lowerLeg_L
+    100038: lowerLeg_R
+    100040: Spine
+    100042: TargetPole_L
+    100044: TargetPole_R
+    100046: upperArm_L
+    100048: upperArm_R
+    100050: upperLeg_L
+    100052: upperLeg_R
+    100054: //RootNode
+    400000: Armature
+    400002: Body
+    400004: Bone
+    400006: Bone_001
+    400008: Bone_002
+    400010: Bone_003
+    400012: Bone_004
+    400014: Bone_005
+    400016: Foot_L
+    400018: Foot_R
+    400020: Hand_L
+    400022: Hand_R
+    400024: Hat
+    400026: Head
+    400028: Hip
+    400030: Lighting
+    400032: lowerArm_L
+    400034: lowerArm_R
+    400036: lowerLeg_L
+    400038: lowerLeg_R
+    400040: Spine
+    400042: TargetPole_L
+    400044: TargetPole_R
+    400046: upperArm_L
+    400048: upperArm_R
+    400050: upperLeg_L
+    400052: upperLeg_R
+    400054: //RootNode
+    2100000: Diffuse_Color
+    2100002: Material
+    2300000: Lighting
+    3300000: Lighting
+    4300000: Hat
+    4300002: Body
+    4300004: Lighting
     7400000: Default Take
     9500000: //RootNode
+    13700000: Body
+    13700002: Hat
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
