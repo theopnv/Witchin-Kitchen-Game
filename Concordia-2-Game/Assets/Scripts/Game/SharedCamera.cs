@@ -56,8 +56,8 @@ namespace con2.game
                     furthestFromMiddle = playerPosition;
             }
 
-            //Average the positions with the x2 to compensate for the middle
-            middle /= (2*m_players.Length);
+            //Average the positions with the x3 to compensate for the middle
+            middle /= (3*m_players.Length);
             middle += m_zoomFactor*m_initialDistanceFromCenter.normalized*furthestFromMiddle.magnitude;  //zoom
             middle += m_initialDistanceFromCenter;  //Keeps camera above the arena, pointed at 'middle'
             return middle;
