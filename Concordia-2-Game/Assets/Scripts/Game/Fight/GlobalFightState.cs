@@ -67,6 +67,11 @@ namespace con2.game
 
                 var stun = punch.Target.GetComponent<FightStun>();
                 stun.Stun(PunchStunSeconds);
+                PlayerPickUpDropObject pickUpSystem = punch.Target.GetComponent<PlayerPickUpDropObject>();
+                if (pickUpSystem)
+                {
+                    pickUpSystem.ForceDropObject(-knockVelocity.normalized);
+                }
             }
 
             // Setup for next frame

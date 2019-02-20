@@ -562,9 +562,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca23126d3b39444aa30e35308ebb724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PunchUpwardsForce: 1
-  PunchForceMultiplier: 5
-  PunchStunSeconds: 1
+  PunchUpwardsForce: 0.1
+  PunchForceMultiplier: 10
+  PunchStunSeconds: 2
   PunchReloadSeconds: 1.33
   PunchLingerSeconds: 0.33
 --- !u!1 &379122728
