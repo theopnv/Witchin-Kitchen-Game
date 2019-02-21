@@ -32,20 +32,12 @@ namespace con2.game
 
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _AudienceInteractionManager.EventSubscribers = _EventSubscribers;
-
-            StartCoroutine(FakePollStarter());
         }
 
         #endregion
 
         #region Custom Methods
-
-        private IEnumerator FakePollStarter()
-        {
-            yield return new WaitForSeconds(2);
-            StartPoll(Events.EventID.freezing_rain, Events.EventID.freezing_rain, 30);
-        }
-
+        
         /// <summary>
         /// Call this method to start an audience poll (events).
         /// At the end, a callback will take care of instantiating the event in the arena.
