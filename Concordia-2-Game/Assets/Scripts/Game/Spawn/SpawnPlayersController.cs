@@ -47,6 +47,11 @@ namespace con2.game
             //Inform Camera of which players to track
             GameObject camera = GameObject.FindGameObjectWithTag(Tags.MAIN_CAMERA);
             camera.GetComponent<SharedCamera>().SetPlayers(m_players);
+
+            //Initialize audience events (requires much player info)
+            MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
+            AudienceEventManager eventManager = mgm.GetComponent<AudienceEventManager>();
+            eventManager.InitializeValues();
         }
 
         public GameObject[] GetPlayers()
