@@ -42,14 +42,27 @@ namespace con2
         #region Emit
 
         /// <summary>
-        /// Teel the server that we exited the room and that it can be deleted.
+        /// Tell the server that we exited the room and that it can be deleted.
         /// </summary>
         /// <returns></returns>
-        public void ExitRoom()
+        public void ExitRoom(bool gameFinished, int winnerIdx = -1)
         {
             if (IsConnectedToServer())
             {
-                _Socket.Emit(Command.QUIT_GAME);
+                var winner = gameFinished && winnerIdx != -1
+                    ? new Player()
+                    {
+                        name = PlayersInfo.Name[winnerIdx],
+                        color = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[winnerIdx]),
+                    }
+                    : null;
+                var gameOutcome = new GameOutcome()
+                {
+                    gameFinished = gameFinished,
+                    winner = winner,
+                };
+                var serialized = JsonConvert.SerializeObject(gameOutcome);
+                _Socket.Emit(Command.QUIT_GAME, new JSONObject(serialized));
             }
             Destroy(gameObject);
         }

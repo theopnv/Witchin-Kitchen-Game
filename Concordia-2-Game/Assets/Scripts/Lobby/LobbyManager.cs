@@ -117,7 +117,7 @@ namespace con2.lobby
 
         public void BackToMenu()
         {
-            _AudienceInteractionManager.ExitRoom();
+            _AudienceInteractionManager.ExitRoom(false);
             SceneManager.LoadSceneAsync(SceneNames.MainMenu);
         }
 

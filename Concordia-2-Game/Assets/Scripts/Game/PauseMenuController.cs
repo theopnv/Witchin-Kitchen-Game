@@ -61,7 +61,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void OnExitClick()
     {
-        _AudienceInteractionManager.ExitRoom();
+        _AudienceInteractionManager.ExitRoom(false);
 
         SceneManager.LoadSceneAsync(SceneNames.MainMenu);
     }
