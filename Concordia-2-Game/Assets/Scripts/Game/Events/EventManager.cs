@@ -32,6 +32,13 @@ namespace con2.game
 
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _AudienceInteractionManager.EventSubscribers = _EventSubscribers;
+
+            //Set up audience events
+            AbstractAudienceEvent[] eventFunctions = GetComponents<AbstractAudienceEvent>();
+            foreach (AbstractAudienceEvent e in eventFunctions)
+            {
+                e.SetUpEvent();
+            }
         }
 
         #endregion
