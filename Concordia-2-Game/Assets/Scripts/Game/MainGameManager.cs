@@ -40,7 +40,7 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
     #region EndGame
 
     public Text m_winnerText, m_rematchText;
-    private bool m_gameOver = false;
+    private bool m_gameOver = false, m_acceptingInput = false;
 
     //For MVP, first person to complete a potion wins. Will require serious reworking when win is time&point based
     public void Gameover(GameObject winnerPlayer)
@@ -55,19 +55,21 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
 
     public bool ConsumeInput(GamepadAction input)
     {
-        if (m_gameOver)
+        if (m_acceptingInput)
         {
             if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.START)
                 || input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
             {
                 SceneManager.LoadScene(SceneNames.Game);
                 m_gameOver = false;
+                m_acceptingInput = false;
                 return true;
             }
             else if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.PUNCH))
             {
                 SceneManager.LoadScene(SceneNames.MainMenu);
                 m_gameOver = false;
+                m_acceptingInput = false;
                 return true;
             }
         }
@@ -84,6 +86,10 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
         {
             m_rematchText.text = "Rematch?\n" + i;
             yield return new WaitForSeconds(1);
+            if (i == 9)
+            {
+                m_acceptingInput = true;
+            }
         }
 
         m_gameOver = false;
