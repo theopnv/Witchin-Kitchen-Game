@@ -64,8 +64,20 @@ namespace con2
             Debug.Log("Votes for A: " + voteA.votes);
             Debug.Log("Votes for B: " + voteB.votes);
 
-            var mostVoted = voteA.votes > voteB.votes ? voteA : voteB;
-            EventSubscribers[(Events.EventID)mostVoted.id]
+            Event chosenEvent;
+            if (voteA.votes == voteB.votes)
+            {
+                chosenEvent = Random.Range(0, 2) == 0 ? voteA : voteB;
+            }
+            else
+            {
+                chosenEvent = voteA.votes > voteB.votes ? voteA : voteB;
+            }
+
+            Debug.Log("Results of the poll: " + 
+                      Events.EventList[(Events.EventID)chosenEvent.id] +
+                      " was voted");
+            EventSubscribers[(Events.EventID)chosenEvent.id]
                 .ForEach((subscriber) =>
             {
                 subscriber.ActivateEventMode();
