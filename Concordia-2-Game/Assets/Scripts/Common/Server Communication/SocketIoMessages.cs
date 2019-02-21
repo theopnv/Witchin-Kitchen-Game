@@ -14,15 +14,17 @@ namespace con2.messages
 
     public class Command
     {
-        // Requests
+        // Emitted
         public const string MAKE_GAME = "makeGame";
         public const string REGISTER_PLAYERS = "registerPlayers";
         public const string QUIT_GAME = "quitGame";
+        public const string LAUNCH_POLL = "launchPoll";
 
-        // Responses
+        // Received
         public const string MESSAGE = "message";
         public const string GAME_CREATED = "gameCreated";
         public const string GAME_UPDATE = "gameUpdate";
+        public const string RECEIVE_VOTES = "event";
     }
 
     public enum Code
@@ -34,6 +36,9 @@ namespace con2.messages
 
         quit_game_success = 230,
         quit_game_error = 231,
+
+        launch_poll_success = 260,
+        launch_poll_error = 261,
     }
 
     public class Base
@@ -45,6 +50,7 @@ namespace con2.messages
     public class Game
     {
         public string id;
+        public string pin;
         public string mainSocketID;
         public List<Player> players;
         public List<string> viewers; // socket IDs
@@ -59,5 +65,23 @@ namespace con2.messages
     public class Players
     {
         public List<Player> players;
+    }
+
+    public class PollChoices
+    {
+        public List<Event> events;
+        public string deadline;
+    }
+
+    public class Event
+    {
+        public int id;
+        public int votes;
+    }
+
+    public class GameOutcome
+    {
+        public bool gameFinished;
+        public Player winner;
     }
 }

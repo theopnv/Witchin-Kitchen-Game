@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using con2.game;
 using con2.messages;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -8,6 +9,7 @@ using SocketIO;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
+using Event = con2.messages.Event;
 
 namespace con2
 {
@@ -17,13 +19,23 @@ namespace con2
     /// </summary>
     public partial class AudienceInteractionManager : MonoBehaviour
     {
+        [HideInInspector]
+        public Dictionary<Events.EventID, List<IEventSubscriber>> EventSubscribers;
+
         void GameStart()
         {
+            _Socket.On(Command.RECEIVE_VOTES, OnReceiveEventVotes);
         }
 
         #region Emit
-        
-        
+
+        public void SendPoll(PollChoices pollChoices)
+        {
+            Debug.Log("SendPoll");
+            var serialized = JsonConvert.SerializeObject(pollChoices);
+            _Socket.Emit(Command.LAUNCH_POLL, new JSONObject(serialized));
+        }
+
         #endregion
 
         #region Receive
@@ -44,8 +56,36 @@ namespace con2
             }
         }
 
+        private void OnReceiveEventVotes(SocketIOEvent e)
+        {
+            var content = JsonConvert.DeserializeObject<PollChoices>(e.data.ToString());
+            var voteA = content.events[0];
+            var voteB = content.events[1];
+            Debug.Log("Votes for A: " + voteA.votes);
+            Debug.Log("Votes for B: " + voteB.votes);
+
+            Event chosenEvent;
+            if (voteA.votes == voteB.votes)
+            {
+                chosenEvent = Random.Range(0, 2) == 0 ? voteA : voteB;
+            }
+            else
+            {
+                chosenEvent = voteA.votes > voteB.votes ? voteA : voteB;
+            }
+
+            Debug.Log("Results of the poll: " + 
+                      Events.EventList[(Events.EventID)chosenEvent.id] +
+                      " was voted");
+            EventSubscribers[(Events.EventID)chosenEvent.id]
+                .ForEach((subscriber) =>
+            {
+                subscriber.ActivateEventMode();
+            });
+        }
+
         #endregion
-        
+
     }
 
 }
