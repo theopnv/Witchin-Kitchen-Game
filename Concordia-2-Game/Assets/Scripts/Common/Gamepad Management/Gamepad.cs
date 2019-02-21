@@ -52,8 +52,6 @@ namespace con2
         private Vector2 movementDirection;
         private Vector2 movementDirectionRaw;
 
-        private bool m_movementIsInverted = false;
-
         private int m_playerID;
 
         public Gamepad(int playerID)
@@ -151,10 +149,6 @@ namespace con2
 
             if (movementDirectionRaw.magnitude > 0.0f)
             {
-                if (m_movementIsInverted)
-                {
-                    movementDirectionRaw *= -1;
-                }
                 joystickAction.SetNewJoystickInput(movementDirectionRaw);
             }
         }
@@ -163,14 +157,27 @@ namespace con2
 
 
         // Public API
-        public void InvertMovement()
-        {
-            m_movementIsInverted = !m_movementIsInverted;
-        }
+        public bool InvertMovement;
 
         public GamepadAction Action(GamepadAction.ButtonID actionID)
         {
             return actions[actionID];
+        }
+
+        public Vector2 MovementDirection()
+        {
+            if (InvertMovement)
+                return -movementDirection;
+
+            return movementDirection;
+        }
+
+        public Vector2 MovementDirectionRaw()
+        {
+            if (InvertMovement)
+                return -movementDirectionRaw;
+
+            return movementDirectionRaw;
         }
 
         public void RemapAction(GamepadAction.ButtonID actionID, InputID inputID)
