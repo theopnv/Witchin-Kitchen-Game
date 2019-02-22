@@ -1,15 +1,18 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using con2.game;
+using con2.messages;
 using UnityEngine.SceneManagement;
+using Event = UnityEngine.Event;
+using Random = System.Random;
 
 namespace con2
 {
     public class DevModeCommands : MonoBehaviour
     {
-        private const string _MAIN_MENU_SCENE_NAME = "Main Menu";
-        private const string _LOBBY_SCENE_NAME = "Lobby";
-        private const string _GAME_SCENE = "Game";
+        [SerializeField]
+        private GameObject _AudienceInteractionManagerPrefab;
 
         void Start()
         {
@@ -18,10 +21,13 @@ namespace con2
 
             // All scenes
             repo.RegisterCommand("reload", Reload);
-
-            // Main Menu
             repo.RegisterCommand("game1", Game1);
             repo.RegisterCommand("game2", Game2);
+
+            // Game
+            repo.RegisterCommand("random_event", RandomEvent);
+            repo.RegisterCommand("ev_fr", EventFreezingRain);
+            repo.RegisterCommand("ev_dm", EventDiscoMania);
         }
 
         public string Help(string[] args)
@@ -39,20 +45,27 @@ namespace con2
 
             switch (currentSceneName)
             {
-                case _MAIN_MENU_SCENE_NAME:
+                case SceneNames.MainMenu:
                     help = string.Join(
                         Environment.NewLine,
                         commonMessage);
                     break;
-                case _LOBBY_SCENE_NAME:
+                case SceneNames.Lobby:
                     help = string.Join(
                         Environment.NewLine,
                         commonMessage);
                     break;
-                case _GAME_SCENE:
+                case SceneNames.Game:
+                    var gameHelp = string.Join(
+                        Environment.NewLine,
+                        "- 'random_event': Simulates a poll and starts an event in 5 seconds",
+                        "- 'ev_fr': Simulates the Freezing Rain (fr) event",
+                        "- 'ev_dm': Simulates the Disco Mania (dm) event");
+
                     help = string.Join(
                         Environment.NewLine,
-                        commonMessage);
+                        commonMessage,
+                        gameHelp);
                     break;
             }
             return help;
@@ -72,15 +85,12 @@ namespace con2
             return "Reloaded the scene";
         }
 
-        #endregion 
-
-        #region Main Menu Commands
-
         public string Game1(string[] args)
         {
             PlayersInfo.Color[0] = Color.red;
             PlayersInfo.PlayerNumber = 1;
-            SceneManager.LoadSceneAsync("Game");
+
+            LoadGameScene();
             return "Started Game scene with 1 player";
         }
 
@@ -89,10 +99,87 @@ namespace con2
             PlayersInfo.Color[0] = Color.red;
             PlayersInfo.Color[1] = Color.blue;
             PlayersInfo.PlayerNumber = 2;
-            SceneManager.LoadSceneAsync("Game");
+
+            LoadGameScene();
             return "Started Game scene with 2 players";
         }
 
+        private void LoadGameScene()
+        {
+            var audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            if (audienceInteractionManager == null)
+            {
+                Instantiate(_AudienceInteractionManagerPrefab);
+            }
+
+            SceneManager.LoadSceneAsync(SceneNames.Game);
+        }
+
         #endregion
+
+        #region Main Menu Commands
+
+        #endregion
+
+        #region Game Commands
+
+        private string RandomEvent(string[] args)
+        {
+            if (GetCurrentSceneName() != SceneNames.Game)
+            {
+                return "You must be in the " + SceneNames.Game + " scene to start this command";
+            }
+
+            StartCoroutine("SimulatePoll");
+            return "Poll was simulated. Random event starting in 5 seconds";
+        }
+
+        private void BroadcastPoll(Events.EventID id)
+        {
+            var audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            var chosenEvent = new messages.Event
+            {
+                id = (int)id,
+            };
+            audienceInteractionManager.BroadcastPollResults(chosenEvent);
+        }
+
+        private IEnumerator SimulatePoll()
+        {
+            yield return new WaitForSeconds(5);
+            BroadcastPoll((Events.EventID)UnityEngine.Random.Range(0, (int)Events.EventID.max_id));
+        }
+
+        private string EventFreezingRain(string[] args)
+        {
+            if (GetCurrentSceneName() != SceneNames.Game)
+            {
+                return "You must be in the " + SceneNames.Game + " scene to start this command";
+            }
+
+            StartCoroutine("SimulateEvent", Events.EventID.freezing_rain);
+            return "Will start the Freezing Rain event in 2 seconds";
+        }
+
+        private string EventDiscoMania(string[] args)
+        {
+            if (GetCurrentSceneName() != SceneNames.Game)
+            {
+                return "You must be in the " + SceneNames.Game + " scene to start this command";
+            }
+
+            StartCoroutine("SimulateEvent", Events.EventID.disco_mania);
+            return "Will start the Disco Mania event in 2 seconds";
+        }
+
+        private IEnumerator SimulateEvent(Events.EventID id)
+        {
+            yield return new WaitForSeconds(2);
+            BroadcastPoll(id);
+        }
+
+        #endregion
+
+
     }
 }

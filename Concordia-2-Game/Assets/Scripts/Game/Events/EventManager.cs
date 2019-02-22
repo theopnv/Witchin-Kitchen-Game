@@ -75,7 +75,7 @@ namespace con2.game
                 deadline = deadlineAsStr,
             };
 
-            _AudienceInteractionManager.SendPoll(poll);
+            _AudienceInteractionManager?.SendPoll(poll);
         }
 
         /// <summary>
