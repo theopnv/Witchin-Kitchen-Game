@@ -53,11 +53,19 @@ namespace con2.messages
         public string pin;
         public string mainSocketID;
         public List<Player> players;
-        public List<string> viewers; // socket IDs
+        public List<Viewer> viewers;
+    }
+
+    public class Viewer
+    {
+        public string socketId;
+        public string color;
+        public string name;
     }
 
     public class Player
     {
+        public int id;
         public string color;
         public string name;
     }

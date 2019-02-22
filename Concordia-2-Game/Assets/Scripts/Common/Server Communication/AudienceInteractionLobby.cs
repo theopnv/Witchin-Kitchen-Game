@@ -57,6 +57,7 @@ namespace con2
             {
                 var player = new Player
                 {
+                    id = i,
                     name = PlayersInfo.Name[i],
                     color = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
                 };
