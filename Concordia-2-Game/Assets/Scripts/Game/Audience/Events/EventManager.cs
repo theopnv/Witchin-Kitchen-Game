@@ -12,6 +12,8 @@ namespace con2.game
     public class EventManager : MonoBehaviour
     {
 
+        public bool AnEventIsHappening;
+
         #region Private Attrubutes
 
         private AudienceInteractionManager _AudienceInteractionManager;
@@ -69,6 +71,14 @@ namespace con2.game
             };
 
             _AudienceInteractionManager.SendPoll(poll);
+            StartCoroutine("StartEvent", pollingTime);
+        }
+
+        private IEnumerator StartEvent(float pollingTime)
+        {
+            AnEventIsHappening = true;
+            yield return new WaitForSeconds(pollingTime);
+            AnEventIsHappening = false;
         }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace con2.messages
         public const string REGISTER_PLAYERS = "registerPlayers";
         public const string QUIT_GAME = "quitGame";
         public const string LAUNCH_POLL = "launchPoll";
+        public const string LAUNCH_SPELL_CAST = "launchSpellCast";
 
         // Received
         public const string MESSAGE = "message";
@@ -39,6 +40,9 @@ namespace con2.messages
 
         launch_poll_success = 260,
         launch_poll_error = 261,
+
+        launch_spell_cast_success = 280,
+        launch_spell_cast_error = 281,
     }
 
     public class Base

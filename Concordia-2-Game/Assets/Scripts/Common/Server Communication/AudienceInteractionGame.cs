@@ -36,6 +36,13 @@ namespace con2
             _Socket.Emit(Command.LAUNCH_POLL, new JSONObject(serialized));
         }
 
+        public void SendSpellCastRequest(Viewer viewer)
+        {
+            Debug.Log("SendSpellCastRequest");
+            var serialized = JsonConvert.SerializeObject(viewer);
+            _Socket.Emit(Command.LAUNCH_SPELL_CAST, new JSONObject(serialized));
+        }
+
         #endregion
 
         #region Receive

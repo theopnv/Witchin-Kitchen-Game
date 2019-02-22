@@ -34,6 +34,7 @@ namespace con2
             _Socket = GetComponent<SocketIOComponent>();
 
             _Socket.On(Command.MESSAGE, OnMessage);
+            _Socket.On(Command.GAME_UPDATE, OnGameUpdate);
 
             LobbyStart();
             GameStart();
@@ -77,6 +78,14 @@ namespace con2
             var currentSceneName = SceneManager.GetActiveScene().name;
 
             _MessageFunctionMapper[currentSceneName]?.DynamicInvoke(content);
+        }
+
+        private void OnGameUpdate(SocketIOEvent e)
+        {
+            Debug.Log("OnGameUpdate");
+            var game = JsonConvert.DeserializeObject<Game>(e.data.ToString());
+            GameInfo.Viewers = game.viewers;
+            _NumberOfViewers.text = "Number of viewers in the room: " + game.viewers.Count;
         }
 
         #endregion
