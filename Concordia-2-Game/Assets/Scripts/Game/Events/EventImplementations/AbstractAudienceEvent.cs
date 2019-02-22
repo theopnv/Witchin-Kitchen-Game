@@ -20,7 +20,7 @@ public abstract class AbstractAudienceEvent : MonoBehaviour, IEventSubscriber
         eventManager.AddSubscriber(GetEventID(), this);
 
         MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
-        m_eventText = mgm.m_audienceEventText;
+        m_eventText = eventManager.m_audienceEventText;
     }
 
     public void ActivateEventMode()

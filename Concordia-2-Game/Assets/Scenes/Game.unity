@@ -140,8 +140,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 719272682}
+  m_Children: []
   m_Father: {fileID: 582771356}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -177,7 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edbbd2ecb7fcab4e96f66a24849501a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_audienceEventText: {fileID: 89556203}
   m_maxEventVoteTime: 20
   m_firstPollTime: 5
   m_secondPollTime: 120
@@ -971,6 +969,7 @@ Transform:
   - {fileID: 496988555}
   - {fileID: 773999202}
   - {fileID: 10916641}
+  - {fileID: 719272682}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1080,8 +1079,8 @@ RectTransform:
   - {fileID: 1778035378}
   - {fileID: 379122729}
   - {fileID: 89556202}
-  m_Father: {fileID: 10916641}
-  m_RootOrder: 0
+  m_Father: {fileID: 582771356}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1188,7 +1187,6 @@ GameObject:
   m_Component:
   - component: {fileID: 773999202}
   - component: {fileID: 773999203}
-  - component: {fileID: 773999204}
   - component: {fileID: 773999206}
   - component: {fileID: 773999205}
   m_Layer: 0
@@ -1224,18 +1222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d6ae315ac823644a1256bfc1f86650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &773999204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773999201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24fab61155748344fba4d5cf48d56826, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_audienceEventText: {fileID: 89556203}
 --- !u!114 &773999205
 MonoBehaviour:
   m_ObjectHideFlags: 0

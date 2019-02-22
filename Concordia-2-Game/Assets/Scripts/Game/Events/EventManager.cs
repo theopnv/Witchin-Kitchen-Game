@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using con2.messages;
 using UnityEngine;
+using UnityEngine.UI;
 using Event = con2.messages.Event;
 
 namespace con2.game
@@ -18,12 +19,16 @@ namespace con2.game
 
         private Dictionary<Events.EventID, List<IEventSubscriber>> _EventSubscribers;
 
+        public Text m_audienceEventText;
+
         #endregion
 
         #region Unity API
 
         private void Start()
         {
+            m_audienceEventText.enabled = false;
+
             _EventSubscribers = new Dictionary<Events.EventID, List<IEventSubscriber>>();
             foreach (Events.EventID id in Enum.GetValues(typeof(Events.EventID)))
             {
@@ -76,6 +81,9 @@ namespace con2.game
             };
 
             _AudienceInteractionManager?.SendPoll(poll);
+
+            m_audienceEventText.text = "Time for an audience event, spectators vote on your phone!";
+            m_audienceEventText.enabled = true;
         }
 
         /// <summary>

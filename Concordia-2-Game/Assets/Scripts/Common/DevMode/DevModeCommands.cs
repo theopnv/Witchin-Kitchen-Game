@@ -25,6 +25,7 @@ namespace con2
             repo.RegisterCommand("game2", Game2);
 
             // Game
+            repo.RegisterCommand("continuous_events", ContinuousEvents);
             repo.RegisterCommand("random_event", RandomEvent);
             repo.RegisterCommand("ev_fr", EventFreezingRain);
             repo.RegisterCommand("ev_dm", EventDiscoMania);
@@ -58,6 +59,7 @@ namespace con2
                 case SceneNames.Game:
                     var gameHelp = string.Join(
                         Environment.NewLine,
+                        "- 'continuous_events': Randomly simulates events every 60 seconds",
                         "- 'random_event': Simulates a poll and starts an event in 5 seconds",
                         "- 'ev_fr': Simulates the Freezing Rain (fr) event",
                         "- 'ev_dm': Simulates the Disco Mania (dm) event");
@@ -123,6 +125,22 @@ namespace con2
 
         #region Game Commands
 
+        private string ContinuousEvents(string[] args)
+        {
+            if (GetCurrentSceneName() != SceneNames.Game)
+            {
+                return "You must be in the " + SceneNames.Game + " scene to start this command";
+            }
+
+            InvokeRepeating("SimulateContinuousEvents", 0, 60);
+            return "Will simulate a poll every 60 seconds. Starting the first one in 5 seconds.";
+        }
+
+        private void SimulateContinuousEvents()
+        {
+            StartCoroutine("SimulatePoll");
+        }
+
         private string RandomEvent(string[] args)
         {
             if (GetCurrentSceneName() != SceneNames.Game)
@@ -146,6 +164,8 @@ namespace con2
 
         private IEnumerator SimulatePoll()
         {
+            var eventManager = FindObjectOfType<EventManager>();
+            eventManager.StartPoll(Events.EventID.max_id, Events.EventID.max_id, 5);
             yield return new WaitForSeconds(5);
             BroadcastPoll((Events.EventID)UnityEngine.Random.Range(0, (int)Events.EventID.max_id));
         }

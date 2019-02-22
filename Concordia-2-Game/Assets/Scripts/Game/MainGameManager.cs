@@ -22,14 +22,12 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
 
     [Header("AudienceEvents")]
     EventManager m_audienceEventManager;
-    public Text m_audienceEventText;
     public int m_maxEventVoteTime = 20, m_firstPollTime = 30, m_secondPollTime = 120;
 
     private void InitializeAudienceEvents()
     {
         GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
         m_audienceEventManager = managers.GetComponentInChildren<EventManager>();
-        m_audienceEventText.enabled = false;
         StartCoroutine(LaunchPolls());
     }
 
@@ -49,9 +47,6 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
 
     private void StartPoll()
     {
-        m_audienceEventText.text = "Time for an audience event, spectators vote on your phone!";
-        m_audienceEventText.enabled = true;
-
         int eventA = GetRandomEventIndex();
         int eventB = GetRandomEventIndex();
         while (eventA == eventB)
