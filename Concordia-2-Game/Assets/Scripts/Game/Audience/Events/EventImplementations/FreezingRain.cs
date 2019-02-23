@@ -9,6 +9,11 @@ public class FreezingRain : AbstractAudienceEvent
 
     private PlayerMovement[] m_playerMovementControllers;
 
+    void Start()
+    {
+        SetUpEvent();
+    }
+
     public override Events.EventID GetEventID()
     {
         return Events.EventID.freezing_rain;

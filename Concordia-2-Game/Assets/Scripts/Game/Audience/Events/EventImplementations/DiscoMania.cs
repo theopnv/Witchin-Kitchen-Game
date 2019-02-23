@@ -9,6 +9,11 @@ public class DiscoMania : AbstractAudienceEvent
 
     private Gamepad[] m_playerGamepads;
 
+    void Start()
+    {
+        SetUpEvent();
+    }
+
     public override Events.EventID GetEventID()
     {
         return Events.EventID.disco_mania;

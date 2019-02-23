@@ -25,7 +25,7 @@ namespace con2.game
         void Start()
         {
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
-            InvokeRepeating("FakeSpellLauncher", 5, 40);
+            InvokeRepeating("FakeSpellLauncher", 40, 40);
         }
 
         #endregion

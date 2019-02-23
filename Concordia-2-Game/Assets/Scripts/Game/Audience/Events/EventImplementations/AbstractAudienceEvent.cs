@@ -25,7 +25,6 @@ public abstract class AbstractAudienceEvent : MonoBehaviour, IEventSubscriber
 
     public void ActivateEventMode()
     {
-        m_eventText.enabled = true;
         StartCoroutine(RunEvent(EventImplementation));
     }
 
