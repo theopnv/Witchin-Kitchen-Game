@@ -13,20 +13,61 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
     // Start is called before the first frame update
     void Start()
     {
-        m_itemSpawner = GetComponent<ItemSpawner>();
-
-        m_winnerText.enabled = false;
-        m_rematchText.enabled = false;
-        m_gameOver = false;
+        InitializeAudienceEvents();
+        InitializeItemSpawning();
+        InitializeEndGame();
     }
 
     #region AudienceEvents
+
+    [Header("AudienceEvents")]
+    EventManager m_audienceEventManager;
+    public int m_maxEventVoteTime = 20, m_firstPollTime = 30, m_secondPollTime = 120;
+
+    private void InitializeAudienceEvents()
+    {
+        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+        m_audienceEventManager = managers.GetComponentInChildren<EventManager>();
+        StartCoroutine(LaunchPolls());
+    }
+
+    private int GetRandomEventIndex()
+    {
+        return Random.Range(0, (int)Events.EventID.max_id);
+    }
+
+    private IEnumerator LaunchPolls()
+    {
+        yield return new WaitForSeconds(m_firstPollTime);
+        StartPoll();
+
+        yield return new WaitForSeconds(m_secondPollTime);
+        StartPoll();
+    }
+
+    private void StartPoll()
+    {
+        int eventA = GetRandomEventIndex();
+        int eventB = GetRandomEventIndex();
+        while (eventA == eventB)
+        {
+            eventB = GetRandomEventIndex();
+        }
+
+        m_audienceEventManager.StartPoll((Events.EventID)eventA, (Events.EventID)eventB, m_maxEventVoteTime);
+    }
 
     #endregion
 
 
     #region ItemSpawning
+
     private ItemSpawner m_itemSpawner;
+
+    private void InitializeItemSpawning()
+    {
+        m_itemSpawner = GetComponent<ItemSpawner>();
+    }
 
     //example function
     private void ModulateSpawnRate(float timeChange)
@@ -39,8 +80,17 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
 
     #region EndGame
 
-    public Text m_winnerText, m_rematchText;
+    [Header("EndGame")]
+    public Text m_winnerText;
+    public Text m_rematchText;
     private bool m_gameOver = false, m_acceptingInput = false;
+
+    private void InitializeEndGame()
+    {
+        m_winnerText.enabled = false;
+        m_rematchText.enabled = false;
+        m_gameOver = false;
+    }
 
     //For MVP, first person to complete a potion wins. Will require serious reworking when win is time&point based
     public void Gameover(GameObject winnerPlayer)

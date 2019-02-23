@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using con2.game;
+﻿#if UNITY_EDITOR
 using UnityEditor;
-using UnityEngine;
-
 
 namespace con2.game
 {
@@ -33,3 +29,5 @@ namespace con2.game
         }
     }
 }
+
+#endif

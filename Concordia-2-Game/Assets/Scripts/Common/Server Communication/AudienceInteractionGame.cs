@@ -82,14 +82,19 @@ namespace con2
                 chosenEvent = voteA.votes > voteB.votes ? voteA : voteB;
             }
 
-            Debug.Log("Results of the poll: " + 
+            BroadcastPollResults(chosenEvent);
+        }
+
+        public void BroadcastPollResults(Event chosenEvent)
+        {
+            Debug.Log("Results of the poll: " +
                       Events.EventList[(Events.EventID)chosenEvent.id] +
                       " was voted");
             EventSubscribers[(Events.EventID)chosenEvent.id]
                 .ForEach((subscriber) =>
-            {
-                subscriber.ActivateEventMode();
-            });
+                {
+                    subscriber.ActivateEventMode();
+                });
         }
 
         private void OnCastSpellRequest(SocketIOEvent e)
