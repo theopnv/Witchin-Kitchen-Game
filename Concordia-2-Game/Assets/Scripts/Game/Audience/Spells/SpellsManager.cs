@@ -17,7 +17,7 @@ namespace con2.game
 
         private AudienceInteractionManager _AudienceInteractionManager;
 
-        private int _LastCastSpeller = -1; 
+        private int _CurrentCastSpeller = 0; 
 
         #region Unity API
 
@@ -34,16 +34,16 @@ namespace con2.game
 
         private void FakeSpellLauncher()
         {
-            if (_EventManager.AnEventIsHappening)
+            if (!_EventManager.AnEventIsHappening)
             {
-                ++_LastCastSpeller;
-                if (_LastCastSpeller >= GameInfo.Viewers.Count)
-                {
-                    _LastCastSpeller = -1;
-                }
-
-                var viewer = GameInfo.Viewers[_LastCastSpeller];
+                var viewer = GameInfo.Viewers[_CurrentCastSpeller];
                 _AudienceInteractionManager.SendSpellCastRequest(viewer);
+
+                ++_CurrentCastSpeller;
+                if (_CurrentCastSpeller >= GameInfo.Viewers.Count)
+                {
+                    _CurrentCastSpeller = 0;
+                }
             }
         }
         

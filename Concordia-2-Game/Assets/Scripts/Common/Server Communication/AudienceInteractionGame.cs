@@ -25,6 +25,7 @@ namespace con2
         void GameStart()
         {
             _Socket.On(Command.RECEIVE_VOTES, OnReceiveEventVotes);
+            _Socket.On(Command.SPELL_CAST_REQUEST, OnCastSpellRequest);
         }
 
         #region Emit
@@ -89,6 +90,12 @@ namespace con2
             {
                 subscriber.ActivateEventMode();
             });
+        }
+
+        private void OnCastSpellRequest(SocketIOEvent e)
+        {
+            var content = JsonConvert.DeserializeObject<Spell>(e.data.ToString());
+            Debug.Log("Casted spell: " + Spells.EventList[(Spells.SpellID)content.spellId]);
         }
 
         #endregion

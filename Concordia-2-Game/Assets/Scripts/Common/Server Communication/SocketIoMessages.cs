@@ -26,6 +26,7 @@ namespace con2.messages
         public const string GAME_CREATED = "gameCreated";
         public const string GAME_UPDATE = "gameUpdate";
         public const string RECEIVE_VOTES = "event";
+        public const string SPELL_CAST_REQUEST = "spell";
     }
 
     public enum Code
@@ -95,5 +96,11 @@ namespace con2.messages
     {
         public bool gameFinished;
         public Player winner;
+    }
+
+    public class Spell
+    {
+        public int spellId;
+        public Player targetedPlayer;
     }
 }
