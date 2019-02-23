@@ -57,7 +57,6 @@ public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
         return false;
     }
 
-    // TODO make this actually work...
     private bool CheckPlayerFacingStation(Transform player)
     {
         Vector3 playerFacing = player.TransformDirection(Vector3.forward);
