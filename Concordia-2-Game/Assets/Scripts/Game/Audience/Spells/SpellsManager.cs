@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using con2.game;
+using con2.messages;
 using UnityEngine;
 
 namespace con2.game
@@ -9,6 +11,8 @@ namespace con2.game
 
     public class SpellsManager : MonoBehaviour
     {
+
+
         /// <summary>
         /// If we're broadcasting an event the spells timer stops.
         /// This is to avoid asking a viewer to cast a spell while he/she's voting.
@@ -17,14 +21,24 @@ namespace con2.game
 
         private AudienceInteractionManager _AudienceInteractionManager;
 
-        private int _CurrentCastSpeller = 0; 
+        private int _CurrentCastSpeller = 0;
+
+        private Dictionary<Spells.SpellID, List<ISpellSubscriber>> _SpellSubscribers;
 
         #region Unity API
 
         // Start is called before the first frame update
         void Start()
         {
+            _SpellSubscribers = new Dictionary<Spells.SpellID, List<ISpellSubscriber>>();
+            foreach (Spells.SpellID id in Enum.GetValues(typeof(Spells.SpellID)))
+            {
+                _SpellSubscribers.Add(id, new List<ISpellSubscriber>());
+            }
+
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            _AudienceInteractionManager.SpellSubscribers = _SpellSubscribers;
+
             InvokeRepeating("FakeSpellLauncher", 40, 40);
         }
 

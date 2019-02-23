@@ -10,7 +10,7 @@ public interface IEventSubscriber
     /// should change its behaviour to react to the event.
     /// For instance, if PlayerMovement.ActivateEventMode() is called,
     /// the player must react to some event
-    /// (be it slippery floors, inverted controllers...)
+    /// (be it slippery floors, meteorites falling...)
     ///
     /// It's up to the subsystem to determine the event duration.
     /// </summary>

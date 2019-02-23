@@ -22,6 +22,9 @@ namespace con2
         [HideInInspector]
         public Dictionary<Events.EventID, List<IEventSubscriber>> EventSubscribers;
 
+        [HideInInspector]
+        public Dictionary<Spells.SpellID, List<ISpellSubscriber>> SpellSubscribers;
+
         void GameStart()
         {
             _Socket.On(Command.RECEIVE_VOTES, OnReceiveEventVotes);
@@ -101,6 +104,10 @@ namespace con2
         {
             var content = JsonConvert.DeserializeObject<Spell>(e.data.ToString());
             Debug.Log("Casted spell: " + Spells.EventList[(Spells.SpellID)content.spellId]);
+            SpellSubscribers[(Spells.SpellID)content.spellId].ForEach((subscriber) =>
+            {
+                subscriber.ActivateSpellMode();
+            });
         }
 
         #endregion
