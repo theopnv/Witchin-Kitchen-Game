@@ -1,5 +1,6 @@
 ﻿using con2;
 using con2.game;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
 {
-    public const float INTERACTION_DISTANCE = 4.0f, FACING_DEGREE = 30.0f;
+    public const float INTERACTION_DISTANCE = 2.0f, FACING_DEGREE = 30.0f;
 
     [SerializeField]
     private Text m_prompt;
@@ -61,7 +62,13 @@ public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
     {
         Vector3 playerFacing = player.TransformDirection(Vector3.forward);
         Vector3 playerToStation = stationLocation - player.position;
-        return Vector3.Dot(playerFacing, playerToStation) <= FACING_DEGREE;
+        double currentAngle = Math.Acos(Vector3.Dot(playerFacing, playerToStation) / (playerFacing.magnitude * playerToStation.magnitude));
+        return currentAngle <= ToRadian(2*FACING_DEGREE);
+    }
+
+    private static double ToRadian(double degreeAngle)
+    {
+        return (Math.PI / 180.0) * degreeAngle;
     }
 
     public void StartMinigame()
