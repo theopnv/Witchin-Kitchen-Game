@@ -119,7 +119,7 @@ namespace con2
             {
                 SpellSubscribers[key].ForEach((subscriber) =>
                 {
-                    subscriber.ActivateSpellMode();
+                    subscriber.ActivateSpellMode(content.targetedPlayer);
                 });
             }
             else
