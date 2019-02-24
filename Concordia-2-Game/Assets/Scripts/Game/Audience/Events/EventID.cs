@@ -10,7 +10,7 @@ namespace con2.game
         public enum EventID
         {
             freezing_rain = 0,
-            disco_mania,
+            network_ads,
 
             max_id,
         }
@@ -18,7 +18,7 @@ namespace con2.game
         public static Dictionary<EventID, string> EventList = new Dictionary<EventID, string>
         {
             { EventID.freezing_rain, "Freezing Rain"},
-            { EventID.disco_mania, "Disco Mania"},
+            { EventID.network_ads, "Network Ads"},
         };
 
     }

@@ -1187,8 +1187,8 @@ GameObject:
   m_Component:
   - component: {fileID: 773999202}
   - component: {fileID: 773999203}
-  - component: {fileID: 773999206}
   - component: {fileID: 773999205}
+  - component: {fileID: 773999204}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -1224,20 +1224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnEventIsHappening: 0
   m_audienceEventText: {fileID: 89556203}
---- !u!114 &773999205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773999201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5da56935b6bc2c40b4d42d9c7c8468a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_discoManianDuration: 10
---- !u!114 &773999206
+--- !u!114 &773999204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1252,6 +1239,19 @@ MonoBehaviour:
   m_freezingRainDuration: 10
   m_frictionFraction: 0.2
   m_movementModulator: 1.5
+--- !u!114 &773999205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773999201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5da56935b6bc2c40b4d42d9c7c8468a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NetworkAdsDuration: 10
 --- !u!1 &866068881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825916750}
   - component: {fileID: 1825916751}
+  - component: {fileID: 1825916752}
   m_Layer: 0
   m_Name: SpellsManager
   m_TagString: Untagged
@@ -1695,6 +1696,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _EventManager: {fileID: 773999203}
+--- !u!114 &1825916752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825916749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b933461727ba90d4598c854409fc55db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DiscoManiaDuration: 10
 --- !u!1001 &1912598297
 PrefabInstance:
   m_ObjectHideFlags: 0

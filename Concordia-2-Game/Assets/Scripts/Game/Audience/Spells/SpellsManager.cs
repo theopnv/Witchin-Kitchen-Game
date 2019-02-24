@@ -60,7 +60,12 @@ namespace con2.game
                 }
             }
         }
-        
+
+        public void AddSubscriber(Spells.SpellID id, ISpellSubscriber subscriber)
+        {
+            _SpellSubscribers[id].Add(subscriber);
+        }
+
         #endregion
     }
 

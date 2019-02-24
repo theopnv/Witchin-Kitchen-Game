@@ -5,38 +5,42 @@ using System;
 using con2.game;
 using static con2.game.Events;
 
-public abstract class AbstractAudienceEvent : MonoBehaviour, IEventSubscriber
+namespace con2.game
 {
-    protected Text m_eventText;
-    protected EventID ID;
 
-    public abstract IEnumerator EventImplementation();
-    public abstract EventID GetEventID();
-
-    public void SetUpEvent()
+    public abstract class AbstractAudienceEvent : MonoBehaviour, IEventSubscriber
     {
-        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        EventManager eventManager = managers.GetComponentInChildren<EventManager>();
-        eventManager.AddSubscriber(GetEventID(), this);
+        protected Text m_eventText;
+        protected EventID ID;
 
-        MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
-        m_eventText = eventManager.m_audienceEventText;
-    }
+        public abstract IEnumerator EventImplementation();
+        public abstract EventID GetEventID();
 
-    public void ActivateEventMode()
-    {
-        StartCoroutine(RunEvent(EventImplementation));
-    }
+        public void SetUpEvent()
+        {
+            GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+            EventManager eventManager = managers.GetComponentInChildren<EventManager>();
+            eventManager.AddSubscriber(GetEventID(), this);
 
-    public IEnumerator RunEvent(Func<IEnumerator> currentEvent)
-    {
-        yield return StartCoroutine(currentEvent());
-        EventEnd();
-    }
+            MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
+            m_eventText = eventManager.m_audienceEventText;
+        }
 
-    private void EventEnd()
-    {
-        m_eventText.text = "";
-        m_eventText.enabled = false;
+        public void ActivateEventMode()
+        {
+            StartCoroutine(RunEvent(EventImplementation));
+        }
+
+        public IEnumerator RunEvent(Func<IEnumerator> currentEvent)
+        {
+            yield return StartCoroutine(currentEvent());
+            EventEnd();
+        }
+
+        private void EventEnd()
+        {
+            m_eventText.text = "";
+            m_eventText.enabled = false;
+        }
     }
 }

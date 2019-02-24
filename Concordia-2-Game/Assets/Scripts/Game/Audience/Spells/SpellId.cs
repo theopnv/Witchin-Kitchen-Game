@@ -9,14 +9,14 @@ namespace con2.game
 
         public enum SpellID
         {
-            network_ad = 0,
+            disco_mania = 0,
 
             max_id,
         }
 
         public static Dictionary<SpellID, string> EventList = new Dictionary<SpellID, string>
         {
-            { SpellID.network_ad, "Network Ads" },
+            { SpellID.disco_mania, "Disco Mania" },
         };
 
     }
