@@ -93,21 +93,40 @@ namespace con2
             Debug.Log("Results of the poll: " +
                       Events.EventList[(Events.EventID)chosenEvent.id] +
                       " was voted");
-            EventSubscribers[(Events.EventID)chosenEvent.id]
-                .ForEach((subscriber) =>
-                {
-                    subscriber.ActivateEventMode();
-                });
+            var key = (Events.EventID) chosenEvent.id;
+
+            if (EventSubscribers.ContainsKey(key))
+            {
+                EventSubscribers[key]
+                    .ForEach((subscriber) =>
+                    {
+                        subscriber.ActivateEventMode();
+                    });
+            }
+            else
+            {
+                Debug.LogError("Event key not found");
+            }
         }
 
         private void OnCastSpellRequest(SocketIOEvent e)
         {
             var content = JsonConvert.DeserializeObject<Spell>(e.data.ToString());
             Debug.Log("Casted spell: " + Spells.EventList[(Spells.SpellID)content.spellId]);
-            SpellSubscribers[(Spells.SpellID)content.spellId].ForEach((subscriber) =>
+
+            var key = (Spells.SpellID) content.spellId;
+            if (SpellSubscribers.ContainsKey(key))
             {
-                subscriber.ActivateSpellMode();
-            });
+                SpellSubscribers[key].ForEach((subscriber) =>
+                {
+                    subscriber.ActivateSpellMode();
+                });
+            }
+            else
+            {
+                Debug.LogError("Spell Key not found");
+            }
+            
         }
 
         #endregion
