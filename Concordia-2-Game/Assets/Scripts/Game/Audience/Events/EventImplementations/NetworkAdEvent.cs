@@ -9,6 +9,8 @@ public class NetworkAdEvent : AbstractAudienceEvent
 
     private Gamepad[] m_playerGamepads;
 
+    [SerializeField] private GameObject _NetworkAdsCanvasPrefab;
+    private GameObject _NetworkAdsCanvasInstance;
     void Start()
     {
         SetUpEvent();
@@ -21,10 +23,10 @@ public class NetworkAdEvent : AbstractAudienceEvent
 
     public override IEnumerator EventImplementation()
     {
-        
+        _NetworkAdsCanvasInstance = Instantiate(_NetworkAdsCanvasPrefab);
         m_eventText.text = "The audience spammed you with important ads!";
         
         yield return new WaitForSeconds(m_NetworkAdsDuration);
-        
+        Destroy(_NetworkAdsCanvasInstance);
     }
 }
