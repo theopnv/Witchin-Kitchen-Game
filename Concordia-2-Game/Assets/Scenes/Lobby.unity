@@ -1413,6 +1413,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudienceInteractionManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8113717970687367647, guid: 785b8767fc9ca7240b6f9bbd0addca47,
+        type: 3}
+      propertyPath: _RoomId
+      value: 
+      objectReference: {fileID: 328034448}
+    - target: {fileID: 8113717970687367647, guid: 785b8767fc9ca7240b6f9bbd0addca47,
+        type: 3}
+      propertyPath: _NumberOfViewers
+      value: 
+      objectReference: {fileID: 1383379716}
     - target: {fileID: 8113717970687367641, guid: 785b8767fc9ca7240b6f9bbd0addca47,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1468,15 +1478,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8113717970687367647, guid: 785b8767fc9ca7240b6f9bbd0addca47,
-        type: 3}
-      propertyPath: _RoomId
-      value: 
-      objectReference: {fileID: 328034448}
-    - target: {fileID: 8113717970687367647, guid: 785b8767fc9ca7240b6f9bbd0addca47,
-        type: 3}
-      propertyPath: _NumberOfViewers
-      value: 
-      objectReference: {fileID: 1383379716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 785b8767fc9ca7240b6f9bbd0addca47, type: 3}
