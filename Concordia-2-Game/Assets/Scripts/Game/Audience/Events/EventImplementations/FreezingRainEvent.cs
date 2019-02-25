@@ -2,12 +2,17 @@
 using System.Collections;
 using con2.game;
 
-public class FreezingRain : AbstractAudienceEvent
+public class FreezingRainEvent : AbstractAudienceEvent
 {
     public float m_freezingRainDuration = 10.0f;
     public float m_frictionFraction = 0.2f, m_movementModulator = 1.5f;
 
     private PlayerMovement[] m_playerMovementControllers;
+
+    void Start()
+    {
+        SetUpEvent();
+    }
 
     public override Events.EventID GetEventID()
     {
