@@ -1252,6 +1252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NetworkAdsDuration: 10
+  _NetworkAdsCanvasPrefab: {fileID: 7062139143320713761, guid: 768e9330d6e1f894097ef746afdd2d07,
+    type: 3}
 --- !u!1 &866068881
 GameObject:
   m_ObjectHideFlags: 0
