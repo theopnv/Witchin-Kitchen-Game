@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using con2.game;
+using con2.messages;
 using UnityEngine;
 
 public interface ISpellSubscriber
@@ -14,6 +15,6 @@ public interface ISpellSubscriber
     ///
     /// It's up to the subsystem to determine the spell duration.
     /// </summary>
-    void ActivateSpellMode();
+    void ActivateSpellMode(Player targetedPlayer);
 }
 

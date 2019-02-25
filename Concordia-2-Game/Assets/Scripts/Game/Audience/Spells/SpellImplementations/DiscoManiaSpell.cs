@@ -9,7 +9,6 @@ namespace con2.game
     {
         public float m_DiscoManiaDuration = 10.0f;
 
-        private Gamepad[] m_playerGamepads;
         // Start is called before the first frame update
 
         void Start()
@@ -19,26 +18,12 @@ namespace con2.game
 
         public override IEnumerator SpellImplementation()
         {
-            GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            GameObject[] players = managers.GetComponentInChildren<SpawnPlayersController>().GetPlayers();
-
-            m_playerGamepads = new Gamepad[players.Length];
-            for (int i = 0; i < players.Length; i++)
-            {
-                m_playerGamepads[i] = GamepadMgr.Pad(i);
-            }
-
-            foreach (Gamepad pad in m_playerGamepads)
-            {
-                pad.InvertMovement();
-            }
+            var playerGamepad = GamepadMgr.Pad(_TargetedPlayer.id);
+            playerGamepad.InvertMovement();
 
             yield return new WaitForSeconds(m_DiscoManiaDuration);
 
-            foreach (Gamepad pad in m_playerGamepads)
-            {
-                pad.InvertMovement();
-            }
+            playerGamepad.InvertMovement();
         }
 
         public override Spells.SpellID GetSpellID()
