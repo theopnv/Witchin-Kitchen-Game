@@ -13,6 +13,11 @@ namespace con2.main_menu
             SceneManager.LoadSceneAsync(SceneNames.Lobby);
         }
 
+        public void OnSettingsClick()
+        {
+            SceneManager.LoadSceneAsync(SceneNames.Settings);
+        }
+
         public void QuitGame()
         {
             Application.Quit();
