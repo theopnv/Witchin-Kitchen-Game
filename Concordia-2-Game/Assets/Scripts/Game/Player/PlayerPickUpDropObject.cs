@@ -1,7 +1,7 @@
 ﻿using con2;
 using UnityEngine;
 
-public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
+public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
 {
     public Transform m_characterHands;
     public float m_throwForce = 5;
@@ -87,10 +87,11 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
         m_pickableObject = null;
     }
 
-    public void ForceDropObject(Vector3 knockVector)
+    public void Punch(Vector3 knockVelocity, float stunTime)
     {
         if (IsHoldingObject())
         {
+            knockVector = -knockVelocity.normalized;
             DropObject(new Vector3(knockVector.x, knockVector.z) * m_throwForce);
         }
     }

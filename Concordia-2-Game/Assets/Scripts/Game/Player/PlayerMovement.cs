@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, IInputConsumer
+public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 {
     [Range(0.0f, 300.0f)]
     public float MovementSpeed;
@@ -110,6 +110,20 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer
         movementDirection.x = 0.0f;
         movementDirection.y = 0.0f;
         movementDirection.z = 0.0f;
+    }
+
+    public void Punch(Vector3 knockVelocity, float stunTime)
+    {
+        var knockVelocity = punch.TargetPosition - punch.SourcePosition;
+        knockVelocity.y = PunchUpwardsForce;
+        knockVelocity.Normalize();
+        knockVelocity *= PunchForceMultiplier;
+
+        var targetBody = punch.Target.GetComponent<Rigidbody>();
+        targetBody.velocity = knockVelocity;
+
+        var stun = punch.Target.GetComponent<FightStun>();
+        stun.Stun(PunchStunSeconds);
     }
 
     public void ModulateMovementFriction(float frictionFraction)
