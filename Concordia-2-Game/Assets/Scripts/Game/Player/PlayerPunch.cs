@@ -11,8 +11,8 @@ namespace con2.game
 
         private List<KeyValuePair<GameObject, IPunchable[]>> m_punchTargets;
 
-        public float m_punchUpwardsForce = 1.0f;
-        public float m_punchForceMultiplier = 5.0f;
+        public float m_punchUpwardsForce = 4.0f;
+        public float m_punchForceMultiplier = 7.0f;
         public float m_punchStunSeconds = 1.0f;
         public float m_punchReloadSeconds = 1.33f;
         private float m_punchCooldownTimer;
@@ -66,9 +66,9 @@ namespace con2.game
                 foreach (IPunchable punchableComponent in target.Value)
                 {
                     Vector3 knockVelocity = target.Key.transform.position - puncherPosition;
-                    knockVelocity.y = m_punchUpwardsForce;
                     knockVelocity = knockVelocity.normalized;
                     knockVelocity *= m_punchForceMultiplier;
+                    knockVelocity.y = m_punchUpwardsForce;
 
                     punchableComponent.Punch(knockVelocity, m_punchStunSeconds);
                 }

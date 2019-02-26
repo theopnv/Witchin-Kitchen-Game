@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 4506763714444401370}
   - component: {fileID: 2341452823837592881}
   - component: {fileID: 7542781231845425812}
-  - component: {fileID: 8258526059682603925}
+  - component: {fileID: 7326723085550458764}
   m_Layer: 0
   m_Name: HoldHands
   m_TagString: Untagged
@@ -231,7 +231,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8258526059682603925
+--- !u!114 &7326723085550458764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,9 +240,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3727488636060508108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d751a2f22e79a249918208dd6f07ddd, type: 3}
+  m_Script: {fileID: 11500000, guid: 11ced922f357c8d4dbf77702c01ea2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_characterHands: {fileID: 0}
+  m_throwForce: 5
 --- !u!1 &8006554420184790311
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c608d04748013e3428257bdc117b2e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_punchUpwardsForce: 4
+  m_punchForceMultiplier: 8
+  m_punchStunSeconds: 1
+  m_punchReloadSeconds: 1.33
 --- !u!1 &9017638658279021675
 GameObject:
   m_ObjectHideFlags: 0

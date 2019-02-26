@@ -114,7 +114,8 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     public void Punch(Vector3 knockVelocity, float stunTime)
     {
-        m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
+        //m_rb.AddForce(knockVelocity, ForceMode.Impulse);
+        m_rb.velocity = knockVelocity;
         m_stun.Stun(stunTime);
     }
 
