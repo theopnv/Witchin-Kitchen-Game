@@ -15,7 +15,6 @@ namespace con2.game
         public float m_punchForceMultiplier = 5.0f;
         public float m_punchStunSeconds = 1.0f;
         public float m_punchReloadSeconds = 1.33f;
-        public float m_punchLingerSeconds = 0.33f;
         private float m_punchCooldownTimer;
 
         private Color m_startColor;
@@ -25,17 +24,24 @@ namespace con2.game
         // Start is called before the first frame update
         void Start()
         {
+            m_punchTargets = new List<KeyValuePair<GameObject, IPunchable[]>>();
+
+            //To be used on model's gloves?
+            /*
             m_startColor = GetComponent<MeshRenderer>().material.color;
-            m_renderer = GetComponent<MeshRenderer>(); ;
+            m_renderer = GetComponent<MeshRenderer>();
+            */
         }
 
         void Update()
         {
+            /*
             if (m_punchCooldownTimer > 0.01f)
             {
                 m_punchCooldownTimer -= Time.deltaTime;
                 ShowPunchCooldown();
             }
+            */
         }
 
         public bool ConsumeInput(GamepadAction input)
@@ -54,14 +60,14 @@ namespace con2.game
 
         private void DoPunch()
         {
-            Vector3 puncherPosition = transform.position;
+            Vector3 puncherPosition = transform.parent.position;
             foreach (KeyValuePair<GameObject, IPunchable[]> target in m_punchTargets)
             {
                 foreach (IPunchable punchableComponent in target.Value)
                 {
-                    Vector3 knockVelocity = puncherPosition - target.Key.transform.position;
+                    Vector3 knockVelocity = target.Key.transform.position - puncherPosition;
                     knockVelocity.y = m_punchUpwardsForce;
-                    knockVelocity.Normalize();
+                    knockVelocity = knockVelocity.normalized;
                     knockVelocity *= m_punchForceMultiplier;
 
                     punchableComponent.Punch(knockVelocity, m_punchStunSeconds);
@@ -106,7 +112,8 @@ namespace con2.game
         {
             if (IsTarget(other))
             {
-                m_punchTargets.Remove(m_punchTargets.Find(item => item.Key.Equals(other.gameObject)));
+                KeyValuePair<GameObject, IPunchable[]> leavingObject = m_punchTargets.Find(item => item.Key.Equals(other.gameObject));
+                m_punchTargets.Remove(leavingObject);
             }
         }
 
