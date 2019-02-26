@@ -114,16 +114,8 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     public void Punch(Vector3 knockVelocity, float stunTime)
     {
-        var knockVelocity = punch.TargetPosition - punch.SourcePosition;
-        knockVelocity.y = PunchUpwardsForce;
-        knockVelocity.Normalize();
-        knockVelocity *= PunchForceMultiplier;
-
-        var targetBody = punch.Target.GetComponent<Rigidbody>();
-        targetBody.velocity = knockVelocity;
-
-        var stun = punch.Target.GetComponent<FightStun>();
-        stun.Stun(PunchStunSeconds);
+        m_rb.AddForce(knockVelocity, ForceMode.Impulse);
+        m_stun.Stun(stunTime);
     }
 
     public void ModulateMovementFriction(float frictionFraction)

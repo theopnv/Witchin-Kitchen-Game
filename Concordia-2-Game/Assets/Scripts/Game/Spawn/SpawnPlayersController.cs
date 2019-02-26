@@ -20,7 +20,6 @@ namespace con2.game
         void Start()
         {
             GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            GlobalFightState gfs = managers.GetComponentInChildren<GlobalFightState>();
 
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
@@ -29,7 +28,6 @@ namespace con2.game
                 player.GetComponent<Renderer>().material.color = PlayersInfo.Color[i];
                 player.GetComponent<PlayerInputController>().SetPlayerIndex(i);
                 m_players[i] = player;
-                gfs.AddFighter(player);
             }
 
             //Switch control context to game once players are spawned

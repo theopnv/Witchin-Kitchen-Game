@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3589913528455673603}
   - component: {fileID: 5232460943432016294}
-  - component: {fileID: 5504908470539047291}
+  - component: {fileID: 4280198769989403238}
   m_Layer: 0
   m_Name: PunchGrabBox
   m_TagString: Untagged
@@ -288,7 +288,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5504908470539047291
+--- !u!114 &4280198769989403238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8006554420184790311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d751a2f22e79a249918208dd6f07ddd, type: 3}
+  m_Script: {fileID: 11500000, guid: c608d04748013e3428257bdc117b2e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9017638658279021675
@@ -315,7 +315,6 @@ GameObject:
   - component: {fileID: 2488503986458008085}
   - component: {fileID: 7425673455405396482}
   - component: {fileID: 1968346470421378227}
-  - component: {fileID: 2957002968297765321}
   - component: {fileID: 7756702639570436469}
   - component: {fileID: 8325852682819089887}
   - component: {fileID: 1618806782590900145}
@@ -448,18 +447,6 @@ MonoBehaviour:
   MovementFriction: 2
   Gravity: 10.3
   RotationSpeed: 0.169
---- !u!114 &2957002968297765321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9017638658279021675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c608d04748013e3428257bdc117b2e3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7756702639570436469
 MonoBehaviour:
   m_ObjectHideFlags: 0

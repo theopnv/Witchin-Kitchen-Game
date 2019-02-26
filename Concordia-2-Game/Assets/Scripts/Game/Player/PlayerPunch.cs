@@ -64,7 +64,7 @@ namespace con2.game
                     knockVelocity.Normalize();
                     knockVelocity *= m_punchForceMultiplier;
 
-                    punchableComponent.Punch(knockVelocity);
+                    punchableComponent.Punch(knockVelocity, m_punchStunSeconds);
                 }
             }
 

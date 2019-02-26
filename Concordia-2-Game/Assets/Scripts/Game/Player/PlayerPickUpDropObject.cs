@@ -91,7 +91,7 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
     {
         if (IsHoldingObject())
         {
-            knockVector = -knockVelocity.normalized;
+            Vector3 knockVector = -knockVelocity.normalized;
             DropObject(new Vector3(knockVector.x, knockVector.z) * m_throwForce);
         }
     }
