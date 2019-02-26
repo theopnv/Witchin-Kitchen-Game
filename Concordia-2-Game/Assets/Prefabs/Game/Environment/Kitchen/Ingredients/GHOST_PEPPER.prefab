@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxSpeedFractionWhenHolding: 0.85
-  ingredientType: 0
+  m_ingredientType: 0
 --- !u!1 &4671573246996757032
 GameObject:
   m_ObjectHideFlags: 0

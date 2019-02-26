@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 1831550912520185448}
   - component: {fileID: 4506763714444401370}
   - component: {fileID: 2341452823837592881}
-  - component: {fileID: 7542781231845425812}
   - component: {fileID: 7326723085550458764}
   m_Layer: 0
   m_Name: HoldHands
@@ -218,19 +217,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7542781231845425812
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3727488636060508108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7326723085550458764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ced922f357c8d4dbf77702c01ea2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_characterHands: {fileID: 0}
+  m_characterHands: {fileID: 1831550912520185448}
   m_throwForce: 5
 --- !u!1 &8006554420184790311
 GameObject:

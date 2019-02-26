@@ -1,22 +1,25 @@
 ﻿using con2;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
 {
     public Transform m_characterHands;
     public float m_throwForce = 5;
-    private float m_playerHeight;
     private Rigidbody m_playerRB;
     private PlayerMovement m_playerMovement;
 
     // The actual pickable object
-    private PickableObject m_pickableObject;
+    private PickableObject m_heldObject;
+
+    //Objects in range to be grabbed
+    private List<KeyValuePair<GameObject, PickableObject>> m_nearbyObjects;
 
     void Start()
     {
-        m_playerHeight = GetComponent<Collider>().bounds.size.y;
         m_playerRB = GetComponent<Rigidbody>();
         m_playerMovement = GetComponent<PlayerMovement>();
+        m_nearbyObjects = new List<KeyValuePair<GameObject, PickableObject>>();
     }
 
     public bool ConsumeInput(GamepadAction input)
@@ -45,30 +48,34 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
         if (IsHoldingObject())
         {
             // Keeps the object in hands at the same position and orientation
-            m_pickableObject.UpdatePosition(m_characterHands.localPosition);
+            m_heldObject.UpdatePosition(m_characterHands.localPosition);
         }
     }
 
     private bool GetNearestItem()
     {
-        RaycastHit rayItemHit;
-
-        // Check if an pickable object is in range
-        if (Physics.Raycast(transform.position - new Vector3(0, m_playerHeight / 2.5f, 0), transform.TransformDirection(Vector3.forward), out rayItemHit, 1f))
+        Vector3 playerPosition = transform.position;
+        float closestObject = Vector3.negativeInfinity.magnitude;
+        foreach (KeyValuePair<GameObject, PickableObject> someNearbyObject in m_nearbyObjects)
         {
-            m_pickableObject = rayItemHit.transform.gameObject.GetComponent<PickableObject>();
+            float distanceFromPlayer = (someNearbyObject.Key.transform.position - playerPosition).magnitude;
+            if (distanceFromPlayer < closestObject)
+            {
+                closestObject = distanceFromPlayer;
+                m_heldObject = someNearbyObject.Value;
+            }
         }
-        return m_pickableObject;
+        return m_heldObject;
     }
 
     // Pick up a nearby object
     private void PickUpObject()
     {
         // Slow down the player
-        m_playerMovement.MaxMovementSpeed *= m_pickableObject.GetMaxSpeedFractionWhenHolding();
+        m_playerMovement.MaxMovementSpeed *= m_heldObject.GetMaxSpeedFractionWhenHolding();
 
         // Have the object adjust its physics
-        m_pickableObject.PickUp(transform);
+        m_heldObject.PickUp(transform);
 
         // Reposition the player hands (location)
         //mCharacterHands.localPosition = new Vector3(0.0f, playerSize.y + objectSize.y / 2.0f, 0.0f);
@@ -78,13 +85,13 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
     private void DropObject(Vector3 throwVector)
     {
         // Restore max movement speed
-        m_playerMovement.MaxMovementSpeed /= m_pickableObject.GetMaxSpeedFractionWhenHolding();
+        m_playerMovement.MaxMovementSpeed /= m_heldObject.GetMaxSpeedFractionWhenHolding();
 
         // Have the object adjust its physics and get thrown
-        m_pickableObject.Drop(throwVector);
+        m_heldObject.Drop(throwVector);
 
         // Reset picked up object
-        m_pickableObject = null;
+        m_heldObject = null;
     }
 
     public void Punch(Vector3 knockVelocity, float stunTime)
@@ -99,6 +106,21 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
     // Get the value of mIsHoldingObject
     public bool IsHoldingObject()
     {
-        return m_pickableObject;
+        return m_heldObject;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        PickableObject pickable = other.gameObject.GetComponent<PickableObject>();
+        if (pickable)
+        {
+            m_nearbyObjects.Add(new KeyValuePair<GameObject, PickableObject>(other.gameObject, pickable));
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        KeyValuePair<GameObject, PickableObject> leavingObject = m_nearbyObjects.Find(item => item.Key.Equals(other.gameObject));
+        m_nearbyObjects.Remove(leavingObject);
     }
 }
