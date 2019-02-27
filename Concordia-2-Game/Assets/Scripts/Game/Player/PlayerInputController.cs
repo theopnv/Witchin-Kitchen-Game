@@ -15,7 +15,7 @@ public class PlayerInputController : MonoBehaviour, IInputConsumer
         m_InputConsumers = new List<IInputConsumer>();
         m_InputConsumers.Add(GetComponent<PlayerPickUpDropObject>());
         m_InputConsumers.Add(GetComponent<PlayerMovement>());
-        m_InputConsumers.Add(GetComponent<PlayerPunch>());
+        m_InputConsumers.Add(GetComponentInChildren<PlayerPunch>());
         //m_InputConsumers.Add(GetComponent<LongRangeAttackControls>());
     }
 

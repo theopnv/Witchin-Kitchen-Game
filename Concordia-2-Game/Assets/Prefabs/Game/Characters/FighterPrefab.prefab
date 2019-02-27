@@ -11,10 +11,8 @@ GameObject:
   - component: {fileID: 8215173312692245032}
   - component: {fileID: 6981661484776325244}
   - component: {fileID: 2718827126759222096}
-  - component: {fileID: 8962576580464388929}
-  - component: {fileID: 6065033310521778178}
   m_Layer: 0
-  m_Name: PunchHands
+  m_Name: ForwardCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,31 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8962576580464388929
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463632441016446814}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6065033310521778178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463632441016446814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d751a2f22e79a249918208dd6f07ddd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1051163180814754590
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,8 +150,7 @@ GameObject:
   - component: {fileID: 1831550912520185448}
   - component: {fileID: 4506763714444401370}
   - component: {fileID: 2341452823837592881}
-  - component: {fileID: 7542781231845425812}
-  - component: {fileID: 8258526059682603925}
+  - component: {fileID: 7326723085550458764}
   m_Layer: 0
   m_Name: HoldHands
   m_TagString: Untagged
@@ -245,20 +217,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7542781231845425812
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3727488636060508108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8258526059682603925
+--- !u!114 &7326723085550458764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,9 +226,72 @@ MonoBehaviour:
   m_GameObject: {fileID: 3727488636060508108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d751a2f22e79a249918208dd6f07ddd, type: 3}
+  m_Script: {fileID: 11500000, guid: 11ced922f357c8d4dbf77702c01ea2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_characterHands: {fileID: 1831550912520185448}
+  m_throwForce: 5
+--- !u!1 &8006554420184790311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3589913528455673603}
+  - component: {fileID: 5232460943432016294}
+  - component: {fileID: 4280198769989403238}
+  m_Layer: 0
+  m_Name: PunchGrabBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3589913528455673603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8006554420184790311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.25, z: 1}
+  m_LocalScale: {x: 1.25, y: 2.25, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9017638658279021679}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5232460943432016294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8006554420184790311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4280198769989403238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8006554420184790311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c608d04748013e3428257bdc117b2e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_punchUpwardsForce: 4
+  m_punchForceMultiplier: 8
+  m_punchStunSeconds: 1
+  m_punchReloadSeconds: 1.33
 --- !u!1 &9017638658279021675
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +307,6 @@ GameObject:
   - component: {fileID: 2488503986458008085}
   - component: {fileID: 7425673455405396482}
   - component: {fileID: 1968346470421378227}
-  - component: {fileID: 2957002968297765321}
   - component: {fileID: 7756702639570436469}
   - component: {fileID: 8325852682819089887}
   - component: {fileID: 1618806782590900145}
@@ -310,6 +331,7 @@ Transform:
   - {fileID: 8215173312692245032}
   - {fileID: 1831550912520185448}
   - {fileID: 1140956063986352686}
+  - {fileID: 3589913528455673603}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -417,18 +439,6 @@ MonoBehaviour:
   MovementFriction: 2
   Gravity: 10.3
   RotationSpeed: 0.169
---- !u!114 &2957002968297765321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9017638658279021675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c608d04748013e3428257bdc117b2e3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7756702639570436469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,10 +508,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
-    - target: {fileID: 100054, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
-      propertyPath: m_Name
-      value: WizardChar_RIG_LOWPOLY_INGAME
-      objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.10711446
@@ -557,6 +563,10 @@ PrefabInstance:
     - target: {fileID: 400054, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100054, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
+      propertyPath: m_Name
+      value: WizardChar_RIG_LOWPOLY_INGAME
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
       propertyPath: m_Materials.Array.data[0]
