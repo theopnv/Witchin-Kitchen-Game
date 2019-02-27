@@ -5,7 +5,7 @@ using con2.game;
 public class FreezingRainEvent : AbstractAudienceEvent
 {
     public float m_freezingRainDuration = 10.0f;
-    public float m_frictionFraction = 0.2f, m_movementModulator = 1.5f;
+    public float m_dragFraction = 0.01f, m_movementModulator = 1.5f;
 
     private PlayerMovement[] m_playerMovementControllers;
 
@@ -35,7 +35,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
 
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
-            player.ModulateMovementFriction(m_frictionFraction);
+            player.ModulateMovementDrag(m_dragFraction);
             player.ModulateMovementSpeed(m_movementModulator);
         }
 
@@ -43,7 +43,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
 
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
-            player.ModulateMovementFriction(1.0f / m_frictionFraction);
+            player.ModulateMovementDrag(1.0f / m_dragFraction);
             player.ModulateMovementSpeed(1.0f / m_movementModulator);
         }
     }

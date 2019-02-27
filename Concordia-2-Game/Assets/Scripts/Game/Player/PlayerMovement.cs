@@ -12,14 +12,14 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer
     [Range(0.0f, 50.0f)]
     public float MaxMovementSpeed;
 
-    [Range(0.0f, 50.0f)]
-    public float MovementFriction;
+    [Range(0.0f, 1.0f)]
+    public float MovementRotationSpeed;
 
     [Range(0.0f, 50.0f)]
     public float Gravity;
 
     [Range(0.0f, 1.0f)]
-    public float RotationSpeed;
+    public float FacingRotationSpeed;
 
     private Vector3 movementDirection = new Vector3();
     FightStun m_stun;
@@ -57,32 +57,16 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer
         // Apply stun factor
         movementDirection *= m_stun.getMovementModifier();
 
-        Vector3 bodyVelocityXZ = m_rb.velocity;
-        bodyVelocityXZ.y = 0.0f;
-
-        // Force wake-up rigid body
-        m_rb.WakeUp();
-
-        // Friction in XZ only
-        if (!Mathf.Approximately(0.0f, bodyVelocityXZ.magnitude))
-        {
-            m_rb.velocity -= MovementFriction * Time.deltaTime * bodyVelocityXZ;
-        }
-
         // If player asked for input
         if (!Mathf.Approximately(movementDirection.magnitude, 0.0f))
         {
-            // Cap movement speed
-            var requestedMovement = m_rb.velocity + movementDirection * Time.fixedDeltaTime;
-            var requestedMovementXZ = bodyVelocityXZ + movementDirection * Time.fixedDeltaTime;
-            var projected = Vector3.Project(requestedMovementXZ, m_rb.velocity);
-            if (projected.magnitude > MaxMovementSpeed)
-            {
-                var acceptableFraction = Mathf.Max(0.0f, MaxMovementSpeed - projected.magnitude);
-                requestedMovement = m_rb.velocity + movementDirection.normalized * acceptableFraction;
-            }
+            m_rb.AddForce(movementDirection * MovementSpeed * MovementRotationSpeed * Time.deltaTime, ForceMode.Acceleration);
 
-            m_rb.velocity = requestedMovement;
+            // Cap movement speed
+            if (m_rb.velocity.magnitude > MaxMovementSpeed)
+            {
+                m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, MaxMovementSpeed);
+            }
         }
 
         // Gravity
@@ -92,17 +76,11 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer
         bool nonZeroInput = movementDirection.magnitude > 0.1f;
         if (nonZeroInput)
         {
-            Vector3 targetRotation = bodyVelocityXZ.normalized;
-
-            // Override by player's desired rotation, if any
-            if (nonZeroInput)
-            {
-                targetRotation = movementDirection.normalized;
-            }
+            Vector3 targetRotation = movementDirection.normalized;
 
             Quaternion facing = new Quaternion();
             facing.SetLookRotation(targetRotation);
-            facing = Quaternion.Slerp(transform.rotation, facing, RotationSpeed);
+            facing = Quaternion.Slerp(transform.rotation, facing, FacingRotationSpeed);
 
             transform.rotation = facing;
         }
@@ -112,15 +90,16 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer
         movementDirection.z = 0.0f;
     }
 
-    public void ModulateMovementFriction(float frictionFraction)
+    public void ModulateMovementDrag(float dragFraction)
     {
-        MovementFriction *= frictionFraction;
+        m_rb.drag *= dragFraction;  
     }
 
     public void ModulateMovementSpeed(float movementModulator)
     {
         MaxMovementSpeed *= movementModulator;
         MovementSpeed *= movementModulator;
-        RotationSpeed /= movementModulator;
+        FacingRotationSpeed /= movementModulator;
+        MovementRotationSpeed /= movementModulator;
     }
 }
