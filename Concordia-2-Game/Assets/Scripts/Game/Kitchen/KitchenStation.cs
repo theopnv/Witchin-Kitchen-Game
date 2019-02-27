@@ -20,7 +20,7 @@ public class KitchenStation : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         PickableObject ingredient = collision.gameObject.GetComponent<PickableObject>();
-        if (ingredient)
+        if (ingredient && !ingredient.IsHeld())
         {
             if (m_recipeManager == null || m_recipeManager.CollectIngredient(ingredient.m_ingredientType))    //If is generic station, or is cauldron and needs the ingredient 
             {

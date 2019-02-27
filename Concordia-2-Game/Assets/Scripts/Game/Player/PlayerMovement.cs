@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, IInputConsumer
+public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 {
     [Range(0.0f, 300.0f)]
     public float MovementSpeed;
@@ -88,6 +88,13 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer
         movementDirection.x = 0.0f;
         movementDirection.y = 0.0f;
         movementDirection.z = 0.0f;
+    }
+
+    public void Punch(Vector3 knockVelocity, float stunTime)
+    {
+        //m_rb.AddForce(knockVelocity, ForceMode.Impulse);
+        m_rb.velocity = knockVelocity;
+        m_stun.Stun(stunTime);
     }
 
     public void ModulateMovementDrag(float dragFraction)

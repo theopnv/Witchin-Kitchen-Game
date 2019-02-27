@@ -55,23 +55,12 @@ namespace con2.game
         {
             var pollEventA = new messages.Event { id = (int)eventA, votes = 0 };
             var pollEventB = new messages.Event { id = (int)eventB, votes = 0 };
-            // yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss
-            // 2019-02-18T17:00:48Z
-            var deadline = new DateTime(
-                year:DateTime.Now.Year, 
-                month:DateTime.Now.Month, 
-                day:DateTime.Now.Day, 
-                hour:DateTime.Now.Hour, 
-                minute:DateTime.Now.Minute, 
-                second:DateTime.Now.Second).ToUniversalTime();
-            var deadlineAsStr = deadline
-                .Add(new TimeSpan(0, 0, 0, pollingTime))
-                .ToString("u");
-            Debug.Log(deadline);
+
             var poll = new PollChoices()
             {
                 events = new List<Event> { pollEventA, pollEventB},
-                deadline = deadlineAsStr,
+                deadline = "", // not used
+                duration = pollingTime,
             };
 
             _AudienceInteractionManager.SendPoll(poll);

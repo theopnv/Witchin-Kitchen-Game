@@ -84,6 +84,7 @@ namespace con2.messages
     {
         public List<Event> events;
         public string deadline;
+        public int duration;
     }
 
     public class Event
@@ -103,4 +104,10 @@ namespace con2.messages
         public int spellId;
         public Player targetedPlayer;
     }
+
+    public static class SocketInfo
+    {
+        public const string SUFFIX_ADDRESS = "socket.io/?EIO=4&transport=websocket";
+    }
 }
+
