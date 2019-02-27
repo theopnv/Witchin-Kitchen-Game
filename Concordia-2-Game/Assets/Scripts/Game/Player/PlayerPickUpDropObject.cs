@@ -48,7 +48,7 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
         if (IsHoldingObject())
         {
             // Keeps the object in hands at the same position and orientation
-            m_heldObject.UpdatePosition(m_characterHands.localPosition);
+            m_heldObject.UpdatePosition(m_playerRB.velocity);
         }
     }
 
@@ -75,7 +75,7 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
         m_playerMovement.MaxMovementSpeed *= m_heldObject.GetMaxSpeedFractionWhenHolding();
 
         // Have the object adjust its physics
-        m_heldObject.PickUp(transform);
+        m_heldObject.PickUp(m_characterHands);
 
         // Reposition the player hands (location)
         //mCharacterHands.localPosition = new Vector3(0.0f, playerSize.y + objectSize.y / 2.0f, 0.0f);

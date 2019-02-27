@@ -14,10 +14,13 @@ public class PickableObject : MonoBehaviour
     }
 
     // Called by the carrying player's Update() to force the object to follow it
-    public void UpdatePosition(Vector3 currentPos)
+    public void UpdatePosition(Vector3 currentVel)
     {
-        transform.localPosition = currentPos;
-        transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+        if (m_isHeld)
+        {
+            transform.position = transform.parent.position;
+            m_rb.velocity = currentVel / m_rb.mass;
+        }
     }
 
     // Get picked up
@@ -28,6 +31,8 @@ public class PickableObject : MonoBehaviour
         // Reset rotation
         transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         transform.parent = newParent;
+
+        transform.position = newParent.position;
 
         // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
         m_rb.useGravity = false;
