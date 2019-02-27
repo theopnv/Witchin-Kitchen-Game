@@ -20,7 +20,6 @@ public class PickableObject : MonoBehaviour
         {
             transform.position = transform.parent.position;
             m_rb.velocity = currentVel / m_rb.mass;
-            Debug.Log(m_rb.velocity);
         }
     }
 
