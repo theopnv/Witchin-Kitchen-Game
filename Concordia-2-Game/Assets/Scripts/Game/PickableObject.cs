@@ -37,7 +37,6 @@ public class PickableObject : MonoBehaviour
 
         // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
         m_rb.useGravity = false;
-        m_rb.isKinematic = false;
         m_rb.velocity = Vector3.zero;
         m_rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
     }
@@ -49,7 +48,6 @@ public class PickableObject : MonoBehaviour
 
         // Re-Enable the use of gravity on the object and remove all constraints
         m_rb.useGravity = true;
-        m_rb.isKinematic = true;
         m_rb.constraints = RigidbodyConstraints.None;
 
         // Get thrown forward
