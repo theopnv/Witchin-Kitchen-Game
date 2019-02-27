@@ -814,10 +814,10 @@ namespace WebSocketSharp
       }
 
       var scheme = uri.Scheme;
-      if (scheme != "ws" && scheme != "wss") {
-        message = "The scheme part must be 'ws' or 'wss': " + scheme;
-        return false;
-      }
+      //if (scheme != "ws" && scheme != "wss") {
+      //  message = "The scheme part must be 'ws' or 'wss': " + scheme;
+      //  return false;
+      //}
 
       var fragment = uri.Fragment;
       if (fragment.Length > 0) {

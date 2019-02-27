@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using con2.messages;
+using SocketIO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -33,7 +35,7 @@ namespace con2.lobby
         #endregion
 
         #region Unity API
-        
+
         void Start()
         {
             // Subscription to controllers events
@@ -51,6 +53,13 @@ namespace con2.lobby
             {
                 SetPlayerUiVisibility(controllerState[i], i);
             }
+
+            var socketComponent = _AudienceInteractionManager.GetComponent<SocketIOComponent>();
+            var hostAddress = PlayerPrefs.GetString(PlayerPrefsKeys.HOST_ADDRESS) + SocketInfo.SUFFIX_ADDRESS;
+            Debug.Log("Host address is: " + hostAddress);
+            socketComponent.url = hostAddress;
+            socketComponent.Start();
+            socketComponent.Connect();
         }
 
         void Update()
