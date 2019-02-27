@@ -13,13 +13,14 @@ namespace con2.game
     public class EventManager : MonoBehaviour
     {
 
+        public bool AnEventIsHappening;
+        public Text m_audienceEventText;
+
         #region Private Attrubutes
 
         private AudienceInteractionManager _AudienceInteractionManager;
 
         private Dictionary<Events.EventID, List<IEventSubscriber>> _EventSubscribers;
-
-        public Text m_audienceEventText;
 
         #endregion
 
@@ -37,13 +38,6 @@ namespace con2.game
 
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _AudienceInteractionManager.EventSubscribers = _EventSubscribers;
-
-            //Set up audience events
-            AbstractAudienceEvent[] eventFunctions = GetComponents<AbstractAudienceEvent>();
-            foreach (AbstractAudienceEvent e in eventFunctions)
-            {
-                e.SetUpEvent();
-            }
         }
 
         #endregion
@@ -80,10 +74,18 @@ namespace con2.game
                 deadline = deadlineAsStr,
             };
 
-            _AudienceInteractionManager?.SendPoll(poll);
+            _AudienceInteractionManager.SendPoll(poll);
+            StartCoroutine("StartEvent", pollingTime);
 
             m_audienceEventText.text = "Time for an audience event, spectators vote on your phone!";
             m_audienceEventText.enabled = true;
+        }
+
+        private IEnumerator StartEvent(float pollingTime)
+        {
+            AnEventIsHappening = true;
+            yield return new WaitForSeconds(pollingTime);
+            AnEventIsHappening = false;
         }
 
         /// <summary>

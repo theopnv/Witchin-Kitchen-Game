@@ -28,7 +28,7 @@ namespace con2
             repo.RegisterCommand("continuous_events", ContinuousEvents);
             repo.RegisterCommand("random_event", RandomEvent);
             repo.RegisterCommand("ev_fr", EventFreezingRain);
-            repo.RegisterCommand("ev_dm", EventDiscoMania);
+            repo.RegisterCommand("ev_na", EventNetworkAds);
         }
 
         public string Help(string[] args)
@@ -181,15 +181,15 @@ namespace con2
             return "Will start the Freezing Rain event in 2 seconds";
         }
 
-        private string EventDiscoMania(string[] args)
+        private string EventNetworkAds(string[] args)
         {
             if (GetCurrentSceneName() != SceneNames.Game)
             {
                 return "You must be in the " + SceneNames.Game + " scene to start this command";
             }
 
-            StartCoroutine("SimulateEvent", Events.EventID.disco_mania);
-            return "Will start the Disco Mania event in 2 seconds";
+            StartCoroutine("SimulateEvent", Events.EventID.network_ads);
+            return "Will start the Network Ads event in 2 seconds";
         }
 
         private IEnumerator SimulateEvent(Events.EventID id)

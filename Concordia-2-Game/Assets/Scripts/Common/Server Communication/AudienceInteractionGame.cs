@@ -22,9 +22,13 @@ namespace con2
         [HideInInspector]
         public Dictionary<Events.EventID, List<IEventSubscriber>> EventSubscribers;
 
+        [HideInInspector]
+        public Dictionary<Spells.SpellID, List<ISpellSubscriber>> SpellSubscribers;
+
         void GameStart()
         {
             _Socket.On(Command.RECEIVE_VOTES, OnReceiveEventVotes);
+            _Socket.On(Command.SPELL_CAST_REQUEST, OnCastSpellRequest);
         }
 
         #region Emit
@@ -34,6 +38,13 @@ namespace con2
             Debug.Log("SendPoll");
             var serialized = JsonConvert.SerializeObject(pollChoices);
             _Socket.Emit(Command.LAUNCH_POLL, new JSONObject(serialized));
+        }
+
+        public void SendSpellCastRequest(Viewer viewer)
+        {
+            Debug.Log("SendSpellCastRequest");
+            var serialized = JsonConvert.SerializeObject(viewer);
+            _Socket.Emit(Command.LAUNCH_SPELL_CAST, new JSONObject(serialized));
         }
 
         #endregion
@@ -82,11 +93,40 @@ namespace con2
             Debug.Log("Results of the poll: " +
                       Events.EventList[(Events.EventID)chosenEvent.id] +
                       " was voted");
-            EventSubscribers[(Events.EventID)chosenEvent.id]
-                .ForEach((subscriber) =>
+            var key = (Events.EventID) chosenEvent.id;
+
+            if (EventSubscribers.ContainsKey(key))
+            {
+                EventSubscribers[key]
+                    .ForEach((subscriber) =>
+                    {
+                        subscriber.ActivateEventMode();
+                    });
+            }
+            else
+            {
+                Debug.LogError("Event key not found");
+            }
+        }
+
+        private void OnCastSpellRequest(SocketIOEvent e)
+        {
+            var content = JsonConvert.DeserializeObject<Spell>(e.data.ToString());
+            Debug.Log("Casted spell: " + Spells.EventList[(Spells.SpellID)content.spellId]);
+
+            var key = (Spells.SpellID) content.spellId;
+            if (SpellSubscribers.ContainsKey(key))
+            {
+                SpellSubscribers[key].ForEach((subscriber) =>
                 {
-                    subscriber.ActivateEventMode();
+                    subscriber.ActivateSpellMode(content.targetedPlayer);
                 });
+            }
+            else
+            {
+                Debug.LogError("Spell Key not found");
+            }
+            
         }
 
         #endregion
