@@ -502,6 +502,7 @@ MonoBehaviour:
   target: {fileID: 302613750}
   prefab: {fileID: 100000, guid: 8efcb45021d4bad439278bec08d6890a, type: 3}
   meshMaterial: {fileID: 2100000, guid: 950c65e3beb946942aca19b2d3dfbc92, type: 2}
+  colorMap: {fileID: 2800000, guid: fc539db6896bea344a7c53d6cda9851b, type: 3}
   spacing: 4
   threshold: 0
   WindStrength: 2
