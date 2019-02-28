@@ -29,6 +29,7 @@ namespace con2
             repo.RegisterCommand("random_event", RandomEvent);
             repo.RegisterCommand("ev_fr", EventFreezingRain);
             repo.RegisterCommand("ev_na", EventNetworkAds);
+            repo.RegisterCommand("ev_mf", EventMeteoritesFalling);
         }
 
         public string Help(string[] args)
@@ -62,7 +63,8 @@ namespace con2
                         "- 'continuous_events': Randomly simulates events every 60 seconds",
                         "- 'random_event': Simulates a poll and starts an event in 5 seconds",
                         "- 'ev_fr': Simulates the Freezing Rain (fr) event",
-                        "- 'ev_dm': Simulates the Disco Mania (dm) event");
+                        "- 'ev_na': Simulates the Network Ads (na) event",
+                        "- 'ev_mf': Simulates the Meteorites Falling (mf) event");
 
                     help = string.Join(
                         Environment.NewLine,
@@ -170,6 +172,12 @@ namespace con2
             BroadcastPoll((Events.EventID)UnityEngine.Random.Range(0, (int)Events.EventID.max_id));
         }
 
+        private IEnumerator SimulateEvent(Events.EventID id)
+        {
+            yield return new WaitForSeconds(2);
+            BroadcastPoll(id);
+        }
+
         private string EventFreezingRain(string[] args)
         {
             if (GetCurrentSceneName() != SceneNames.Game)
@@ -192,10 +200,15 @@ namespace con2
             return "Will start the Network Ads event in 2 seconds";
         }
 
-        private IEnumerator SimulateEvent(Events.EventID id)
+        private string EventMeteoritesFalling(string[] args)
         {
-            yield return new WaitForSeconds(2);
-            BroadcastPoll(id);
+            if (GetCurrentSceneName() != SceneNames.Game)
+            {
+                return "You must be in the " + SceneNames.Game + " scene to start this command";
+            }
+
+            StartCoroutine("SimulateEvent", Events.EventID.meteorites);
+            return "Will start the Meteorites Falling event in 2 seconds";
         }
 
         #endregion

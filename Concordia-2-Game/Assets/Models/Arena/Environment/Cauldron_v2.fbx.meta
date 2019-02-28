@@ -1,14 +1,22 @@
 fileFormatVersion: 2
-guid: 2c4db435999f27846b4face54a4061fe
+guid: 645abc2dbf999434d8eec8c401dbfcb8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: duplicate
+    100000: Cauldron
+    100002: //RootNode
+    100004: Liquid
+    400000: Cauldron
+    400002: //RootNode
+    400004: Liquid
+    2100000: Cauldron_MAT
+    2100002: Potion_MAT1
+    2300000: Cauldron
+    2300002: Liquid
+    3300000: Cauldron
+    3300002: Liquid
+    4300000: Cauldron
+    4300002: Liquid
   externalObjects: {}
   materials:
     importMaterials: 1

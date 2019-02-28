@@ -13,21 +13,24 @@ namespace con2.game
         protected Text m_eventText;
         protected EventID ID;
 
+        public abstract void EventStart();
         public abstract IEnumerator EventImplementation();
         public abstract EventID GetEventID();
 
         public void SetUpEvent()
         {
-            GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            EventManager eventManager = managers.GetComponentInChildren<EventManager>();
+            var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+            var eventManager = managers.GetComponentInChildren<EventManager>();
+            eventManager.SetUp();
             eventManager.AddSubscriber(GetEventID(), this);
 
-            MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
+            var mgm = managers.GetComponentInChildren<MainGameManager>();
             m_eventText = eventManager.m_audienceEventText;
         }
 
         public void ActivateEventMode()
         {
+            EventStart();
             StartCoroutine(RunEvent(EventImplementation));
         }
 

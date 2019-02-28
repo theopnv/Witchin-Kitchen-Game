@@ -19,6 +19,9 @@ public class FreezingRainEvent : AbstractAudienceEvent
         return Events.EventID.freezing_rain;
     }
 
+    public override void EventStart()
+    {}
+
     public override IEnumerator EventImplementation()
     {
         GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);

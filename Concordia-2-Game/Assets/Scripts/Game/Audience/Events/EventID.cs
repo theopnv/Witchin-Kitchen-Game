@@ -11,6 +11,7 @@ namespace con2.game
         {
             freezing_rain = 0,
             network_ads,
+            meteorites,
 
             max_id,
         }
@@ -19,6 +20,7 @@ namespace con2.game
         {
             { EventID.freezing_rain, "Freezing Rain"},
             { EventID.network_ads, "Network Ads"},
+            { EventID.meteorites, "Meteorites"},
         };
 
     }

@@ -1,14 +1,22 @@
 fileFormatVersion: 2
-guid: 2c4db435999f27846b4face54a4061fe
+guid: 5148d8c632ebc8c4cae8a24c5c737929
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: duplicate
+    100000: Flask_GEO
+    100002: //RootNode
+    100004: Liquid_GEO
+    400000: Flask_GEO
+    400002: //RootNode
+    400004: Liquid_GEO
+    2100000: Flask_MAT
+    2100002: Liquid_MAT
+    2300000: Flask_GEO
+    2300002: Liquid_GEO
+    3300000: Flask_GEO
+    3300002: Liquid_GEO
+    4300000: Flask_GEO
+    4300002: Liquid_GEO
   externalObjects: {}
   materials:
     importMaterials: 1

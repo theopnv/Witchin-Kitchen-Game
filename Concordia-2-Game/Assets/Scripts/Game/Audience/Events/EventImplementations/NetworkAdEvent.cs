@@ -11,6 +11,7 @@ public class NetworkAdEvent : AbstractAudienceEvent
 
     [SerializeField] private GameObject _NetworkAdsCanvasPrefab;
     private GameObject _NetworkAdsCanvasInstance;
+
     void Start()
     {
         SetUpEvent();
@@ -20,6 +21,9 @@ public class NetworkAdEvent : AbstractAudienceEvent
     {
         return Events.EventID.network_ads;
     }
+
+    public override void EventStart()
+    {}
 
     public override IEnumerator EventImplementation()
     {
