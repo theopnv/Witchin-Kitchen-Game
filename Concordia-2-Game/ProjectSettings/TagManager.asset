@@ -9,6 +9,7 @@ TagManager:
   - Kitchen
   - Menu
   - ArenaBase
+  - GrassSurface
   layers:
   - Default
   - TransparentFX

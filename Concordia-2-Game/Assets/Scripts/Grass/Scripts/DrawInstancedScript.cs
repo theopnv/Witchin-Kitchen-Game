@@ -7,13 +7,12 @@ public class DrawInstancedScript : MonoBehaviour
     // Batch stuff
     const float BATCH_MAX_FLOAT = 1023f;
     const int BATCH_MAX = 1023;
+    public const string GRASS_SURFACE_TAG = "GrassSurface";
 
+    public GameObject target;
     public GameObject prefab;
     public Material meshMaterial;
     
-    public int width;
-    public int depth;
-
     public float spacing;
     public float threshold;
 
@@ -73,8 +72,7 @@ public class DrawInstancedScript : MonoBehaviour
     {
         Vector3 pos = new Vector3();
         Vector3 scale = new Vector3(1, 1, 1);
-
-        int count = width * depth;
+        
         propertyBlock = new MaterialPropertyBlock();
         
         Color[] colors = {
@@ -95,10 +93,39 @@ public class DrawInstancedScript : MonoBehaviour
                             HexToColor(0x0091EA)
                         };
 
-        for (int i = 0; i < width; ++i)
+        var bounds = target.GetComponent<MeshRenderer>().bounds;
+        var w = Mathf.RoundToInt(bounds.size.x - mMeshRenderer.bounds.size.x * 2.0f);
+        var d = Mathf.RoundToInt(bounds.size.z - mMeshRenderer.bounds.size.z * 2.0f);
+        var startX = bounds.min.x + mMeshRenderer.bounds.size.x - target.transform.position.x;
+        var startZ = bounds.min.z + mMeshRenderer.bounds.size.z - target.transform.position.z;
+
+        for (int i = 0; i < w / spacing; ++i)
         {
-            for (int j = 0; j < depth; ++j)
+            for (int j = 0; j < d / spacing; ++j)
             {
+                int idx = i * d + j;
+                pos.x = startX + i * spacing;
+                pos.y = 0.0f;
+                pos.z = startZ + j * spacing;
+
+                Vector3 origin = pos + new Vector3(0.0f, 100.0f, 0.0f);
+                RaycastHit hitInfo;
+                if (Physics.Raycast(origin, Vector3.down, out hitInfo))
+                {
+                    if (hitInfo.transform.tag == GRASS_SURFACE_TAG)
+                    {
+                        pos.y = hitInfo.point.y;
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+
                 BatchBucket currentBucket = Buckets[Buckets.Count - 1];
                 if (currentBucket.IsFull())
                 {
@@ -106,15 +133,9 @@ public class DrawInstancedScript : MonoBehaviour
                     Buckets.Add(currentBucket);
                 }
 
-                int idx = i * depth + j;
-
                 currentBucket.MatrixArray[currentBucket.NumInstances] = Matrix4x4.identity;
 
-                pos.x = i * spacing;
-                pos.y = 0.0f;
-                pos.z = j * spacing;
-
-                float curNoise = Mathf.PerlinNoise(pos.x / (float)width, pos.z / (float)depth);
+                float curNoise = Mathf.PerlinNoise(pos.x / (float)w, pos.z / (float)d);
 
                 if (curNoise >= threshold)
                 {
@@ -152,9 +173,6 @@ public class DrawInstancedScript : MonoBehaviour
         CurTime += Time.deltaTime;
         RollingWindOffset.x -= WindDirectionModulated.x * (WindScrollSpeed * Time.deltaTime);
         RollingWindOffset.y -= WindDirectionModulated.z * (WindScrollSpeed * Time.deltaTime);
-
-        int total = width * depth;
-        int batches = (int)Mathf.Ceil(total / BATCH_MAX_FLOAT);
 
         for (int i = 0; i < Buckets.Count; ++i)
         {
