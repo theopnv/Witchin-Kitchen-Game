@@ -16,7 +16,7 @@ public class PlayerInputController : MonoBehaviour, IInputConsumer
         m_InputConsumers.Add(GetComponent<PlayerPickUpDropObject>());
         m_InputConsumers.Add(GetComponent<PlayerMovement>());
         m_InputConsumers.Add(GetComponentInChildren<PlayerPunch>());
-        //m_InputConsumers.Add(GetComponent<LongRangeAttackControls>());
+        m_InputConsumers.Add(GetComponentInChildren<PlayerFireball>());
     }
 
     public bool ConsumeInput(GamepadAction input)
