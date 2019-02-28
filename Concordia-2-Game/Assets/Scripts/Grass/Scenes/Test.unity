@@ -162,7 +162,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1b638444e8318b74599ce6153082aa59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -197,13 +197,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22911204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.17, y: 3.16, z: 0}
+  m_LocalRotation: {x: -0.061243836, y: -0, z: -0, w: 0.9981229}
+  m_LocalPosition: {x: -20.17, y: 3.16, z: 0.0000000083352365}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -7.0220003, y: 0, z: 0}
 --- !u!1 &302613750
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,8 +503,7 @@ MonoBehaviour:
   prefab: {fileID: 100000, guid: 8efcb45021d4bad439278bec08d6890a, type: 3}
   meshMaterial: {fileID: 2100000, guid: 950c65e3beb946942aca19b2d3dfbc92, type: 2}
   colorMap: {fileID: 2800000, guid: fc539db6896bea344a7c53d6cda9851b, type: 3}
-  spacing: 4
-  threshold: 0
+  instanceMap: {fileID: 2800000, guid: 481a003cc6b31bd4fa3a3d27ecde8ed9, type: 3}
   WindStrength: 2
   WindScrollSpeed: 0.1
   WindDirection: {x: 1, y: 0, z: 0}
