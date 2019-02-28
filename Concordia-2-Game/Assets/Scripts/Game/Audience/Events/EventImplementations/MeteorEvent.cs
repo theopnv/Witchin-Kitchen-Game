@@ -20,8 +20,7 @@ namespace con2.game
         [SerializeField]
         private GameObject _MeteorPrefab;
 
-        private List<float> _SpawningFrequencies;
-        private int _SpawningFrequenciesIndex = 0;
+        private Queue<float> _SpawningFrequencies;
 
         void Start()
         {
@@ -30,33 +29,32 @@ namespace con2.game
 
         public override void EventStart()
         {
-            _SpawningFrequencies = new List<float>(NumberOfMeteors);
-            var defaultFrequency = duration / NumberOfMeteors;
-            var adjustedFrequency = defaultFrequency / 2;
+            _SpawningFrequencies = new Queue<float>();
+            var defaultFrequency = duration / NumberOfMeteors; // e.g 15 meteors in 10 seconds = 1.5 meteors in 1 sec
+            var adjustedFrequency = defaultFrequency / 2; // Randomize the frequencies a bit (make spawning more natural)
             for (var i = 0; i < NumberOfMeteors; i++)
             {
-                _SpawningFrequencies[i] = defaultFrequency + Random.Range(-adjustedFrequency, adjustedFrequency);
+                _SpawningFrequencies.Enqueue(defaultFrequency + Random.Range(-adjustedFrequency, adjustedFrequency));
             }
         }
 
         public override IEnumerator EventImplementation()
         {
-            yield return new WaitForSeconds(_SpawningFrequencies[_SpawningFrequenciesIndex++]);
+            yield return new WaitForSeconds(_SpawningFrequencies.Dequeue());
 
             var groundPosition = new Vector3(
                 Random.Range(transform.position.x - Radius, transform.position.x + Radius),
                 0,
                 Random.Range(transform.position.z - Radius, transform.position.z + Radius));
             var vector3Angle = new Vector3(0, Mathf.Sin(Mathf.Deg2Rad * Angle), Mathf.Cos(Mathf.Deg2Rad * Angle));
-            var rayToTest = new Ray(groundPosition, vector3Angle);
-            var targetPoint = rayToTest.GetPoint(YSpawn);
+            var ray = new Ray(groundPosition, vector3Angle);
+            var targetPoint = ray.GetPoint(YSpawn);
+            //Debug.DrawLine(groundPosition, targetPoint, Color.green, 10);
 
             var meteor = Instantiate(_MeteorPrefab, targetPoint, Quaternion.identity);
-            var go = new GameObject();
-            go.transform.position = groundPosition;
-            meteor.GetComponent<Meteor>().GroundTarget = gameObject.transform;
+            meteor.GetComponent<Meteor>().SetDirection(groundPosition);
 
-            if (_SpawningFrequenciesIndex < _SpawningFrequencies.Count)
+            if (_SpawningFrequencies.Count > 0)
             {
                 yield return EventImplementation();
             }

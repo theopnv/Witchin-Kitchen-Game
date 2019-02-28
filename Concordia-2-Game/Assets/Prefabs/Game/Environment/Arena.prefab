@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 50838684015822167}
   - component: {fileID: 50838684016625013}
   - component: {fileID: 50838684017723317}
+  - component: {fileID: 214746291}
   m_Layer: 0
   m_Name: Icosphere
-  m_TagString: Untagged
+  m_TagString: ArenaBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 50838684015729015}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 2674.786, y: 2674.786, z: 26.747856}
+  m_LocalScale: {x: 1300, y: 1300, z: 16}
   m_Children: []
   m_Father: {fileID: 50838684015822171}
   m_RootOrder: 0
@@ -78,6 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &214746291
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50838684015729015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: 14b67a2396369de41b97a24a6e76e256, type: 3}
 --- !u!1 &50838684015729019
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,8 +152,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4984875720584209266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.119999886, z: 0}
-  m_LocalScale: {x: 7.3677998, y: 1, z: 5.0597}
+  m_LocalPosition: {x: 0.9, y: 0.119999886, z: -1.5}
+  m_LocalScale: {x: 2.6005752, y: 0.5309067, z: 2.6862285}
   m_Children: []
   m_Father: {fileID: 50838684015822171}
   m_RootOrder: 1
