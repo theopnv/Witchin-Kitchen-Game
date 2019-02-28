@@ -23,7 +23,8 @@ public class DrawInstancedScript : MonoBehaviour
 
     private float CurTime = 0.0f;
     public float WindSpeed = 1.0f;
-    public Vector2 WindDirection = new Vector2();
+    public Vector3 WindDirection = new Vector3();
+    public Vector3 WindDirectionModulated = new Vector3();
     private Texture2D RollingWindTex;
     private Vector2 RollingWindOffset = new Vector2();
     private float MeshHeight = 0.0f;
@@ -40,8 +41,6 @@ public class DrawInstancedScript : MonoBehaviour
 
     private void InitData()
     {
-        MeshHeight = mMeshFilter.sharedMesh.bounds.size.y;
-
         Vector3 pos = new Vector3();
         Vector3 scale = new Vector3(1, 1, 1);
 
@@ -106,8 +105,17 @@ public class DrawInstancedScript : MonoBehaviour
 
     void Update()
     {
+        MeshHeight = mMeshFilter.sharedMesh.bounds.size.y;
+
+        WindDirection.Normalize();
+        WindDirectionModulated = WindDirection;
+        WindDirectionModulated.z += 0.5f * Mathf.Sin(Time.time * 0.1f);
+        print(WindDirectionModulated);
+        WindDirectionModulated.Normalize();
+
         CurTime += Time.deltaTime;
-        RollingWindOffset -= WindDirection * WindSpeed * Time.deltaTime;
+        RollingWindOffset.x -= WindDirectionModulated.x * (WindSpeed * Time.deltaTime);
+        RollingWindOffset.y -= WindDirectionModulated.z * (WindSpeed * Time.deltaTime);
 
         int total = width * depth;
         int batches = (int)Mathf.Ceil(total / BATCH_MAX_FLOAT);
@@ -126,7 +134,7 @@ public class DrawInstancedScript : MonoBehaviour
             propertyBlock.SetVectorArray("_InstancePosition", batchedInstancePositionArray);
 
             propertyBlock.SetFloat("_CurTime", CurTime);
-            propertyBlock.SetVector("_WindDirection", WindDirection);
+            propertyBlock.SetVector("_WindDirection", WindDirectionModulated);
             propertyBlock.SetTexture("_RollingWindTex", RollingWindTex);
             propertyBlock.SetVector("_RollingWindOffset", RollingWindOffset);
             propertyBlock.SetFloat("_MeshHeight", MeshHeight);
