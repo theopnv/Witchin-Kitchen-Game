@@ -59,6 +59,7 @@
             UNITY_TRANSFER_INSTANCE_ID(v, o);
 
             float4 outVertex = v.vertex;
+            float vertexLength = length(v.vertex);
 
             float4 instancePosition = UNITY_ACCESS_INSTANCED_PROP(Props, _InstancePosition);
             float2 rollingWindSampleCoords = instancePosition.xz * _RollingWindPositionScale + _RollingWindOffset;
@@ -71,6 +72,7 @@
 
             float4 localWindDirection = mul(unity_WorldToObject, _WindDirection);
             outVertex.xyz += localWindDirection.xyz * windStrength * _WindStrength;
+            outVertex = normalize(outVertex) * vertexLength;
 
             o.vertex = outVertex;
             v.vertex = outVertex;
