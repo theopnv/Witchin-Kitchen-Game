@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using con2.game;
 using UnityEngine;
 
 public class Meteor : MonoBehaviour
@@ -66,7 +67,19 @@ public class Meteor : MonoBehaviour
             _HasHitTheGround = true;
             _Rb.velocity = Vector3.zero;
             _Rb.freezeRotation = true;
-            
+        }
+
+        if (other.gameObject.tag == "Player" && !_HasHitTheGround)
+        {
+            var fightStun = other.gameObject.GetComponent<FightStun>();
+            if (fightStun)
+            {
+                fightStun.Stun(3);
+            }
+            else
+            {
+                Debug.LogError("Could not find Stun component on player");
+            }
         }
     }
 }

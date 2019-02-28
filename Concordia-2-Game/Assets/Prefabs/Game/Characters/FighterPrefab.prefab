@@ -77,68 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &1051163180814754590
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 8004170737721676276}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8004170737721805634}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8004170737721805634
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 400054, guid: 8bde87d463799b44a92170ac0864116c,
-    type: 3}
-  m_PrefabInstance: {fileID: 8004170737721676276}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051163180814754590}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1140956063986352686}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3611833270045507085
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 8004170737721676276}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1140956063986352686}
-  m_Layer: 0
-  m_Name: WizardChar_RIG_LOWPOLY_INGAME (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1140956063986352686
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 8004170737721676276}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3611833270045507085}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8004170737721805634}
-  m_Father: {fileID: 9017638658279021679}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3727488636060508108
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +268,7 @@ Transform:
   m_Children:
   - {fileID: 8215173312692245032}
   - {fileID: 1831550912520185448}
-  - {fileID: 1140956063986352686}
+  - {fileID: 8004170737721805634}
   - {fileID: 3589913528455673603}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -470,21 +408,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
+      value: 0.01651001
+      inSlope: 0.054995023
+      outSlope: 0.054995023
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.47185898
+      value: 0.042459905
+      inSlope: 0.36214548
+      outSlope: 0.36214548
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.29056704
+      outWeight: 0.57006097
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
+      value: 1.01651
+      inSlope: 1.8442993
+      outSlope: 1.8442993
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -508,6 +455,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
+    - target: {fileID: 100054, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
+      propertyPath: m_Name
+      value: WizardChar_RIG_LOWPOLY_INGAME
+      objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.10711446
@@ -564,10 +515,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 100054, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
-      propertyPath: m_Name
-      value: WizardChar_RIG_LOWPOLY_INGAME
-      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -578,3 +525,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 35b590ab446b23b4d97fe3ea7d460f4b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bde87d463799b44a92170ac0864116c, type: 3}
+--- !u!4 &8004170737721805634 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400054, guid: 8bde87d463799b44a92170ac0864116c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8004170737721676276}
+  m_PrefabAsset: {fileID: 0}
