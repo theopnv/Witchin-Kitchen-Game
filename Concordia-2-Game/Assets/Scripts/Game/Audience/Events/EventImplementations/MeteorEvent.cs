@@ -11,11 +11,13 @@ namespace con2.game
 
         public int NumberOfMeteors;
 
-        public float duration;
+        public float Duration;
 
         public float Radius; // Change this if we want a square/rectangular map.
 
         public int YSpawn;
+
+        public float MeteoriteSpeed;
 
         [SerializeField]
         private GameObject _MeteorPrefab;
@@ -30,7 +32,7 @@ namespace con2.game
         public override void EventStart()
         {
             _SpawningFrequencies = new Queue<float>();
-            var defaultFrequency = duration / NumberOfMeteors; // e.g 15 meteors in 10 seconds = 1.5 meteors in 1 sec
+            var defaultFrequency = Duration / NumberOfMeteors; // e.g 15 meteors in 10 seconds = 1.5 meteors in 1 sec
             var adjustedFrequency = defaultFrequency / 2; // Randomize the frequencies a bit (make spawning more natural)
             for (var i = 0; i < NumberOfMeteors; i++)
             {
@@ -46,13 +48,19 @@ namespace con2.game
                 Random.Range(transform.position.x - Radius, transform.position.x + Radius),
                 0,
                 Random.Range(transform.position.z - Radius, transform.position.z + Radius));
-            var vector3Angle = new Vector3(0, Mathf.Sin(Mathf.Deg2Rad * Angle), Mathf.Cos(Mathf.Deg2Rad * Angle));
+
+            var vector3Angle = new Vector3(
+                Mathf.Cos(Mathf.Deg2Rad * Angle), 
+                Mathf.Sin(Mathf.Deg2Rad * Angle), 
+                Mathf.Cos(Mathf.Deg2Rad * Angle));
             var ray = new Ray(groundPosition, vector3Angle);
             var targetPoint = ray.GetPoint(YSpawn);
-            //Debug.DrawLine(groundPosition, targetPoint, Color.green, 10);
+            Debug.DrawLine(groundPosition, targetPoint, Color.green, 10);
 
             var meteor = Instantiate(_MeteorPrefab, targetPoint, Quaternion.identity);
-            meteor.GetComponent<Meteor>().SetDirection(groundPosition);
+            var manager = meteor.GetComponent<Meteor>();
+            manager.Speed = MeteoriteSpeed;
+            manager.SetDirection(groundPosition);
 
             if (_SpawningFrequencies.Count > 0)
             {

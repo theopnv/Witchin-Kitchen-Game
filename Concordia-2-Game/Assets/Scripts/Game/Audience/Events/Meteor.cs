@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
-    #region Private Attributes
+    [HideInInspector]
+    public float Speed = 500f;
 
-    private float Speed = 350f;
+    #region Private Attributes
 
     private bool _HasHitTheGround;
     

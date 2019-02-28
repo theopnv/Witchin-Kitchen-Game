@@ -231,7 +231,7 @@ PrefabInstance:
     - target: {fileID: 6041867778123601711, guid: 62e7d00b9f4aa8944a35f663eb8cbf27,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6041867778123601711, guid: 62e7d00b9f4aa8944a35f663eb8cbf27,
         type: 3}
@@ -541,7 +541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 582771356}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &215454030
 MonoBehaviour:
@@ -738,7 +738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 582771356}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &496988556
 MonoBehaviour:
@@ -814,7 +814,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 582771356}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &581277800
 MonoBehaviour:
@@ -868,9 +868,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 773999202}
-  - {fileID: 866068882}
   - {fileID: 13281191}
+  - {fileID: 866068882}
   - {fileID: 581277799}
   - {fileID: 215454029}
   - {fileID: 496988555}
@@ -1111,12 +1110,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773999201}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 582771356}
-  m_RootOrder: 0
+  m_Father: {fileID: 1032917600}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &773999203
 MonoBehaviour:
@@ -1174,11 +1173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2a547f32fb54749b4f4d39c1be9274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Angle: 70
-  NumberOfMeteors: 15
-  duration: 8
+  Angle: 60
+  NumberOfMeteors: 20
+  Duration: 8
   Radius: 8
   YSpawn: 20
+  MeteoriteSpeed: 500
   _MeteorPrefab: {fileID: 8841021199448463490, guid: da7587c3c169dcd4b93eed17a77ef890,
     type: 3}
 --- !u!1 &866068881
@@ -1210,7 +1210,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 582771356}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &866068883
 MonoBehaviour:
