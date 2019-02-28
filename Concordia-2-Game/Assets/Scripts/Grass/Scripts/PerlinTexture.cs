@@ -25,6 +25,9 @@ public class PerlinTexture : MonoBehaviour
     {
         // Set up the texture and a Color array to hold pixels during processing.
         noiseTex = new Texture2D(pixSize, pixSize);
+        noiseTex.wrapModeU = TextureWrapMode.Repeat;
+        noiseTex.wrapModeV = TextureWrapMode.Repeat;
+
         pix = new Color[noiseTex.width * noiseTex.height];
 
         CalcNoise();

@@ -22,9 +22,13 @@ public class DrawInstancedScript : MonoBehaviour
     private MaterialPropertyBlock propertyBlock;
 
     private float CurTime = 0.0f;
-    public float WindSpeed = 1.0f;
+    public float WindStrength = 2.0f;
+    public float WindScrollSpeed = 0.1f;
     public Vector3 WindDirection = new Vector3();
-    public Vector3 WindDirectionModulated = new Vector3();
+    public float WindDirectionModulationTimeScale = 0.1f;
+    public float WindDirectionModulationStrength = 0.5f;
+    public float RollingWindPositionScale = 0.001f;
+    private Vector3 WindDirectionModulated = new Vector3();
     private Texture2D RollingWindTex;
     private Vector2 RollingWindOffset = new Vector2();
     private float MeshHeight = 0.0f;
@@ -108,14 +112,14 @@ public class DrawInstancedScript : MonoBehaviour
         MeshHeight = mMeshFilter.sharedMesh.bounds.size.y;
 
         WindDirection.Normalize();
-        WindDirectionModulated = WindDirection;
-        WindDirectionModulated.z += 0.5f * Mathf.Sin(Time.time * 0.1f);
-        print(WindDirectionModulated);
+        var perpendicularWindDirection = new Vector3(WindDirection.z, 0.0f, -WindDirection.x);
+        var modulation = WindDirectionModulationStrength * Mathf.Sin(Time.time * WindDirectionModulationTimeScale);
+        WindDirectionModulated = WindDirection + perpendicularWindDirection * modulation;
         WindDirectionModulated.Normalize();
 
         CurTime += Time.deltaTime;
-        RollingWindOffset.x -= WindDirectionModulated.x * (WindSpeed * Time.deltaTime);
-        RollingWindOffset.y -= WindDirectionModulated.z * (WindSpeed * Time.deltaTime);
+        RollingWindOffset.x -= WindDirectionModulated.x * (WindScrollSpeed * Time.deltaTime);
+        RollingWindOffset.y -= WindDirectionModulated.z * (WindScrollSpeed * Time.deltaTime);
 
         int total = width * depth;
         int batches = (int)Mathf.Ceil(total / BATCH_MAX_FLOAT);
@@ -134,7 +138,9 @@ public class DrawInstancedScript : MonoBehaviour
             propertyBlock.SetVectorArray("_InstancePosition", batchedInstancePositionArray);
 
             propertyBlock.SetFloat("_CurTime", CurTime);
+            propertyBlock.SetFloat("_WindStrength", WindStrength);
             propertyBlock.SetVector("_WindDirection", WindDirectionModulated);
+            propertyBlock.SetFloat("_RollingWindPositionScale", RollingWindPositionScale);
             propertyBlock.SetTexture("_RollingWindTex", RollingWindTex);
             propertyBlock.SetVector("_RollingWindOffset", RollingWindOffset);
             propertyBlock.SetFloat("_MeshHeight", MeshHeight);

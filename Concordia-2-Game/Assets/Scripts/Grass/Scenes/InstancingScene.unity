@@ -378,8 +378,12 @@ MonoBehaviour:
   depth: 200
   spacing: 4
   threshold: 0
-  WindSpeed: 0.2
-  WindDirection: {x: 1, y: 0}
+  WindStrength: 2
+  WindScrollSpeed: 0.1
+  WindDirection: {x: 1, y: 0, z: 0}
+  WindDirectionModulationTimeScale: 0.1
+  WindDirectionModulationStrength: 0.5
+  RollingWindPositionScale: 0.001
 --- !u!4 &1668225368
 Transform:
   m_ObjectHideFlags: 0

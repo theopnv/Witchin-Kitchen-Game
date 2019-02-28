@@ -7,7 +7,9 @@
         _Metallic("Metallic", Range(0,1)) = 0.0
 
         _CurTime("Current simulation time", Float) = 0.0
+        _WindStrength("Wind strength", Float) = 2.0
         _WindDirection("Wind direction", Vector) = (1.0, 0.0, 0.0, 0.0)
+        _RollingWindPositionScale("Rolling wind position scale", Float) = 0.001
         _RollingWindTex("Rolling wind texture", 2D) = "black" {}
         _RollingWindOffset("Rolling wind texture", Vector) = (0.0, 0.0, 0.0, 0.0)
         _MeshHeight("Height of the mesh", Float) = 1.0
@@ -33,7 +35,9 @@
         half _Metallic;
 
         float _CurTime;
+        float _WindStrength;
         float4 _WindDirection;
+        float _RollingWindPositionScale;
         sampler2D _RollingWindTex;
         float4 _RollingWindOffset;
         float _MeshHeight;
@@ -57,7 +61,7 @@
             float4 outVertex = v.vertex;
 
             float4 instancePosition = UNITY_ACCESS_INSTANCED_PROP(Props, _InstancePosition);
-            float2 rollingWindSampleCoords = instancePosition.xz * 0.001f + _RollingWindOffset;
+            float2 rollingWindSampleCoords = instancePosition.xz * _RollingWindPositionScale + _RollingWindOffset;
             fixed4 rollingWind = tex2Dlod(_RollingWindTex, float4(rollingWindSampleCoords.xy, 0, 0));
             float windStrength = min(1.0f, rollingWind.x);
 
@@ -66,7 +70,7 @@
             windStrength *= bendFactor;
 
             float4 localWindDirection = mul(unity_WorldToObject, _WindDirection);
-            outVertex.xyz += localWindDirection.xyz * windStrength * 2.0f;
+            outVertex.xyz += localWindDirection.xyz * windStrength * _WindStrength;
 
             o.vertex = outVertex;
             v.vertex = outVertex;
