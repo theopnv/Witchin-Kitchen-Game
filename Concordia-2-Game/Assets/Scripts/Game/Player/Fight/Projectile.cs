@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : HitAllInRange
+public class Projectile : AHitAllInRange
 {
     [SerializeField] private float m_speed = 6.0f;
     [SerializeField] private float m_flyTime = 2.0f;

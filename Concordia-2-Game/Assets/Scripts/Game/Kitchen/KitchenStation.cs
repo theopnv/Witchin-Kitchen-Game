@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KitchenStation : MonoBehaviour
 {
-    private CookingMinigame m_miniGame;
+    private ACookingMinigame m_miniGame;
     private Ingredient m_storedIngredient;
     [SerializeField]
     private bool m_hasOwner;
@@ -12,7 +12,7 @@ public class KitchenStation : MonoBehaviour
 
     private void Awake()
     {
-        m_miniGame = GetComponent<CookingMinigame>();
+        m_miniGame = GetComponent<ACookingMinigame>();
         m_recipeManager = GetComponent<RecipeManager>();
         m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class HitAllInRange : MonoBehaviour
+public abstract class AHitAllInRange : MonoBehaviour
 {
     [SerializeField] protected float m_strength, m_stunTime;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace con2.game
 {
-    public class PlayerPunch : HitAllInRange, IInputConsumer
+    public class PlayerPunch : AHitAllInRange, IInputConsumer
     {
         public float m_punchUpwardsForce = 4.0f;
 
