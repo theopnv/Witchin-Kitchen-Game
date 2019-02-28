@@ -26,7 +26,7 @@
 
         #pragma target 3.0
         #pragma vertex vert
-        #pragma surface surf Standard fullforwardshadows
+        #pragma surface surf Standard addshadow fullforwardshadows
         #pragma multi_compile_instancing
 
         #include "UnityCG.cginc"

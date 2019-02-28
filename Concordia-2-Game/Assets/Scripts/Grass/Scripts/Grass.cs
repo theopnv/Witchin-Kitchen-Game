@@ -11,6 +11,7 @@ public class Grass : MonoBehaviour
 
     public GameObject target;
     public GameObject prefab;
+    public float prefabScale = 1.0f;
     public Material meshMaterial;
     public Texture2D colorMap;
     public Texture2D instanceMap;
@@ -70,7 +71,7 @@ public class Grass : MonoBehaviour
     private void InitData()
     {
         Vector3 pos = new Vector3();
-        Vector3 scale = new Vector3(1, 1, 1);
+        Vector3 scale = new Vector3(prefabScale, prefabScale, prefabScale);
         
         propertyBlock = new MaterialPropertyBlock();
 
@@ -162,7 +163,16 @@ public class Grass : MonoBehaviour
             propertyBlock.SetVector("_RollingWindOffset", RollingWindOffset);
             propertyBlock.SetFloat("_MeshHeight", MeshHeight);
 
-            Graphics.DrawMeshInstanced(mMeshFilter.sharedMesh, 0, meshMaterial, bucket.MatrixArray, bucket.NumInstances, propertyBlock);
+            Graphics.DrawMeshInstanced(
+                mMeshFilter.sharedMesh,
+                0,
+                meshMaterial,
+                bucket.MatrixArray,
+                bucket.NumInstances,
+                propertyBlock,
+                UnityEngine.Rendering.ShadowCastingMode.On,
+                true
+            );
         }
     }
 }
