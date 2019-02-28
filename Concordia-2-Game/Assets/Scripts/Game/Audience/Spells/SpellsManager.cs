@@ -37,7 +37,10 @@ namespace con2.game
             }
 
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
-            _AudienceInteractionManager.SpellSubscribers = _SpellSubscribers;
+            if (_AudienceInteractionManager != null)
+            {
+                _AudienceInteractionManager.SpellSubscribers = _SpellSubscribers;
+            }
 
             InvokeRepeating("FakeSpellLauncher", 40, 40);
         }
@@ -48,7 +51,7 @@ namespace con2.game
 
         private void FakeSpellLauncher()
         {
-            if (!_EventManager.AnEventIsHappening)
+            if (!_EventManager.AnEventIsHappening && GameInfo.Viewers.Count > 0)
             {
                 var viewer = GameInfo.Viewers[_CurrentCastSpeller];
                 _AudienceInteractionManager.SendSpellCastRequest(viewer);

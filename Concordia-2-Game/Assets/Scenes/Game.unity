@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -142,7 +142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 582771356}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &10916642
 MonoBehaviour:
@@ -231,7 +231,7 @@ PrefabInstance:
     - target: {fileID: 6041867778123601711, guid: 62e7d00b9f4aa8944a35f663eb8cbf27,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6041867778123601711, guid: 62e7d00b9f4aa8944a35f663eb8cbf27,
         type: 3}
@@ -859,7 +859,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 582771356}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &581277800
 MonoBehaviour:
@@ -913,9 +913,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 581277799}
   - {fileID: 866068882}
   - {fileID: 13281191}
+  - {fileID: 581277799}
   - {fileID: 215454029}
   - {fileID: 496988555}
   - {fileID: 10916641}
@@ -1031,7 +1031,7 @@ RectTransform:
   - {fileID: 379122729}
   - {fileID: 89556202}
   m_Father: {fileID: 582771356}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1140,6 +1140,7 @@ GameObject:
   - component: {fileID: 773999203}
   - component: {fileID: 773999205}
   - component: {fileID: 773999204}
+  - component: {fileID: 773999206}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -1158,8 +1159,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 582771356}
-  m_RootOrder: 5
+  m_Father: {fileID: 1032917600}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &773999203
 MonoBehaviour:
@@ -1188,7 +1189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_freezingRainDuration: 10
-  m_frictionFraction: 0.2
+  m_dragFraction: 0.01
   m_movementModulator: 1.5
 --- !u!114 &773999205
 MonoBehaviour:
@@ -1204,6 +1205,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NetworkAdsDuration: 10
   _NetworkAdsCanvasPrefab: {fileID: 7062139143320713761, guid: 768e9330d6e1f894097ef746afdd2d07,
+    type: 3}
+--- !u!114 &773999206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773999201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2a547f32fb54749b4f4d39c1be9274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Angle: 20
+  NumberOfMeteors: 2
+  duration: 5
+  Radius: 12
+  YSpawn: 12
+  _MeteorPrefab: {fileID: 8841021199448463490, guid: da7587c3c169dcd4b93eed17a77ef890,
     type: 3}
 --- !u!1 &866068881
 GameObject:
@@ -1234,7 +1254,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 582771356}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &866068883
 MonoBehaviour:
@@ -1383,10 +1403,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 773999202}
   - {fileID: 1825916750}
+  - {fileID: 773999202}
   m_Father: {fileID: 582771356}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1058771928
 PrefabInstance:
@@ -1634,7 +1654,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1032917600}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1825916751
 MonoBehaviour:

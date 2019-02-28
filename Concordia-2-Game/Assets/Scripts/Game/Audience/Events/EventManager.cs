@@ -28,22 +28,33 @@ namespace con2.game
 
         private void Start()
         {
-            m_audienceEventText.enabled = false;
-
-            _EventSubscribers = new Dictionary<Events.EventID, List<IEventSubscriber>>();
-            foreach (Events.EventID id in Enum.GetValues(typeof(Events.EventID)))
-            {
-                _EventSubscribers.Add(id, new List<IEventSubscriber>());
-            }
-
-            _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
-            _AudienceInteractionManager.EventSubscribers = _EventSubscribers;
+            SetUp();
         }
 
         #endregion
 
         #region Custom Methods
-        
+
+        public void SetUp()
+        {
+            m_audienceEventText.enabled = false;
+
+            if (_EventSubscribers == null)
+            {
+                _EventSubscribers = new Dictionary<Events.EventID, List<IEventSubscriber>>();
+                foreach (Events.EventID id in Enum.GetValues(typeof(Events.EventID)))
+                {
+                    _EventSubscribers.Add(id, new List<IEventSubscriber>());
+                }
+
+                _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+                if (_AudienceInteractionManager != null)
+                {
+                    _AudienceInteractionManager.EventSubscribers = _EventSubscribers;
+                }
+            }
+        }
+
         /// <summary>
         /// Call this method to start an audience poll (events).
         /// At the end, a callback will take care of instantiating the event in the arena.
@@ -63,7 +74,7 @@ namespace con2.game
                 duration = pollingTime,
             };
 
-            _AudienceInteractionManager.SendPoll(poll);
+            _AudienceInteractionManager?.SendPoll(poll);
             StartCoroutine("StartEvent", pollingTime);
 
             m_audienceEventText.text = "Time for an audience event, spectators vote on your phone!";
