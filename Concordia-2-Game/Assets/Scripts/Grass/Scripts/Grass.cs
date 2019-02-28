@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class DrawInstancedScript : MonoBehaviour
+public class Grass : MonoBehaviour
 {
     // Batch stuff
     const float BATCH_MAX_FLOAT = 1023f;
