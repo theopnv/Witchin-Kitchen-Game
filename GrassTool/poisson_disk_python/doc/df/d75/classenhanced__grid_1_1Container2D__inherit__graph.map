@@ -1,0 +1,7 @@
+<area shape="rect" href="$d7/d89/classenhanced__grid_1_1Grid2D.html" title="Class that represent a 2D grid, with enhanced slicing notation." alt="" coords="16,518,165,646">
+<area shape="rect" href="$de/d7a/classenhanced__grid_1_1GridSliceXY.html" title="{enhanced_grid.GridSliceXY\n||}" alt="" coords="189,542,368,622">
+<area shape="rect" href="$d5/d39/classenhanced__grid_1_1GridSliceXZ.html" title="{enhanced_grid.GridSliceXZ\n||}" alt="" coords="392,542,568,622">
+<area shape="rect" href="$d2/dbd/classenhanced__grid_1_1GridSliceYZ.html" title="{enhanced_grid.GridSliceYZ\n||}" alt="" coords="592,542,771,622">
+<area shape="rect" href="$d6/d00/classenhanced__grid_1_1GridWindow2D.html" title="{enhanced_grid.GridWindow2D\n|+ grid\l+ x\l+ y\l|+ __init__()\l+ __getitem__()\l+ __setitem__()\l+ __repr__()\l}" alt="" coords="795,502,989,662">
+<area shape="rect" href="$d7/d04/classenhanced__grid_1_1Container.html" title="{enhanced_grid.Container\n|+ dims\l+ count\l|+ __init__()\l+ __eq__()\l+ __ne__()\l+ __len__()\l+ min_max()\l+ copy_from()\l+ clone()\l}" alt="" coords="399,6,561,198">
+<area shape="rect" href="$d7/d38/classenhanced__grid_1_1ListGrid2D.html" title="{enhanced_grid.ListGrid2D\n||+ __init__()\l+ additem()\l}" alt="" coords="5,710,176,806">
