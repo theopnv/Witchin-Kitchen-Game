@@ -18,6 +18,9 @@ public class PerlinTexture : MonoBehaviour
     // over the width and height of the texture.
     public float scale = 1.0f;
 
+    public int octaves = 4;
+    public float persistence = 0.3f;
+
     public Texture2D noiseTex;
     private Color[] pix;
 
@@ -52,7 +55,7 @@ public class PerlinTexture : MonoBehaviour
             {
                 float xCoord = xOrg + x * scale;
                 float yCoord = yOrg + y * scale;
-                float sample = (float)perlin.perlin(xCoord, yCoord, 0.0f);
+                float sample = (float)perlin.OctavePerlin(xCoord, yCoord, 0.0f, octaves, persistence);
                 pix[(int)y * noiseTex.width + (int)x] = new Color(sample, sample, sample);
                 x++;
             }
