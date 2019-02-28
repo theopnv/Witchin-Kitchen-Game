@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressSingleButton : CookingMinigame
+public class PressSingleButton : ACookingMinigame
 {
     override public void StartMinigameSpecifics()
     {

@@ -47,7 +47,7 @@ public class RecipeManager : MonoBehaviour
             counter.text = "You made a potion!";
             GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
-            CookingMinigame minigame = GetComponent<CookingMinigame>();
+            ACookingMinigame minigame = GetComponent<ACookingMinigame>();
             mgm.Gameover(minigame.m_stationOwner);
         }
     }

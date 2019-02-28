@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class CookingMinigame : MonoBehaviour, IInputConsumer
+public abstract class ACookingMinigame : MonoBehaviour, IInputConsumer
 {
     public const float INTERACTION_DISTANCE = 2.0f, FACING_DEGREE = 30.0f;
 

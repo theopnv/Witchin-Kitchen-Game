@@ -43,6 +43,7 @@ namespace con2
         public static readonly InputID INP_HORIZONTAL = new InputID("Horizontal");
         public static readonly InputID INP_VERTICAL = new InputID("Vertical");
         public static readonly InputID INP_PUNCH = new InputID("Punch");
+        public static readonly InputID INP_FIREBALL = new InputID("Fireball");
         public static readonly InputID INP_INTERACT = new InputID("Interact");
         public static readonly InputID INP_START = new InputID("Start");
 
@@ -96,6 +97,7 @@ namespace con2
         private void setupDefaultMappings()
         {
             addMapping(INP_PUNCH, GamepadAction.ButtonID.PUNCH);
+            addMapping(INP_FIREBALL, GamepadAction.ButtonID.FIREBALL);
             addMapping(INP_INTERACT, GamepadAction.ButtonID.INTERACT);
             addMapping(INP_START, GamepadAction.ButtonID.START);
         }

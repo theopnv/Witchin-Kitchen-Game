@@ -64,17 +64,17 @@ public class InputContextSwitcher : MonoBehaviour
         inputConsumers.Add(mgm);
 
         GameObject[] kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
-        List<CookingMinigame> kitchenStations = new List<CookingMinigame>();
+        List<ACookingMinigame> kitchenStations = new List<ACookingMinigame>();
         foreach (GameObject kitchen in kitchenParents)
         {
-            CookingMinigame[] stations = kitchen.GetComponentsInChildren<CookingMinigame>();
-            foreach (CookingMinigame station in stations)
+            ACookingMinigame[] stations = kitchen.GetComponentsInChildren<ACookingMinigame>();
+            foreach (ACookingMinigame station in stations)
             {
                 kitchenStations.Add(station);
             }
         }    
           
-        foreach (CookingMinigame station in kitchenStations)
+        foreach (ACookingMinigame station in kitchenStations)
         {
             inputConsumers.Add(station);
         }
