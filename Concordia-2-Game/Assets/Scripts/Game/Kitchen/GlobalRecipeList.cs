@@ -21,7 +21,7 @@ public class GlobalRecipeList : MonoBehaviour
         if (currentRecipeIndex >= m_sharedRecipeList.Count)
         {
             int nextIndex = Random.Range(0, m_potionRecipes.Count);
-            while(m_potionRecipes[nextIndex].Equals(m_potionRecipes[m_potionRecipes.Count]))
+            while(m_potionRecipes[nextIndex].Equals(m_potionRecipes[m_potionRecipes.Count - 1]))
             {
                 nextIndex = Random.Range(0, m_potionRecipes.Count);
             }
