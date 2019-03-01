@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Displacer
-  m_Shader: {fileID: 4800000, guid: 1d62ad6295eaefe46a4dcbc1f82801db, type: 3}
+  m_Name: Blastwave
+  m_Shader: {fileID: 4800000, guid: f8b144b6f53eab74380764162012227b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -63,11 +63,12 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _MaxRingRadius: 1
     - _Metallic: 0
+    - _MinRingRadius: 0.8
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Radius: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

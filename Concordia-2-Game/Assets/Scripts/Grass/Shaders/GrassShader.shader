@@ -63,7 +63,8 @@
             UNITY_TRANSFER_INSTANCE_ID(v, o);
 
             float4 outVertex = v.vertex;
-            float vertexLength = length(v.vertex);
+            float3 addVertex = float3(0.0f, 0.0f, 0.0f);
+            float vertexLength = length(v.vertex.xyz);
 
             float4 instancePosition = UNITY_ACCESS_INSTANCED_PROP(Props, _InstancePosition);
             float2 rollingWindSampleCoords = instancePosition.xz * _RollingWindPositionScale + _RollingWindOffset;
@@ -75,7 +76,7 @@
             windStrength *= bendFactor;
 
             float4 localWindDirection = mul(unity_WorldToObject, _WindDirection);
-            outVertex.xyz += localWindDirection.xyz * windStrength * _WindStrength;
+            addVertex.xyz += localWindDirection.xyz * windStrength * _WindStrength;
 
          
             float2 displacementUV = float2(0.0f, 0.0f);
@@ -85,10 +86,10 @@
             fixed4 displacement = tex2Dlod(_Displacement, float4(displacementUV.xy, 0, 0));
             fixed2 packedDisplacementDirection = displacement.xy;
             fixed2 displacementDirection = (packedDisplacementDirection * 2.0f) - fixed2(1.0f, 1.0f);
-            outVertex.xz += displacementDirection.xy * displacement.z * bendFactor;
+            addVertex.xz += displacementDirection.xy * displacement.z * bendFactor;
 
 
-            outVertex = normalize(outVertex) * vertexLength;
+            outVertex.xyz = normalize(outVertex.xyz + addVertex) * vertexLength;
             o.vertex = outVertex;
             v.vertex = outVertex;
         }

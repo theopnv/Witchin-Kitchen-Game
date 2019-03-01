@@ -2,9 +2,11 @@
 {
     Properties
     {
-        _Radius("Radius", Float) = 0.5
+        _MinRingRadius("Min ring radius", Float) = 0.8
+        _MaxRingRadius("Max ring radius", Float) = 1.0
+        _Intensity("Intensity", Float) = 1.0
     }
-    SubShader
+        SubShader
     {
         Tags { "Queue" = "Transparent" "RenderType" = "Transparent" "IgnoreProjector" = "True" }
 
@@ -30,9 +32,11 @@
                 float3 localPos : TEXCOORD0;
             };
 
-            float _Radius;
+            float _MinRingRadius;
+            float _MaxRingRadius;
+            float _Intensity;
 
-            v2f vert (appdata v)
+            v2f vert(appdata v)
             {
                 v2f o;
                 o.localPos = v.vertex.xyz;
@@ -40,10 +44,11 @@
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
                 float dist = sqrt(i.localPos.x * i.localPos.x + i.localPos.z * i.localPos.z);
-                float factor = saturate(1.0f - dist / _Radius);
+                float x = saturate((dist - _MinRingRadius) / (_MaxRingRadius - _MinRingRadius)) - 0.5f;
+                float factor = saturate(-4.0f * x * x + 1.0f) * _Intensity;
 
                 float2 direction = normalize(i.localPos.xz);
                 float2 packedDirection = (direction + float2(1.0f, 1.0f)) / 2.0f;

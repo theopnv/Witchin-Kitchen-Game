@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DisplacementMap : MonoBehaviour
 {
+    public const int GRASS_DISPLACEMENT_LAYER = 9;
+
+
     static private DisplacementMap Instance;
 
     static public DisplacementMap Get()
@@ -12,6 +15,7 @@ public class DisplacementMap : MonoBehaviour
     }
 
 
+    public Camera cam;
     public RenderTexture rt;
     public GameObject target;
     public Bounds targetBounds;
@@ -30,6 +34,17 @@ public class DisplacementMap : MonoBehaviour
         rt.wrapModeU = TextureWrapMode.Clamp;
         rt.wrapModeV = TextureWrapMode.Clamp;
         rt.Create();
+        
+        cam.orthographic = true;
+        cam.cullingMask = 1 << GRASS_DISPLACEMENT_LAYER;
+        cam.targetTexture = rt;
+        cam.clearFlags = CameraClearFlags.SolidColor;
+        cam.backgroundColor = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+
+        cam.transform.rotation = Quaternion.AngleAxis(90.0f, Vector3.right);
+        cam.transform.position = targetBounds.center + Vector3.up * 100.0f;
+        cam.orthographicSize = targetBounds.extents.z;
+        cam.aspect = targetBounds.size.x / targetBounds.size.z;
     }
 
     // Start is called before the first frame update
