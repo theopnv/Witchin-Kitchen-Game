@@ -10,6 +10,7 @@ TagManager:
   - Menu
   - ArenaBase
   - Cauldron
+  - GrassSurface
   layers:
   - Default
   - TransparentFX
