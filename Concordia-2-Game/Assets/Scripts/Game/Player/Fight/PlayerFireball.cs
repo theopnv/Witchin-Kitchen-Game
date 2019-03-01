@@ -57,4 +57,9 @@ public class PlayerFireball : MonoBehaviour, IInputConsumer
         yield return new WaitForSeconds(m_reloadSeconds);
         m_canCastFireball = true;
     }
+
+    public void ModulateReloadTime(float reloadModulator)
+    {
+        m_reloadSeconds *= reloadModulator;
+    }
 }
