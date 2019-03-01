@@ -6,26 +6,36 @@ using UnityEngine.UI;
 public enum Ingredient
 {
     GHOST_PEPPER,
+    NEWT_EYE,
     NOT_AN_INGREDIENT
 }
 
 public class RecipeManager : MonoBehaviour
 {
-    private Recipe m_recipe;
-    public int ingredientCount = 3;
-    public Text counter;
+    private Recipe m_currentPotionRecipe;
+    private int m_currentRecipeIndex = -1;
+    public Text m_recipeUI, m_score;
+    private KitchenStation m_thisStation;
 
     void Start()
     {
-        Ingredient[] newRecipe = {Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER};
-        m_recipe = new Recipe(newRecipe);
-        counter.text = ingredientCount + "";
+        m_thisStation = GetComponent<KitchenStation>();
+        NextRecipe();
+    }
+
+    void NextRecipe()
+    {
+        m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
+        m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
+        m_score.text = m_currentRecipeIndex.ToString();
     }
 
     public bool CollectIngredient(Ingredient collectedIngredient)
     {
-        if (m_recipe.IsIngredientNeeded(collectedIngredient))
+        if (m_currentPotionRecipe.IsIngredientNeeded(collectedIngredient) && !m_thisStation.IsStoringIngredient())
         {
+            m_currentPotionRecipe.CollectIngredient(collectedIngredient);
+            m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
             return true;
         }
         return false;
@@ -33,23 +43,23 @@ public class RecipeManager : MonoBehaviour
 
     public void ProcessIngredient(Ingredient ingredient)
     {
-        m_recipe.ProcessIngredient(ingredient);
-        ingredientCount--;
-        counter.text = ingredientCount + "";
+        m_currentPotionRecipe.ProcessIngredient(ingredient);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_recipe.IsComplete())
+        if (m_currentPotionRecipe.IsComplete())
         {
             //You did it!
-            counter.text = "You made a potion!";
-            GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
-            ACookingMinigame minigame = GetComponent<ACookingMinigame>();
-            mgm.Gameover(minigame.m_stationOwner);
+            m_recipeUI.text = "You made a potion, keep going!";
+            NextRecipe();
         }
+    }
+
+    public int GetNumCompletedPotions()
+    {
+        return m_currentRecipeIndex;
     }
 }
 
@@ -78,7 +88,18 @@ public class Recipe
         return missingIngredientsOfThisType.Count > 0;
     }
 
-    public void ProcessIngredient(Ingredient ingredient)
+    public void CollectIngredient(Ingredient ingredient)
+    {
+        IngredientStatus missingIngredientOfThisType = m_fullRecipe.Find(
+            delegate (IngredientStatus temp)
+            {
+                return !temp.m_collected && temp.m_type == ingredient;
+            }
+          );
+        missingIngredientOfThisType.m_collected = true;
+    }
+
+        public void ProcessIngredient(Ingredient ingredient)
     {
         IngredientStatus missingIngredientOfThisType = m_fullRecipe.Find(
             delegate (IngredientStatus temp)
@@ -97,6 +118,24 @@ public class Recipe
         m_isComplete = complete;
     }
 
+    public string GetRecipeUI()
+    {
+        string recipeUI = "";
+        foreach (IngredientStatus status in m_fullRecipe)
+        {
+            if (status.m_collected == false)
+            {
+                recipeUI += "X - " + status.m_type + "\n";
+            }
+            else
+            {
+                char checkmark = '\u2713';
+                recipeUI += checkmark.ToString() + " - " + status.m_type + "\n";
+            }
+        }
+        return recipeUI;
+    }
+
     public bool IsComplete()
     {
         return m_isComplete;
@@ -105,11 +144,12 @@ public class Recipe
     public class IngredientStatus
     {
         public Ingredient m_type;
-        public bool m_processed;
+        public bool m_collected, m_processed;
 
         public IngredientStatus(Ingredient type)
         {
             m_type = type;
+            m_collected = false;
             m_processed = false;
         }
     }

@@ -109,4 +109,9 @@ public abstract class ACookingMinigame : MonoBehaviour, IInputConsumer
         m_kitchenStation = kitchenStation;
         m_stationOwner = owner;
     }
+
+    public GameObject GetStationOwner()
+    {
+        return m_stationOwner;
+    }
 }
