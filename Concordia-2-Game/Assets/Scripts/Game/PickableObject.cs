@@ -50,7 +50,7 @@ public class PickableObject : MonoBehaviour
         m_rb.constraints = RigidbodyConstraints.None;
 
         // Get thrown forward
-        m_rb.AddForce(throwVector, ForceMode.Impulse);
+        m_rb.AddForce(throwVector, ForceMode.VelocityChange);
 
         // Unparent the object from the player
         transform.parent = null;

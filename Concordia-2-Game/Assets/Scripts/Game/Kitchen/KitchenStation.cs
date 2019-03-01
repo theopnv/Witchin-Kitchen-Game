@@ -6,8 +6,6 @@ public class KitchenStation : MonoBehaviour
 {
     private ACookingMinigame m_miniGame;
     private Ingredient m_storedIngredient;
-    [SerializeField]
-    private bool m_hasOwner;
     private RecipeManager m_recipeManager;
 
     private void Awake()
@@ -24,8 +22,9 @@ public class KitchenStation : MonoBehaviour
         {
             if (m_recipeManager == null || m_recipeManager.CollectIngredient(ingredient.m_ingredientType))    //If is generic station, or is cauldron and needs the ingredient 
             {
+                Debug.Log("Collected a " + ingredient.m_ingredientType);
                 m_storedIngredient = ingredient.m_ingredientType;
-                collision.gameObject.SetActive(false);
+                GameObject.Destroy(collision.gameObject);
                 m_miniGame.StartMinigame();
             }
         }
@@ -56,5 +55,10 @@ public class KitchenStation : MonoBehaviour
     public bool CollectIngredient(Ingredient type)
     {
         return m_recipeManager.CollectIngredient(type);
+    }
+
+    public bool IsStoringIngredient()
+    {
+        return m_storedIngredient != Ingredient.NOT_AN_INGREDIENT;
     }
 }
