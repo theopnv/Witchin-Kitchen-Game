@@ -10,6 +10,7 @@ namespace con2.game
         public enum SpellID
         {
             disco_mania = 0,
+            mega_mage_punch = 1,
 
             max_id,
         }

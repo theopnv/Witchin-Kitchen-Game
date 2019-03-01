@@ -7,6 +7,7 @@ namespace con2.game
     public class PlayerPunch : AHitAllInRange, IInputConsumer
     {
         public float m_punchUpwardsForce = 4.0f;
+        private float m_punchStrengthMultiplier = 1.0f;
 
         private bool m_canPunch = true;
         private float m_punchCooldownTimer;
@@ -55,6 +56,11 @@ namespace con2.game
         {
             hitVector.y = m_punchUpwardsForce;
             return hitVector;
+        }
+
+        public void ModulatePunchStrength(float punchStrengthMultiplier)
+        {
+            m_punchStrengthMultiplier *= punchStrengthMultiplier;
         }
 
         protected override void AfterHitting()
