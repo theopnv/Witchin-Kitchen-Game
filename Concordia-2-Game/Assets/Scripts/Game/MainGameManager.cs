@@ -106,7 +106,7 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
     {
         if (!m_gameOver)
         {
-            int remainingTime = (int)(GAME_TIMER - Time.time);
+            int remainingTime = (int)(GAME_TIMER - Time.timeSinceLevelLoad);
             m_clock.text = FormatRemainingTime(remainingTime);
             if (remainingTime <= 0)
             {
