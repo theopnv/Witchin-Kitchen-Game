@@ -8,12 +8,16 @@ using UnityEngine.UI;
 
 public class MainGameManager : MonoBehaviour, IInputConsumer
 {
+    private AudienceInteractionManager _AudienceInteractionManager;
+
     // Start is called before the first frame update
     void Start()
     {
         InitializeAudienceEvents();
         InitializeItemSpawning();
         InitializeEndGame();
+
+        _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
     }
 
 
@@ -124,6 +128,7 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
             m_gameOver = true;
             GameObject winnerPlayer = DetermineWinner();
             m_winnerText.text = winnerPlayer.name + " is the winner!";
+            _AudienceInteractionManager?.ExitRoom(true, 1); // TODO: HARDCODED: WINNER INDEX MUST ABSOLUTELY BE DYNAMIC
             StartCoroutine(BackToMainMenuAfterShortPause());
         }
     }
