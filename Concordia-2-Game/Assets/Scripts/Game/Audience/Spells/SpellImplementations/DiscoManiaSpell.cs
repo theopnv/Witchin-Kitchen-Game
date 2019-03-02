@@ -19,7 +19,7 @@ namespace con2.game
 
         public override IEnumerator SpellImplementation()
         {
-            Vector3 startExitPos = new Vector3 (20, 20, 5);
+            Vector3 startExitPos = new Vector3 (20, 5, 20);
 
             GameObject discoball = Instantiate(m_discoBallPrefab, startExitPos, new Quaternion(0, 0, 0, 0));
             DiscoBall discoballController = discoball.GetComponent<DiscoBall>();
