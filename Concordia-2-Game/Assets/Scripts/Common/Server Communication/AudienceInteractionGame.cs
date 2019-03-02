@@ -109,24 +109,27 @@ namespace con2
             }
         }
 
-        private void OnCastSpellRequest(SocketIOEvent e)
+        public void BroadcastSpellRequest(Spell requestedSpell)
         {
-            var content = JsonConvert.DeserializeObject<Spell>(e.data.ToString());
-            Debug.Log("Casted spell: " + Spells.EventList[(Spells.SpellID)content.spellId]);
-
-            var key = (Spells.SpellID) content.spellId;
+            Debug.Log("Casted spell: " + Spells.EventList[(Spells.SpellID)requestedSpell.spellId]);
+            var key = (Spells.SpellID)requestedSpell.spellId;
             if (SpellSubscribers.ContainsKey(key))
             {
                 SpellSubscribers[key].ForEach((subscriber) =>
                 {
-                    subscriber.ActivateSpellMode(content.targetedPlayer);
+                    subscriber.ActivateSpellMode(requestedSpell.targetedPlayer);
                 });
             }
             else
             {
                 Debug.LogError("Spell Key not found");
             }
-            
+        }
+
+        private void OnCastSpellRequest(SocketIOEvent e)
+        {
+            var content = JsonConvert.DeserializeObject<Spell>(e.data.ToString());
+            BroadcastSpellRequest(content);
         }
 
         #endregion
