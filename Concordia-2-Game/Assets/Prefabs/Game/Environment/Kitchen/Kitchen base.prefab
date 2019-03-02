@@ -132,8 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba19f371788f00943890907c3bb238a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientCount: 3
-  counter: {fileID: 6987964688834659855}
+  m_recipeUI: {fileID: 0}
 --- !u!1 &4715703134649005131
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +375,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 2988a924f9d76bc4dae9bd357210e114, type: 3}
       propertyPath: m_Name
+      value: Cauldron
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2988a924f9d76bc4dae9bd357210e114, type: 3}
+      propertyPath: m_TagString
       value: Cauldron
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2988a924f9d76bc4dae9bd357210e114, type: 3}
