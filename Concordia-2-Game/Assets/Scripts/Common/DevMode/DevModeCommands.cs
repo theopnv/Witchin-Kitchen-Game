@@ -14,8 +14,17 @@ namespace con2
         [SerializeField]
         private GameObject _AudienceInteractionManagerPrefab;
 
+        private AudienceInteractionManager _AudienceInteractionManager;
+
         void Start()
         {
+            _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            if (_AudienceInteractionManager == null)
+            {
+                var instance = Instantiate(_AudienceInteractionManagerPrefab);
+                _AudienceInteractionManager = instance.GetComponent<AudienceInteractionManager>();
+            }
+
             var repo = ConsoleCommandsRepository.Instance;
             repo.RegisterCommand("help", Help);
 
@@ -30,6 +39,8 @@ namespace con2
             repo.RegisterCommand("ev_fr", EventFreezingRain);
             repo.RegisterCommand("ev_na", EventNetworkAds);
             repo.RegisterCommand("ev_mf", EventMeteoritesFalling);
+
+            repo.RegisterCommand("spell_dm", SpellDiscoMania);
         }
 
         public string Help(string[] args)
@@ -64,7 +75,8 @@ namespace con2
                         "- 'random_event': Simulates a poll and starts an event in 5 seconds",
                         "- 'ev_fr': Simulates the Freezing Rain (fr) event",
                         "- 'ev_na': Simulates the Network Ads (na) event",
-                        "- 'ev_mf': Simulates the Meteorites Falling (mf) event");
+                        "- 'ev_mf': Simulates the Meteorites Falling (mf) event",
+                        "- 'spell_dm': Simulates the Disco Mania (dm) spell on player 1");
 
                     help = string.Join(
                         Environment.NewLine,
@@ -110,12 +122,6 @@ namespace con2
 
         private void LoadGameScene()
         {
-            var audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
-            if (audienceInteractionManager == null)
-            {
-                Instantiate(_AudienceInteractionManagerPrefab);
-            }
-
             SceneManager.LoadSceneAsync(SceneNames.Game);
         }
 
@@ -156,12 +162,11 @@ namespace con2
 
         private void BroadcastPoll(Events.EventID id)
         {
-            var audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             var chosenEvent = new messages.Event
             {
                 id = (int)id,
             };
-            audienceInteractionManager.BroadcastPollResults(chosenEvent);
+            _AudienceInteractionManager?.BroadcastPollResults(chosenEvent);
         }
 
         private IEnumerator SimulatePoll()
@@ -209,6 +214,24 @@ namespace con2
 
             StartCoroutine("SimulateEvent", Events.EventID.meteorites);
             return "Will start the Meteorites Falling event in 2 seconds";
+        }
+
+        private string SpellDiscoMania(string[] args)
+        {
+            StartCoroutine("SimulateSpell", Spells.SpellID.disco_mania);
+            return "Will cast the Disco Mania spell in 2 seconds";
+        }
+
+        private IEnumerator SimulateSpell(Spells.SpellID id)
+        {
+            yield return new WaitForSeconds(2);
+
+            var spell = new messages.Spell()
+            {
+                spellId = (int)id,
+                targetedPlayer = new Player() { id = 0 }
+            };
+            _AudienceInteractionManager?.BroadcastSpellRequest(spell);
         }
 
         #endregion
