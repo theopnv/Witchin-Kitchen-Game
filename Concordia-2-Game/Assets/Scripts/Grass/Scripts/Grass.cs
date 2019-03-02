@@ -10,6 +10,7 @@ public class Grass : MonoBehaviour
     public const string GRASS_SURFACE_TAG = "GrassSurface";
 
     public GameObject target;
+    private Bounds targetBounds;
     public GameObject prefab;
     public float prefabScale = 1.0f;
     public Material meshMaterial;
@@ -75,11 +76,11 @@ public class Grass : MonoBehaviour
         
         propertyBlock = new MaterialPropertyBlock();
 
-        var bounds = target.GetComponent<MeshRenderer>().bounds;
-        var w = bounds.size.x - mMeshRenderer.bounds.size.x * 2.0f;
-        var d = bounds.size.z - mMeshRenderer.bounds.size.z * 2.0f;
-        var startX = bounds.min.x + mMeshRenderer.bounds.size.x - target.transform.position.x;
-        var startZ = bounds.min.z + mMeshRenderer.bounds.size.z - target.transform.position.z;
+        targetBounds = target.GetComponent<MeshRenderer>().bounds;
+        var w = targetBounds.size.x - mMeshRenderer.bounds.size.x * 2.0f;
+        var d = targetBounds.size.z - mMeshRenderer.bounds.size.z * 2.0f;
+        var startX = targetBounds.min.x + mMeshRenderer.bounds.size.x - target.transform.position.x;
+        var startZ = targetBounds.min.z + mMeshRenderer.bounds.size.z - target.transform.position.z;
 
         for (int i = 0; i < instanceMap.width; ++i)
         {
@@ -114,8 +115,6 @@ public class Grass : MonoBehaviour
                 {
                     continue;
                 }
-
-                print(pos);
 
                 BatchBucket currentBucket = Buckets[Buckets.Count - 1];
                 if (currentBucket.IsFull())
@@ -162,6 +161,14 @@ public class Grass : MonoBehaviour
             propertyBlock.SetTexture("_RollingWindTex", RollingWindTex);
             propertyBlock.SetVector("_RollingWindOffset", RollingWindOffset);
             propertyBlock.SetFloat("_MeshHeight", MeshHeight);
+            propertyBlock.SetTexture("_Displacement", DisplacementMap.Get().rt);
+
+            var grassBounds = new Vector4();
+            grassBounds.x = targetBounds.center.x - targetBounds.extents.x;
+            grassBounds.y = targetBounds.center.z - targetBounds.extents.z;
+            grassBounds.z = targetBounds.size.x;
+            grassBounds.w = targetBounds.size.z;
+            propertyBlock.SetVector("_Bounds", grassBounds);
 
             Graphics.DrawMeshInstanced(
                 mMeshFilter.sharedMesh,

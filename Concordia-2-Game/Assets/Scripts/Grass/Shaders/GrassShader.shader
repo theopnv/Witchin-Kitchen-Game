@@ -13,6 +13,8 @@
         _RollingWindTex("Rolling wind texture", 2D) = "black" {}
         _RollingWindOffset("Rolling wind texture", Vector) = (0.0, 0.0, 0.0, 0.0)
         _MeshHeight("Height of the mesh", Float) = 1.0
+        _Displacement("Displacement R,G = direction, B = intensity, A is unused", 2D) = "black"
+        _Bounds("X,Y = back left, Z,W = width,depth", Vector) = (0.0, 0.0, 0.0, 0.0)
 
         _InstancePosition("Instance position", Vector) = (1.0, 0.0, 0.0, 0.0)
     }
@@ -41,6 +43,8 @@
         sampler2D _RollingWindTex;
         float4 _RollingWindOffset;
         float _MeshHeight;
+        sampler2D _Displacement;
+        float4 _Bounds;
 
         struct Input
         {
@@ -59,7 +63,8 @@
             UNITY_TRANSFER_INSTANCE_ID(v, o);
 
             float4 outVertex = v.vertex;
-            float vertexLength = length(v.vertex);
+            float3 addVertex = float3(0.0f, 0.0f, 0.0f);
+            float vertexLength = length(v.vertex.xyz);
 
             float4 instancePosition = UNITY_ACCESS_INSTANCED_PROP(Props, _InstancePosition);
             float2 rollingWindSampleCoords = instancePosition.xz * _RollingWindPositionScale + _RollingWindOffset;
@@ -71,9 +76,20 @@
             windStrength *= bendFactor;
 
             float4 localWindDirection = mul(unity_WorldToObject, _WindDirection);
-            outVertex.xyz += localWindDirection.xyz * windStrength * _WindStrength;
-            outVertex = normalize(outVertex) * vertexLength;
+            addVertex.xyz += localWindDirection.xyz * windStrength * _WindStrength;
 
+         
+            float2 displacementUV = float2(0.0f, 0.0f);
+            displacementUV.x = (instancePosition.x - _Bounds.x) / _Bounds.z;
+            displacementUV.y = (instancePosition.z - _Bounds.y) / _Bounds.w;
+
+            fixed4 displacement = tex2Dlod(_Displacement, float4(displacementUV.xy, 0, 0));
+            fixed2 packedDisplacementDirection = displacement.xy;
+            fixed2 displacementDirection = (packedDisplacementDirection * 2.0f) - fixed2(1.0f, 1.0f);
+            addVertex.xz += displacementDirection.xy * displacement.z * bendFactor;
+
+
+            outVertex.xyz = normalize(outVertex.xyz + addVertex) * vertexLength;
             o.vertex = outVertex;
             v.vertex = outVertex;
         }
