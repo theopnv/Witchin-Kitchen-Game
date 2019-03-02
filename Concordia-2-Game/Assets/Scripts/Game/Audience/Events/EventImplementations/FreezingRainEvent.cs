@@ -38,16 +38,25 @@ public class FreezingRainEvent : AbstractAudienceEvent
 
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
-            player.ModulateMovementDrag(m_dragFraction);
             player.ModulateMovementSpeed(m_movementModulator);
+        }
+
+        FloorFriction[] frictionControllers = GameObject.FindObjectsOfType<FloorFriction>();
+        foreach (FloorFriction controller in frictionControllers)
+        {
+            controller.ModulateFriction(-m_dragFraction);
         }
 
         yield return new WaitForSeconds(m_freezingRainDuration);
 
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
-            player.ModulateMovementDrag(1.0f / m_dragFraction);
             player.ModulateMovementSpeed(1.0f / m_movementModulator);
+        }
+
+        foreach (FloorFriction controller in frictionControllers)
+        {
+            controller.ModulateFriction(1.0f / -m_dragFraction);
         }
     }
 }
