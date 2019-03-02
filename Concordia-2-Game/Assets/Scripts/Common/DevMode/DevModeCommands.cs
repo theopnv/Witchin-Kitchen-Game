@@ -41,6 +41,7 @@ namespace con2
             repo.RegisterCommand("ev_mf", EventMeteoritesFalling);
 
             repo.RegisterCommand("spell_dm", SpellDiscoMania);
+            repo.RegisterCommand("spell_mmp", SpellMegaMagePunch);
         }
 
         public string Help(string[] args)
@@ -219,7 +220,13 @@ namespace con2
         private string SpellDiscoMania(string[] args)
         {
             StartCoroutine("SimulateSpell", Spells.SpellID.disco_mania);
-            return "Will cast the Disco Mania spell in 2 seconds";
+            return "Will cast the Disco Mania spell on player 1 in 2 seconds";
+        }
+
+        private string SpellMegaMagePunch(string[] args)
+        {
+            StartCoroutine("SimulateSpell", Spells.SpellID.mega_mage_punch);
+            return "Will cast the Mega Mage Punch spell on player 1 in 2 seconds";
         }
 
         private IEnumerator SimulateSpell(Spells.SpellID id)

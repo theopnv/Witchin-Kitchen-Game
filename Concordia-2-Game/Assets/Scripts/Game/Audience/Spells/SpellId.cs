@@ -12,12 +12,14 @@ namespace con2.game
             disco_mania = 0,
             mega_mage_punch = 1,
 
+
             max_id,
         }
 
         public static Dictionary<SpellID, string> EventList = new Dictionary<SpellID, string>
         {
             { SpellID.disco_mania, "Disco Mania" },
+            { SpellID.mega_mage_punch, "Mega Mage Punch" },
         };
 
     }

@@ -28,14 +28,17 @@ namespace con2.game
         #region Unity API
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             _SpellSubscribers = new Dictionary<Spells.SpellID, List<ISpellSubscriber>>();
             foreach (Spells.SpellID id in Enum.GetValues(typeof(Spells.SpellID)))
             {
                 _SpellSubscribers.Add(id, new List<ISpellSubscriber>());
             }
+        }
 
+        private void Start()
+        {
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             if (_AudienceInteractionManager != null)
             {
