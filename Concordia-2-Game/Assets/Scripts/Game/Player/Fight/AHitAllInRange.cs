@@ -43,7 +43,7 @@ public abstract class AHitAllInRange : MonoBehaviour
             {
                 foreach (IPunchable punchableComponent in target.Value)
                 {
-                    Vector3 hitVector = (target.Key.transform.position - transform.position) * m_strength;
+                    Vector3 hitVector = (target.Key.transform.position - transform.position).normalized * m_strength;
                     punchableComponent.Punch(ModulateHitVector(hitVector), m_stunTime);
                 }
             }
