@@ -31,14 +31,24 @@ public abstract class AHitAllInRange : MonoBehaviour
 
     public void Hit()
     {
-        foreach (KeyValuePair<GameObject, IPunchable[]> target in m_punchablesInRadius)
+        for (int i = 0; i < m_punchablesInRadius.Count; i++)
         {
-            foreach (IPunchable punchableComponent in target.Value)
+            KeyValuePair<GameObject, IPunchable[]> target = m_punchablesInRadius[i];
+            if (target.Key == null)
             {
-                Vector3 hitVector = (target.Key.transform.position - transform.position) * m_strength;
-                punchableComponent.Punch(ModulateHitVector(hitVector), m_stunTime);
+                m_punchablesInRadius.Remove(target);
+                i--;
+            }
+            else
+            {
+                foreach (IPunchable punchableComponent in target.Value)
+                {
+                    Vector3 hitVector = (target.Key.transform.position - transform.position).normalized * m_strength;
+                    punchableComponent.Punch(ModulateHitVector(hitVector), m_stunTime);
+                }
             }
         }
+
         AfterHitting();
     }
 

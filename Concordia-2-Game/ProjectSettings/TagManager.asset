@@ -9,6 +9,7 @@ TagManager:
   - Kitchen
   - Menu
   - ArenaBase
+  - Cauldron
   - GrassSurface
   layers:
   - Default
@@ -20,7 +21,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - GrassDisplacement
   - 
   - 
   - 

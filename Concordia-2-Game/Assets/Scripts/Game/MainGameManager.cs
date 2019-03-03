@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class MainGameManager : MonoBehaviour, IInputConsumer
 {
-    public static int REMATCH_TIMER = 10;
+    private AudienceInteractionManager _AudienceInteractionManager;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,16 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
         InitializeAudienceEvents();
         InitializeItemSpawning();
         InitializeEndGame();
+
+        _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
     }
+
+
+    void Update()
+    {
+        UpdateEndGame();
+    }
+
 
     #region AudienceEvents
 
@@ -82,8 +91,9 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
 
     [Header("EndGame")]
     public Text m_winnerText;
-    public Text m_rematchText;
+    public Text m_rematchText, m_clock;
     private bool m_gameOver = false, m_acceptingInput = false;
+    public static int REMATCH_TIMER = 10, GAME_TIMER = 240;
 
     private void InitializeEndGame()
     {
@@ -92,15 +102,55 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
         m_gameOver = false;
     }
 
-    //For MVP, first person to complete a potion wins. Will require serious reworking when win is time&point based
-    public void Gameover(GameObject winnerPlayer)
+    private void UpdateEndGame()
+    {
+        if (!m_gameOver)
+        {
+            int remainingTime = (int)(GAME_TIMER - Time.timeSinceLevelLoad);
+            m_clock.text = FormatRemainingTime(remainingTime);
+            if (remainingTime <= 0)
+            {
+                GameOver();
+            }
+        }
+    }
+
+    private string FormatRemainingTime(int time)
+    {
+        int sec = time % 60;
+        return time / 60 + ":" + (sec > 9 ? sec.ToString() : "0" + sec);
+    }
+
+    public void GameOver()
     {
         if (!m_gameOver)
         {
             m_gameOver = true;
+            GameObject winnerPlayer = DetermineWinner();
             m_winnerText.text = winnerPlayer.name + " is the winner!";
+            _AudienceInteractionManager?.ExitRoom(true, 1); // TODO: HARDCODED: WINNER INDEX MUST ABSOLUTELY BE DYNAMIC
             StartCoroutine(BackToMainMenuAfterShortPause());
         }
+    }
+
+    private GameObject DetermineWinner()
+    {
+        GameObject[] cauldrons = GameObject.FindGameObjectsWithTag(Tags.CAULDRON);
+        GameObject winner = null;
+        int mostPotions = -1;
+
+        foreach (GameObject cauldron in cauldrons)
+        {
+            RecipeManager manager = cauldron.GetComponent<RecipeManager>();
+            int numPotions = manager.GetNumCompletedPotions();
+            if (numPotions > mostPotions)
+            {
+                winner = cauldron.GetComponent<ACookingMinigame>().GetStationOwner();
+                mostPotions = numPotions;
+            }
+        }
+
+        return winner;
     }
 
     public bool ConsumeInput(GamepadAction input)

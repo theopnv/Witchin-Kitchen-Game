@@ -33,7 +33,7 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
         if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
         {
             if (IsHoldingObject())
-                DropObject(m_playerRB.velocity + (transform.forward * m_throwForce));
+                DropObject(transform.forward * m_throwForce);
             else if (GetNearestItem())
                 PickUpObject();
             else
@@ -56,15 +56,25 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
     {
         Vector3 playerPosition = transform.position;
         float closestObject = Vector3.negativeInfinity.magnitude;
-        foreach (KeyValuePair<GameObject, PickableObject> someNearbyObject in m_nearbyObjects)
+        for (int i = 0; i < m_nearbyObjects.Count; i++)
         {
-            float distanceFromPlayer = (someNearbyObject.Key.transform.position - playerPosition).magnitude;
-            if (distanceFromPlayer < closestObject)
+            KeyValuePair<GameObject, PickableObject> someNearbyObject = m_nearbyObjects[i];
+            if (someNearbyObject.Key == null)
             {
-                closestObject = distanceFromPlayer;
-                m_heldObject = someNearbyObject.Value;
+                m_nearbyObjects.Remove(someNearbyObject);
+                i--;
+            }
+            else
+            {
+                float distanceFromPlayer = (someNearbyObject.Key.transform.position - playerPosition).magnitude;
+                if (distanceFromPlayer < closestObject)
+                {
+                    closestObject = distanceFromPlayer;
+                    m_heldObject = someNearbyObject.Value;
+                }
             }
         }
+
         return m_heldObject;
     }
 
@@ -98,8 +108,9 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
     {
         if (IsHoldingObject())
         {
+            m_heldObject.UpdatePosition(Vector3.zero);
             Vector3 knockVector = -knockVelocity.normalized;
-            DropObject(new Vector3(knockVector.x, knockVector.z) * m_throwForce);
+            DropObject(new Vector3(knockVector.x, 0, knockVector.z) * m_throwForce);
         }
     }
 
