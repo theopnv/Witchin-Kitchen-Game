@@ -43,17 +43,13 @@ namespace con2
         public static readonly InputID INP_HORIZONTAL = new InputID("Horizontal");
         public static readonly InputID INP_VERTICAL = new InputID("Vertical");
         public static readonly InputID INP_PUNCH = new InputID("Punch");
-        public static readonly InputID INP_FIREBALL = new InputID("Fireball");
         public static readonly InputID INP_INTERACT = new InputID("Interact");
         public static readonly InputID INP_START = new InputID("Start");
+        public static readonly InputID INP_LEFT_TRIGGER = new InputID("LeftTrigger");
+        public static readonly InputID INP_RIGHT_TRIGGER = new InputID("RightTrigger");
 
-        private Dictionary<GamepadAction.ButtonID, GamepadAction> actions;      // One to one
-        private Dictionary<InputID, List<GamepadAction.ButtonID>> inputToAction; // One to many
-        private GamepadAction joystickAction;
-        private Vector2 movementDirection;
-        private Vector2 movementDirectionRaw;
-
-        private bool m_movementIsInverted = false;
+        private Dictionary<GamepadAction.ID, GamepadAction> actions;      // One to one
+        private Dictionary<InputID, List<GamepadAction.ID>> inputToAction; // One to many
 
         private int m_playerID;
 
@@ -61,15 +57,19 @@ namespace con2
         {
             m_playerID = playerID;
 
-            actions = new Dictionary<GamepadAction.ButtonID, GamepadAction>();
-            for (GamepadAction.ButtonID actionID = 0; actionID < GamepadAction.ButtonID.MAX_ID; ++actionID)
+            actions = new Dictionary<GamepadAction.ID, GamepadAction>();
+            //Button Actions
+            for (GamepadAction.ID actionID = GamepadAction.ID.__BUTTONS__ + 1; actionID < GamepadAction.ID.__AXES__; ++actionID)
             {
-                actions.Add(actionID, new GamepadAction(playerID, actionID));
+                actions.Add(actionID, new GamepadAction(playerID, actionID, true));
+            }
+            //Axis Actions
+            for (GamepadAction.ID actionID = GamepadAction.ID.__AXES__ + 1; actionID < GamepadAction.ID.MAX_ID; ++actionID)
+            {
+                actions.Add(actionID, new GamepadAction(playerID, actionID, false));
             }
 
-            joystickAction = new GamepadAction(playerID, GamepadAction.ButtonID.MAX_ID);
-
-            inputToAction = new Dictionary<InputID, List<GamepadAction.ButtonID>>();
+            inputToAction = new Dictionary<InputID, List<GamepadAction.ID>>();
             setupDefaultMappings();
             foreach (InputID inputID in inputToAction.Keys)
             {
@@ -85,24 +85,26 @@ namespace con2
 
         public void SwitchGamepadContext(List<IInputConsumer> inputConsumers, int playerId)
         {
-            foreach (KeyValuePair<GamepadAction.ButtonID, GamepadAction> action in actions)
+            foreach (KeyValuePair<GamepadAction.ID, GamepadAction> action in actions)
             {
                 action.Value.SetInputConsumers(inputConsumers, playerId);
             }
-
-            joystickAction.SetInputConsumers(inputConsumers, playerId);
         }
 
         // DEFINE DEFAULT CONTROLS HERE!
         private void setupDefaultMappings()
         {
-            addMapping(INP_PUNCH, GamepadAction.ButtonID.PUNCH);
-            addMapping(INP_FIREBALL, GamepadAction.ButtonID.FIREBALL);
-            addMapping(INP_INTERACT, GamepadAction.ButtonID.INTERACT);
-            addMapping(INP_START, GamepadAction.ButtonID.START);
+            addMapping(INP_PUNCH, GamepadAction.ID.PUNCH);
+            addMapping(INP_INTERACT, GamepadAction.ID.INTERACT);
+            addMapping(INP_START, GamepadAction.ID.START);
+
+            addMapping(INP_HORIZONTAL, GamepadAction.ID.HORIZONTAL);
+            addMapping(INP_VERTICAL, GamepadAction.ID.VERTICAL);
+            addMapping(INP_LEFT_TRIGGER, GamepadAction.ID.LEFT_TRIGGER);
+            addMapping(INP_RIGHT_TRIGGER, GamepadAction.ID.RIGHT_TRIGGER);
         }
 
-        private void addMapping(InputID inputID, GamepadAction.ButtonID actionID)
+        private void addMapping(InputID inputID, GamepadAction.ID actionID)
         {
             var action = actions[actionID];
             action.currentInputID = inputID;
@@ -114,7 +116,7 @@ namespace con2
             }
             else
             {
-                var list = new List<GamepadAction.ButtonID>();
+                var list = new List<GamepadAction.ID>();
                 list.Add(actionID);
                 inputToAction.Add(inputID, list);
             }
@@ -128,7 +130,7 @@ namespace con2
         // Internal use only
         public void Poll()
         {
-            // Buttons
+
             foreach (InputID inputID in inputToAction.Keys)
             {
                 var list = inputToAction[inputID];
@@ -140,42 +142,19 @@ namespace con2
                     var justPressed = Input.GetButtonDown(getInputForPlayerIdx(inputID.Value));
                     var pressed = Input.GetButton(getInputForPlayerIdx(inputID.Value));
                     var justReleased = Input.GetButtonUp(getInputForPlayerIdx(inputID.Value));
-
-                    action.SetNewButtonInput(justPressed, pressed, justReleased);
+                    var axisValue = Input.GetAxis(getInputForPlayerIdx(inputID.Value));
+                    action.SetNewInput(justPressed, pressed, justReleased, axisValue);
                 }
             }
 
-            // Axes
-            movementDirection.x = Input.GetAxis(getInputForPlayerIdx(INP_HORIZONTAL.Value));
-            movementDirection.y = Input.GetAxis(getInputForPlayerIdx(INP_VERTICAL.Value));
-            movementDirectionRaw.x = Input.GetAxisRaw(getInputForPlayerIdx(INP_HORIZONTAL.Value));
-            movementDirectionRaw.y = Input.GetAxisRaw(getInputForPlayerIdx(INP_VERTICAL.Value));
-
-            if (movementDirectionRaw.magnitude > 0.0f)
-            {
-                if (m_movementIsInverted)
-                {
-                    movementDirectionRaw *= -1;
-                }
-                joystickAction.SetNewJoystickInput(movementDirectionRaw);
-            }
         }
 
-
-
-
-        // Public API
-        public void InvertMovement()
-        {
-            m_movementIsInverted = !m_movementIsInverted;
-        }
-
-        public GamepadAction Action(GamepadAction.ButtonID actionID)
+        public GamepadAction Action(GamepadAction.ID actionID)
         {
             return actions[actionID];
         }
 
-        public void RemapAction(GamepadAction.ButtonID actionID, InputID inputID)
+        public void RemapAction(GamepadAction.ID actionID, InputID inputID)
         {
             var action = actions[actionID];
 
@@ -192,12 +171,16 @@ namespace con2
 
         public void ResetMappings()
         {
-            inputToAction.Clear();
-
-            for (GamepadAction.ButtonID actionID = 0; actionID < GamepadAction.ButtonID.MAX_ID; ++actionID)
+            setupDefaultMappings();
+            foreach (InputID inputID in inputToAction.Keys)
             {
-                var action = actions[actionID];
-                addMapping(action.defaultInputID, actionID);
+                // Save default mapping
+                var list = inputToAction[inputID];
+                foreach (var actionID in list)
+                {
+                    var action = actions[actionID];
+                    action.defaultInputID = inputID;
+                }
             }
         }
     }
