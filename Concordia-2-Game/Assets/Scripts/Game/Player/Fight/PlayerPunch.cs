@@ -57,6 +57,11 @@ namespace con2.game
             return hitVector;
         }
 
+        public void ModulatePunchStrength(float punchStrengthMultiplier)
+        {
+            m_strength *= punchStrengthMultiplier;
+        }
+
         protected override void AfterHitting()
         { }
 

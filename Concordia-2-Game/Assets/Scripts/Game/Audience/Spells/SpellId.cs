@@ -10,6 +10,8 @@ namespace con2.game
         public enum SpellID
         {
             disco_mania = 0,
+            mega_mage_punch = 1,
+
 
             max_id,
         }
@@ -17,6 +19,7 @@ namespace con2.game
         public static Dictionary<SpellID, string> EventList = new Dictionary<SpellID, string>
         {
             { SpellID.disco_mania, "Disco Mania" },
+            { SpellID.mega_mage_punch, "Mega Mage Punch" },
         };
 
     }

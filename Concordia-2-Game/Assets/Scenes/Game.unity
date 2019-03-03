@@ -2047,6 +2047,7 @@ GameObject:
   - component: {fileID: 1825916750}
   - component: {fileID: 1825916751}
   - component: {fileID: 1825916752}
+  - component: {fileID: 1825916753}
   m_Layer: 0
   m_Name: SpellsManager
   m_TagString: Untagged
@@ -2094,6 +2095,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DiscoManiaDuration: 10
+--- !u!114 &1825916753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825916749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b505e46ff0bf05b41bb949dab53f9124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_megaMagePunchDuration: 10
+  m_megaMageMultiplier: 3
   m_discoBallPrefab: {fileID: 5542362868210446654, guid: c94288c0f58b4404f823d9217078ca5c,
     type: 3}
 --- !u!1001 &1912598297
