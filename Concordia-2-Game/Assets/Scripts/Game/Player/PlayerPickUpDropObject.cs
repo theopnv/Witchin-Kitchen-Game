@@ -24,13 +24,13 @@ public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
 
     public bool ConsumeInput(GamepadAction input)
     {
-        if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.PUNCH))
+        if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
         {
             if (IsHoldingObject())
                 return true;
         }
 
-        if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
+        if (input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
         {
             if (IsHoldingObject())
                 DropObject(transform.forward * m_throwForce);

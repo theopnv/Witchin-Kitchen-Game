@@ -27,13 +27,13 @@ namespace con2.game
             GameObject targetPlayer = managers.GetComponentInChildren<SpawnPlayersController>().GetPlayers()[_TargetedPlayer.id];
             discoballController.FollowTarget = targetPlayer;
 
-            var playerGamepad = GamepadMgr.Pad(_TargetedPlayer.id);
-            playerGamepad.InvertMovement();
+            var playerMovement = targetPlayer.GetComponent<PlayerMovement>();
+            playerMovement.InvertMovement();
 
 
             yield return new WaitForSeconds(m_DiscoManiaDuration);
 
-            playerGamepad.InvertMovement();
+            playerMovement.InvertMovement();
 
             GameObject leaveTarget = Instantiate(new GameObject(), startExitPos, new Quaternion(0, 0, 0, 0));
             discoballController.FollowTarget = leaveTarget;
