@@ -160,13 +160,13 @@ namespace con2
 
             // Remove old mapping
             var list = inputToAction[action.currentInputID];
-            list.Remove(action.GetActionID());
+            list.Remove(actionID);
             if (list.Count == 0)
             {
                 inputToAction.Remove(inputID);
             }
 
-            addMapping(inputID, action.GetActionID());
+            addMapping(inputID, actionID);
         }
 
         public void ResetMappings()
