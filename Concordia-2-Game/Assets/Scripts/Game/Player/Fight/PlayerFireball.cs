@@ -16,7 +16,11 @@ public class PlayerFireball : MonoBehaviour, IInputConsumer
     public void Start()
     {
         m_spawnParent = GameObject.Find("Environment");
-        m_player = transform.parent.gameObject.GetComponent<Rigidbody>();
+        Transform parent = transform.parent;
+        if (parent)
+        {
+            m_player = parent.gameObject.GetComponent<Rigidbody>();
+        }
     }
 
     public bool ConsumeInput(GamepadAction input)
@@ -45,9 +49,24 @@ public class PlayerFireball : MonoBehaviour, IInputConsumer
         StartCoroutine(FireballCooldown());
     }
 
+    public void FireballTurret(GameObject launcher)
+    {
+        if (m_spawnLocation)
+        {
+            GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnLocation.transform.position, m_spawnLocation.transform.rotation, m_spawnParent.transform);
+            newFireball.transform.forward = m_spawnLocation.transform.forward;
+            newFireball.GetComponent<Projectile>().m_launcher = launcher;
+        }
+    }
+
     private void Recoil()
     {
         m_player.AddForce(-transform.forward * m_recoil, ForceMode.VelocityChange);
+    }
+
+    public void SetCanCast(bool canCast)
+    {
+        m_canCastFireball = canCast;
     }
 
     private IEnumerator FireballCooldown()

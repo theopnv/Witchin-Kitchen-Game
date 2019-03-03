@@ -20,6 +20,7 @@ namespace con2.game
         {
             { SpellID.disco_mania, "Disco Mania" },
             { SpellID.mega_mage_punch, "Mega Mage Punch" },
+            { SpellID.fireball_for_all, "Fireball For All" },
         };
 
     }
