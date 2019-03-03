@@ -8,6 +8,7 @@ namespace con2.game
     public class FightStun : MonoBehaviour
     {
         public AnimationCurve modifierCurve;
+        StunStars m_visualFeedback;
 
         private float timerElapsed = 0.0f;
         private float timerMax = 0.0f;
@@ -15,12 +16,14 @@ namespace con2.game
         private void FixedUpdate()
         {
             timerElapsed = Mathf.Min(timerMax, timerElapsed + Time.deltaTime);
+            m_visualFeedback = GetComponentInChildren<StunStars>();
         }
 
         public void Stun(float seconds)
         {
             timerMax = seconds;
             timerElapsed = 0.0f;
+            m_visualFeedback.Play(seconds);
         }
 
         public float getMovementModifier()
