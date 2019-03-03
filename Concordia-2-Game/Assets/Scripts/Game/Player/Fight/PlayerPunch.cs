@@ -41,7 +41,7 @@ namespace con2.game
             if (!m_canPunch)
                 return false;
 
-            if (input.GetActionID().GetID().Equals(con2.GamepadAction.ID.PUNCH))
+            if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
             {
                 Hit();
                 StartCoroutine(PunchCooldown());

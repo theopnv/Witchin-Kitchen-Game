@@ -35,13 +35,13 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     public bool ConsumeInput(GamepadAction input)
     {
-        if (input.GetActionID().GetID().Equals(con2.GamepadAction.ID.HORIZONTAL))
+        if (input.GetActionID().Equals(con2.GamepadAction.ID.HORIZONTAL))
         {
             float joystick = input.m_axisValue;
             movementDirection.x += joystick;
             return true;
         }
-        if (input.GetActionID().GetID().Equals(con2.GamepadAction.ID.VERTICAL))
+        if (input.GetActionID().Equals(con2.GamepadAction.ID.VERTICAL))
         {
             float joystick = input.m_axisValue;
             movementDirection.z = joystick;

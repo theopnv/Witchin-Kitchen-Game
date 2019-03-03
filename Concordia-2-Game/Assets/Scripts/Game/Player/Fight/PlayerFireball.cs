@@ -24,7 +24,7 @@ public class PlayerFireball : MonoBehaviour, IInputConsumer
         if (!m_canCastFireball)
             return false;
 
-        if (input.GetActionID().GetID().Equals(con2.GamepadAction.ID.RIGHT_TRIGGER))
+        if (input.GetActionID().Equals(con2.GamepadAction.ID.RIGHT_TRIGGER))
         {
             if (input.m_axisValue > 0.5)
             {

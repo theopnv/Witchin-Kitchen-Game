@@ -49,7 +49,7 @@ namespace con2
         public static readonly InputID INP_RIGHT_TRIGGER = new InputID("RightTrigger");
 
         private Dictionary<GamepadAction.ID, GamepadAction> actions;      // One to one
-        private Dictionary<InputID, List<GamepadAction.ActionID>> inputToAction; // One to many
+        private Dictionary<InputID, List<GamepadAction.ID>> inputToAction; // One to many
 
         private int m_playerID;
 
@@ -61,15 +61,15 @@ namespace con2
             //Button Actions
             for (GamepadAction.ID actionID = GamepadAction.ID.__BUTTONS__ + 1; actionID < GamepadAction.ID.__AXES__; ++actionID)
             {
-                actions.Add(actionID, new GamepadAction(playerID, new GamepadAction.ActionID(actionID, true)));
+                actions.Add(actionID, new GamepadAction(playerID, actionID, true));
             }
             //Axis Actions
             for (GamepadAction.ID actionID = GamepadAction.ID.__AXES__ + 1; actionID < GamepadAction.ID.MAX_ID; ++actionID)
             {
-                actions.Add(actionID, new GamepadAction(playerID, new GamepadAction.ActionID(actionID, false)));
+                actions.Add(actionID, new GamepadAction(playerID, actionID, false));
             }
 
-            inputToAction = new Dictionary<InputID, List<GamepadAction.ActionID>>();
+            inputToAction = new Dictionary<InputID, List<GamepadAction.ID>>();
             setupDefaultMappings();
             foreach (InputID inputID in inputToAction.Keys)
             {
@@ -77,7 +77,7 @@ namespace con2
                 var list = inputToAction[inputID];
                 foreach (var actionID in list)
                 {
-                    var action = actions[actionID.GetID()];
+                    var action = actions[actionID];
                     action.defaultInputID = inputID;
                 }
             }
@@ -94,19 +94,19 @@ namespace con2
         // DEFINE DEFAULT CONTROLS HERE!
         private void setupDefaultMappings()
         {
-            addMapping(INP_PUNCH, new GamepadAction.ActionID(GamepadAction.ID.PUNCH, true));
-            addMapping(INP_INTERACT, new GamepadAction.ActionID(GamepadAction.ID.INTERACT, true));
-            addMapping(INP_START, new GamepadAction.ActionID(GamepadAction.ID.START, true));
+            addMapping(INP_PUNCH, GamepadAction.ID.PUNCH);
+            addMapping(INP_INTERACT, GamepadAction.ID.INTERACT);
+            addMapping(INP_START, GamepadAction.ID.START);
 
-            addMapping(INP_HORIZONTAL, new GamepadAction.ActionID(GamepadAction.ID.HORIZONTAL, false));
-            addMapping(INP_VERTICAL, new GamepadAction.ActionID(GamepadAction.ID.VERTICAL, false));
-            addMapping(INP_LEFT_TRIGGER, new GamepadAction.ActionID(GamepadAction.ID.LEFT_TRIGGER, false));
-            addMapping(INP_RIGHT_TRIGGER, new GamepadAction.ActionID(GamepadAction.ID.RIGHT_TRIGGER, false));
+            addMapping(INP_HORIZONTAL, GamepadAction.ID.HORIZONTAL);
+            addMapping(INP_VERTICAL, GamepadAction.ID.VERTICAL);
+            addMapping(INP_LEFT_TRIGGER, GamepadAction.ID.LEFT_TRIGGER);
+            addMapping(INP_RIGHT_TRIGGER, GamepadAction.ID.RIGHT_TRIGGER);
         }
 
-        private void addMapping(InputID inputID, GamepadAction.ActionID actionID)
+        private void addMapping(InputID inputID, GamepadAction.ID actionID)
         {
-            var action = actions[actionID.GetID()];
+            var action = actions[actionID];
             action.currentInputID = inputID;
 
             if (inputToAction.ContainsKey(inputID))
@@ -116,7 +116,7 @@ namespace con2
             }
             else
             {
-                var list = new List<GamepadAction.ActionID>();
+                var list = new List<GamepadAction.ID>();
                 list.Add(actionID);
                 inputToAction.Add(inputID, list);
             }
@@ -137,7 +137,7 @@ namespace con2
 
                 foreach (var actionID in list)
                 {
-                    var action = actions[actionID.GetID()];
+                    var action = actions[actionID];
 
                     var justPressed = Input.GetButtonDown(getInputForPlayerIdx(inputID.Value));
                     var pressed = Input.GetButton(getInputForPlayerIdx(inputID.Value));
@@ -178,7 +178,7 @@ namespace con2
                 var list = inputToAction[inputID];
                 foreach (var actionID in list)
                 {
-                    var action = actions[actionID.GetID()];
+                    var action = actions[actionID];
                     action.defaultInputID = inputID;
                 }
             }

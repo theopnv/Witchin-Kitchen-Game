@@ -157,15 +157,15 @@ public class MainGameManager : MonoBehaviour, IInputConsumer
     {
         if (m_acceptingInput)
         {
-            if (input.GetActionID().GetID().Equals(con2.GamepadAction.ID.START)
-                || input.GetActionID().GetID().Equals(con2.GamepadAction.ID.INTERACT))
+            if (input.GetActionID().Equals(con2.GamepadAction.ID.START)
+                || input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
             {
                 SceneManager.LoadScene(SceneNames.Game);
                 m_gameOver = false;
                 m_acceptingInput = false;
                 return true;
             }
-            else if (input.GetActionID().GetID().Equals(con2.GamepadAction.ID.PUNCH))
+            else if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
             {
                 SceneManager.LoadScene(SceneNames.MainMenu);
                 m_gameOver = false;
