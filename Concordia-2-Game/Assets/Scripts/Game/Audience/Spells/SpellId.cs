@@ -11,7 +11,7 @@ namespace con2.game
         {
             disco_mania = 0,
             mega_mage_punch = 1,
-
+            fireball_for_all = 2,
 
             max_id,
         }

@@ -6,11 +6,11 @@ using UnityEngine;
 public class PlayerFireball : MonoBehaviour, IInputConsumer
 {
     [SerializeField] private GameObject m_fireballPrefab;
+    [SerializeField] private GameObject m_spawnLocation;
     [SerializeField] public float m_reloadSeconds, m_recoil;
 
     private GameObject m_spawnParent;
     private Rigidbody m_player;
-    private Projectile m_currentFireball;
     private bool m_canCastFireball = true;
 
     public void Start()
@@ -33,12 +33,11 @@ public class PlayerFireball : MonoBehaviour, IInputConsumer
         return false;
     }
 
-    private void CastFireball()
+    public void CastFireball()
     {
         //The enviroment (terrain) is the parent of the fireball, but we position it initially based on the player
-        GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnParent.transform);
-        newFireball.transform.position = transform.position;
-        newFireball.transform.forward = transform.forward;
+        GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnLocation.transform.position, m_spawnLocation.transform.rotation, m_spawnParent.transform);
+        newFireball.transform.forward = m_spawnLocation.transform.forward;
         newFireball.GetComponent<Projectile>().m_launcher = transform.parent.gameObject;
 
         Recoil();
