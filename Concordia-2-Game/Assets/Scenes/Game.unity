@@ -814,7 +814,7 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: -1
+    m_Resolution: 3
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
@@ -2109,6 +2109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_megaMagePunchDuration: 10
   m_megaMageMultiplier: 3
+  m_discoBallPrefab: {fileID: 5542362868210446654, guid: c94288c0f58b4404f823d9217078ca5c,
+    type: 3}
 --- !u!1001 &1912598297
 PrefabInstance:
   m_ObjectHideFlags: 0
