@@ -2,7 +2,7 @@
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
+        _Alpha("Alpha", Float) = 1.0
         _Radius("Radius of the wave", Float) = 1.0
         _RampTex("Ramp texture (RGBA)", 2D) = "white" {}
         _RampTexSmall("Ramp texture (RGBA)", 2D) = "white" {}
@@ -34,7 +34,7 @@
                 float4 localPos : TEXCOORD1;
             };
 
-            fixed4 _Color;
+            half _Alpha;
             half _Radius;
             sampler2D _RampTex;
             sampler2D _RampTexSmall;
@@ -50,7 +50,7 @@
 
             fixed4 frag(v2f i) : SV_Target
             {
-                fixed4 col = _Color;
+                fixed4 col = fixed4(0.0f, 0.0f, 0.0f, 0.0f);
 
                 float polarDist = sqrt(i.localPos.x * i.localPos.x + i.localPos.z * i.localPos.z);
 
@@ -63,6 +63,7 @@
                     fixed4 big = tex2D(_RampTex, rampUV);
 
                     col = lerp(small, big, _RampTexInterp);
+                    col.a *= _Alpha;
                 }
 
                 return col;
