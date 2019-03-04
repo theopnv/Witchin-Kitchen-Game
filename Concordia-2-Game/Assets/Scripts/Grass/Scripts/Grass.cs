@@ -8,6 +8,7 @@ public class Grass : MonoBehaviour
     const float BATCH_MAX_FLOAT = 1023f;
     const int BATCH_MAX = 1023;
     public const int GRASS_SURFACE_LAYER_MASK = 10;
+    public const int GRASS_GEOMETRY_LAYER_MASK = 11;
 
     public GameObject target;
     private Bounds targetBounds;
@@ -179,7 +180,8 @@ public class Grass : MonoBehaviour
                 bucket.NumInstances,
                 propertyBlock,
                 UnityEngine.Rendering.ShadowCastingMode.On,
-                true
+                true,
+                GRASS_GEOMETRY_LAYER_MASK
             );
         }
     }

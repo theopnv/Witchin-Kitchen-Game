@@ -20,6 +20,7 @@ public class DisplacementMap : MonoBehaviour
     public GameObject target;
     public Bounds targetBounds;
     public int pixelsPerGameUnit = 10;
+    public bool previewMode = false;
 
     private void Awake()
     {
@@ -45,6 +46,14 @@ public class DisplacementMap : MonoBehaviour
         cam.transform.position = targetBounds.center + Vector3.up * 100.0f;
         cam.orthographicSize = targetBounds.extents.z;
         cam.aspect = targetBounds.size.x / targetBounds.size.z;
+
+        // Preview mode
+        if (previewMode)
+        {
+            // Top-down view to use as a reference for grass planting: hide grass geometry and displacement layers
+            int toHide = (1 << GRASS_DISPLACEMENT_LAYER) | (1 << Grass.GRASS_GEOMETRY_LAYER_MASK);
+            cam.cullingMask = ~(toHide);
+        }
     }
 
     // Start is called before the first frame update
