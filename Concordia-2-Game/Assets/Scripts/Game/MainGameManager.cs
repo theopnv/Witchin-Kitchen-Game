@@ -130,7 +130,7 @@ namespace con2.game
             {
                 m_gameOver = true;
                 var winnerPlayer = DetermineWinner();
-                m_winnerText.text = winnerPlayer.name + " is the winner!";
+                m_winnerText.text = winnerPlayer.Name + " is the winner!";
                 _AudienceInteractionManager?.ExitRoom(true, winnerPlayer.ID);                StartCoroutine(BackToMainMenuAfterShortPause());
             }
         }

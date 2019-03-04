@@ -1280,6 +1280,11 @@ PrefabInstance:
       propertyPath: m_recipeUI
       value: 
       objectReference: {fileID: 2019444084}
+    - target: {fileID: 7134775336041668615, guid: 6e74e8cec5a7752488eb916904035552,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cauldron
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e74e8cec5a7752488eb916904035552, type: 3}
 --- !u!1 &719272681
