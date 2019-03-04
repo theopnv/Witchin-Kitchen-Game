@@ -11,7 +11,7 @@ namespace con2.game
         {
             disco_mania = 0,
             mega_mage_punch = 1,
-
+            fireball_for_all = 2,
 
             max_id,
         }
@@ -20,6 +20,7 @@ namespace con2.game
         {
             { SpellID.disco_mania, "Disco Mania" },
             { SpellID.mega_mage_punch, "Mega Mage Punch" },
+            { SpellID.fireball_for_all, "Fireball For All" },
         };
 
     }
