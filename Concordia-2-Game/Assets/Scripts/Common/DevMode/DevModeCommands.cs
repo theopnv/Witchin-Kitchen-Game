@@ -42,6 +42,7 @@ namespace con2
 
             repo.RegisterCommand("spell_dm", SpellDiscoMania);
             repo.RegisterCommand("spell_mmp", SpellMegaMagePunch);
+            repo.RegisterCommand("spell_fb", SpellFireballForAll);
         }
 
         public string Help(string[] args)
@@ -77,7 +78,9 @@ namespace con2
                         "- 'ev_fr': Simulates the Freezing Rain (fr) event",
                         "- 'ev_na': Simulates the Network Ads (na) event",
                         "- 'ev_mf': Simulates the Meteorites Falling (mf) event",
-                        "- 'spell_dm': Simulates the Disco Mania (dm) spell on player 1");
+                        "- 'spell_dm': Simulates the Disco Mania (dm) spell on player 1",
+                        "- 'spell_mmp': Simulates the Mega Mage Punch (mmp) spell on player 1",
+                        "- 'spell_fb': Simulates the Fireball For All (fb) spell on player 1");
 
                     help = string.Join(
                         Environment.NewLine,
@@ -227,6 +230,12 @@ namespace con2
         {
             StartCoroutine("SimulateSpell", Spells.SpellID.mega_mage_punch);
             return "Will cast the Mega Mage Punch spell on player 1 in 2 seconds";
+        }
+
+        private string SpellFireballForAll(string[] args)
+        {
+            StartCoroutine("SimulateSpell", Spells.SpellID.fireball_for_all);
+            return "Will cast the Fireball For All spell on player 1 in 2 seconds";
         }
 
         private IEnumerator SimulateSpell(Spells.SpellID id)
