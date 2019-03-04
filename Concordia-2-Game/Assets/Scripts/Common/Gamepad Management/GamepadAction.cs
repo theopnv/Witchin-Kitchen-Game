@@ -17,6 +17,8 @@ namespace con2
             __AXES__,
             HORIZONTAL,
             VERTICAL,
+            HORIZONTAL2,
+            VERTICAL2,
             LEFT_TRIGGER,
             RIGHT_TRIGGER,
             MAX_ID
