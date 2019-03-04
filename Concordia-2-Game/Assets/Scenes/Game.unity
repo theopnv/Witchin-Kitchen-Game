@@ -1325,6 +1325,16 @@ PrefabInstance:
       propertyPath: m_score
       value: 
       objectReference: {fileID: 1123861398}
+    - target: {fileID: 7134775336041668611, guid: 6e74e8cec5a7752488eb916904035552,
+        type: 3}
+      propertyPath: m_score
+      value: 
+      objectReference: {fileID: 1123861398}
+    - target: {fileID: 7134775336041668611, guid: 6e74e8cec5a7752488eb916904035552,
+        type: 3}
+      propertyPath: m_recipeUI
+      value: 
+      objectReference: {fileID: 2019444084}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e74e8cec5a7752488eb916904035552, type: 3}
 --- !u!1 &719272681
@@ -2096,7 +2106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DiscoManiaDuration: 10
-  m_discoBallPrefab: {fileID: 0}
+  m_discoBallPrefab: {fileID: 5542362868210446654, guid: c94288c0f58b4404f823d9217078ca5c,
+    type: 3}
 --- !u!114 &1825916753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2213,6 +2224,16 @@ PrefabInstance:
       propertyPath: m_score
       value: 
       objectReference: {fileID: 10317849}
+    - target: {fileID: 995111168217165314, guid: 22484125f6b8f404496ef89f3e2b426b,
+        type: 3}
+      propertyPath: m_score
+      value: 
+      objectReference: {fileID: 10317849}
+    - target: {fileID: 995111168217165314, guid: 22484125f6b8f404496ef89f3e2b426b,
+        type: 3}
+      propertyPath: m_recipeUI
+      value: 
+      objectReference: {fileID: 563996026}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22484125f6b8f404496ef89f3e2b426b, type: 3}
 --- !u!1 &1967356361
