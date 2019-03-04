@@ -3,23 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KitchenManager : MonoBehaviour
+namespace con2.game 
 {
-    public int m_ownerId;
-
-    public void SetOwner(SpawnPlayersController playerSpawner)
+    public class KitchenManager : MonoBehaviour
     {
-        GameObject owner = playerSpawner.GetPlayerByID(m_ownerId);
-        if (owner == null)
+        public int m_ownerId;
+
+        public void SetOwner(SpawnPlayersController spawnController)
         {
-            Debug.LogError("Kitchen owner player " + m_ownerId + " not found!");
-        }
-        else
-        {
-            KitchenStation[] stations = GetComponentsInChildren<KitchenStation>();
-            foreach (KitchenStation station in stations)
+            var owner = spawnController.GetPlayerByID(m_ownerId);
+            if (owner == null)
             {
-                station.SetOwner(owner);
+                Debug.LogError("Kitchen owner player " + m_ownerId + " not found!");
+            }
+            else
+            {
+                var stations = GetComponentsInChildren<KitchenStation>();
+                foreach (var station in stations)
+                {
+                    station.SetOwner(owner);
+                }
             }
         }
     }

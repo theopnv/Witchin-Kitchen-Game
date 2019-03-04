@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace con2.game
@@ -13,46 +14,53 @@ namespace con2.game
 
         [SerializeField] private GameObject _playerPrefab;
 
-        private GameObject[] m_players = new GameObject[PlayersInfo.PlayerNumber];
+        private Dictionary<int, PlayerManager> m_players;
 
         #endregion
 
         void Start()
         {
-            GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+            var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
 
+            // Initialize players
+            m_players = new Dictionary<int, PlayerManager>(PlayersInfo.PlayerNumber);
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
                 var player = Instantiate(_playerPrefab, _playerSpawnPositions[i]);
-                player.name = "Player " + (i + 1);
-                player.GetComponent<Renderer>().material.color = PlayersInfo.Color[i];
-                player.GetComponent<PlayerInputController>().SetPlayerIndex(i);
-                m_players[i] = player;
+                var playerManager = player.GetComponent<PlayerManager>();
+
+                playerManager.ID = i;
+                playerManager.Name = "Player " + playerManager.ID;
+                playerManager.Color = PlayersInfo.Color[playerManager.ID];
+                m_players[i] = playerManager;
             }
 
             //Switch control context to game once players are spawned
-            InputContextSwitcher contextSwitcher = managers.GetComponentInChildren<InputContextSwitcher>();
+            var contextSwitcher = managers.GetComponentInChildren<InputContextSwitcher>();
             contextSwitcher.SetToGameContext();
 
             //Initialize kitchens
-            GameObject[] kitchens = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
-            foreach (GameObject kitchen in kitchens)
+            var kitchens = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+            foreach (var kitchen in kitchens)
             {
-                KitchenManager km = kitchen.GetComponent<KitchenManager>();
+                var km = kitchen.GetComponent<KitchenManager>();
                 km.SetOwner(this);
             }
 
             //Inform Camera of which players to track
-            GameObject camera = GameObject.FindGameObjectWithTag(Tags.MAIN_CAMERA);
-            camera.GetComponent<SharedCamera>().SetPlayers(m_players);
+            var camera = GameObject.FindGameObjectWithTag(Tags.MAIN_CAMERA);
+            camera.GetComponent<SharedCamera>()
+                .SetPlayers(m_players
+                    .Select(p => p.Value.gameObject)
+                    .ToArray());
         }
 
-        public GameObject[] GetPlayers()
+        public Dictionary<int, PlayerManager> GetPlayers()
         {
             return m_players;
         }
 
-        public GameObject GetPlayerByID(int ID)
+        public PlayerManager GetPlayerByID(int ID)
         {
             return m_players[ID];
         }

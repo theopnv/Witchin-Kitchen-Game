@@ -3,33 +3,36 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class GlobalRecipeList : MonoBehaviour
+namespace con2.game
 {
-    private static List<Ingredient[]> m_sharedRecipeList = new List<Ingredient[]>();
 
-    private static List<Ingredient[]> m_potionRecipes = new List<Ingredient[]> {
-      new Ingredient[] { Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER },
-      new Ingredient[] { Ingredient.NEWT_EYE, Ingredient.NEWT_EYE },
-      new Ingredient[] { Ingredient.NEWT_EYE, Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER },
-      new Ingredient[] { Ingredient.GHOST_PEPPER, Ingredient.NEWT_EYE, Ingredient.GHOST_PEPPER }
-    };
-
-    //Synchronize this method because I'm suspicious of what will happen when all cauldrons call Start() ...
-    [MethodImpl(MethodImplOptions.Synchronized)]
-    public static Ingredient[] GetNextRecipe(int currentRecipeIndex)
+    public class GlobalRecipeList : MonoBehaviour
     {
-        if (currentRecipeIndex >= m_sharedRecipeList.Count)
+        private static List<Ingredient[]> m_sharedRecipeList = new List<Ingredient[]>();
+
+        private static List<Ingredient[]> m_potionRecipes = new List<Ingredient[]> {
+            new Ingredient[] { Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER },
+            new Ingredient[] { Ingredient.NEWT_EYE, Ingredient.NEWT_EYE },
+            new Ingredient[] { Ingredient.NEWT_EYE, Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER },
+            new Ingredient[] { Ingredient.GHOST_PEPPER, Ingredient.NEWT_EYE, Ingredient.GHOST_PEPPER }
+        };
+
+        //Synchronize this method because I'm suspicious of what will happen when all cauldrons call Start() ...
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public static Ingredient[] GetNextRecipe(int currentRecipeIndex)
         {
-            int nextIndex = Random.Range(0, m_potionRecipes.Count);
-            while(m_potionRecipes[nextIndex].Equals(m_potionRecipes[m_potionRecipes.Count - 1]))
+            if (currentRecipeIndex >= m_sharedRecipeList.Count)
             {
-                nextIndex = Random.Range(0, m_potionRecipes.Count);
+                int nextIndex = Random.Range(0, m_potionRecipes.Count);
+                while (m_potionRecipes[nextIndex].Equals(m_potionRecipes[m_potionRecipes.Count - 1]))
+                {
+                    nextIndex = Random.Range(0, m_potionRecipes.Count);
+                }
+                Ingredient[] next = m_potionRecipes[nextIndex];
+                m_sharedRecipeList.Add(m_potionRecipes[nextIndex]);
             }
-            Ingredient[] next = m_potionRecipes[nextIndex];
-            m_sharedRecipeList.Add(m_potionRecipes[nextIndex]);
+
+            return m_sharedRecipeList[currentRecipeIndex];
         }
-
-        return m_sharedRecipeList[currentRecipeIndex];
     }
-
 }

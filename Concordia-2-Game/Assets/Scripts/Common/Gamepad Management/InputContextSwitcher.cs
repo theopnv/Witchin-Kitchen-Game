@@ -1,4 +1,4 @@
-﻿using con2;
+using con2;
 using con2.game;
 using System;
 using System.Collections;
@@ -13,8 +13,8 @@ public class InputContextSwitcher : MonoBehaviour
      public void Awake()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        f_menuContext = new Func<int, List<IInputConsumer>>(GetMenuContext);
-        f_gameContext = new Func<int, List<IInputConsumer>>(GetGameContext);
+        f_menuContext = GetMenuContext;
+        f_gameContext = GetGameContext;
 
         //Initialize gamepads
         GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
@@ -51,27 +51,24 @@ public class InputContextSwitcher : MonoBehaviour
 
     private static List<IInputConsumer> GetMenuContext(int playerIndex)
     {
-        List<IInputConsumer> inputConsumers = new List<IInputConsumer>();
+        var inputConsumers = new List<IInputConsumer>();
         return inputConsumers;
     }
 
     private static List<IInputConsumer> GetGameContext(int playerIndex)
     {
-        List<IInputConsumer> inputConsumers = new List<IInputConsumer>();
+        var inputConsumers = new List<IInputConsumer>();
 
-        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
+        var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+        var mgm = managers.GetComponentInChildren<MainGameManager>();
         inputConsumers.Add(mgm);
 
-        GameObject[] kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
-        List<ACookingMinigame> kitchenStations = new List<ACookingMinigame>();
-        foreach (GameObject kitchen in kitchenParents)
+        var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+        var kitchenStations = new List<ACookingMinigame>();
+        foreach (var kitchen in kitchenParents)
         {
-            ACookingMinigame[] stations = kitchen.GetComponentsInChildren<ACookingMinigame>();
-            foreach (ACookingMinigame station in stations)
-            {
-                kitchenStations.Add(station);
-            }
+            var stations = kitchen.GetComponentsInChildren<ACookingMinigame>();
+            kitchenStations.AddRange(stations);
         }    
           
         foreach (ACookingMinigame station in kitchenStations)
@@ -79,8 +76,8 @@ public class InputContextSwitcher : MonoBehaviour
             inputConsumers.Add(station);
         }
 
-        SpawnPlayersController playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
-        GameObject player = playerSpawner.GetPlayerByID(playerIndex);
+        var playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
+        var player = playerSpawner.GetPlayerByID(playerIndex);
         inputConsumers.Add(player.GetComponent<PlayerInputController>());
         
         return inputConsumers;

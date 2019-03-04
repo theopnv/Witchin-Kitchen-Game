@@ -245,7 +245,7 @@ namespace con2
             var spell = new messages.Spell()
             {
                 spellId = (int)id,
-                targetedPlayer = new Player() { id = 0 }
+                targetedPlayer = new messages.Player() { id = 0 }
             };
             _AudienceInteractionManager?.BroadcastSpellRequest(spell);
         }

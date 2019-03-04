@@ -10,7 +10,7 @@ namespace con2.game
     public abstract class ASpell : MonoBehaviour, ISpellSubscriber
     {
         protected Spells.SpellID ID;
-        protected Player _TargetedPlayer;
+        protected messages.Player _TargetedPlayer;
 
         public abstract IEnumerator SpellImplementation();
         public abstract Spells.SpellID GetSpellID();
@@ -24,7 +24,7 @@ namespace con2.game
             var mgm = managers.GetComponentInChildren<MainGameManager>();
         }
 
-        public void ActivateSpellMode(Player targetedPlayer)
+        public void ActivateSpellMode(messages.Player targetedPlayer)
         {
             _TargetedPlayer = targetedPlayer;
             StartCoroutine(RunEvent(SpellImplementation));

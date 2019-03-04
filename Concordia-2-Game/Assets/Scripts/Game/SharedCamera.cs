@@ -18,18 +18,11 @@ namespace con2.game
 
         private GameObject[] m_players;
         private Vector3 m_initialDistanceFromCenter;
-
-        // Start is called before the first frame update
+        
         void Start()
         {
             // Snap at start to avoid interpolation
             m_initialDistanceFromCenter = transform.position;
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public void SetPlayers(GameObject[] players)
@@ -45,12 +38,12 @@ namespace con2.game
 
         private Vector3 getNewCamTargetPos()
         {
-            Vector3 middle = Vector3.zero;
-            Vector3 furthestFromMiddle = Vector3.zero;
+            var middle = Vector3.zero;
+            var furthestFromMiddle = Vector3.zero;
 
-            for (int i = 0; i < m_players.Length; ++i)
+            foreach (var t in m_players)
             {
-                Vector3 playerPosition = m_players[i].transform.position;
+                var playerPosition = t.transform.position;
                 middle += playerPosition;
                 if (playerPosition.magnitude > furthestFromMiddle.magnitude)
                     furthestFromMiddle = playerPosition;

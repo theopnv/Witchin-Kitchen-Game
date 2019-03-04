@@ -1,69 +1,74 @@
 ﻿using UnityEngine;
 
-public class PickableObject : MonoBehaviour
+namespace con2.game
 {
-    // The object's rigidbody
-    private Rigidbody m_rb;
-    private bool m_isHeld = false;
-    public float m_maxSpeedFractionWhenHolding = .85f;
-    public Ingredient m_ingredientType = Ingredient.NOT_AN_INGREDIENT;
 
-    void Start()
+    public class PickableObject : MonoBehaviour
     {
-        m_rb = GetComponent<Rigidbody>();
-    }
+        // The object's rigidbody
+        private Rigidbody m_rb;
+        private bool m_isHeld = false;
+        public float m_maxSpeedFractionWhenHolding = .85f;
+        public Ingredient m_ingredientType = Ingredient.NOT_AN_INGREDIENT;
 
-    // Called by the carrying player's Update() to force the object to follow it
-    public void UpdatePosition(Vector3 currentVel)
-    {
-        if (m_isHeld)
+        void Start()
         {
-            transform.position = transform.parent.position;
-            m_rb.velocity = currentVel / m_rb.mass;
+            m_rb = GetComponent<Rigidbody>();
         }
-    }
 
-    // Get picked up
-    public void PickUp(Transform newParent)
-    {
-        m_isHeld = true;
+        // Called by the carrying player's Update() to force the object to follow it
+        public void UpdatePosition(Vector3 currentVel)
+        {
+            if (m_isHeld)
+            {
+                transform.position = transform.parent.position;
+                m_rb.velocity = currentVel / m_rb.mass;
+            }
+        }
 
-        // Reset rotation
-        transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-        transform.parent = newParent;
+        // Get picked up
+        public void PickUp(Transform newParent)
+        {
+            m_isHeld = true;
 
-        transform.position = newParent.position;
+            // Reset rotation
+            transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+            transform.parent = newParent;
 
-        // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
-        m_rb.useGravity = false;
-        m_rb.velocity = Vector3.zero;
-        m_rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-    }
+            transform.position = newParent.position;
 
-    //Get dropped
-    public void Drop(Vector3 throwVector)
-    {
-        m_isHeld = false;
+            // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
+            m_rb.useGravity = false;
+            m_rb.velocity = Vector3.zero;
+            m_rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        }
 
-        // Re-Enable the use of gravity on the object and remove all constraints
-        m_rb.useGravity = true;
-        m_rb.constraints = RigidbodyConstraints.None;
+        //Get dropped
+        public void Drop(Vector3 throwVector)
+        {
+            m_isHeld = false;
 
-        // Get thrown forward
-        m_rb.AddForce(throwVector, ForceMode.VelocityChange);
+            // Re-Enable the use of gravity on the object and remove all constraints
+            m_rb.useGravity = true;
+            m_rb.constraints = RigidbodyConstraints.None;
 
-        // Unparent the object from the player
-        transform.parent = null;
-    }
+            // Get thrown forward
+            m_rb.AddForce(throwVector, ForceMode.VelocityChange);
 
-    public bool IsHeld()
-    {
-        return m_isHeld;
-    }
+            // Unparent the object from the player
+            transform.parent = null;
+        }
 
-    public float GetMaxSpeedFractionWhenHolding()
-    {
-        return m_maxSpeedFractionWhenHolding;
+        public bool IsHeld()
+        {
+            return m_isHeld;
+        }
+
+        public float GetMaxSpeedFractionWhenHolding()
+        {
+            return m_maxSpeedFractionWhenHolding;
+        }
+
     }
 
 }
