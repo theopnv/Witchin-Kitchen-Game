@@ -16,8 +16,9 @@ public class SetHeight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var renderer = GetComponent<MeshRenderer>();
-        GlowMeshHeight = renderer.bounds.extents.y * 2.0f;
+        var renderer = GetComponent<Renderer>();
+        var mesh = GetComponent<MeshFilter>().sharedMesh;
+        GlowMeshHeight = mesh.bounds.size.y;
         renderer.sharedMaterial.SetFloat("_GlowHeight", GlowMeshHeight);
     }
 }

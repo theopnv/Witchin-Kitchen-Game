@@ -67,7 +67,7 @@ Material:
     - _BorderSize: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _DepthFactor: 1.41
+    - _DepthFactor: 3.54
     - _DetailNormalMapScale: 1
     - _DistortStrength: 1
     - _DstBlend: 0
