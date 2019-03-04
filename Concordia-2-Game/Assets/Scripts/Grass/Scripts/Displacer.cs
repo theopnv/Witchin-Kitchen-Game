@@ -2,21 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class Displacer : MonoBehaviour
 {
-    MeshRenderer renderer;
-    MeshFilter mesh;
+    [Range(0.0f, 10.0f)]
+    public float Intensity = 1.0f;
+
+    public float MaxRaycastDistance = 20.0f;
+
+    public float HeightFalloffScale = 0.5f;
+
+    public AnimationCurve HeightFalloff;
+
+    private Renderer Renderer;
+    private MeshFilter Mesh;
 
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<MeshRenderer>();
-        mesh = GetComponent<MeshFilter>();
+        Renderer = GetComponent<Renderer>();
+        Mesh = GetComponent<MeshFilter>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        renderer.material.SetFloat("_Radius", mesh.mesh.bounds.extents.x);
+        Renderer.sharedMaterial.SetFloat("_Radius", Mesh.sharedMesh.bounds.extents.x);
+
+        // Height falloff
+        var internalIntensity = 0.0f;
+        RaycastHit hitInfo;
+        int layerMask = ~Grass.GRASS_SURFACE_LAYER_MASK; // Ignore all but grass surfaces
+        var hit = Physics.Raycast(transform.position, Vector3.down, out hitInfo, MaxRaycastDistance, layerMask);
+
+        if (hit)
+        {
+            print(hitInfo.distance);
+
+            var falloffProgress = Mathf.Clamp01(hitInfo.distance / HeightFalloffScale);
+            var falloff = HeightFalloff.Evaluate(falloffProgress);
+            internalIntensity = falloff * Intensity;
+        }
+
+        Renderer.sharedMaterial.SetFloat("_Intensity", internalIntensity);
     }
 }

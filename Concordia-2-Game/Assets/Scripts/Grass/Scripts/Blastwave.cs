@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class Blastwave : MonoBehaviour
 {
     public AnimationCurve MinRingRadius;
@@ -12,14 +13,14 @@ public class Blastwave : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float Playback = 0.0f;
 
-    MeshRenderer renderer;
-    MeshFilter mesh;
+    Renderer Renderer;
+    MeshFilter Mesh;
 
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<MeshRenderer>();
-        mesh = GetComponent<MeshFilter>();
+        Renderer = GetComponent<Renderer>();
+        Mesh = GetComponent<MeshFilter>();
     }
 
     // Update is called once per frame
@@ -32,8 +33,8 @@ public class Blastwave : MonoBehaviour
 
         transform.localScale = new Vector3(scale, scale, scale);
 
-        renderer.material.SetFloat("_MinRingRadius", mesh.mesh.bounds.extents.x * min);
-        renderer.material.SetFloat("_MaxRingRadius", mesh.mesh.bounds.extents.x * max);
-        renderer.material.SetFloat("_Intensity", intensity);
+        Renderer.sharedMaterial.SetFloat("_MinRingRadius", Mesh.sharedMesh.bounds.extents.x * min);
+        Renderer.sharedMaterial.SetFloat("_MaxRingRadius", Mesh.sharedMesh.bounds.extents.x * max);
+        Renderer.sharedMaterial.SetFloat("_Intensity", intensity);
     }
 }

@@ -7,7 +7,7 @@ public class Grass : MonoBehaviour
     // Batch stuff
     const float BATCH_MAX_FLOAT = 1023f;
     const int BATCH_MAX = 1023;
-    public const string GRASS_SURFACE_TAG = "GrassSurface";
+    public const int GRASS_SURFACE_LAYER_MASK = 10;
 
     public GameObject target;
     private Bounds targetBounds;
@@ -102,7 +102,8 @@ public class Grass : MonoBehaviour
                 RaycastHit hitInfo;
                 if (Physics.Raycast(origin, Vector3.down, out hitInfo))
                 {
-                    if (hitInfo.transform.tag == GRASS_SURFACE_TAG)
+                    if (hitInfo.transform.gameObject != null &&
+                        hitInfo.transform.gameObject.layer == GRASS_SURFACE_LAYER_MASK)
                     {
                         pos.y = hitInfo.point.y;
                     }

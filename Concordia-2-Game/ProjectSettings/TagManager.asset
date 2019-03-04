@@ -10,7 +10,6 @@ TagManager:
   - Menu
   - ArenaBase
   - Cauldron
-  - GrassSurface
   layers:
   - Default
   - TransparentFX
@@ -22,7 +21,7 @@ TagManager:
   - 
   - PostProcessing
   - GrassDisplacement
-  - 
+  - GrassSurface
   - 
   - 
   - 
