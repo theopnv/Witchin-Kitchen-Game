@@ -63,10 +63,10 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Intensity: 0.5783844
+    - _Intensity: 0
     - _MaxRingRadius: 5
     - _Metallic: 0
-    - _MinRingRadius: 0.00046610832
+    - _MinRingRadius: 4.144569
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02

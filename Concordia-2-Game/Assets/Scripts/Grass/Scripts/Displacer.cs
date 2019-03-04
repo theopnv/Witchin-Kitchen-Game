@@ -37,8 +37,6 @@ public class Displacer : MonoBehaviour
 
         if (hit)
         {
-            print(hitInfo.distance);
-
             var falloffProgress = Mathf.Clamp01(hitInfo.distance / HeightFalloffScale);
             var falloff = HeightFalloff.Evaluate(falloffProgress);
             internalIntensity = falloff * Intensity;
