@@ -11,9 +11,19 @@ public class Cauldron : MonoBehaviour
 
     public AnimationCurve GlowIntensity;
 
+    public AnimationCurve BubbleFrequency;
+
+    public AnimationCurve BubblesScale;
+
+    public AnimationCurve BubblesSpeed;
+
     private const string CAULDRON_BODY_NAME = "Cauldron";
+    private const string BUBBLES_EMITTER_NAME = "Bubbles";
     private GameObject CauldronBody;
     private Renderer CauldronBodyRenderer;
+    private ParticleSystem Bubbles;
+    private ParticleSystem.EmissionModule BubblesEmission;
+    private ParticleSystem.MainModule BubblesMain;
 
     private float StartTime;
     private bool Growing;
@@ -24,6 +34,10 @@ public class Cauldron : MonoBehaviour
     {
         CauldronBody = transform.Find(CAULDRON_BODY_NAME).gameObject;
         CauldronBodyRenderer = CauldronBody.GetComponent<Renderer>();
+
+        Bubbles = transform.Find(BUBBLES_EMITTER_NAME).gameObject.GetComponent<ParticleSystem>();
+        BubblesEmission = Bubbles.emission;
+        BubblesMain = Bubbles.main;
 
         Playback = 0.0f;
     }
@@ -67,5 +81,15 @@ public class Cauldron : MonoBehaviour
 
         var glowIntensity = GlowIntensity.Evaluate(Playback);
         CauldronBodyRenderer.material.SetFloat("_GlowIntensity", glowIntensity);
+
+
+        var bubbleFrequency = BubbleFrequency.Evaluate(Playback);
+        BubblesEmission.rateOverTime = bubbleFrequency;
+
+        var bubbleScale = BubblesScale.Evaluate(Playback);
+        BubblesMain.startSize = new ParticleSystem.MinMaxCurve(bubbleScale - bubbleScale * 0.2f, bubbleScale + bubbleScale * 0.2f);
+
+        var bubbleSpeed = BubblesSpeed.Evaluate(Playback);
+        BubblesMain.startSpeedMultiplier = bubbleSpeed;
     }
 }
