@@ -12,6 +12,11 @@ namespace con2.game
         private RecipeManager m_recipeManager;
         private PlayerManager m_owner;
 
+        protected abstract void OnAwake();
+        public abstract bool ShouldAcceptIngredient(Ingredient type);
+        protected abstract void OnCollectIngredient();
+        public abstract void ProcessIngredient();
+
         private Cauldron m_cauldronFX;
         private Spin2Win m_spoonSpinner;
 
@@ -23,6 +28,7 @@ namespace con2.game
 
             m_cauldronFX = GetComponent<Cauldron>();
             m_spoonSpinner = GetComponentInChildren<Spin2Win>();
+            OnAwake();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -30,18 +36,12 @@ namespace con2.game
             PickableObject ingredient = collision.gameObject.GetComponent<PickableObject>();
             if (ingredient && !ingredient.IsHeld())
             {
-                if (m_recipeManager == null || m_recipeManager.CollectIngredient(ingredient.m_ingredientType)) //If is generic station, or is cauldron and needs the ingredient 
+                if (ShouldAcceptIngredient(ingredient.m_ingredientType))
                 {
-                    Debug.Log("Collected a " + ingredient.m_ingredientType);
+                    OnCollectIngredient();
                     m_storedIngredient = ingredient.m_ingredientType;
                     Destroy(collision.gameObject);
                     m_miniGame.StartMinigame();
-
-                    if (m_cauldronFX)
-                    {
-                        m_cauldronFX.StartCooking();
-                        m_spoonSpinner.SetToSpin(true);
-                    }
                 }
             }
         }
@@ -54,31 +54,6 @@ namespace con2.game
             //Apply player color to station?
         }
 
-        public PlayerManager GetOwner() => m_owner;
-
-        public void ProcessIngredient()
-        {
-            if (m_recipeManager)    //Is cauldron
-            {
-                m_recipeManager.ProcessIngredient(m_storedIngredient);  //Add to recipe
-                if (m_cauldronFX)
-                {
-                    m_cauldronFX.StopCooking();
-                    m_spoonSpinner.SetToSpin(false);
-                } //Add to recipe
-            }
-            else                //Is some other kitchen station
-            {
-                //Process ingredient (chop, smash, etc.)
-            }
-
-            m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
-        }
-
-        public bool CollectIngredient(Ingredient type)
-        {
-            return m_recipeManager.CollectIngredient(type);
-        }
 
         public bool IsStoringIngredient()
         {
