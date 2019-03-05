@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5925793903106845511}
   - component: {fileID: 5925793903106845508}
+  - component: {fileID: 557715211787672956}
   m_Layer: 0
   m_Name: PlayerHUD
   m_TagString: Untagged
@@ -103,7 +104,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5925793903106845510}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -141,6 +142,20 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 1
+--- !u!114 &557715211787672956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925793903106845510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade9fde8d840a564e98944560a7b643e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Recipe: {fileID: 5925793904626477926}
+  Score: {fileID: 5925793903726636420}
 --- !u!1 &5925793903726636422
 GameObject:
   m_ObjectHideFlags: 0

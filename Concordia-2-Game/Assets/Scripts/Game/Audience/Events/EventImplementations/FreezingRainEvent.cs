@@ -24,9 +24,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
 
     public override IEnumerator EventImplementation()
     {
-        var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        var players = managers.GetComponentInChildren<SpawnPlayersController>().GetPlayers();
-
+        var players = Players.Dic;
 
         m_playerMovementControllers = new PlayerMovement[players.Count];
         for (int i = 0; i < players.Count; i++)

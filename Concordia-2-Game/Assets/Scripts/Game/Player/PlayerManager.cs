@@ -16,7 +16,15 @@ namespace con2.game
             set
             {
                 _ID = value;
-                GetComponent<PlayerInputController>().SetPlayerIndex(_ID);
+                GetComponent<PlayerInputController>()?.SetPlayerIndex(_ID);
+                if (Players.Dic.ContainsKey(ID))
+                {
+                    Players.Dic[ID] = this;
+                }
+                else
+                {
+                    Players.Dic.Add(ID, this);
+                }
             }
         }
 
@@ -28,6 +36,7 @@ namespace con2.game
             {
                 _Name = value;
                 gameObject.name = _Name;
+                Players.Dic[ID] = this;
             }
         }
 
@@ -39,24 +48,36 @@ namespace con2.game
             {
                 _Color = value;
                 GetComponent<Renderer>().material.color = value;
+                Players.Dic[ID] = this;
             }
         }
 
-        public int Score;
+        private int _Score;
+
+        public int Score
+        {
+            get => _Score;
+            set
+            {
+                _Score = value;
+                Players.Dic[ID] = this;
+            }
+        }
+
+        private PlayerHUD _PlayerHUD;
+
+        public PlayerHUD PlayerHUD
+        {
+            get => _PlayerHUD;
+            set
+            {
+                _PlayerHUD = value;
+                Players.Dic[ID] = this;
+            }
+        }
 
         #endregion
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 
 }

@@ -21,8 +21,7 @@ public class FireballForAll : ASpell
 
     public override IEnumerator SpellImplementation()
     {
-        var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        m_player = managers.GetComponentInChildren<SpawnPlayersController>().GetPlayerByID(_TargetedPlayer.id);
+        m_player = Players.GetPlayerByID(_TargetedPlayer.id);
         var playerFireball = m_player.GetComponentInChildren<PlayerFireball>();
         playerFireball.SetCanCast(false);
 
@@ -41,7 +40,7 @@ public class FireballForAll : ASpell
 
         m_doneRotation = true;
         playerFireball.SetCanCast(true);
-        GameObject.Destroy(m_fireballer);
+        Destroy(m_fireballer);
         yield return null;
     }
 

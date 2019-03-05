@@ -15,8 +15,7 @@ namespace con2.game
         private Vector3 velocity = Vector3.zero;
 
         private Vector3 camPos;
-
-        private GameObject[] m_players;
+        
         private Vector3 m_initialDistanceFromCenter;
         
         void Start()
@@ -24,12 +23,7 @@ namespace con2.game
             // Snap at start to avoid interpolation
             m_initialDistanceFromCenter = transform.position;
         }
-
-        public void SetPlayers(GameObject[] players)
-        {
-            m_players = players;
-        }
-
+        
         void LateUpdate()
         {
             camPos = getNewCamTargetPos();
@@ -41,16 +35,16 @@ namespace con2.game
             var middle = Vector3.zero;
             var furthestFromMiddle = Vector3.zero;
 
-            foreach (var t in m_players)
+            foreach (var t in Players.Dic)
             {
-                var playerPosition = t.transform.position;
+                var playerPosition = t.Value.gameObject.transform.position;
                 middle += playerPosition;
                 if (playerPosition.magnitude > furthestFromMiddle.magnitude)
                     furthestFromMiddle = playerPosition;
             }
 
             //Average the positions with the x3 to compensate for the middle
-            middle /= (3*m_players.Length);
+            middle /= (3 * Players.Dic.Count);
             middle += m_zoomFactor*m_initialDistanceFromCenter.normalized*furthestFromMiddle.magnitude;  //zoom
             middle += m_initialDistanceFromCenter;  //Keeps camera above the arena, pointed at 'middle'
             return middle;

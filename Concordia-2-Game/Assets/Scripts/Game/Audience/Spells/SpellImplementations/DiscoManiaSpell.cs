@@ -23,8 +23,7 @@ namespace con2.game
 
             var discoball = Instantiate(m_discoBallPrefab, startExitPos, new Quaternion(0, 0, 0, 0));
             var discoballController = discoball.GetComponent<DiscoBall>();
-            var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            var targetPlayer = managers.GetComponentInChildren<SpawnPlayersController>().GetPlayerByID(_TargetedPlayer.id);
+            var targetPlayer = Players.GetPlayerByID(_TargetedPlayer.id);
             discoballController.FollowTarget = targetPlayer.gameObject;
 
             var playerMovement = targetPlayer.GetComponent<PlayerMovement>();

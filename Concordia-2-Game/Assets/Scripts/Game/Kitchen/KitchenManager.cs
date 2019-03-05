@@ -7,14 +7,12 @@ namespace con2.game
 {
     public class KitchenManager : MonoBehaviour
     {
-        public int m_ownerId;
-
-        public void SetOwner(SpawnPlayersController spawnController)
+        public void SetOwner(int ownerId)
         {
-            var owner = spawnController.GetPlayerByID(m_ownerId);
+            var owner = Players.GetPlayerByID(ownerId);
             if (owner == null)
             {
-                Debug.LogError("Kitchen owner player " + m_ownerId + " not found!");
+                Debug.LogError("Kitchen owner player " + ownerId + " not found!");
             }
             else
             {

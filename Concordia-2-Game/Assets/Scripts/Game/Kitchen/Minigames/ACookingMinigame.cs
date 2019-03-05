@@ -16,9 +16,9 @@ namespace con2.game
         [SerializeField]
         private Text m_prompt;
         private Vector3 stationLocation;
+        [HideInInspector]
         public PlayerManager m_stationOwner;
         private KitchenStation m_kitchenStation;
-        private SpawnPlayersController m_playerSpawner;
 
         [SerializeField]
         protected bool m_started = false;
@@ -36,8 +36,6 @@ namespace con2.game
         {
             stationLocation = this.transform.position;
             m_prompt.enabled = false;
-            GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            m_playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
         }
 
         // Update is called once per frame
@@ -97,9 +95,9 @@ namespace con2.game
 
         public bool ConsumeInput(GamepadAction input)
         {
-            var interactingPlayer = m_playerSpawner.GetPlayerByID(input.GetPlayerId());
+            var interactingPlayer = Players.GetPlayerByID(input.GetPlayerId());
             var noOwner = m_stationOwner == null;
-            var samePlayer = m_stationOwner.Equals(interactingPlayer);
+            var samePlayer = m_stationOwner.ID == interactingPlayer.ID;
             if (m_started && (noOwner || samePlayer) && CheckPlayerIsNear(interactingPlayer.gameObject))
             {
                 return TryToConsumeInput(input);

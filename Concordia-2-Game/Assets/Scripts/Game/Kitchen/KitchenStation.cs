@@ -10,6 +10,7 @@ namespace con2.game
         private ACookingMinigame m_miniGame;
         private Ingredient m_storedIngredient;
         private RecipeManager m_recipeManager;
+        private PlayerManager m_owner;
 
         private Cauldron m_cauldronFX;
         private Spin2Win m_spoonSpinner;
@@ -29,19 +30,17 @@ namespace con2.game
             PickableObject ingredient = collision.gameObject.GetComponent<PickableObject>();
             if (ingredient && !ingredient.IsHeld())
             {
-                if (m_recipeManager == null || m_recipeManager.CollectIngredient(ingredient.m_ingredientType)
-                ) //If is generic station, or is cauldron and needs the ingredient 
+                if (m_recipeManager == null || m_recipeManager.CollectIngredient(ingredient.m_ingredientType)) //If is generic station, or is cauldron and needs the ingredient 
                 {
                     Debug.Log("Collected a " + ingredient.m_ingredientType);
                     m_storedIngredient = ingredient.m_ingredientType;
-                    GameObject.Destroy(collision.gameObject);
+                    Destroy(collision.gameObject);
                     m_miniGame.StartMinigame();
 
                     if (m_cauldronFX)
                     {
                         m_cauldronFX.StartCooking();
                         m_spoonSpinner.SetToSpin(true);
-
                     }
                 }
             }
@@ -49,10 +48,13 @@ namespace con2.game
 
         public void SetOwner(PlayerManager owner)
         {
+            m_owner = owner;
             m_miniGame.SetStationOwner(owner, this);
 
             //Apply player color to station?
         }
+
+        public PlayerManager GetOwner() => m_owner;
 
         public void ProcessIngredient()
         {
@@ -64,7 +66,7 @@ namespace con2.game
                     m_cauldronFX.StopCooking();
                     m_spoonSpinner.SetToSpin(false);
                 } //Add to recipe
-                }
+            }
             else                //Is some other kitchen station
             {
                 //Process ingredient (chop, smash, etc.)
