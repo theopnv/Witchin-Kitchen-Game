@@ -11,7 +11,7 @@ public abstract class ACookingMinigame : MonoBehaviour, IInputConsumer
     public const float INTERACTION_DISTANCE = 2.0f, FACING_DEGREE = 30.0f;
 
     [SerializeField]
-    private Text m_prompt;
+    protected Text m_prompt;
     private Vector3 stationLocation;
     public GameObject m_stationOwner;
     private KitchenStation m_kitchenStation;
