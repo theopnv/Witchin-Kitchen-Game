@@ -11,10 +11,10 @@ namespace con2.game
         private static List<Ingredient[]> m_sharedRecipeList = new List<Ingredient[]>();
 
         private static List<Ingredient[]> m_potionRecipes = new List<Ingredient[]> {
-            new Ingredient[] { Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER },
-            new Ingredient[] { Ingredient.NEWT_EYE, Ingredient.NEWT_EYE },
-            new Ingredient[] { Ingredient.NEWT_EYE, Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER },
-            new Ingredient[] { Ingredient.GHOST_PEPPER, Ingredient.NEWT_EYE, Ingredient.GHOST_PEPPER }
+            new[] { Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER },
+            new[] { Ingredient.NEWT_EYE, Ingredient.NEWT_EYE },
+            new[] { Ingredient.NEWT_EYE, Ingredient.GHOST_PEPPER, Ingredient.GHOST_PEPPER },
+            new[] { Ingredient.GHOST_PEPPER, Ingredient.NEWT_EYE, Ingredient.GHOST_PEPPER }
         };
 
         //Synchronize this method because I'm suspicious of what will happen when all cauldrons call Start() ...
@@ -24,7 +24,8 @@ namespace con2.game
             if (currentRecipeIndex >= m_sharedRecipeList.Count)
             {
                 int nextIndex = Random.Range(0, m_potionRecipes.Count);
-                while (m_potionRecipes[nextIndex].Equals(m_potionRecipes[m_potionRecipes.Count - 1]))
+                while (m_sharedRecipeList.Count > 0 
+                    && m_potionRecipes[nextIndex].Equals(m_sharedRecipeList[m_sharedRecipeList.Count - 1]))
                 {
                     nextIndex = Random.Range(0, m_potionRecipes.Count);
                 }

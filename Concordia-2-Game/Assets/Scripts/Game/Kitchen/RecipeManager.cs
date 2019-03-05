@@ -28,9 +28,18 @@ namespace con2.game
 
         void NextRecipe()
         {
+            if (m_recipeUI == null)
+            {
+                m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
+            }
+            if (m_score == null)
+            {
+                m_score = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Score;
+            }
+
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
-            m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
-            m_score = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Score;
+            m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
+            m_score.text = m_currentRecipeIndex.ToString();
         }
 
         public bool CollectIngredient(Ingredient collectedIngredient)
