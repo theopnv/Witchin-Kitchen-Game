@@ -5,10 +5,10 @@ using UnityEngine;
 namespace con2.game
 {
 
-    public class KitchenStation : MonoBehaviour
+    public abstract class KitchenStation : MonoBehaviour
     {
         private ACookingMinigame m_miniGame;
-        private Ingredient m_storedIngredient;
+        protected Ingredient m_storedIngredient;
         private RecipeManager m_recipeManager;
         private PlayerManager m_owner;
 
@@ -16,18 +16,12 @@ namespace con2.game
         public abstract bool ShouldAcceptIngredient(Ingredient type);
         protected abstract void OnCollectIngredient();
         public abstract void ProcessIngredient();
-
-        private Cauldron m_cauldronFX;
-        private Spin2Win m_spoonSpinner;
-
+        
         private void Awake()
         {
             m_miniGame = GetComponent<ACookingMinigame>();
             m_recipeManager = GetComponent<RecipeManager>();
             m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
-
-            m_cauldronFX = GetComponent<Cauldron>();
-            m_spoonSpinner = GetComponentInChildren<Spin2Win>();
             OnAwake();
         }
 
@@ -50,10 +44,9 @@ namespace con2.game
         {
             m_owner = owner;
             m_miniGame.SetStationOwner(owner, this);
-
-            //Apply player color to station?
         }
 
+        public PlayerManager GetOwner() => m_owner;
 
         public bool IsStoringIngredient()
         {

@@ -16,13 +16,8 @@ namespace con2.game
         [SerializeField]
         protected Text m_prompt;
         private Vector3 stationLocation;
-        public GameObject m_stationOwner;
-        private KitchenStation m_kitchenStation;
         private SpawnPlayersController m_playerSpawner;
 
-        [SerializeField]
-        private Text m_prompt;
-        private Vector3 stationLocation;
         [HideInInspector]
         public PlayerManager m_stationOwner;
         private KitchenStation m_kitchenStation;
