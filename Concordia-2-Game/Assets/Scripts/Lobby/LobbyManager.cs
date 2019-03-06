@@ -10,7 +10,7 @@ using UnityEngine.UI;
 namespace con2.lobby
 {
 
-    public class LobbyManager : MonoBehaviour
+    public class LobbyManager : MonoBehaviour, IInputConsumer
     {
         [Tooltip("The prefab to use as UI for each player")]
         public GameObject PlayerUiPrefab;
@@ -71,8 +71,7 @@ namespace con2.lobby
         {
             DevMode();
 
-            if (Input.GetKeyDown(KeyCode.Return)
-                || Input.GetKeyDown("joystick button 0"))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 _AudienceInteractionManager.SendPlayerCharacteristics();
             }
@@ -157,6 +156,23 @@ namespace con2.lobby
             SceneManager.LoadSceneAsync(SceneNames.MainMenu);
         }
 
+        public bool ConsumeInput(GamepadAction input)
+        {
+            if (input.GetActionID() == GamepadAction.ID.INTERACT)
+            {
+                _AudienceInteractionManager.SendPlayerCharacteristics();
+                return true;
+            }
+
+            if (input.GetActionID() == GamepadAction.ID.PUNCH)
+            {
+                BackToMenu();
+                return true;
+            }
+
+            return false;
+        }
+
         #endregion
 
         #region Dev Mode
@@ -180,6 +196,7 @@ namespace con2.lobby
         }
 
         #endregion
+
     }
 
 }
