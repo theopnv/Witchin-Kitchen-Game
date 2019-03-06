@@ -3,6 +3,7 @@
     Properties
     {
         _Radius("Radius", Float) = 0.5
+        _Intensity("Intensity", Float) = 1.0
     }
     SubShader
     {
@@ -31,6 +32,7 @@
             };
 
             float _Radius;
+            float _Intensity;
 
             v2f vert (appdata v)
             {
@@ -44,6 +46,7 @@
             {
                 float dist = sqrt(i.localPos.x * i.localPos.x + i.localPos.z * i.localPos.z);
                 float factor = saturate(1.0f - dist / _Radius);
+                factor *= _Intensity;
 
                 float2 direction = normalize(i.localPos.xz);
                 float2 packedDirection = (direction + float2(1.0f, 1.0f)) / 2.0f;
