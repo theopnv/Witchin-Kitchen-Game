@@ -10,8 +10,8 @@ namespace con2.game
         public enum EventID
         {
             freezing_rain = 0,
-            network_ads,
-            meteorites,
+            network_ads = 1,
+            meteorites = 2,
 
             max_id,
         }
