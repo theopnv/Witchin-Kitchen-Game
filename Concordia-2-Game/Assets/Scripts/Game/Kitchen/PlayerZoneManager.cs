@@ -48,6 +48,7 @@ namespace con2.game
             var playersHUDZone = GameObject.FindGameObjectWithTag(Tags.PLAYERS_HUD_ZONE);
             var instance = Instantiate(_PlayerHUDPrefab, playersHUDZone.transform);
             Owner.PlayerHUD = instance.GetComponent<PlayerHUD>();
+            Owner.PlayerHUD.OwnerId = Owner.ID;
         }
     }
 

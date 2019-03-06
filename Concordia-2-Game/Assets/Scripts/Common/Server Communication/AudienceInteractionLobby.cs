@@ -24,7 +24,7 @@ namespace con2
 
         public void SetURL(string url)
         {
-            _Socket.url = url;
+            _Socket.ResetUrl(url);
         }
 
         public void Connect()
