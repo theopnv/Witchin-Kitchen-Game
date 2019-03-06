@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OwnerId: 0
   Owner: {fileID: 0}
-  _PlayerPrefab: {fileID: 9017638658279021675, guid: 1f61a2d60e05bdd4b96c3f0e8588e8ce,
+  _PlayerPrefab: {fileID: 9017638658279021675, guid: e13c39e08d61e894cac18d15b8ceb4c8,
     type: 3}
   _PlayerSpawnPosition: {fileID: 2486706287073537941}
   _PlayerHUDPrefab: {fileID: 5925793903106845510, guid: 0d3d11cfa2034724aa98222dce43761c,
