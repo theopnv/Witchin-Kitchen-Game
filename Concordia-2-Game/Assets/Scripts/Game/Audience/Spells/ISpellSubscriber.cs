@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using con2.game;
 using con2.messages;
 using UnityEngine;
+using Player = con2.messages.Player;
 
 public interface ISpellSubscriber
 {

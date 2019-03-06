@@ -24,12 +24,10 @@ public class FreezingRainEvent : AbstractAudienceEvent
 
     public override IEnumerator EventImplementation()
     {
-        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        GameObject[] players = managers.GetComponentInChildren<SpawnPlayersController>().GetPlayers();
+        var players = Players.Dic;
 
-
-        m_playerMovementControllers = new PlayerMovement[players.Length];
-        for (int i = 0; i < players.Length; i++)
+        m_playerMovementControllers = new PlayerMovement[players.Count];
+        for (int i = 0; i < players.Count; i++)
         {
             m_playerMovementControllers[i] = players[i].GetComponent<PlayerMovement>();
         }
@@ -41,7 +39,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
             player.ModulateMovementSpeed(m_movementModulator);
         }
 
-        FloorFriction[] frictionControllers = GameObject.FindObjectsOfType<FloorFriction>();
+        var frictionControllers = FindObjectsOfType<FloorFriction>();
         foreach (FloorFriction controller in frictionControllers)
         {
             controller.ModulateFriction(-m_dragFraction);

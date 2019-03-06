@@ -43,6 +43,8 @@ namespace con2
             repo.RegisterCommand("spell_dm", SpellDiscoMania);
             repo.RegisterCommand("spell_mmp", SpellMegaMagePunch);
             repo.RegisterCommand("spell_fb", SpellFireballForAll);
+
+            repo.RegisterCommand("game_over", GameOver);
         }
 
         public string Help(string[] args)
@@ -245,9 +247,22 @@ namespace con2
             var spell = new messages.Spell()
             {
                 spellId = (int)id,
-                targetedPlayer = new Player() { id = 0 }
+                targetedPlayer = new messages.Player() { id = 0 }
             };
             _AudienceInteractionManager?.BroadcastSpellRequest(spell);
+        }
+
+        private string GameOver(string[] args)
+        {
+            StartCoroutine(SimulateGameOver());
+            return "Will end the game in 2 seconds.";
+        }
+
+        private IEnumerator SimulateGameOver()
+        {
+            yield return new WaitForSeconds(2);
+            var mainGameManager = FindObjectOfType<MainGameManager>();
+            mainGameManager.GameOver();
         }
 
         #endregion

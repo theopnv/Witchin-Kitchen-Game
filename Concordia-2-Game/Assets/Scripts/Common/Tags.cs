@@ -9,6 +9,7 @@ public static class Tags
         , KITCHEN = "Kitchen"
         , CAULDRON = "Cauldron"
         , MAIN_CAMERA = "MainCamera"
-        , ARENA_BASE = "ArenaBase";
+        , ARENA_BASE = "ArenaBase"
+        , PLAYERS_HUD_ZONE = "PlayersHUDZone";
 
 }

@@ -19,7 +19,7 @@ namespace con2.main_menu
             // Setting default values in case this is the first time the app is started
             if (!PlayerPrefs.HasKey(Key.HOST_ADDRESS))
             {
-                PlayerPrefs.SetString(Key.HOST_ADDRESS, "http://dev.witchin-kitchen.com/");
+                PlayerPrefs.SetString(Key.HOST_ADDRESS, "http://dev.audience.witchin-kitchen.com/");
             }
         }
 
