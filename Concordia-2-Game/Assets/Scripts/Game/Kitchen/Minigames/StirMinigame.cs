@@ -19,7 +19,7 @@ namespace con2.game
             , BOTTOM_LEFT = -TOP_RIGHT
             , LEFT = -RIGHT;
 
-        private static Vector2[] GOALS = { TOP_LEFT, TOP, TOP_RIGHT, RIGHT, BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT, LEFT };
+        private static Vector2[] GOALS = { TOP, TOP_RIGHT, RIGHT, BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT, LEFT, TOP_LEFT };
 
         private Vector2 m_pointingDirection;
         private int m_fullTurnCount, m_currentGoal, m_turnDirection;
@@ -42,7 +42,8 @@ namespace con2.game
             }
 
             m_spoonSpinner = GetComponentInChildren<Spin2Win>();
-            m_spoonSpinner.SetToSpin(true);
+            m_spoonSpinner.SetTargetYAngle(m_currentGoal*45);
+            m_spoonSpinner.SetTargetRotation(m_turnDirection);
 
             m_prompt.text = "Stir R-joystick " + (m_turnDirection == 1 ? "" : "counter-") + "clockwise " + m_turnsRequired + " times!";
         }
@@ -88,11 +89,13 @@ namespace con2.game
                 m_currentGoal = GOALS.Length + m_currentGoal;
             }
 
-            if (GOALS[m_currentGoal] == TOP_LEFT)
+            if (GOALS[m_currentGoal] == TOP)
             {
                 FullTurnComplete();
             }
+
             m_spoonSpinner.SetTargetYAngle(m_currentGoal * 45);
+        
         }
 
         private void FullTurnComplete()

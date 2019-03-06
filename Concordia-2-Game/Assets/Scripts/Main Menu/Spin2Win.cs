@@ -1,19 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Spin2Win : MonoBehaviour 
 {
-    bool m_spin = false;
-    float m_targetAngle = 0.0f;
+    Vector2 m_currentRotation;
+    float m_targetAngle;
+    int m_rotationDir;
 
     void Update()
     {
-        if (m_spin)
-        {
-            float currentAngle = Mathf.LerpAngle(transform.eulerAngles.y, m_targetAngle, Time.deltaTime * 5);
-            transform.eulerAngles = new Vector3(0.0f, currentAngle, 0.0f);
-        }
+        float dif = Mathf.DeltaAngle(transform.eulerAngles.y, m_targetAngle);
+        if (Math.Abs(dif) > 10)
+            transform.Rotate(Vector3.up * 600 * Time.deltaTime * m_rotationDir * (Math.Abs(dif)/180.0f));
     }
 
     public void SetTargetYAngle(float newTarget)
@@ -21,9 +21,9 @@ public class Spin2Win : MonoBehaviour
         m_targetAngle = newTarget;
     }
 
-    public void SetToSpin(bool shouldSpin)
+    public void SetTargetRotation(int newTarget)
     {
-        m_spin = shouldSpin;
+        m_rotationDir = newTarget;
     }
 }
 
