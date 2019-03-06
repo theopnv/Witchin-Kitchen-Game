@@ -1,55 +1,67 @@
-﻿using con2;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 using static con2.GamepadAction;
 
-public class MashButton : CookingMinigame
+
+namespace con2.game
 {
-    public ButtonID m_inputToMash = ButtonID.INTERACT;
-    public const int m_numberOfPressesRequired = 11;
-    public float m_timeToLoseProgress = 1.0f;
 
-    private int m_currentNumberOfPresses = 0;
-    private float m_lastMashTime = 0;
-
-
-    override public void StartMinigameSpecifics()
+    public class MashButton : ACookingMinigame
     {
+        public ID m_inputToMash = ID.INTERACT;
+        public const int m_numberOfPressesRequired = 11;
+        public float m_timeToLoseProgress = 1.0f;
 
-    }
+        private int m_currentNumberOfPresses = 0;
+        private float m_lastMashTime = 0;
 
-    public override bool TryToConsumeInput(GamepadAction input)
-    {
-        if (input.GetActionID().Equals(m_inputToMash))
+        private SpoonMash m_masher;
+
+        override public void StartMinigameSpecifics()
         {
-            m_lastMashTime = Time.time;
-            m_currentNumberOfPresses++;
-            if (m_currentNumberOfPresses >= m_numberOfPressesRequired)
-            {
-                EndMinigame();
-            }
-            return true;
+            m_currentNumberOfPresses = 0;
+            m_lastMashTime = 0;
+
+            m_prompt.text = "Mash 'A'!";
+
+            m_masher = GetComponentInChildren<SpoonMash>();
+            m_masher.StartMash();
         }
-        return false;
-    }
 
-    override public void UpdateMinigameSpecifics()
-    {
-        if (m_currentNumberOfPresses > 0)
+        public override bool TryToConsumeInput(GamepadAction input)
         {
-            if (Time.time - m_lastMashTime > m_timeToLoseProgress)
+            if (input.GetActionID().Equals(m_inputToMash))
             {
                 m_lastMashTime = Time.time;
-                m_currentNumberOfPresses--;
+                m_currentNumberOfPresses++;
+                m_masher.Mash();
+                if (m_currentNumberOfPresses >= m_numberOfPressesRequired)
+                {
+                    EndMinigame();
+                }
+                return true;
+            }
+            return false;
+        }
+
+        override public void UpdateMinigameSpecifics()
+        {
+            if (m_currentNumberOfPresses > 0)
+            {
+                if (Time.time - m_lastMashTime > m_timeToLoseProgress)
+                {
+                    m_lastMashTime = Time.time;
+                    m_currentNumberOfPresses--;
+                }
             }
         }
+
+        override public void EndMinigameSpecifics()
+        {
+            m_masher.EndMash();
+        }
+
     }
-
-    override public void EndMinigameSpecifics()
-    {
-
-    }
-
 }
