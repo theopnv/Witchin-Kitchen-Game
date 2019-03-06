@@ -14,6 +14,10 @@ namespace con2.messages
 
     public class Command
     {
+        // Socket IO reserved
+        public const string CONNECT = "connect";
+        public const string DISCONNECT = "disconnect";
+
         // Emitted
         public const string MAKE_GAME = "makeGame";
         public const string REGISTER_PLAYERS = "registerPlayers";
