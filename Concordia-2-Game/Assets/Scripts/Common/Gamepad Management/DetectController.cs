@@ -32,7 +32,7 @@ namespace con2
         /// <summary>
         /// Time it takes between 2 controllers state checks. 
         /// </summary>
-        private const float _refreshFrequence = 3f;
+        private const float _refreshFrequence = 1.5f;
 
         #region Unity API
 

@@ -69,7 +69,7 @@
             o.Alpha = c.a;
 
             // Glow albedo and emission
-            half heightRatio = (IN.localPos.y + _GlowHeight / 2.0) / 2.0;
+            half heightRatio = (IN.localPos.y + _GlowHeight / 2.0f) / _GlowHeight;
             half2 glowUV = half2(heightRatio, 0.5);
             fixed4 glowColor = tex2D(_GlowColor, glowUV);
             fixed glowEmission = tex2D(_GlowEmissive, glowUV).r;

@@ -12,11 +12,13 @@ public class PlayerInputController : MonoBehaviour, IInputConsumer
 
     void Start()
     {
-        m_InputConsumers = new List<IInputConsumer>();
-        m_InputConsumers.Add(GetComponent<PlayerPickUpDropObject>());
-        m_InputConsumers.Add(GetComponent<PlayerMovement>());
-        m_InputConsumers.Add(GetComponentInChildren<PlayerPunch>());
-        m_InputConsumers.Add(GetComponentInChildren<PlayerFireball>());
+        m_InputConsumers = new List<IInputConsumer>
+        {
+            GetComponent<PlayerPickUpDropObject>(),
+            GetComponent<PlayerMovement>(),
+            GetComponentInChildren<PlayerPunch>(),
+            GetComponentInChildren<PlayerFireball>()
+        };
     }
 
     public bool ConsumeInput(GamepadAction input)

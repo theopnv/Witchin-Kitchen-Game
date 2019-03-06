@@ -17,9 +17,8 @@ public class MegaMagePunch : ASpell
 
     public override IEnumerator SpellImplementation()
     {
-        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        GameObject player = managers.GetComponentInChildren<SpawnPlayersController>().GetPlayers()[_TargetedPlayer.id];
-        PlayerPunch playerPunch = player.GetComponentInChildren<PlayerPunch>();
+        var player = Players.GetPlayerByID(_TargetedPlayer.id);
+        var playerPunch = player.GetComponentInChildren<PlayerPunch>();
         playerPunch.ModulatePunchStrength(m_megaMageMultiplier);
 
         yield return new WaitForSeconds(m_megaMagePunchDuration);

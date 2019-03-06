@@ -2,63 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KitchenStation : MonoBehaviour
+namespace con2.game
 {
-    private ACookingMinigame m_miniGame;
-    private Ingredient m_storedIngredient;
-    private RecipeManager m_recipeManager;
 
-    private void Awake()
+    public abstract class KitchenStation : MonoBehaviour
     {
-        m_miniGame = GetComponent<ACookingMinigame>();
-        m_recipeManager = GetComponent<RecipeManager>();
-        m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
-    }
+        private ACookingMinigame m_miniGame;
+        protected Ingredient m_storedIngredient;
+        private RecipeManager m_recipeManager;
+        private PlayerManager m_owner;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        PickableObject ingredient = collision.gameObject.GetComponent<PickableObject>();
-        if (ingredient && !ingredient.IsHeld())
+        protected abstract void OnAwake();
+        public abstract bool ShouldAcceptIngredient(Ingredient type);
+        protected abstract void OnCollectIngredient();
+        public abstract void ProcessIngredient();
+        
+        private void Awake()
         {
-            if (m_recipeManager == null || m_recipeManager.CollectIngredient(ingredient.m_ingredientType))    //If is generic station, or is cauldron and needs the ingredient 
+            m_miniGame = GetComponent<ACookingMinigame>();
+            m_recipeManager = GetComponent<RecipeManager>();
+            m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
+            OnAwake();
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            PickableObject ingredient = collision.gameObject.GetComponent<PickableObject>();
+            if (ingredient && !ingredient.IsHeld())
             {
-                Debug.Log("Collected a " + ingredient.m_ingredientType);
-                m_storedIngredient = ingredient.m_ingredientType;
-                GameObject.Destroy(collision.gameObject);
-                m_miniGame.StartMinigame();
+                if (ShouldAcceptIngredient(ingredient.m_ingredientType))
+                {
+                    OnCollectIngredient();
+                    m_storedIngredient = ingredient.m_ingredientType;
+                    Destroy(collision.gameObject);
+                    m_miniGame.StartMinigame();
+                }
             }
         }
-    }
 
-    public void SetOwner(GameObject owner)
-    {
-        m_miniGame.SetStationOwner(owner, this);
-
-        //Apply player color to station?
-
-    }
-
-    public void ProcessIngredient()
-    {
-        if (m_recipeManager)    //Is cauldron
+        public void SetOwner(PlayerManager owner)
         {
-            m_recipeManager.ProcessIngredient(m_storedIngredient);  //Add to recipe
-        }
-        else                //Is some other kitchen station
-        {
-            //Process ingredient (chop, smash, etc.)
+            m_owner = owner;
+            m_miniGame.SetStationOwner(owner, this);
         }
 
-        m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
+        public PlayerManager GetOwner() => m_owner;
+
+        public bool IsStoringIngredient()
+        {
+            return m_storedIngredient != Ingredient.NOT_AN_INGREDIENT;
+        }
     }
 
-    public bool CollectIngredient(Ingredient type)
-    {
-        return m_recipeManager.CollectIngredient(type);
-    }
-
-    public bool IsStoringIngredient()
-    {
-        return m_storedIngredient != Ingredient.NOT_AN_INGREDIENT;
-    }
 }

@@ -3,155 +3,169 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Ingredient
+namespace con2.game
 {
-    GHOST_PEPPER,
-    NEWT_EYE,
-    NOT_AN_INGREDIENT
-}
 
-public class RecipeManager : MonoBehaviour
-{
-    private Recipe m_currentPotionRecipe;
-    private int m_currentRecipeIndex = -1;
-    public Text m_recipeUI, m_score;
-    private KitchenStation m_thisStation;
-
-    void Start()
+    public enum Ingredient
     {
-        m_thisStation = GetComponent<KitchenStation>();
-        NextRecipe();
+        GHOST_PEPPER,
+        NEWT_EYE,
+        NOT_AN_INGREDIENT
     }
 
-    void NextRecipe()
+    public class RecipeManager : MonoBehaviour
     {
-        m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
-        m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
-        m_score.text = m_currentRecipeIndex.ToString();
-    }
+        private Recipe m_currentPotionRecipe;
+        private int m_currentRecipeIndex = -1;
+        public Text m_recipeUI, m_score;
+        private KitchenStation m_thisStation;
 
-    public bool CollectIngredient(Ingredient collectedIngredient)
-    {
-        if (m_currentPotionRecipe.IsIngredientNeeded(collectedIngredient) && !m_thisStation.IsStoringIngredient())
+        void Start()
         {
-            m_currentPotionRecipe.CollectIngredient(collectedIngredient);
-            m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
-            return true;
-        }
-        return false;
-    }
-
-    public void ProcessIngredient(Ingredient ingredient)
-    {
-        m_currentPotionRecipe.ProcessIngredient(ingredient);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (m_currentPotionRecipe.IsComplete())
-        {
-            //You did it!
-            m_recipeUI.text = "You made a potion, keep going!";
+            m_thisStation = GetComponent<KitchenStation>();
             NextRecipe();
         }
-    }
 
-    public int GetNumCompletedPotions()
-    {
-        return m_currentRecipeIndex;
-    }
-}
-
-public class Recipe
-{
-    List<IngredientStatus> m_fullRecipe;
-    bool m_isComplete = false;
-
-    public Recipe(Ingredient[] recipe)
-    {
-        m_fullRecipe = new List<IngredientStatus>();
-        for (int i = 0; i < recipe.Length; i++)
+        void NextRecipe()
         {
-            m_fullRecipe.Add(new IngredientStatus(recipe[i]));
+            if (m_recipeUI == null)
+            {
+                m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
+            }
+            if (m_score == null)
+            {
+                m_score = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Score;
+            }
+
+            m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
+            m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
+            m_score.text = m_currentRecipeIndex.ToString();
         }
-    }
 
-    public bool IsIngredientNeeded(Ingredient ingredient)
-    {
-        List<IngredientStatus> missingIngredientsOfThisType = m_fullRecipe.FindAll(
-            delegate (IngredientStatus temp)
+        public bool CollectIngredient(Ingredient collectedIngredient)
+        {
+            if (m_currentPotionRecipe.IsIngredientNeeded(collectedIngredient) && !m_thisStation.IsStoringIngredient())
             {
-                return !temp.m_processed && temp.m_type == ingredient;
+                m_currentPotionRecipe.CollectIngredient(collectedIngredient);
+                m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
+                return true;
             }
-          );
-        return missingIngredientsOfThisType.Count > 0;
-    }
-
-    public void CollectIngredient(Ingredient ingredient)
-    {
-        IngredientStatus missingIngredientOfThisType = m_fullRecipe.Find(
-            delegate (IngredientStatus temp)
-            {
-                return !temp.m_collected && temp.m_type == ingredient;
-            }
-          );
-        missingIngredientOfThisType.m_collected = true;
-    }
+            return false;
+        }
 
         public void ProcessIngredient(Ingredient ingredient)
-    {
-        IngredientStatus missingIngredientOfThisType = m_fullRecipe.Find(
-            delegate (IngredientStatus temp)
-            {
-                return !temp.m_processed && temp.m_type == ingredient;
-            }
-          );
-        missingIngredientOfThisType.m_processed = true;
-
-        bool complete = true;
-        foreach (IngredientStatus status in m_fullRecipe)
         {
-            if (status.m_processed == false)
-                complete = false;
+            m_currentPotionRecipe.ProcessIngredient(ingredient);
         }
-        m_isComplete = complete;
-    }
 
-    public string GetRecipeUI()
-    {
-        string recipeUI = "";
-        foreach (IngredientStatus status in m_fullRecipe)
+        // Update is called once per frame
+        void Update()
         {
-            if (status.m_collected == false)
+            if (m_currentPotionRecipe.IsComplete())
             {
-                recipeUI += "X - " + status.m_type + "\n";
-            }
-            else
-            {
-                char checkmark = '\u2713';
-                recipeUI += checkmark.ToString() + " - " + status.m_type + "\n";
+                //You did it!
+                m_recipeUI.text = "You made a potion, keep going!";
+                NextRecipe();
             }
         }
-        return recipeUI;
-    }
 
-    public bool IsComplete()
-    {
-        return m_isComplete;
-    }
-
-    public class IngredientStatus
-    {
-        public Ingredient m_type;
-        public bool m_collected, m_processed;
-
-        public IngredientStatus(Ingredient type)
+        public int GetNumCompletedPotions()
         {
-            m_type = type;
-            m_collected = false;
-            m_processed = false;
+            return m_currentRecipeIndex;
         }
     }
+
+    public class Recipe
+    {
+        List<IngredientStatus> m_fullRecipe;
+        bool m_isComplete = false;
+
+        public Recipe(Ingredient[] recipe)
+        {
+            m_fullRecipe = new List<IngredientStatus>();
+            for (int i = 0; i < recipe.Length; i++)
+            {
+                m_fullRecipe.Add(new IngredientStatus(recipe[i]));
+            }
+        }
+
+        public bool IsIngredientNeeded(Ingredient ingredient)
+        {
+            List<IngredientStatus> missingIngredientsOfThisType = m_fullRecipe.FindAll(
+                delegate (IngredientStatus temp)
+                {
+                    return !temp.m_processed && temp.m_type == ingredient;
+                }
+              );
+            return missingIngredientsOfThisType.Count > 0;
+        }
+
+        public void CollectIngredient(Ingredient ingredient)
+        {
+            IngredientStatus missingIngredientOfThisType = m_fullRecipe.Find(
+                delegate (IngredientStatus temp)
+                {
+                    return !temp.m_collected && temp.m_type == ingredient;
+                }
+              );
+            missingIngredientOfThisType.m_collected = true;
+        }
+
+        public void ProcessIngredient(Ingredient ingredient)
+        {
+            IngredientStatus missingIngredientOfThisType = m_fullRecipe.Find(
+                delegate (IngredientStatus temp)
+                {
+                    return !temp.m_processed && temp.m_type == ingredient;
+                }
+              );
+            missingIngredientOfThisType.m_processed = true;
+
+            bool complete = true;
+            foreach (IngredientStatus status in m_fullRecipe)
+            {
+                if (status.m_processed == false)
+                    complete = false;
+            }
+            m_isComplete = complete;
+        }
+
+        public string GetRecipeUI()
+        {
+            string recipeUI = "";
+            foreach (IngredientStatus status in m_fullRecipe)
+            {
+                if (status.m_collected == false)
+                {
+                    recipeUI += "X - " + status.m_type + "\n";
+                }
+                else
+                {
+                    char checkmark = '\u2713';
+                    recipeUI += checkmark.ToString() + " - " + status.m_type + "\n";
+                }
+            }
+            return recipeUI;
+        }
+
+        public bool IsComplete()
+        {
+            return m_isComplete;
+        }
+
+        public class IngredientStatus
+        {
+            public Ingredient m_type;
+            public bool m_collected, m_processed;
+
+            public IngredientStatus(Ingredient type)
+            {
+                m_type = type;
+                m_collected = false;
+                m_processed = false;
+            }
+        }
+    }
+
+
 }
-
