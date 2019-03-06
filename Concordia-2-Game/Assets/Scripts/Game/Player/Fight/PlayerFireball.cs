@@ -58,7 +58,9 @@ public class PlayerFireball : MonoBehaviour, IInputConsumer
         {
             GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnLocation.transform.position, m_spawnLocation.transform.rotation, m_spawnParent.transform);
             newFireball.transform.forward = m_spawnLocation.transform.forward;
-            newFireball.GetComponent<Projectile>().m_launcher = launcher;
+            Projectile projectile = newFireball.GetComponent<Projectile>();
+            projectile.m_launcher = launcher;
+            projectile.m_immuneTargets.Add(launcher);           
         }
     }
 

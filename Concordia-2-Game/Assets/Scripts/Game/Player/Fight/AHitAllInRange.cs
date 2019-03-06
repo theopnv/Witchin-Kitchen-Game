@@ -7,9 +7,11 @@ public abstract class AHitAllInRange : MonoBehaviour
     [SerializeField] protected float m_strength, m_stunTime;
 
     private List<KeyValuePair<GameObject, IPunchable[]>> m_punchablesInRadius;
+    public List<GameObject> m_immuneTargets;
 
-    private void Start()
+    private void Awake()
     {
+        m_immuneTargets = new List<GameObject>();
         m_punchablesInRadius = new List<KeyValuePair<GameObject, IPunchable[]>>();
         OnStart();
     }
@@ -39,7 +41,7 @@ public abstract class AHitAllInRange : MonoBehaviour
                 m_punchablesInRadius.Remove(target);
                 i--;
             }
-            else
+            else if (!m_immuneTargets.Contains(target.Key))
             {
                 foreach (IPunchable punchableComponent in target.Value)
                 {
