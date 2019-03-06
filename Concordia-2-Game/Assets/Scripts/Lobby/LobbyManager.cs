@@ -46,8 +46,8 @@ namespace con2.lobby
 
             // Player UIs instantiation
             _PlayerUiManagers = new PlayerUiManager[2];
-            InstantiatePlayerUi(0, "Player 0", Color.red);
-            InstantiatePlayerUi(1, "Player 1", Color.blue);
+            InstantiatePlayerUi(0, "Gandalf the OG", Color.red);
+            InstantiatePlayerUi(1, "Sabrina the Tahini Witch", Color.blue);
 
             // If controllers are already connected we activate players UIs right from the start
             var controllerState = _DetectController.ControllersState;
@@ -143,6 +143,7 @@ namespace con2.lobby
 
             _PlayerUiManagers[i].Color = color;
             PlayersInfo.Color[i] = color;
+            PlayersInfo.Name[i] = name;
         }
 
         void SetPlayerUiVisibility(bool inLobby, int i)
