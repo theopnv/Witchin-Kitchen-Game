@@ -57,8 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740ddabb204c5e04e99ea6b0a2eb9565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _RoomId: {fileID: 0}
-  _NumberOfViewers: {fileID: 0}
+  IsConnectedToServer: 0
 --- !u!114 &8113717970687367646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: http://dev.witchin-kitchen.com/socket.io/?EIO=4&transport=websocket
-  autoConnect: 1
+  autoConnect: 0
   reconnectDelay: 5
   ackExpirationTime: 1800
   pingInterval: 25

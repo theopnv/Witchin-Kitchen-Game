@@ -21,16 +21,18 @@ namespace con2.lobby
         #region Private Variables
 
         [Tooltip("Controllers detector")]
-        [SerializeField]
-        private DetectController _DetectController;
+        [SerializeField] private DetectController _DetectController;
 
-        private PlayerUiManager[] _PlayerUiManagers;
-
-        [SerializeField]
         private AudienceInteractionManager _AudienceInteractionManager;
 
-        [SerializeField]
-        private Text _ServerWarningText;
+        [SerializeField] private Text _ServerWarningText;
+
+        [SerializeField] private Text _RoomId;
+        [SerializeField] private Text _NbViewers;
+
+        private SocketIOComponent _SocketIoComponent;
+        private float _ServerTryAgainTimeout = 2f;
+        private PlayerUiManager[] _PlayerUiManagers;
 
         #endregion
 
@@ -44,8 +46,8 @@ namespace con2.lobby
 
             // Player UIs instantiation
             _PlayerUiManagers = new PlayerUiManager[2];
-            InstantiatePlayerUi(0, "Player 1", Color.red);
-            InstantiatePlayerUi(1, "Player 2", Color.blue);
+            InstantiatePlayerUi(0, "Player 0", Color.red);
+            InstantiatePlayerUi(1, "Player 1", Color.blue);
 
             // If controllers are already connected we activate players UIs right from the start
             var controllerState = _DetectController.ControllersState;
@@ -54,12 +56,15 @@ namespace con2.lobby
                 SetPlayerUiVisibility(controllerState[i], i);
             }
 
-            var socketComponent = _AudienceInteractionManager.GetComponent<SocketIOComponent>();
+            // Audience & Networking
+            _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            _AudienceInteractionManager.OnGameUpdated += OnGameUpdated;
+            _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
             var hostAddress = PlayerPrefs.GetString(PlayerPrefsKeys.HOST_ADDRESS) + SocketInfo.SUFFIX_ADDRESS;
             Debug.Log("Host address is: " + hostAddress);
-            socketComponent.url = hostAddress;
-            socketComponent.Start();
-            socketComponent.Connect();
+
+            _AudienceInteractionManager.SetURL(hostAddress);
+            ConnectToServer();
         }
 
         void Update()
@@ -69,19 +74,48 @@ namespace con2.lobby
             if (Input.GetKeyDown(KeyCode.Return)
                 || Input.GetKeyDown("joystick button 0"))
             {
-                ReadyToStartGame();
+                _AudienceInteractionManager.SendPlayerCharacteristics();
             }
-        }
-
-        void OnDestroy()
-        {
-            _DetectController.OnConnected -= OnControllerConnected;
-            _DetectController.OnDisconnected -= OnControllerDisconnected;
         }
 
         #endregion
 
         #region Custom Methods
+
+        void OnGameUpdated()
+        {
+            _RoomId.text = "Room's PIN: " + GameInfo.RoomId;
+            _NbViewers.text = "Number of viewers in the room: " + GameInfo.Viewers.Count;
+        }
+
+        void OnDisconnectedFromServer()
+        {
+            GameInfo.RoomId = "0000";
+            GameInfo.Viewers = new List<Viewer>();
+            OnGameUpdated();
+
+            ConnectToServer();
+        }
+
+        void ConnectToServer()
+        {
+            _AudienceInteractionManager.Connect();
+            StartCoroutine(CheckServerConnection());
+        }
+
+        private IEnumerator CheckServerConnection()
+        {
+            yield return new WaitForSeconds(_ServerTryAgainTimeout);
+            if (!_AudienceInteractionManager.IsConnectedToServer)
+            {
+                _ServerWarningText.gameObject.SetActive(true);
+                ConnectToServer();
+            }
+            else
+            {
+                _ServerWarningText.gameObject.SetActive(false);
+            }
+        }
 
         void OnControllerConnected(int i)
         {
@@ -102,7 +136,6 @@ namespace con2.lobby
             _PlayerUiManagers[i].SetActiveCanvas(false);
             _PlayerUiManagers[i].Label.text = name;
 
-            // TODO: Temporary hard coding the colors for each player. Make that dynamic.
             _PlayerUiManagers[i].Color = color;
             PlayersInfo.Color[i] = color;
         }
@@ -110,18 +143,6 @@ namespace con2.lobby
         void SetPlayerUiVisibility(bool inLobby, int i)
         {
             _PlayerUiManagers[i].SetActiveCanvas(inLobby);
-        }
-
-        private void ReadyToStartGame()
-        {
-            if (!_AudienceInteractionManager.SendPlayerCharacteristics())
-            {
-                _ServerWarningText.gameObject.SetActive(true);
-            }
-            else
-            {
-                _ServerWarningText.gameObject.SetActive(false);
-            }
         }
 
         public void BackToMenu()

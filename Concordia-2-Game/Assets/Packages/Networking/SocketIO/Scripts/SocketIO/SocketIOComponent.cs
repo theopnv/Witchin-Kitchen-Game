@@ -98,9 +98,11 @@ namespace SocketIO
             ackList = new List<Ack>();
             sid = null;
             packetId = 0;
+
+
         }
 
-		public void Start()
+        public void Start()
 		{
 			if (autoConnect) { Connect(); }
 		}
@@ -150,7 +152,7 @@ namespace SocketIO
 		#region Public Interface
 		
 		public void Connect()
-		{
+        {
             ws = new WebSocket(url);
             ws.OnOpen += OnOpen;
             ws.OnMessage += OnMessage;

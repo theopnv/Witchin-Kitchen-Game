@@ -21,6 +21,12 @@ namespace con2.main_menu
             {
                 PlayerPrefs.SetString(Key.HOST_ADDRESS, "http://dev.audience.witchin-kitchen.com/");
             }
+
+            var audienceManager = FindObjectOfType<AudienceInteractionManager>();
+            if (audienceManager)
+            {
+                Destroy(audienceManager.gameObject);
+            }
         }
 
     }

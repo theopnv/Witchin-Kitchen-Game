@@ -6,6 +6,7 @@ namespace con2
 {
     public static class GameInfo
     {
+        public static string RoomId = "";
         public static List<Viewer> Viewers = new List<Viewer>();
     }
 

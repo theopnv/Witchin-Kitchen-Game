@@ -23,6 +23,12 @@ namespace con2
         /// </summary>
         private Dictionary<string, Delegate> _MessageFunctionMapper;
 
+        public Action OnConnected;
+        public Action OnDisconnected;
+        public Action OnGameUpdated;
+
+        [HideInInspector] public bool IsConnectedToServer;
+
         void Start()
         {
             _MessageFunctionMapper = new Dictionary<string, Delegate>()
@@ -32,6 +38,19 @@ namespace con2
             };
 
             _Socket = GetComponent<SocketIOComponent>();
+
+            _Socket.On(Command.CONNECT, e =>
+            {
+                IsConnectedToServer = true;
+                // Small delay between object instantiation and first use.
+                StartCoroutine("Authenticate");
+                OnConnected?.Invoke();
+            });
+            _Socket.On(Command.DISCONNECT, e =>
+            {
+                IsConnectedToServer = false;
+                OnDisconnected?.Invoke();
+            });
 
             _Socket.On(Command.MESSAGE, OnMessage);
             _Socket.On(Command.GAME_UPDATE, OnGameUpdate);
@@ -48,7 +67,7 @@ namespace con2
         /// <returns></returns>
         public void ExitRoom(bool gameFinished, int winnerIdx = -1)
         {
-            if (IsConnectedToServer())
+            if (IsConnectedToServer)
             {
                 var winner = gameFinished && winnerIdx != -1
                     ? new Player()
@@ -65,7 +84,6 @@ namespace con2
                 var serialized = JsonConvert.SerializeObject(gameOutcome);
                 _Socket.Emit(Command.QUIT_GAME, new JSONObject(serialized));
             }
-            Destroy(gameObject);
         }
 
         #endregion
@@ -85,17 +103,17 @@ namespace con2
             Debug.Log("OnGameUpdate");
             var game = JsonConvert.DeserializeObject<Game>(e.data.ToString());
             GameInfo.Viewers = game.viewers;
-            _NumberOfViewers.text = "Number of viewers in the room: " + game.viewers.Count;
+            OnGameUpdated?.Invoke();
         }
 
         #endregion
 
         #region Custom Methods
 
-        private bool IsConnectedToServer()
-        {
-            return _Socket.sid != null;
-        }
+        //private bool IsConnectedToServer()
+        //{
+        //    return _Socket.sid != null;
+        //}
 
         #endregion
     }
