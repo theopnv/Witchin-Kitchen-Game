@@ -24,12 +24,12 @@ namespace con2
 
         public void SetURL(string url)
         {
-            _Socket.ResetUrl(url);
+            _Socket?.ResetUrl(url);
         }
 
         public void Connect()
         {
-            _Socket.Connect();
+            _Socket?.Connect();
         }
 
         #region Emit

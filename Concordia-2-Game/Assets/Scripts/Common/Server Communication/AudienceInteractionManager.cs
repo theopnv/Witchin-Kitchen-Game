@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using con2.messages;
+using con2.game;
 using Newtonsoft.Json;
 using UnityEngine;
 using SocketIO;
@@ -41,14 +42,19 @@ namespace con2
 
             _Socket.On(Command.CONNECT, e =>
             {
+                Debug.Log("Connected to server");
                 IsConnectedToServer = true;
-                // Small delay between object instantiation and first use.
                 StartCoroutine("Authenticate");
                 OnConnected?.Invoke();
             });
             _Socket.On(Command.DISCONNECT, e =>
             {
+                Debug.LogError("Disconnected from server");
                 IsConnectedToServer = false;
+                foreach (var lol in OnDisconnected.GetInvocationList())
+                {
+                    Debug.Log("AGA");
+                }
                 OnDisconnected?.Invoke();
             });
 
@@ -107,15 +113,7 @@ namespace con2
         }
 
         #endregion
-
-        #region Custom Methods
-
-        //private bool IsConnectedToServer()
-        //{
-        //    return _Socket.sid != null;
-        //}
-
-        #endregion
+        
     }
 
 }

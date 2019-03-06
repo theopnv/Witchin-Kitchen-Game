@@ -13,6 +13,8 @@ namespace con2.game
     {
         private AudienceInteractionManager _AudienceInteractionManager;
 
+        [SerializeField] private Text MessageFeed;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -21,16 +23,33 @@ namespace con2.game
             InitializeEndGame();
 
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
         }
-
 
         void Update()
         {
             UpdateEndGame();
         }
 
+        void OnDisable()
+        {
+            _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
+        }
 
         #region AudienceEvents
+
+        public void OnDisconnectedFromServer()
+        {
+            StartCoroutine(QuitGame());
+        }
+
+        private IEnumerator QuitGame()
+        {
+            _AudienceInteractionManager?.ExitRoom(false);
+            MessageFeed.text = "Disconnected from server. Game will quit in 5 seconds.";
+            yield return new WaitForSeconds(5);
+            SceneManager.LoadSceneAsync(SceneNames.MainMenu);
+        }
 
         [Header("AudienceEvents")]
         EventManager m_audienceEventManager;

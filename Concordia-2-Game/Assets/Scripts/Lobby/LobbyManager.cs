@@ -78,6 +78,12 @@ namespace con2.lobby
             }
         }
 
+        void OnDisable()
+        {
+            _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
+            _AudienceInteractionManager.OnGameUpdated -= OnGameUpdated;
+        }
+
         #endregion
 
         #region Custom Methods
