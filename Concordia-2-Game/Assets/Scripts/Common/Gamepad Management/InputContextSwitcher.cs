@@ -89,6 +89,8 @@ namespace con2
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             var mgm = managers.GetComponentInChildren<MainGameManager>();
             inputConsumers.Add(mgm);
+            var pmi = managers.GetComponentInChildren<PauseMenuInstantiator>();
+            inputConsumers.Add(pmi);
 
             var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
             var kitchenStations = new List<ACookingMinigame>();
