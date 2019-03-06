@@ -42,6 +42,11 @@ namespace con2
             }
         }
 
+        /// <summary>
+        /// Return the instance of the gamepad associated to the player
+        /// </summary>
+        /// <param name="playerIdx"></param>
+        /// <returns></returns>
         public static Gamepad Pad(int playerIdx)
         {
             return instance.gamepads[playerIdx];

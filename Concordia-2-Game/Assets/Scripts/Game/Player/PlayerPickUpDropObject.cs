@@ -1,103 +1,141 @@
 ﻿using con2;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer
+namespace con2.game
 {
-    public Transform m_characterHands;
-    public float m_throwForce = 5;
-    private float m_playerHeight;
-    private Rigidbody m_playerRB;
-    private PlayerMovement m_playerMovement;
 
-    // The actual pickable object
-    private PickableObject m_pickableObject;
-
-    void Start()
+    public class PlayerPickUpDropObject : MonoBehaviour, IInputConsumer, IPunchable
     {
-        m_playerHeight = GetComponent<Collider>().bounds.size.y;
-        m_playerRB = GetComponent<Rigidbody>();
-        m_playerMovement = GetComponent<PlayerMovement>();
-    }
+        public Transform m_characterHands;
+        public float m_throwForce = 5;
+        private Rigidbody m_playerRB;
+        private PlayerMovement m_playerMovement;
 
-    public bool ConsumeInput(GamepadAction input)
-    {
-        if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.PUNCH))
+        // The actual pickable object
+        private PickableObject m_heldObject;
+
+        //Objects in range to be grabbed
+        private List<KeyValuePair<GameObject, PickableObject>> m_nearbyObjects;
+
+        void Start()
         {
-            if (IsHoldingObject())
+            m_playerRB = GetComponent<Rigidbody>();
+            m_playerMovement = GetComponent<PlayerMovement>();
+            m_nearbyObjects = new List<KeyValuePair<GameObject, PickableObject>>();
+        }
+
+        public bool ConsumeInput(GamepadAction input)
+        {
+            if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
+            {
+                if (IsHoldingObject())
+                    return true;
+            }
+
+            if (input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
+            {
+                if (IsHoldingObject())
+                    DropObject(transform.forward * m_throwForce);
+                else if (GetNearestItem())
+                    PickUpObject();
+                else
+                    return false;
                 return true;
+            }
+            return false;
         }
 
-        if (input.GetActionID().Equals(con2.GamepadAction.ButtonID.INTERACT))
+        private void Update()
         {
             if (IsHoldingObject())
-                DropObject(m_playerRB.velocity + (transform.forward * m_throwForce));
-            else if (GetNearestItem())
-                PickUpObject();
-            else
-                return false;
-            return true;
+            {
+                // Keeps the object in hands at the same position and orientation
+                m_heldObject.UpdatePosition(m_playerRB.velocity);
+            }
         }
-        return false;
-    }
 
-    private void Update()
-    {
-        if (IsHoldingObject())
+        private bool GetNearestItem()
         {
-            // Keeps the object in hands at the same position and orientation
-            m_pickableObject.UpdatePosition(m_characterHands.localPosition);
+            Vector3 playerPosition = transform.position;
+            float closestObject = Vector3.negativeInfinity.magnitude;
+            for (int i = 0; i < m_nearbyObjects.Count; i++)
+            {
+                KeyValuePair<GameObject, PickableObject> someNearbyObject = m_nearbyObjects[i];
+                if (someNearbyObject.Key == null)
+                {
+                    m_nearbyObjects.Remove(someNearbyObject);
+                    i--;
+                }
+                else
+                {
+                    float distanceFromPlayer = (someNearbyObject.Key.transform.position - playerPosition).magnitude;
+                    if (distanceFromPlayer < closestObject)
+                    {
+                        closestObject = distanceFromPlayer;
+                        m_heldObject = someNearbyObject.Value;
+                    }
+                }
+            }
+
+            return m_heldObject;
         }
-    }
 
-    private bool GetNearestItem()
-    {
-        RaycastHit rayItemHit;
-
-        // Check if an pickable object is in range
-        if (Physics.Raycast(transform.position - new Vector3(0, m_playerHeight / 2.5f, 0), transform.TransformDirection(Vector3.forward), out rayItemHit, 1f))
+        // Pick up a nearby object
+        private void PickUpObject()
         {
-            m_pickableObject = rayItemHit.transform.gameObject.GetComponent<PickableObject>();
+            // Slow down the player
+            m_playerMovement.MaxMovementSpeed *= m_heldObject.GetMaxSpeedFractionWhenHolding();
+
+            // Have the object adjust its physics
+            m_heldObject.PickUp(m_characterHands);
+
+            // Reposition the player hands (location)
+            //mCharacterHands.localPosition = new Vector3(0.0f, playerSize.y + objectSize.y / 2.0f, 0.0f);
         }
-        return m_pickableObject;
-    }
 
-    // Pick up a nearby object
-    private void PickUpObject()
-    {
-        // Slow down the player
-        m_playerMovement.MaxMovementSpeed *= m_pickableObject.GetMaxSpeedFractionWhenHolding();
-
-        // Have the object adjust its physics
-        m_pickableObject.PickUp(transform);
-
-        // Reposition the player hands (location)
-        //mCharacterHands.localPosition = new Vector3(0.0f, playerSize.y + objectSize.y / 2.0f, 0.0f);
-    }
-
-    // Drop the object in hands
-    private void DropObject(Vector3 throwVector)
-    {
-        // Restore max movement speed
-        m_playerMovement.MaxMovementSpeed /= m_pickableObject.GetMaxSpeedFractionWhenHolding();
-
-        // Have the object adjust its physics and get thrown
-        m_pickableObject.Drop(throwVector);
-
-        // Reset picked up object
-        m_pickableObject = null;
-    }
-
-    public void ForceDropObject(Vector3 knockVector)
-    {
-        if (IsHoldingObject())
+        // Drop the object in hands
+        private void DropObject(Vector3 throwVector)
         {
-            DropObject(new Vector3(knockVector.x, knockVector.z) * m_throwForce);
-        }
-    }
+            // Restore max movement speed
+            m_playerMovement.MaxMovementSpeed /= m_heldObject.GetMaxSpeedFractionWhenHolding();
 
-    // Get the value of mIsHoldingObject
-    public bool IsHoldingObject()
-    {
-        return m_pickableObject;
+            // Have the object adjust its physics and get thrown
+            m_heldObject.Drop(throwVector);
+
+            // Reset picked up object
+            m_heldObject = null;
+        }
+
+        public void Punch(Vector3 knockVelocity, float stunTime)
+        {
+            if (IsHoldingObject())
+            {
+                m_heldObject.UpdatePosition(Vector3.zero);
+                Vector3 knockVector = -knockVelocity.normalized;
+                DropObject(new Vector3(knockVector.x, 0, knockVector.z) * m_throwForce);
+            }
+        }
+
+        // Get the value of mIsHoldingObject
+        public bool IsHoldingObject()
+        {
+            return m_heldObject;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            PickableObject pickable = other.gameObject.GetComponent<PickableObject>();
+            if (pickable)
+            {
+                m_nearbyObjects.Add(new KeyValuePair<GameObject, PickableObject>(other.gameObject, pickable));
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            KeyValuePair<GameObject, PickableObject> leavingObject = m_nearbyObjects.Find(item => item.Key.Equals(other.gameObject));
+            m_nearbyObjects.Remove(leavingObject);
+        }
     }
 }

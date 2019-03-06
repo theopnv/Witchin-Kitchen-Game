@@ -1,54 +1,74 @@
 ﻿using UnityEngine;
 
-public class PickableObject : MonoBehaviour
+namespace con2.game
 {
-    // The object's rigidbody
-    private Rigidbody rb;
-    public float m_maxSpeedFractionWhenHolding = .85f;
-    public Ingredient ingredientType = Ingredient.NOT_AN_INGREDIENT;
 
-    void Start()
+    public class PickableObject : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-    }
+        // The object's rigidbody
+        private Rigidbody m_rb;
+        private bool m_isHeld = false;
+        public float m_maxSpeedFractionWhenHolding = .85f;
+        public Ingredient m_ingredientType = Ingredient.NOT_AN_INGREDIENT;
 
-    // Called by the carrying player's Update() to force the object to follow it
-    public void UpdatePosition(Vector3 currentPos)
-    {
-        transform.localPosition = currentPos;
-        transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-    }
+        void Start()
+        {
+            m_rb = GetComponent<Rigidbody>();
+        }
 
-    // Get picked up
-    public void PickUp(Transform newParent)
-    {
-        // Reset rotation
-        transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-        transform.parent = newParent;
+        // Called by the carrying player's Update() to force the object to follow it
+        public void UpdatePosition(Vector3 currentVel)
+        {
+            if (m_isHeld)
+            {
+                transform.position = transform.parent.position;
+                m_rb.velocity = currentVel / m_rb.mass;
+            }
+        }
 
-        // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
-        rb.useGravity = false;
-        rb.velocity = Vector3.zero;
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-    }
+        // Get picked up
+        public void PickUp(Transform newParent)
+        {
+            m_isHeld = true;
 
-    //Get dropped
-    public void Drop(Vector3 throwVector)
-    {
-        // Re-Enable the use of gravity on the object and remove all constraints
-        rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.None;
+            // Reset rotation
+            transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+            transform.parent = newParent;
 
-        // Get thrown forward
-        rb.AddForce(throwVector, ForceMode.Impulse);
+            transform.position = newParent.position;
 
-        // Unparent the object from the player
-        transform.parent = null;
-    }
+            // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
+            m_rb.useGravity = false;
+            m_rb.velocity = Vector3.zero;
+            m_rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        }
 
-    public float GetMaxSpeedFractionWhenHolding()
-    {
-        return m_maxSpeedFractionWhenHolding;
+        //Get dropped
+        public void Drop(Vector3 throwVector)
+        {
+            m_isHeld = false;
+
+            // Re-Enable the use of gravity on the object and remove all constraints
+            m_rb.useGravity = true;
+            m_rb.constraints = RigidbodyConstraints.None;
+
+            // Get thrown forward
+            m_rb.AddForce(throwVector, ForceMode.VelocityChange);
+
+            // Unparent the object from the player
+            transform.parent = null;
+        }
+
+        public bool IsHeld()
+        {
+            return m_isHeld;
+        }
+
+        public float GetMaxSpeedFractionWhenHolding()
+        {
+            return m_maxSpeedFractionWhenHolding;
+        }
+
     }
 
 }

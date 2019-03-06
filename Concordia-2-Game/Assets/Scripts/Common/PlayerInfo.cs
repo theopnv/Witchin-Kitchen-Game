@@ -1,8 +1,15 @@
 ﻿using System.Collections.Generic;
+using con2.messages;
 using UnityEngine;
 
 namespace con2
 {
+    public static class GameInfo
+    {
+        public static string RoomId = "0000";
+        public static List<Viewer> Viewers = new List<Viewer>();
+    }
+
     /// <summary>
     /// Static class to pass player data from lobby scene to game scene
     /// Unfortunately we can't use an array of static PlayerInfo[] because arrays

@@ -90,36 +90,48 @@ namespace SocketIO
 		#region Unity interface
 
 		public void Awake()
-		{
-			encoder = new Encoder();
-			decoder = new Decoder();
-			parser = new Parser();
-			handlers = new Dictionary<string, List<Action<SocketIOEvent>>>();
-			ackList = new List<Ack>();
-			sid = null;
-			packetId = 0;
+        {
+            encoder = new Encoder();
+            decoder = new Decoder();
+            parser = new Parser();
+            handlers = new Dictionary<string, List<Action<SocketIOEvent>>>();
+            ackList = new List<Ack>();
+            sid = null;
+            packetId = 0;
 
-			ws = new WebSocket(url);
-			ws.OnOpen += OnOpen;
-			ws.OnMessage += OnMessage;
-			ws.OnError += OnError;
-			ws.OnClose += OnClose;
-			wsConnected = false;
+            CreateWebsocket(url);
 
-			eventQueueLock = new object();
-			eventQueue = new Queue<SocketIOEvent>();
+            eventQueueLock = new object();
+            eventQueue = new Queue<SocketIOEvent>();
 
-			ackQueueLock = new object();
-			ackQueue = new Queue<Packet>();
+            ackQueueLock = new object();
+            ackQueue = new Queue<Packet>();
 
-			connected = false;
+            connected = false;
 
-			#if SOCKET_IO_DEBUG
+#if SOCKET_IO_DEBUG
 			if(debugMethod == null) { debugMethod = Debug.Log; };
-			#endif
-		}
+#endif
 
-		public void Start()
+        }
+
+        private void CreateWebsocket(string url)
+        {
+            ws = new WebSocket(url);
+            ws.OnOpen += OnOpen;
+            ws.OnMessage += OnMessage;
+            ws.OnError += OnError;
+            ws.OnClose += OnClose;
+            wsConnected = false;
+        }
+
+        public void ResetUrl(string url)
+        {
+            connected = false;
+            CreateWebsocket(url);
+        }
+
+        public void Start()
 		{
 			if (autoConnect) { Connect(); }
 		}
@@ -169,8 +181,8 @@ namespace SocketIO
 		#region Public Interface
 		
 		public void Connect()
-		{
-			connected = true;
+        {
+            connected = true;
 
 			socketThread = new Thread(RunSocketThread);
 			socketThread.Start(ws);

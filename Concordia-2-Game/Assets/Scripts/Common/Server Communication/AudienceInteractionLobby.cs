@@ -17,19 +17,19 @@ namespace con2
     /// </summary>
     public partial class AudienceInteractionManager : MonoBehaviour
     {
-        [SerializeField]
-        private Text _RoomId;
-
-        [SerializeField]
-        private Text _NumberOfViewers;
-
         void LobbyStart()
         {
             _Socket.On(Command.GAME_CREATED, OnGameCreated);
-            _Socket.On(Command.GAME_UPDATE, OnGameUpdate);
+        }
 
-            // Small delay between object instantiation and first use.
-            StartCoroutine("Authenticate");
+        public void SetURL(string url)
+        {
+            _Socket?.ResetUrl(url);
+        }
+
+        public void Connect()
+        {
+            _Socket?.Connect();
         }
 
         #region Emit
@@ -47,11 +47,6 @@ namespace con2
         /// <returns></returns>
         public bool SendPlayerCharacteristics()
         {
-            if (!IsConnectedToServer())
-            {
-                return false;
-            }
-
             var playerList = new List<Player>();
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
@@ -104,14 +99,9 @@ namespace con2
         {
             Debug.Log("OnGameCreated");
             var game = JsonConvert.DeserializeObject<Game>(e.data.ToString());
-            _RoomId.text = "Room's PIN: " + game.pin;
-        }
-
-        private void OnGameUpdate(SocketIOEvent e)
-        {
-            Debug.Log("OnGameUpdate");
-            var game = JsonConvert.DeserializeObject<Game>(e.data.ToString());
-            _NumberOfViewers.text = "Number of viewers in the room: " + game.viewers.Count;
+            GameInfo.RoomId = game.pin;
+            GameInfo.Viewers = game.viewers;
+            OnGameUpdated?.Invoke();
         }
 
         #endregion

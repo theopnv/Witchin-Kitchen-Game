@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using con2.messages;
+using SocketIO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +10,7 @@ using UnityEngine.UI;
 namespace con2.lobby
 {
 
-    public class LobbyManager : MonoBehaviour
+    public class LobbyManager : MonoBehaviour, IInputConsumer
     {
         [Tooltip("The prefab to use as UI for each player")]
         public GameObject PlayerUiPrefab;
@@ -19,21 +21,23 @@ namespace con2.lobby
         #region Private Variables
 
         [Tooltip("Controllers detector")]
-        [SerializeField]
-        private DetectController _DetectController;
+        [SerializeField] private DetectController _DetectController;
 
-        private PlayerUiManager[] _PlayerUiManagers;
-
-        [SerializeField]
         private AudienceInteractionManager _AudienceInteractionManager;
 
-        [SerializeField]
-        private Text _ServerWarningText;
+        [SerializeField] private Text _ServerWarningText;
+
+        [SerializeField] private Text _RoomId;
+        [SerializeField] private Text _NbViewers;
+
+        private SocketIOComponent _SocketIoComponent;
+        private float _ServerTryAgainTimeout = 2f;
+        private PlayerUiManager[] _PlayerUiManagers;
 
         #endregion
 
         #region Unity API
-        
+
         void Start()
         {
             // Subscription to controllers events
@@ -42,8 +46,8 @@ namespace con2.lobby
 
             // Player UIs instantiation
             _PlayerUiManagers = new PlayerUiManager[2];
-            InstantiatePlayerUi(0, "Player 1", Color.red);
-            InstantiatePlayerUi(1, "Player 2", Color.blue);
+            InstantiatePlayerUi(0, "Gandalf the OG", Color.red);
+            InstantiatePlayerUi(1, "Sabrina the Tahini Witch", Color.blue);
 
             // If controllers are already connected we activate players UIs right from the start
             var controllerState = _DetectController.ControllersState;
@@ -51,28 +55,72 @@ namespace con2.lobby
             {
                 SetPlayerUiVisibility(controllerState[i], i);
             }
+
+            // Audience & Networking
+            _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            _AudienceInteractionManager.OnGameUpdated += OnGameUpdated;
+            _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
+            var hostAddress = PlayerPrefs.GetString(PlayerPrefsKeys.HOST_ADDRESS) + SocketInfo.SUFFIX_ADDRESS;
+            Debug.Log("Host address is: " + hostAddress);
+
+            _AudienceInteractionManager.SetURL(hostAddress);
+            ConnectToServer();
         }
 
         void Update()
         {
             DevMode();
 
-            if (Input.GetKeyDown(KeyCode.Return)
-                || Input.GetKeyDown("joystick button 0"))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                ReadyToStartGame();
+                _AudienceInteractionManager.SendPlayerCharacteristics();
             }
         }
 
-        void OnDestroy()
+        void OnDisable()
         {
-            _DetectController.OnConnected -= OnControllerConnected;
-            _DetectController.OnDisconnected -= OnControllerDisconnected;
+            _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
+            _AudienceInteractionManager.OnGameUpdated -= OnGameUpdated;
         }
 
         #endregion
 
         #region Custom Methods
+
+        void OnGameUpdated()
+        {
+            _RoomId.text = "Room's PIN: " + GameInfo.RoomId;
+            _NbViewers.text = "Number of viewers in the room: " + GameInfo.Viewers.Count;
+        }
+
+        void OnDisconnectedFromServer()
+        {
+            GameInfo.RoomId = "0000";
+            GameInfo.Viewers = new List<Viewer>();
+            OnGameUpdated();
+
+            ConnectToServer();
+        }
+
+        void ConnectToServer()
+        {
+            _AudienceInteractionManager.Connect();
+            StartCoroutine(CheckServerConnection());
+        }
+
+        private IEnumerator CheckServerConnection()
+        {
+            yield return new WaitForSeconds(_ServerTryAgainTimeout);
+            if (!_AudienceInteractionManager.IsConnectedToServer)
+            {
+                _ServerWarningText.gameObject.SetActive(true);
+                ConnectToServer();
+            }
+            else
+            {
+                _ServerWarningText.gameObject.SetActive(false);
+            }
+        }
 
         void OnControllerConnected(int i)
         {
@@ -93,9 +141,9 @@ namespace con2.lobby
             _PlayerUiManagers[i].SetActiveCanvas(false);
             _PlayerUiManagers[i].Label.text = name;
 
-            // TODO: Temporary hard coding the colors for each player. Make that dynamic.
             _PlayerUiManagers[i].Color = color;
             PlayersInfo.Color[i] = color;
+            PlayersInfo.Name[i] = name;
         }
 
         void SetPlayerUiVisibility(bool inLobby, int i)
@@ -103,22 +151,27 @@ namespace con2.lobby
             _PlayerUiManagers[i].SetActiveCanvas(inLobby);
         }
 
-        private void ReadyToStartGame()
-        {
-            if (!_AudienceInteractionManager.SendPlayerCharacteristics())
-            {
-                _ServerWarningText.gameObject.SetActive(true);
-            }
-            else
-            {
-                _ServerWarningText.gameObject.SetActive(false);
-            }
-        }
-
         public void BackToMenu()
         {
             _AudienceInteractionManager.ExitRoom(false);
             SceneManager.LoadSceneAsync(SceneNames.MainMenu);
+        }
+
+        public bool ConsumeInput(GamepadAction input)
+        {
+            if (input.GetActionID() == GamepadAction.ID.INTERACT)
+            {
+                _AudienceInteractionManager.SendPlayerCharacteristics();
+                return true;
+            }
+
+            if (input.GetActionID() == GamepadAction.ID.PUNCH)
+            {
+                BackToMenu();
+                return true;
+            }
+
+            return false;
         }
 
         #endregion
@@ -144,6 +197,7 @@ namespace con2.lobby
         }
 
         #endregion
+
     }
 
 }

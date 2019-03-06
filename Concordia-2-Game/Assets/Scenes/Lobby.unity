@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 366298017}
   m_Layer: 0
   m_Name: Managers
-  m_TagString: Untagged
+  m_TagString: Managers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -571,18 +571,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648777045}
   m_CullTransparentMesh: 0
---- !u!114 &931744693 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8113717970687367647, guid: 785b8767fc9ca7240b6f9bbd0addca47,
-    type: 3}
-  m_PrefabInstance: {fileID: 8113717971535221354}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740ddabb204c5e04e99ea6b0a2eb9565, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &933089666
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,6 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273105650}
   - component: {fileID: 1273105651}
+  - component: {fileID: 1273105652}
   m_Layer: 0
   m_Name: LobbyManager
   m_TagString: Untagged
@@ -841,8 +830,21 @@ MonoBehaviour:
   - {fileID: 1657162398}
   - {fileID: 1578125801}
   _DetectController: {fileID: 1360604513}
-  _AudienceInteractionManager: {fileID: 931744693}
   _ServerWarningText: {fileID: 419560049}
+  _RoomId: {fileID: 328034448}
+  _NbViewers: {fileID: 1383379716}
+--- !u!114 &1273105652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273105649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2fd88a053959941b49de3eee3a9df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1360604511
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,8 +855,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1360604512}
   - component: {fileID: 1360604513}
+  - component: {fileID: 1360604514}
+  - component: {fileID: 1360604515}
   m_Layer: 0
-  m_Name: ControllerManager
+  m_Name: GamepadManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -887,6 +891,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ControllersState: 
+--- !u!114 &1360604514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360604511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601f50d73eee7a346b31c5bb3c7f564c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1360604515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360604511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4492285a43d0b489a012bef25e5799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1383379714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,32 +1444,32 @@ PrefabInstance:
     - target: {fileID: 8113717970687367641, guid: 785b8767fc9ca7240b6f9bbd0addca47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 512.86505
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113717970687367641, guid: 785b8767fc9ca7240b6f9bbd0addca47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 290.32758
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113717970687367641, guid: 785b8767fc9ca7240b6f9bbd0addca47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.226746
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113717970687367641, guid: 785b8767fc9ca7240b6f9bbd0addca47,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113717970687367641, guid: 785b8767fc9ca7240b6f9bbd0addca47,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113717970687367641, guid: 785b8767fc9ca7240b6f9bbd0addca47,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113717970687367641, guid: 785b8767fc9ca7240b6f9bbd0addca47,
         type: 3}
@@ -1468,15 +1496,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8113717970687367647, guid: 785b8767fc9ca7240b6f9bbd0addca47,
-        type: 3}
-      propertyPath: _RoomId
-      value: 
-      objectReference: {fileID: 328034448}
-    - target: {fileID: 8113717970687367647, guid: 785b8767fc9ca7240b6f9bbd0addca47,
-        type: 3}
-      propertyPath: _NumberOfViewers
-      value: 
-      objectReference: {fileID: 1383379716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 785b8767fc9ca7240b6f9bbd0addca47, type: 3}

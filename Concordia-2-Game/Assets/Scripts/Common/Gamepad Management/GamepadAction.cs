@@ -1,4 +1,5 @@
 ﻿using con2.game;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,27 +8,36 @@ namespace con2
 {
     public class GamepadAction
     {
-        public enum ButtonID
+        public enum ID
         {
+            __BUTTONS__,
             PUNCH,
             INTERACT,
             START,
-            MAX_ID, //Used as a max count and to handle joystick input
+            __AXES__,
+            HORIZONTAL,
+            VERTICAL,
+            HORIZONTAL2,
+            VERTICAL2,
+            LEFT_TRIGGER,
+            RIGHT_TRIGGER,
+            MAX_ID
         }
 
         public Gamepad.InputID defaultInputID;
         public Gamepad.InputID currentInputID;
 
         private List<IInputConsumer> m_InputConsumers = new List<IInputConsumer>();
-        private GamepadAction.ButtonID m_actionID;
+        private GamepadAction.ID m_actionID;
+        bool m_isButton;
         private int m_playerId;
 
-        //this is shitty code...
-        public Vector2 m_movementDirection;
+        public float m_axisValue;
 
-        public GamepadAction(int playerID, GamepadAction.ButtonID actionID)
+        public GamepadAction(int playerID, GamepadAction.ID actionID, bool isButton)
         {
             m_actionID = actionID;
+            m_isButton = isButton;
         }
 
         public void SetInputConsumers(List<IInputConsumer> inputConsumers, int playerId)
@@ -36,33 +46,7 @@ namespace con2
             m_playerId = playerId;
         }
 
-        // Internal use only
-        public void SetNewButtonInput(bool justPressed, bool pressed, bool justReleased)
-        {
-            if (justPressed)
-            {
-                ConsumeInput();
-            }
-
-            /*
-            if (pressed && PressedEvent != null)
-            {
-                ConsumeInput(PressedEvent);
-            
-            if (justReleased && JustReleasedEvent != null)
-            {
-                ConsumeInput(JustReleasedEvent);
-            }
-            */
-        }
-
-        public void SetNewJoystickInput(Vector2 movementDirection)
-        {
-            m_movementDirection = movementDirection;
-            ConsumeInput();
-        }
-
-        private void ConsumeInput()
+        protected void ConsumeInput()
         {
             foreach (IInputConsumer consumer in m_InputConsumers)
             {
@@ -73,14 +57,44 @@ namespace con2
             }
         }
 
-        public GamepadAction.ButtonID GetActionID()
+        public void SetNewInput(bool justPressed, bool pressed, bool justReleased, float movementDirection)
         {
-            return m_actionID;
+            if (m_isButton)
+            {
+                if (justPressed)
+                {
+                    ConsumeInput();
+                }
+
+                /*
+                if (pressed && PressedEvent != null)
+                {
+                    ConsumeInput(PressedEvent);
+
+                if (justReleased && JustReleasedEvent != null)
+                {
+                    ConsumeInput(JustReleasedEvent);
+                }
+                */
+            }
+            else
+            {
+                if (Math.Abs(movementDirection) > 0.001)
+                {
+                    m_axisValue = movementDirection;
+                    ConsumeInput();
+                }
+            }
         }
 
         public int GetPlayerId()
         {
             return m_playerId;
+        }
+
+        public GamepadAction.ID GetActionID()
+        {
+            return m_actionID;
         }
     }
 }

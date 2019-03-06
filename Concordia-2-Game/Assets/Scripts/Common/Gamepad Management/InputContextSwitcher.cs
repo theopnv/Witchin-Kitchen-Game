@@ -1,93 +1,120 @@
-﻿using con2;
+using con2;
 using con2.game;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using con2.lobby;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class InputContextSwitcher : MonoBehaviour
+namespace con2
 {
-    Func<int, List<IInputConsumer>> f_menuContext, f_gameContext;
 
-     public void Awake()
+    public class InputContextSwitcher : MonoBehaviour
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        f_menuContext = new Func<int, List<IInputConsumer>>(GetMenuContext);
-        f_gameContext = new Func<int, List<IInputConsumer>>(GetGameContext);
+        Func<int, List<IInputConsumer>> 
+            f_menuContext, 
+            f_lobbyContext, 
+            f_gameContext;
 
-        //Initialize gamepads
-        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        GamepadMgr gp = managers.GetComponentInChildren<GamepadMgr>();
-        gp.InitializeGampads();
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name.Equals(SceneNames.MainMenu))
+        public void Awake()
         {
-            SetToMenuContext();
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            f_menuContext = GetMenuContext;
+            f_lobbyContext = GetLobbyContext;
+            f_gameContext = GetGameContext;
+
+            //Initialize gamepads
+            var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+            var gp = managers.GetComponentInChildren<GamepadMgr>();
+            gp.InitializeGampads();
         }
-    }
 
-    public void SetToGameContext()
-    {
-        SwitchContext(f_gameContext);
-    }
-
-    public void SetToMenuContext()
-    {
-        SwitchContext(f_menuContext);
-    }
-
-    private static void SwitchContext(Func<int, List<IInputConsumer>> contextFunction)
-    {
-        //Ask gpm for number of player, use that number to set contexts (with playercontroller, and only allow menu input for p1)
-        for (int i = 0; i < GamepadMgr.NUM_PADS; i++)
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            GamepadMgr.Pad(i).SwitchGamepadContext(contextFunction(i), i);
-        }
-    }
-
-    private static List<IInputConsumer> GetMenuContext(int playerIndex)
-    {
-        List<IInputConsumer> inputConsumers = new List<IInputConsumer>();
-        return inputConsumers;
-    }
-
-    private static List<IInputConsumer> GetGameContext(int playerIndex)
-    {
-        List<IInputConsumer> inputConsumers = new List<IInputConsumer>();
-
-        GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-        MainGameManager mgm = managers.GetComponentInChildren<MainGameManager>();
-        inputConsumers.Add(mgm);
-
-        GameObject[] kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
-        List<CookingMinigame> kitchenStations = new List<CookingMinigame>();
-        foreach (GameObject kitchen in kitchenParents)
-        {
-            CookingMinigame[] stations = kitchen.GetComponentsInChildren<CookingMinigame>();
-            foreach (CookingMinigame station in stations)
+            switch (scene.name)
             {
-                kitchenStations.Add(station);
+                case SceneNames.MainMenu:
+                    SetToMenuContext();
+                    break;
+                case SceneNames.Lobby:
+                    SetToLobbyContext();
+                    break;
+                default: break;
             }
-        }    
-          
-        foreach (CookingMinigame station in kitchenStations)
-        {
-            inputConsumers.Add(station);
         }
 
-        SpawnPlayersController playerSpawner = managers.GetComponentInChildren<SpawnPlayersController>();
-        GameObject player = playerSpawner.GetPlayerByID(playerIndex);
-        inputConsumers.Add(player.GetComponent<PlayerInputController>());
-        
-        return inputConsumers;
+        public void SetToGameContext()
+        {
+            SwitchContext(f_gameContext);
+        }
+
+        public void SetToMenuContext()
+        {
+            SwitchContext(f_menuContext);
+        }
+
+        public void SetToLobbyContext()
+        {
+            SwitchContext(f_lobbyContext);
+        }
+
+        private static void SwitchContext(Func<int, List<IInputConsumer>> contextFunction)
+        {
+            //Ask gpm for number of player, use that number to set contexts (with playercontroller, and only allow menu input for p1)
+            for (int i = 0; i < GamepadMgr.NUM_PADS; i++)
+            {
+                GamepadMgr.Pad(i).SwitchGamepadContext(contextFunction(i), i);
+            }
+        }
+
+        private static List<IInputConsumer> GetMenuContext(int playerIndex)
+        {
+            var inputConsumers = new List<IInputConsumer>();
+            return inputConsumers;
+        }
+
+        private static List<IInputConsumer> GetLobbyContext(int playerIndex)
+        {
+            var inputConsumers = new List<IInputConsumer>();
+            var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+            inputConsumers.Add(managers.GetComponentInChildren<LobbyManager>());
+            return inputConsumers;
+        }
+
+        private static List<IInputConsumer> GetGameContext(int playerIndex)
+        {
+            var inputConsumers = new List<IInputConsumer>();
+
+            var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+            var mgm = managers.GetComponentInChildren<MainGameManager>();
+            inputConsumers.Add(mgm);
+            var pmi = managers.GetComponentInChildren<PauseMenuInstantiator>();
+            inputConsumers.Add(pmi);
+
+            var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+            var kitchenStations = new List<ACookingMinigame>();
+            foreach (var kitchen in kitchenParents)
+            {
+                var stations = kitchen.GetComponentsInChildren<ACookingMinigame>();
+                kitchenStations.AddRange(stations);
+            }
+
+            foreach (ACookingMinigame station in kitchenStations)
+            {
+                inputConsumers.Add(station);
+            }
+
+            var player = Players.GetPlayerByID(playerIndex);
+            inputConsumers.Add(player.GetComponent<PlayerInputController>());
+
+            return inputConsumers;
+        }
+
+        void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
     }
 
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
 }

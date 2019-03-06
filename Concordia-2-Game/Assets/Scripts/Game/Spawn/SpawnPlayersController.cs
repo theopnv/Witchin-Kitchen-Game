@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace con2.game
@@ -9,54 +10,40 @@ namespace con2.game
     {
         #region Private Variables
 
-        [SerializeField] private Transform[] _playerSpawnPositions;
+        [SerializeField] private Transform[] _PlayerZoneSpawnPositions;
 
-        [SerializeField] private GameObject _playerPrefab;
+        [SerializeField] private GameObject _PlayerZonePrefab;
 
-        private GameObject[] m_players = new GameObject[PlayersInfo.PlayerNumber];
+        private int _NbPlayersInstantiated = 0;
 
         #endregion
 
         void Start()
         {
-            GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            GlobalFightState gfs = managers.GetComponentInChildren<GlobalFightState>();
 
+            // Initialize players
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
-                var player = Instantiate(_playerPrefab, _playerSpawnPositions[i]);
-                player.name = "Player " + (i + 1);
-                player.GetComponent<Renderer>().material.color = PlayersInfo.Color[i];
-                player.GetComponent<PlayerInputController>().SetPlayerIndex(i);
-                m_players[i] = player;
-                gfs.AddFighter(player);
+                var instance = Instantiate(_PlayerZonePrefab, _PlayerZoneSpawnPositions[i].transform);
+                var playerZoneManager = instance.GetComponent<PlayerZoneManager>();
+                playerZoneManager.OwnerId = i;
+                playerZoneManager.OnPlayerInstantiated += OnPlayerInstantiated;
             }
+        }
 
-            //Switch control context to game once players are spawned
-            InputContextSwitcher contextSwitcher = managers.GetComponentInChildren<InputContextSwitcher>();
-            contextSwitcher.SetToGameContext();
-
-            //Initialize kitchens
-            GameObject[] kitchens = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
-            foreach (GameObject kitchen in kitchens)
+        void OnPlayerInstantiated()
+        {
+            ++_NbPlayersInstantiated;
+            // If all players were instantiated
+            if (_NbPlayersInstantiated == PlayersInfo.PlayerNumber)
             {
-                KitchenManager km = kitchen.GetComponent<KitchenManager>();
-                km.SetOwner(this);
+                var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+                //Switch control context to game once players are spawned
+                var contextSwitcher = managers.GetComponentInChildren<InputContextSwitcher>();
+                contextSwitcher.SetToGameContext();
             }
-
-            //Inform Camera of which players to track
-            GameObject camera = GameObject.FindGameObjectWithTag(Tags.MAIN_CAMERA);
-            camera.GetComponent<SharedCamera>().SetPlayers(m_players);
         }
 
-        public GameObject[] GetPlayers()
-        {
-            return m_players;
-        }
 
-        public GameObject GetPlayerByID(int ID)
-        {
-            return m_players[ID];
-        }
     }
 }

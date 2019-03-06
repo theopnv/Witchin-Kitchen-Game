@@ -14,17 +14,23 @@ namespace con2.messages
 
     public class Command
     {
+        // Socket IO reserved
+        public const string CONNECT = "connect";
+        public const string DISCONNECT = "disconnect";
+
         // Emitted
         public const string MAKE_GAME = "makeGame";
         public const string REGISTER_PLAYERS = "registerPlayers";
         public const string QUIT_GAME = "quitGame";
         public const string LAUNCH_POLL = "launchPoll";
+        public const string LAUNCH_SPELL_CAST = "launchSpellCast";
 
         // Received
         public const string MESSAGE = "message";
         public const string GAME_CREATED = "gameCreated";
         public const string GAME_UPDATE = "gameUpdate";
         public const string RECEIVE_VOTES = "event";
+        public const string SPELL_CAST_REQUEST = "spell";
     }
 
     public enum Code
@@ -39,6 +45,9 @@ namespace con2.messages
 
         launch_poll_success = 260,
         launch_poll_error = 261,
+
+        launch_spell_cast_success = 280,
+        launch_spell_cast_error = 281,
     }
 
     public class Base
@@ -79,6 +88,7 @@ namespace con2.messages
     {
         public List<Event> events;
         public string deadline;
+        public int duration;
     }
 
     public class Event
@@ -92,4 +102,16 @@ namespace con2.messages
         public bool gameFinished;
         public Player winner;
     }
+
+    public class Spell
+    {
+        public int spellId;
+        public Player targetedPlayer;
+    }
+
+    public static class SocketInfo
+    {
+        public const string SUFFIX_ADDRESS = "socket.io/?EIO=4&transport=websocket";
+    }
 }
+
