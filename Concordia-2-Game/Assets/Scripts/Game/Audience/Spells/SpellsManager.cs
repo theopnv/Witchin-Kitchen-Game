@@ -88,6 +88,12 @@ namespace con2.game
 
         public void OnSpellCasted(Spell spell)
         {
+            if (spell.caster == null)
+            {
+                spell.caster = new Viewer();
+                spell.caster.name = "DevCheats";
+            }
+
             Debug.Log(spell.caster.name + " casted a spell: " + Spells.EventList[(Spells.SpellID)spell.spellId]);
             LogSpellInPlayerHUD(spell);
             var key = (Spells.SpellID)spell.spellId;
