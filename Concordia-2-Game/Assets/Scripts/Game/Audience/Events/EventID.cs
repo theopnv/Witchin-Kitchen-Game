@@ -12,6 +12,7 @@ namespace con2.game
             freezing_rain = 0,
             network_ads = 1,
             meteorites = 2,
+            ingredient_morph = 3,
 
             max_id,
         }
@@ -21,6 +22,7 @@ namespace con2.game
             { EventID.freezing_rain, "Freezing Rain"},
             { EventID.network_ads, "Network Ads"},
             { EventID.meteorites, "Meteorites"},
+            { EventID.ingredient_morph, "Ingredient Morph"},
         };
 
     }

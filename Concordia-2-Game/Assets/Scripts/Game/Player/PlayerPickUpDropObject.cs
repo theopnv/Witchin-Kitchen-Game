@@ -14,6 +14,7 @@ namespace con2.game
 
         // The actual pickable object
         private PickableObject m_heldObject;
+        private float m_speedReduction;
 
         //Objects in range to be grabbed
         private List<KeyValuePair<GameObject, PickableObject>> m_nearbyObjects;
@@ -85,13 +86,24 @@ namespace con2.game
         private void PickUpObject()
         {
             // Slow down the player
-            m_playerMovement.MaxMovementSpeed *= m_heldObject.GetMaxSpeedFractionWhenHolding();
+            m_speedReduction = m_heldObject.GetMaxSpeedFractionWhenHolding();
+            m_playerMovement.MaxMovementSpeed *= m_speedReduction;
 
             // Have the object adjust its physics
             m_heldObject.PickUp(m_characterHands);
 
             // Reposition the player hands (location)
             //mCharacterHands.localPosition = new Vector3(0.0f, playerSize.y + objectSize.y / 2.0f, 0.0f);
+        }
+
+        public void UpdateHeldObjectWeight()
+        {
+            if (IsHoldingObject())
+            {
+                m_playerMovement.MaxMovementSpeed /= m_speedReduction;
+                m_speedReduction = m_heldObject.GetMaxSpeedFractionWhenHolding();
+                m_playerMovement.MaxMovementSpeed *= m_speedReduction;
+            }
         }
 
         // Drop the object in hands
@@ -105,6 +117,7 @@ namespace con2.game
 
             // Reset picked up object
             m_heldObject = null;
+            m_speedReduction = 1;
         }
 
         public void Punch(Vector3 knockVelocity, float stunTime)
