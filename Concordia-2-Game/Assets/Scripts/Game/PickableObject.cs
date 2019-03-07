@@ -8,8 +8,6 @@ namespace con2.game
         // The object's rigidbody
         private Rigidbody m_rb;
         private bool m_isHeld = false;
-        public float m_maxSpeedFractionWhenHolding = .85f;
-        public Ingredient m_ingredientType = Ingredient.NOT_AN_INGREDIENT;
 
         void Start()
         {
@@ -66,7 +64,7 @@ namespace con2.game
 
         public float GetMaxSpeedFractionWhenHolding()
         {
-            return m_maxSpeedFractionWhenHolding;
+            return GetComponentInChildren<ObjectWeight>().m_maxSpeedFractionWhenHolding;
         }
 
     }

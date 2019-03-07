@@ -39,6 +39,7 @@ namespace con2
             repo.RegisterCommand("ev_fr", EventFreezingRain);
             repo.RegisterCommand("ev_na", EventNetworkAds);
             repo.RegisterCommand("ev_mf", EventMeteoritesFalling);
+            repo.RegisterCommand("ev_im", EventIngredientMorph);
 
             repo.RegisterCommand("spell_dm", SpellDiscoMania);
             repo.RegisterCommand("spell_mmp", SpellMegaMagePunch);
@@ -81,6 +82,7 @@ namespace con2
                         "- 'ev_fr': Simulates the Freezing Rain (fr) event",
                         "- 'ev_na': Simulates the Network Ads (na) event",
                         "- 'ev_mf': Simulates the Meteorites Falling (mf) event",
+                        "- 'ev_im': Simulates the Ingredient Morph (im) event",
                         "- 'spell_dm': Simulates the Disco Mania (dm) spell on player 1",
                         "- 'spell_mmp': Simulates the Mega Mage Punch (mmp) spell on player 1",
                         "- 'spell_fb': Simulates the Fireball For All (fb) spell on player 1",
@@ -222,6 +224,17 @@ namespace con2
 
             StartCoroutine("SimulateEvent", Events.EventID.meteorites);
             return "Will start the Meteorites Falling event in 2 seconds";
+        }
+
+        private string EventIngredientMorph(string[] args)
+        {
+            if (GetCurrentSceneName() != SceneNames.Game)
+            {
+                return "You must be in the " + SceneNames.Game + " scene to start this command";
+            }
+
+            StartCoroutine("SimulateEvent", Events.EventID.ingredient_morph);
+            return "Will start the Ingredient Morph event in 2 seconds";
         }
 
         private string SpellDiscoMania(string[] args)

@@ -30,10 +30,11 @@ namespace con2.game
             PickableObject ingredient = collision.gameObject.GetComponent<PickableObject>();
             if (ingredient && !ingredient.IsHeld())
             {
-                if (ShouldAcceptIngredient(ingredient.m_ingredientType))
+                IngredientType ingredientType = collision.gameObject.GetComponentInChildren<IngredientType>();
+                if (ingredientType && ShouldAcceptIngredient(ingredientType.m_type))
                 {
                     OnCollectIngredient();
-                    m_storedIngredient = ingredient.m_ingredientType;
+                    m_storedIngredient = ingredientType.m_type;
                     Destroy(collision.gameObject);
 
                     int nextMinigame = Random.Range(0, m_miniGames.Length);

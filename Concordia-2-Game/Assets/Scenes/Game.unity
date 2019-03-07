@@ -192,12 +192,12 @@ MonoBehaviour:
   UseTimerMode: 1
   SpawnableItemsList:
   - Name: GHOST_PEPPER
-    Prefab: {fileID: 3239770806383430194, guid: 9a54a1a458ab3d34492dea0100fe30a4,
+    Prefab: {fileID: 8340910405799370762, guid: de53b678d6e39ea41a94cfa6883e159d,
       type: 3}
     SpawnDelay: 12
     TimeSinceSpawn: 0
   - Name: NEWT_EYE
-    Prefab: {fileID: 9049116890118353781, guid: 73f258cd215efd443b38ca6114628f2a,
+    Prefab: {fileID: 2135384641246065995, guid: 0652c01fbe9564a46a3ba33d08f586b7,
       type: 3}
     SpawnDelay: 15
     TimeSinceSpawn: 0
@@ -1169,6 +1169,7 @@ GameObject:
   - component: {fileID: 773999205}
   - component: {fileID: 773999204}
   - component: {fileID: 773999206}
+  - component: {fileID: 773999207}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -1254,6 +1255,18 @@ MonoBehaviour:
   MeteoriteSpeed: 500
   _MeteorPrefab: {fileID: 8841021199448463490, guid: da7587c3c169dcd4b93eed17a77ef890,
     type: 3}
+--- !u!114 &773999207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773999201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d805077dcdbb254683d377719c06865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &866068881
 GameObject:
   m_ObjectHideFlags: 0
