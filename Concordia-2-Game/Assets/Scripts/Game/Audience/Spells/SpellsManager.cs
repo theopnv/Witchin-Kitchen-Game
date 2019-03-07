@@ -44,15 +44,13 @@ namespace con2.game
             {
                 _AudienceInteractionManager.SpellSubscribers = _SpellSubscribers;
             }
-
-            InvokeRepeating("FakeSpellLauncher", 40, 40);
         }
 
         #endregion
 
         #region Custom methods
 
-        private void FakeSpellLauncher()
+        public void LaunchSpellRequest()
         {
             if (!_EventManager.AnEventIsHappening && GameInfo.Viewers.Count > 0)
             {

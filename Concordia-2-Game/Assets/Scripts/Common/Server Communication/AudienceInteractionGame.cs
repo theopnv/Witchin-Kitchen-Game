@@ -111,7 +111,7 @@ namespace con2
 
         public void BroadcastSpellRequest(Spell requestedSpell)
         {
-            Debug.Log("Casted spell: " + Spells.EventList[(Spells.SpellID)requestedSpell.spellId]);
+            Debug.Log(requestedSpell.caster.name + " casted a spell: " + Spells.EventList[(Spells.SpellID)requestedSpell.spellId]);
             var key = (Spells.SpellID)requestedSpell.spellId;
             if (SpellSubscribers.ContainsKey(key))
             {
