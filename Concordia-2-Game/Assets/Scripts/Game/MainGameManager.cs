@@ -197,7 +197,6 @@ namespace con2.game
                     List<PlayerManager> group = scoreGroups[i];
                     if (group.Contains(player))
                     {
-                        Debug.Log(player.ID + " is rank " + (Rank)i);
                         return (Rank)i;
                     }
                 }
