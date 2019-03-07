@@ -11,6 +11,11 @@ public class PressSingleButton : ACookingMinigame
 
     }
 
+    public override void BalanceMinigame()
+    {
+        
+    }
+
     public override bool TryToConsumeInput(GamepadAction input)
     {
         if (input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))

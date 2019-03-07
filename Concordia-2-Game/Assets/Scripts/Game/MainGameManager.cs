@@ -2,6 +2,7 @@
 using con2.game;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -122,6 +123,7 @@ namespace con2.game
         public Text m_rematchText, m_clock;
         private bool m_gameOver = false, m_acceptingInput = false;
         public static int REMATCH_TIMER = 10, GAME_TIMER = 240;
+        [SerializeField] private int m_dominationDifference = 3;
 
         private void InitializeEndGame()
         {
@@ -160,24 +162,72 @@ namespace con2.game
             }
         }
 
-        private PlayerManager DetermineWinner()
+        public PlayerManager DetermineWinner()
         {
-            var cauldrons = GameObject.FindGameObjectsWithTag(Tags.CAULDRON);
+            var players = Players.Dic;
             PlayerManager winner = null;
             var mostPotions = -1;
 
-            foreach (GameObject cauldron in cauldrons)
+            for (int i = 0; i < players.Count; i++)
             {
-                RecipeManager manager = cauldron.GetComponent<RecipeManager>();
-                var numPotions = manager.GetNumCompletedPotions();
+                var numPotions = players[i].Score;
                 if (numPotions > mostPotions)
                 {
-                    winner = cauldron.GetComponent<ACookingMinigame>().GetStationOwner();
+                    winner = players[i];
                     mostPotions = numPotions;
                 }
             }
 
             return winner;
+        }
+
+        public void UpdateRanks()
+        {
+            var players = Players.Dic;
+            List<PlayerManager> playerScores = new List<PlayerManager>();         
+            for (int i = 0; i < players.Count; i++)
+            {
+                playerScores.Add(players[i]);
+            }
+
+            List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.Score)
+                                             .Select(x => x.ToList())
+                                             .OrderByDescending(x => x[0].Score)
+                                             .ToList();
+
+            switch (scoreGroups.Count)
+            {
+                case 1:
+                    for (int i = 0; i < players.Count; i++)     // When all players are even (e.g. at start), no one is in first
+                    {
+                        players[i].PlayerRank = PlayerManager.Rank.MIDDLE;
+                    }
+                    break;
+                default:
+                    RankGroup(scoreGroups[0], PlayerManager.Rank.FIRST);    
+                    for (int i = 1; i < scoreGroups.Count; i++)
+                    {
+                        if (IsDominating(scoreGroups[0], scoreGroups[i]))
+                            RankGroup(scoreGroups[i], PlayerManager.Rank.LAST);
+                        else
+                            RankGroup(scoreGroups[i], PlayerManager.Rank.MIDDLE);
+                    }
+                    break;
+            }
+        }
+
+        private void RankGroup(List<PlayerManager> group, PlayerManager.Rank rank)
+        {
+            foreach (PlayerManager player in group)
+            {
+                player.PlayerRank = rank;
+                Debug.Log("Player" + player + " is rank " + rank);
+            }
+        }
+
+        private bool IsDominating(List<PlayerManager> group1, List<PlayerManager> group2)
+        {
+            return group1[0].Score - group2[0].Score >= m_dominationDifference;
         }
 
         public bool ConsumeInput(GamepadAction input)

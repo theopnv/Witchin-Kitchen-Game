@@ -65,6 +65,25 @@ namespace con2.game
             }
         }
 
+        private Rank _Rank;
+
+        public Rank PlayerRank
+        {
+            get => _Rank;
+            set
+            {
+                _Rank = value;
+                Players.Dic[ID] = this;
+            }
+        }
+
+        public enum Rank
+        {
+            FIRST,
+            MIDDLE,
+            LAST
+        }
+
         private PlayerHUD _PlayerHUD;
 
         public PlayerHUD PlayerHUD

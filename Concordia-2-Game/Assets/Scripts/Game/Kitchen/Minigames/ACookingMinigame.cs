@@ -27,6 +27,7 @@ namespace con2.game
 
         //For any extra specifics a minigame requires at start, in update (e.g. a timer), and at end (e.g. spit out some item)
         public abstract void StartMinigameSpecifics();
+        public abstract void BalanceMinigame();
         public abstract void UpdateMinigameSpecifics();
         public abstract void EndMinigameSpecifics();
 
@@ -80,6 +81,7 @@ namespace con2.game
 
             m_started = true;
 
+            BalanceMinigame();
             StartMinigameSpecifics();
         }
 

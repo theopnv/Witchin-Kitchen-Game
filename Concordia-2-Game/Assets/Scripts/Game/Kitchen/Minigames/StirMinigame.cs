@@ -25,12 +25,27 @@ namespace con2.game
 
         private Spin2Win m_spoonSpinner;
 
+        public override void BalanceMinigame()
+        {
+            switch (m_stationOwner.PlayerRank)
+            {
+                case PlayerManager.Rank.FIRST:
+                    m_turnsRequired = 4;
+                    break;
+                case PlayerManager.Rank.LAST:
+                    m_turnsRequired = 1;
+                    break;
+                default:
+                    m_turnsRequired = 2;
+                    break;
+            }
+        }
+
         override public void StartMinigameSpecifics()
         {
             m_pointingDirection = Vector3.zero;
             m_currentGoal = 0;
             m_fullTurnCount = 0;
-            m_turnsRequired = 2;
 
             if (Random.Range(0.0f, 1.0f) < 0.5f)
             {

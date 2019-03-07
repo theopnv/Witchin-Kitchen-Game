@@ -19,6 +19,7 @@ namespace con2.game
         private int m_currentRecipeIndex = -1;
         public Text m_recipeUI, m_score;
         private KitchenStation m_thisStation;
+        private MainGameManager m_mgm;
 
         void Start()
         {
@@ -31,6 +32,8 @@ namespace con2.game
             {
                 m_score = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Score;
             }
+            var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+            m_mgm = managers.GetComponentInChildren<MainGameManager>();
             NextRecipe();
         }
 
@@ -38,8 +41,10 @@ namespace con2.game
         {
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
             m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
-            m_score.text = m_currentRecipeIndex.ToString();
-
+            var owner = m_thisStation.GetOwner();
+            owner.Score = m_currentRecipeIndex;
+            m_score.text = owner.Score.ToString();
+            m_mgm.UpdateRanks();
             if (m_currentRecipeIndex > 0)
             {
                 var spellManager = FindObjectOfType<SpellsManager>();

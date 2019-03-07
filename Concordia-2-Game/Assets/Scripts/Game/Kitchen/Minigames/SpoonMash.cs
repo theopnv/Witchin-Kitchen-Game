@@ -24,7 +24,6 @@ public class SpoonMash : MonoBehaviour
     {
         if (m_movingIntoPlace)
         {
-            Debug.Log("moving into place");
             if (Quaternion.Angle(transform.rotation, m_mashOrientation) < 5)
             {
                 m_movingIntoPlace = false;
@@ -36,7 +35,6 @@ public class SpoonMash : MonoBehaviour
         }
         else if (m_resettingPos)
         {
-            Debug.Log("resetting");
             if (Quaternion.Angle(transform.rotation, m_startOrientation) < 5)
             {
                 m_resettingPos = false;
@@ -48,7 +46,6 @@ public class SpoonMash : MonoBehaviour
         }
         else if (m_gameIsOn)
         {
-            Debug.Log("mashing");
             transform.Rotate(Vector3.forward, m_speed);
             if (m_mashing)
             {
