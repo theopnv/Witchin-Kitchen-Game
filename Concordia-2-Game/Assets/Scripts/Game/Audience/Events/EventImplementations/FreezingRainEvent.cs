@@ -37,6 +37,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
             player.ModulateMovementSpeed(m_movementModulator);
+            player.ModulateRotationSpeed(m_movementModulator);
         }
 
         var frictionControllers = FindObjectsOfType<FloorFriction>();
@@ -50,6 +51,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
             player.ModulateMovementSpeed(1.0f / m_movementModulator);
+            player.ModulateRotationSpeed(1.0f / m_movementModulator);
         }
 
         foreach (FloorFriction controller in frictionControllers)
