@@ -81,6 +81,7 @@ namespace con2
                         "- 'ev_fr': Simulates the Freezing Rain (fr) event",
                         "- 'ev_na': Simulates the Network Ads (na) event",
                         "- 'ev_mf': Simulates the Meteorites Falling (mf) event",
+                        "- 'ev_im': Simulates the Ingredient Morph (im) event",
                         "- 'spell_dm': Simulates the Disco Mania (dm) spell on player 1",
                         "- 'spell_mmp': Simulates the Mega Mage Punch (mmp) spell on player 1",
                         "- 'spell_fb': Simulates the Fireball For All (fb) spell on player 1");
