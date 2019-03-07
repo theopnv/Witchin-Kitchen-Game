@@ -21,17 +21,18 @@ namespace con2.game
 
         public override void BalanceMinigame(MainGameManager mgm)
         {
-            m_numberOfPressesRequired = 11;
-            
-            if (MainGameManager.Rank.FIRST == mgm.DetermineRank(m_stationOwner))
+            switch (mgm.DetermineRank(m_stationOwner))
             {
-                m_numberOfPressesRequired = 16;
-            }
-            else if (MainGameManager.Rank.LAST == mgm.DetermineRank(m_stationOwner))
-            {
-                m_numberOfPressesRequired = 6;
-            }
-            
+                case MainGameManager.Rank.FIRST:
+                    m_numberOfPressesRequired = 16;
+                    break;
+                case MainGameManager.Rank.LAST:
+                    m_numberOfPressesRequired = 6;
+                    break;
+                default:
+                    m_numberOfPressesRequired = 11;
+                    break;
+            }        
         }
 
         override public void StartMinigameSpecifics()

@@ -27,14 +27,17 @@ namespace con2.game
 
         public override void BalanceMinigame(MainGameManager mgm)
         {
-            m_turnsRequired = 2;
-            if (MainGameManager.Rank.FIRST == mgm.DetermineRank(m_stationOwner))
+            switch (mgm.DetermineRank(m_stationOwner))
             {
-                m_turnsRequired = 4;
-            }
-            else if (MainGameManager.Rank.LAST == mgm.DetermineRank(m_stationOwner))
-            {
-                m_turnsRequired = 1;
+                case MainGameManager.Rank.FIRST:
+                    m_turnsRequired = 4;
+                    break;
+                case MainGameManager.Rank.LAST:
+                    m_turnsRequired = 1;
+                    break;
+                default:
+                    m_turnsRequired = 2;
+                    break;
             }
         }
 
