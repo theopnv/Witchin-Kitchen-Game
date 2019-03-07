@@ -61,6 +61,11 @@ namespace con2.game
         // Update is called once per frame
         void Update()
         {
+            if (m_currentPotionRecipe == null)
+            {
+                NextRecipe();
+            }
+
             if (m_currentPotionRecipe.IsComplete())
             {
                 //You did it!
