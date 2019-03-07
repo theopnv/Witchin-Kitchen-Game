@@ -26,6 +26,9 @@ namespace con2.game
 
         private Dictionary<Spells.SpellID, List<ISpellSubscriber>> _SpellSubscribers;
 
+        private float _LastSpellCasted = 0f;
+        private float _SpellFrequency = 50f;
+
         #region Unity API
 
         // Start is called before the first frame update
@@ -49,6 +52,15 @@ namespace con2.game
             _AudienceInteractionManager.OnSpellCasted -= OnSpellCasted;
         }
 
+        void Update()
+        {
+            _LastSpellCasted += Time.deltaTime;
+            if (_LastSpellCasted >= _SpellFrequency)
+            {
+                LaunchSpellRequest();
+            }
+        }
+
         #endregion
 
         #region Custom methods
@@ -58,6 +70,7 @@ namespace con2.game
             if (GameInfo.Viewers.Count > 0)
             {
                 var viewer = GameInfo.Viewers[_CurrentCastSpeller];
+                _LastSpellCasted = 0f;
                 _AudienceInteractionManager.SendSpellCastRequest(viewer);
 
                 ++_CurrentCastSpeller;
