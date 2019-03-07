@@ -8,7 +8,6 @@ namespace con2.game
 
     public class StirMinigame : ACookingMinigame
     {
-        [SerializeField] private int m_turnsRequired;
         private static Vector2
             TOP_LEFT = new Vector2(-1.0f, 1.0f).normalized
             , TOP = new Vector2(0.0f, 1.0f).normalized
@@ -22,7 +21,7 @@ namespace con2.game
         private static Vector2[] GOALS = { TOP_LEFT, TOP, TOP_RIGHT, RIGHT, BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT, LEFT };
 
         private Vector2 m_pointingDirection;
-        private int m_fullTurnCount, m_currentGoal, m_turnDirection;
+        private int m_turnsRequired, m_fullTurnCount, m_currentGoal, m_turnDirection;
 
         private Spin2Win m_spoonSpinner;
 
@@ -31,6 +30,7 @@ namespace con2.game
             m_pointingDirection = Vector3.zero;
             m_currentGoal = 0;
             m_fullTurnCount = 0;
+            m_turnsRequired = 2;
 
             if (Random.Range(0.0f, 1.0f) < 0.5f)
             {
