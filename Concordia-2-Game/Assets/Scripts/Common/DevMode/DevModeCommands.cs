@@ -43,6 +43,7 @@ namespace con2
             repo.RegisterCommand("spell_dm", SpellDiscoMania);
             repo.RegisterCommand("spell_mmp", SpellMegaMagePunch);
             repo.RegisterCommand("spell_fb", SpellFireballForAll);
+            repo.RegisterCommand("spell_rs", SpellRocketSpeed);
 
             repo.RegisterCommand("game_over", GameOver);
         }
@@ -82,7 +83,8 @@ namespace con2
                         "- 'ev_mf': Simulates the Meteorites Falling (mf) event",
                         "- 'spell_dm': Simulates the Disco Mania (dm) spell on player 1",
                         "- 'spell_mmp': Simulates the Mega Mage Punch (mmp) spell on player 1",
-                        "- 'spell_fb': Simulates the Fireball For All (fb) spell on player 1");
+                        "- 'spell_fb': Simulates the Fireball For All (fb) spell on player 1",
+                        "- 'spell_rs': Simulates the Rocket Speed (rs) spell on player 1");
 
                     help = string.Join(
                         Environment.NewLine,
@@ -238,6 +240,12 @@ namespace con2
         {
             StartCoroutine("SimulateSpell", Spells.SpellID.fireball_for_all);
             return "Will cast the Fireball For All spell on player 1 in 2 seconds";
+        }
+
+        private string SpellRocketSpeed(string[] args)
+        {
+            StartCoroutine("SimulateSpell", Spells.SpellID.rocket_speed);
+            return "Will cast the Rocket Speed spell on player 1 in 2 seconds";
         }
 
         private IEnumerator SimulateSpell(Spells.SpellID id)
