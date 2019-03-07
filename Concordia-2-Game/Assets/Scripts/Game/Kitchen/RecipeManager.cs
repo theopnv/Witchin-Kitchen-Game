@@ -23,11 +23,6 @@ namespace con2.game
         void Start()
         {
             m_thisStation = GetComponent<KitchenStation>();
-            NextRecipe();
-        }
-
-        void NextRecipe()
-        {
             if (m_recipeUI == null)
             {
                 m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
@@ -36,10 +31,20 @@ namespace con2.game
             {
                 m_score = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Score;
             }
+            NextRecipe();
+        }
 
+        void NextRecipe()
+        {
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
             m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
             m_score.text = m_currentRecipeIndex.ToString();
+
+            if (m_currentRecipeIndex > 0)
+            {
+                var spellManager = FindObjectOfType<SpellsManager>();
+                spellManager.LaunchSpellRequest();
+            }
         }
 
         public bool CollectIngredient(Ingredient collectedIngredient)
@@ -61,6 +66,11 @@ namespace con2.game
         // Update is called once per frame
         void Update()
         {
+            if (m_currentPotionRecipe == null)
+            {
+                NextRecipe();
+            }
+
             if (m_currentPotionRecipe.IsComplete())
             {
                 //You did it!

@@ -33,7 +33,7 @@ namespace con2.game
             Owner = player.GetComponent<PlayerManager>();
 
             Owner.ID = OwnerId;
-            Owner.Name = "Player " + Owner.ID;
+            Owner.Name = PlayersInfo.Name[Owner.ID];
             Owner.Color = PlayersInfo.Color[Owner.ID];
         }
 
