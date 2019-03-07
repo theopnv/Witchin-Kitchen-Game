@@ -24,6 +24,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -68,17 +80,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+    - target: {fileID: 400000, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
+    - target: {fileID: 400000, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+    - target: {fileID: 400000, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88de348ee21efc540b0f7cfb6d1439bd, type: 3}
