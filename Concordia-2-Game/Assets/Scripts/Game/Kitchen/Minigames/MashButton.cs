@@ -19,14 +19,14 @@ namespace con2.game
 
         private SpoonMash m_masher;
 
-        public override void BalanceMinigame(MainGameManager mgm)
+        public override void BalanceMinigame()
         {
-            switch (mgm.DetermineRank(m_stationOwner))
+            switch (m_stationOwner.PlayerRank)
             {
-                case MainGameManager.Rank.FIRST:
+                case PlayerManager.Rank.FIRST:
                     m_numberOfPressesRequired = 16;
                     break;
-                case MainGameManager.Rank.LAST:
+                case PlayerManager.Rank.LAST:
                     m_numberOfPressesRequired = 6;
                     break;
                 default:

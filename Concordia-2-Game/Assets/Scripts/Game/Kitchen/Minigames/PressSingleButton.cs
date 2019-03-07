@@ -11,7 +11,7 @@ public class PressSingleButton : ACookingMinigame
 
     }
 
-    public override void BalanceMinigame(MainGameManager mgm)
+    public override void BalanceMinigame()
     {
         
     }

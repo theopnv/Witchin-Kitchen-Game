@@ -25,14 +25,14 @@ namespace con2.game
 
         private Spin2Win m_spoonSpinner;
 
-        public override void BalanceMinigame(MainGameManager mgm)
+        public override void BalanceMinigame()
         {
-            switch (mgm.DetermineRank(m_stationOwner))
+            switch (m_stationOwner.PlayerRank)
             {
-                case MainGameManager.Rank.FIRST:
+                case PlayerManager.Rank.FIRST:
                     m_turnsRequired = 4;
                     break;
-                case MainGameManager.Rank.LAST:
+                case PlayerManager.Rank.LAST:
                     m_turnsRequired = 1;
                     break;
                 default:

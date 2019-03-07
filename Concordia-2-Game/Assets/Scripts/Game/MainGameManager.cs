@@ -117,6 +117,7 @@ namespace con2.game
         public Text m_rematchText, m_clock;
         private bool m_gameOver = false, m_acceptingInput = false;
         public static int REMATCH_TIMER = 10, GAME_TIMER = 240;
+        [SerializeField] private int m_dominationDifference = 3;
 
         private void InitializeEndGame()
         {
@@ -174,7 +175,7 @@ namespace con2.game
             return winner;
         }
 
-        public Rank DetermineRank(PlayerManager player)
+        public void UpdateRanks()
         {
             var players = Players.Dic;
             List<PlayerManager> playerScores = new List<PlayerManager>();         
@@ -185,31 +186,42 @@ namespace con2.game
 
             List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.Score)
                                              .Select(x => x.ToList())
+                                             .OrderByDescending(x => x[0].Score)
                                              .ToList();
-            if (scoreGroups.Count == 1)
-            {
-                return Rank.MIDDLE;
-            }
-            else
-            {
-                for (int i = 0; i < scoreGroups.Count; i++)
-                {
-                    List<PlayerManager> group = scoreGroups[i];
-                    if (group.Contains(player))
-                    {
-                        return (Rank)i;
-                    }
-                }
-            }
 
-            return Rank.LAST;
+            switch (scoreGroups.Count)
+            {
+                case 1:
+                    for (int i = 0; i < players.Count; i++)     // When all players are even (e.g. at start), no one is in first
+                    {
+                        players[i].PlayerRank = PlayerManager.Rank.MIDDLE;
+                    }
+                    break;
+                default:
+                    RankGroup(scoreGroups[0], PlayerManager.Rank.FIRST);    
+                    for (int i = 1; i < scoreGroups.Count; i++)
+                    {
+                        if (IsDominating(scoreGroups[0], scoreGroups[i]))
+                            RankGroup(scoreGroups[i], PlayerManager.Rank.LAST);
+                        else
+                            RankGroup(scoreGroups[i], PlayerManager.Rank.MIDDLE);
+                    }
+                    break;
+            }
         }
 
-        public enum Rank
+        private void RankGroup(List<PlayerManager> group, PlayerManager.Rank rank)
         {
-            FIRST,
-            MIDDLE,
-            LAST
+            foreach (PlayerManager player in group)
+            {
+                player.PlayerRank = rank;
+                Debug.Log("Player" + player + " is rank " + rank);
+            }
+        }
+
+        private bool IsDominating(List<PlayerManager> group1, List<PlayerManager> group2)
+        {
+            return group1[0].Score - group2[0].Score >= m_dominationDifference;
         }
 
         public bool ConsumeInput(GamepadAction input)
