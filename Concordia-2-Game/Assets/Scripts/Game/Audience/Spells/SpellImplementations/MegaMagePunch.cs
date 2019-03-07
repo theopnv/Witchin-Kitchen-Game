@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MegaMagePunch : ASpell
 {
-    public float m_megaMagePunchDuration = 10.0f, m_megaMageMultiplier = 2.0f;
+    public float m_megaMagePunchDuration = 10.0f, m_megaMageMultiplier = 2.0f, m_sizeScaler = 1.2f;
 
     // Start is called before the first frame update
 
@@ -19,11 +19,15 @@ public class MegaMagePunch : ASpell
     {
         var player = Players.GetPlayerByID(_TargetedPlayer.id);
         var playerPunch = player.GetComponentInChildren<PlayerPunch>();
+        var playerTransform = player.gameObject.transform;
+
         playerPunch.ModulatePunchStrength(m_megaMageMultiplier);
+        playerTransform.localScale *= m_sizeScaler;
 
         yield return new WaitForSeconds(m_megaMagePunchDuration);
 
         playerPunch.ModulatePunchStrength(1.0f / m_megaMageMultiplier);
+        playerTransform.localScale /= m_sizeScaler;
     }
 
     public override Spells.SpellID GetSpellID()
