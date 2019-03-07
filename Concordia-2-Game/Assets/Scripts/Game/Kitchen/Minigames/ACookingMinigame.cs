@@ -21,12 +21,14 @@ namespace con2.game
         [HideInInspector]
         public PlayerManager m_stationOwner;
         private KitchenStation m_kitchenStation;
+        private MainGameManager m_mgm;
 
         [SerializeField]
         protected bool m_started = false;
 
         //For any extra specifics a minigame requires at start, in update (e.g. a timer), and at end (e.g. spit out some item)
         public abstract void StartMinigameSpecifics();
+        public abstract void BalanceMinigame(MainGameManager mgm);
         public abstract void UpdateMinigameSpecifics();
         public abstract void EndMinigameSpecifics();
 
@@ -38,6 +40,8 @@ namespace con2.game
         {
             stationLocation = this.transform.position;
             m_prompt.enabled = false;
+            var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
+            m_mgm = managers.GetComponentInChildren<MainGameManager>();
         }
 
         // Update is called once per frame
@@ -80,6 +84,7 @@ namespace con2.game
 
             m_started = true;
 
+            BalanceMinigame(m_mgm);
             StartMinigameSpecifics();
         }
 

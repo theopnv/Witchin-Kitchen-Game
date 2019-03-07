@@ -2,6 +2,7 @@
 using con2.game;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -154,24 +155,62 @@ namespace con2.game
             }
         }
 
-        private PlayerManager DetermineWinner()
+        public PlayerManager DetermineWinner()
         {
-            var cauldrons = GameObject.FindGameObjectsWithTag(Tags.CAULDRON);
+            var players = Players.Dic;
             PlayerManager winner = null;
             var mostPotions = -1;
 
-            foreach (GameObject cauldron in cauldrons)
+            for (int i = 0; i < players.Count; i++)
             {
-                RecipeManager manager = cauldron.GetComponent<RecipeManager>();
-                var numPotions = manager.GetNumCompletedPotions();
+                var numPotions = players[i].Score;
                 if (numPotions > mostPotions)
                 {
-                    winner = cauldron.GetComponent<ACookingMinigame>().GetStationOwner();
+                    winner = players[i];
                     mostPotions = numPotions;
                 }
             }
 
             return winner;
+        }
+
+        public Rank DetermineRank(PlayerManager player)
+        {
+            var players = Players.Dic;
+            List<PlayerManager> playerScores = new List<PlayerManager>();         
+            for (int i = 0; i < players.Count; i++)
+            {
+                playerScores.Add(players[i]);
+            }
+
+            List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.Score)
+                                             .Select(x => x.ToList())
+                                             .ToList();
+            if (scoreGroups.Count == 1)
+            {
+                return Rank.MIDDLE;
+            }
+            else
+            {
+                for (int i = 0; i < scoreGroups.Count; i++)
+                {
+                    List<PlayerManager> group = scoreGroups[i];
+                    if (group.Contains(player))
+                    {
+                        Debug.Log(player.ID + " is rank " + (Rank)i);
+                        return (Rank)i;
+                    }
+                }
+            }
+
+            return Rank.LAST;
+        }
+
+        public enum Rank
+        {
+            FIRST,
+            MIDDLE,
+            LAST
         }
 
         public bool ConsumeInput(GamepadAction input)

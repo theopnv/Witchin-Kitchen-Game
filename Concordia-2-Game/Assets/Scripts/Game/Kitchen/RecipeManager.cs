@@ -39,7 +39,9 @@ namespace con2.game
 
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
             m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
-            m_score.text = m_currentRecipeIndex.ToString();
+            var owner = m_thisStation.GetOwner();
+            owner.Score = m_currentRecipeIndex;
+            m_score.text = owner.Score.ToString();
         }
 
         public bool CollectIngredient(Ingredient collectedIngredient)

@@ -11,13 +11,28 @@ namespace con2.game
     public class MashButton : ACookingMinigame
     {
         public ID m_inputToMash = ID.INTERACT;
-        public const int m_numberOfPressesRequired = 11;
+        private int m_numberOfPressesRequired;
         public float m_timeToLoseProgress = 1.0f;
 
         private int m_currentNumberOfPresses = 0;
         private float m_lastMashTime = 0;
 
         private SpoonMash m_masher;
+
+        public override void BalanceMinigame(MainGameManager mgm)
+        {
+            m_numberOfPressesRequired = 11;
+            
+            if (MainGameManager.Rank.FIRST == mgm.DetermineRank(m_stationOwner))
+            {
+                m_numberOfPressesRequired = 16;
+            }
+            else if (MainGameManager.Rank.LAST == mgm.DetermineRank(m_stationOwner))
+            {
+                m_numberOfPressesRequired = 6;
+            }
+            
+        }
 
         override public void StartMinigameSpecifics()
         {
