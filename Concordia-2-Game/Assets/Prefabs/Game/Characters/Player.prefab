@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_strength: 7
   m_stunTime: 1.5
+  m_immuneTargets: []
   m_punchUpwardsForce: 4
   m_reloadSeconds: 1
 --- !u!114 &2929309564052152870
@@ -173,7 +174,6 @@ GameObject:
   - component: {fileID: 1968346470421378227}
   - component: {fileID: 7756702639570436469}
   - component: {fileID: 8325852682819089887}
-  - component: {fileID: 1618806782590900145}
   - component: {fileID: 5405327483178596843}
   - component: {fileID: 3159072838977598754}
   m_Layer: 0
@@ -364,18 +364,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1618806782590900145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9017638658279021675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450c87de407f355438731ba32b7bcf77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5405327483178596843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,10 +389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0c5f4ff2705ba4facbc2d35933e04e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Color: {r: 0, g: 0, b: 0, a: 0}
-  Score: 0
 --- !u!1001 &3082055160139705256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -412,14 +396,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
-    - target: {fileID: 100052, guid: 37e4b7dae86174744916ffba018f9147, type: 3}
-      propertyPath: m_Name
-      value: WizardChar_RIG_LOWPOLY_INGAME
-      objectReference: {fileID: 0}
-    - target: {fileID: 100052, guid: 37e4b7dae86174744916ffba018f9147, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 37e4b7dae86174744916ffba018f9147, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -475,6 +451,14 @@ PrefabInstance:
     - target: {fileID: 400052, guid: 37e4b7dae86174744916ffba018f9147, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100052, guid: 37e4b7dae86174744916ffba018f9147, type: 3}
+      propertyPath: m_Name
+      value: WizardChar_RIG_LOWPOLY_INGAME
+      objectReference: {fileID: 0}
+    - target: {fileID: 100052, guid: 37e4b7dae86174744916ffba018f9147, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 37e4b7dae86174744916ffba018f9147, type: 3}
       propertyPath: m_Materials.Array.data[0]

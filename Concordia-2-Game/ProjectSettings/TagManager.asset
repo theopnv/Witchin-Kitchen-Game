@@ -25,8 +25,8 @@ TagManager:
   - GrassDisplacement
   - GrassSurface
   - GrassGeometry
-  - 
-  - 
+  - Ingredient
+  - InvisibleWall
   - 
   - 
   - 

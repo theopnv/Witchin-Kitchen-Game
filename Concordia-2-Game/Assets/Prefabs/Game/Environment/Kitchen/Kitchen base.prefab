@@ -185,6 +185,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 260
       objectReference: {fileID: 0}
+    - target: {fileID: 3447241073867117578, guid: aa9d3b1a44d777340871d4fd0c675d72,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e435dfb0e36eb1c45bf7eeb4480ff78d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa9d3b1a44d777340871d4fd0c675d72, type: 3}
 --- !u!1 &1610211123794525710 stripped
@@ -230,10 +235,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6580967724236997304}
     m_Modifications:
-    - target: {fileID: 100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
-      propertyPath: m_Name
-      value: firepit
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -289,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
+      propertyPath: m_Name
+      value: firepit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
