@@ -51,10 +51,6 @@ namespace con2
             {
                 Debug.LogError("Disconnected from server");
                 IsConnectedToServer = false;
-                foreach (var lol in OnDisconnected.GetInvocationList())
-                {
-                    Debug.Log("AGA");
-                }
                 OnDisconnected?.Invoke();
             });
 

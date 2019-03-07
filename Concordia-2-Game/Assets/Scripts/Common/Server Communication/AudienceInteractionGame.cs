@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using con2.game;
@@ -10,6 +11,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using Event = con2.messages.Event;
+using Random = UnityEngine.Random;
 
 namespace con2
 {
@@ -22,8 +24,7 @@ namespace con2
         [HideInInspector]
         public Dictionary<Events.EventID, List<IEventSubscriber>> EventSubscribers;
 
-        [HideInInspector]
-        public Dictionary<Spells.SpellID, List<ISpellSubscriber>> SpellSubscribers;
+        public Action<Spell> OnSpellCasted;
 
         void GameStart()
         {
@@ -111,19 +112,7 @@ namespace con2
 
         public void BroadcastSpellRequest(Spell requestedSpell)
         {
-            Debug.Log("Casted spell: " + Spells.EventList[(Spells.SpellID)requestedSpell.spellId]);
-            var key = (Spells.SpellID)requestedSpell.spellId;
-            if (SpellSubscribers.ContainsKey(key))
-            {
-                SpellSubscribers[key].ForEach((subscriber) =>
-                {
-                    subscriber.ActivateSpellMode(requestedSpell.targetedPlayer);
-                });
-            }
-            else
-            {
-                Debug.LogError("Spell Key not found");
-            }
+            OnSpellCasted?.Invoke(requestedSpell);
         }
 
         private void OnCastSpellRequest(SocketIOEvent e)

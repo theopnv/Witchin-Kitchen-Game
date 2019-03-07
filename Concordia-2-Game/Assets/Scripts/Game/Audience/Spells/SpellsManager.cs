@@ -5,6 +5,7 @@ using System.Linq;
 using con2.game;
 using con2.messages;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace con2.game
 {
@@ -25,6 +26,9 @@ namespace con2.game
 
         private Dictionary<Spells.SpellID, List<ISpellSubscriber>> _SpellSubscribers;
 
+        private float _LastSpellCasted = 0f;
+        private float _SpellFrequency = 50f;
+
         #region Unity API
 
         // Start is called before the first frame update
@@ -40,23 +44,33 @@ namespace con2.game
         private void Start()
         {
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
-            if (_AudienceInteractionManager != null)
-            {
-                _AudienceInteractionManager.SpellSubscribers = _SpellSubscribers;
-            }
+            _AudienceInteractionManager.OnSpellCasted += OnSpellCasted;
+        }
 
-            InvokeRepeating("FakeSpellLauncher", 40, 40);
+        void OnDisable()
+        {
+            _AudienceInteractionManager.OnSpellCasted -= OnSpellCasted;
+        }
+
+        void Update()
+        {
+            _LastSpellCasted += Time.deltaTime;
+            if (_LastSpellCasted >= _SpellFrequency)
+            {
+                LaunchSpellRequest();
+            }
         }
 
         #endregion
 
         #region Custom methods
 
-        private void FakeSpellLauncher()
+        public void LaunchSpellRequest()
         {
-            if (!_EventManager.AnEventIsHappening && GameInfo.Viewers.Count > 0)
+            if (GameInfo.Viewers.Count > 0)
             {
                 var viewer = GameInfo.Viewers[_CurrentCastSpeller];
+                _LastSpellCasted = 0f;
                 _AudienceInteractionManager.SendSpellCastRequest(viewer);
 
                 ++_CurrentCastSpeller;
@@ -70,6 +84,31 @@ namespace con2.game
         public void AddSubscriber(Spells.SpellID id, ISpellSubscriber subscriber)
         {
             _SpellSubscribers[id].Add(subscriber);
+        }
+
+        public void OnSpellCasted(Spell spell)
+        {
+            Debug.Log(spell.caster.name + " casted a spell: " + Spells.EventList[(Spells.SpellID)spell.spellId]);
+            LogSpellInPlayerHUD(spell);
+            var key = (Spells.SpellID)spell.spellId;
+            if (_SpellSubscribers.ContainsKey(key))
+            {
+                _SpellSubscribers[key].ForEach((subscriber) =>
+                {
+                    subscriber.ActivateSpellMode(spell.targetedPlayer);
+                });
+            }
+            else
+            {
+                Debug.LogError("Spell Key not found");
+            }
+        }
+
+        private void LogSpellInPlayerHUD(Spell spell)
+        {
+            var message = spell.caster.name + " casted " + Spells.EventList[(Spells.SpellID) spell.spellId] + " on you";
+            var player = Players.GetPlayerByID(spell.targetedPlayer.id);
+            player.SendMessageToPlayerInHUD(message, Color.magenta);
         }
 
         #endregion

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking.NetworkSystem;
 
 namespace con2.game
 {
@@ -93,6 +94,22 @@ namespace con2.game
                 _PlayerHUD = value;
                 Players.Dic[ID] = this;
             }
+        }
+
+        public void SendMessageToPlayerInHUD(string message, Color color, bool stick = false)
+        {
+            _PlayerHUD.Message.color = color;
+            _PlayerHUD.Message.text = message;
+            if (!stick)
+            {
+                StartCoroutine(RemoveMessage());
+            }
+        }
+
+        private IEnumerator RemoveMessage()
+        {
+            yield return new WaitForSeconds(3f);
+            _PlayerHUD.Message.text = "";
         }
 
         #endregion

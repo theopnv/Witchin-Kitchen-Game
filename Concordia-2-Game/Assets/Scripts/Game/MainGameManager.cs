@@ -54,13 +54,18 @@ namespace con2.game
 
         [Header("AudienceEvents")]
         EventManager m_audienceEventManager;
-        public int m_maxEventVoteTime = 20, m_firstPollTime = 30, m_secondPollTime = 120;
+        public int 
+            m_maxEventVoteTime = 20, 
+            m_firstPollTime = 30, 
+            m_poll_frequency = 60, 
+            m_max_poll_number = 3, 
+            m_poll_number = 0;
 
         private void InitializeAudienceEvents()
         {
             GameObject managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             m_audienceEventManager = managers.GetComponentInChildren<EventManager>();
-            StartCoroutine(LaunchPolls());
+            InvokeRepeating("LaunchPoll", m_firstPollTime, m_poll_frequency);
         }
 
         private int GetRandomEventIndex()
@@ -68,13 +73,14 @@ namespace con2.game
             return Random.Range(0, (int)Events.EventID.max_id);
         }
 
-        private IEnumerator LaunchPolls()
+        private void LaunchPoll()
         {
-            yield return new WaitForSeconds(m_firstPollTime);
+            if (m_poll_number >= m_max_poll_number)
+            {
+                return;
+            }
             StartPoll();
-
-            yield return new WaitForSeconds(m_secondPollTime);
-            StartPoll();
+            ++m_poll_number;
         }
 
         private void StartPoll()
