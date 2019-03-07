@@ -13,7 +13,7 @@ public class Spin2Win : MonoBehaviour
     {
         float dif = Mathf.DeltaAngle(transform.eulerAngles.y, m_targetAngle);
         if (Math.Abs(dif) > 10)
-            transform.Rotate(Vector3.up * 600 * Time.deltaTime * m_rotationDir * (Math.Abs(dif)/180.0f));
+            transform.Rotate(Vector3.up * 600 * Time.deltaTime * m_rotationDir * (Math.Abs(dif)/90.0f));
     }
 
     public void SetTargetYAngle(float newTarget)
