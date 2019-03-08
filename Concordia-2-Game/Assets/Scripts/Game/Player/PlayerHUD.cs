@@ -16,32 +16,21 @@ namespace con2.game
         void Start()
         {
             var detectController = FindObjectOfType<DetectController>();
-            detectController.OnConnected += i => {
-                if (i == OwnerId)
-                {
-                    DisableMessage();
-                }
-            };
             detectController.OnDisconnected += i =>
             {
                 if (i == OwnerId)
                 {
-                    EnableMessage("Your controller was disconnected.");
+                    Players.GetPlayerByID(OwnerId).SendMessageToPlayerInHUD("Your controller was disconnected.", Color.red, true);
+                }
+            };
+            detectController.OnConnected += i =>
+            {
+                if (i == OwnerId)
+                {
+                    Players.GetPlayerByID(OwnerId).SendMessageToPlayerInHUD("", Color.red);
                 }
             };
         }
-
-        void EnableMessage(string message)
-        {
-            Message.text = message;
-            Message.gameObject.SetActive(true);
-        }
-
-        void DisableMessage()
-        {
-            Message.gameObject.SetActive(false);
-        }
-
     }
 
 }

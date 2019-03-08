@@ -14,11 +14,6 @@ public class FreezingRainEvent : AbstractAudienceEvent
         SetUpEvent();
     }
 
-    public override Events.EventID GetEventID()
-    {
-        return Events.EventID.freezing_rain;
-    }
-
     public override void EventStart()
     {}
 
@@ -32,7 +27,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
             m_playerMovementControllers[i] = players[i].GetComponent<PlayerMovement>();
         }
 
-        m_eventText.text = "The audience made the floor slippery!";
+        _MessageFeedManager.AddMessageToFeed("The audience made the floor slippery!", MessageFeedManager.MessageType.arena_event);
 
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
@@ -58,5 +53,10 @@ public class FreezingRainEvent : AbstractAudienceEvent
         {
             controller.ModulateFriction(1.0f / -m_dragFraction);
         }
+    }
+
+    public override Events.EventID GetEventID()
+    {
+        return Events.EventID.freezing_rain;
     }
 }

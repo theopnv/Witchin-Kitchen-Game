@@ -18,9 +18,8 @@ namespace con2.game
 
         #endregion
 
-        void Start()
+        void Awake()
         {
-
             // Initialize players
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
