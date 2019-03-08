@@ -148,6 +148,8 @@ namespace con2.lobby
 
         void SetPlayerUiVisibility(bool inLobby, int i)
         {
+            var tmp = new Tuple<bool, PlayerUiManager>(inLobby, _PlayerUiManagers[i].Item2);
+            _PlayerUiManagers[i] = tmp;
             _PlayerUiManagers[i].Item2.SetActiveCanvas(inLobby);
         }
 
@@ -183,7 +185,7 @@ namespace con2.lobby
                 {
                     PlayersInfo.Name[i] = _PlayerUiManagers[i].Item2.Label.text;
                     PlayersInfo.Color[i] = _PlayerUiManagers[i].Item2.Color;
-                    PlayersInfo.PlayerNumber = i;
+                    PlayersInfo.PlayerNumber = i + 1;
 
                     var player = new Player
                     {
@@ -193,9 +195,8 @@ namespace con2.lobby
                     };
                     playerList.Add(player);
                 }
-
-                _AudienceInteractionManager?.SendPlayerCharacteristics(playerList);
             }
+            _AudienceInteractionManager?.SendPlayerCharacteristics(playerList);
         }
 
         #endregion

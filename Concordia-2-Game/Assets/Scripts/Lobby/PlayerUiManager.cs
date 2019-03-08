@@ -33,18 +33,25 @@ namespace con2.lobby
         /// Shortcuts to turn on/off canvases
         /// </summary>
         [SerializeField]
-        private GameObject PlayerInLobby;
+        private GameObject _PlayerInLobby;
         [SerializeField]
-        private GameObject PlayerOutOfLobby;
+        private GameObject _PlayerOutOfLobby;
+
+        [SerializeField] private GameObject _Model;
 
         [SerializeField] private Image ColorBox;
 
         #endregion
 
+        void Update()
+        {
+            _Model?.transform?.Rotate(Vector3.up, -20 * Time.deltaTime);
+        }
+
         public void SetActiveCanvas(bool inLobby)
         {
-            PlayerInLobby.SetActive(inLobby);
-            PlayerOutOfLobby.SetActive(!inLobby);
+            _PlayerInLobby.SetActive(inLobby);
+            _PlayerOutOfLobby.SetActive(!inLobby);
         }
 
     }

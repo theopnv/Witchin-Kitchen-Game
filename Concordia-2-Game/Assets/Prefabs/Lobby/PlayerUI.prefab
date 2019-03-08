@@ -171,7 +171,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 191.1, y: 250.1}
+  m_SizeDelta: {x: 191.1, y: 196.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3497529520826292013
 CanvasRenderer:
@@ -233,8 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: {fileID: 3497529521776814492}
-  PlayerInLobby: {fileID: 1241741056536410484}
-  PlayerOutOfLobby: {fileID: 9036959398047443103}
+  _PlayerInLobby: {fileID: 1241741056536410484}
+  _PlayerOutOfLobby: {fileID: 9036959398047443103}
+  _Model: {fileID: 3497529520826292010}
   ColorBox: {fileID: 3497529520707121835}
 --- !u!222 &3636874103872667835
 CanvasRenderer:
@@ -279,7 +280,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 193, y: 28.93}
+  m_SizeDelta: {x: 193, y: 76.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3497529521776814493
 CanvasRenderer:
