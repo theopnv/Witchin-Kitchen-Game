@@ -16,7 +16,7 @@ namespace con2.game
         {
             if (currentRecipeIndex >= m_sharedRecipeList.Count)
             {
-                m_sharedRecipeList.Add(GenerateRandomRecipe(Random.Range(3,6)));
+                m_sharedRecipeList.Add(GenerateRandomRecipe(Random.Range(2,4)));
             }
 
             return m_sharedRecipeList[currentRecipeIndex];

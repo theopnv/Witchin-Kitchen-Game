@@ -13,8 +13,6 @@ namespace con2.game
         MUSHROOM,
         FLOWER,
         FISH,
-        SNOWFLAKE,
-        ICE_GEM,
         NOT_AN_INGREDIENT
     }
 
