@@ -7,7 +7,6 @@ namespace con2.game
 
     public class CauldronStation : KitchenStation
     {
-        private RecipeManager m_recipeManager;
         private Cauldron m_cauldronFX;
 
         protected override void OnAwake()

@@ -11,20 +11,15 @@ namespace con2.game
             SetUpEvent();
         }
 
-        public override Events.EventID GetEventID()
-        {
-            return Events.EventID.ingredient_morph;
-        }
-
         public override void EventStart()
         { }
 
         public override IEnumerator EventImplementation()
         {
-            IngredientMorph[] allIngredients = GameObject.FindObjectsOfType<IngredientMorph>();
+            IngredientMorph[] allIngredients = FindObjectsOfType<IngredientMorph>();
             List<GameObject> innerIngredients = new List<GameObject>();
 
-            m_eventText.text = "The ingredients were morphed!";
+            _MessageFeedManager.AddMessageToFeed("The ingredients were morphed!", MessageFeedManager.MessageType.arena_event);
 
             foreach (IngredientMorph ingredient in allIngredients)
             {
@@ -47,6 +42,11 @@ namespace con2.game
             }
 
             yield return null;
+        }
+
+        public override Events.EventID GetEventID()
+        {
+            return Events.EventID.ingredient_morph;
         }
 
         private void Shuffle(List<GameObject> list)

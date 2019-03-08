@@ -3,6 +3,7 @@ using con2.game;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ namespace con2.game
     {
         private AudienceInteractionManager _AudienceInteractionManager;
 
-        [SerializeField] private Text MessageFeed;
+        private MessageFeedManager _MessageFeedManager;
 
         // Start is called before the first frame update
         void Start()
@@ -25,6 +26,8 @@ namespace con2.game
 
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
+
+            _MessageFeedManager = FindObjectOfType<MessageFeedManager>();
         }
 
         void Update()
@@ -47,7 +50,8 @@ namespace con2.game
         private IEnumerator QuitGame()
         {
             _AudienceInteractionManager?.ExitRoom(false);
-            MessageFeed.text = "Disconnected from server. Game will quit in 5 seconds.";
+            const string msg = "Disconnected from server. Game will quit in 5 seconds.";
+            _MessageFeedManager.AddMessageToFeed(msg, MessageFeedManager.MessageType.error);
             yield return new WaitForSeconds(5);
             SceneManager.LoadSceneAsync(SceneNames.MainMenu);
         }

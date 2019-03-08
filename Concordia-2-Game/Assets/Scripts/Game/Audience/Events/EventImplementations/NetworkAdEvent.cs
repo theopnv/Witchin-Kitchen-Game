@@ -17,20 +17,20 @@ public class NetworkAdEvent : AbstractAudienceEvent
         SetUpEvent();
     }
 
-    public override Events.EventID GetEventID()
-    {
-        return Events.EventID.network_ads;
-    }
-
     public override void EventStart()
     {}
 
     public override IEnumerator EventImplementation()
     {
         _NetworkAdsCanvasInstance = Instantiate(_NetworkAdsCanvasPrefab);
-        m_eventText.text = "The audience spammed you with important ads!";
+        _MessageFeedManager.AddMessageToFeed("The audience spammed you with important ads!", MessageFeedManager.MessageType.arena_event);
         
         yield return new WaitForSeconds(m_NetworkAdsDuration);
         Destroy(_NetworkAdsCanvasInstance);
+    }
+
+    public override Events.EventID GetEventID()
+    {
+        return Events.EventID.network_ads;
     }
 }

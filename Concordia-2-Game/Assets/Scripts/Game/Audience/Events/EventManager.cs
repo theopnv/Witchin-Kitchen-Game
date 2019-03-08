@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using con2.messages;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 using Event = con2.messages.Event;
+using Random = UnityEngine.Random;
 
 namespace con2.game
 {
@@ -13,14 +15,13 @@ namespace con2.game
     public class EventManager : MonoBehaviour
     {
 
-        public bool AnEventIsHappening;
-        public Text m_audienceEventText;
-
         #region Private Attrubutes
 
         private AudienceInteractionManager _AudienceInteractionManager;
 
         private Dictionary<Events.EventID, List<IEventSubscriber>> _EventSubscribers;
+
+        private MessageFeedManager _MessageFeedManager;
 
         #endregion
 
@@ -29,6 +30,12 @@ namespace con2.game
         private void Start()
         {
             SetUp();
+            _MessageFeedManager = FindObjectOfType<MessageFeedManager>();
+        }
+
+        private void OnDisable()
+        {
+            _AudienceInteractionManager.OnEventVoted += OnReceiveEventVotes;
         }
 
         #endregion
@@ -37,8 +44,6 @@ namespace con2.game
 
         public void SetUp()
         {
-            m_audienceEventText.enabled = false;
-
             if (_EventSubscribers == null)
             {
                 _EventSubscribers = new Dictionary<Events.EventID, List<IEventSubscriber>>();
@@ -48,10 +53,7 @@ namespace con2.game
                 }
 
                 _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
-                if (_AudienceInteractionManager != null)
-                {
-                    _AudienceInteractionManager.EventSubscribers = _EventSubscribers;
-                }
+                _AudienceInteractionManager.OnEventVoted += OnReceiveEventVotes;
             }
         }
 
@@ -69,7 +71,7 @@ namespace con2.game
 
             var poll = new PollChoices()
             {
-                events = new List<Event> { pollEventA, pollEventB},
+                events = new List<Event> { pollEventA, pollEventB },
                 deadline = "", // not used
                 duration = pollingTime,
             };
@@ -77,15 +79,13 @@ namespace con2.game
             _AudienceInteractionManager?.SendPoll(poll);
             StartCoroutine("StartEvent", pollingTime);
 
-            m_audienceEventText.text = "Time for an audience event, spectators vote on your phone!";
-            m_audienceEventText.enabled = true;
+            var msg = "Spectators, vote for an event!";
+            _MessageFeedManager.AddMessageToFeed(msg, MessageFeedManager.MessageType.generic);
         }
 
         private IEnumerator StartEvent(float pollingTime)
         {
-            AnEventIsHappening = true;
             yield return new WaitForSeconds(pollingTime);
-            AnEventIsHappening = false;
         }
 
         /// <summary>
@@ -96,6 +96,47 @@ namespace con2.game
         public void AddSubscriber(Events.EventID id, IEventSubscriber subscriber)
         {
             _EventSubscribers[id].Add(subscriber);
+        }
+
+        private void OnReceiveEventVotes(PollChoices pollChoices)
+        {
+            var voteA = pollChoices.events[0];
+            var voteB = pollChoices.events[1];
+            Debug.Log("Votes for A: " + voteA.votes);
+            Debug.Log("Votes for B: " + voteB.votes);
+
+            Event chosenEvent;
+            if (voteA.votes == voteB.votes)
+            {
+                chosenEvent = Random.Range(0, 2) == 0 ? voteA : voteB;
+            }
+            else
+            {
+                chosenEvent = voteA.votes > voteB.votes ? voteA : voteB;
+            }
+
+            BroadcastPollResults(chosenEvent);
+        }
+
+        public void BroadcastPollResults(Event chosenEvent)
+        {
+            Debug.Log("Results of the poll: " +
+                      Events.EventList[(Events.EventID)chosenEvent.id] +
+                      " was voted");
+            var key = (Events.EventID)chosenEvent.id;
+
+            if (_EventSubscribers.ContainsKey(key))
+            {
+                _EventSubscribers[key]
+                    .ForEach((subscriber) =>
+                    {
+                        subscriber.ActivateEventMode();
+                    });
+            }
+            else
+            {
+                Debug.LogError("Event key not found");
+            }
         }
 
         #endregion

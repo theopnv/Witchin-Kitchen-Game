@@ -108,7 +108,7 @@ namespace con2.game
 
         private IEnumerator RemoveMessage()
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(5f);
             _PlayerHUD.Message.text = "";
         }
 

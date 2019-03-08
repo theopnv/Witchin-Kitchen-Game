@@ -21,10 +21,8 @@ namespace con2
     /// </summary>
     public partial class AudienceInteractionManager : MonoBehaviour
     {
-        [HideInInspector]
-        public Dictionary<Events.EventID, List<IEventSubscriber>> EventSubscribers;
-
         public Action<Spell> OnSpellCasted;
+        public Action<PollChoices> OnEventVoted;
 
         void GameStart()
         {
@@ -71,54 +69,13 @@ namespace con2
         private void OnReceiveEventVotes(SocketIOEvent e)
         {
             var content = JsonConvert.DeserializeObject<PollChoices>(e.data.ToString());
-            var voteA = content.events[0];
-            var voteB = content.events[1];
-            Debug.Log("Votes for A: " + voteA.votes);
-            Debug.Log("Votes for B: " + voteB.votes);
-
-            Event chosenEvent;
-            if (voteA.votes == voteB.votes)
-            {
-                chosenEvent = Random.Range(0, 2) == 0 ? voteA : voteB;
-            }
-            else
-            {
-                chosenEvent = voteA.votes > voteB.votes ? voteA : voteB;
-            }
-
-            BroadcastPollResults(chosenEvent);
-        }
-
-        public void BroadcastPollResults(Event chosenEvent)
-        {
-            Debug.Log("Results of the poll: " +
-                      Events.EventList[(Events.EventID)chosenEvent.id] +
-                      " was voted");
-            var key = (Events.EventID) chosenEvent.id;
-
-            if (EventSubscribers.ContainsKey(key))
-            {
-                EventSubscribers[key]
-                    .ForEach((subscriber) =>
-                    {
-                        subscriber.ActivateEventMode();
-                    });
-            }
-            else
-            {
-                Debug.LogError("Event key not found");
-            }
-        }
-
-        public void BroadcastSpellRequest(Spell requestedSpell)
-        {
-            OnSpellCasted?.Invoke(requestedSpell);
+            OnEventVoted?.Invoke(content);
         }
 
         private void OnCastSpellRequest(SocketIOEvent e)
         {
             var content = JsonConvert.DeserializeObject<Spell>(e.data.ToString());
-            BroadcastSpellRequest(content);
+            OnSpellCasted?.Invoke(content);
         }
 
         #endregion
