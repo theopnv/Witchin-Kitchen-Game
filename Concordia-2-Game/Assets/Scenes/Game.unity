@@ -195,10 +195,35 @@ MonoBehaviour:
   - Name: GHOST_PEPPER
     Prefab: {fileID: 8340910405799370762, guid: de53b678d6e39ea41a94cfa6883e159d,
       type: 3}
-    SpawnDelay: 12
+    SpawnDelay: 15
     TimeSinceSpawn: 0
   - Name: NEWT_EYE
     Prefab: {fileID: 2135384641246065995, guid: 0652c01fbe9564a46a3ba33d08f586b7,
+      type: 3}
+    SpawnDelay: 15
+    TimeSinceSpawn: 0
+  - Name: FISH
+    Prefab: {fileID: 5532703018747530490, guid: a6990a6bcd7d62c44a87719b2aa8889d,
+      type: 3}
+    SpawnDelay: 15
+    TimeSinceSpawn: 0
+  - Name: FLOWER
+    Prefab: {fileID: 2445369503663072453, guid: 3e11b5ea44d5c9844a96d67630a34056,
+      type: 3}
+    SpawnDelay: 15
+    TimeSinceSpawn: 0
+  - Name: ICE_GEM
+    Prefab: {fileID: 5768123434757628052, guid: e0643686db8380a4097f652dea4efb5e,
+      type: 3}
+    SpawnDelay: 15
+    TimeSinceSpawn: 0
+  - Name: MUSHROOM
+    Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
+      type: 3}
+    SpawnDelay: 15
+    TimeSinceSpawn: 0
+  - Name: SNOWFLAKE
+    Prefab: {fileID: 6604599451708796378, guid: c328020ccca59ae49b0f354e1a6f149d,
       type: 3}
     SpawnDelay: 15
     TimeSinceSpawn: 0
@@ -4170,10 +4195,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1448121867}
     m_Modifications:
-    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
-      propertyPath: m_Name
-      value: spoon
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.509
@@ -4229,6 +4250,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
+      propertyPath: m_Name
+      value: spoon
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_Materials.Array.data[0]

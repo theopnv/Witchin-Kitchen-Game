@@ -10,6 +10,9 @@ namespace con2.game
     {
         GHOST_PEPPER,
         NEWT_EYE,
+        MUSHROOM,
+        FLOWER,
+        FISH,
         NOT_AN_INGREDIENT
     }
 
