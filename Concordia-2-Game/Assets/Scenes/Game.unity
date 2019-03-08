@@ -400,7 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 32389776}
   - component: {fileID: 32389777}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Players
   m_TagString: PlayersHUDZone
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   - component: {fileID: 379122729}
   - component: {fileID: 379122731}
   - component: {fileID: 379122730}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RematchText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 477752800}
   - component: {fileID: 477752802}
   - component: {fileID: 477752801}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1462,7 +1462,7 @@ GameObject:
   - component: {fileID: 703342992}
   - component: {fileID: 703342994}
   - component: {fileID: 703342993}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Room PIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1611,7 +1611,7 @@ GameObject:
   - component: {fileID: 719272685}
   - component: {fileID: 719272684}
   - component: {fileID: 719272683}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1691,7 +1691,7 @@ Canvas:
   m_GameObject: {fileID: 719272681}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1701,7 +1701,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1001 &762396595
 PrefabInstance:
@@ -2218,7 +2218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 894137372}
   - component: {fileID: 894137373}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MessageFeedPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3318,7 +3318,7 @@ GameObject:
   - component: {fileID: 1698345664}
   - component: {fileID: 1698345666}
   - component: {fileID: 1698345665}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Viewers Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3442,7 +3442,7 @@ GameObject:
   - component: {fileID: 1778035378}
   - component: {fileID: 1778035380}
   - component: {fileID: 1778035379}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WinnerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4221,7 +4221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2030936565}
   - component: {fileID: 2030936566}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: AudienceInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
