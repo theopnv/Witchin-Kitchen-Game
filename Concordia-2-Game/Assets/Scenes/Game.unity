@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 10916642}
   - component: {fileID: 10916645}
   - component: {fileID: 10916644}
+  - component: {fileID: 10916646}
   m_Layer: 0
   m_Name: MainGameManager
   m_TagString: GameController
@@ -213,7 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edbbd2ecb7fcab4e96f66a24849501a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MessageFeed: {fileID: 89556203}
   m_maxEventVoteTime: 20
   m_firstPollTime: 30
   m_poll_frequency: 60
@@ -249,6 +249,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2fd88a053959941b49de3eee3a9df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &10916646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10916640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e854bbcae7d0144888ca0cf1d583bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MessageFeedPlaceholder: {fileID: 894137371}
+  _GlobalMessagePrefab: {fileID: 4345727725033474270, guid: d40a536ec69f9044388da84d94a618d7,
+    type: 3}
+  TimeBeforeFade: 15
 --- !u!1001 &13281190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -384,7 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 32389776}
   - component: {fileID: 32389777}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Players
   m_TagString: PlayersHUDZone
   m_Icon: {fileID: 0}
@@ -488,85 +504,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4518234804007465847}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &89556201
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 89556202}
-  - component: {fileID: 89556204}
-  - component: {fileID: 89556203}
-  m_Layer: 0
-  m_Name: EventText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &89556202
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89556201}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 719272682}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -455.6, y: -20}
-  m_SizeDelta: {x: 430.6, y: 74.1}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &89556203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89556201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.9725491, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 60
-    m_Alignment: 2
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: EventText
---- !u!222 &89556204
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89556201}
-  m_CullTransparentMesh: 0
 --- !u!1001 &113913493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -633,6 +570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807227141112824243, guid: 814636b5095062740a0a03099f6bd4a2,
+        type: 3}
+      propertyPath: m_TagString
+      value: ArenaBase
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814636b5095062740a0a03099f6bd4a2, type: 3}
@@ -908,7 +850,7 @@ GameObject:
   - component: {fileID: 379122729}
   - component: {fileID: 379122731}
   - component: {fileID: 379122730}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RematchText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1040,7 @@ GameObject:
   - component: {fileID: 477752800}
   - component: {fileID: 477752802}
   - component: {fileID: 477752801}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,7 +1059,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 719272682}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1568,7 +1510,7 @@ GameObject:
   - component: {fileID: 703342992}
   - component: {fileID: 703342994}
   - component: {fileID: 703342993}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Room PIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1717,7 +1659,7 @@ GameObject:
   - component: {fileID: 719272685}
   - component: {fileID: 719272684}
   - component: {fileID: 719272683}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1737,8 +1679,8 @@ RectTransform:
   m_Children:
   - {fileID: 1778035378}
   - {fileID: 379122729}
-  - {fileID: 89556202}
   - {fileID: 477752800}
+  - {fileID: 894137372}
   - {fileID: 32389776}
   - {fileID: 2030936565}
   m_Father: {fileID: 0}
@@ -1797,7 +1739,7 @@ Canvas:
   m_GameObject: {fileID: 719272681}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1807,7 +1749,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1001 &762396595
 PrefabInstance:
@@ -1995,8 +1937,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d6ae315ac823644a1256bfc1f86650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnEventIsHappening: 0
-  m_audienceEventText: {fileID: 89556203}
 --- !u!114 &773999204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2318,6 +2258,65 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 534172597}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &894137371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894137372}
+  - component: {fileID: 894137373}
+  m_Layer: 5
+  m_Name: MessageFeedPlaceholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &894137372
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894137371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 719272682}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -25, y: -17.4}
+  m_SizeDelta: {x: 339.8, y: 64}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &894137373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894137371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 2
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
 --- !u!1 &930326411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3430,7 +3429,7 @@ GameObject:
   - component: {fileID: 1698345664}
   - component: {fileID: 1698345666}
   - component: {fileID: 1698345665}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Viewers Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3554,7 +3553,7 @@ GameObject:
   - component: {fileID: 1778035378}
   - component: {fileID: 1778035380}
   - component: {fileID: 1778035379}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WinnerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4333,7 +4332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2030936565}
   - component: {fileID: 2030936566}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: AudienceInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4358,8 +4357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 237, y: -50.7}
-  m_SizeDelta: {x: 434, y: 61.4}
+  m_AnchoredPosition: {x: 192.1, y: -50.7}
+  m_SizeDelta: {x: 344.2, y: 61.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030936566
 MonoBehaviour:

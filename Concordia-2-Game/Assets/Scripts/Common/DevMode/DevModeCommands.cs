@@ -176,7 +176,8 @@ namespace con2
             {
                 id = (int)id,
             };
-            _AudienceInteractionManager?.BroadcastPollResults(chosenEvent);
+            var eventManager = FindObjectOfType<EventManager>();
+            eventManager?.BroadcastPollResults(chosenEvent);
         }
 
         private IEnumerator SimulatePoll()
@@ -268,9 +269,11 @@ namespace con2
             var spell = new messages.Spell()
             {
                 spellId = (int)id,
-                targetedPlayer = new messages.Player() { id = 0 }
+                targetedPlayer = new messages.Player() { id = 0 },
+                caster = new Viewer { color = ColorUtility.ToHtmlStringRGBA(Color.red), name = "Smeagol", socketId = ""}
             };
-            _AudienceInteractionManager?.BroadcastSpellRequest(spell);
+            var spellsManager = FindObjectOfType<SpellsManager>();
+            spellsManager?.OnSpellCasted(spell);
         }
 
         private string GameOver(string[] args)

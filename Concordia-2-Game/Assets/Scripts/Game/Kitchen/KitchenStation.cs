@@ -9,7 +9,7 @@ namespace con2.game
     {
         private ACookingMinigame[] m_miniGames;
         protected Ingredient m_storedIngredient;
-        private RecipeManager m_recipeManager;
+        protected RecipeManager m_recipeManager;
         private PlayerManager m_owner;
 
         protected abstract void OnAwake();

@@ -10,8 +10,7 @@ namespace con2.game
 
     public abstract class AbstractAudienceEvent : MonoBehaviour, IEventSubscriber
     {
-        protected Text m_eventText;
-        protected EventID ID;
+        protected MessageFeedManager _MessageFeedManager;
 
         public abstract void EventStart();
         public abstract IEnumerator EventImplementation();
@@ -19,13 +18,11 @@ namespace con2.game
 
         public void SetUpEvent()
         {
+            _MessageFeedManager = FindObjectOfType<MessageFeedManager>();
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             var eventManager = managers.GetComponentInChildren<EventManager>();
             eventManager.SetUp();
             eventManager.AddSubscriber(GetEventID(), this);
-
-            var mgm = managers.GetComponentInChildren<MainGameManager>();
-            m_eventText = eventManager.m_audienceEventText;
         }
 
         public void ActivateEventMode()
@@ -37,13 +34,6 @@ namespace con2.game
         public IEnumerator RunEvent(Func<IEnumerator> currentEvent)
         {
             yield return StartCoroutine(currentEvent());
-            EventEnd();
-        }
-
-        private void EventEnd()
-        {
-            m_eventText.text = "";
-            m_eventText.enabled = false;
         }
     }
 }
