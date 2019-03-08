@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.02
+  OutlineWidth: 0.03
 --- !u!1001 &210225203949848058
 PrefabInstance:
   m_ObjectHideFlags: 0

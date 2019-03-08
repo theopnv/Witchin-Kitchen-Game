@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.02
+  OutlineWidth: 0.03
 --- !u!1 &2006348380012521983
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.02
+  OutlineWidth: 0.03
 --- !u!1 &2260218851993408577
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.02
+  OutlineWidth: 0.03
 --- !u!1 &8644310146778683877
 GameObject:
   m_ObjectHideFlags: 0
