@@ -8,7 +8,7 @@ namespace con2
     {
         public static GamepadMgr instance;
 
-        public const int NUM_PADS = 2;
+        public const int NUM_PADS = 4;
 
         private List<Gamepad> gamepads = new List<Gamepad>();
 

@@ -21,8 +21,7 @@ namespace con2.lobby
             {
                 _color = value;
                 // Automatically update colors for the whole Player UI
-                ColorSelector.color = value;
-                CharacterModel.color = value;
+                ColorBox.color = value;
             }
         }
 
@@ -38,8 +37,7 @@ namespace con2.lobby
         [SerializeField]
         private GameObject PlayerOutOfLobby;
 
-        [SerializeField] private Image ColorSelector;
-        [SerializeField] private Image CharacterModel;
+        [SerializeField] private Image ColorBox;
 
         #endregion
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using con2.messages;
@@ -15,10 +16,9 @@ namespace con2.lobby
         [Tooltip("The prefab to use as UI for each player")]
         public GameObject PlayerUiPrefab;
 
-        [Tooltip("Position of players' UIs")]
-        public Transform[] PlayerUiPositions;
-        
         #region Private Variables
+
+        [SerializeField] private GameObject _PlayersHolder;
 
         [Tooltip("Controllers detector")]
         [SerializeField] private DetectController _DetectController;
@@ -32,7 +32,7 @@ namespace con2.lobby
 
         private SocketIOComponent _SocketIoComponent;
         private float _ServerTryAgainTimeout = 2f;
-        private PlayerUiManager[] _PlayerUiManagers;
+        private List<Tuple<bool, PlayerUiManager>> _PlayerUiManagers;
 
         #endregion
 
@@ -45,9 +45,11 @@ namespace con2.lobby
             _DetectController.OnDisconnected += OnControllerDisconnected;
 
             // Player UIs instantiation
-            _PlayerUiManagers = new PlayerUiManager[2];
+            _PlayerUiManagers = new List<Tuple<bool, PlayerUiManager>>(4);
             InstantiatePlayerUi(0, "Gandalf the OG", Color.red);
             InstantiatePlayerUi(1, "Sabrina the Tahini Witch", Color.blue);
+            InstantiatePlayerUi(2, "Snape the Punch-master", Color.green);
+            InstantiatePlayerUi(3, "Wicked Witch of Western Cuisine", Color.yellow);
 
             // If controllers are already connected we activate players UIs right from the start
             var controllerState = _DetectController.ControllersState;
@@ -73,7 +75,7 @@ namespace con2.lobby
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                _AudienceInteractionManager.SendPlayerCharacteristics();
+                MakePlayerList();
             }
         }
 
@@ -136,19 +138,17 @@ namespace con2.lobby
 
         void InstantiatePlayerUi(int i, string name, Color color)
         {
-            var instance = Instantiate(PlayerUiPrefab, PlayerUiPositions[i]);
-            _PlayerUiManagers[i] = instance.GetComponent<PlayerUiManager>();
-            _PlayerUiManagers[i].SetActiveCanvas(false);
-            _PlayerUiManagers[i].Label.text = name;
-
-            _PlayerUiManagers[i].Color = color;
-            PlayersInfo.Color[i] = color;
-            PlayersInfo.Name[i] = name;
+            var instance = Instantiate(PlayerUiPrefab, _PlayersHolder.transform);
+            var playerUI = new Tuple<bool, PlayerUiManager>(false, instance.GetComponent<PlayerUiManager>());
+            playerUI.Item2.SetActiveCanvas(false);
+            playerUI.Item2.Label.text = name;
+            playerUI.Item2.Color = color;
+            _PlayerUiManagers.Add(playerUI);
         }
 
         void SetPlayerUiVisibility(bool inLobby, int i)
         {
-            _PlayerUiManagers[i].SetActiveCanvas(inLobby);
+            _PlayerUiManagers[i].Item2.SetActiveCanvas(inLobby);
         }
 
         public void BackToMenu()
@@ -161,7 +161,7 @@ namespace con2.lobby
         {
             if (input.GetActionID() == GamepadAction.ID.INTERACT)
             {
-                _AudienceInteractionManager.SendPlayerCharacteristics();
+                MakePlayerList();
                 return true;
             }
 
@@ -172,6 +172,30 @@ namespace con2.lobby
             }
 
             return false;
+        }
+
+        private void MakePlayerList()
+        {
+            var playerList = new List<Player>();
+            for (var i = 0; i < _PlayerUiManagers.Count; i++)
+            {
+                if (_PlayerUiManagers[i].Item1)
+                {
+                    PlayersInfo.Name[i] = _PlayerUiManagers[i].Item2.Label.text;
+                    PlayersInfo.Color[i] = _PlayerUiManagers[i].Item2.Color;
+                    PlayersInfo.PlayerNumber = i;
+
+                    var player = new Player
+                    {
+                        id = i,
+                        name = PlayersInfo.Name[i],
+                        color = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
+                    };
+                    playerList.Add(player);
+                }
+
+                _AudienceInteractionManager?.SendPlayerCharacteristics(playerList);
+            }
         }
 
         #endregion
@@ -193,6 +217,16 @@ namespace con2.lobby
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 SetPlayerUiVisibility(true, 1);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SetPlayerUiVisibility(true, 2);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SetPlayerUiVisibility(true, 3);
             }
         }
 
