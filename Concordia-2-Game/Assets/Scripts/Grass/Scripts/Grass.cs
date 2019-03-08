@@ -83,12 +83,12 @@ public class Grass : MonoBehaviour
         var startX = targetBounds.min.x + mMeshRenderer.bounds.size.x - target.transform.position.x;
         var startZ = targetBounds.min.z + mMeshRenderer.bounds.size.z - target.transform.position.z;
 
-        print(w);
-        print(d);
-        print(startX);
-        print(startZ);
-        print(instanceMap.width);
-        print(instanceMap.height);
+        //print(w);
+        //print(d);
+        //print(startX);
+        //print(startZ);
+        //print(instanceMap.width);
+        //print(instanceMap.height);
 
         for (int i = 0; i < instanceMap.width; ++i)
         {
@@ -117,15 +117,16 @@ public class Grass : MonoBehaviour
                     }
                     else
                     {
-                        if (hitInfo.transform.gameObject == null)
-                        {
-                            print("noname");
-                        }
-                        else
-                        {
-                            print(hitInfo.transform.gameObject.name);
-                            print(hitInfo.transform.gameObject.layer);
-                        }
+                        //if (hitInfo.transform.gameObject == null)
+                        //{
+                        //    print("noname");
+                        //}
+                        //else
+                        //{
+                        //    print(hitInfo.transform.gameObject.name);
+                        //    print(hitInfo.transform.gameObject.layer);
+                        //}
+
                         continue;
                     }
                 }
