@@ -62,7 +62,7 @@ namespace con2
         private static void SwitchContext(Func<int, List<IInputConsumer>> contextFunction)
         {
             //Ask gpm for number of player, use that number to set contexts (with playercontroller, and only allow menu input for p1)
-            for (int i = 0; i < GamepadMgr.NUM_PADS; i++)
+            for (int i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
                 GamepadMgr.Pad(i).SwitchGamepadContext(contextFunction(i), i);
             }

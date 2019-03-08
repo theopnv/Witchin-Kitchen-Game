@@ -17,7 +17,7 @@ namespace con2
     /// </summary>
     public static class PlayersInfo
     {
-        public static int PlayerNumber = 2; // Default value
+        public static int PlayerNumber = 4; // Default value
         public static Color[] Color = new Color[PlayerNumber];
         public static string[] Name = new string[PlayerNumber];
     }
