@@ -21,8 +21,7 @@ namespace con2.lobby
             {
                 _color = value;
                 // Automatically update colors for the whole Player UI
-                ColorSelector.color = value;
-                CharacterModel.color = value;
+                ColorBox.color = value;
             }
         }
 
@@ -34,19 +33,25 @@ namespace con2.lobby
         /// Shortcuts to turn on/off canvases
         /// </summary>
         [SerializeField]
-        private GameObject PlayerInLobby;
+        private GameObject _PlayerInLobby;
         [SerializeField]
-        private GameObject PlayerOutOfLobby;
+        private GameObject _PlayerOutOfLobby;
 
-        [SerializeField] private Image ColorSelector;
-        [SerializeField] private Image CharacterModel;
+        [SerializeField] private GameObject _Model;
+
+        [SerializeField] private Image ColorBox;
 
         #endregion
 
+        void Update()
+        {
+            _Model?.transform?.Rotate(Vector3.up, -20 * Time.deltaTime);
+        }
+
         public void SetActiveCanvas(bool inLobby)
         {
-            PlayerInLobby.SetActive(inLobby);
-            PlayerOutOfLobby.SetActive(!inLobby);
+            _PlayerInLobby.SetActive(inLobby);
+            _PlayerOutOfLobby.SetActive(!inLobby);
         }
 
     }
