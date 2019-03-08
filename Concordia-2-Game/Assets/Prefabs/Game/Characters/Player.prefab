@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 50
-  MaxMovementSpeed: 3
+  MaxMovementSpeed: 4
   MovementRotationSpeed: 1
   Gravity: 10.3
   FacingRotationSpeed: 0.163
