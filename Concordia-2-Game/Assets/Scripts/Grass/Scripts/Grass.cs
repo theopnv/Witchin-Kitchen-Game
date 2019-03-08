@@ -83,6 +83,13 @@ public class Grass : MonoBehaviour
         var startX = targetBounds.min.x + mMeshRenderer.bounds.size.x - target.transform.position.x;
         var startZ = targetBounds.min.z + mMeshRenderer.bounds.size.z - target.transform.position.z;
 
+        //print(w);
+        //print(d);
+        //print(startX);
+        //print(startZ);
+        //print(instanceMap.width);
+        //print(instanceMap.height);
+
         for (int i = 0; i < instanceMap.width; ++i)
         {
             for (int j = 0; j < instanceMap.height; ++j)
@@ -98,18 +105,28 @@ public class Grass : MonoBehaviour
                 pos.x = startX + progressX * w;
                 pos.y = 0.0f;
                 pos.z = startZ + progressZ * d;
-
+                
                 Vector3 origin = pos + new Vector3(0.0f, 100.0f, 0.0f);
                 RaycastHit hitInfo;
                 if (Physics.Raycast(origin, Vector3.down, out hitInfo))
                 {
                     if (hitInfo.transform.gameObject != null &&
-                        hitInfo.transform.gameObject.layer == GRASS_SURFACE_LAYER_MASK)
+                        (hitInfo.transform.gameObject.layer & GRASS_SURFACE_LAYER_MASK) > 0)
                     {
                         pos.y = hitInfo.point.y;
                     }
                     else
                     {
+                        //if (hitInfo.transform.gameObject == null)
+                        //{
+                        //    print("noname");
+                        //}
+                        //else
+                        //{
+                        //    print(hitInfo.transform.gameObject.name);
+                        //    print(hitInfo.transform.gameObject.layer);
+                        //}
+
                         continue;
                     }
                 }
