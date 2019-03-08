@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -212,18 +212,8 @@ MonoBehaviour:
       type: 3}
     SpawnDelay: 15
     TimeSinceSpawn: 0
-  - Name: ICE_GEM
-    Prefab: {fileID: 5768123434757628052, guid: e0643686db8380a4097f652dea4efb5e,
-      type: 3}
-    SpawnDelay: 15
-    TimeSinceSpawn: 0
   - Name: MUSHROOM
     Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
-      type: 3}
-    SpawnDelay: 15
-    TimeSinceSpawn: 0
-  - Name: SNOWFLAKE
-    Prefab: {fileID: 6604599451708796378, guid: c328020ccca59ae49b0f354e1a6f149d,
       type: 3}
     SpawnDelay: 15
     TimeSinceSpawn: 0
@@ -4195,6 +4185,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1448121867}
     m_Modifications:
+    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
+      propertyPath: m_Name
+      value: spoon
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.509
@@ -4250,10 +4244,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
-      propertyPath: m_Name
-      value: spoon
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
