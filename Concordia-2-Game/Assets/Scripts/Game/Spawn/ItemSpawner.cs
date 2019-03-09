@@ -142,30 +142,42 @@ namespace con2.game
             return point;
         }
 
+        private void RefreshPool(SpawnableItem item)
+        {
+            if (_SpawnedItems[item.Type].Count >= item.MaxNbOfInstances)
+            {
+                var toRemove = _SpawnedItems[item.Type][0];
+                if (toRemove == null || toRemove.gameObject == null)
+                {
+                    _SpawnedItems[item.Type].RemoveAt(0);
+                    
+                }
+                else
+                {
+                    var pickManager = toRemove.gameObject.GetComponent<PickableObject>();
+                    if (!pickManager)
+                    {
+                        Debug.LogError("Could not find PickableObject component on the ingredient");
+                    }
+
+                    if (pickManager.IsHeld())
+                    {
+                        return;
+                    }
+
+                    _SpawnedItems[item.Type].RemoveAt(0);
+                    Destroy(toRemove.gameObject);
+                }
+            }
+        }
+
         /// <summary>
         /// Actual instantiation on the map
         /// </summary>
         /// <param name="prefab"></param>
         private void InstantiateOnMap(SpawnableItem item)
         {
-            if (_SpawnedItems[item.Type].Count >= item.MaxNbOfInstances)
-            {
-                var toRemove = _SpawnedItems[item.Type][0];
-                var pickManager = toRemove.gameObject.GetComponent<PickableObject>();
-                if (!pickManager)
-                {
-                    Debug.LogError("Could not find PickableObject component on the ingredient");
-                }
-
-                if (pickManager.IsHeld())
-                {
-                    return;
-                }
-
-                _SpawnedItems[item.Type].RemoveAt(0);
-                Destroy(toRemove.gameObject);
-            }
-
+            RefreshPool(item);
             var position = new Vector3
             {
                 x = FindValidPoint(
