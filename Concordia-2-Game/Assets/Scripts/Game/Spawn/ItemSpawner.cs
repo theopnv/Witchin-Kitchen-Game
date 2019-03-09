@@ -6,13 +6,16 @@ namespace con2.game
     public class ItemSpawner : MonoBehaviour
     {
 
+        [SerializeField] [Tooltip("[RANDOM POS. MODE] Boundaries of the map")]
+        private float _MinX, _MaxX, _MinZ, _MaxZ;
+
         /// <summary>
         /// This list is used to prepare the items in the editor.
         /// Also if UseTimerMode is true.
         /// We can't access it from outside (no way to retrieve an item)
         /// </summary>
         [SerializeField]
-        [Tooltip("List of spwanable items")]
+        [Tooltip("List of spawnable items")]
         private List<SpawnableItem> SpawnableItemsList = new List<SpawnableItem>();
 
         /// <summary>
@@ -21,24 +24,27 @@ namespace con2.game
         /// From outside we can access any item (with its name) and ask to instantiate it.
         /// </summary>
         [HideInInspector]
-        public Dictionary<string, SpawnableItem> SpawnableItems = new Dictionary<string, SpawnableItem>();
+        public Dictionary<Ingredient, SpawnableItem> SpawnableItems;
 
         #region Unity API
 
         // Start is called before the first frame update
         void Start()
         {
+            SpawnableItems = new Dictionary<Ingredient, SpawnableItem>();
             foreach (var item in SpawnableItemsList)
             {
-                if (!item.ActivateTimerMode)
+                InstantiateOnMap(item);
+                if (item.ActivateTimerMode)
                 {
-                    InstantiateOnMap(item);
-                    item.TimeSinceSpawn = 0f;
+                    item.TimeSinceSpawn = -item.FirstSpawnDelay;
+                    item.AskToInstantiate += () => { }; // Empty callback
+                    SpawnableItems.Add(item.Type, item);
                 }
                 else
                 {
                     item.AskToInstantiate += () => InstantiateOnMap(item);
-                    SpawnableItems.Add(item.Name, item);
+                    SpawnableItems.Add(item.Type, item);
                 }
             }
         }
@@ -78,9 +84,19 @@ namespace con2.game
         {
             var position = new Vector3();
 
-            position.x = Random.Range(-item.Area.Radius, item.Area.Radius);
+            var rangeX = item.ActivateRandomPosMode
+                ? Random.Range(_MinX, _MaxX)
+                : Random.Range(
+                    item.Area.transform.position.x - item.Area.Radius, 
+                    item.Area.transform.position.x + item.Area.Radius);
+            var rangeZ = item.ActivateRandomPosMode
+                ? Random.Range(_MinZ, _MaxZ)
+                : Random.Range(
+                    item.Area.transform.position.z - item.Area.Radius,
+                    item.Area.transform.position.z + item.Area.Radius);
+            position.x = rangeX;
             position.y = 1f;
-            position.z = Random.Range(-item.Area.Radius, item.Area.Radius);
+            position.z = rangeZ;
 
             Instantiate(item.Prefab, position, Quaternion.identity);
         }

@@ -14,6 +14,22 @@ namespace con2.game
         {
             EditorGUILayout.PropertyField(
                 serializedObject.FindProperty(
+                    "_MinX"),
+                true);
+            EditorGUILayout.PropertyField(
+                serializedObject.FindProperty(
+                    "_MaxX"),
+                true);
+            EditorGUILayout.PropertyField(
+                serializedObject.FindProperty(
+                    "_MinZ"),
+                true);
+            EditorGUILayout.PropertyField(
+                serializedObject.FindProperty(
+                    "_MaxZ"),
+                true);
+            EditorGUILayout.PropertyField(
+                serializedObject.FindProperty(
                     "SpawnableItemsList"),
                 true);
             serializedObject.ApplyModifiedProperties();

@@ -11,8 +11,7 @@ namespace con2.game
     {
         #region Editor Properties
 
-        [Tooltip("[TIMER MODE] Used to retrieve the item in the list")]
-        public string Name;
+        public Ingredient Type;
 
         public GameObject Prefab;
 

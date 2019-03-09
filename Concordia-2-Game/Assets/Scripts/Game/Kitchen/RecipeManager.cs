@@ -5,17 +5,6 @@ using UnityEngine.UI;
 
 namespace con2.game
 {
-
-    public enum Ingredient
-    {
-        GHOST_PEPPER,
-        NEWT_EYE,
-        MUSHROOM,
-        FLOWER,
-        FISH,
-        NOT_AN_INGREDIENT
-    }
-
     public class RecipeManager : MonoBehaviour
     {
         private Recipe m_currentPotionRecipe;
@@ -23,10 +12,12 @@ namespace con2.game
         public Text m_recipeUI, m_score;
         private KitchenStation m_thisStation;
         private MainGameManager m_mgm;
+        private ItemSpawner m_itemSpawner;
 
         void Start()
         {
             m_thisStation = GetComponent<KitchenStation>();
+            m_itemSpawner = FindObjectOfType<ItemSpawner>();
             if (m_recipeUI == null)
             {
                 m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
@@ -61,6 +52,7 @@ namespace con2.game
             {
                 m_currentPotionRecipe.CollectIngredient(collectedIngredient);
                 m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
+                m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
                 return true;
             }
             return false;
@@ -120,7 +112,7 @@ namespace con2.game
 
         public void CollectIngredient(Ingredient ingredient)
         {
-            IngredientStatus missingIngredientOfThisType = m_fullRecipe.Find(
+            var missingIngredientOfThisType = m_fullRecipe.Find(
                 delegate (IngredientStatus temp)
                 {
                     return !temp.m_collected && temp.m_type == ingredient;

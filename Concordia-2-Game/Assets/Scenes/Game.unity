@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 1.5
+  Radius: 5
 --- !u!1 &227259911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,8 +1356,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3715dcfabd3e92b4790510e3e1651212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MinX: -14
+  _MaxX: 14
+  _MinZ: -9
+  _MaxZ: 9
   SpawnableItemsList:
-  - Name: GHOST_PEPPER
+  - Type: 0
     Prefab: {fileID: 8340910405799370762, guid: de53b678d6e39ea41a94cfa6883e159d,
       type: 3}
     ActivateTimerMode: 0
@@ -1366,7 +1370,7 @@ MonoBehaviour:
     ActivateRandomPosMode: 0
     Area: {fileID: 996886205}
     TimeSinceSpawn: 0
-  - Name: NEWT_EYE
+  - Type: 1
     Prefab: {fileID: 2135384641246065995, guid: 0652c01fbe9564a46a3ba33d08f586b7,
       type: 3}
     ActivateTimerMode: 0
@@ -1375,7 +1379,7 @@ MonoBehaviour:
     ActivateRandomPosMode: 0
     Area: {fileID: 213108576}
     TimeSinceSpawn: 0
-  - Name: FISH
+  - Type: 4
     Prefab: {fileID: 5532703018747530490, guid: a6990a6bcd7d62c44a87719b2aa8889d,
       type: 3}
     ActivateTimerMode: 0
@@ -1384,7 +1388,7 @@ MonoBehaviour:
     ActivateRandomPosMode: 0
     Area: {fileID: 737448633}
     TimeSinceSpawn: 0
-  - Name: FLOWER
+  - Type: 3
     Prefab: {fileID: 2445369503663072453, guid: 3e11b5ea44d5c9844a96d67630a34056,
       type: 3}
     ActivateTimerMode: 1
@@ -1393,13 +1397,13 @@ MonoBehaviour:
     ActivateRandomPosMode: 1
     Area: {fileID: 0}
     TimeSinceSpawn: 0
-  - Name: MUSHROOM
+  - Type: 2
     Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
       type: 3}
-    ActivateTimerMode: 1
-    SpawnDelay: 15
+    ActivateTimerMode: 0
+    SpawnDelay: 0
     FirstSpawnDelay: 0
-    ActivateRandomPosMode: 1
+    ActivateRandomPosMode: 0
     Area: {fileID: 1010139671}
     TimeSinceSpawn: 0
 --- !u!1001 &534172597
@@ -1977,7 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 1.5
+  Radius: 5
 --- !u!1001 &762396595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2751,7 +2755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 1.5
+  Radius: 5
 --- !u!1 &1010139669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,7 +2799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 1.5
+  Radius: 5
 --- !u!1 &1032917599
 GameObject:
   m_ObjectHideFlags: 0
