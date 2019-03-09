@@ -152,7 +152,6 @@ GameObject:
   m_Component:
   - component: {fileID: 10916641}
   - component: {fileID: 10916643}
-  - component: {fileID: 10916642}
   - component: {fileID: 10916645}
   - component: {fileID: 10916644}
   - component: {fileID: 10916646}
@@ -177,46 +176,6 @@ Transform:
   m_Father: {fileID: 582771356}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &10916642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10916640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3715dcfabd3e92b4790510e3e1651212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Radius: 9
-  UseTimerMode: 1
-  SpawnableItemsList:
-  - Name: GHOST_PEPPER
-    Prefab: {fileID: 8340910405799370762, guid: de53b678d6e39ea41a94cfa6883e159d,
-      type: 3}
-    SpawnDelay: 15
-    TimeSinceSpawn: 0
-  - Name: NEWT_EYE
-    Prefab: {fileID: 2135384641246065995, guid: 0652c01fbe9564a46a3ba33d08f586b7,
-      type: 3}
-    SpawnDelay: 15
-    TimeSinceSpawn: 0
-  - Name: FISH
-    Prefab: {fileID: 5532703018747530490, guid: a6990a6bcd7d62c44a87719b2aa8889d,
-      type: 3}
-    SpawnDelay: 15
-    TimeSinceSpawn: 0
-  - Name: FLOWER
-    Prefab: {fileID: 2445369503663072453, guid: 3e11b5ea44d5c9844a96d67630a34056,
-      type: 3}
-    SpawnDelay: 15
-    TimeSinceSpawn: 0
-  - Name: MUSHROOM
-    Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
-      type: 3}
-    SpawnDelay: 15
-    TimeSinceSpawn: 0
 --- !u!114 &10916643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +550,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ArenaBase
       objectReference: {fileID: 0}
+    - target: {fileID: 6617460996186883086, guid: 814636b5095062740a0a03099f6bd4a2,
+        type: 3}
+      propertyPath: m_Name
+      value: WeepingWillowTreeArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465899347435406397, guid: 814636b5095062740a0a03099f6bd4a2,
+        type: 3}
+      propertyPath: m_Name
+      value: PondArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840469210048509556, guid: 814636b5095062740a0a03099f6bd4a2,
+        type: 3}
+      propertyPath: m_Name
+      value: SandArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153836629775485547, guid: 814636b5095062740a0a03099f6bd4a2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a81d60d8ab3d3e040bb37b54c2b7c3aa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814636b5095062740a0a03099f6bd4a2, type: 3}
 --- !u!1001 &179246803
@@ -701,6 +680,50 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   pixelsPerGameUnit: 24
   previewMode: 0
+--- !u!1 &213108574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 213108575}
+  - component: {fileID: 213108576}
+  m_Layer: 0
+  m_Name: NewtArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &213108575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213108574}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.79, y: 0, z: -4.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 508981968}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &213108576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213108574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 1.5
 --- !u!1 &227259911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1309,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601f50d73eee7a346b31c5bb3c7f564c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &508981967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508981968}
+  - component: {fileID: 508981969}
+  m_Layer: 0
+  m_Name: ItemSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &508981968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508981967}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1010139670}
+  - {fileID: 996886204}
+  - {fileID: 737448632}
+  - {fileID: 213108575}
+  m_Father: {fileID: 582771356}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &508981969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508981967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3715dcfabd3e92b4790510e3e1651212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnableItemsList:
+  - Name: GHOST_PEPPER
+    Prefab: {fileID: 8340910405799370762, guid: de53b678d6e39ea41a94cfa6883e159d,
+      type: 3}
+    ActivateTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
+    ActivateRandomPosMode: 0
+    Area: {fileID: 996886205}
+    TimeSinceSpawn: 0
+  - Name: NEWT_EYE
+    Prefab: {fileID: 2135384641246065995, guid: 0652c01fbe9564a46a3ba33d08f586b7,
+      type: 3}
+    ActivateTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
+    ActivateRandomPosMode: 0
+    Area: {fileID: 213108576}
+    TimeSinceSpawn: 0
+  - Name: FISH
+    Prefab: {fileID: 5532703018747530490, guid: a6990a6bcd7d62c44a87719b2aa8889d,
+      type: 3}
+    ActivateTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
+    ActivateRandomPosMode: 0
+    Area: {fileID: 737448633}
+    TimeSinceSpawn: 0
+  - Name: FLOWER
+    Prefab: {fileID: 2445369503663072453, guid: 3e11b5ea44d5c9844a96d67630a34056,
+      type: 3}
+    ActivateTimerMode: 1
+    SpawnDelay: 15
+    FirstSpawnDelay: 7
+    ActivateRandomPosMode: 1
+    Area: {fileID: 0}
+    TimeSinceSpawn: 0
+  - Name: MUSHROOM
+    Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
+      type: 3}
+    ActivateTimerMode: 1
+    SpawnDelay: 15
+    FirstSpawnDelay: 0
+    ActivateRandomPosMode: 1
+    Area: {fileID: 1010139671}
+    TimeSinceSpawn: 0
 --- !u!1001 &534172597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1444,6 +1560,7 @@ Transform:
   - {fileID: 581277799}
   - {fileID: 496988555}
   - {fileID: 10916641}
+  - {fileID: 508981968}
   - {fileID: 1032917600}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1817,6 +1934,50 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1 &737448631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737448632}
+  - component: {fileID: 737448633}
+  m_Layer: 0
+  m_Name: FishArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &737448632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737448631}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.08, y: 0, z: 5.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 508981968}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737448633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737448631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 1.5
 --- !u!1001 &762396595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2275,7 +2436,7 @@ GameObject:
   - component: {fileID: 866068882}
   - component: {fileID: 866068883}
   m_Layer: 0
-  m_Name: SpawningController
+  m_Name: PlayerSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2547,6 +2708,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1238414358}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &996886203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 996886204}
+  - component: {fileID: 996886205}
+  m_Layer: 0
+  m_Name: PepperArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &996886204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996886203}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.65, y: 0, z: -5.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 508981968}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &996886205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996886203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 1.5
+--- !u!1 &1010139669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1010139670}
+  - component: {fileID: 1010139671}
+  m_Layer: 0
+  m_Name: MushroomArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1010139670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010139669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.66, y: 0, z: 5.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 508981968}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1010139671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010139669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 1.5
 --- !u!1 &1032917599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,7 +2827,7 @@ Transform:
   - {fileID: 1825916750}
   - {fileID: 773999202}
   m_Father: {fileID: 582771356}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1032917601
 MonoBehaviour:
@@ -4185,10 +4434,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1448121867}
     m_Modifications:
-    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
-      propertyPath: m_Name
-      value: spoon
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.509
@@ -4244,6 +4489,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
+      propertyPath: m_Name
+      value: spoon
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_Materials.Array.data[0]

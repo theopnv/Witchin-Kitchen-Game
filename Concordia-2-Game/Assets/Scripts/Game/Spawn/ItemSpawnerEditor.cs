@@ -12,15 +12,6 @@ namespace con2.game
     {
         public override void OnInspectorGUI()
         {
-            serializedObject.Update();
-            EditorGUILayout.PropertyField(
-                serializedObject.FindProperty(
-                    "Radius"),
-                true);
-            EditorGUILayout.PropertyField(
-                serializedObject.FindProperty(
-                    "UseTimerMode"),
-                true);
             EditorGUILayout.PropertyField(
                 serializedObject.FindProperty(
                     "SpawnableItemsList"),

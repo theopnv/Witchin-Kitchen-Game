@@ -6,12 +6,6 @@ namespace con2.game
     public class ItemSpawner : MonoBehaviour
     {
 
-        [Tooltip("Radius of the spawning zone (circle)")]
-        public float Radius;
-
-        [Tooltip("If not checked, will use trigger-based mode")]
-        public bool UseTimerMode;
-
         /// <summary>
         /// This list is used to prepare the items in the editor.
         /// Also if UseTimerMode is true.
@@ -36,14 +30,14 @@ namespace con2.game
         {
             foreach (var item in SpawnableItemsList)
             {
-                if (UseTimerMode)
+                if (!item.ActivateTimerMode)
                 {
-                    InstantiateOnMap(item.Prefab);
+                    InstantiateOnMap(item);
                     item.TimeSinceSpawn = 0f;
                 }
                 else
                 {
-                    item.AskToInstantiate += () => OnInstantiationAsked(item.Prefab);
+                    item.AskToInstantiate += () => InstantiateOnMap(item);
                     SpawnableItems.Add(item.Name, item);
                 }
             }
@@ -52,10 +46,7 @@ namespace con2.game
         // Update is called once per frame
         void Update()
         {
-            if (UseTimerMode)
-            {
-                UpdateForTimerMode();
-            }
+            UpdateForTimerMode();
         }
 
         #endregion
@@ -66,18 +57,16 @@ namespace con2.game
         {
             foreach (var item in SpawnableItemsList)
             {
-                item.TimeSinceSpawn += Time.deltaTime;
-                if (item.TimeSinceSpawn >= item.SpawnDelay)
+                if (item.ActivateTimerMode)
                 {
-                    InstantiateOnMap(item.Prefab);
-                    item.TimeSinceSpawn = 0f;
+                    item.TimeSinceSpawn += Time.deltaTime;
+                    if (item.TimeSinceSpawn >= item.SpawnDelay)
+                    {
+                        InstantiateOnMap(item);
+                        item.TimeSinceSpawn = 0f;
+                    }
                 }
             }
-        }
-
-        private void OnInstantiationAsked(GameObject prefab)
-        {
-            InstantiateOnMap(prefab);
         }
 
         /// <summary>
@@ -85,15 +74,15 @@ namespace con2.game
         /// (later on there may be more computation to find a valid position on the map)
         /// </summary>
         /// <param name="prefab"></param>
-        private void InstantiateOnMap(GameObject prefab)
+        private void InstantiateOnMap(SpawnableItem item)
         {
             var position = new Vector3();
 
-            position.x = Random.Range(-Radius, Radius);
+            position.x = Random.Range(-item.Area.Radius, item.Area.Radius);
             position.y = 1f;
-            position.z = Random.Range(-Radius, Radius);
+            position.z = Random.Range(-item.Area.Radius, item.Area.Radius);
 
-            Instantiate(prefab, position, Quaternion.identity);
+            Instantiate(item.Prefab, position, Quaternion.identity);
         }
 
         #endregion
