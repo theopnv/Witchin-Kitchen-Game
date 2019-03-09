@@ -139,7 +139,7 @@ MonoBehaviour:
   m_stunTime: 1.5
   m_immuneTargets: []
   m_punchUpwardsForce: 4
-  m_reloadSeconds: 1
+  m_reloadSeconds: 1.75
 --- !u!114 &2929309564052152870
 MonoBehaviour:
   m_ObjectHideFlags: 0
