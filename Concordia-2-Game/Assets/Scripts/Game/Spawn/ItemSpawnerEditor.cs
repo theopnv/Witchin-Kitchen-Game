@@ -30,6 +30,10 @@ namespace con2.game
                 true);
             EditorGUILayout.PropertyField(
                 serializedObject.FindProperty(
+                    "_ForbiddenAreas"),
+                true);
+            EditorGUILayout.PropertyField(
+                serializedObject.FindProperty(
                     "SpawnableItemsList"),
                 true);
             serializedObject.ApplyModifiedProperties();

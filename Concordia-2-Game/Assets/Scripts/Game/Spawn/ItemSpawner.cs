@@ -1,13 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace con2.game
 {
     public class ItemSpawner : MonoBehaviour
     {
-
         [SerializeField] [Tooltip("[RANDOM POS. MODE] Boundaries of the map")]
         private float _MinX, _MaxX, _MinZ, _MaxZ;
+
+        [Tooltip("A list of areas to avoid for items spawn")]
+        [SerializeField]
+        private List<SpawnArea> _ForbiddenAreas;
+
+        private List<Tuple<float, float>> _ForbiddenRangesX;
+        private List<Tuple<float, float>> _ForbiddenRangesZ;
 
         /// <summary>
         /// This list is used to prepare the items in the editor.
@@ -31,6 +39,8 @@ namespace con2.game
         // Start is called before the first frame update
         void Start()
         {
+            ComputeForbiddenRanges();
+
             SpawnableItems = new Dictionary<Ingredient, SpawnableItem>();
             foreach (var item in SpawnableItemsList)
             {
@@ -59,6 +69,21 @@ namespace con2.game
 
         #region Custom Methods
 
+        private void ComputeForbiddenRanges()
+        {
+            _ForbiddenRangesX = new List<Tuple<float, float>>();
+            _ForbiddenRangesZ = new List<Tuple<float, float>>();
+
+            foreach (var area in _ForbiddenAreas)
+            {
+                var tupleX = new Tuple<float, float>(area.transform.position.x - area.Radius, area.transform.position.x + area.Radius);
+                var tupleZ = new Tuple<float, float>(area.transform.position.z - area.Radius, area.transform.position.z + area.Radius);
+                _ForbiddenRangesX.Add(tupleX);
+                _ForbiddenRangesZ.Add(tupleZ);
+            }
+
+        }
+
         private void UpdateForTimerMode()
         {
             foreach (var item in SpawnableItemsList)
@@ -75,6 +100,53 @@ namespace con2.game
             }
         }
 
+        private bool IsValidPosition(float pos)
+        {
+            foreach (var (item1, item2) in _ForbiddenRangesX)
+            {
+                if (item1 < pos && pos < item2)
+                {
+                    return false;
+                }
+            }
+
+            foreach (var (item1, item2) in _ForbiddenRangesZ)
+            {
+                if (item1 < pos && pos < item2)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private float FindValidPoint(bool randomPosModeActivated, float min, float max, float areaPoint, float areaRadius, Ingredient itemType)
+        {
+            var point = float.NaN;
+            var trials = 0;
+            do
+            {
+                ++trials;
+                var tmp = randomPosModeActivated
+                    ? Random.Range(min, max)
+                    : Random.Range(
+                        areaPoint - areaRadius,
+                        areaPoint + areaRadius);
+                if (IsValidPosition(tmp))
+                {
+                    point = tmp;
+                }
+
+                if (trials == 10)
+                {
+                    Debug.LogError("A Forbidden zone is overlapping too much with the " + itemType + " spawn zone. Please make the zones smaller or change their position.");
+                    point = tmp;
+                }
+            } while (float.IsNaN(point));
+
+            return point;
+        }
+
         /// <summary>
         /// Actual instantiation on the map
         /// (later on there may be more computation to find a valid position on the map)
@@ -82,21 +154,24 @@ namespace con2.game
         /// <param name="prefab"></param>
         private void InstantiateOnMap(SpawnableItem item)
         {
-            var position = new Vector3();
-
-            var rangeX = item.ActivateRandomPosMode
-                ? Random.Range(_MinX, _MaxX)
-                : Random.Range(
-                    item.Area.transform.position.x - item.Area.Radius, 
-                    item.Area.transform.position.x + item.Area.Radius);
-            var rangeZ = item.ActivateRandomPosMode
-                ? Random.Range(_MinZ, _MaxZ)
-                : Random.Range(
-                    item.Area.transform.position.z - item.Area.Radius,
-                    item.Area.transform.position.z + item.Area.Radius);
-            position.x = rangeX;
-            position.y = 1f;
-            position.z = rangeZ;
+            var position = new Vector3
+            {
+                x = FindValidPoint(
+                    item.ActivateRandomPosMode,
+                    _MinX,
+                    _MaxX,
+                    item.ActivateRandomPosMode ? 0 : item.Area.transform.position.x,
+                    item.ActivateRandomPosMode ? 0 : item.Area.Radius,
+                    item.Type),
+                y = 1f,
+                z = FindValidPoint(
+                    item.ActivateRandomPosMode,
+                    _MinZ,
+                    _MaxZ,
+                    item.ActivateRandomPosMode ? 0 : item.Area.transform.position.z,
+                    item.ActivateRandomPosMode ? 0 : item.Area.Radius,
+                    item.Type)
+            };
 
             Instantiate(item.Prefab, position, Quaternion.identity);
         }
