@@ -142,7 +142,12 @@ namespace con2.game
             return point;
         }
 
-        private void RefreshPool(SpawnableItem item)
+        /// <summary>
+        /// Returns true if an item was destroyed.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        private bool RefreshPool(SpawnableItem item)
         {
             if (_SpawnedItems[item.Type].Count >= item.MaxNbOfInstances)
             {
@@ -162,13 +167,15 @@ namespace con2.game
 
                     if (pickManager.IsHeld())
                     {
-                        return;
+                        return false;
                     }
 
                     _SpawnedItems[item.Type].RemoveAt(0);
                     Destroy(toRemove.gameObject);
                 }
             }
+
+            return true;
         }
 
         /// <summary>
@@ -177,7 +184,10 @@ namespace con2.game
         /// <param name="prefab"></param>
         private void InstantiateOnMap(SpawnableItem item)
         {
-            RefreshPool(item);
+            if (!RefreshPool(item))
+            {
+                return;
+            }
             var position = new Vector3
             {
                 x = FindValidPoint(

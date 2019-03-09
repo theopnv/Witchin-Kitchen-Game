@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 5
+  Radius: 3
 --- !u!1 &227259911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,7 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 5
+  Radius: 3
 --- !u!1001 &762396595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2789,7 +2789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 5
+  Radius: 3
 --- !u!1 &1010139669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,7 +2833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 5
+  Radius: 3
 --- !u!1 &1032917599
 GameObject:
   m_ObjectHideFlags: 0
