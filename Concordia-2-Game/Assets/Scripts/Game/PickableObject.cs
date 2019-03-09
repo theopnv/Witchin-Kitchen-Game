@@ -7,7 +7,7 @@ namespace con2.game
     {
         // The object's rigidbody
         private Rigidbody m_rb;
-        private bool m_isHeld = false;
+        public bool m_isHeld = false;
 
         void Start()
         {
