@@ -16,14 +16,15 @@ namespace con2.game
         public GameObject Prefab;
 
         [Header("Frequency")]
-        [Tooltip("[TIMER MODE] Will spawn the item after a certain time")]
-        public bool ActivateTimerMode;
-
         [Tooltip("[TIMER MODE]Delay between two respawns of this item")]
         public float SpawnDelay;
 
         [Tooltip("Delay before first spawn so that all items don't spawn on the same second each time.")]
         public float FirstSpawnDelay;
+
+        [Tooltip("Maximum instances of this item on the map")]
+        public int MaxNbOfInstances = 2; // Default is 2 for "landmark" ingredients. This is to prevent the possibility where for some
+        // Reason the first ingredient is inaccessible but still on the map. So that players can still continue to play.
 
         [Header("Position")]
         [Tooltip("[RANDOM POS. MODE] Will spawn the item randomly in the map")]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using con2.messages;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -26,6 +27,8 @@ namespace con2.game
         [Tooltip("List of spawnable items")]
         private List<SpawnableItem> SpawnableItemsList = new List<SpawnableItem>();
 
+        private Dictionary<Ingredient, List<GameObject>> _SpawnedItems;
+
         /// <summary>
         /// This dictionary is used if UseTimerMode is false (Trigger Mode)
         /// It's built in Start(), from SpawnableItemsList
@@ -42,20 +45,15 @@ namespace con2.game
             ComputeForbiddenRanges();
 
             SpawnableItems = new Dictionary<Ingredient, SpawnableItem>();
+            _SpawnedItems = new Dictionary<Ingredient, List<GameObject>>();
             foreach (var item in SpawnableItemsList)
             {
+                _SpawnedItems.Add(item.Type, new List<GameObject>());
+
                 InstantiateOnMap(item);
-                if (item.ActivateTimerMode)
-                {
-                    item.TimeSinceSpawn = -item.FirstSpawnDelay;
-                    item.AskToInstantiate += () => { }; // Empty callback
-                    SpawnableItems.Add(item.Type, item);
-                }
-                else
-                {
-                    item.AskToInstantiate += () => InstantiateOnMap(item);
-                    SpawnableItems.Add(item.Type, item);
-                }
+                item.TimeSinceSpawn = -item.FirstSpawnDelay;
+                item.AskToInstantiate += () => InstantiateOnMap(item);
+                SpawnableItems.Add(item.Type, item);
             }
         }
 
@@ -88,14 +86,11 @@ namespace con2.game
         {
             foreach (var item in SpawnableItemsList)
             {
-                if (item.ActivateTimerMode)
+                item.TimeSinceSpawn += Time.deltaTime;
+                if (item.TimeSinceSpawn >= item.SpawnDelay)
                 {
-                    item.TimeSinceSpawn += Time.deltaTime;
-                    if (item.TimeSinceSpawn >= item.SpawnDelay)
-                    {
-                        InstantiateOnMap(item);
-                        item.TimeSinceSpawn = 0f;
-                    }
+                    InstantiateOnMap(item);
+                    item.TimeSinceSpawn = 0f;
                 }
             }
         }
@@ -149,11 +144,17 @@ namespace con2.game
 
         /// <summary>
         /// Actual instantiation on the map
-        /// (later on there may be more computation to find a valid position on the map)
         /// </summary>
         /// <param name="prefab"></param>
         private void InstantiateOnMap(SpawnableItem item)
         {
+            if (_SpawnedItems[item.Type].Count >= item.MaxNbOfInstances)
+            {
+                var toRemove = _SpawnedItems[item.Type][0];
+                _SpawnedItems[item.Type].RemoveAt(0);
+                Destroy(toRemove.gameObject);
+            }
+
             var position = new Vector3
             {
                 x = FindValidPoint(
@@ -173,7 +174,8 @@ namespace con2.game
                     item.Type)
             };
 
-            Instantiate(item.Prefab, position, Quaternion.identity);
+            var instance = Instantiate(item.Prefab, position, Quaternion.identity);
+            _SpawnedItems[item.Type].Add(instance);
         }
 
         #endregion

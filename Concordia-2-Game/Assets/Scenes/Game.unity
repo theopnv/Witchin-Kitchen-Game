@@ -1358,50 +1358,51 @@ MonoBehaviour:
   _MaxX: 14
   _MinZ: -9
   _MaxZ: 9
-  _ForbiddenAreas: []
+  _ForbiddenAreas:
+  - {fileID: 1085581706}
   SpawnableItemsList:
   - Type: 0
     Prefab: {fileID: 8340910405799370762, guid: de53b678d6e39ea41a94cfa6883e159d,
       type: 3}
-    ActivateTimerMode: 0
-    SpawnDelay: 0
+    SpawnDelay: 45
     FirstSpawnDelay: 0
+    MaxNbOfInstances: 1
     ActivateRandomPosMode: 0
     Area: {fileID: 996886205}
     TimeSinceSpawn: 0
   - Type: 1
     Prefab: {fileID: 2135384641246065995, guid: 0652c01fbe9564a46a3ba33d08f586b7,
       type: 3}
-    ActivateTimerMode: 0
-    SpawnDelay: 0
-    FirstSpawnDelay: 0
+    SpawnDelay: 45
+    FirstSpawnDelay: 1
+    MaxNbOfInstances: 1
     ActivateRandomPosMode: 0
     Area: {fileID: 213108576}
     TimeSinceSpawn: 0
   - Type: 4
     Prefab: {fileID: 5532703018747530490, guid: a6990a6bcd7d62c44a87719b2aa8889d,
       type: 3}
-    ActivateTimerMode: 0
-    SpawnDelay: 0
-    FirstSpawnDelay: 0
+    SpawnDelay: 45
+    FirstSpawnDelay: 2
+    MaxNbOfInstances: 1
     ActivateRandomPosMode: 0
     Area: {fileID: 737448633}
     TimeSinceSpawn: 0
   - Type: 3
     Prefab: {fileID: 2445369503663072453, guid: 3e11b5ea44d5c9844a96d67630a34056,
       type: 3}
-    ActivateTimerMode: 1
     SpawnDelay: 15
     FirstSpawnDelay: 7
+    MaxNbOfInstances: 4
     ActivateRandomPosMode: 1
     Area: {fileID: 0}
     TimeSinceSpawn: 0
   - Type: 2
     Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
       type: 3}
-    ActivateTimerMode: 0
-    SpawnDelay: 0
-    FirstSpawnDelay: 0
+    SpawnDelay: 45
+    FirstSpawnDelay: 3
+    MaxNbOfInstances: 1
     ActivateRandomPosMode: 0
     Area: {fileID: 1010139671}
     TimeSinceSpawn: 0
