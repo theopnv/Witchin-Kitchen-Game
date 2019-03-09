@@ -22,7 +22,17 @@ ModelImporter:
     4300000: Pepper_Geo
     4300002: Leaves_Geo
     4300004: Stem_Geo
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaf_TEX
+    second: {fileID: 2100000, guid: 52da19c77e2f8c8418b4a2d63a3db2b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pepper_TEX
+    second: {fileID: 2100000, guid: 903c3c618a5ae9840b113aafc465b334, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

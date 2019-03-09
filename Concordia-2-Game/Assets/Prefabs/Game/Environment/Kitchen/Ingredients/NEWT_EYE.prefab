@@ -39,6 +39,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_type: 1
+--- !u!114 &2106163056904089636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889615502106873695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec56a916337799f45887b53ebf468467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+  OutlineWidth: 0.03
 --- !u!1001 &210225203949848058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,6 +266,12 @@ PrefabInstance:
 --- !u!1 &2889615502106873689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 32e63cc9f650e4d499bff47048f46f43,
+    type: 3}
+  m_PrefabInstance: {fileID: 2889615502106905085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2889615502106873695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 32e63cc9f650e4d499bff47048f46f43,
     type: 3}
   m_PrefabInstance: {fileID: 2889615502106905085}
   m_PrefabAsset: {fileID: 0}
