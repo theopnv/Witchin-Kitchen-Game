@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1263322971824541353}
   - component: {fileID: 3646252277359941161}
   - component: {fileID: 2194194835657881058}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e697b88729b632242a9da0f6552509d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 500
 --- !u!136 &3646252277359941161
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -86,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5a69a693f94f0a41add84fd0501966d, type: 3}
       propertyPath: m_Name
       value: Meteorite_MOD3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5a69a693f94f0a41add84fd0501966d, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5a69a693f94f0a41add84fd0501966d, type: 3}
       propertyPath: m_LocalPosition.x
