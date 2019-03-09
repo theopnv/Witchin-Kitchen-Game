@@ -2,91 +2,118 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaterialOverride : MonoBehaviour
+namespace con2.gfx
 {
-    [System.Serializable]
-    public enum MaterialOverrideEntryType
+    public class MaterialOverride : MonoBehaviour
     {
-        Color,
-        Texture,
-    }
-
-    [System.Serializable]
-    public class MaterialOverrideEntry
-    {
-        public MaterialOverrideEntryType Type;
-        public string Name;
-        public Color Color;
-        public Texture2D Texture;
-    }
-    
-    public List<MaterialOverrideEntry> Entries = new List<MaterialOverrideEntry>();
-
-    protected Renderer OurRenderer;
-    protected Material SourceMaterial;
-    protected Material ClonedMaterial;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        CloneMaterial();
-        Apply();
-    }
-
-    protected void CloneMaterial()
-    {
-        OurRenderer = gameObject.GetComponent<Renderer>();
-        SourceMaterial = OurRenderer.sharedMaterial;
-        ClonedMaterial = new Material(SourceMaterial);
-        OurRenderer.sharedMaterial = ClonedMaterial;
-    }
-
-    public void Apply()
-    {
-        foreach (var entry in Entries)
+        [System.Serializable]
+        public enum EntryType
         {
-            if (entry.Name == null)
+            Color,
+            Texture,
+        }
+
+        [System.Serializable]
+        public class Entry
+        {
+            public EntryType Type;
+            public string Name;
+            public Color Color;
+            public Texture2D Texture;
+
+            public Entry()
             {
-                throw new System.Exception("No property name set");
+
             }
 
-            if (!ClonedMaterial.HasProperty(entry.Name))
+            public Entry(string Name, Color Color)
             {
-                throw new System.Exception("No material property with name: " + entry.Name);
+                Type = EntryType.Color;
+                this.Name = Name;
+                this.Color = Color;
             }
 
-            if (entry.Type == MaterialOverrideEntryType.Color)
+            public Entry(string Name, Texture2D Texture)
             {
-                if (entry.Color == null)
-                {
-                    throw new System.Exception("No color set");
-                }
-                else
-                {
-                    ClonedMaterial.SetColor(entry.Name, entry.Color);
-                }
-            }
-            else if (entry.Type == MaterialOverrideEntryType.Texture)
-            {
-                if (entry.Texture == null)
-                {
-                    throw new System.Exception("No texture set");
-                }
-                else
-                {
-                    ClonedMaterial.SetTexture(entry.Name, entry.Texture);
-                }
-            }
-            else
-            {
-                throw new System.Exception("No type set on entry");
+                Type = EntryType.Texture;
+                this.Name = Name;
+                this.Texture = Texture;
             }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        public List<Entry> Entries = new List<Entry>();
+
+        protected Renderer OurRenderer;
+        protected Material SourceMaterial;
+        protected Material ClonedMaterial;
         
+        void Awake()
+        {
+            CloneMaterial();
+            Apply();
+        }
+
+        protected void CloneMaterial()
+        {
+            OurRenderer = gameObject.GetComponent<Renderer>();
+
+            if (OurRenderer == null)
+            {
+                throw new System.Exception("Found no Renderer component whose material to modify");
+            }
+            
+            SourceMaterial = OurRenderer.sharedMaterial;
+            ClonedMaterial = new Material(SourceMaterial);
+            OurRenderer.sharedMaterial = ClonedMaterial;
+        }
+
+        public void Apply()
+        {
+            foreach (var entry in Entries)
+            {
+                if (entry.Name == null)
+                {
+                    throw new System.Exception("No property name set");
+                }
+
+                if (!ClonedMaterial.HasProperty(entry.Name))
+                {
+                    throw new System.Exception("No material property with name: " + entry.Name);
+                }
+
+                if (entry.Type == EntryType.Color)
+                {
+                    if (entry.Color == null)
+                    {
+                        throw new System.Exception("No color set");
+                    }
+                    else
+                    {
+                        ClonedMaterial.SetColor(entry.Name, entry.Color);
+                    }
+                }
+                else if (entry.Type == EntryType.Texture)
+                {
+                    if (entry.Texture == null)
+                    {
+                        throw new System.Exception("No texture set");
+                    }
+                    else
+                    {
+                        ClonedMaterial.SetTexture(entry.Name, entry.Texture);
+                    }
+                }
+                else
+                {
+                    throw new System.Exception("No type set on entry");
+                }
+            }
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }
