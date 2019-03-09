@@ -23,8 +23,7 @@ namespace con2.game
         public float FirstSpawnDelay;
 
         [Tooltip("Maximum instances of this item on the map")]
-        public int MaxNbOfInstances = 2; // Default is 2 for "landmark" ingredients. This is to prevent the possibility where for some
-        // Reason the first ingredient is inaccessible but still on the map. So that players can still continue to play.
+        public int MaxNbOfInstances = 1; 
 
         [Header("Position")]
         [Tooltip("[RANDOM POS. MODE] Will spawn the item randomly in the map")]

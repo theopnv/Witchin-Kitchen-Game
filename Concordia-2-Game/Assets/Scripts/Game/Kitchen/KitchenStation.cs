@@ -14,6 +14,7 @@ namespace con2.game
         private PlayerManager m_owner;
 
         protected abstract void OnAwake();
+        protected abstract void OnSetOwner(PlayerManager owner);
         public abstract bool ShouldAcceptIngredient(Ingredient type);
         protected abstract void OnCollectIngredient();
         public abstract void ProcessIngredient();
@@ -51,6 +52,7 @@ namespace con2.game
             {
                 game.SetStationOwner(owner, this);
             }
+            OnSetOwner(owner);
         }
 
         public PlayerManager GetOwner() => m_owner;
