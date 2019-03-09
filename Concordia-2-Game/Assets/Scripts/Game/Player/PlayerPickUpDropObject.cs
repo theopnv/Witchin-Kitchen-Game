@@ -37,7 +37,7 @@ namespace con2.game
             if (input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
             {
                 if (IsHoldingObject())
-                    DropObject(transform.forward * m_throwForce);
+                    DropObject(m_playerRB.velocity*0.5f + m_throwForce*transform.forward);
                 else if (GetNearestItem())
                     PickUpObject();
                 else
