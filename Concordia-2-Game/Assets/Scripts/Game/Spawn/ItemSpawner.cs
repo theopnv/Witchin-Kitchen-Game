@@ -1,16 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using con2.messages;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace con2.game
 {
     public class ItemSpawner : MonoBehaviour
     {
+        [SerializeField] [Tooltip("[RANDOM POS. MODE] Boundaries of the map")]
+        private float _MinX, _MaxX, _MinZ, _MaxZ;
 
-        [Tooltip("Radius of the spawning zone (circle)")]
-        public float Radius;
+        [Tooltip("A list of areas to avoid for items spawn")]
+        [SerializeField]
+        private List<SpawnArea> _ForbiddenAreas;
 
-        [Tooltip("If not checked, will use trigger-based mode")]
-        public bool UseTimerMode;
+        private List<Tuple<float, float>> _ForbiddenRangesX;
+        private List<Tuple<float, float>> _ForbiddenRangesZ;
 
         /// <summary>
         /// This list is used to prepare the items in the editor.
@@ -18,8 +24,10 @@ namespace con2.game
         /// We can't access it from outside (no way to retrieve an item)
         /// </summary>
         [SerializeField]
-        [Tooltip("List of spwanable items")]
+        [Tooltip("List of spawnable items")]
         private List<SpawnableItem> SpawnableItemsList = new List<SpawnableItem>();
+
+        private Dictionary<Ingredient, List<GameObject>> _SpawnedItems;
 
         /// <summary>
         /// This dictionary is used if UseTimerMode is false (Trigger Mode)
@@ -27,40 +35,52 @@ namespace con2.game
         /// From outside we can access any item (with its name) and ask to instantiate it.
         /// </summary>
         [HideInInspector]
-        public Dictionary<string, SpawnableItem> SpawnableItems = new Dictionary<string, SpawnableItem>();
+        public Dictionary<Ingredient, SpawnableItem> SpawnableItems;
 
         #region Unity API
 
         // Start is called before the first frame update
         void Start()
         {
+            ComputeForbiddenRanges();
+
+            SpawnableItems = new Dictionary<Ingredient, SpawnableItem>();
+            _SpawnedItems = new Dictionary<Ingredient, List<GameObject>>();
             foreach (var item in SpawnableItemsList)
             {
-                if (UseTimerMode)
-                {
-                    InstantiateOnMap(item.Prefab);
-                    item.TimeSinceSpawn = 0f;
-                }
-                else
-                {
-                    item.AskToInstantiate += () => OnInstantiationAsked(item.Prefab);
-                    SpawnableItems.Add(item.Name, item);
-                }
+                _SpawnedItems.Add(item.Type, new List<GameObject>());
+
+                InstantiateOnMap(item);
+                item.TimeSinceSpawn = -item.FirstSpawnDelay;
+                item.AskToInstantiate += () => InstantiateOnMap(item);
+                SpawnableItems.Add(item.Type, item);
             }
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (UseTimerMode)
-            {
-                UpdateForTimerMode();
-            }
+            UpdateForTimerMode();
         }
 
         #endregion
 
         #region Custom Methods
+
+        private void ComputeForbiddenRanges()
+        {
+            _ForbiddenRangesX = new List<Tuple<float, float>>();
+            _ForbiddenRangesZ = new List<Tuple<float, float>>();
+
+            foreach (var area in _ForbiddenAreas)
+            {
+                var tupleX = new Tuple<float, float>(area.transform.position.x - area.Radius, area.transform.position.x + area.Radius);
+                var tupleZ = new Tuple<float, float>(area.transform.position.z - area.Radius, area.transform.position.z + area.Radius);
+                _ForbiddenRangesX.Add(tupleX);
+                _ForbiddenRangesZ.Add(tupleZ);
+            }
+
+        }
 
         private void UpdateForTimerMode()
         {
@@ -69,31 +89,126 @@ namespace con2.game
                 item.TimeSinceSpawn += Time.deltaTime;
                 if (item.TimeSinceSpawn >= item.SpawnDelay)
                 {
-                    InstantiateOnMap(item.Prefab);
+                    InstantiateOnMap(item);
                     item.TimeSinceSpawn = 0f;
                 }
             }
         }
 
-        private void OnInstantiationAsked(GameObject prefab)
+        private bool IsValidPosition(float pos)
         {
-            InstantiateOnMap(prefab);
+            foreach (var (item1, item2) in _ForbiddenRangesX)
+            {
+                if (item1 < pos && pos < item2)
+                {
+                    return false;
+                }
+            }
+
+            foreach (var (item1, item2) in _ForbiddenRangesZ)
+            {
+                if (item1 < pos && pos < item2)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private float FindValidPoint(bool randomPosModeActivated, float min, float max, float areaPoint, float areaRadius, Ingredient itemType)
+        {
+            var point = float.NaN;
+            var trials = 0;
+            do
+            {
+                ++trials;
+                var tmp = randomPosModeActivated
+                    ? Random.Range(min, max)
+                    : Random.Range(
+                        areaPoint - areaRadius,
+                        areaPoint + areaRadius);
+                if (IsValidPosition(tmp))
+                {
+                    point = tmp;
+                }
+
+                if (trials == 10)
+                {
+                    Debug.LogError("A Forbidden zone is overlapping too much with the " + itemType + " spawn zone. Please make the zones smaller or change their position.");
+                    point = tmp;
+                }
+            } while (float.IsNaN(point));
+
+            return point;
+        }
+
+        /// <summary>
+        /// Returns true if an item was destroyed.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        private bool RefreshPool(SpawnableItem item)
+        {
+            if (_SpawnedItems[item.Type].Count >= item.MaxNbOfInstances)
+            {
+                var toRemove = _SpawnedItems[item.Type][0];
+                if (toRemove == null || toRemove.gameObject == null)
+                {
+                    _SpawnedItems[item.Type].RemoveAt(0);
+                    
+                }
+                else
+                {
+                    var pickManager = toRemove.gameObject.GetComponent<PickableObject>();
+                    if (!pickManager)
+                    {
+                        Debug.LogError("Could not find PickableObject component on the ingredient");
+                    }
+
+                    if (pickManager.IsHeld())
+                    {
+                        return false;
+                    }
+
+                    _SpawnedItems[item.Type].RemoveAt(0);
+                    Destroy(toRemove.gameObject);
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
         /// Actual instantiation on the map
-        /// (later on there may be more computation to find a valid position on the map)
         /// </summary>
         /// <param name="prefab"></param>
-        private void InstantiateOnMap(GameObject prefab)
+        private void InstantiateOnMap(SpawnableItem item)
         {
-            var position = new Vector3();
+            if (!RefreshPool(item))
+            {
+                return;
+            }
+            var position = new Vector3
+            {
+                x = FindValidPoint(
+                    item.ActivateRandomPosMode,
+                    _MinX,
+                    _MaxX,
+                    item.ActivateRandomPosMode ? 0 : item.Area.transform.position.x,
+                    item.ActivateRandomPosMode ? 0 : item.Area.Radius,
+                    item.Type),
+                y = 1f,
+                z = FindValidPoint(
+                    item.ActivateRandomPosMode,
+                    _MinZ,
+                    _MaxZ,
+                    item.ActivateRandomPosMode ? 0 : item.Area.transform.position.z,
+                    item.ActivateRandomPosMode ? 0 : item.Area.Radius,
+                    item.Type)
+            };
 
-            position.x = Random.Range(-Radius, Radius);
-            position.y = 1f;
-            position.z = Random.Range(-Radius, Radius);
-
-            Instantiate(prefab, position, Quaternion.identity);
+            var instance = Instantiate(item.Prefab, position, Quaternion.identity);
+            _SpawnedItems[item.Type].Add(instance);
         }
 
         #endregion

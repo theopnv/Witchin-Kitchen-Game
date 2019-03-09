@@ -114,7 +114,7 @@ namespace con2.game
         //example function
         private void ModulateSpawnRate(float timeChange)
         {
-            m_itemSpawner.SpawnableItems["GHOST_PEPPER"].SpawnDelay += timeChange;
+            m_itemSpawner.SpawnableItems[Ingredient.GHOST_PEPPER].SpawnDelay += timeChange;
         }
 
         #endregion
