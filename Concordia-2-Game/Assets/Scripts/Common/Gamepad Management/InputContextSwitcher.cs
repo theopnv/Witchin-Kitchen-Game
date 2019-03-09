@@ -92,6 +92,9 @@ namespace con2
             var pmi = managers.GetComponentInChildren<PauseMenuInstantiator>();
             inputConsumers.Add(pmi);
 
+            var player = Players.GetPlayerByID(playerIndex);
+            inputConsumers.Add(player.GetComponent<FightStun>());
+
             var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
             var kitchenStations = new List<ACookingMinigame>();
             foreach (var kitchen in kitchenParents)
@@ -105,7 +108,6 @@ namespace con2
                 inputConsumers.Add(station);
             }
 
-            var player = Players.GetPlayerByID(playerIndex);
             inputConsumers.Add(player.GetComponent<PlayerInputController>());
 
             return inputConsumers;
