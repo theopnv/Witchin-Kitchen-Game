@@ -69,11 +69,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _BurnSize: 0.329
+    - _BurnSize: 0.72659636
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EmissionAmount: 2.16
+    - _EmissionAmount: 2.6203566
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -81,10 +81,10 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _SliceAmount: 0
+    - _SliceAmount: 0.69532603
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpinSpeed: 0.66
+    - _SpinSpeed: 0.14049888
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1

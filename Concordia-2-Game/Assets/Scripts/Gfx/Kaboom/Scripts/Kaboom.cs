@@ -12,6 +12,9 @@ public class Kaboom : MonoBehaviour
 
     public AnimationCurve Scale;
 
+    [Range(0.0f, 10.0f)]
+    public float ScaleMultiplier = 1.0f;
+
     public AnimationCurve SliceAmount;
 
     public AnimationCurve SpinSpeed;
@@ -33,7 +36,7 @@ public class Kaboom : MonoBehaviour
     private bool Playing = false;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Halo = transform.GetChild(0).gameObject;
 
@@ -74,7 +77,7 @@ public class Kaboom : MonoBehaviour
         Playback = Mathf.Clamp01(Playback);
 
 
-        var scale = Scale.Evaluate(Playback);
+        var scale = Scale.Evaluate(Playback) * ScaleMultiplier;
         var sliceAmount = SliceAmount.Evaluate(Playback);
         var spinSpeed = SpinSpeed.Evaluate(Playback);
         var burnSize = BurnSize.Evaluate(Playback);
