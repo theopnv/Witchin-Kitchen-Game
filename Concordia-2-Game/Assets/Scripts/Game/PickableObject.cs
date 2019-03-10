@@ -19,8 +19,14 @@ namespace con2.game
         {
             if (m_isHeld)
             {
-                transform.position = transform.parent.position;
-                m_rb.velocity = currentVel / m_rb.mass;
+                var parent = transform.parent;
+                if (parent)
+                {
+                    transform.position = parent.position;
+                    m_rb.velocity = currentVel / m_rb.mass;
+                }
+                else
+                    m_isHeld = false;
             }
         }
 

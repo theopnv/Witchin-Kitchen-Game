@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1028785531022391640}
   m_Layer: 12
   m_Name: IngredientBase
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d29fe69f55881ed42a7ba1cf2c0a6f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_isHeld: 0
 --- !u!114 &2852003424446809603
 MonoBehaviour:
   m_ObjectHideFlags: 0

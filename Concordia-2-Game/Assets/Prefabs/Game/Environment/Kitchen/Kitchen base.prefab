@@ -219,18 +219,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 989145188201049857}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1610211123442723895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2009370911268733750, guid: aa9d3b1a44d777340871d4fd0c675d72,
-    type: 3}
-  m_PrefabInstance: {fileID: 989145188201049857}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2480684259524502987 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3447241073865181898, guid: aa9d3b1a44d777340871d4fd0c675d72,
@@ -243,6 +231,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 989145188201049857}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1610211123442723895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2009370911268733750, guid: aa9d3b1a44d777340871d4fd0c675d72,
+    type: 3}
+  m_PrefabInstance: {fileID: 989145188201049857}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8413746888521408974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -250,6 +250,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6580967724236997304}
     m_Modifications:
+    - target: {fileID: 100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
+      propertyPath: m_Name
+      value: firepit
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -305,10 +309,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
-      propertyPath: m_Name
-      value: firepit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
