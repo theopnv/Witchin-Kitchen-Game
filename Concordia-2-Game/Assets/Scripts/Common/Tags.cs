@@ -10,6 +10,8 @@ public static class Tags
         , CAULDRON = "Cauldron"
         , MAIN_CAMERA = "MainCamera"
         , ARENA_BASE = "ArenaBase"
-        , PLAYERS_HUD_ZONE = "PlayersHUDZone";
+        , PLAYERS_HUD_ZONE = "PlayersHUDZone"
+        , INGREDIENT = "Ingredient"
+        , PROJECTILE = "Projectile";
 
 }

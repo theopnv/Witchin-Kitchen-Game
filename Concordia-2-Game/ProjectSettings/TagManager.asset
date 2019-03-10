@@ -12,6 +12,8 @@ TagManager:
   - Cauldron
   - PlayersHUDZone
   - GrassSurface
+  - Ingredient
+  - Projectile
   layers:
   - Default
   - TransparentFX

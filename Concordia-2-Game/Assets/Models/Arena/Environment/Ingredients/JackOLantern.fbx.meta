@@ -1,22 +1,21 @@
 fileFormatVersion: 2
-guid: b5b9ed880ce5362488efcd2f05b51f8d
+guid: 93af0df349bcd1b40bbde1f46178abc1
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cap_GEO
-    100002: //RootNode
-    100004: Stem_GEO
-    400000: Cap_GEO
-    400002: //RootNode
-    400004: Stem_GEO
-    2100000: Cap_TEX
-    2100002: Stem_TEX
-    2300000: Cap_GEO
-    2300002: Stem_GEO
-    3300000: Cap_GEO
-    3300002: Stem_GEO
-    4300000: Cap_GEO
-    4300002: Stem_GEO
+    100000: //RootNode
+    100002: Light
+    100004: Pumpkin
+    400000: //RootNode
+    400002: Light
+    400004: Pumpkin
+    2100000: lambert1
+    2300000: Light
+    2300002: Pumpkin
+    3300000: Light
+    3300002: Pumpkin
+    4300000: Light
+    4300002: Pumpkin
   externalObjects: {}
   materials:
     importMaterials: 1

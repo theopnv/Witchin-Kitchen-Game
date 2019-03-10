@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5542362868210446624}
   - component: {fileID: 5542362868210446625}
   - component: {fileID: 5542362868210446629}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DiscoBall
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
