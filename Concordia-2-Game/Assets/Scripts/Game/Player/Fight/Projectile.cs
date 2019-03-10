@@ -8,6 +8,7 @@ public class Projectile : AHitAllInRange
     [SerializeField] private float m_flyTime = 2.0f;
     private float m_launchTime;
     public GameObject m_launcher;
+    private bool m_destroyed = false;
 
     protected override void OnStart()
     {
@@ -20,7 +21,10 @@ public class Projectile : AHitAllInRange
     private IEnumerator ProjectileDespawn()
     {
         yield return new WaitForSeconds(m_flyTime);
-        Hit();
+        if (!m_destroyed)
+        {
+            Hit();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -43,12 +47,29 @@ public class Projectile : AHitAllInRange
     
     private IEnumerator Explode()
     {
-        MeshRenderer[] meshes = transform.GetComponentsInChildren<MeshRenderer>();
-        foreach (MeshRenderer mesh in meshes)
+        m_destroyed = true;
+
+        Rigidbody body = GetComponent<Rigidbody>();
+        body.constraints = RigidbodyConstraints.FreezeAll;
+
+        Collider[] colliders = transform.GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders)
         {
-            mesh.enabled = true;
+            collider.enabled = false;
         }
-        yield return new WaitForSeconds(0.1f);
+
+        Renderer[] meshes = transform.GetComponentsInChildren<Renderer>();
+        foreach (Renderer mesh in meshes)
+        {
+            mesh.enabled = false;
+        }
+
+        var kaboom = gameObject.GetComponentInChildren<Kaboom>();
+        kaboom.GetComponent<Renderer>().enabled = true;
+        kaboom.transform.GetChild(0).GetComponent<Renderer>().enabled = true;
+        kaboom.Play();
+
+        yield return new WaitForSeconds(kaboom.AnimTime);
         GameObject.Destroy(this.gameObject);
     }
 }
