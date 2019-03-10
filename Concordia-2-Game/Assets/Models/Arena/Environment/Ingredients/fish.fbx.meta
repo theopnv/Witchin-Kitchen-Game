@@ -1,23 +1,28 @@
 fileFormatVersion: 2
-guid: 32e63cc9f650e4d499bff47048f46f43
+guid: 6d98124f9298e5442bcbec84665b1d5e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Eye_GEO
-    100002: Eyelid_GEO
-    100004: //RootNode
-    400000: Eye_GEO
-    400002: Eyelid_GEO
-    400004: //RootNode
-    2100000: eyeball_Tex
-    2100002: pupil
-    2100004: lambert5
-    2300000: Eye_GEO
-    2300002: Eyelid_GEO
-    3300000: Eye_GEO
-    3300002: Eyelid_GEO
-    4300000: Eye_GEO
-    4300002: Eyelid_GEO
+    100000: EyeL
+    100002: EyeR
+    100004: Fish
+    100006: //RootNode
+    400000: EyeL
+    400002: EyeR
+    400004: Fish
+    400006: //RootNode
+    2100000: lambert2
+    2100002: lambert1
+    2100004: lambert3
+    2300000: EyeL
+    2300002: EyeR
+    2300004: Fish
+    3300000: EyeL
+    3300002: EyeR
+    3300004: Fish
+    4300000: Fish
+    4300002: EyeR
+    4300004: EyeL
   externalObjects: {}
   materials:
     importMaterials: 1
