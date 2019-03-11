@@ -59,6 +59,7 @@ public class Blastwave : MonoBehaviour
         var intensity = Intensity.Evaluate(Playback);
         var scale = Scale.Evaluate(Playback);
 
+        transform.rotation = Quaternion.identity;
         transform.localScale = new Vector3(scale, scale, scale);
 
         Renderer.sharedMaterial.SetFloat("_MinRingRadius", Mesh.sharedMesh.bounds.extents.x * min);
