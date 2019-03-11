@@ -37,7 +37,7 @@ public class DiscoBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TargetRenderer = FollowTarget.GetComponent<Renderer>();
+        TargetRenderer = FollowTarget.GetComponentInChildren<Renderer>();
 
         // Disable shadow casting - it's distracting when it lands on the player
         TargetRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
