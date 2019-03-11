@@ -53,7 +53,7 @@
                 float2 direction = normalize(i.localPos.xz);
                 float2 packedDirection = (direction + float2(1.0f, 1.0f)) / 2.0f;
 
-                fixed4 col = fixed4(direction.x, direction.y, factor, factor);
+                fixed4 col = fixed4(packedDirection.x, packedDirection.y, factor, factor);
                 return col;
             }
             ENDCG

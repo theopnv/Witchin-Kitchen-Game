@@ -27,6 +27,8 @@ public class Displacer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = Quaternion.AngleAxis(90.0f, Vector3.right);
+
         Renderer.sharedMaterial.SetFloat("_Radius", Mesh.sharedMesh.bounds.extents.x);
 
         // Height falloff
