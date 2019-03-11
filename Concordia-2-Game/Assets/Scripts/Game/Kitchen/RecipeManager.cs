@@ -13,11 +13,13 @@ namespace con2.game
         private KitchenStation m_thisStation;
         private MainGameManager m_mgm;
         private ItemSpawner m_itemSpawner;
+        private AudienceInteractionManager m_audienceInteractionManager;
 
         void Start()
         {
             m_thisStation = GetComponent<KitchenStation>();
             m_itemSpawner = FindObjectOfType<ItemSpawner>();
+            m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             if (m_recipeUI == null)
             {
                 m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
@@ -39,6 +41,7 @@ namespace con2.game
             owner.Score = m_currentRecipeIndex;
             m_score.text = owner.Score.ToString();
             m_mgm.UpdateRanks();
+            m_audienceInteractionManager.SendGameStateUpdate();
             if (m_currentRecipeIndex > 0)
             {
                 var spellManager = FindObjectOfType<SpellsManager>();

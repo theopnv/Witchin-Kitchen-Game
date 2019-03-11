@@ -24,6 +24,7 @@ namespace con2.messages
         public const string QUIT_GAME = "quitGame";
         public const string LAUNCH_POLL = "launchPoll";
         public const string LAUNCH_SPELL_CAST = "launchSpellCast";
+        public const string SEND_GAME_STATE = "updateGameState";
 
         // Received
         public const string MESSAGE = "message";
