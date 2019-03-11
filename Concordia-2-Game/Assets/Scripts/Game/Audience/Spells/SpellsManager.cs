@@ -27,7 +27,7 @@ namespace con2.game
         private Dictionary<Spells.SpellID, List<ISpellSubscriber>> _SpellSubscribers;
 
         private float _LastSpellCasted = 0f;
-        private float _SpellFrequency = 50f;
+        private float _SpellFrequency = 40f;
 
         #region Unity API
 
