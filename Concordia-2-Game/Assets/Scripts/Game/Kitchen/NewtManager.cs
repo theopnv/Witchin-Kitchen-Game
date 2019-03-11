@@ -22,7 +22,7 @@ public class NewtManager : MonoBehaviour, IPunchable
         m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
 
 
-        if (m_eyeCount >= 0)
+        if (m_eyeCount > 0)
         {
             //Spawn an eye ingredient
             m_eyeCount--;
