@@ -124,19 +124,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &2307323528031162603
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4223523222216322606}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 1, z: 7}
-  m_Center: {x: 0, y: -0.2, z: 0.3}
 --- !u!114 &1410545703240633373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +164,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isHeld: 0
+--- !u!136 &8379478087987239220
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223523222216322606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 6.4234514
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.26999998, z: 0.20175171}
 --- !u!1 &6095864287538356265
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +297,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newt Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: EyeBall1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: EyeBall2
+      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -319,22 +336,6 @@ PrefabInstance:
     - target: {fileID: 100006, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
       propertyPath: m_Name
       value: EyeSocket2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: EyeBall1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: EyeBall2
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
       propertyPath: m_LocalPosition.x
