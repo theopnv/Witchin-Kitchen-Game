@@ -1,23 +1,74 @@
 fileFormatVersion: 2
-guid: de68f8211f8d4da43a3d9dc965353bfe
+guid: 5e35fc50e4ff92c4387273579598ccb3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Light
-    100002: Pumpkin
-    100004: //RootNode
-    400000: Light
-    400002: Pumpkin
-    400004: //RootNode
-    2100000: lambert1
-    2300000: Light
-    2300002: Pumpkin
-    3300000: Light
-    3300002: Pumpkin
-    4300000: Light
-    4300002: Pumpkin
-    6400000: Light
-    6400002: Pumpkin
+    100000: //RootNode
+    100002: foot_L
+    100004: foot_R
+    100006: forearm_L
+    100008: forearm_R
+    100010: hand_L
+    100012: hand_R
+    100014: heel_02_L
+    100016: heel_02_R
+    100018: metarig
+    100020: pelvis_L
+    100022: pelvis_R
+    100024: shin_L
+    100026: shin_R
+    100028: shoulder_L
+    100030: shoulder_R
+    100032: spine
+    100034: spine_001
+    100036: spine_002
+    100038: spine_003
+    100040: spine_004
+    100042: spine_005
+    100044: spine_006
+    100046: thigh_L
+    100048: thigh_R
+    100050: toe_L
+    100052: toe_R
+    100054: upper_arm_L
+    100056: upper_arm_R
+    100058: wiz_lp
+    400000: //RootNode
+    400002: foot_L
+    400004: foot_R
+    400006: forearm_L
+    400008: forearm_R
+    400010: hand_L
+    400012: hand_R
+    400014: heel_02_L
+    400016: heel_02_R
+    400018: metarig
+    400020: pelvis_L
+    400022: pelvis_R
+    400024: shin_L
+    400026: shin_R
+    400028: shoulder_L
+    400030: shoulder_R
+    400032: spine
+    400034: spine_001
+    400036: spine_002
+    400038: spine_003
+    400040: spine_004
+    400042: spine_005
+    400044: spine_006
+    400046: thigh_L
+    400048: thigh_R
+    400050: toe_L
+    400052: toe_R
+    400054: upper_arm_L
+    400056: upper_arm_R
+    400058: wiz_lp
+    2100000: Material_006__wiz_ao
+    2100002: Material_009
+    4300000: wiz_lp
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: wiz_lp
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -51,7 +102,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
@@ -71,7 +122,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -98,7 +149,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

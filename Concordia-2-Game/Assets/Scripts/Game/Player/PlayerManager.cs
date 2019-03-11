@@ -48,7 +48,11 @@ namespace con2.game
             set
             {
                 _Color = value;
-                GetComponent<Renderer>().material.color = value;
+                var renderers = GetComponentsInChildren<Renderer>();
+                foreach (var renderer in renderers)
+                { 
+                    renderer.material.color = value;
+                }
                 Players.Dic[ID] = this;
             }
         }

@@ -6,11 +6,12 @@ namespace con2.game
 {
     public enum Ingredient
     {
-        GHOST_PEPPER,
+        PEPPER,
         NEWT_EYE,
         MUSHROOM,
         FLOWER,
         FISH,
+        PUMPKIN,
         NOT_AN_INGREDIENT
     }
 
