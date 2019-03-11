@@ -6,6 +6,12 @@ namespace con2.game
 {
     public class IngredientDance : MonoBehaviour
     {
+        [Range(0.0f, 10.0f)]
+        public float m_bounceIntensity = 5.0f;
+
+        [Range(0.0f, 0.1f)]
+        public float m_bounceFilter = 0.01f;
+
         private bool m_shouldDance = false;
         private List<GameObject> m_players = new List<GameObject>();
         private float m_danceDistance = 3.0f;
@@ -26,6 +32,14 @@ namespace con2.game
             {
                 MoveAway();
                 Wiggle();
+
+                var body = GetComponent<Rigidbody>();
+                if (Mathf.Abs(body.velocity.y) <= m_bounceFilter)
+                {
+                    var vel = body.velocity;
+                    vel += Vector3.up * m_bounceIntensity;
+                    body.velocity = vel;
+                }
             }
         }
 
