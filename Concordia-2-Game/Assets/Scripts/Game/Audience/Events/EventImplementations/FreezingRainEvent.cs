@@ -6,6 +6,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
 {
     public float m_freezingRainDuration = 10.0f;
     public float m_dragFraction = 0.01f, m_movementModulator = 1.5f;
+    public Freeze m_freeze;
 
     private PlayerMovement[] m_playerMovementControllers;
 
@@ -41,6 +42,8 @@ public class FreezingRainEvent : AbstractAudienceEvent
             controller.ModulateFriction(-m_dragFraction);
         }
 
+        m_freeze.PlayFreeze();
+
         yield return new WaitForSeconds(m_freezingRainDuration);
 
         foreach (PlayerMovement player in m_playerMovementControllers)
@@ -53,6 +56,8 @@ public class FreezingRainEvent : AbstractAudienceEvent
         {
             controller.ModulateFriction(1.0f / -m_dragFraction);
         }
+
+        m_freeze.PlayThaw();
     }
 
     public override Events.EventID GetEventID()

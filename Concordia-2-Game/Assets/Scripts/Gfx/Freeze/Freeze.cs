@@ -16,6 +16,8 @@ public class Freeze : MonoBehaviour
     public float AnimTime = 1.5f;
 
     public AnimationCurve ScaleAnimation;
+    public AnimationCurve AlphaAnimation;
+    public AnimationCurve GlossinessAnimation;
 
     protected GameObject Clone;
     protected GameObject GroundClone;
@@ -48,10 +50,20 @@ public class Freeze : MonoBehaviour
             var newScaleX = curScale.x * (extents.x + Thickness) / extents.x;
             var newScaleY = curScale.y * (extents.y + Thickness) / extents.y;
             var newScaleZ = curScale.z * (extents.z + Thickness) / extents.z;
+
+            if (Mathf.Approximately(extents.x, 0.0f) || Mathf.Approximately(curScale.x, 0.0f))
+                newScaleX = 1.0f;
+            if (Mathf.Approximately(extents.y, 0.0f) || Mathf.Approximately(curScale.y, 0.0f))
+                newScaleY = 1.0f;
+            if (Mathf.Approximately(extents.z, 0.0f) || Mathf.Approximately(curScale.z, 0.0f))
+                newScaleZ = 1.0f;
+
             var newScale = new Vector3(newScaleX, newScaleY, newScaleZ);
 
             OriginalScales.Add(curScale);
             TargetScales.Add(newScale);
+
+            //print(extents + " | " + curScale + " | " + newScale + " | " + child.name);
         }
 
         GroundClone = Instantiate(Ground);
@@ -72,8 +84,17 @@ public class Freeze : MonoBehaviour
         {
             var child = obj.transform.GetChild(i);
 
-            Children.Add(child.gameObject);
-            CollectChildren(child.gameObject);
+            if (child.GetComponent<Renderer>() != null &&
+                child.GetComponent<DontFreeze>() == null &&
+                child.GetComponent<DontFreezeWithChildren>() == null)
+            {
+                Children.Add(child.gameObject);
+            }
+
+            if (child.GetComponent<DontFreezeWithChildren>() == null)
+            {
+                CollectChildren(child.gameObject);
+            }
         }
     }
 
@@ -132,6 +153,12 @@ public class Freeze : MonoBehaviour
 
                 child.transform.localScale = originalScale + (targetScale - originalScale) * scaleAnim;
             }
+
+            var color = FrozenMaterial.color;
+            color.a = AlphaAnimation.Evaluate(Playback);
+            FrozenMaterial.color = color;
+
+            FrozenMaterial.SetFloat("_Glossiness", GlossinessAnimation.Evaluate(Playback));
 
             var pos = GroundClone.transform.position;
             pos.y = GroundCloneOriginalPos.y + Thickness * scaleAnim;
