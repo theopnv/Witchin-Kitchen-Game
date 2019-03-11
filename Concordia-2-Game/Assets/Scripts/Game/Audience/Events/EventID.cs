@@ -14,6 +14,7 @@ namespace con2.game
             meteorites = 2,
             ingredient_morph = 3,
             kitchen_spin = 4,
+            ingredient_dance = 5,
 
             max_id,
         }
@@ -25,6 +26,7 @@ namespace con2.game
             { EventID.meteorites, "Meteorites"},
             { EventID.ingredient_morph, "Ingredient Morph"},
             { EventID.kitchen_spin, "Kitchen Spin"},
+            { EventID.ingredient_dance, "Ingredient Dance"},
         };
 
     }
