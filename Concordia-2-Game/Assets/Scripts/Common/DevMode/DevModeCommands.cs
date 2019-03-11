@@ -41,6 +41,7 @@ namespace con2
             repo.RegisterCommand("ev_mf", EventMeteoritesFalling);
             repo.RegisterCommand("ev_im", EventIngredientMorph);
             repo.RegisterCommand("ev_ks", EventKitchenSpin);
+            repo.RegisterCommand("ev_id", EventIngredientDance);
 
             repo.RegisterCommand("spell_dm", SpellDiscoMania);
             repo.RegisterCommand("spell_mmp", SpellMegaMagePunch);
@@ -85,6 +86,7 @@ namespace con2
                         "- 'ev_mf': Simulates the Meteorites Falling (mf) event",
                         "- 'ev_im': Simulates the Ingredient Morph (im) event",
                         "- 'ev_ks': Simulates the Kitchen Spin (ks) event",
+                        "- 'ev_id': Simulates the Ingredient Dance (id) event",
                         "- 'spell_dm': Simulates the Disco Mania (dm) spell on player 1",
                         "- 'spell_mmp': Simulates the Mega Mage Punch (mmp) spell on player 1",
                         "- 'spell_fb': Simulates the Fireball For All (fb) spell on player 1",
@@ -249,6 +251,17 @@ namespace con2
 
             StartCoroutine("SimulateEvent", Events.EventID.kitchen_spin);
             return "Will start the Kitchen Spin event in 2 seconds";
+        }
+
+        private string EventIngredientDance(string[] args)
+        {
+            if (GetCurrentSceneName() != SceneNames.Game)
+            {
+                return "You must be in the " + SceneNames.Game + " scene to start this command";
+            }
+
+            StartCoroutine("SimulateEvent", Events.EventID.ingredient_dance);
+            return "Will start the Ingredient Dance event in 2 seconds";
         }
 
         private string SpellDiscoMania(string[] args)

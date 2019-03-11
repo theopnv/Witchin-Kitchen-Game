@@ -2172,6 +2172,7 @@ GameObject:
   - component: {fileID: 773999206}
   - component: {fileID: 773999207}
   - component: {fileID: 773999208}
+  - component: {fileID: 773999209}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -2345,6 +2346,19 @@ MonoBehaviour:
   m_kitchenSpinDuration: 24
   m_spinRate: 30
   m_spinBase: {fileID: 113913494}
+--- !u!114 &773999209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773999201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49da5f72ab9ce34a8fd6bd0b7f22db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ingredientDanceDuration: 20
 --- !u!4 &813127263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 337929360, guid: 46f9d9270a3c2614c9f053be66f36209,
