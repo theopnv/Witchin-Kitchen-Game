@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081c4194748e60f449df4b2f5c9449af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BigShakeAmount: 1.26
-  BigShakeDuration: 1.1
-  SmallShakeAmount: 1
-  SmallShakeDuration: 1
+  BigShakeAmount: 3.5
+  BigShakeDuration: 1.2
+  SmallShakeAmount: 0.9
+  SmallShakeDuration: 0.6
 --- !u!4 &488163589
 Transform:
   m_ObjectHideFlags: 0
@@ -540,6 +540,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugMode: 0
   shakeAmount: 0
+  shakeAmountMax: 3
   shakeDuration: 0
+  shakeDurationMax: 3
   smooth: 0
   smoothAmount: 5

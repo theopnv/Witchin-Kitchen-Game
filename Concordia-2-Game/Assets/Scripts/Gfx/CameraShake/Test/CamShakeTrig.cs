@@ -27,14 +27,26 @@ public class CamShakeTrig : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        // Old method
+        if (Input.GetKeyDown(KeyCode.N))
         {
             Shake.ShakeCamera(BigShakeAmount, BigShakeDuration);
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             Shake.ShakeCamera(SmallShakeAmount, SmallShakeDuration);
+        }
+    
+        // New method
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Shake.ShakeCameraBig();
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Shake.ShakeCameraSmall();
         }
     }
 }

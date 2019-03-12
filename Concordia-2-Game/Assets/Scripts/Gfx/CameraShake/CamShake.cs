@@ -9,7 +9,12 @@ public class CamShake : MonoBehaviour
     public bool debugMode = false;//Test-run/Call ShakeCamera() on start
 
     public float shakeAmount;//The amount to shake this frame.
+    [Range (1.0f, 5.0f)]
+    public float shakeAmountMax = 3f;
+
     public float shakeDuration;//The duration this frame.
+    [Range(1.0f, 5.0f)]
+    public float shakeDurationMax = 3f;
 
     //Readonly values...
     float shakePercentage;//A percentage (0-1) representing the amount of shake to be applied when setting rotation.
@@ -23,14 +28,21 @@ public class CamShake : MonoBehaviour
 
     void Start()
     {
-
         if (debugMode) ShakeCamera();
     }
 
+    public void ShakeCameraSmall ()
+    {
+        ShakeCamera(0.9f, 0.6f);
+    }
+
+    public void ShakeCameraBig ()
+    {
+        ShakeCamera(3.5f, 1.2f);
+    }
 
     void ShakeCamera()
     {
-
         startAmount = shakeAmount;//Set default (start) values
         startDuration = shakeDuration;//Set default (start) values
 
@@ -39,15 +51,16 @@ public class CamShake : MonoBehaviour
 
     public void ShakeCamera(float amount, float duration)
     {
-
         shakeAmount += amount;//Add to the current amount.
+        shakeAmount = Mathf.Min(shakeAmount, shakeAmountMax);
         startAmount = shakeAmount;//Reset the start amount, to determine percentage.
-        shakeDuration += duration;//Add to the current time.
-        startDuration = shakeDuration;//Reset the start time.
 
+        shakeDuration += duration;//Add to the current time.
+        shakeDuration = Mathf.Min(shakeDuration, shakeDurationMax);
+        startDuration = shakeDuration;//Reset the start time.
+        
         if (!isRunning) StartCoroutine(Shake());//Only call the coroutine if it isn't currently running. Otherwise, just set the variables.
     }
-
 
     IEnumerator Shake()
     {
@@ -71,6 +84,7 @@ public class CamShake : MonoBehaviour
 
             yield return null;
         }
+
         transform.localRotation = Quaternion.identity;//Set the local rotation to 0 when done, just to get rid of any fudging stuff.
         isRunning = false;
     }
