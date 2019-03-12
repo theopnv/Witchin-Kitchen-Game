@@ -20,6 +20,11 @@ public abstract class AHitAllInRange : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.isTrigger)
+        {
+            return;
+        }
+
         IPunchable[] targetPunchableComponents = other.gameObject.GetComponentsInChildren<IPunchable>();
         if (targetPunchableComponents.Length > 0)
             m_punchablesInRadius.Add(new KeyValuePair<GameObject, IPunchable[]>(other.gameObject, targetPunchableComponents));
