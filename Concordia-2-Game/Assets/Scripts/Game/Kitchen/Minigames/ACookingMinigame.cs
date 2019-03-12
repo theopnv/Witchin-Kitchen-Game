@@ -15,11 +15,11 @@ namespace con2.game
 
         [SerializeField]
         protected Text m_prompt;
-        private SpawnPlayersController m_playerSpawner;
 
         [HideInInspector]
         public PlayerManager m_stationOwner;
         private KitchenStation m_kitchenStation;
+        private PlayerPickUpDropObject m_playerHolding;
 
         [SerializeField]
         protected bool m_started = false;
@@ -37,6 +37,7 @@ namespace con2.game
         private void Start()
         {
             m_prompt.enabled = false;
+            m_playerHolding = m_stationOwner.gameObject.GetComponentInChildren<PlayerPickUpDropObject>();
         }
 
         // Update is called once per frame
@@ -102,6 +103,10 @@ namespace con2.game
             var samePlayer = m_stationOwner.ID == interactingPlayer.ID;
             if (m_started && (noOwner || samePlayer) && CheckPlayerIsNear(interactingPlayer.gameObject))
             {
+                if (!noOwner && m_playerHolding.IsHoldingObject())
+                {
+                    return false;
+                }
                 return TryToConsumeInput(input);
             }
             return false;
