@@ -96,6 +96,12 @@ namespace con2.game
             //mCharacterHands.localPosition = new Vector3(0.0f, playerSize.y + objectSize.y / 2.0f, 0.0f);
         }
 
+        public void ForcePickUpObject(PickableObject obj)
+        {
+            m_heldObject = obj;
+            PickUpObject();
+        }
+
         public void UpdateHeldObjectWeight()
         {
             if (IsHoldingObject())
