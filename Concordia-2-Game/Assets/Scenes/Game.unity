@@ -2774,7 +2774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothTime: 0.3
-  m_zoomFactor: 0.2
+  m_zoomFactor: 0.35
 --- !u!114 &930326416
 MonoBehaviour:
   m_ObjectHideFlags: 0
