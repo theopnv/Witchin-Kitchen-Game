@@ -27,7 +27,7 @@ namespace con2.game
             Ingredient[] recipe = new Ingredient[numIngredients];
             for (int i = 0; i < numIngredients; i++)
             {
-                recipe[i] = (Ingredient)Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT - 1);
+                recipe[i] = (Ingredient)Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT);
             }
             return recipe;
         }

@@ -15,7 +15,6 @@ namespace con2.game
 
         [SerializeField]
         protected Text m_prompt;
-        private Vector3 stationLocation;
         private SpawnPlayersController m_playerSpawner;
 
         [HideInInspector]
@@ -37,7 +36,6 @@ namespace con2.game
         // Start is called before the first frame update
         private void Start()
         {
-            stationLocation = this.transform.position;
             m_prompt.enabled = false;
         }
 
@@ -53,7 +51,7 @@ namespace con2.game
         protected bool CheckPlayerIsNear(GameObject player)
         {
             Transform playerTransform = player.transform;
-            float distanceToKitchenStation = (playerTransform.position - stationLocation).magnitude;
+            float distanceToKitchenStation = (playerTransform.position - transform.position).magnitude;
             if (distanceToKitchenStation <= INTERACTION_DISTANCE && CheckPlayerFacingStation(playerTransform))
             {
                 return true;
@@ -64,7 +62,7 @@ namespace con2.game
         private bool CheckPlayerFacingStation(Transform player)
         {
             Vector3 playerFacing = player.TransformDirection(Vector3.forward);
-            Vector3 playerToStation = stationLocation - player.position;
+            Vector3 playerToStation = transform.position - player.position;
             double currentAngle = Math.Acos(Vector3.Dot(playerFacing, playerToStation) / (playerFacing.magnitude * playerToStation.magnitude));
             return currentAngle <= ToRadian(2 * FACING_DEGREE);
         }
