@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7062139142204180827}
   - component: {fileID: 7062139142204180825}
   - component: {fileID: 7062139142204180826}
-  - component: {fileID: 1455892815}
+  - component: {fileID: 1833303921771340463}
   m_Layer: 0
-  m_Name: Ad 1
+  m_Name: BreakingNews
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,10 +34,10 @@ RectTransform:
   m_Father: {fileID: 7062139143320713773}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1680, y: -192}
-  m_SizeDelta: {x: 963.6, y: -490}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1766, y: -193}
+  m_SizeDelta: {x: 2007.6, y: 98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7062139142204180825
 CanvasRenderer:
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &1455892815
+--- !u!114 &1833303921771340463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,11 +85,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7062139142204180828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a3eed602d24b124cb19b94c7852e583, type: 3}
+  m_Script: {fileID: 11500000, guid: 2063efc05a2883b448a74204582eca50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 350
-  Delay: 0
+  MaxSpeed: 450
+  MinSpeed: 25
+  Delay: 1
   ScrollDir: 2
 --- !u!1 &7062139142392421185
 GameObject:
@@ -206,7 +207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -676.66, y: 27}
+  m_AnchoredPosition: {x: -763, y: 0}
   m_SizeDelta: {x: 279.99, y: 121.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7062139142677515418
@@ -258,8 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3eed602d24b124cb19b94c7852e583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 200
-  Delay: 2.5
+  MaxSpeed: 600
+  MinSpeed: 50
+  Delay: 1
   ScrollDir: 3
 --- !u!1 &7062139143320713761
 GameObject:
@@ -397,8 +399,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139, y: 442}
-  m_SizeDelta: {x: 237.8, y: 310}
+  m_AnchoredPosition: {x: 0, y: 465}
+  m_SizeDelta: {x: 237.79999, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7062139143917489374
 CanvasRenderer:
@@ -449,6 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3eed602d24b124cb19b94c7852e583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 100
+  MaxSpeed: 600
+  MinSpeed: 50
   Delay: 1
   ScrollDir: 1
