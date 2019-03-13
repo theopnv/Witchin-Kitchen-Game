@@ -24,10 +24,6 @@ namespace con2.game
             {
                 m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
             }
-            if (m_score == null)
-            {
-                m_score = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Score;
-            }
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             m_mgm = managers.GetComponentInChildren<MainGameManager>();
             NextRecipe();
@@ -39,7 +35,6 @@ namespace con2.game
             m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
             var owner = m_thisStation.GetOwner();
             owner.CompletedPotionCount = m_currentRecipeIndex;
-            m_score.text = owner.CompletedPotionCount.ToString();
             m_mgm.UpdateRanks();
             m_audienceInteractionManager.SendGameStateUpdate();
             if (m_currentRecipeIndex > 0)

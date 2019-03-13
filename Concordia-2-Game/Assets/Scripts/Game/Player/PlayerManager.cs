@@ -66,6 +66,7 @@ namespace con2.game
             {
                 _CompletedPotionCount = value;
                 Players.Dic[ID] = this;
+                _PlayerHUD.Score.text = _CompletedPotionCount.ToString();
             }
         }
 
