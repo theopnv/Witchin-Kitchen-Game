@@ -66,7 +66,7 @@
             UNITY_SETUP_INSTANCE_ID(v);
             UNITY_TRANSFER_INSTANCE_ID(v, o);
 
-            float4 outVertex = v.vertex * _Scale;
+            float4 outVertex = v.vertex;
             float3 addVertex = float3(0.0f, 0.0f, 0.0f);
             float vertexLength = length(outVertex.xyz);
 
@@ -93,7 +93,7 @@
             addVertex.xz += displacementDirection.xy * displacement.z * bendFactor;
 
 
-            outVertex.xyz = normalize(outVertex.xyz + addVertex * _Flexibility) * vertexLength;
+            outVertex.xyz = normalize(outVertex.xyz + addVertex * _Flexibility) * vertexLength * _Scale.xyz;
             o.vertex = outVertex;
             v.vertex = outVertex;
         }
