@@ -122,8 +122,9 @@ namespace con2.game
         [Header("EndGame")]
         public Text m_winnerText;
         public Text m_rematchText, m_clock;
+        private List<List<PlayerManager>> m_finalRankings;
         private bool m_gameOver = false, m_acceptingInput = false;
-        public static int REMATCH_TIMER = 10, GAME_TIMER = 240;
+        public static int REMATCH_TIMER = 10, GAME_TIMER = 30;
         [SerializeField] private int m_dominationDifference = 3;
 
         private void InitializeEndGame()
@@ -157,29 +158,46 @@ namespace con2.game
             if (!m_gameOver)
             {
                 m_gameOver = true;
-                var winnerPlayer = DetermineWinner();
-                m_winnerText.text = winnerPlayer.Name + " is the winner!";
-                _AudienceInteractionManager?.ExitRoom(true, winnerPlayer.ID);                StartCoroutine(BackToMainMenuAfterShortPause());
+                m_winnerText.text = "";
+                DetermineWinner();
+                foreach (var scoregroup in m_finalRankings)
+                {
+                    foreach (var player in scoregroup)
+                    {
+                        var count = player.CollectedIngredientCount;
+                        m_winnerText.text += player.Name + " collected " + count + " ingredient" + (count == 1 ? "" : "s") + "\n";
+                    }
+                }
+                _AudienceInteractionManager?.ExitRoom(true, m_finalRankings[0][0].ID);                StartCoroutine(BackToMainMenuAfterShortPause());
             }
         }
 
-        public PlayerManager DetermineWinner()
+        public void DetermineWinner()
         {
+            m_finalRankings = new List<List<PlayerManager>>();
             var players = Players.Dic;
-            PlayerManager winner = null;
-            var mostPotions = -1;
-
+            List<PlayerManager> playerScores = new List<PlayerManager>();
             for (int i = 0; i < players.Count; i++)
             {
-                var numPotions = players[i].Score;
-                if (numPotions > mostPotions)
-                {
-                    winner = players[i];
-                    mostPotions = numPotions;
-                }
+                playerScores.Add(players[i]);
             }
 
-            return winner;
+            List<List<PlayerManager>> rankings = playerScores.GroupBy(x => x.CompletedPotionCount)
+                                             .Select(x => x.ToList())
+                                             .OrderByDescending(x => x[0].CompletedPotionCount)
+                                             .ToList();
+
+            for (int i = 0; i < rankings.Count; i++)
+            {
+                List<List<PlayerManager>> tieBreaker = rankings[i].GroupBy(x => x.CollectedIngredientCount)
+                                 .Select(x => x.ToList())
+                                 .OrderByDescending(x => x[0].CollectedIngredientCount)
+                                 .ToList();
+                foreach (var scoreGroup in tieBreaker)
+                {
+                    m_finalRankings.Add(scoreGroup);
+                }
+            }
         }
 
         public void UpdateRanks()
@@ -191,9 +209,9 @@ namespace con2.game
                 playerScores.Add(players[i]);
             }
 
-            List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.Score)
+            List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.CompletedPotionCount)
                                              .Select(x => x.ToList())
-                                             .OrderByDescending(x => x[0].Score)
+                                             .OrderByDescending(x => x[0].CompletedPotionCount)
                                              .ToList();
 
             switch (scoreGroups.Count)
@@ -228,7 +246,7 @@ namespace con2.game
 
         private bool IsDominating(List<PlayerManager> group1, List<PlayerManager> group2)
         {
-            return group1[0].Score - group2[0].Score >= m_dominationDifference;
+            return group1[0].CompletedPotionCount - group2[0].CompletedPotionCount >= m_dominationDifference;
         }
 
         public bool ConsumeInput(GamepadAction input)
