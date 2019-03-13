@@ -544,6 +544,11 @@ PrefabInstance:
       propertyPath: ScaleMultiplier
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7835907406285593779, guid: 1b78295089820684f9975e1bd59fceb9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7835907406285593791, guid: 1b78295089820684f9975e1bd59fceb9,
         type: 3}
       propertyPath: m_Enabled
@@ -710,6 +715,16 @@ PrefabInstance:
         type: 3}
       propertyPath: SizeModule.curve.minCurve.m_Curve.Array.data[1].value
       value: 0.040000916
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598745608626540, guid: 1b85934f3ab9f88409e04178ece71a05,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598745608626540, guid: 1b85934f3ab9f88409e04178ece71a05,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b85934f3ab9f88409e04178ece71a05, type: 3}
