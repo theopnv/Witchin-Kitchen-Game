@@ -49,7 +49,7 @@
                 factor *= _Intensity;
 
                 float2 direction = normalize(i.localPos.xy);
-                float2 packedDirection = (direction + float2(1.0f, 1.0f)) / 2.0f;
+                float2 packedDirection = direction + float2(0.5f, 0.5f);
 
                 fixed4 col = fixed4(packedDirection.x, packedDirection.y, factor, factor);
                 return col;

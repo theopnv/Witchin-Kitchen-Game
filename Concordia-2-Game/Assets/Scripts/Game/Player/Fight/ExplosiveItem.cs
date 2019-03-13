@@ -70,6 +70,10 @@ namespace con2.game
                     mesh.enabled = false;
                 }
 
+                var blastwave = gameObject.GetComponentInChildren<Blastwave>();
+                blastwave.GetComponent<Renderer>().enabled = true;
+                blastwave.Play();
+
                 var kaboom = gameObject.GetComponentInChildren<Kaboom>();
                 StartCoroutine(kaboom.Activate());
             }

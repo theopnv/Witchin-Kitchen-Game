@@ -898,6 +898,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 984703630302878023, guid: c274b11d8b017cb489f5873bbc9e64db,
+        type: 3}
+      propertyPath: Scale.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984703630302878023, guid: c274b11d8b017cb489f5873bbc9e64db,
+        type: 3}
+      propertyPath: Scale.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984703630302878023, guid: c274b11d8b017cb489f5873bbc9e64db,
+        type: 3}
+      propertyPath: Scale.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984703630302878023, guid: c274b11d8b017cb489f5873bbc9e64db,
+        type: 3}
+      propertyPath: ScaleMultiplier
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c274b11d8b017cb489f5873bbc9e64db, type: 3}
 --- !u!1001 &4556435400273464746
