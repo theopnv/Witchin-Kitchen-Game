@@ -7,7 +7,7 @@ namespace con2.game
     {
         // The object's rigidbody
         private Rigidbody m_rb;
-        public bool m_isHeld = false;
+        private bool m_isHeld = false;
 
         void Start()
         {
@@ -31,7 +31,7 @@ namespace con2.game
         }
 
         // Get picked up
-        public void PickUp(Transform newParent)
+        virtual public void PickUp(Transform newParent)
         {
             m_isHeld = true;
 
@@ -40,6 +40,11 @@ namespace con2.game
             transform.parent = newParent;
 
             transform.position = newParent.position;
+
+            if (m_rb == null)
+            {
+                m_rb = GetComponent<Rigidbody>();
+            }
 
             // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
             m_rb.useGravity = false;

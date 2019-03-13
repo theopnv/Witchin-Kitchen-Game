@@ -34,6 +34,8 @@ public class Meteor : MonoBehaviour
             Random.Range(0f, 100f));
 
         _Material = GetComponentInChildren<MeshRenderer>().material;
+
+        GetComponentInChildren<ExplosiveItem>().ExplodeOnContact();
     }
 
     public void SetDirection(Vector3 target)
@@ -68,19 +70,6 @@ public class Meteor : MonoBehaviour
             _HasHitTheGround = true;
             _Rb.velocity = Vector3.zero;
             _Rb.freezeRotation = true;
-        }
-
-        if (other.gameObject.tag == "Player" && !_HasHitTheGround)
-        {
-            var fightStun = other.gameObject.GetComponent<FightStun>();
-            if (fightStun)
-            {
-                fightStun.Stun(3);
-            }
-            else
-            {
-                Debug.LogError("Could not find Stun component on player");
-            }
         }
     }
 }

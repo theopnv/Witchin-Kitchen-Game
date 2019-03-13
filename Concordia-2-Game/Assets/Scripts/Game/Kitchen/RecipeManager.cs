@@ -86,6 +86,11 @@ namespace con2.game
         {
             return m_currentRecipeIndex;
         }
+
+        public Ingredient GetNextNeededIngredient()
+        {
+            return m_currentPotionRecipe.GetNextNeededIngredient();
+        }
     }
 
     public class Recipe
@@ -164,6 +169,19 @@ namespace con2.game
         public bool IsComplete()
         {
             return m_isComplete;
+        }
+
+        public Ingredient GetNextNeededIngredient()
+        {
+            foreach (IngredientStatus i in m_fullRecipe)
+            {
+                if (!i.m_collected)
+                {
+                    return i.m_type;
+                }
+            }
+            //If nothing needed, then return random ingredient
+            return (Ingredient)Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT);
         }
 
         public class IngredientStatus
