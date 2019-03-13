@@ -41,6 +41,8 @@ namespace con2.game
             {
                 c.isTrigger = true;
             }
+            var rb = GetComponent<Rigidbody>();
+            rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
 
             var renderers = GetComponentsInChildren<Renderer>();
             while (renderers[0].material.color.a > 0.02f)
@@ -48,7 +50,7 @@ namespace con2.game
                 foreach (Renderer r in renderers)
                 {
                     var color = r.material.color;
-                    r.material.color = new Color(color.r, color.g, color.b, color.a - Time.deltaTime/2.0f);
+                    r.material.color = new Color(color.r, color.g, color.b, color.a - Time.deltaTime);
                 }
                 yield return new WaitForEndOfFrame();
             }
