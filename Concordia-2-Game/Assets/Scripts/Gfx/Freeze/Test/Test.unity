@@ -472,6 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 639758058}
   Ground: {fileID: 1210306288}
+  GrassTarget: {fileID: 0}
   FrozenMaterial: {fileID: 2100000, guid: d6443c9db3e17cc4f924eb6e8fb663a6, type: 2}
   Thickness: 0.1
   AnimTime: 0.5
@@ -538,6 +539,30 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0.65660226
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  GrassFlexibilityAnimation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

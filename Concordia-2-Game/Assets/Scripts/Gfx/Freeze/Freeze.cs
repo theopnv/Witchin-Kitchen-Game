@@ -8,6 +8,9 @@ public class Freeze : MonoBehaviour
 
     public GameObject Ground;
 
+    public Grass GrassTarget;
+    protected float OriginalGrassFlexibility;
+
     public Material FrozenMaterial;
 
     [Range(0.0f, 1.0f)]
@@ -18,6 +21,7 @@ public class Freeze : MonoBehaviour
     public AnimationCurve ScaleAnimation;
     public AnimationCurve AlphaAnimation;
     public AnimationCurve GlossinessAnimation;
+    public AnimationCurve GrassFlexibilityAnimation;
 
     protected GameObject Clone;
     protected GameObject GroundClone;
@@ -76,6 +80,12 @@ public class Freeze : MonoBehaviour
 
         // Hide at start
         Clone.SetActive(false);
+
+
+        if (GrassTarget != null)
+        {
+            OriginalGrassFlexibility = GrassTarget.Flexibility;
+        }
     }
 
     void CollectChildren(GameObject obj)
@@ -163,6 +173,11 @@ public class Freeze : MonoBehaviour
             var pos = GroundClone.transform.position;
             pos.y = GroundCloneOriginalPos.y + Thickness * scaleAnim;
             GroundClone.transform.position = pos;
+
+            if (GrassTarget != null)
+            {
+                GrassTarget.Flexibility = OriginalGrassFlexibility * GrassFlexibilityAnimation.Evaluate(Playback);
+            }
         }
     }
 }
