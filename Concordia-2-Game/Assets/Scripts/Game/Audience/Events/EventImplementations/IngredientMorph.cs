@@ -8,7 +8,7 @@ namespace con2.game
     {
         public GameObject RemoveIngredient()
         {
-            GameObject ingredient = transform.GetChild(0).gameObject;
+            GameObject ingredient = transform.Find("Ingredient").gameObject;
             ingredient.transform.parent = null;
             return ingredient;
         }
@@ -17,6 +17,7 @@ namespace con2.game
         {
             newIngredient.transform.parent = transform;
             newIngredient.transform.SetPositionAndRotation(transform.position, transform.rotation);
+            GetComponentInChildren<ParticleSystem>().Play();
         }
     }
 }

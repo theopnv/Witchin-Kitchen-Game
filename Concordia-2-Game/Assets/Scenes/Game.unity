@@ -2331,6 +2331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d805077dcdbb254683d377719c06865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_swapDelay: 3
+  m_numberOfSwaps: 5
 --- !u!114 &773999208
 MonoBehaviour:
   m_ObjectHideFlags: 0
