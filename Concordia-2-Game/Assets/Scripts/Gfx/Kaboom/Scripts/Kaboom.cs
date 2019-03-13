@@ -41,7 +41,7 @@ public class Kaboom : MonoBehaviour
         Halo = transform.GetChild(0).gameObject;
 
         OwnRenderer = GetComponent<Renderer>();
-        HaloRenderer = GetComponentInChildren<Renderer>();
+        HaloRenderer = Halo.GetComponent<Renderer>();
 
         // Hide at start
         transform.localScale = new Vector3(0.0f, 0.0f, 0.0f);
@@ -52,6 +52,19 @@ public class Kaboom : MonoBehaviour
         OwnRenderer.receiveShadows = false;
         HaloRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         HaloRenderer.receiveShadows = false;
+    }
+
+    public IEnumerator Activate()
+    {
+        if (!Playing)
+        {
+            OwnRenderer.enabled = true;
+            HaloRenderer.enabled = true;
+            Play();
+
+            yield return new WaitForSeconds(AnimTime);
+            GameObject.Destroy(transform.parent.gameObject);
+        }
     }
 
     public void Play()
@@ -69,9 +82,6 @@ public class Kaboom : MonoBehaviour
         // Playback
         var curTime = Time.time;
         var elapsed = curTime - StartTime;
-
-        if (elapsed > AnimTime) // Done animation
-            Playing = false;
 
         Playback = elapsed / AnimTime;
         Playback = Mathf.Clamp01(Playback);

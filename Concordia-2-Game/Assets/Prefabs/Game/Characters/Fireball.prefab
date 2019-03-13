@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4228449804683420278}
   - component: {fileID: 3090913621653762100}
   - component: {fileID: 1699448683796564149}
+  - component: {fileID: 6905349851094465372}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Projectile
@@ -64,11 +65,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b83dd5ac4efb06448604c7f11880f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_strength: 55
-  m_stunTime: 4
-  m_immuneTargets: []
   m_speed: 10
   m_flyTime: 2
+--- !u!114 &6905349851094465372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061191736115989615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc8cc93a0f76fd489d348d192eecff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_strength: 10
+  m_stunTime: 8
+  m_immuneTargets: []
   m_launcher: {fileID: 0}
 --- !u!1 &2895953486452573032
 GameObject:
@@ -520,11 +533,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7835907406285593791, guid: 1b78295089820684f9975e1bd59fceb9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7835907406285593779, guid: 1b78295089820684f9975e1bd59fceb9,
         type: 3}
       propertyPath: Playback
@@ -534,6 +542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ScaleMultiplier
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835907406285593791, guid: 1b78295089820684f9975e1bd59fceb9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7835907408223459628, guid: 1b78295089820684f9975e1bd59fceb9, type: 3}

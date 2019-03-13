@@ -22,7 +22,7 @@ namespace con2.game
             giftComponent.SetIsBomb(true);
             giftComponent.SetContents(m_bombPrefab);
             var r = gift.GetComponent<Renderer>();
-            r.material.color = ColorsManager.Get().CauldronLiquidColors[_TargetedPlayer.id];
+            r.material.color = ColorsManager.Get().PlayerMeshColors[_TargetedPlayer.id];
             yield return null;
         }
 

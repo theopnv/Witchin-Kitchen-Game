@@ -16,6 +16,11 @@ namespace con2.game
             var playerPickup = newParent.parent.gameObject.GetComponent<PlayerPickUpDropObject>();
             playerPickup.ForcePickUpObject(giftPickable);
 
+            if (m_isBomb)
+            {
+                gift.GetComponent<ExplosiveItem>().ExplodeByTime(1.75f);
+            }
+
             StartCoroutine(DespawnThis());
         }
 
