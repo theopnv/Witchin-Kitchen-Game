@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class Blastwave : MonoBehaviour
 {
     public AnimationCurve MinRingRadius;
@@ -38,7 +37,7 @@ public class Blastwave : MonoBehaviour
     {
         if (!Playing)
         {
-            Renderer.sharedMaterial.SetFloat("_Intensity", 0.0f);
+            Renderer.material.SetFloat("_Intensity", 0.0f);
             return;
         }
 
@@ -62,8 +61,13 @@ public class Blastwave : MonoBehaviour
         transform.rotation = Quaternion.identity;
         transform.localScale = new Vector3(scale, scale, scale);
 
-        Renderer.sharedMaterial.SetFloat("_MinRingRadius", Mesh.sharedMesh.bounds.extents.x * min);
-        Renderer.sharedMaterial.SetFloat("_MaxRingRadius", Mesh.sharedMesh.bounds.extents.x * max);
-        Renderer.sharedMaterial.SetFloat("_Intensity", intensity);
+        Renderer.material.SetFloat("_MinRingRadius", Mesh.sharedMesh.bounds.extents.x * min);
+        Renderer.material.SetFloat("_MaxRingRadius", Mesh.sharedMesh.bounds.extents.x * max);
+        Renderer.material.SetFloat("_Intensity", intensity);
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(Renderer.material);
     }
 }
