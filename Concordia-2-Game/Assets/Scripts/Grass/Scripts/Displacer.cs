@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class Displacer : MonoBehaviour
 {
     [Range(0.0f, 10.0f)]
@@ -29,12 +28,12 @@ public class Displacer : MonoBehaviour
     {
         transform.rotation = Quaternion.AngleAxis(90.0f, Vector3.right);
 
-        Renderer.sharedMaterial.SetFloat("_Radius", Mesh.sharedMesh.bounds.extents.x);
+        Renderer.material.SetFloat("_Radius", Mesh.sharedMesh.bounds.extents.x);
 
         // Height falloff
         var internalIntensity = 0.0f;
         RaycastHit hitInfo;
-        int layerMask = ~Grass.GRASS_SURFACE_LAYER_MASK; // Ignore all but grass surfaces
+        int layerMask = 1 << Grass.GRASS_SURFACE_LAYER_MASK; // Ignore all but grass surfaces
         var hit = Physics.Raycast(transform.position, Vector3.down, out hitInfo, MaxRaycastDistance, layerMask);
 
         if (hit)
@@ -44,6 +43,11 @@ public class Displacer : MonoBehaviour
             internalIntensity = falloff * Intensity;
         }
 
-        Renderer.sharedMaterial.SetFloat("_Intensity", internalIntensity);
+        Renderer.material.SetFloat("_Intensity", internalIntensity);
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(Renderer.material);
     }
 }
