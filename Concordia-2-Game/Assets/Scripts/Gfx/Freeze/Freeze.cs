@@ -105,6 +105,12 @@ public class Freeze : MonoBehaviour
             {
                 CollectChildren(child.gameObject);
             }
+
+            if (child.GetComponent<DontFreeze>() != null ||
+                child.GetComponent<DontFreezeWithChildren>() != null)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 
