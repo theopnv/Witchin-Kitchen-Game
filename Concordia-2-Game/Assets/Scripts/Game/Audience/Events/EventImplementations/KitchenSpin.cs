@@ -67,7 +67,10 @@ namespace con2.game
             if (p)
                 parentObject = p.transform.gameObject;
 
-            m_objectsInSpinZoneAndTheirOriginalParents.Add(collidingObject, parentObject);
+            if (!m_objectsInSpinZoneAndTheirOriginalParents.ContainsKey(collidingObject))
+            {
+                m_objectsInSpinZoneAndTheirOriginalParents.Add(collidingObject, parentObject);
+            }
 
 
             if (m_isSpinning)
