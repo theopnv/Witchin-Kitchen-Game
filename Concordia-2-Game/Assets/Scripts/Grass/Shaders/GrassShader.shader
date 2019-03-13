@@ -7,6 +7,7 @@
         _Metallic("Metallic", Range(0,1)) = 0.0
 
         _CurTime("Current simulation time", Float) = 0.0
+        _Flexibility("Flexibility", Float) = 1.0
         _WindStrength("Wind strength", Float) = 2.0
         _WindDirection("Wind direction", Vector) = (1.0, 0.0, 0.0, 0.0)
         _RollingWindPositionScale("Rolling wind position scale", Float) = 0.001
@@ -37,6 +38,7 @@
         half _Metallic;
 
         float _CurTime;
+        float _Flexibility;
         float _WindStrength;
         float4 _WindDirection;
         float _RollingWindPositionScale;
@@ -89,7 +91,7 @@
             addVertex.xz += displacementDirection.xy * displacement.z * bendFactor;
 
 
-            outVertex.xyz = normalize(outVertex.xyz + addVertex) * vertexLength;
+            outVertex.xyz = normalize(outVertex.xyz + addVertex * _Flexibility) * vertexLength;
             o.vertex = outVertex;
             v.vertex = outVertex;
         }
