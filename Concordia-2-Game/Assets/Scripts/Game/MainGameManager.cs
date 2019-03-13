@@ -122,13 +122,15 @@ namespace con2.game
         [Header("EndGame")]
         public Text m_winnerText;
         public Text m_rematchText, m_clock;
+        public GameObject m_backdrop;
         private List<List<PlayerManager>> m_finalRankings;
         private bool m_gameOver = false, m_acceptingInput = false;
-        public static int REMATCH_TIMER = 10, GAME_TIMER = 30;
+        public int REMATCH_TIMER = 10, GAME_TIMER = 240;
         [SerializeField] private int m_dominationDifference = 3;
 
         private void InitializeEndGame()
         {
+            m_backdrop.SetActive(false);
             m_winnerText.enabled = false;
             m_rematchText.enabled = false;
             m_gameOver = false;
@@ -140,6 +142,10 @@ namespace con2.game
             {
                 int remainingTime = (int)(GAME_TIMER - Time.timeSinceLevelLoad);
                 m_clock.text = FormatRemainingTime(remainingTime);
+                if (remainingTime == 5)
+                {
+                    m_clock.fontSize = 150;
+                }
                 if (remainingTime <= 0)
                 {
                     GameOver();
@@ -150,7 +156,13 @@ namespace con2.game
         private string FormatRemainingTime(int time)
         {
             int sec = time % 60;
-            return time / 60 + ":" + (sec > 9 ? sec.ToString() : "0" + sec);
+            var timeString = "";
+            if (time > 5)
+                timeString = time / 60 + ":" + (sec > 9 ? sec.ToString() : "0" + sec);
+            else
+                timeString = time.ToString();
+
+            return timeString;
         }
 
         public void GameOver()
@@ -158,18 +170,29 @@ namespace con2.game
             if (!m_gameOver)
             {
                 m_gameOver = true;
-                m_winnerText.text = "";
+                m_winnerText.text = "Game Over";
+                m_winnerText.enabled = true;
+                m_clock.enabled = false;
+
                 DetermineWinner();
-                foreach (var scoregroup in m_finalRankings)
+                StartCoroutine(ShowLeaderboard());
+               }
+        }
+
+        private IEnumerator ShowLeaderboard()
+        {
+            yield return new WaitForSeconds(2.0f);
+            m_backdrop.SetActive(true);
+            m_winnerText.text = "";
+            foreach (var scoregroup in m_finalRankings)
+            {
+                foreach (var player in scoregroup)
                 {
-                    foreach (var player in scoregroup)
-                    {
-                        var count = player.CollectedIngredientCount;
-                        m_winnerText.text += player.Name + " collected " + count + " ingredient" + (count == 1 ? "" : "s") + "\n";
-                    }
+                    var count = player.CollectedIngredientCount;
+                    m_winnerText.text += player.Name + " collected " + count + " ingredient" + (count == 1 ? "" : "s") + "\n\n";
                 }
-                _AudienceInteractionManager?.ExitRoom(true, m_finalRankings[0][0].ID);                StartCoroutine(BackToMainMenuAfterShortPause());
             }
+            _AudienceInteractionManager?.ExitRoom(true, m_finalRankings[0][0].ID); StartCoroutine(BackToMainMenuAfterShortPause());
         }
 
         public void DetermineWinner()
@@ -257,15 +280,17 @@ namespace con2.game
                     || input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
                 {
                     SceneManager.LoadScene(SceneNames.Game);
-                    m_gameOver = false;
                     m_acceptingInput = false;
+                    m_winnerText.text = "";
+                    m_rematchText.enabled = false;
                     return true;
                 }
                 else if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
                 {
                     SceneManager.LoadScene(SceneNames.MainMenu);
-                    m_gameOver = false;
                     m_acceptingInput = false;
+                    m_winnerText.enabled = false;
+                    m_rematchText.enabled = false;
                     return true;
                 }
             }
@@ -282,7 +307,7 @@ namespace con2.game
             {
                 m_rematchText.text = "Rematch?\n" + i;
                 yield return new WaitForSeconds(1);
-                if (i == 9)
+                if (i == REMATCH_TIMER - 1)
                 {
                     m_acceptingInput = true;
                 }
