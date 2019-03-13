@@ -61,7 +61,7 @@ namespace con2
             };
 
             var serialized = JsonConvert.SerializeObject(game);
-            _Socket.Emit(Command.SEND_GAME_STATE, new JSONObject(serialized));
+            _Socket?.Emit(Command.SEND_GAME_STATE, new JSONObject(serialized));
         }
 
         #endregion
