@@ -41,6 +41,7 @@ public class Kaboom : MonoBehaviour
         Halo = transform.GetChild(0).gameObject;
 
         OwnRenderer = GetComponent<Renderer>();
+        OwnRenderer.sharedMaterial = new Material(OwnRenderer.sharedMaterial);
         HaloRenderer = Halo.GetComponent<Renderer>();
 
         // Hide at start
