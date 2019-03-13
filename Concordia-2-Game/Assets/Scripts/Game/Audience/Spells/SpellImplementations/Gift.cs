@@ -36,6 +36,12 @@ namespace con2.game
 
         private IEnumerator DespawnThis()
         {
+            var colliders = GetComponentsInChildren<Collider>();
+            foreach (Collider c in colliders)
+            {
+                c.isTrigger = true;
+            }
+
             var renderers = GetComponentsInChildren<Renderer>();
             while (renderers[0].material.color.a > 0.02f)
             {

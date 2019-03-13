@@ -14,6 +14,11 @@ namespace con2.game
 
         void Start()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             m_rb = GetComponent<Rigidbody>();
             m_eyes = new GameObject[] { transform.Find("EyeBall2/Eye2").gameObject, transform.Find("EyeBall1/Eye1").gameObject };
             m_eyesockets = new GameObject[] { transform.Find("EyeBall2/EyeSocket2").gameObject, transform.Find("EyeBall1/EyeSocket1").gameObject };
@@ -24,6 +29,10 @@ namespace con2.game
         {
             if (m_eyeCount > 0)
             {
+                if (!m_rb)
+                {
+                    Initialize();
+                }
                 var dist = transform.position - newParent.position;
                 m_rb.AddForce(dist.normalized * 5, ForceMode.VelocityChange);
 
