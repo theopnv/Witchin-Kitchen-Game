@@ -30,7 +30,7 @@ namespace con2.game
 
         protected float _CenterSquare = 60f;
 
-        virtual protected void Start()
+        protected virtual void Start()
         {
             SetDirection();
             _Speed = MinSpeed;
