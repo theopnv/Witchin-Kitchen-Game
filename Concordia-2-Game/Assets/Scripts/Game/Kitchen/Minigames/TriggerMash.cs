@@ -4,7 +4,6 @@ using Unity.Collections;
 using UnityEngine;
 using static con2.GamepadAction;
 
-
 namespace con2.game
 {
 
@@ -49,20 +48,22 @@ namespace con2.game
 
         public override bool TryToConsumeInput(GamepadAction input)
         {
-            if (input.GetActionID().Equals(ID.LEFT_TRIGGER))
+            if (input.GetActionID().Equals(ID.LEFT_TRIGGER) && input.m_axisValue > 0.8)
             { 
-                if (m_expectingLeft)
+                if (m_expectingLeft && input.m_axisValue > 0.8)
                 {
+                    Debug.Log("Left Trigger");
                     AcceptMash();
                 }
 
                 return true;
             }
 
-            if (input.GetActionID().Equals(ID.RIGHT_TRIGGER))
+            if (input.GetActionID().Equals(ID.RIGHT_TRIGGER) && input.m_axisValue > 0.8)
             {
-                if (!m_expectingLeft)
+                if (!m_expectingLeft && input.m_axisValue > 0.8)
                 {
+                    Debug.Log("Right Trigger");
                     AcceptMash();
                 }
 

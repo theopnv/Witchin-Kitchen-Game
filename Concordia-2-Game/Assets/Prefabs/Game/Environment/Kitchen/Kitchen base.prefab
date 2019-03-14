@@ -7,7 +7,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610211123794525710}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14b24a6e48850c04f89703418970607b, type: 3}
   m_Name: 
@@ -16,6 +16,22 @@ MonoBehaviour:
   m_stationOwner: {fileID: 0}
   m_started: 0
   m_inputToMash: 2
+  m_timeToLoseProgress: 1
+--- !u!114 &5656487958821849431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610211123794525710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e616890427370fb4a9da7bbd2850b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_prompt: {fileID: 1610211123442723895}
+  m_stationOwner: {fileID: 0}
+  m_started: 0
   m_timeToLoseProgress: 1
 --- !u!114 &5164730955908783348
 MonoBehaviour:
@@ -185,6 +201,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 260
       objectReference: {fileID: 0}
+    - target: {fileID: 3646885899598553157, guid: aa9d3b1a44d777340871d4fd0c675d72,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3447241073867117578, guid: aa9d3b1a44d777340871d4fd0c675d72,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -235,6 +256,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6580967724236997304}
     m_Modifications:
+    - target: {fileID: 100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
+      propertyPath: m_Name
+      value: firepit
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -290,10 +315,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
-      propertyPath: m_Name
-      value: firepit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
