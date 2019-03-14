@@ -7,6 +7,7 @@
         _Metallic("Metallic", Range(0,1)) = 0.0
 
         _CurTime("Current simulation time", Float) = 0.0
+        _DisplacementStrength("DisplacementStrength", Float) = 1.0
         _Flexibility("Flexibility", Float) = 1.0
         _WindStrength("Wind strength", Float) = 2.0
         _WindDirection("Wind direction", Vector) = (1.0, 0.0, 0.0, 0.0)
@@ -39,6 +40,7 @@
         half _Metallic;
 
         float _CurTime;
+        float _DisplacementStrength;
         float _Flexibility;
         float _WindStrength;
         float4 _WindDirection;
@@ -90,7 +92,7 @@
             fixed4 displacement = tex2Dlod(_Displacement, float4(displacementUV.xy, 0, 0));
             fixed2 packedDisplacementDirection = displacement.xy;
             fixed2 displacementDirection = (packedDisplacementDirection * 2.0f) - fixed2(1.0f, 1.0f);
-            addVertex.xz += displacementDirection.xy * displacement.z * bendFactor;
+            addVertex.xz += displacementDirection.xy * displacement.z * bendFactor * _DisplacementStrength;
 
 
             outVertex.xyz = normalize(outVertex.xyz + addVertex * _Flexibility) * vertexLength * _Scale.xyz;

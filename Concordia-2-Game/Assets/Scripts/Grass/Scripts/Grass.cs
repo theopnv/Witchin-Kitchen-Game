@@ -47,6 +47,7 @@ public class Grass : MonoBehaviour
 
     // Wind anim stuff
     private float CurTime = 0.0f;
+    public float DisplacementStrength = 1.0f;
     public float Flexibility = 1.0f;
     public float WindStrength = 2.0f;
     public float WindScrollSpeed = 0.1f;
@@ -176,6 +177,7 @@ public class Grass : MonoBehaviour
             propertyBlock.SetVectorArray("_InstancePosition", bucket.PositionArray);
 
             propertyBlock.SetFloat("_CurTime", CurTime);
+            propertyBlock.SetFloat("_DisplacementStrength", DisplacementStrength);
             propertyBlock.SetFloat("_Flexibility", Flexibility);
             propertyBlock.SetFloat("_WindStrength", WindStrength);
             propertyBlock.SetVector("_WindDirection", WindDirectionModulated);
