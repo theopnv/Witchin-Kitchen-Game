@@ -6,7 +6,7 @@ namespace con2.game
     public class PickableObject : MonoBehaviour
     {
         // The object's rigidbody
-        private Rigidbody m_rb;
+        protected Rigidbody m_rb;
         private bool m_isHeld = false;
 
         void Start()

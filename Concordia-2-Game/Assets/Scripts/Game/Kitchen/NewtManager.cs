@@ -7,7 +7,6 @@ namespace con2.game
 
     public class NewtManager : PickableObject, IPunchable
     {
-        Rigidbody m_rb;
         public GameObject m_eyeIngredientPrefab;
         private int m_eyeCount = 2;
         private GameObject[] m_eyes, m_eyesockets, m_eyepatches;

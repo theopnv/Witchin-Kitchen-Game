@@ -9,7 +9,8 @@ namespace con2.game
     {
         private Recipe m_currentPotionRecipe;
         private int m_currentRecipeIndex = -1;
-        public Text m_recipeUI, m_score;
+        public Text m_score;
+        public PlayerHUD m_recipeUI;
         private KitchenStation m_thisStation;
         private MainGameManager m_mgm;
         private ItemSpawner m_itemSpawner;
@@ -22,7 +23,7 @@ namespace con2.game
             m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             if (m_recipeUI == null)
             {
-                m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
+                m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD;
             }
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             m_mgm = managers.GetComponentInChildren<MainGameManager>();
@@ -32,7 +33,7 @@ namespace con2.game
         void NextRecipe()
         {
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
-            m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
+            SetNewRecipeUI();
             var owner = m_thisStation.GetOwner();
             owner.CompletedPotionCount = m_currentRecipeIndex;
             m_mgm.UpdateRanks();
@@ -44,12 +45,22 @@ namespace con2.game
             }
         }
 
+        void SetNewRecipeUI()
+        {
+            m_currentPotionRecipe.SetNewRecipeUI(m_recipeUI);
+        }
+
+        void UpdateRecipeUI(Ingredient collected)
+        {
+            m_currentPotionRecipe.UpdateRecipeUI(m_recipeUI, collected);
+        }
+
         public bool CollectIngredient(Ingredient collectedIngredient)
         {
             if (m_currentPotionRecipe.IsIngredientNeeded(collectedIngredient) && !m_thisStation.IsStoringIngredient())
             {
                 m_currentPotionRecipe.CollectIngredient(collectedIngredient);
-                m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
+                UpdateRecipeUI(collectedIngredient);
                 if (collectedIngredient != Ingredient.NEWT_EYE)
                 {
                     m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
@@ -77,7 +88,6 @@ namespace con2.game
             if (m_currentPotionRecipe.IsComplete())
             {
                 //You did it!
-                m_recipeUI.text = "You made a potion, keep going!";
                 NextRecipe();
             }
         }
@@ -148,22 +158,25 @@ namespace con2.game
             m_isComplete = complete;
         }
 
-        public string GetRecipeUI()
+        public void UpdateRecipeUI(PlayerHUD recipeUI, Ingredient collected)
         {
-            string recipeUI = "";
+            List<Image> newIcons = new List<Image>();
             foreach (IngredientStatus status in m_fullRecipe)
             {
-                if (status.m_collected == false)
-                {
-                    recipeUI += "X - " + status.m_type + "\n";
-                }
-                else
-                {
-                    char checkmark = '\u2713';
-                    recipeUI += checkmark.ToString() + " - " + status.m_type + "\n";
-                }
+                Image icon = GlobalRecipeList.IconSprites[status.m_type];
+                newIcons.Add(icon);
             }
-            return recipeUI;
+            recipeUI.CollectIngredient(collected);
+        }
+
+        public void SetNewRecipeUI(PlayerHUD recipeUI)
+        {
+            List<Image> newIcons = new List<Image>();
+            foreach (IngredientStatus status in m_fullRecipe)
+            {
+                newIcons.Add(GlobalRecipeList.IconSprites[status.m_type]);
+            }
+            recipeUI.SetNewRecipeIcons(newIcons);
         }
 
         public bool IsComplete()
