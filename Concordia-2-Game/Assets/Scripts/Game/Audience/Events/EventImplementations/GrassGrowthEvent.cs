@@ -20,10 +20,18 @@ namespace con2.game
         [Range(0.0f, 1.0f)]
         public float TargetFlexibility;
 
+        public AnimationCurve DisplacementStrengthAnim;
+
+        [Range(0.0f, 10.0f)]
+        public float TargetDisplacementStrength;
+
         protected bool Playing;
         protected float StartTime;
         protected float StartScale;
         protected float StartFlexibility;
+        protected float StartDisplacementStrength;
+
+        public static float DisplacementStrengthMultiplier = 1.0f;
 
         void Start()
         {
@@ -41,6 +49,8 @@ namespace con2.game
             StartTime = Time.time;
             StartScale = m_gazon.Scale.y;
             StartFlexibility = m_gazon.Flexibility;
+            StartDisplacementStrength = m_gazon.DisplacementStrength;
+            DisplacementStrengthMultiplier = StartDisplacementStrength;
             Playing = true;
 
             yield return new WaitForSeconds(m_grassGrowthEventLength);
@@ -68,6 +78,11 @@ namespace con2.game
 
                 var flexibilityAnim = FlexibilityAnim.Evaluate(playback);
                 m_gazon.Flexibility = StartFlexibility + (TargetFlexibility - StartFlexibility) * flexibilityAnim;
+
+                var displacementStrengthAnim = DisplacementStrengthAnim.Evaluate(playback);
+                m_gazon.DisplacementStrength = StartDisplacementStrength + (TargetDisplacementStrength - StartDisplacementStrength) * displacementStrengthAnim;
+
+                DisplacementStrengthMultiplier = m_gazon.DisplacementStrength;
             }
         }
     }

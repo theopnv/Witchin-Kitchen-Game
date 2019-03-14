@@ -16,17 +16,21 @@ public class Displacer : MonoBehaviour
     private Renderer Renderer;
     private MeshFilter Mesh;
 
+    private Vector3 StartScale;
+
     // Start is called before the first frame update
     void Start()
     {
         Renderer = GetComponent<Renderer>();
         Mesh = GetComponent<MeshFilter>();
+        StartScale = transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.rotation = Quaternion.AngleAxis(90.0f, Vector3.right);
+        transform.localScale = StartScale * con2.game.GrassGrowthEvent.DisplacementStrengthMultiplier;
 
         Renderer.material.SetFloat("_Radius", Mesh.sharedMesh.bounds.extents.x);
 
@@ -38,7 +42,7 @@ public class Displacer : MonoBehaviour
 
         if (hit)
         {
-            var falloffProgress = Mathf.Clamp01(hitInfo.distance / HeightFalloffScale);
+            var falloffProgress = Mathf.Clamp01(hitInfo.distance / HeightFalloffScale / con2.game.GrassGrowthEvent.DisplacementStrengthMultiplier);
             var falloff = HeightFalloff.Evaluate(falloffProgress);
             internalIntensity = falloff * Intensity;
         }
