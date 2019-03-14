@@ -14,8 +14,8 @@ public class SpoonMash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_mashOrientation = m_mashPlacement.transform.rotation;
-        m_startOrientation = transform.rotation;
+        m_mashOrientation = m_mashPlacement.transform.localRotation;
+        m_startOrientation = transform.localRotation;
         EndMash();
     }
 
@@ -24,29 +24,29 @@ public class SpoonMash : MonoBehaviour
     {
         if (m_movingIntoPlace)
         {
-            if (Quaternion.Angle(transform.rotation, m_mashOrientation) < 5)
+            if (Quaternion.Angle(transform.localRotation, m_mashOrientation) < 5)
             {
                 m_movingIntoPlace = false;
             }
             else
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, m_mashOrientation, Time.deltaTime * m_speed);
+                transform.localRotation = Quaternion.Slerp(transform.localRotation, m_mashOrientation, Time.deltaTime * m_speed);
             }
         }
         else if (m_resettingPos)
         {
-            if (Quaternion.Angle(transform.rotation, m_startOrientation) < 5)
+            if (Quaternion.Angle(transform.localRotation, m_startOrientation) < 5)
             {
                 m_resettingPos = false;
             }
             else
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, m_startOrientation, Time.deltaTime * m_speed);
+                transform.localRotation = Quaternion.Slerp(transform.localRotation, m_startOrientation, Time.deltaTime * m_speed);
             }
         }
         else if (m_gameIsOn)
         {
-            transform.Rotate(Vector3.forward, m_speed);
+            transform.Rotate(Vector3.up, m_speed, Space.World);
             if (m_mashing)
             {
                 Vector3 pos = transform.position;
@@ -59,9 +59,9 @@ public class SpoonMash : MonoBehaviour
             else
             {
                 Vector3 pos = transform.position;
-                pos.y += Time.deltaTime * m_speed;  
+                pos.y += Time.deltaTime * m_speed * 2;  
 
-                if (pos.y <= 0.4f)
+                if (pos.y <= 0.6f)
                     transform.position = pos;
             }
         }

@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
         if (input.GetActionID().Equals(con2.GamepadAction.ID.HORIZONTAL))
         {
             float joystick = input.m_axisValue;
-            movementDirection.x += joystick;
+            movementDirection.x = joystick;
             return true;
         }
         if (input.GetActionID().Equals(con2.GamepadAction.ID.VERTICAL))

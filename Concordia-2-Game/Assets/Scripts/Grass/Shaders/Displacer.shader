@@ -44,14 +44,14 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float dist = sqrt(i.localPos.x * i.localPos.x + i.localPos.z * i.localPos.z);
+                float dist = sqrt(i.localPos.x * i.localPos.x + i.localPos.y * i.localPos.y);
                 float factor = saturate(1.0f - dist / _Radius);
                 factor *= _Intensity;
 
-                float2 direction = normalize(i.localPos.xz);
-                float2 packedDirection = (direction + float2(1.0f, 1.0f)) / 2.0f;
+                float2 direction = normalize(i.localPos.xy);
+                float2 packedDirection = direction + float2(0.5f, 0.5f);
 
-                fixed4 col = fixed4(direction.x, direction.y, factor, factor);
+                fixed4 col = fixed4(packedDirection.x, packedDirection.y, factor, factor);
                 return col;
             }
             ENDCG

@@ -13,6 +13,9 @@ namespace con2.game
             network_ads = 1,
             meteorites = 2,
             ingredient_morph = 3,
+            kitchen_spin = 4,
+            ingredient_dance = 5,
+            grass_growth = 6,
 
             max_id,
         }
@@ -23,6 +26,9 @@ namespace con2.game
             { EventID.network_ads, "Network Ads"},
             { EventID.meteorites, "Meteorites"},
             { EventID.ingredient_morph, "Ingredient Morph"},
+            { EventID.kitchen_spin, "Kitchen Spin"},
+            { EventID.ingredient_dance, "Ingredient Dance"},
+            { EventID.grass_growth, "Grass Growth"},
         };
 
     }

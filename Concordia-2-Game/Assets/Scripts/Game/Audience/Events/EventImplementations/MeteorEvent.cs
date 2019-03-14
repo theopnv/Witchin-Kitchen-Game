@@ -7,17 +7,31 @@ namespace con2.game
 
     public class MeteorEvent : AbstractAudienceEvent
     {
+        public const int MeteorLayer = 14;
+
+
         public float Angle;
 
         public int NumberOfMeteors;
 
         public float Duration;
 
+        public float ShadowLightDuration;
+
         public float Radius; // Change this if we want a square/rectangular map.
 
         public int YSpawn;
 
         public float MeteoriteSpeed;
+
+        public Light SceneMainLight;
+
+        public Light ShadowLight;
+
+        public AnimationCurve ShadowLightIntensity;
+        
+        private float StartTime;
+        private bool Playing = false;
 
         [SerializeField]
         private GameObject _MeteorPrefab;
@@ -27,6 +41,8 @@ namespace con2.game
         void Start()
         {
             SetUpEvent();
+
+            Physics.IgnoreLayerCollision(LetIngredientsThroughWalls.InvisibleWallLayer, MeteorLayer, true);
         }
 
         public override void EventStart()
@@ -38,6 +54,9 @@ namespace con2.game
             {
                 _SpawningFrequencies.Enqueue(defaultFrequency + Random.Range(-adjustedFrequency, adjustedFrequency));
             }
+
+            Playing = true;
+            StartTime = Time.time;
         }
 
         public override IEnumerator EventImplementation()
@@ -57,6 +76,8 @@ namespace con2.game
             var targetPoint = ray.GetPoint(YSpawn);
             Debug.DrawLine(groundPosition, targetPoint, Color.green, 10);
 
+            ShadowLight.transform.rotation = Quaternion.LookRotation(-vector3Angle);
+
             var meteor = Instantiate(_MeteorPrefab, targetPoint, Quaternion.identity);
             var manager = meteor.GetComponent<Meteor>();
             manager.Speed = MeteoriteSpeed;
@@ -73,6 +94,29 @@ namespace con2.game
         public override Events.EventID GetEventID()
         {
             return Events.EventID.meteorites;
+        }
+
+        void Update()
+        {
+            ManageLights();
+        }
+
+        void ManageLights()
+        {
+            if (!Playing)
+                return;
+
+            var elapsed = Time.time - StartTime;
+            var progress = Mathf.Clamp01(elapsed / ShadowLightDuration);
+
+            if (elapsed > ShadowLightDuration)
+                Playing = false;
+
+
+            var shadowLightIntensity = ShadowLightIntensity.Evaluate(progress);
+            var mainLightIntensity = Mathf.Clamp01(1.0f - shadowLightIntensity);
+            ShadowLight.intensity = shadowLightIntensity;
+            SceneMainLight.intensity = mainLightIntensity;
         }
     }
 

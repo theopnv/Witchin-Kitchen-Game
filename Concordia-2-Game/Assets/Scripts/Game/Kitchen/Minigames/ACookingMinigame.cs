@@ -15,12 +15,11 @@ namespace con2.game
 
         [SerializeField]
         protected Text m_prompt;
-        private Vector3 stationLocation;
-        private SpawnPlayersController m_playerSpawner;
 
         [HideInInspector]
         public PlayerManager m_stationOwner;
         private KitchenStation m_kitchenStation;
+        private PlayerPickUpDropObject m_playerHolding;
 
         [SerializeField]
         protected bool m_started = false;
@@ -37,8 +36,8 @@ namespace con2.game
         // Start is called before the first frame update
         private void Start()
         {
-            stationLocation = this.transform.position;
             m_prompt.enabled = false;
+            m_playerHolding = m_stationOwner.gameObject.GetComponentInChildren<PlayerPickUpDropObject>();
         }
 
         // Update is called once per frame
@@ -53,7 +52,7 @@ namespace con2.game
         protected bool CheckPlayerIsNear(GameObject player)
         {
             Transform playerTransform = player.transform;
-            float distanceToKitchenStation = (playerTransform.position - stationLocation).magnitude;
+            float distanceToKitchenStation = (playerTransform.position - transform.position).magnitude;
             if (distanceToKitchenStation <= INTERACTION_DISTANCE && CheckPlayerFacingStation(playerTransform))
             {
                 return true;
@@ -64,7 +63,7 @@ namespace con2.game
         private bool CheckPlayerFacingStation(Transform player)
         {
             Vector3 playerFacing = player.TransformDirection(Vector3.forward);
-            Vector3 playerToStation = stationLocation - player.position;
+            Vector3 playerToStation = transform.position - player.position;
             double currentAngle = Math.Acos(Vector3.Dot(playerFacing, playerToStation) / (playerFacing.magnitude * playerToStation.magnitude));
             return currentAngle <= ToRadian(2 * FACING_DEGREE);
         }
@@ -104,6 +103,10 @@ namespace con2.game
             var samePlayer = m_stationOwner.ID == interactingPlayer.ID;
             if (m_started && (noOwner || samePlayer) && CheckPlayerIsNear(interactingPlayer.gameObject))
             {
+                if (!noOwner && m_playerHolding.IsHoldingObject())
+                {
+                    return false;
+                }
                 return TryToConsumeInput(input);
             }
             return false;

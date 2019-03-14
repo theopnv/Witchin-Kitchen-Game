@@ -7,7 +7,7 @@ public class Outline : MonoBehaviour
     public Color OutlineColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
 
     [Range(0.0f, 5.0f)]
-    public float OutlineWidth = 0.15f;
+    public float OutlineWidth = 0.02f;
 
     // We don't need to touch this unless we start seeing artifacts (incomplete outlines)
     [Range(0.0f, 180.0f)]
@@ -26,7 +26,7 @@ public class Outline : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         OutlineMaterial.SetColor("_OutlineColor", OutlineColor);
         OutlineMaterial.SetFloat("_OutlineWidth", OutlineWidth);

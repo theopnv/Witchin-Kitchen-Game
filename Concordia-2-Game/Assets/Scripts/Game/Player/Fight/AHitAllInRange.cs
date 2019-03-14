@@ -7,7 +7,7 @@ public abstract class AHitAllInRange : MonoBehaviour
     [SerializeField] protected float m_strength, m_stunTime;
 
     private List<KeyValuePair<GameObject, IPunchable[]>> m_punchablesInRadius;
-    public List<GameObject> m_immuneTargets;
+    [HideInInspector] public List<GameObject> m_immuneTargets;
 
     private void Awake()
     {
@@ -20,6 +20,11 @@ public abstract class AHitAllInRange : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.isTrigger)
+        {
+            return;
+        }
+
         IPunchable[] targetPunchableComponents = other.gameObject.GetComponentsInChildren<IPunchable>();
         if (targetPunchableComponents.Length > 0)
             m_punchablesInRadius.Add(new KeyValuePair<GameObject, IPunchable[]>(other.gameObject, targetPunchableComponents));

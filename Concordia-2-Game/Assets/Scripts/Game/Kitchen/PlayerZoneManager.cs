@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace con2.game
 {
@@ -19,6 +20,10 @@ namespace con2.game
         [SerializeField] private GameObject _PlayerSpawnPosition;
         [SerializeField] private GameObject _PlayerHUDPrefab;
 
+        [SerializeField]
+        [Tooltip("List of HUD rectangles icons")]
+        public List<Sprite> BackgroundRectangles = new List<Sprite>();
+
         void Start()
         {
             InitPlayer();
@@ -34,7 +39,7 @@ namespace con2.game
 
             Owner.ID = OwnerId;
             Owner.Name = PlayersInfo.Name[Owner.ID];
-            Owner.Color = PlayersInfo.Color[Owner.ID];
+            Owner.Color = ColorsManager.Get().PlayerMeshColors[Owner.ID];
         }
 
         void InitKitchen()
@@ -49,6 +54,9 @@ namespace con2.game
             var instance = Instantiate(_PlayerHUDPrefab, playersHUDZone.transform);
             Owner.PlayerHUD = instance.GetComponent<PlayerHUD>();
             Owner.PlayerHUD.OwnerId = Owner.ID;
+            var name = instance.transform.Find("Organizer/Recipe/Name");
+            name.GetComponentInChildren<Image>().sprite = BackgroundRectangles[Owner.ID];
+            name.GetComponentInChildren<Text>().text = Owner.Name;
         }
     }
 

@@ -7,12 +7,14 @@ namespace con2.game
 
     public abstract class KitchenStation : MonoBehaviour
     {
+        private ItemSpawner m_itemSpawner;
         private ACookingMinigame[] m_miniGames;
         protected Ingredient m_storedIngredient;
         protected RecipeManager m_recipeManager;
         private PlayerManager m_owner;
 
         protected abstract void OnAwake();
+        protected abstract void OnSetOwner(PlayerManager owner);
         public abstract bool ShouldAcceptIngredient(Ingredient type);
         protected abstract void OnCollectIngredient();
         public abstract void ProcessIngredient();
@@ -27,17 +29,17 @@ namespace con2.game
 
         private void OnCollisionEnter(Collision collision)
         {
-            PickableObject ingredient = collision.gameObject.GetComponent<PickableObject>();
+            var ingredient = collision.gameObject.GetComponent<PickableObject>();
             if (ingredient && !ingredient.IsHeld())
             {
-                IngredientType ingredientType = collision.gameObject.GetComponentInChildren<IngredientType>();
+                var ingredientType = collision.gameObject.GetComponentInChildren<IngredientType>();
                 if (ingredientType && ShouldAcceptIngredient(ingredientType.m_type))
                 {
                     OnCollectIngredient();
                     m_storedIngredient = ingredientType.m_type;
                     Destroy(collision.gameObject);
 
-                    int nextMinigame = Random.Range(0, m_miniGames.Length);
+                    var nextMinigame = Random.Range(0, m_miniGames.Length);
                     m_miniGames[nextMinigame].StartMinigame();
                 }
             }
@@ -50,6 +52,7 @@ namespace con2.game
             {
                 game.SetStationOwner(owner, this);
             }
+            OnSetOwner(owner);
         }
 
         public PlayerManager GetOwner() => m_owner;

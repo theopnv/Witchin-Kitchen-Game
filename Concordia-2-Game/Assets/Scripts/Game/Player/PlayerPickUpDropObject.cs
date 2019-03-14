@@ -28,7 +28,8 @@ namespace con2.game
 
         public bool ConsumeInput(GamepadAction input)
         {
-            if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
+            if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH)
+                || input.GetActionID().Equals(con2.GamepadAction.ID.RIGHT_TRIGGER))
             {
                 if (IsHoldingObject())
                     return true;
@@ -37,7 +38,7 @@ namespace con2.game
             if (input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
             {
                 if (IsHoldingObject())
-                    DropObject(transform.forward * m_throwForce);
+                    DropObject(m_playerRB.velocity*0.5f + m_throwForce*transform.forward);
                 else if (GetNearestItem())
                     PickUpObject();
                 else
@@ -94,6 +95,12 @@ namespace con2.game
 
             // Reposition the player hands (location)
             //mCharacterHands.localPosition = new Vector3(0.0f, playerSize.y + objectSize.y / 2.0f, 0.0f);
+        }
+
+        public void ForcePickUpObject(PickableObject obj)
+        {
+            m_heldObject = obj;
+            PickUpObject();
         }
 
         public void UpdateHeldObjectWeight()

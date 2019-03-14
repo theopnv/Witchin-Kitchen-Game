@@ -5,7 +5,7 @@ using UnityEngine;
 namespace con2.game
 {
 
-    public class FightStun : MonoBehaviour
+    public class FightStun : MonoBehaviour, IInputConsumer
     {
         public AnimationCurve modifierCurve;
         StunStars m_visualFeedback;
@@ -24,6 +24,19 @@ namespace con2.game
             timerMax = seconds;
             timerElapsed = 0.0f;
             m_visualFeedback.Play(seconds);
+        }
+
+        public bool ConsumeInput(GamepadAction input)
+        {
+            if (input.GetActionID().Equals(GamepadAction.ID.HORIZONTAL)
+                || input.GetActionID().Equals(GamepadAction.ID.VERTICAL))
+            {
+                return false;
+            }
+            else
+            {
+                return timerElapsed/timerMax <= 0.9f;
+            }
         }
 
         public float getMovementModifier()

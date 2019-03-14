@@ -20,6 +20,7 @@ namespace con2.game
 
         void Awake()
         {
+            Debug.Log(PlayersInfo.PlayerNumber);
             // Initialize players
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {

@@ -1,0 +1,10 @@
+ 
+Type: Amatic SC, Bold | VA: 120 ; Vertical Scale: 85% ; horizontal Scale: 112% 
+Font scale: 48pt (scale objects relative to this)
+
+Colour dark: #434343 white
+Colour light: white
+
+Rectangle opacity: 30%
+
+

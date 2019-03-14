@@ -45,20 +45,8 @@ namespace con2
         /// False otherwise
         /// </summary>
         /// <returns></returns>
-        public bool SendPlayerCharacteristics()
+        public bool SendPlayerCharacteristics(List<Player> playerList)
         {
-            var playerList = new List<Player>();
-            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
-            {
-                var player = new Player
-                {
-                    id = i,
-                    name = PlayersInfo.Name[i],
-                    color = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
-                };
-                playerList.Add(player);
-            }
-
             var players = new Players
             {
                 players = playerList,

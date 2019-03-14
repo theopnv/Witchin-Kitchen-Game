@@ -39,7 +39,7 @@ namespace con2
         // Start is called before the first frame update
         private void Start()
         {
-            ControllersState = new bool[2];
+            ControllersState = new bool[4];
             InvokeRepeating("UpdateControllersState", 0, _refreshFrequence);
         }
 

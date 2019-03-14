@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Net.Sockets;
-using con2.game;
 using con2.messages;
 using Newtonsoft.Json;
 using UnityEngine;
 using SocketIO;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
-using Event = con2.messages.Event;
-using Random = UnityEngine.Random;
+using Players = con2.game.Players;
 
 namespace con2
 {
@@ -44,6 +38,30 @@ namespace con2
             Debug.Log("SendSpellCastRequest");
             var serialized = JsonConvert.SerializeObject(viewer);
             _Socket.Emit(Command.LAUNCH_SPELL_CAST, new JSONObject(serialized));
+        }
+
+        public void SendGameStateUpdate()
+        {
+            var players = new List<Player>();
+            for (var i = 0; i < Players.Dic.Count; i++)
+            {
+                var player = Players.GetPlayerByID(i);
+                players.Add(new Player
+                {
+                    id = i,
+                    color = ColorUtility.ToHtmlStringRGBA(player.Color),
+                    name = player.Name,
+                    score = player.CompletedPotionCount,
+                });
+            }
+
+            var game = new Game
+            {
+                players = players,
+            };
+
+            var serialized = JsonConvert.SerializeObject(game);
+            _Socket?.Emit(Command.SEND_GAME_STATE, new JSONObject(serialized));
         }
 
         #endregion

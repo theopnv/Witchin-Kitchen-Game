@@ -62,7 +62,7 @@ namespace con2
         private static void SwitchContext(Func<int, List<IInputConsumer>> contextFunction)
         {
             //Ask gpm for number of player, use that number to set contexts (with playercontroller, and only allow menu input for p1)
-            for (int i = 0; i < GamepadMgr.NUM_PADS; i++)
+            for (int i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
                 GamepadMgr.Pad(i).SwitchGamepadContext(contextFunction(i), i);
             }
@@ -92,6 +92,9 @@ namespace con2
             var pmi = managers.GetComponentInChildren<PauseMenuInstantiator>();
             inputConsumers.Add(pmi);
 
+            var player = Players.GetPlayerByID(playerIndex);
+            inputConsumers.Add(player.GetComponent<FightStun>());
+
             var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
             var kitchenStations = new List<ACookingMinigame>();
             foreach (var kitchen in kitchenParents)
@@ -105,7 +108,6 @@ namespace con2
                 inputConsumers.Add(station);
             }
 
-            var player = Players.GetPlayerByID(playerIndex);
             inputConsumers.Add(player.GetComponent<PlayerInputController>());
 
             return inputConsumers;

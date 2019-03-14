@@ -47,12 +47,15 @@ public class Grass : MonoBehaviour
 
     // Wind anim stuff
     private float CurTime = 0.0f;
+    public float DisplacementStrength = 1.0f;
+    public float Flexibility = 1.0f;
     public float WindStrength = 2.0f;
     public float WindScrollSpeed = 0.1f;
     public Vector3 WindDirection = new Vector3();
     public float WindDirectionModulationTimeScale = 0.1f;
     public float WindDirectionModulationStrength = 0.5f;
     public float RollingWindPositionScale = 0.001f;
+    public Vector3 Scale = new Vector3(1.0f, 1.0f, 1.0f);
     private Vector3 WindDirectionModulated = new Vector3();
     private Texture2D RollingWindTex;
     private Vector2 RollingWindOffset = new Vector2();
@@ -78,10 +81,10 @@ public class Grass : MonoBehaviour
         propertyBlock = new MaterialPropertyBlock();
 
         targetBounds = target.GetComponent<MeshRenderer>().bounds;
-        var w = targetBounds.size.x - mMeshRenderer.bounds.size.x * 2.0f;
-        var d = targetBounds.size.z - mMeshRenderer.bounds.size.z * 2.0f;
-        var startX = targetBounds.min.x + mMeshRenderer.bounds.size.x - target.transform.position.x;
-        var startZ = targetBounds.min.z + mMeshRenderer.bounds.size.z - target.transform.position.z;
+        var w = targetBounds.size.x;
+        var d = targetBounds.size.z;
+        var startX = targetBounds.min.x - target.transform.position.x;
+        var startZ = targetBounds.min.z - target.transform.position.z;
 
         //print(w);
         //print(d);
@@ -174,12 +177,15 @@ public class Grass : MonoBehaviour
             propertyBlock.SetVectorArray("_InstancePosition", bucket.PositionArray);
 
             propertyBlock.SetFloat("_CurTime", CurTime);
+            propertyBlock.SetFloat("_DisplacementStrength", DisplacementStrength);
+            propertyBlock.SetFloat("_Flexibility", Flexibility);
             propertyBlock.SetFloat("_WindStrength", WindStrength);
             propertyBlock.SetVector("_WindDirection", WindDirectionModulated);
             propertyBlock.SetFloat("_RollingWindPositionScale", RollingWindPositionScale);
             propertyBlock.SetTexture("_RollingWindTex", RollingWindTex);
             propertyBlock.SetVector("_RollingWindOffset", RollingWindOffset);
             propertyBlock.SetFloat("_MeshHeight", MeshHeight);
+            propertyBlock.SetVector("_Scale", Scale);
             propertyBlock.SetTexture("_Displacement", DisplacementMap.Get().rt);
 
             var grassBounds = new Vector4();

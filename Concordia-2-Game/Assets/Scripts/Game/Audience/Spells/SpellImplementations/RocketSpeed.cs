@@ -20,14 +20,17 @@ namespace con2.game
         {
             var player = Players.GetPlayerByID(_TargetedPlayer.id);
             var playerMovement = player.GetComponentInChildren<PlayerMovement>();
+            var rainbowTrail = player.GetComponentInChildren<TrailRenderer>();
 
             playerMovement.ModulateMovementSpeed(m_movementModulator);
             playerMovement.ModulateRotationSpeed(m_rotationModulator);
+            rainbowTrail.emitting = true;
 
             yield return new WaitForSeconds(m_rocketSpeedDuration);
 
             playerMovement.ModulateMovementSpeed(1.0f / m_movementModulator);
             playerMovement.ModulateRotationSpeed(1.0f / m_rotationModulator);
+            rainbowTrail.emitting = false;
         }
 
         public override Spells.SpellID GetSpellID()

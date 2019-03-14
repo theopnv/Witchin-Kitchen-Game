@@ -12,14 +12,25 @@ namespace con2.game
     {
         public override void OnInspectorGUI()
         {
-            serializedObject.Update();
             EditorGUILayout.PropertyField(
                 serializedObject.FindProperty(
-                    "Radius"),
+                    "_MinX"),
                 true);
             EditorGUILayout.PropertyField(
                 serializedObject.FindProperty(
-                    "UseTimerMode"),
+                    "_MaxX"),
+                true);
+            EditorGUILayout.PropertyField(
+                serializedObject.FindProperty(
+                    "_MinZ"),
+                true);
+            EditorGUILayout.PropertyField(
+                serializedObject.FindProperty(
+                    "_MaxZ"),
+                true);
+            EditorGUILayout.PropertyField(
+                serializedObject.FindProperty(
+                    "_ForbiddenAreas"),
                 true);
             EditorGUILayout.PropertyField(
                 serializedObject.FindProperty(

@@ -48,19 +48,36 @@ namespace con2.game
             set
             {
                 _Color = value;
-                GetComponent<Renderer>().material.color = value;
+                var renderers = GetComponentsInChildren<Renderer>();
+                foreach (var renderer in renderers)
+                { 
+                    renderer.material.color = value;
+                }
                 Players.Dic[ID] = this;
             }
         }
 
-        private int _Score;
+        private int _CompletedPotionCount;
 
-        public int Score
+        public int CompletedPotionCount
         {
-            get => _Score;
+            get => _CompletedPotionCount;
             set
             {
-                _Score = value;
+                _CompletedPotionCount = value;
+                Players.Dic[ID] = this;
+                _PlayerHUD.Score.text = _CompletedPotionCount.ToString();
+            }
+        }
+
+        private int _CollectedIngredientCount;
+
+        public int CollectedIngredientCount
+        {
+            get => _CollectedIngredientCount;
+            set
+            {
+                _CollectedIngredientCount = value;
                 Players.Dic[ID] = this;
             }
         }

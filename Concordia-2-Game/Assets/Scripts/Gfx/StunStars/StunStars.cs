@@ -38,7 +38,7 @@ public class StunStars : MonoBehaviour
     void Start()
     {
         OwnRenderer = GetComponent<Renderer>();
-        TargetRenderer = FollowTarget.GetComponent<Renderer>();
+        TargetRenderer = FollowTarget.GetComponentInChildren<Renderer>();
 
         // Hide at start
         transform.localScale = new Vector3(0.0f, 0.0f, 0.0f);

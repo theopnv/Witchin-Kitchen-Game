@@ -6,7 +6,7 @@ namespace con2.game
     public class PickableObject : MonoBehaviour
     {
         // The object's rigidbody
-        private Rigidbody m_rb;
+        protected Rigidbody m_rb;
         private bool m_isHeld = false;
 
         void Start()
@@ -19,13 +19,19 @@ namespace con2.game
         {
             if (m_isHeld)
             {
-                transform.position = transform.parent.position;
-                m_rb.velocity = currentVel / m_rb.mass;
+                var parent = transform.parent;
+                if (parent)
+                {
+                    transform.position = parent.position;
+                    m_rb.velocity = currentVel / m_rb.mass;
+                }
+                else
+                    m_isHeld = false;
             }
         }
 
         // Get picked up
-        public void PickUp(Transform newParent)
+        virtual public void PickUp(Transform newParent)
         {
             m_isHeld = true;
 
@@ -34,6 +40,11 @@ namespace con2.game
             transform.parent = newParent;
 
             transform.position = newParent.position;
+
+            if (m_rb == null)
+            {
+                m_rb = GetComponent<Rigidbody>();
+            }
 
             // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
             m_rb.useGravity = false;
