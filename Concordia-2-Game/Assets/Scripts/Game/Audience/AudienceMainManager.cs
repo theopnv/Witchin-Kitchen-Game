@@ -24,8 +24,8 @@ namespace con2.game
 
         void UpdateHUD()
         {
-            _RoomPin.text = "Room's PIN: " + GameInfo.RoomId;
-            _ViewersNumber.text = "Number of judges: " + GameInfo.Viewers.Count;
+            _RoomPin.text = GameInfo.RoomId.ToString();
+            _ViewersNumber.text = GameInfo.Viewers.Count.ToString();
         }
 
     }

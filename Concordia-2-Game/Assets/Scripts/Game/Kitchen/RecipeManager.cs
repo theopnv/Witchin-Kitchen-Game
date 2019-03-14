@@ -33,7 +33,7 @@ namespace con2.game
         void NextRecipe()
         {
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
-            UpdateRecipeUI();
+            SetNewRecipeUI();
             var owner = m_thisStation.GetOwner();
             owner.CompletedPotionCount = m_currentRecipeIndex;
             m_mgm.UpdateRanks();
@@ -45,9 +45,14 @@ namespace con2.game
             }
         }
 
-        void UpdateRecipeUI()
+        void SetNewRecipeUI()
         {
-            m_currentPotionRecipe.UpdateRecipeUI(m_recipeUI);
+            m_currentPotionRecipe.SetNewRecipeUI(m_recipeUI);
+        }
+
+        void UpdateRecipeUI(Ingredient collected)
+        {
+            m_currentPotionRecipe.UpdateRecipeUI(m_recipeUI, collected);
         }
 
         public bool CollectIngredient(Ingredient collectedIngredient)
@@ -55,7 +60,7 @@ namespace con2.game
             if (m_currentPotionRecipe.IsIngredientNeeded(collectedIngredient) && !m_thisStation.IsStoringIngredient())
             {
                 m_currentPotionRecipe.CollectIngredient(collectedIngredient);
-                UpdateRecipeUI();
+                UpdateRecipeUI(collectedIngredient);
                 m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
                 var owner = m_thisStation.GetOwner();
                 owner.CollectedIngredientCount++;
@@ -150,21 +155,34 @@ namespace con2.game
             m_isComplete = complete;
         }
 
-        public void UpdateRecipeUI(PlayerHUD recipeUI)
+        public void UpdateRecipeUI(PlayerHUD recipeUI, Ingredient collected)
         {
             List<Image> newIcons = new List<Image>();
             foreach (IngredientStatus status in m_fullRecipe)
             {
                 Image icon = GlobalRecipeList.IconSprites[status.m_type];
                 newIcons.Add(icon);
+            }
+            recipeUI.CollectIngredient(collected);
+        }
+
+        public void SetNewRecipeUI(PlayerHUD recipeUI)
+        {
+            List<Image> newIcons = new List<Image>();
+            foreach (IngredientStatus status in m_fullRecipe)
+            {
+                Image icon = GlobalRecipeList.IconSprites[status.m_type];
+                newIcons.Add(icon);
+                /*
+                var renderer = icon.GetComponent<Image>();
+                var color = renderer.color;
                 if (status.m_collected == true)
                 {
-                    var renderer = icon.GetComponent<Image>();
-                    var color = renderer.color;
                     renderer.color = new Color(0.5f*color.r, 0.5f*color.g, 0.5f * color.b, 0.5f);
                 }
+                */
             }
-            recipeUI.UpdateRecipeIcons(newIcons);
+            recipeUI.SetNewRecipeIcons(newIcons);
         }
 
         public bool IsComplete()

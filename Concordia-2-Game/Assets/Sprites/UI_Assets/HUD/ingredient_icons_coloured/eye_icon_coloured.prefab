@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8573396863440492178}
   - component: {fileID: 8573396863440492179}
   - component: {fileID: 9134334915603434428}
+  - component: {fileID: 5155042965596435033}
   m_Layer: 0
   m_Name: eye_icon_coloured
   m_TagString: Untagged
@@ -74,7 +75,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 1
+  m_UseSpriteMesh: 0
 --- !u!114 &9134334915603434428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,3 +96,16 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &5155042965596435033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573396863440492188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f36c151d2635f43a5c461fac8c0dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 1

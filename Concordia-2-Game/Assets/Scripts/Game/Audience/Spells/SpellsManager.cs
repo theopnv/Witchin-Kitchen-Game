@@ -114,7 +114,7 @@ namespace con2.game
         {
             var message = spell.caster.name + " casted " + Spells.EventList[(Spells.SpellID) spell.spellId] + " on you";
             var player = Players.GetPlayerByID(spell.targetedPlayer.id);
-            player.SendMessageToPlayerInHUD(message, Color.magenta);
+            player.SendMessageToPlayerInHUD(message, Color.white);
         }
 
         #endregion

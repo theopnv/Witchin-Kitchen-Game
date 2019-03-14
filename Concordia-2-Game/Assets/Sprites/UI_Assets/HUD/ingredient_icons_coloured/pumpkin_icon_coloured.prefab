@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6722457858213151132}
   - component: {fileID: 8846902297067964224}
   - component: {fileID: 2390480541284834363}
+  - component: {fileID: 6058228997626681477}
   m_Layer: 0
   m_Name: pumpkin_icon_coloured
   m_TagString: Untagged
@@ -74,7 +75,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 1
+  m_UseSpriteMesh: 0
 --- !u!114 &2390480541284834363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,3 +96,16 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &6058228997626681477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8197857777404942021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f36c151d2635f43a5c461fac8c0dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 5

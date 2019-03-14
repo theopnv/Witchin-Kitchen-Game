@@ -2,17 +2,14 @@ fileFormatVersion: 2
 guid: d1c53d3e3760aec45a9910ab44c9a428
 ScriptedImporter:
   fileIDToRecycleName:
-    100000: gameObject/rect_blue
-    400000: gameObject/rect_blue/Transform
-    21200000: gameObject/rect_blue/SpriteRenderer
+    2800000: tex
     21300000: sprite
-    100100000: gameObject
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: a57477913897c46af95d590f580878bd, type: 3}
-  svgType: 0
+  svgType: 1
   texturedSpriteMeshType: 0
   svgPixelsPerUnit: 100
   gradientResolution: 128
