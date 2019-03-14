@@ -171,16 +171,7 @@ namespace con2.game
             List<Image> newIcons = new List<Image>();
             foreach (IngredientStatus status in m_fullRecipe)
             {
-                Image icon = GlobalRecipeList.IconSprites[status.m_type];
-                newIcons.Add(icon);
-                /*
-                var renderer = icon.GetComponent<Image>();
-                var color = renderer.color;
-                if (status.m_collected == true)
-                {
-                    renderer.color = new Color(0.5f*color.r, 0.5f*color.g, 0.5f * color.b, 0.5f);
-                }
-                */
+                newIcons.Add(GlobalRecipeList.IconSprites[status.m_type]);
             }
             recipeUI.SetNewRecipeIcons(newIcons);
         }
