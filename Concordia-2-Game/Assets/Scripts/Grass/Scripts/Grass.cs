@@ -54,6 +54,7 @@ public class Grass : MonoBehaviour
     public float WindDirectionModulationTimeScale = 0.1f;
     public float WindDirectionModulationStrength = 0.5f;
     public float RollingWindPositionScale = 0.001f;
+    public Vector3 Scale = new Vector3(1.0f, 1.0f, 1.0f);
     private Vector3 WindDirectionModulated = new Vector3();
     private Texture2D RollingWindTex;
     private Vector2 RollingWindOffset = new Vector2();
@@ -79,10 +80,10 @@ public class Grass : MonoBehaviour
         propertyBlock = new MaterialPropertyBlock();
 
         targetBounds = target.GetComponent<MeshRenderer>().bounds;
-        var w = targetBounds.size.x - mMeshRenderer.bounds.size.x * 2.0f;
-        var d = targetBounds.size.z - mMeshRenderer.bounds.size.z * 2.0f;
-        var startX = targetBounds.min.x + mMeshRenderer.bounds.size.x - target.transform.position.x;
-        var startZ = targetBounds.min.z + mMeshRenderer.bounds.size.z - target.transform.position.z;
+        var w = targetBounds.size.x;
+        var d = targetBounds.size.z;
+        var startX = targetBounds.min.x - target.transform.position.x;
+        var startZ = targetBounds.min.z - target.transform.position.z;
 
         //print(w);
         //print(d);
@@ -182,6 +183,7 @@ public class Grass : MonoBehaviour
             propertyBlock.SetTexture("_RollingWindTex", RollingWindTex);
             propertyBlock.SetVector("_RollingWindOffset", RollingWindOffset);
             propertyBlock.SetFloat("_MeshHeight", MeshHeight);
+            propertyBlock.SetVector("_Scale", Scale);
             propertyBlock.SetTexture("_Displacement", DisplacementMap.Get().rt);
 
             var grassBounds = new Vector4();

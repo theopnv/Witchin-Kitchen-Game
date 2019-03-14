@@ -14,6 +14,7 @@
         _RollingWindTex("Rolling wind texture", 2D) = "black" {}
         _RollingWindOffset("Rolling wind texture", Vector) = (0.0, 0.0, 0.0, 0.0)
         _MeshHeight("Height of the mesh", Float) = 1.0
+        _Scale("Scale", Vector) = (1.0, 1.0, 1.0, 1.0)
         _Displacement("Displacement R,G = direction, B = intensity, A is unused", 2D) = "black"
         _Bounds("X,Y = back left, Z,W = width,depth", Vector) = (0.0, 0.0, 0.0, 0.0)
 
@@ -46,6 +47,7 @@
         float4 _RollingWindOffset;
         float _MeshHeight;
         sampler2D _Displacement;
+        float4 _Scale;
         float4 _Bounds;
 
         struct Input
@@ -66,7 +68,7 @@
 
             float4 outVertex = v.vertex;
             float3 addVertex = float3(0.0f, 0.0f, 0.0f);
-            float vertexLength = length(v.vertex.xyz);
+            float vertexLength = length(outVertex.xyz);
 
             float4 instancePosition = UNITY_ACCESS_INSTANCED_PROP(Props, _InstancePosition);
             float2 rollingWindSampleCoords = instancePosition.xz * _RollingWindPositionScale + _RollingWindOffset;
@@ -91,7 +93,7 @@
             addVertex.xz += displacementDirection.xy * displacement.z * bendFactor;
 
 
-            outVertex.xyz = normalize(outVertex.xyz + addVertex * _Flexibility) * vertexLength;
+            outVertex.xyz = normalize(outVertex.xyz + addVertex * _Flexibility) * vertexLength * _Scale.xyz;
             o.vertex = outVertex;
             v.vertex = outVertex;
         }

@@ -5430,6 +5430,31 @@ PrefabInstance:
       propertyPath: prefabScale
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 181414314283483913, guid: e4134959079ad8a4db15cf558cc046b8,
+        type: 3}
+      propertyPath: Scale.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 181414314283483913, guid: e4134959079ad8a4db15cf558cc046b8,
+        type: 3}
+      propertyPath: Scale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181414314283483913, guid: e4134959079ad8a4db15cf558cc046b8,
+        type: 3}
+      propertyPath: Scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181414314283483913, guid: e4134959079ad8a4db15cf558cc046b8,
+        type: 3}
+      propertyPath: RollingWindPositionScale
+      value: 0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 181414314283483913, guid: e4134959079ad8a4db15cf558cc046b8,
+        type: 3}
+      propertyPath: Flexibility
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4134959079ad8a4db15cf558cc046b8, type: 3}
 --- !u!4 &2016537469 stripped
