@@ -1,0 +1,12 @@
+Type: Work Sans, Light | VA: 20; horizontal Scale: 112%; leading: 9pt
+Font scale: approximate (sorry)
+
+Type: Amatic SC, Bold | VA: 140; horizontal Scale: 112% 
+Font scale: 48pt (scale objects relative to this)
+
+Colour dark: #434343 white
+Colour light: white
+
+Rectangle opacity: 30%
+
+
