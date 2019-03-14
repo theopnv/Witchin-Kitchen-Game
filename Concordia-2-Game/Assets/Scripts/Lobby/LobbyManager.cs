@@ -49,7 +49,7 @@ namespace con2.lobby
             InstantiatePlayerUi(0, "Gandalf the OG", Color.red);
             InstantiatePlayerUi(1, "Sabrina the Tahini Witch", Color.blue);
             InstantiatePlayerUi(2, "Snape the Punch-master", Color.green);
-            InstantiatePlayerUi(3, "Wicked Witch of Western Cuisine", Color.yellow);
+            InstantiatePlayerUi(3, "Herbione Grainger", Color.yellow);
 
             // If controllers are already connected we activate players UIs right from the start
             var controllerState = _DetectController.ControllersState;
