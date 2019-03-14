@@ -1377,17 +1377,19 @@ MonoBehaviour:
   - Type: 0
     Prefab: {fileID: 8340910405799370762, guid: de53b678d6e39ea41a94cfa6883e159d,
       type: 3}
-    SpawnDelay: 45
+    UseTimerMode: 1
+    SpawnDelay: 20
     FirstSpawnDelay: 0
-    MaxNbOfInstances: 1
+    MaxNbOfInstances: 4
     ActivateRandomPosMode: 1
     Area: {fileID: 0}
     TimeSinceSpawn: 0
   - Type: 1
     Prefab: {fileID: 4223523222216322606, guid: 45764d7e8ef4d2e4eba1bd2099847369,
       type: 3}
-    SpawnDelay: 40
-    FirstSpawnDelay: 1
+    UseTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
     MaxNbOfInstances: 1
     ActivateRandomPosMode: 0
     Area: {fileID: 213108576}
@@ -1395,8 +1397,9 @@ MonoBehaviour:
   - Type: 4
     Prefab: {fileID: 5532703018747530490, guid: a6990a6bcd7d62c44a87719b2aa8889d,
       type: 3}
-    SpawnDelay: 45
-    FirstSpawnDelay: 2
+    UseTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
     MaxNbOfInstances: 1
     ActivateRandomPosMode: 0
     Area: {fileID: 737448633}
@@ -1404,6 +1407,7 @@ MonoBehaviour:
   - Type: 3
     Prefab: {fileID: 2445369503663072453, guid: 3e11b5ea44d5c9844a96d67630a34056,
       type: 3}
+    UseTimerMode: 1
     SpawnDelay: 20
     FirstSpawnDelay: 7
     MaxNbOfInstances: 4
@@ -1413,8 +1417,9 @@ MonoBehaviour:
   - Type: 2
     Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
       type: 3}
-    SpawnDelay: 45
-    FirstSpawnDelay: 3
+    UseTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
     MaxNbOfInstances: 1
     ActivateRandomPosMode: 0
     Area: {fileID: 1010139671}
@@ -1422,8 +1427,9 @@ MonoBehaviour:
   - Type: 5
     Prefab: {fileID: 2149888162642991435, guid: 44e1da904c5e2dd44af8772bc983d4dd,
       type: 3}
-    SpawnDelay: 45
-    FirstSpawnDelay: 3
+    UseTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
     MaxNbOfInstances: 1
     ActivateRandomPosMode: 0
     Area: {fileID: 1593869648}
@@ -3212,7 +3218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010139669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.03, y: 0, z: 4.78}
+  m_LocalPosition: {x: -12, y: 0, z: 4.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 768667705}

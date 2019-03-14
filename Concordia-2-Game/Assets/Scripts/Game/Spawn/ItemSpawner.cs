@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using con2.messages;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -87,7 +88,9 @@ namespace con2.game
             foreach (var item in SpawnableItemsList)
             {
                 item.TimeSinceSpawn += Time.deltaTime;
-                if (item.TimeSinceSpawn >= item.SpawnDelay)
+                if (item.UseTimerMode 
+                    && item.TimeSinceSpawn >= item.SpawnDelay
+                    && _SpawnedItems[item.Type].Count >= item.MaxNbOfInstances)
                 {
                     InstantiateOnMap(item);
                     item.TimeSinceSpawn = 0f;
@@ -143,51 +146,11 @@ namespace con2.game
         }
 
         /// <summary>
-        /// Returns true if an item was destroyed.
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        private bool RefreshPool(SpawnableItem item)
-        {
-            if (_SpawnedItems[item.Type].Count >= item.MaxNbOfInstances)
-            {
-                var toRemove = _SpawnedItems[item.Type][0];
-                if (toRemove == null || toRemove.gameObject == null)
-                {
-                    _SpawnedItems[item.Type].RemoveAt(0);
-                    
-                }
-                else
-                {
-                    var pickManager = toRemove.gameObject.GetComponent<PickableObject>();
-                    if (!pickManager)
-                    {
-                        Debug.LogError("Could not find PickableObject component on the ingredient");
-                    }
-
-                    if (pickManager.IsHeld())
-                    {
-                        return false;
-                    }
-
-                    _SpawnedItems[item.Type].RemoveAt(0);
-                    Destroy(toRemove.gameObject);
-                }
-            }
-
-            return true;
-        }
-
-        /// <summary>
         /// Actual instantiation on the map
         /// </summary>
         /// <param name="prefab"></param>
         private void InstantiateOnMap(SpawnableItem item)
         {
-            if (!RefreshPool(item))
-            {
-                return;
-            }
             var position = new Vector3
             {
                 x = FindValidPoint(
