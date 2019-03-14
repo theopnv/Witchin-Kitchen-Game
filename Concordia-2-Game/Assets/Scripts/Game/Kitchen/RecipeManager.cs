@@ -24,10 +24,6 @@ namespace con2.game
             {
                 m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
             }
-            if (m_score == null)
-            {
-                m_score = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Score;
-            }
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             m_mgm = managers.GetComponentInChildren<MainGameManager>();
             NextRecipe();
@@ -38,8 +34,7 @@ namespace con2.game
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
             m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
             var owner = m_thisStation.GetOwner();
-            owner.Score = m_currentRecipeIndex;
-            m_score.text = owner.Score.ToString();
+            owner.CompletedPotionCount = m_currentRecipeIndex;
             m_mgm.UpdateRanks();
             m_audienceInteractionManager.SendGameStateUpdate();
             if (m_currentRecipeIndex > 0)
@@ -56,6 +51,8 @@ namespace con2.game
                 m_currentPotionRecipe.CollectIngredient(collectedIngredient);
                 m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
                 m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
+                var owner = m_thisStation.GetOwner();
+                owner.CollectedIngredientCount++;
                 return true;
             }
             return false;

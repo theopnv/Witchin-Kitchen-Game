@@ -51,7 +51,7 @@ namespace con2
                     id = i,
                     color = ColorUtility.ToHtmlStringRGBA(player.Color),
                     name = player.Name,
-                    score = player.Score,
+                    score = player.CompletedPotionCount,
                 });
             }
 
