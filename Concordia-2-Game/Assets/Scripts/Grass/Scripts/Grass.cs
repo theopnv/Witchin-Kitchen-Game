@@ -14,9 +14,11 @@ public class Grass : MonoBehaviour
     private Bounds targetBounds;
     public GameObject prefab;
     public float prefabScale = 1.0f;
+    public Vector3 minScale = new Vector3(0.35f, 0.25f, 0.35f);
     public Material meshMaterial;
     public Texture2D colorMap;
     public Texture2D instanceMap;
+    public Texture2D heightMap;
 
     private MeshFilter mMeshFilter;
     private MeshRenderer mMeshRenderer;
@@ -144,10 +146,13 @@ public class Grass : MonoBehaviour
                     currentBucket = new BatchBucket();
                     Buckets.Add(currentBucket);
                 }
+                
+                var lerpFactor = 1.0f - heightMap.GetPixelBilinear(progressX, progressZ).r;
+                var instanceScale = scale - lerpFactor * (scale - minScale);
 
                 currentBucket.PositionArray[currentBucket.NumInstances] = pos;
                 currentBucket.MatrixArray[currentBucket.NumInstances] = Matrix4x4.identity;
-                currentBucket.MatrixArray[currentBucket.NumInstances].SetTRS(pos, Quaternion.identity, scale);
+                currentBucket.MatrixArray[currentBucket.NumInstances].SetTRS(pos, Quaternion.identity, instanceScale);
                 currentBucket.ColorArray[currentBucket.NumInstances] = colorMap.GetPixelBilinear(progressX, progressZ);
 
                 currentBucket.NumInstances++;
