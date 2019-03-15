@@ -632,6 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1730322773}
   rt: {fileID: 0}
+  prevrt: {fileID: 0}
   target: {fileID: 2029797792}
   targetBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -3306,7 +3307,7 @@ MonoBehaviour:
     m_Bits: 256
   stopNaNPropagation: 0
   finalBlitToCameraTarget: 1
-  antialiasingMode: 0
+  antialiasingMode: 3
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -5921,6 +5922,11 @@ PrefabInstance:
       propertyPath: minScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 181414314283483913, guid: e4134959079ad8a4db15cf558cc046b8,
+        type: 3}
+      propertyPath: motionVectorsMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 0adba6537c141e64e8d744021406d887, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4134959079ad8a4db15cf558cc046b8, type: 3}
 --- !u!4 &2016537469 stripped
