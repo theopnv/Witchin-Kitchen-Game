@@ -39,7 +39,9 @@ namespace con2.game
 
                 //Spawn an eye ingredient
                 m_eyeCount--;
-                var newEye = Instantiate(m_eyeIngredientPrefab, transform.position, Quaternion.identity);
+                var pos = transform.position;
+                pos.x -= 1f; // Shift instantiation on the side a bit to avoid colliders overlapping and making the newt jump 20 feet high
+                var newEye = Instantiate(m_eyeIngredientPrefab, pos, Quaternion.identity);
                 var eyePickable = newEye.GetComponent<PickableObject>();
                 var playerPickup = newParent.parent.gameObject.GetComponent<PlayerPickUpDropObject>();
                 playerPickup.ForcePickUpObject(eyePickable);
@@ -47,6 +49,10 @@ namespace con2.game
                 //Swap out eye for an eyepatch
                 m_eyes[m_eyeCount].SetActive(false);
                 StartCoroutine(AddBandage());
+                if (m_eyeCount <= 0)
+                {
+                    StartCoroutine(Despawn());
+                }
             }
         }
 
