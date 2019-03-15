@@ -1182,9 +1182,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fireballPrefab: {fileID: 2061191736115989615, guid: afc0f1c562ef2434581dc4d750d2ec1f,
     type: 3}
+  _FireballIndicatorPrefab: {fileID: 4565021023995713173, guid: 05544762bb303a944bf170ff12bbf93d,
+    type: 3}
   m_spawnLocation: {fileID: 8006554420184790311}
   m_reloadSeconds: 15
   m_recoil: 20
+  m_indicator: {fileID: 0}
 --- !u!1 &9017638658279021675
 GameObject:
   m_ObjectHideFlags: 0

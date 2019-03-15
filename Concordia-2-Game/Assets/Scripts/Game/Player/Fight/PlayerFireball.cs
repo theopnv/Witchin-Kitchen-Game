@@ -8,10 +8,12 @@ namespace con2.game
     public class PlayerFireball : MonoBehaviour, IInputConsumer
     {
         [SerializeField] private GameObject m_fireballPrefab;
+        [SerializeField] private GameObject _FireballIndicatorPrefab;
         [SerializeField] private GameObject m_spawnLocation;
         [SerializeField] public float m_reloadSeconds, m_recoil;
 
         private Rigidbody m_player;
+        public FireballEmberIndicator m_indicator;
         private bool m_canCastFireball = true;
 
         public void Start()
@@ -20,6 +22,9 @@ namespace con2.game
             if (parent)
             {
                 m_player = parent.gameObject.GetComponent<Rigidbody>();
+                var fireballIndicatior = Instantiate(_FireballIndicatorPrefab);
+                m_indicator = fireballIndicatior.GetComponent<FireballEmberIndicator>();
+                m_indicator.SetPlayer(m_player.gameObject);
             }
         }
 
@@ -86,8 +91,10 @@ namespace con2.game
         private IEnumerator FireballCooldown()
         {
             m_canCastFireball = false;
+            m_indicator.SetCharged(false);
             yield return new WaitForSeconds(m_reloadSeconds);
             m_canCastFireball = true;
+            m_indicator.SetCharged(true);
         }
 
         public void ModulateReloadTime(float reloadModulator)
