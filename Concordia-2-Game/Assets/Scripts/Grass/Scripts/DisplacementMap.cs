@@ -17,6 +17,7 @@ public class DisplacementMap : MonoBehaviour
 
     public Camera cam;
     public RenderTexture rt;
+    public RenderTexture prevrt;
     public GameObject target;
     public Bounds targetBounds;
     public int pixelsPerGameUnit = 10;
@@ -35,7 +36,13 @@ public class DisplacementMap : MonoBehaviour
         rt.wrapModeU = TextureWrapMode.Clamp;
         rt.wrapModeV = TextureWrapMode.Clamp;
         rt.Create();
-        
+
+        prevrt = new RenderTexture(w, h, 0, RenderTextureFormat.ARGB32);
+        prevrt.filterMode = FilterMode.Bilinear;
+        prevrt.wrapModeU = TextureWrapMode.Clamp;
+        prevrt.wrapModeV = TextureWrapMode.Clamp;
+        prevrt.Create();
+
         cam.orthographic = true;
         cam.cullingMask = 1 << GRASS_DISPLACEMENT_LAYER;
         cam.targetTexture = rt;
@@ -59,12 +66,21 @@ public class DisplacementMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    void OnRenderObject()
+    {
+        // Save the current frame's displacement map
+        if (Camera.current == cam)
+        {
+            Graphics.CopyTexture(rt, prevrt);
+        }
     }
 }
