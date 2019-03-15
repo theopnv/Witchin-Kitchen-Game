@@ -9,7 +9,7 @@ namespace con2.game
 
     public class TriggerMash : ACookingMinigame
     {
-        private bool m_expectingLeft = true;
+        private bool m_expectingLeft = true, m_leftWasRaised = true, m_rightWasRaised = true;
 
         private int m_numberOfPressesRequired;
         public float m_timeToLoseProgress = 1.0f;
@@ -17,7 +17,7 @@ namespace con2.game
         private int m_currentNumberOfPresses = 0;
         private float m_lastMashTime = 0;
 
-        private SpoonMash m_masher;
+        private SpoonTap m_tapper;
 
         public override void BalanceMinigame()
         {
@@ -42,29 +42,39 @@ namespace con2.game
 
             m_prompt.text = "Alternate L and R triggers!";
 
-            m_masher = GetComponentInChildren<SpoonMash>();
-            m_masher.StartMash();
+            m_tapper = GetComponentInChildren<SpoonTap>();
+            m_tapper.StartTap();
         }
 
         public override bool TryToConsumeInput(GamepadAction input)
         {
-            if (input.GetActionID().Equals(ID.LEFT_TRIGGER) && input.m_axisValue > 0.8)
-            { 
-                if (m_expectingLeft && input.m_axisValue > 0.8)
+            if (input.GetActionID().Equals(ID.LEFT_TRIGGER))
+            {
+                if (m_expectingLeft && m_leftWasRaised && input.m_axisValue > 0.9f)
                 {
-                    Debug.Log("Left Trigger");
+                    m_leftWasRaised = false;
                     AcceptMash();
+                }
+
+                if (!m_leftWasRaised && input.m_axisValue < 0.7f)
+                {
+                    m_leftWasRaised = true;
                 }
 
                 return true;
             }
 
-            if (input.GetActionID().Equals(ID.RIGHT_TRIGGER) && input.m_axisValue > 0.8)
+            if (input.GetActionID().Equals(ID.RIGHT_TRIGGER))
             {
-                if (!m_expectingLeft && input.m_axisValue > 0.8)
+                if (!m_expectingLeft && m_rightWasRaised && input.m_axisValue > 0.9f)
                 {
-                    Debug.Log("Right Trigger");
+                    m_rightWasRaised = false;
                     AcceptMash();
+                }
+
+                if (!m_rightWasRaised && input.m_axisValue < 0.7f)
+                {
+                    m_rightWasRaised = true;
                 }
 
                 return true;
@@ -77,7 +87,6 @@ namespace con2.game
         {
             m_lastMashTime = Time.time;
             m_currentNumberOfPresses++;
-            m_masher.Mash();
 
             if (m_currentNumberOfPresses >= m_numberOfPressesRequired)
             {
@@ -85,6 +94,7 @@ namespace con2.game
             }
 
             m_expectingLeft = !m_expectingLeft;
+            m_tapper.Aim(m_expectingLeft);
         }
 
         override public void UpdateMinigameSpecifics()
@@ -101,7 +111,18 @@ namespace con2.game
 
         override public void EndMinigameSpecifics()
         {
-            m_masher.EndMash();
+            m_tapper.EndTap();
+            StartCoroutine(FireballDelay());
+        }
+
+        private IEnumerator FireballDelay()
+        {
+            var fb = m_stationOwner.GetComponentInChildren<PlayerFireball>();
+            fb.SetCanCast(false);
+
+            yield return new WaitForSeconds(2.0f);
+
+            fb.SetCanCast(true);
         }
 
     }

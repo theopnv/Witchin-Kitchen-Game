@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2009370910949445897}
   - component: {fileID: 5614343644586294545}
   - component: {fileID: 3646885899598553157}
+  - component: {fileID: 930252789565089817}
+  - component: {fileID: 4037997098270301099}
   m_Layer: 0
   m_Name: Cauldron_v2
   m_TagString: Cauldron
@@ -65,8 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba19f371788f00943890907c3bb238a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_recipeUI: {fileID: 0}
   m_score: {fileID: 0}
+  m_recipeUI: {fileID: 0}
 --- !u!114 &2009370910949445897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +206,39 @@ MonoBehaviour:
   m_prompt: {fileID: 2009370911268733750}
   m_stationOwner: {fileID: 0}
   m_started: 0
+--- !u!114 &930252789565089817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009370910949445903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b24a6e48850c04f89703418970607b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_prompt: {fileID: 2009370911268733750}
+  m_stationOwner: {fileID: 0}
+  m_started: 0
+  m_inputToMash: 2
+  m_timeToLoseProgress: 1
+--- !u!114 &4037997098270301099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009370910949445903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e616890427370fb4a9da7bbd2850b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_prompt: {fileID: 2009370911268733750}
+  m_stationOwner: {fileID: 0}
+  m_started: 0
+  m_timeToLoseProgress: 1
 --- !u!1 &2009370911021819945
 GameObject:
   m_ObjectHideFlags: 0
