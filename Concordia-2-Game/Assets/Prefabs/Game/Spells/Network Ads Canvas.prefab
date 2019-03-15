@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7062139142204180827}
   - component: {fileID: 7062139142204180825}
   - component: {fileID: 7062139142204180826}
-  - component: {fileID: 1455892815}
+  - component: {fileID: 1833303921771340463}
   m_Layer: 0
-  m_Name: Ad 1
+  m_Name: BreakingNews
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,12 +32,12 @@ RectTransform:
   m_Children:
   - {fileID: 7062139142392421184}
   m_Father: {fileID: 7062139143320713773}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1680, y: -192}
-  m_SizeDelta: {x: 963.6, y: -490}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1862, y: 0}
+  m_SizeDelta: {x: 2007.6, y: 98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7062139142204180825
 CanvasRenderer:
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &1455892815
+--- !u!114 &1833303921771340463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,11 +85,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7062139142204180828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a3eed602d24b124cb19b94c7852e583, type: 3}
+  m_Script: {fileID: 11500000, guid: 2063efc05a2883b448a74204582eca50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 350
-  Delay: 0
+  MaxSpeed: 450
+  MinSpeed: 25
+  Delay: 1
   ScrollDir: 2
 --- !u!1 &7062139142392421185
 GameObject:
@@ -184,7 +185,7 @@ GameObject:
   - component: {fileID: 7062139142677515419}
   - component: {fileID: 1914547342}
   m_Layer: 0
-  m_Name: Ad 3
+  m_Name: Apron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,14 +200,14 @@ RectTransform:
   m_GameObject: {fileID: 7062139142677515421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 2.3256001, y: 2.3256001, z: 2.3256001}
   m_Children: []
   m_Father: {fileID: 7062139143320713773}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -676.66, y: 27}
+  m_AnchoredPosition: {x: -968, y: 0}
   m_SizeDelta: {x: 279.99, y: 121.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7062139142677515418
@@ -237,7 +238,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6964646a1590ad04faf677c8a7e01c83, type: 3}
+  m_Sprite: {fileID: 21300000, guid: efc7b8ef7ac00fe4c888c751ea3be29b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -258,8 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3eed602d24b124cb19b94c7852e583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 200
-  Delay: 2.5
+  MaxSpeed: 600
+  MinSpeed: 50
+  Delay: 1
   ScrollDir: 3
 --- !u!1 &7062139143320713761
 GameObject:
@@ -273,6 +275,7 @@ GameObject:
   - component: {fileID: 7062139143320713774}
   - component: {fileID: 7062139143320713775}
   - component: {fileID: 7062139143320713760}
+  - component: {fileID: 6615800055407113344}
   m_Layer: 5
   m_Name: Network Ads Canvas
   m_TagString: Untagged
@@ -291,9 +294,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 7062139142204180827}
   - {fileID: 7062139143917489360}
   - {fileID: 7062139142677515420}
-  - {fileID: 7062139142204180827}
+  - {fileID: 6184208233740905758}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -362,6 +366,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6615800055407113344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7062139143320713761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ae3be8a79f434bb22e0b047053352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BreakingNews: {fileID: 1833303921771340463}
+  _Ketchup: {fileID: 673459402}
+  _FireBlades: {fileID: 2605679266152358934}
+  _Apron: {fileID: 1914547342}
 --- !u!1 &7062139143917489361
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +395,7 @@ GameObject:
   - component: {fileID: 7062139143917489375}
   - component: {fileID: 673459402}
   m_Layer: 5
-  m_Name: Ad 2
+  m_Name: Ketchup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,12 +413,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7062139143320713773}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139, y: 442}
-  m_SizeDelta: {x: 237.8, y: 310}
+  m_AnchoredPosition: {x: 0, y: 531}
+  m_SizeDelta: {x: 237.79999, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7062139143917489374
 CanvasRenderer:
@@ -449,6 +469,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3eed602d24b124cb19b94c7852e583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 100
+  MaxSpeed: 600
+  MinSpeed: 50
   Delay: 1
   ScrollDir: 1
+--- !u!1 &8504761356906005309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6184208233740905758}
+  - component: {fileID: 5489951735792933716}
+  - component: {fileID: 408777759733898306}
+  - component: {fileID: 2605679266152358934}
+  m_Layer: 0
+  m_Name: FireBlades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6184208233740905758
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504761356906005309}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.30904, y: 2.30904, z: 2.30904}
+  m_Children: []
+  m_Father: {fileID: 7062139143320713773}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -966, y: 2}
+  m_SizeDelta: {x: 279.99, y: 121.99}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5489951735792933716
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504761356906005309}
+  m_CullTransparentMesh: 0
+--- !u!114 &408777759733898306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504761356906005309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: c63603253e7d4d44daf184780d6f5594, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &2605679266152358934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8504761356906005309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3eed602d24b124cb19b94c7852e583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 600
+  MinSpeed: 50
+  Delay: 1
+  ScrollDir: 3

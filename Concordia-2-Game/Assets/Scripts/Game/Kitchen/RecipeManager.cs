@@ -61,7 +61,10 @@ namespace con2.game
             {
                 m_currentPotionRecipe.CollectIngredient(collectedIngredient);
                 UpdateRecipeUI(collectedIngredient);
-                m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
+                if (collectedIngredient != Ingredient.NEWT_EYE)
+                {
+                    m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
+                }
                 var owner = m_thisStation.GetOwner();
                 owner.CollectedIngredientCount++;
                 return true;

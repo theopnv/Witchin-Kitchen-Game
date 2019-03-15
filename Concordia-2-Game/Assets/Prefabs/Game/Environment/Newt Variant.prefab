@@ -311,6 +311,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: EyeBall2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: Eye1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: Eye2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: EyeSocket1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: EyeSocket2
+      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -366,30 +390,6 @@ PrefabInstance:
     - target: {fileID: 400012, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: Eye2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: Eye1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: EyeSocket2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: EyeSocket1
       objectReference: {fileID: 0}
     - target: {fileID: 2300008, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
