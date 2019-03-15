@@ -16,6 +16,9 @@ namespace con2.game
         public GameObject Prefab;
 
         [Header("Frequency")]
+        [Tooltip("Should the item us Timer Mode ? If not checked, will use Trigger Mode")]
+        public bool UseTimerMode;
+
         [Tooltip("[TIMER MODE]Delay between two respawns of this item")]
         public float SpawnDelay;
 

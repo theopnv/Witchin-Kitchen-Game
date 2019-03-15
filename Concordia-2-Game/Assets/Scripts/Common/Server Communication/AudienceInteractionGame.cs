@@ -72,7 +72,6 @@ namespace con2
         {
             if ((int)content.code % 10 == 0) // Success codes always have their unit number equal to 0 (cf. protocol)
             {
-                Debug.Log(content.content);
                 switch (content.code)
                 {
                     default: break;
