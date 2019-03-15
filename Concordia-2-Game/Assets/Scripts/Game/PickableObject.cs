@@ -5,9 +5,10 @@ namespace con2.game
 
     public class PickableObject : MonoBehaviour
     {
-        // The object's rigidbody
         protected Rigidbody m_rb;
         private bool m_isHeld = false;
+
+        public float m_lerpSpeedz = 10.0f;
 
         void Start()
         {
@@ -22,7 +23,7 @@ namespace con2.game
                 var parent = transform.parent;
                 if (parent)
                 {
-                    transform.position = parent.position;
+                    transform.position = Vector3.Lerp(transform.position, parent.position, Time.deltaTime * m_lerpSpeedz);
                     m_rb.velocity = currentVel / m_rb.mass;
                 }
                 else
@@ -36,10 +37,7 @@ namespace con2.game
             m_isHeld = true;
 
             // Reset rotation
-            transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             transform.parent = newParent;
-
-            transform.position = newParent.position;
 
             if (m_rb == null)
             {
