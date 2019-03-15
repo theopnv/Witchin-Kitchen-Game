@@ -15,18 +15,38 @@ namespace con2.game
             right,
         }
 
-        public float Speed = 100f;
+        public float MaxSpeed;
+        public float MinSpeed;
 
-        public float Delay = 0f;
+        public float Delay;
 
         public ScrollDirection ScrollDir = ScrollDirection.left;
 
-        private Vector3 _Direction;
-        private bool _DelayIsPassed = false;
+        protected Vector3 _Direction;
+        protected bool _DelayIsPassed = false;
 
-        void Start()
+        protected float _Speed;
+        protected float _Increment = 15f;
+
+        protected float _CenterSquare = 60f;
+
+        protected virtual void Start()
         {
-            // A bit ugly but efficient and simple
+            SetDirection();
+            _Speed = MinSpeed;
+            _Direction *= _Speed * Time.deltaTime;
+            StartCoroutine("TimerDelay");
+        }
+
+        private IEnumerator TimerDelay()
+        {
+            yield return new WaitForSeconds(Delay);
+            _DelayIsPassed = true;
+        }
+
+
+        protected void SetDirection()
+        {
             switch (ScrollDir)
             {
                 case ScrollDirection.left:
@@ -42,22 +62,48 @@ namespace con2.game
                     _Direction = Vector3.down;
                     break;
             }
-
-            _Direction *= Speed * Time.deltaTime;
-            StartCoroutine("TimerDelay");
         }
 
-        private IEnumerator TimerDelay()
+        private bool InMiddleVerticalDir()
         {
-            yield return new WaitForSeconds(Delay);
-            _DelayIsPassed = true;
+            var height = GetComponent<RectTransform>().rect.height;
+            if (transform.localPosition.y < _CenterSquare && transform.localPosition.y > -_CenterSquare)
+                return true;
+            return false;
+        }
+
+        private bool InMiddleHorizontalDir()
+        {
+            var width = GetComponent<RectTransform>().rect.width;
+            if (transform.localPosition.x < _CenterSquare && transform.localPosition.x > -_CenterSquare)
+                return true;
+            return false;
+        }
+
+        protected bool InMiddle()
+        {
+            if (ScrollDir == ScrollDirection.left || ScrollDir == ScrollDirection.right)
+                return InMiddleHorizontalDir();
+            else if (ScrollDir == ScrollDirection.up || ScrollDir == ScrollDirection.down)
+                return InMiddleVerticalDir();
+            return false;
         }
 
         // Update is called once per frame
-        void Update()
+        protected virtual void Update()
         {
             if (_DelayIsPassed)
             {
+                SetDirection();
+                if (InMiddle())
+                {
+                    _Increment = 15f;
+                    _Speed = MinSpeed;
+                }
+                else
+                    _Speed += _Increment;
+                _Speed = Mathf.Clamp(_Speed, MinSpeed, MaxSpeed);
+                _Direction *= _Speed * Time.deltaTime;
                 gameObject.transform.Translate(_Direction);
             }
         }
