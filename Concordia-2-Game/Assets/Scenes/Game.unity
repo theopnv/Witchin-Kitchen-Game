@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,14 +199,11 @@ MonoBehaviour:
   - Type: 2
     Prefab: {fileID: 8846902297067964224, guid: 0dfceb1d59fb02c40801aefeece6f99d,
       type: 3}
-  - Type: 3
-    Prefab: {fileID: 8846902297067964224, guid: 53d0690f266e8fc48906c47b0e90dbe2,
-      type: 3}
   - Type: 4
-    Prefab: {fileID: 8846902297067964224, guid: 5850a1e0de0f6fb43a0d96c9807a981b,
-      type: 3}
-  - Type: 5
     Prefab: {fileID: 8846902297067964224, guid: fb9b723aeb232c840850368b2661fc65,
+      type: 3}
+  - Type: 3
+    Prefab: {fileID: 8846902297067964224, guid: 5850a1e0de0f6fb43a0d96c9807a981b,
       type: 3}
 --- !u!114 &10916643
 MonoBehaviour:
@@ -1562,7 +1559,7 @@ MonoBehaviour:
     ActivateRandomPosMode: 0
     Area: {fileID: 213108576}
     TimeSinceSpawn: 0
-  - Type: 4
+  - Type: 3
     Prefab: {fileID: 5532703018747530490, guid: a6990a6bcd7d62c44a87719b2aa8889d,
       type: 3}
     UseTimerMode: 0
@@ -1572,15 +1569,15 @@ MonoBehaviour:
     ActivateRandomPosMode: 0
     Area: {fileID: 737448633}
     TimeSinceSpawn: 0
-  - Type: 3
-    Prefab: {fileID: 2445369503663072453, guid: 3e11b5ea44d5c9844a96d67630a34056,
+  - Type: 4
+    Prefab: {fileID: 2149888162642991435, guid: 44e1da904c5e2dd44af8772bc983d4dd,
       type: 3}
-    UseTimerMode: 1
-    SpawnDelay: 20
-    FirstSpawnDelay: 7
-    MaxNbOfInstances: 4
-    ActivateRandomPosMode: 1
-    Area: {fileID: 0}
+    UseTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
+    MaxNbOfInstances: 1
+    ActivateRandomPosMode: 0
+    Area: {fileID: 1593869648}
     TimeSinceSpawn: 0
   - Type: 2
     Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
@@ -1591,16 +1588,6 @@ MonoBehaviour:
     MaxNbOfInstances: 1
     ActivateRandomPosMode: 0
     Area: {fileID: 1010139671}
-    TimeSinceSpawn: 0
-  - Type: 5
-    Prefab: {fileID: 2149888162642991435, guid: 44e1da904c5e2dd44af8772bc983d4dd,
-      type: 3}
-    UseTimerMode: 0
-    SpawnDelay: 0
-    FirstSpawnDelay: 0
-    MaxNbOfInstances: 1
-    ActivateRandomPosMode: 0
-    Area: {fileID: 1593869648}
     TimeSinceSpawn: 0
 --- !u!1001 &534172597
 PrefabInstance:
