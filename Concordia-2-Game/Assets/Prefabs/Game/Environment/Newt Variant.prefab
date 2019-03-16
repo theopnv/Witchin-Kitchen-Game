@@ -135,8 +135,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.75, z: 7}
-  m_Center: {x: 0, y: 0.9, z: 0.3}
+  m_Size: {x: 2, y: 2.75, z: 3}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &1410545703240633373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cfeaf896809ea42a336bdc193fc929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_lerpSpeedz: 10
   m_eyeIngredientPrefab: {fileID: 2135384641246065995, guid: 0652c01fbe9564a46a3ba33d08f586b7,
     type: 3}
 --- !u!114 &8216381678525545477
@@ -176,6 +177,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d29fe69f55881ed42a7ba1cf2c0a6f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_lerpSpeedz: 10
+--- !u!65 &4632261633807649536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223523222216322606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.75, z: 6.5}
+  m_Center: {x: 0, y: 0.9, z: 0.3}
 --- !u!1 &6095864287538356265
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,30 +326,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EyeBall2
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: Eye1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: Eye2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: EyeSocket1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
-      propertyPath: m_Name
-      value: EyeSocket2
-      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -390,6 +381,30 @@ PrefabInstance:
     - target: {fileID: 400012, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: Eye2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: Eye1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: EyeSocket2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
+      propertyPath: m_Name
+      value: EyeSocket1
       objectReference: {fileID: 0}
     - target: {fileID: 2300008, guid: d7bfa1f1d676fc04fac3babc4cdd86dc, type: 3}
       propertyPath: m_Materials.Array.data[0]
