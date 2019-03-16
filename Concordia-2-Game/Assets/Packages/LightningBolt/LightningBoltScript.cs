@@ -44,7 +44,7 @@ namespace DigitalRuby.LightningBolt
     public class LightningBoltScript : MonoBehaviour
     {
         [Tooltip("The game object where the lightning will emit from. If null, StartPosition is used.")]
-        public Image StartObject;
+        public GameObject StartObject;
 
         [Tooltip("The start position where the lightning will emit from. This is in world space if StartObject is null, otherwise this is offset from StartObject position.")]
         public Vector3 StartPosition;
@@ -324,12 +324,7 @@ namespace DigitalRuby.LightningBolt
             }
             else
             {
-                var startpos = StartObject.rectTransform.TransformPoint(Vector3.one);
-                var pos = Camera.main.ScreenToWorldPoint(startpos + new Vector3(0, 0, Camera.main.nearClipPlane));
-                Debug.Log("Start: " + startpos);
-                Debug.Log("To screen: " + pos);
-                pos = new Vector3(pos.x, pos.y, 1);
-                Debug.Log("Adjust z: " + pos);
+                var pos = StartObject.transform.position;
                 start = pos + StartPosition;
             }
             if (EndObject == null)
