@@ -48,11 +48,8 @@ namespace con2.game
             set
             {
                 _Color = value;
-                var renderers = GetComponentsInChildren<Renderer>();
-                foreach (var renderer in renderers)
-                { 
-                    renderer.material.color = value;
-                }
+                var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+                skinRenderer.material.color = value;
                 Players.Dic[ID] = this;
             }
         }
