@@ -50,6 +50,7 @@ namespace con2
             repo.RegisterCommand("spell_rs", SpellRocketSpeed);
             repo.RegisterCommand("spell_gi", SpellGiftItem);
             repo.RegisterCommand("spell_gb", SpellGiftBomb);
+            repo.RegisterCommand("spell_iv", SpellInvisibility);
 
             repo.RegisterCommand("game_over", GameOver);
         }
@@ -96,7 +97,8 @@ namespace con2
                         "- 'spell_fb': Simulates the Fireball For All (fb) spell on player 1",
                         "- 'spell_rs': Simulates the Rocket Speed (rs) spell on player 1",
                         "- 'spell_gi': Simulates the Gift Item (gi) spell on player 1",
-                        "- 'spell_gb': Simulates the Gift Bomb (gb) spell on player 1");
+                        "- 'spell_gb': Simulates the Gift Bomb (gb) spell on player 1",
+                        "- 'spell_iv': Simulates the Invisibility (iv) spell on player 1");
 
                     help = string.Join(
                         Environment.NewLine,
@@ -315,6 +317,12 @@ namespace con2
         {
             StartCoroutine("SimulateSpell", Spells.SpellID.gift_bomb);
             return "Will cast the Gift Bomb spell on player 1 in 2 seconds";
+        }
+
+        private string SpellInvisibility(string[] args)
+        {
+            StartCoroutine("SimulateSpell", Spells.SpellID.invisibility);
+            return "Will cast the Invisibility spell on player 1 in 2 seconds";
         }
 
         private IEnumerator SimulateSpell(Spells.SpellID id)

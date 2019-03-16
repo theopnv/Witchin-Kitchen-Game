@@ -5413,6 +5413,7 @@ GameObject:
   - component: {fileID: 1825916755}
   - component: {fileID: 1825916756}
   - component: {fileID: 1825916757}
+  - component: {fileID: 1825916758}
   m_Layer: 0
   m_Name: SpellsManager
   m_TagString: Untagged
@@ -5538,6 +5539,20 @@ MonoBehaviour:
     type: 3}
   m_bombPrefab: {fileID: 6086180112102842847, guid: 3aa0e21fd48984548965a05140f9a021,
     type: 3}
+--- !u!114 &1825916758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825916749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1395040a8b8bab24583709149174a6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  m_InvisibilityDuration: 10
 --- !u!4 &1842573301 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 337929360, guid: 46f9d9270a3c2614c9f053be66f36209,

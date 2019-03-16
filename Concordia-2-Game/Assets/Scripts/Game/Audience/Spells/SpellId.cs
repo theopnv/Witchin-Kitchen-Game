@@ -15,6 +15,7 @@ namespace con2.game
             rocket_speed = 3,
             gift_item = 4,
             gift_bomb = 5,
+            invisibility = 6,
 
             max_id,
         }
@@ -27,6 +28,7 @@ namespace con2.game
             { SpellID.rocket_speed, "Rocket Speed" },
             { SpellID.gift_item, "Gift Item" },
             { SpellID.gift_bomb, "Gift Bomb" },
+            { SpellID.invisibility, "Invisibility" },
         };
 
     }
