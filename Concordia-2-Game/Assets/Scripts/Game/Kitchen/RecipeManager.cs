@@ -9,12 +9,14 @@ namespace con2.game
     {
         private Recipe m_currentPotionRecipe;
         private int m_currentRecipeIndex = -1;
-        public Text m_score;
         public PlayerHUD m_recipeUI;
         private KitchenStation m_thisStation;
         private MainGameManager m_mgm;
         private ItemSpawner m_itemSpawner;
+        private OnCompletePotion m_potionSpawner;
         private AudienceInteractionManager m_audienceInteractionManager;
+
+        public bool m_TestComplete = false;
 
         void Start()
         {
@@ -23,10 +25,11 @@ namespace con2.game
             m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             if (m_recipeUI == null)
             {
-                m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD;
+                m_recipeUI = Players.Dic[GetOwner().ID].PlayerHUD;
             }
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             m_mgm = managers.GetComponentInChildren<MainGameManager>();
+            m_potionSpawner = m_mgm.GetComponent<OnCompletePotion>();
             NextRecipe();
         }
 
@@ -34,7 +37,7 @@ namespace con2.game
         {
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
             SetNewRecipeUI();
-            var owner = m_thisStation.GetOwner();
+            var owner = GetOwner();
             owner.CompletedPotionCount = m_currentRecipeIndex;
             m_mgm.UpdateRanks();
             m_audienceInteractionManager.SendGameStateUpdate();
@@ -65,7 +68,7 @@ namespace con2.game
                 {
                     m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
                 }
-                var owner = m_thisStation.GetOwner();
+                var owner = GetOwner();
                 owner.CollectedIngredientCount++;
                 return true;
             }
@@ -88,6 +91,14 @@ namespace con2.game
             if (m_currentPotionRecipe.IsComplete())
             {
                 //You did it!
+                m_potionSpawner.OnPotionComplete(this);
+                NextRecipe();
+            }
+
+            if (m_TestComplete)
+            {
+                m_TestComplete = false;
+                m_potionSpawner.OnPotionComplete(this);
                 NextRecipe();
             }
         }
@@ -95,6 +106,11 @@ namespace con2.game
         public int GetNumCompletedPotions()
         {
             return m_currentRecipeIndex;
+        }
+
+        public PlayerManager GetOwner()
+        {
+            return m_thisStation.GetOwner();
         }
 
         public Ingredient GetNextNeededIngredient()

@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 10916644}
   - component: {fileID: 10916646}
   - component: {fileID: 10916642}
+  - component: {fileID: 10916647}
   m_Layer: 0
   m_Name: MainGameManager
   m_TagString: GameController
@@ -271,6 +272,21 @@ MonoBehaviour:
   _GlobalMessagePrefab: {fileID: 4345727725033474270, guid: d40a536ec69f9044388da84d94a618d7,
     type: 3}
   TimeBeforeFade: 15
+--- !u!114 &10916647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10916640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5425582bfb7d6c347942c4a15e128d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_potionPrefab: {fileID: 2285153345642673686, guid: ae5c186bc22019c4eb953a5ed6020507,
+    type: 3}
+  m_audienceInterface: {fileID: 487494894}
 --- !u!1001 &13281190
 PrefabInstance:
   m_ObjectHideFlags: 0
