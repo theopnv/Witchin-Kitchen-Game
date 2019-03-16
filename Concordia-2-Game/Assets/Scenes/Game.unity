@@ -6420,7 +6420,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.13953769
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -6428,8 +6428,17 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 0.4550277
+        value: 0.3126455
+        inSlope: 0.06823593
+        outSlope: 0.06823593
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.24237654
+      - serializedVersion: 3
         time: 1
-        value: 0.2011612
+        value: 0.026745617
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -6488,13 +6497,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb4d413de9f1d541915329635c9f2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartObject: {fileID: 1780248766160941210}
-  StartPosition: {x: 0, y: 0, z: 0}
+  StartObject: {fileID: 487494894}
+  StartPosition: {x: 0, y: -0.1, z: 0}
   EndObject: {fileID: 1780248766160916740}
   EndPosition: {x: 0, y: -0.2, z: -0.2}
   Generations: 6
   Duration: 0.05
-  ChaosFactor: 0.05
+  ChaosFactor: 0.1
   ManualMode: 1
   Rows: 1
   Columns: 1
