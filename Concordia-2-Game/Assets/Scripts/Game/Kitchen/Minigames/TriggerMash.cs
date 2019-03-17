@@ -40,8 +40,6 @@ namespace con2.game
             m_currentNumberOfPresses = 0;
             m_lastMashTime = 0;
 
-            m_prompt.text = "Alternate L and R triggers!";
-
             m_tapper = GetComponentInChildren<SpoonTap>();
             m_tapper.StartTap();
         }

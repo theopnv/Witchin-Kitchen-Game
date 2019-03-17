@@ -14,7 +14,9 @@ namespace con2.game
         public const float INTERACTION_DISTANCE = 2.0f, FACING_DEGREE = 30.0f;
 
         [SerializeField]
-        protected Text m_prompt;
+        protected Image m_promptBackground;
+        [SerializeField]
+        protected GameObject m_prompt;
 
         [HideInInspector]
         public PlayerManager m_stationOwner;
@@ -36,7 +38,8 @@ namespace con2.game
         // Start is called before the first frame update
         private void Start()
         {
-            m_prompt.enabled = false;
+            m_promptBackground.enabled = false;
+            m_prompt.SetActive(false);
             m_playerHolding = m_stationOwner.gameObject.GetComponentInChildren<PlayerPickUpDropObject>();
         }
 
@@ -75,13 +78,14 @@ namespace con2.game
 
         public void StartMinigame()
         {
-            //Display prompt
-            m_prompt.enabled = true;
-
-            m_started = true;
-
             BalanceMinigame();
             StartMinigameSpecifics();
+
+            //Display prompt
+            m_promptBackground.enabled = true;
+            m_prompt.SetActive(true);
+
+            m_started = true;
         }
 
         public void EndMinigame()
@@ -89,7 +93,8 @@ namespace con2.game
             m_kitchenStation.ProcessIngredient();
 
             //Hide prompt
-            m_prompt.enabled = false;
+            m_promptBackground.enabled = false;
+            m_prompt.SetActive(false);
 
             m_started = false;
 
