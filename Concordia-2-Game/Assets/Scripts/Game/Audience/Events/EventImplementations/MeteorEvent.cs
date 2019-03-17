@@ -47,6 +47,8 @@ namespace con2.game
 
         public override void EventStart()
         {
+            _MessageFeedManager.AddMessageToFeed("Run, run! The audience sent meteorites!", MessageFeedManager.MessageType.arena_event);
+
             _SpawningFrequencies = new Queue<float>();
             var defaultFrequency = Duration / NumberOfMeteors; // e.g 15 meteors in 10 seconds = 1.5 meteors in 1 sec
             var adjustedFrequency = defaultFrequency / 2; // Randomize the frequencies a bit (make spawning more natural)
