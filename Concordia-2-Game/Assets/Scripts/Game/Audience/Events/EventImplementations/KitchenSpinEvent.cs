@@ -22,6 +22,7 @@ namespace con2.game
 
         public override IEnumerator EventImplementation()
         {
+            _MessageFeedManager.AddMessageToFeed("The audience made the kitchens spin!", MessageFeedManager.MessageType.arena_event);
             var turnDirection = 1.0f;
             if (Random.Range(0.0f, 1.0f) < 0.5f)
             {

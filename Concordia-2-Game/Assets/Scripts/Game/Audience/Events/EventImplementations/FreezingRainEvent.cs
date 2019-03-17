@@ -16,7 +16,9 @@ public class FreezingRainEvent : AbstractAudienceEvent
     }
 
     public override void EventStart()
-    {}
+    {
+        _MessageFeedManager.AddMessageToFeed("The audience made the floor slippery!", MessageFeedManager.MessageType.arena_event);
+    }
 
     public override IEnumerator EventImplementation()
     {
@@ -27,9 +29,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
         {
             m_playerMovementControllers[i] = players[i].GetComponent<PlayerMovement>();
         }
-
-        _MessageFeedManager.AddMessageToFeed("The audience made the floor slippery!", MessageFeedManager.MessageType.arena_event);
-
+        
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
             player.ModulateMovementSpeed(m_movementModulator);
