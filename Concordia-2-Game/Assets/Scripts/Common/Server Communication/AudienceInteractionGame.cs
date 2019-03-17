@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using con2.messages;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -49,9 +50,9 @@ namespace con2
                 players.Add(new Player
                 {
                     id = i,
-                    color = ColorUtility.ToHtmlStringRGBA(player.Color),
+                    color = "#" + ColorUtility.ToHtmlStringRGBA(player.Color),
                     name = player.Name,
-                    score = player.CompletedPotionCount,
+                    potions = player.CompletedPotionCount,
                 });
             }
 
@@ -62,6 +63,30 @@ namespace con2
 
             var serialized = JsonConvert.SerializeObject(game);
             _Socket?.Emit(Command.SEND_GAME_STATE, new JSONObject(serialized));
+        }
+        
+        public void SendGameOutcome()
+        {
+            List<Player> leaderboards = Players.Dic
+                .Select(x => x.Value)
+                .OrderByDescending(x => x.CompletedPotionCount)
+                .ThenByDescending(x => x.CollectedIngredientCount)
+                .Select(x => new Player()
+                {
+                    color = ColorUtility.ToHtmlStringRGBA(x.Color),
+                    id = x.ID,
+                    name = x.Name,
+                    ingredients = x.CollectedIngredientCount,
+                    potions = x.CompletedPotionCount,
+                }).ToList();
+
+            var gameOutcome = new GameOutcome()
+            {
+                leaderboards = leaderboards.ToArray(),
+            };
+
+            var serialized = JsonConvert.SerializeObject(gameOutcome);
+            _Socket.Emit(Command.GAME_OUTCOME, new JSONObject(serialized));
         }
 
         #endregion

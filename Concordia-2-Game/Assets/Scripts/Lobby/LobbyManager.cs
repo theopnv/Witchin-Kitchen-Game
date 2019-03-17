@@ -155,7 +155,7 @@ namespace con2.lobby
 
         public void BackToMenu()
         {
-            _AudienceInteractionManager.ExitRoom(false);
+            _AudienceInteractionManager.SendEndGame(false);
             SceneManager.LoadSceneAsync(SceneNames.MainMenu);
         }
 
@@ -191,7 +191,7 @@ namespace con2.lobby
                     {
                         id = i,
                         name = PlayersInfo.Name[i],
-                        color = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
+                        color = "#" + ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
                     };
                     playerList.Add(player);
                 }

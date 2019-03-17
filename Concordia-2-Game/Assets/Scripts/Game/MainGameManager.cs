@@ -46,7 +46,7 @@ namespace con2.game
 
         private IEnumerator QuitGame()
         {
-            _AudienceInteractionManager?.ExitRoom(false);
+            _AudienceInteractionManager.SendEndGame(false);
             const string msg = "Disconnected from server. Game will quit in 5 seconds.";
             _MessageFeedManager.AddMessageToFeed(msg, MessageFeedManager.MessageType.error);
             yield return new WaitForSeconds(5);
@@ -192,7 +192,8 @@ namespace con2.game
                     m_winnerText.text += player.Name + " collected " + count + " ingredient" + (count == 1 ? "" : "s") + "\n\n";
                 }
             }
-            _AudienceInteractionManager?.ExitRoom(true, m_finalRankings[0][0].ID); StartCoroutine(BackToMainMenuAfterShortPause());
+            _AudienceInteractionManager?.SendGameOutcome();
+            StartCoroutine(BackToMainMenuAfterShortPause());
         }
 
         public void DetermineWinner()
@@ -279,13 +280,15 @@ namespace con2.game
                 if (input.GetActionID().Equals(con2.GamepadAction.ID.START)
                     || input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
                 {
+                    _AudienceInteractionManager.SendEndGame(true);
                     SceneManager.LoadScene(SceneNames.Game);
                     m_acceptingInput = false;
                     m_winnerText.text = "";
                     m_rematchText.enabled = false;
                     return true;
                 }
-                else if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
+
+                if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
                 {
                     SceneManager.LoadScene(SceneNames.MainMenu);
                     m_acceptingInput = false;
@@ -314,6 +317,7 @@ namespace con2.game
             }
 
             m_gameOver = false;
+            _AudienceInteractionManager.SendEndGame(false);
             SceneManager.LoadScene(SceneNames.MainMenu);
         }
 
