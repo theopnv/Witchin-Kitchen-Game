@@ -21,10 +21,11 @@ namespace con2.messages
         // Emitted
         public const string MAKE_GAME = "makeGame";
         public const string REGISTER_PLAYERS = "registerPlayers";
-        public const string QUIT_GAME = "quitGame";
+        public const string END_GAME = "endGame";
         public const string LAUNCH_POLL = "launchPoll";
         public const string LAUNCH_SPELL_CAST = "launchSpellCast";
         public const string SEND_GAME_STATE = "updateGameState";
+        public const string GAME_OUTCOME = "gameOutcome";
 
         // Received
         public const string MESSAGE = "message";
@@ -49,6 +50,9 @@ namespace con2.messages
 
         launch_spell_cast_success = 280,
         launch_spell_cast_error = 281,
+
+        rematch_success = 320,
+        rematch_error = 321,
     }
 
     public class Base
@@ -101,7 +105,6 @@ namespace con2.messages
 
     public class GameOutcome
     {
-        public bool gameFinished;
         public Player winner;
     }
 
@@ -110,6 +113,11 @@ namespace con2.messages
         public int spellId;
         public Player targetedPlayer;
         public Viewer caster;
+    }
+
+    public class EndGame
+    {
+        public bool doRematch;
     }
 
     public static class SocketInfo

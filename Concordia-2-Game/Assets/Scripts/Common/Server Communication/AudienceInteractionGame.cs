@@ -49,7 +49,7 @@ namespace con2
                 players.Add(new Player
                 {
                     id = i,
-                    color = ColorUtility.ToHtmlStringRGBA(player.Color),
+                    color = "#" + ColorUtility.ToHtmlStringRGBA(player.Color),
                     name = player.Name,
                     score = player.CompletedPotionCount,
                 });
@@ -62,6 +62,23 @@ namespace con2
 
             var serialized = JsonConvert.SerializeObject(game);
             _Socket?.Emit(Command.SEND_GAME_STATE, new JSONObject(serialized));
+        }
+        
+        public void SendGameOutcome(int winnerIdx = -1)
+        {
+            var winner = winnerIdx != -1
+                ? new Player()
+                {
+                    name = PlayersInfo.Name[winnerIdx],
+                    color = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[winnerIdx]),
+                }
+                : null;
+            var gameOutcome = new GameOutcome()
+            {
+                winner = winner,
+            };
+            var serialized = JsonConvert.SerializeObject(gameOutcome);
+            _Socket.Emit(Command.GAME_OUTCOME, new JSONObject(serialized));
         }
 
         #endregion

@@ -63,28 +63,26 @@ namespace con2
 
         #region Emit
 
+        void OnDisable()
+        {
+            _Socket.Close();
+        }
+
         /// <summary>
         /// Tell the server that we exited the room and that it can be deleted.
         /// </summary>
         /// <returns></returns>
-        public void ExitRoom(bool gameFinished, int winnerIdx = -1)
+        public void SendEndGame(bool doRematch)
         {
             if (IsConnectedToServer)
             {
-                var winner = gameFinished && winnerIdx != -1
-                    ? new Player()
-                    {
-                        name = PlayersInfo.Name[winnerIdx],
-                        color = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[winnerIdx]),
-                    }
-                    : null;
-                var gameOutcome = new GameOutcome()
+                var endGame = new EndGame()
                 {
-                    gameFinished = gameFinished,
-                    winner = winner,
+                    doRematch = doRematch,
                 };
-                var serialized = JsonConvert.SerializeObject(gameOutcome);
-                _Socket.Emit(Command.QUIT_GAME, new JSONObject(serialized));
+
+                var serialized = JsonConvert.SerializeObject(endGame);
+                _Socket.Emit(Command.END_GAME, new JSONObject(serialized));
             }
         }
 
