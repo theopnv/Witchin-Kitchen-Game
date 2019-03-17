@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2481,7 +2481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773999201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.08, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1032917600}
@@ -2546,7 +2546,8 @@ MonoBehaviour:
   NumberOfMeteors: 20
   Duration: 8
   ShadowLightDuration: 12
-  Radius: 8
+  X_Radius: 14
+  Z_Radius: 9
   YSpawn: 20
   MeteoriteSpeed: 500
   SceneMainLight: {fileID: 417751345}
@@ -5551,7 +5552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1395040a8b8bab24583709149174a6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
   m_InvisibilityDuration: 10
 --- !u!4 &1842573301 stripped
 Transform:
