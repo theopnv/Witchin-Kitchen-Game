@@ -34,10 +34,21 @@ namespace con2
             _Socket.Emit(Command.LAUNCH_POLL, new JSONObject(serialized));
         }
 
-        public void SendSpellCastRequest(Viewer viewer)
+        public void SendSpellCastRequest(int playerId, Viewer viewer)
         {
             Debug.Log("SendSpellCastRequest");
-            var serialized = JsonConvert.SerializeObject(viewer);
+            var player = new Player() {id = playerId};
+            if (playerId != -1)
+            {
+                player.name = Players.GetPlayerByID(playerId).Name;
+            }
+
+            var spellRequest = new SpellRequest()
+            {
+                fromPlayer = player,
+                targetedViewer = viewer,
+            };
+            var serialized = JsonConvert.SerializeObject(spellRequest);
             _Socket.Emit(Command.LAUNCH_SPELL_CAST, new JSONObject(serialized));
         }
 
