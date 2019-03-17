@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using con2.messages;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -51,7 +52,7 @@ namespace con2
                     id = i,
                     color = "#" + ColorUtility.ToHtmlStringRGBA(player.Color),
                     name = player.Name,
-                    score = player.CompletedPotionCount,
+                    potions = player.CompletedPotionCount,
                 });
             }
 
@@ -64,19 +65,26 @@ namespace con2
             _Socket?.Emit(Command.SEND_GAME_STATE, new JSONObject(serialized));
         }
         
-        public void SendGameOutcome(int winnerIdx = -1)
+        public void SendGameOutcome()
         {
-            var winner = winnerIdx != -1
-                ? new Player()
+            List<Player> leaderboards = Players.Dic
+                .Select(x => x.Value)
+                .OrderByDescending(x => x.CompletedPotionCount)
+                .ThenByDescending(x => x.CollectedIngredientCount)
+                .Select(x => new Player()
                 {
-                    name = PlayersInfo.Name[winnerIdx],
-                    color = ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[winnerIdx]),
-                }
-                : null;
+                    color = ColorUtility.ToHtmlStringRGBA(x.Color),
+                    id = x.ID,
+                    name = x.Name,
+                    ingredients = x.CollectedIngredientCount,
+                    potions = x.CompletedPotionCount,
+                }).ToList();
+
             var gameOutcome = new GameOutcome()
             {
-                winner = winner,
+                leaderboards = leaderboards.ToArray(),
             };
+
             var serialized = JsonConvert.SerializeObject(gameOutcome);
             _Socket.Emit(Command.GAME_OUTCOME, new JSONObject(serialized));
         }

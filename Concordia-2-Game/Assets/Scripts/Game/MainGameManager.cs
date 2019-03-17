@@ -192,7 +192,7 @@ namespace con2.game
                     m_winnerText.text += player.Name + " collected " + count + " ingredient" + (count == 1 ? "" : "s") + "\n\n";
                 }
             }
-            _AudienceInteractionManager?.SendGameOutcome(m_finalRankings[0][0].ID);
+            _AudienceInteractionManager?.SendGameOutcome();
             StartCoroutine(BackToMainMenuAfterShortPause());
         }
 
