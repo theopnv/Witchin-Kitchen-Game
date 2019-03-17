@@ -109,6 +109,12 @@ namespace con2.messages
         public Player[] leaderboards;
     }
 
+    public class SpellRequest
+    {
+        public Viewer targetedViewer;
+        public Player fromPlayer;
+    }
+
     public class Spell
     {
         public int spellId;

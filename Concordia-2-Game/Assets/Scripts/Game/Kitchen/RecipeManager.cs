@@ -44,7 +44,7 @@ namespace con2.game
             if (m_currentRecipeIndex > 0)
             {
                 var spellManager = FindObjectOfType<SpellsManager>();
-                spellManager.LaunchSpellRequest();
+                spellManager.LaunchSpellRequest(owner.ID);
             }
         }
 
