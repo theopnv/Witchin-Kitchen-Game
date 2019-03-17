@@ -56,11 +56,11 @@ namespace con2.game
                 m_turnDirection = 1;
             }
 
+            m_prompt.GetComponent<StirGame>().m_spinDir = m_turnDirection;
+
             m_spoonSpinner = GetComponentInChildren<Spin2Win>();
             m_spoonSpinner.SetTargetYAngle(m_currentGoal*45);
             m_spoonSpinner.SetTargetRotation(m_turnDirection);
-
-            m_prompt.text = "Stir R-joystick " + (m_turnDirection == 1 ? "" : "counter-") + "clockwise " + m_turnsRequired + " times!";
         }
 
         public override bool TryToConsumeInput(GamepadAction input)
@@ -116,8 +116,6 @@ namespace con2.game
         private void FullTurnComplete()
         {
             m_fullTurnCount++;
-
-            m_prompt.text = "Stir R-joystick " + (m_turnDirection == 1 ? "" : "counter-") + "clockwise " + (m_turnsRequired - m_fullTurnCount) + " times!";
 
             if (m_fullTurnCount == m_turnsRequired)
             {

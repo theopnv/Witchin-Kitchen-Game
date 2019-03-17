@@ -40,8 +40,6 @@ namespace con2.game
             m_currentNumberOfPresses = 0;
             m_lastMashTime = 0;
 
-            m_prompt.text = "Mash 'A'!";
-
             m_masher = GetComponentInChildren<SpoonMash>();
             m_masher.StartMash();
         }
