@@ -345,11 +345,11 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4166776755432027155}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f41269f201b07cb419cea6afd1a1fcd9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.3, z: 0.2}
+  m_Size: {x: 0.3, y: 0.3, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7820617728595579067
 PrefabInstance:
@@ -423,15 +423,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 335452957193026619, guid: 1da633f4c7854fd459d05e444cbd1952,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6356156231182219705, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 335452957193026619, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da633f4c7854fd459d05e444cbd1952, type: 3}

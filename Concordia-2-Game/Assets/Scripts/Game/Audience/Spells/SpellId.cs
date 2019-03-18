@@ -26,8 +26,8 @@ namespace con2.game
             { SpellID.mega_mage_punch, "Mega Mage Punch" },
             { SpellID.fireball_for_all, "Fireball For All" },
             { SpellID.rocket_speed, "Rocket Speed" },
-            { SpellID.gift_item, "Gift Item" },
-            { SpellID.gift_bomb, "Gift Bomb" },
+            { SpellID.gift_item, "Gift" },
+            { SpellID.gift_bomb, "Gift" },
             { SpellID.invisibility, "Invisibility" },
         };
 

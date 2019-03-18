@@ -138,6 +138,8 @@ public class Freeze : MonoBehaviour
         {
             Clone.SetActive(true);
 
+            Clone.transform.Find("Ground/Green").GetComponent<BoxCollider>().enabled = false;
+
             var curTime = Time.time;
             var elapsed = curTime - StartTime;
 

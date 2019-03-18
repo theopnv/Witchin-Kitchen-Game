@@ -7,6 +7,8 @@ public class FreezingRainEvent : AbstractAudienceEvent
     public float m_freezingRainDuration = 10.0f;
     public float m_dragFraction = 0.01f, m_movementModulator = 1.5f;
     public Freeze m_freeze;
+    public GameObject m_floor;
+    public PhysicMaterial m_freezePhysicsPlayer, m_originalPhysicsPlayer, m_frozenFloor, m_normalFloor, m_frozenItem, m_normalItem;
 
     private PlayerMovement[] m_playerMovementControllers;
 
@@ -34,13 +36,23 @@ public class FreezingRainEvent : AbstractAudienceEvent
         {
             player.ModulateMovementSpeed(m_movementModulator);
             player.ModulateRotationSpeed(m_movementModulator);
+            var collider = player.GetComponent<CapsuleCollider>();
+            collider.material = m_freezePhysicsPlayer;
         }
 
-        var frictionControllers = FindObjectsOfType<FloorFriction>();
-        foreach (FloorFriction controller in frictionControllers)
+        var items = FindObjectsOfType<PickableObject>();
+        foreach (var item in items)
         {
-            controller.ModulateFriction(-m_dragFraction);
+            var colliders = item.GetComponentsInChildren<Collider>();
+            foreach (var c in colliders)
+            {
+                if (!c.isTrigger)
+                    c.material = m_frozenItem;
+            }
         }
+
+        var floor = m_floor.GetComponent<BoxCollider>();
+        floor.material = m_frozenFloor;
 
         m_freeze.PlayFreeze();
 
@@ -50,12 +62,21 @@ public class FreezingRainEvent : AbstractAudienceEvent
         {
             player.ModulateMovementSpeed(1.0f / m_movementModulator);
             player.ModulateRotationSpeed(1.0f / m_movementModulator);
+            var collider = player.GetComponent<CapsuleCollider>();
+            collider.material = m_originalPhysicsPlayer;
         }
 
-        foreach (FloorFriction controller in frictionControllers)
+        foreach (var item in items)
         {
-            controller.ModulateFriction(1.0f / -m_dragFraction);
+            var colliders = item.GetComponentsInChildren<Collider>();
+            foreach (var c in colliders)
+            {
+                if (!c.isTrigger)
+                    c.material = m_normalItem;
+            }
         }
+
+        floor.material = m_normalFloor;
 
         m_freeze.PlayThaw();
     }

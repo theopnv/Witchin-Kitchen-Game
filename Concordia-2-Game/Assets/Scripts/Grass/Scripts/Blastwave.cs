@@ -28,10 +28,12 @@ public class Blastwave : MonoBehaviour
         Renderer = GetComponent<Renderer>();
         Mesh = GetComponent<MeshFilter>();
 
+        /*
         foreach (var v in Mesh.sharedMesh.vertices)
         {
             print("vert: " + v);
         }
+        */
     }
 
     public void Play()

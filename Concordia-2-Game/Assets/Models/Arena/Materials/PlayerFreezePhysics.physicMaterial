@@ -6,9 +6,9 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CouldronForceField
+  m_Name: PlayerFreezePhysics
   dynamicFriction: 0.1
   staticFriction: 0.1
-  bounciness: 1
+  bounciness: 0.9
   frictionCombine: 1
   bounceCombine: 2
