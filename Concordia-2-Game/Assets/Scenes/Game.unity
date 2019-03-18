@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3127,7 +3127,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -25, y: -17.4}
-  m_SizeDelta: {x: 339.8, y: 64}
+  m_SizeDelta: {x: 339.8, y: 85.21}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &894137373
 MonoBehaviour:
@@ -3147,7 +3147,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 2
-  m_Spacing: 0
+  m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -5492,6 +5492,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1448121867}
     m_Modifications:
+    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
+      propertyPath: m_Name
+      value: spoon
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.509
@@ -5547,10 +5551,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
-      propertyPath: m_Name
-      value: spoon
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
