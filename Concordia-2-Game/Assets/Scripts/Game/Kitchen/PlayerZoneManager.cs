@@ -16,7 +16,8 @@ namespace con2.game
         [HideInInspector]
         public Action OnPlayerInstantiated;
 
-        [SerializeField] private GameObject _PlayerPrefab;
+        [SerializeField] private GameObject _FemalePrefab;
+        [SerializeField] private GameObject _MalePrefab;
         [SerializeField] private GameObject _PlayerSpawnPosition;
         [SerializeField] private GameObject _PlayerHUDPrefab;
 
@@ -34,7 +35,9 @@ namespace con2.game
 
         void InitPlayer()
         {
-            var player = Instantiate(_PlayerPrefab, _PlayerSpawnPosition.transform);
+            var player = Instantiate(
+                OwnerId % 2 == 0 ? _MalePrefab : _FemalePrefab, 
+                _PlayerSpawnPosition.transform);
             Owner = player.GetComponent<PlayerManager>();
 
             Owner.ID = OwnerId;
