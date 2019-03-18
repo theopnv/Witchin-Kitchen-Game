@@ -18,8 +18,9 @@ namespace con2.game
 
         [SerializeField] private GameObject _FemalePrefab;
         [SerializeField] private GameObject _MalePrefab;
-        [SerializeField] private GameObject _PlayerSpawnPosition;
         [SerializeField] private GameObject _PlayerHUDPrefab;
+
+        [SerializeField] private float _PlayerDistanceFromCenter = 2f;
 
         [SerializeField]
         [Tooltip("List of HUD rectangles icons")]
@@ -35,9 +36,20 @@ namespace con2.game
 
         void InitPlayer()
         {
+            var increment = 360 / (PlayersInfo.PlayerNumber != 0 ? PlayersInfo.PlayerNumber : 1);
+            var radians = increment * OwnerId * Mathf.Deg2Rad;
+            var pos = new Vector3()
+            {
+                x = Mathf.Cos(radians),
+                y = 0,
+                z = Mathf.Sin(radians),
+            };
+            pos *= _PlayerDistanceFromCenter;
             var player = Instantiate(
-                OwnerId % 2 == 0 ? _MalePrefab : _FemalePrefab, 
-                _PlayerSpawnPosition.transform);
+            OwnerId % 2 == 0 ? _MalePrefab : _FemalePrefab,
+            pos, Quaternion.identity);
+            player.transform.Rotate(new Vector3(0, radians * Mathf.Rad2Deg + (OwnerId % 2 == 0 ? -90 : 90), 0));
+
             Owner = player.GetComponent<PlayerManager>();
 
             Owner.ID = OwnerId;
