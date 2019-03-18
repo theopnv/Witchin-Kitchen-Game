@@ -1203,7 +1203,6 @@ GameObject:
   - component: {fileID: 1968346470421378227}
   - component: {fileID: 7756702639570436469}
   - component: {fileID: 8325852682819089887}
-  - component: {fileID: 5405327483178596843}
   - component: {fileID: 3159072838977598754}
   m_Layer: 0
   m_Name: Player
@@ -1351,19 +1350,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5405327483178596843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9017638658279021675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46f190eab70a9f44183fc2efec1ca9ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_frictionCoefficient: 0.1
 --- !u!114 &3159072838977598754
 MonoBehaviour:
   m_ObjectHideFlags: 0

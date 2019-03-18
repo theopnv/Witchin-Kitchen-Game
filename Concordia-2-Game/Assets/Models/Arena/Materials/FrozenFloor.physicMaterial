@@ -6,9 +6,9 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CouldronForceField
+  m_Name: FrozenFloor
   dynamicFriction: 0.1
   staticFriction: 0.1
-  bounciness: 1
+  bounciness: 0
   frictionCombine: 1
-  bounceCombine: 2
+  bounceCombine: 1

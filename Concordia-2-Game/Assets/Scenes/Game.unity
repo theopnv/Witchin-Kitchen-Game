@@ -563,6 +563,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 391479724, guid: 74be4fe823443b841b1b09ed5310ecbc, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 1d500fc9d026f0a4daaa261a37a1f1fe,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74be4fe823443b841b1b09ed5310ecbc, type: 3}
 --- !u!1 &113913494 stripped
@@ -2454,9 +2459,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_freezingRainDuration: 10
-  m_dragFraction: 0.01
+  m_dragFraction: 0.5
   m_movementModulator: 1.5
   m_freeze: {fileID: 1131434750}
+  m_floor: {fileID: 2078672600}
+  m_freezePhysicsPlayer: {fileID: 0}
+  m_originalPhysicsPlayer: {fileID: 0}
+  m_frozenFloor: {fileID: 13400000, guid: 161f34cbdfe320d47b0e5649cdaca69a, type: 2}
+  m_normalFloor: {fileID: 13400000, guid: 1d500fc9d026f0a4daaa261a37a1f1fe, type: 2}
+  m_frozenItem: {fileID: 13400000, guid: fc97fe4cd87f01c4eb513150a9721afa, type: 2}
+  m_normalItem: {fileID: 13400000, guid: f41269f201b07cb419cea6afd1a1fcd9, type: 2}
 --- !u!114 &773999205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6018,6 +6030,12 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!1 &2078672600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 391479721, guid: 74be4fe823443b841b1b09ed5310ecbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 113913493}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2079452879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1679541421770703188, guid: 793367bd31843474ca468b2640020af9,
