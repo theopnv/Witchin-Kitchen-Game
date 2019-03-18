@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_characterHands: {fileID: 1831550912520185448}
-  m_throwForce: 4
+  m_throwForce: 3
 --- !u!114 &8325852682819089887
 MonoBehaviour:
   m_ObjectHideFlags: 0
