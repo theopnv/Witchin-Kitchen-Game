@@ -2463,8 +2463,10 @@ MonoBehaviour:
   m_movementModulator: 1.5
   m_freeze: {fileID: 1131434750}
   m_floor: {fileID: 2078672600}
-  m_freezePhysicsPlayer: {fileID: 0}
-  m_originalPhysicsPlayer: {fileID: 0}
+  m_freezePhysicsPlayer: {fileID: 13400000, guid: 010d08c9cba8235489b57fde14ab4027,
+    type: 2}
+  m_originalPhysicsPlayer: {fileID: 13400000, guid: 23ad5d1e03503754ca3c6df786700b0a,
+    type: 2}
   m_frozenFloor: {fileID: 13400000, guid: 161f34cbdfe320d47b0e5649cdaca69a, type: 2}
   m_normalFloor: {fileID: 13400000, guid: 1d500fc9d026f0a4daaa261a37a1f1fe, type: 2}
   m_frozenItem: {fileID: 13400000, guid: fc97fe4cd87f01c4eb513150a9721afa, type: 2}
