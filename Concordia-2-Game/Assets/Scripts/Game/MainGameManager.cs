@@ -121,7 +121,7 @@ namespace con2.game
 
         [Header("EndGame")]
         public Text m_winnerText;
-        public Text m_rematchText, m_clock;
+        public Text m_gameOverText, m_rematchText, m_clock;
         public GameObject m_backdrop;
         private List<List<PlayerManager>> m_finalRankings;
         private bool m_gameOver = false, m_acceptingInput = false;
@@ -131,6 +131,7 @@ namespace con2.game
         private void InitializeEndGame()
         {
             m_backdrop.SetActive(false);
+            m_gameOverText.enabled = false;
             m_winnerText.enabled = false;
             m_rematchText.enabled = false;
             m_gameOver = false;
@@ -142,9 +143,9 @@ namespace con2.game
             {
                 int remainingTime = (int)(GAME_TIMER - Time.timeSinceLevelLoad);
                 m_clock.text = FormatRemainingTime(remainingTime);
-                if (remainingTime == 5)
+                if (remainingTime == 10)
                 {
-                    m_clock.fontSize = 150;
+                    m_clock.fontSize = 200;
                 }
                 if (remainingTime <= 0)
                 {
@@ -157,7 +158,7 @@ namespace con2.game
         {
             int sec = time % 60;
             var timeString = "";
-            if (time > 5)
+            if (time > 10)
                 timeString = time / 60 + ":" + (sec > 9 ? sec.ToString() : "0" + sec);
             else
                 timeString = time.ToString();
@@ -170,8 +171,7 @@ namespace con2.game
             if (!m_gameOver)
             {
                 m_gameOver = true;
-                m_winnerText.text = "Game Over";
-                m_winnerText.enabled = true;
+                m_gameOverText.enabled = true;
                 m_clock.enabled = false;
 
                 DetermineWinner();
