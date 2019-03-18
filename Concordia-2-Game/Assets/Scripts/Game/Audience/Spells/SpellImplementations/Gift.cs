@@ -8,6 +8,13 @@ namespace con2.game
     {
         private bool m_isBomb;
         private GameObject m_contentsPrefab;
+        private Color m_color;
+
+        private void Start()
+        {
+            var r = transform.GetChild(0).GetChild(0).GetComponent<Renderer>();
+            r.material.color = m_color;
+        }
 
         public override void PickUp(Transform newParent)
         {
@@ -44,7 +51,8 @@ namespace con2.game
             var rb = GetComponent<Rigidbody>();
             rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
 
-            var renderers = GetComponentsInChildren<Renderer>();
+            var visuals = transform.GetChild(0);
+            var renderers = visuals.GetComponentsInChildren<Renderer>();
             while (renderers[0].material.color.a > 0.02f)
             {
                 foreach (Renderer r in renderers)
@@ -55,6 +63,11 @@ namespace con2.game
                 yield return new WaitForEndOfFrame();
             }
             GameObject.Destroy(gameObject);
+        }
+
+        public void SetColor(Color c)
+        {
+            m_color = c;
         }
     }
 }
