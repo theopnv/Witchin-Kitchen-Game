@@ -48,7 +48,7 @@ namespace con2.game
             var player = Instantiate(
             OwnerId % 2 == 0 ? _MalePrefab : _FemalePrefab,
             pos, Quaternion.identity);
-            player.transform.Rotate(new Vector3(0, radians * Mathf.Rad2Deg + (OwnerId % 2 == 0 ? -90 : 90), 0));
+            player.transform.forward = -pos;
 
             Owner = player.GetComponent<PlayerManager>();
 
