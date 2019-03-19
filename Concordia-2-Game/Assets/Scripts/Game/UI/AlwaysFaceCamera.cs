@@ -14,7 +14,7 @@ public class AlwaysFaceCamera : MonoBehaviour
     void FixedUpdate()
     {
         transform.LookAt(m_towardsCamera);
-        var prompt = transform.Find("Canvas/Backdrop");
+        var prompt = transform.Find("Backdrop");
         prompt.transform.localEulerAngles = new Vector3(0, 180, 0);
     }
 }
