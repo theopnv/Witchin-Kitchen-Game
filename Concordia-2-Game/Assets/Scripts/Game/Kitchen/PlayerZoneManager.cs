@@ -36,8 +36,14 @@ namespace con2.game
 
         void InitPlayer()
         {
+            var playersShiftMagicVar = PlayersInfo.PlayerNumber == 2
+                ? 180
+                : PlayersInfo.PlayerNumber == 3
+                    ? 150
+                    : 135;
+
             var increment = 360 / (PlayersInfo.PlayerNumber != 0 ? PlayersInfo.PlayerNumber : 1);
-            var radians = increment * OwnerId * Mathf.Deg2Rad;
+            var radians = (increment * OwnerId + playersShiftMagicVar) * Mathf.Deg2Rad;
             var pos = new Vector3()
             {
                 x = Mathf.Cos(radians),

@@ -54,11 +54,17 @@ namespace con2.game
         {
             Debug.Log(PlayersInfo.PlayerNumber);
 
+            var playersShiftMagicVar = PlayersInfo.PlayerNumber == 2
+                ? 180
+                : PlayersInfo.PlayerNumber == 3
+                    ? 150
+                    : 135;
+
             var increment = 360 / (PlayersInfo.PlayerNumber != 0 ? PlayersInfo.PlayerNumber : 1);
             _PlayerZoneSpawnPositions = new List<Transform>();
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
-                var radians = increment * i * Mathf.Deg2Rad;
+                var radians = (increment * i + playersShiftMagicVar) * Mathf.Deg2Rad;
                 var pos = new Vector3()
                 {
                     x = Mathf.Cos(radians),
