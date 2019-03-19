@@ -19,7 +19,7 @@ namespace con2.game
             var targetPlayer = Players.GetPlayerByID(_TargetedPlayer.id);
             var gift = Instantiate(m_giftPrefab, targetPlayer.transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
             var giftComponent = gift.GetComponent<Gift>();
-            giftComponent.SetIsBomb(true);
+            giftComponent.SetIngredientType(Ingredient.NOT_AN_INGREDIENT);
             giftComponent.SetContents(m_bombPrefab);
             giftComponent.SetColor(ColorsManager.Get().PlayerMeshColors[_TargetedPlayer.id]);
             yield return null;

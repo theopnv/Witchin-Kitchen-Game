@@ -28,7 +28,7 @@ namespace con2.game
         [Tooltip("List of spawnable items")]
         private List<SpawnableItem> SpawnableItemsList = new List<SpawnableItem>();
 
-        private Dictionary<Ingredient, List<GameObject>> _SpawnedItems;
+        public Dictionary<Ingredient, int> SpawnedItemsCount;
 
         /// <summary>
         /// This dictionary is used if UseTimerMode is false (Trigger Mode)
@@ -46,15 +46,14 @@ namespace con2.game
             ComputeForbiddenRanges();
 
             SpawnableItems = new Dictionary<Ingredient, SpawnableItem>();
-            _SpawnedItems = new Dictionary<Ingredient, List<GameObject>>();
+            SpawnedItemsCount = new Dictionary<Ingredient, int>();
             foreach (var item in SpawnableItemsList)
             {
-                _SpawnedItems.Add(item.Type, new List<GameObject>());
-
-                InstantiateOnMap(item);
+                SpawnedItemsCount[item.Type] = 0;
                 item.TimeSinceSpawn = -item.FirstSpawnDelay;
                 item.AskToInstantiate += () => InstantiateOnMap(item);
                 SpawnableItems.Add(item.Type, item);
+                InstantiateOnMap(item);
             }
         }
 
@@ -90,7 +89,7 @@ namespace con2.game
                 item.TimeSinceSpawn += Time.deltaTime;
                 if (item.UseTimerMode 
                     && item.TimeSinceSpawn >= item.SpawnDelay
-                    && _SpawnedItems[item.Type].Count >= item.MaxNbOfInstances)
+                    && SpawnedItemsCount[item.Type] >= item.MaxNbOfInstances)
                 {
                     InstantiateOnMap(item);
                     item.TimeSinceSpawn = 0f;
@@ -151,6 +150,11 @@ namespace con2.game
         /// <param name="prefab"></param>
         private void InstantiateOnMap(SpawnableItem item)
         {
+            if (SpawnedItemsCount[item.Type] >= SpawnableItems[item.Type].MaxNbOfInstances)
+            {
+                return;
+            }
+
             var position = new Vector3
             {
                 x = FindValidPoint(
@@ -170,8 +174,8 @@ namespace con2.game
                     item.Type)
             };
 
-            var instance = Instantiate(item.Prefab, position, Quaternion.identity);
-            _SpawnedItems[item.Type].Add(instance);
+            Instantiate(item.Prefab, position, Quaternion.identity);
+            ++SpawnedItemsCount[item.Type];
         }
 
         #endregion
