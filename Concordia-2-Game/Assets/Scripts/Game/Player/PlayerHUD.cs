@@ -43,7 +43,7 @@ namespace con2.game
                     var color = renderer.color;
                     if (color.a > 0.75f)
                     {
-                        renderer.color = new Color(0.5f * color.r, 0.5f * color.g, 0.5f * color.b, 0.5f);
+                        renderer.color = new Color(0.5f * color.r, 0.5f * color.g, 0.5f * color.b, 0.3f);
                         break;
                     }
                 }
