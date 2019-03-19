@@ -1163,11 +1163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c608d04748013e3428257bdc117b2e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_strength: 7
-  m_stunTime: 1.5
+  m_strength: 10
+  m_stunTime: 1.33
   m_immuneTargets: []
-  m_punchUpwardsForce: 4
-  m_reloadSeconds: 1.75
+  m_punchUpwardsForce: 5
+  m_reloadSeconds: 2
 --- !u!114 &2929309564052152870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1186,7 +1186,7 @@ MonoBehaviour:
     type: 3}
   m_spawnLocation: {fileID: 8006554420184790311}
   m_reloadSeconds: 15
-  m_recoil: 20
+  m_recoil: 5
   m_indicator: {fileID: 0}
 --- !u!1 &9017638658279021675
 GameObject:
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 8325852682819089887}
   - component: {fileID: 3159072838977598754}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Female
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_characterHands: {fileID: 1831550912520185448}
-  m_throwForce: 3
+  m_throwForce: 2.75
 --- !u!114 &8325852682819089887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,6 +1369,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
+    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
+        type: 3}
+      propertyPath: m_Name
+      value: RainbowTrail
+      objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526967, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1434,11 +1439,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
-        type: 3}
-      propertyPath: m_Name
-      value: RainbowTrail
-      objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526966, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
       propertyPath: m_Enabled
@@ -1464,6 +1464,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
+    - target: {fileID: 1482552317, guid: ab90e35ef38ca6f40aef07e489039fd3, type: 3}
+      propertyPath: m_Name
+      value: StunStars
+      objectReference: {fileID: 0}
     - target: {fileID: 1482552321, guid: ab90e35ef38ca6f40aef07e489039fd3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1519,10 +1523,6 @@ PrefabInstance:
     - target: {fileID: 1482552321, guid: ab90e35ef38ca6f40aef07e489039fd3, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1482552317, guid: ab90e35ef38ca6f40aef07e489039fd3, type: 3}
-      propertyPath: m_Name
-      value: StunStars
       objectReference: {fileID: 0}
     - target: {fileID: 1482552318, guid: ab90e35ef38ca6f40aef07e489039fd3, type: 3}
       propertyPath: FollowTarget

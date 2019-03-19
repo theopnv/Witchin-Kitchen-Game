@@ -3,12 +3,14 @@
 namespace con2.game
 {
 
-    public class PickableObject : MonoBehaviour
+    public class PickableObject : MonoBehaviour, IPunchable
     {
         protected Rigidbody m_rb;
         private bool m_isHeld = false;
 
         public float m_lerpSpeedz = 10.0f;
+
+        private float m_dropTimestamp;
 
         void Start()
         {
@@ -27,32 +29,47 @@ namespace con2.game
                     m_rb.velocity = currentVel / m_rb.mass;
                 }
                 else
+                {
                     m_isHeld = false;
+                    m_dropTimestamp = Time.time;
+                }
             }
         }
 
         // Get picked up
-        virtual public void PickUp(Transform newParent)
+        virtual public bool PickUp(Transform newParent)
         {
-            m_isHeld = true;
-
-            // Reset rotation
-            transform.parent = newParent;
-
-            if (m_rb == null)
+            if (!m_isHeld)
             {
-                m_rb = GetComponent<Rigidbody>();
+                m_isHeld = true;
+
+                // Reset rotation
+                transform.parent = newParent;
+
+                if (m_rb == null)
+                {
+                    m_rb = GetComponent<Rigidbody>();
+                }
+
+                // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
+                m_rb.useGravity = false;
+                m_rb.velocity = Vector3.zero;
+                m_rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
+                return true;
             }
 
-            // Disable the use of gravity, remove the velocity, and freeze rotation (will all be driven by player movement)
-            m_rb.useGravity = false;
-            m_rb.velocity = Vector3.zero;
-            m_rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            return false;
         }
 
         //Get dropped
         public void Drop(Vector3 throwVector)
         {
+            if (m_rb == null)
+            {
+                m_rb = GetComponent<Rigidbody>();
+            }
+
             m_isHeld = false;
 
             // Re-Enable the use of gravity on the object and remove all constraints
@@ -64,6 +81,20 @@ namespace con2.game
 
             // Unparent the object from the player
             transform.parent = null;
+
+            m_dropTimestamp = Time.time;
+        }
+
+        public void Punch(Vector3 knockVelocity, float stunTime)
+        {
+            if (!m_isHeld && Time.time - m_dropTimestamp > 0.1f)
+            {
+                if (m_rb == null)
+                {
+                    m_rb = GetComponent<Rigidbody>();
+                }
+                m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
+            }
         }
 
         public bool IsHeld()
