@@ -10,29 +10,40 @@ namespace con2.game
 
     public class NetworkAdsManager : MonoBehaviour
     {
+        [SerializeField]
+        private Ad _combo1FireBlades;
 
         [SerializeField]
-        private Ad _BreakingNews;
+        private Ad _combo1Apron;
 
         [SerializeField]
-        private Ad _Ketchup;
+        private Ad _combo2FireBlades;
 
         [SerializeField]
-        private Ad _FireBlades;
+        private Ad _combo2Apron;
 
         [SerializeField]
-        private Ad _Apron;
+        private Ad _combo3FireBlades;
 
-        private static int[] _suiteNumbers = UniqueRandomNumbers(0, 3);
+        [SerializeField]
+        private Ad _combo3Apron;
+
+        [SerializeField]
+        private Ad _combo4FireBlades;
+
+        [SerializeField]
+        private Ad _combo4Apron;
+
+        private static readonly int[] SuiteNumbers = UniqueRandomNumbers(0, 3);
         private static int _index = 0;
-        private static int _numberOfAds = 4; 
+        private const int NumberOfCombos = 4;
 
         public static int[] UniqueRandomNumbers(int min, int max)
         {
             var rnd = new System.Random();
             int[] numbers = new int[max - min + 1];
             var toBeInserted = new List<int>();
-            for (int i = min; i <= max; i++)
+            for (int i = min; i < NumberOfCombos; i++)
             {
                 toBeInserted.Add(i);
             }
@@ -52,30 +63,38 @@ namespace con2.game
         // Start is called before the first frame update
         void Start()
         {
-            _BreakingNews.gameObject.SetActive(false);
-            _Ketchup.gameObject.SetActive(false);
-            _FireBlades.gameObject.SetActive(false);
-            _Apron.gameObject.SetActive(false);
+            _combo1FireBlades.gameObject.SetActive(false);
+            _combo1Apron.gameObject.SetActive(false);
+            _combo2FireBlades.gameObject.SetActive(false);
+            _combo2Apron.gameObject.SetActive(false);
+            _combo3FireBlades.gameObject.SetActive(false);
+            _combo3Apron.gameObject.SetActive(false);
+            _combo4FireBlades.gameObject.SetActive(false);
+            _combo4Apron.gameObject.SetActive(false);
 
-            switch (_suiteNumbers[_index])
+            switch (SuiteNumbers[_index])
             {
                 case 0:
-                    _BreakingNews.gameObject.SetActive(true);
+                    _combo1FireBlades.gameObject.SetActive(true);
+                    _combo1Apron.gameObject.SetActive(true);
                     break;
                 case 1:
-                    _Ketchup.gameObject.SetActive(true);
+                    _combo2FireBlades.gameObject.SetActive(true);
+                    _combo2Apron.gameObject.SetActive(true);
                     break;
                 case 2:
-                    _FireBlades.gameObject.SetActive(true);
+                    _combo3FireBlades.gameObject.SetActive(true);
+                    _combo3Apron.gameObject.SetActive(true);
                     break;
                 case 3:
-                    _Apron.gameObject.SetActive(true);
+                    _combo4FireBlades.gameObject.SetActive(true);
+                    _combo4Apron.gameObject.SetActive(true);
                     break;
 
             }
 
             ++_index;
-            if (_index == _numberOfAds)
+            if (_index == NumberOfCombos)
                 _index = 0;
         }
 
