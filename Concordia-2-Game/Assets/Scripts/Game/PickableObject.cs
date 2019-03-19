@@ -89,6 +89,10 @@ namespace con2.game
         {
             if (!m_isHeld && Time.time - m_dropTimestamp > 0.1f)
             {
+                if (m_rb == null)
+                {
+                    m_rb = GetComponent<Rigidbody>();
+                }
                 m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
             }
         }
