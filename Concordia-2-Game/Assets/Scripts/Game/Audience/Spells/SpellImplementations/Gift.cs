@@ -9,6 +9,7 @@ namespace con2.game
         private GameObject m_contentsPrefab;
         private Color m_color;
         private Ingredient m_type;
+        private bool m_contentsSpawned;
 
         private void Start()
         {
@@ -16,24 +17,32 @@ namespace con2.game
             r.material.color = m_color;
         }
 
-        public override void PickUp(Transform newParent)
+        public override bool PickUp(Transform newParent)
         {
-            var gift = Instantiate(m_contentsPrefab, transform.position, new Quaternion(0, 0, 0, 0));
-            var giftPickable = gift.GetComponent<PickableObject>();
-            var playerPickup = newParent.parent.gameObject.GetComponent<PlayerPickUpDropObject>();
-            playerPickup.ForcePickUpObject(giftPickable);
-
-            if (m_type == Ingredient.NOT_AN_INGREDIENT)
+            if (!m_contentsSpawned)
             {
-                gift.GetComponent<ExplosiveItem>().ExplodeByTime(1.75f);
-            }
-            else
-            {
-                var spawner = FindObjectOfType<ItemSpawner>();
-                ++spawner.SpawnedItemsCount[m_type];
-            }
+                m_contentsSpawned = true;
 
-            StartCoroutine(DespawnThis());
+                var gift = Instantiate(m_contentsPrefab, transform.position, new Quaternion(0, 0, 0, 0));
+                var giftPickable = gift.GetComponent<PickableObject>();
+                var playerPickup = newParent.parent.gameObject.GetComponent<PlayerPickUpDropObject>();
+                playerPickup.ForcePickUpObject(giftPickable);
+
+                if (m_type == Ingredient.NOT_AN_INGREDIENT)
+                {
+                    gift.GetComponent<ExplosiveItem>().ExplodeByTime(1.75f);
+                }
+                else
+                {
+                    var spawner = FindObjectOfType<ItemSpawner>();
+                    ++spawner.SpawnedItemsCount[m_type];
+                }
+
+                StartCoroutine(DespawnThis());
+
+                return true;
+            }
+            return false;
         }
 
         public void SetIngredientType(Ingredient type)
