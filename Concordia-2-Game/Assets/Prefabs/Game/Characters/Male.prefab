@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_characterHands: {fileID: 199525186850608842}
-  m_throwForce: 2.5
+  m_throwForce: 2.75
 --- !u!114 &7504540862884185469
 MonoBehaviour:
   m_ObjectHideFlags: 0

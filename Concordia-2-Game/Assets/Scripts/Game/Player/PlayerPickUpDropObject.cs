@@ -86,15 +86,13 @@ namespace con2.game
         // Pick up a nearby object
         private void PickUpObject()
         {
-            // Slow down the player
-            m_speedReduction = m_heldObject.GetMaxSpeedFractionWhenHolding();
-            m_playerMovement.MaxMovementSpeed *= m_speedReduction;
-
-            // Have the object adjust its physics
-            m_heldObject.PickUp(m_characterHands);
-
-            // Reposition the player hands (location)
-            //mCharacterHands.localPosition = new Vector3(0.0f, playerSize.y + objectSize.y / 2.0f, 0.0f);
+            // Have the object adjust its physics, and tell us if it can be grabbed now
+            if (m_heldObject.PickUp(m_characterHands))
+            {
+                // Slow down the player
+                m_speedReduction = m_heldObject.GetMaxSpeedFractionWhenHolding();
+                m_playerMovement.MaxMovementSpeed *= m_speedReduction;
+            }
         }
 
         public void ForcePickUpObject(PickableObject obj)

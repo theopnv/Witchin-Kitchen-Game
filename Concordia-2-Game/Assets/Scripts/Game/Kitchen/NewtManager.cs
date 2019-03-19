@@ -26,7 +26,7 @@ namespace con2.game
             m_eyepatches = new[] { transform.Find("Eyepatch2").gameObject, transform.Find("Eyepatch1").gameObject };
         }
 
-        public override void PickUp(Transform newParent)
+        public override bool PickUp(Transform newParent)
         {
             if (m_eyeCount > 0)
             {
@@ -53,10 +53,13 @@ namespace con2.game
                 {
                     StartCoroutine(Despawn());
                 }
+
+                return true;
             }
+            return false;
         }
 
-        public void Punch(Vector3 knockVelocity, float stunTime)
+        public new void Punch(Vector3 knockVelocity, float stunTime)
         {
             m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
 
