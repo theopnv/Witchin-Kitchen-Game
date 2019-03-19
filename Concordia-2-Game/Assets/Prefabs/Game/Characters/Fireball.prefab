@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc8cc93a0f76fd489d348d192eecff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_strength: 10
-  m_stunTime: 8
+  m_strength: 40
+  m_stunTime: 4
   m_immuneTargets: []
   m_launcher: {fileID: 0}
 --- !u!1 &2895953486452573032
