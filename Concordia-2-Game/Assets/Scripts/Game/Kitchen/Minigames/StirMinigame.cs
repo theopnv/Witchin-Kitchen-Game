@@ -24,6 +24,7 @@ namespace con2.game
         private int m_turnsRequired, m_fullTurnCount, m_currentGoal, m_turnDirection;
 
         private Spin2Win m_spoonSpinner;
+        private StirGame m_stirUI;
 
         public override void BalanceMinigame()
         {
@@ -56,7 +57,8 @@ namespace con2.game
                 m_turnDirection = 1;
             }
 
-            m_prompt.GetComponent<StirGame>().m_spinDir = m_turnDirection;
+            m_stirUI = m_prompt.GetComponent<StirGame>();
+            m_stirUI.m_spinDir = m_turnDirection;
 
             m_spoonSpinner = GetComponentInChildren<Spin2Win>();
             m_spoonSpinner.SetTargetYAngle(m_currentGoal*45);
@@ -110,7 +112,7 @@ namespace con2.game
             }
 
             m_spoonSpinner.SetTargetYAngle(m_currentGoal * 45);
-        
+            m_stirUI.MakingProgress();
         }
 
         private void FullTurnComplete()

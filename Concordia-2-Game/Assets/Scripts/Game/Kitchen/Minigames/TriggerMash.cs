@@ -18,6 +18,7 @@ namespace con2.game
         private float m_lastMashTime = 0;
 
         private SpoonTap m_tapper;
+        private TriggerMashGame m_mashUI;
 
         public override void BalanceMinigame()
         {
@@ -42,6 +43,8 @@ namespace con2.game
 
             m_tapper = GetComponentInChildren<SpoonTap>();
             m_tapper.StartTap();
+
+            m_mashUI = m_prompt.GetComponent<TriggerMashGame>();
         }
 
         public override bool TryToConsumeInput(GamepadAction input)
@@ -93,6 +96,7 @@ namespace con2.game
 
             m_expectingLeft = !m_expectingLeft;
             m_tapper.Aim(m_expectingLeft);
+            m_mashUI.MakingProgress();
         }
 
         override public void UpdateMinigameSpecifics()
