@@ -93,6 +93,10 @@ namespace con2.game
                 m_speedReduction = m_heldObject.GetMaxSpeedFractionWhenHolding();
                 m_playerMovement.MaxMovementSpeed *= m_speedReduction;
             }
+            else
+            {
+                m_heldObject = null;
+            }
         }
 
         public void ForcePickUpObject(PickableObject obj)
