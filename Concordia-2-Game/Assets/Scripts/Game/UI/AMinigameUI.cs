@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public abstract class AMinigameUI : MonoBehaviour
 {
     protected bool m_makingProgress = false;
     protected float m_progressTimestamp;
+
+    public GameObject m_backdrop;
 
     public void MakingProgress()
     {
@@ -21,7 +24,11 @@ public abstract class AMinigameUI : MonoBehaviour
 
         if (m_makingProgress)
         {
-
+            m_backdrop.GetComponent<Image>().color = Color.green;
+        }
+        else
+        {
+            m_backdrop.GetComponent<Image>().color = Color.white;
         }
     }
 }

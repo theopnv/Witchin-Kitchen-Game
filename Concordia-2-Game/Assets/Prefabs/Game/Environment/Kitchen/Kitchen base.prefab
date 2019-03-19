@@ -4751,6 +4751,57 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!23 &7676190307533264192
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774717295681023258}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &7212903486881750939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774717295681023258}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec56a916337799f45887b53ebf468467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineColor: {r: 0.27347407, g: 0.9056604, b: 0, a: 1}
+  OutlineWidth: 0.02
 --- !u!1 &6580967724236997308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,6 +5026,12 @@ GameObject:
 --- !u!1 &9214477792437026757 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8239969891636842692, guid: aa9d3b1a44d777340871d4fd0c675d72,
+    type: 3}
+  m_PrefabInstance: {fileID: 989145188201049857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5774717295681023258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6744646793018835483, guid: aa9d3b1a44d777340871d4fd0c675d72,
     type: 3}
   m_PrefabInstance: {fileID: 989145188201049857}
   m_PrefabAsset: {fileID: 0}
