@@ -67,9 +67,7 @@ namespace con2.game
         private bool InMiddleVerticalDir()
         {
             var height = GetComponent<RectTransform>().rect.height;
-            if (transform.localPosition.y < _CenterSquare && transform.localPosition.y > -_CenterSquare)
-                return true;
-            return false;
+            return transform.localPosition.y < _CenterSquare && transform.localPosition.y > -_CenterSquare;
         }
 
         private bool InMiddleHorizontalDir()
@@ -82,11 +80,17 @@ namespace con2.game
 
         protected bool InMiddle()
         {
-            if (ScrollDir == ScrollDirection.left || ScrollDir == ScrollDirection.right)
-                return InMiddleHorizontalDir();
-            else if (ScrollDir == ScrollDirection.up || ScrollDir == ScrollDirection.down)
-                return InMiddleVerticalDir();
-            return false;
+            switch (ScrollDir)
+            {
+                case ScrollDirection.left:
+                case ScrollDirection.right:
+                    return InMiddleHorizontalDir();
+                case ScrollDirection.up:
+                case ScrollDirection.down:
+                    return InMiddleVerticalDir();
+                default:
+                    return false;
+            }
         }
 
         // Update is called once per frame
