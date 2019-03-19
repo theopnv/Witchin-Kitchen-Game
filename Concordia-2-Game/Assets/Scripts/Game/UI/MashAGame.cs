@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MashAGame : MonoBehaviour
+public class MashAGame : AMinigameUI
 {
 
     public GameObject m_AbuttonIcon, m_pressIcon;
     public float m_timePerState = 0.4f;
 
-    private Vector3 m_movement = new Vector3(0, 0, 0.175f), m_startPos = Vector3.zero;
+    private Vector3 m_movement = new Vector3(0, 0.125f, 0), m_startPos = Vector3.zero;
 
     private void OnEnable()
     {
@@ -17,10 +17,10 @@ public class MashAGame : MonoBehaviour
 
     private IEnumerator RaiseButton()
     {
-        m_AbuttonIcon.transform.position += m_movement;
+        m_AbuttonIcon.transform.localPosition += m_movement;
         m_pressIcon.SetActive(false);
 
-        yield return new WaitForSeconds(m_timePerState);
+        yield return new WaitForSeconds(m_makingProgress ? 0.1f : m_timePerState);
 
         StartCoroutine(LowerButton());
     }
@@ -29,20 +29,20 @@ public class MashAGame : MonoBehaviour
     {
         if (m_startPos == Vector3.zero)
         {
-            m_startPos = m_AbuttonIcon.transform.position;
+            m_startPos = m_AbuttonIcon.transform.localPosition;
         }
 
-        m_AbuttonIcon.transform.position -= m_movement;
+        m_AbuttonIcon.transform.localPosition -= m_movement;
         m_pressIcon.SetActive(true);
 
-        yield return new WaitForSeconds(m_timePerState);
+        yield return new WaitForSeconds(m_makingProgress ? 0.1f : m_timePerState);
 
         StartCoroutine(RaiseButton());
     }
 
     private void OnDisable()
     {
-        m_AbuttonIcon.transform.position = m_startPos;
+        m_AbuttonIcon.transform.localPosition = m_startPos;
         m_startPos = Vector3.zero;
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StirGame : MonoBehaviour
+public class StirGame : AMinigameUI
 {
     public int m_spinDir;
 
@@ -29,7 +29,7 @@ public class StirGame : MonoBehaviour
         Transform arrow = m_arrow.transform;
         while (true)
         {
-            arrow.Rotate(Vector3.back * m_spinDir, m_spinSpeed);
+            arrow.Rotate(Vector3.back * m_spinDir, (m_makingProgress ? 2*m_spinSpeed : m_spinSpeed));
             yield return new WaitForEndOfFrame();
         }
     }
