@@ -8,12 +8,11 @@ namespace con2.game
     public class FireballEmberIndicator : MonoBehaviour
     {
 
-        public GameObject m_uncharged, m_charged, m_player;
+        public GameObject m_charged, m_player;
         // Start is called before the first frame update
         void Start()
         {
             m_charged.SetActive(true);
-            m_uncharged.SetActive(false);
             transform.Rotate(Vector3.up * Random.Range(0, 360), Space.Self);
         }
 
@@ -26,16 +25,7 @@ namespace con2.game
 
         public void SetCharged(bool charged)
         {
-            if (charged)
-            {
-                m_charged.SetActive(true);
-                m_uncharged.SetActive(false);
-            }
-            else
-            {
-                m_charged.SetActive(false);
-                m_uncharged.SetActive(true);
-            }
+            m_charged.SetActive(charged);
         }
 
         public void SetPlayer(GameObject player)
