@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4804,8 +4804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9eae65790079c540aa4633b6eaef954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_kitchenSpinDuration: 24
-  m_spinRate: 30
   m_spinBase: {fileID: 113913494}
 --- !u!114 &773999209
 MonoBehaviour:
@@ -9717,9 +9715,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b505e46ff0bf05b41bb949dab53f9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_megaMagePunchDuration: 10
-  m_megaMageMultiplier: 3
-  m_sizeScaler: 1.2
+  m_megaMagePunchDuration: 20
+  m_megaMageMultiplier: 5
+  m_sizeScaler: 2
 --- !u!114 &1825916754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9749,7 +9747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rocketSpeedDuration: 7
-  m_movementModulator: 2.75
+  m_movementModulator: 0.4
   m_rotationModulator: 0.25
 --- !u!114 &1825916756
 MonoBehaviour:
