@@ -42,9 +42,10 @@ namespace con2.game
         /// </summary>
         [HideInInspector]
         public Action AskToInstantiate;
-
+        
         [HideInInspector]
         public float TimeSinceSpawn;
+        
     }
 
 }

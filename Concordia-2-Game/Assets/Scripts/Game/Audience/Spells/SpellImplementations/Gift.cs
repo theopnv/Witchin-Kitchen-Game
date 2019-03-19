@@ -6,9 +6,9 @@ namespace con2.game
 
     public class Gift : PickableObject
     {
-        private bool m_isBomb;
         private GameObject m_contentsPrefab;
         private Color m_color;
+        private Ingredient m_type;
 
         private void Start()
         {
@@ -23,17 +23,22 @@ namespace con2.game
             var playerPickup = newParent.parent.gameObject.GetComponent<PlayerPickUpDropObject>();
             playerPickup.ForcePickUpObject(giftPickable);
 
-            if (m_isBomb)
+            if (m_type == Ingredient.NOT_AN_INGREDIENT)
             {
                 gift.GetComponent<ExplosiveItem>().ExplodeByTime(1.75f);
+            }
+            else
+            {
+                var spawner = FindObjectOfType<ItemSpawner>();
+                ++spawner.SpawnedItemsCount[m_type];
             }
 
             StartCoroutine(DespawnThis());
         }
 
-        public void SetIsBomb(bool isBomb)
+        public void SetIngredientType(Ingredient type)
         {
-            m_isBomb = isBomb;
+            m_type = type;
         }
 
         public void SetContents(GameObject contents)
@@ -62,7 +67,7 @@ namespace con2.game
                 }
                 yield return new WaitForEndOfFrame();
             }
-            GameObject.Destroy(gameObject);
+            Destroy(gameObject);
         }
 
         public void SetColor(Color c)

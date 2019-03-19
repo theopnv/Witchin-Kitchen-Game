@@ -66,6 +66,7 @@ namespace con2.game
                 UpdateRecipeUI(collectedIngredient);
                 if (collectedIngredient != Ingredient.NEWT_EYE)
                 {
+                    --m_itemSpawner.SpawnedItemsCount[collectedIngredient];
                     m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
                 }
                 var owner = GetOwner();

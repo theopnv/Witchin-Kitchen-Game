@@ -90,6 +90,7 @@ namespace con2.game
         private IEnumerator Despawn()
         {
             yield return new WaitForSeconds(1.5f);
+            --m_itemSpawner.SpawnedItemsCount[Ingredient.NEWT_EYE];
             m_itemSpawner.SpawnableItems[Ingredient.NEWT_EYE]?.AskToInstantiate();
             Destroy(gameObject);
         }
