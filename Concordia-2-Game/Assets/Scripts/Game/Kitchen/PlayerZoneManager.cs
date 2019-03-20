@@ -76,7 +76,9 @@ namespace con2.game
             Owner.PlayerHUD = instance.GetComponent<PlayerHUD>();
             Owner.PlayerHUD.OwnerId = Owner.ID;
             var name = instance.transform.Find("Organizer/Recipe/Name");
-            name.GetComponentInChildren<Image>().sprite = BackgroundRectangles[Owner.ID];
+            var rect = name.GetComponentInChildren<Image>();
+            rect.sprite = BackgroundRectangles[Owner.ID];
+            rect.color = ColorsManager.Get().PlayerMeshColors[Owner.ID];
             name.GetComponentInChildren<Text>().text = Owner.Name;
         }
     }
