@@ -5,6 +5,6 @@ namespace con2
 {
     public abstract class AMainManager : MonoBehaviour
     {
-        public abstract List<IInputConsumer> GetInputConsumers();
+        public abstract List<IInputConsumer> GetInputConsumers(int playerIndex);
     }
 }

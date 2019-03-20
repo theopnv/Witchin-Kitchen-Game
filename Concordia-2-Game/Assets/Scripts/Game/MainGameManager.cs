@@ -37,7 +37,7 @@ namespace con2.game
             _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
         }
 
-        public override List<IInputConsumer> GetInputConsumers()
+        public override List<IInputConsumer> GetInputConsumers(int playerIndex)
         {
             var inputConsumers = new List<IInputConsumer>();
 
@@ -47,12 +47,8 @@ namespace con2.game
             inputConsumers.Add(pmi);
 
             // Players
-            foreach (var p in Players.Dic)
-            {
-                var player = Players.GetPlayerByID(p.Key);
-                inputConsumers.Add(player.GetComponent<FightStun>());
-                inputConsumers.Add(player.GetComponent<PlayerInputController>());
-            }
+            var player = Players.GetPlayerByID(playerIndex);
+            inputConsumers.Add(player.GetComponent<FightStun>());
 
             // Kitchens
             var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
@@ -67,6 +63,7 @@ namespace con2.game
                 inputConsumers.Add(station);
             }
 
+            inputConsumers.Add(player.GetComponent<PlayerInputController>());
             return inputConsumers;
         }
 

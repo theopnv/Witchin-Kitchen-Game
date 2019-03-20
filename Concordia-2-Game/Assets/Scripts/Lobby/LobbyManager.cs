@@ -16,7 +16,6 @@ namespace con2.lobby
     {
         #region Private Variables
 
-        private int _PlayerNb = 0;
         private Dictionary<int, Tuple<string, Color>> _Players = new Dictionary<int, Tuple<string, Color>>()
         {
             { 0, new Tuple<string, Color>("Gandalf the OG", Color.red) },
@@ -140,22 +139,16 @@ namespace con2.lobby
             ActivatePlayer(false, i);
         }
 
-        public override List<IInputConsumer> GetInputConsumers()
+        public override List<IInputConsumer> GetInputConsumers(int playerIndex)
         {
             var inputConsumers = new List<IInputConsumer>();
 
             // Misc.
             inputConsumers.Add(this);
-            var pmi = GetComponent<PauseMenuInstantiator>();
-            inputConsumers.Add(pmi);
 
-            // Players
-            foreach (var p in game.Players.Dic)
-            {
-                var player = game.Players.GetPlayerByID(p.Key);
-                inputConsumers.Add(player.GetComponent<FightStun>());
-                inputConsumers.Add(player.GetComponent<PlayerInputController>());
-            }
+            // Fight
+            var player = game.Players.GetPlayerByID(playerIndex);
+            inputConsumers.Add(player.GetComponent<FightStun>());
 
             // Kitchens
             var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
@@ -165,10 +158,11 @@ namespace con2.lobby
                 var stations = kitchen.GetComponentsInChildren<ACookingMinigame>();
                 kitchenStations.AddRange(stations);
             }
-            foreach (ACookingMinigame station in kitchenStations)
-            {
-                inputConsumers.Add(station);
-            }
+
+            inputConsumers.AddRange(kitchenStations);
+
+            // Players
+            inputConsumers.Add(player.GetComponent<PlayerInputController>());
 
             return inputConsumers;
         }
@@ -203,24 +197,22 @@ namespace con2.lobby
         {
             if (activate)
             {
-                ++_PlayerNb;
+                PlayersInfo.Name[i] = _Players[i].Item1;
+                PlayersInfo.Color[i] = _Players[i].Item2;
+                ++PlayersInfo.PlayerNumber;
                 GetComponent<SpawnPlayersControllerLobby>().InstantiatePlayer(i, OnPlayerInitialized);
             }
             else
             {
-                --_PlayerNb;
+                --PlayersInfo.PlayerNumber;
             }
         }
 
         private void MakePlayerList()
         {
             var playerList = new List<Player>();
-            for (var i = 0; i < _PlayerNb; i++)
+            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
-                PlayersInfo.Name[i] = _Players[i].Item1;
-                PlayersInfo.Color[i] = _Players[i].Item2;
-                PlayersInfo.PlayerNumber = _PlayerNb;
-
                 var player = new Player
                 {
                     id = i,

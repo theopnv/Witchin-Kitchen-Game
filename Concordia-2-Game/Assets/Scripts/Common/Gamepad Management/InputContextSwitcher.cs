@@ -71,7 +71,7 @@ namespace con2
 
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             var mgm = managers.GetComponentInChildren<AMainManager>();
-            inputConsumers.AddRange(mgm.GetInputConsumers());
+            inputConsumers.AddRange(mgm.GetInputConsumers(playerIndex));
 
             return inputConsumers;
         }
