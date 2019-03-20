@@ -22,7 +22,7 @@ namespace con2.game
 
         public override void BalanceMinigame()
         {
-            switch (m_stationOwner.PlayerRank)
+            switch (Owner.PlayerRank)
             {
                 case PlayerManager.Rank.FIRST:
                     m_numberOfPressesRequired = 16;
@@ -119,7 +119,7 @@ namespace con2.game
 
         private IEnumerator FireballDelay()
         {
-            var fb = m_stationOwner.GetComponentInChildren<PlayerFireball>();
+            var fb = Owner.GetComponentInChildren<PlayerFireball>();
             fb.SetCanCast(false);
 
             yield return new WaitForSeconds(2.0f);

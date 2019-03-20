@@ -16,7 +16,7 @@ namespace con2.game
             var potion = potionObj.GetComponent<FlyingPotion>();
 
             //Set color
-            var liquidColor = ColorsManager.Get().CauldronLiquidColors[cauldron.GetOwner().ID];
+            var liquidColor = ColorsManager.Get().CauldronLiquidColors[cauldron.Owner.ID];
             potion.SetColor(liquidColor);
 
             //Set Destination

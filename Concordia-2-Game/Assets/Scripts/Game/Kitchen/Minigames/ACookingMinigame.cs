@@ -19,8 +19,8 @@ namespace con2.game
         protected GameObject m_prompt;
 
         [HideInInspector]
-        public PlayerManager m_stationOwner;
-        private KitchenStation m_kitchenStation;
+        public PlayerManager Owner;
+        public KitchenStation KitchenStation;
         private PlayerPickUpDropObject m_playerHolding;
 
         [SerializeField]
@@ -40,7 +40,7 @@ namespace con2.game
         {
             m_promptBackground.enabled = false;
             m_prompt.SetActive(false);
-            m_playerHolding = m_stationOwner.gameObject.GetComponentInChildren<PlayerPickUpDropObject>();
+            m_playerHolding = Owner.gameObject.GetComponentInChildren<PlayerPickUpDropObject>();
         }
 
         // Update is called once per frame
@@ -90,7 +90,7 @@ namespace con2.game
 
         public void EndMinigame()
         {
-            m_kitchenStation.ProcessIngredient();
+            KitchenStation.ProcessIngredient();
 
             //Hide prompt
             m_promptBackground.enabled = false;
@@ -104,8 +104,8 @@ namespace con2.game
         public bool ConsumeInput(GamepadAction input)
         {
             var interactingPlayer = Players.GetPlayerByID(input.GetPlayerId());
-            var noOwner = m_stationOwner == null;
-            var samePlayer = m_stationOwner.ID == interactingPlayer.ID;
+            var noOwner = Owner == null;
+            var samePlayer = Owner.ID == interactingPlayer.ID;
             if (m_started && (noOwner || samePlayer) && CheckPlayerIsNear(interactingPlayer.gameObject))
             {
                 if (!noOwner && m_playerHolding.IsHoldingObject())
@@ -115,17 +115,6 @@ namespace con2.game
                 return TryToConsumeInput(input);
             }
             return false;
-        }
-
-        public void SetStationOwner(PlayerManager owner, KitchenStation kitchenStation)
-        {
-            m_kitchenStation = kitchenStation;
-            m_stationOwner = owner;
-        }
-
-        public PlayerManager GetStationOwner()
-        {
-            return m_stationOwner;
         }
     }
 

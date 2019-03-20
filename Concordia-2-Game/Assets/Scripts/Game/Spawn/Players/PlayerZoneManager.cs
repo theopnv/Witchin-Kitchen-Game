@@ -17,6 +17,7 @@ namespace con2.game
         [HideInInspector]
         public Vector3 PlayerSpawnPosition;
 
+        [SerializeField] private GameObject _Kitchen;
         [SerializeField] private GameObject _FemalePrefab;
         [SerializeField] private GameObject _MalePrefab;
         [SerializeField] private GameObject _PlayerHUDPrefab;
@@ -53,8 +54,11 @@ namespace con2.game
 
         void InitKitchen()
         {
+            _Kitchen.SetActive(true);
             var km = GetComponentInChildren<KitchenManager>();
-            km.SetOwner(Owner.ID);
+            km.SetOwner(Owner);
+            var rm = GetComponentInChildren<RecipeManager>();
+            rm.Owner = Owner;
         }
 
         void InitHUD()

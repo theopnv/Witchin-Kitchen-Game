@@ -10,7 +10,8 @@ namespace con2.game
     {
         private Recipe m_currentPotionRecipe;
         private int m_currentRecipeIndex = -1;
-        public PlayerHUD m_recipeUI;
+        [HideInInspector] public PlayerHUD m_recipeUI;
+        [HideInInspector] public PlayerManager Owner;
         private KitchenStation m_thisStation;
         private AMainManager m_mgm;
         private ItemSpawner m_itemSpawner;
@@ -26,7 +27,8 @@ namespace con2.game
             m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             if (m_recipeUI == null)
             {
-                m_recipeUI = Players.Dic[GetOwner().ID].PlayerHUD;
+                var player = Players.Dic[Owner.ID];
+                m_recipeUI = player.PlayerHUD;
             }
 
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
@@ -39,14 +41,13 @@ namespace con2.game
         {
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
             SetNewRecipeUI();
-            var owner = GetOwner();
-            owner.CompletedPotionCount = m_currentRecipeIndex;
+            Owner.CompletedPotionCount = m_currentRecipeIndex;
             //m_mgm.UpdateRanks();
             m_audienceInteractionManager.SendGameStateUpdate();
             if (m_currentRecipeIndex > 0)
             {
                 var spellManager = FindObjectOfType<SpellsManager>();
-                spellManager.LaunchSpellRequest(owner.ID);
+                spellManager.LaunchSpellRequest(Owner.ID);
             }
         }
 
@@ -71,8 +72,7 @@ namespace con2.game
                     --m_itemSpawner.SpawnedItemsCount[collectedIngredient];
                     m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
                 }
-                var owner = GetOwner();
-                owner.CollectedIngredientCount++;
+                Owner.CollectedIngredientCount++;
                 return true;
             }
             return false;
@@ -109,11 +109,6 @@ namespace con2.game
         public int GetNumCompletedPotions()
         {
             return m_currentRecipeIndex;
-        }
-
-        public PlayerManager GetOwner()
-        {
-            return m_thisStation.GetOwner();
         }
 
         public Ingredient GetNextNeededIngredient()
