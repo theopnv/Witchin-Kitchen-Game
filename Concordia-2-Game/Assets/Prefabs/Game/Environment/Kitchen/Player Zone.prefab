@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2486706285430789234}
-  - component: {fileID: 799335840859558607}
+  - component: {fileID: 4736746163875989103}
   m_Layer: 0
   m_Name: Player Zone
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &799335840859558607
+--- !u!114 &4736746163875989103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,23 +42,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2486706285430789235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9052bd576f0bd649afde2e7432f2d78, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c0ade685dd998d45b2fd1d936e69121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OwnerId: 0
   Owner: {fileID: 0}
-  _FemalePrefab: {fileID: 9017638658279021675, guid: e13c39e08d61e894cac18d15b8ceb4c8,
+  PlayerSpawnPosition: {x: 0, y: 0, z: 0}
+  _FemalePrefab: {fileID: 9017638658279021675, guid: 5ccd0739091c3014ea080cde68de93eb,
     type: 3}
   _MalePrefab: {fileID: 7389057155434458313, guid: 4a8c37a52a9f97141b4a89adcde58280,
     type: 3}
   _PlayerHUDPrefab: {fileID: 5925793903106845510, guid: 0d3d11cfa2034724aa98222dce43761c,
     type: 3}
-  _PlayerDistanceFromCenter: 2.5
   BackgroundRectangles:
-  - {fileID: 21300000, guid: 0179efe56beff66459f7758e501ea046, type: 3}
-  - {fileID: 21300000, guid: d1c53d3e3760aec45a9910ab44c9a428, type: 3}
-  - {fileID: 21300000, guid: 805f1aa36ce0fa34dafabc24714f6511, type: 3}
-  - {fileID: 21300000, guid: a097b0639fb165a46ab22d4febb0884f, type: 3}
+  - {fileID: 21300000, guid: 3c1a077dad2ea5e4db01329b70fc7120, type: 3}
+  - {fileID: 21300000, guid: 3c1a077dad2ea5e4db01329b70fc7120, type: 3}
+  - {fileID: 21300000, guid: 3c1a077dad2ea5e4db01329b70fc7120, type: 3}
+  - {fileID: 21300000, guid: 3c1a077dad2ea5e4db01329b70fc7120, type: 3}
 --- !u!1 &2486706287073537941
 GameObject:
   m_ObjectHideFlags: 0

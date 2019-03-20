@@ -15,17 +15,6 @@ namespace con2.game
 
         #endregion
 
-        public override void Awake()
-        {
-            base.Awake();
-
-            // Initialize players
-            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
-            {
-                InstantiatePlayer(i);
-            }
-        }
-        
         public override Transform GetZoneSpawnPosition(int i)
         {
             return _PlayerZoneSpawnPositions[i];

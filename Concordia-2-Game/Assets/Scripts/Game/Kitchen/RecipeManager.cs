@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace con2.game
@@ -11,7 +12,7 @@ namespace con2.game
         private int m_currentRecipeIndex = -1;
         public PlayerHUD m_recipeUI;
         private KitchenStation m_thisStation;
-        private MainGameManager m_mgm;
+        private AMainManager m_mgm;
         private ItemSpawner m_itemSpawner;
         private OnCompletePotion m_potionSpawner;
         private AudienceInteractionManager m_audienceInteractionManager;
@@ -27,8 +28,9 @@ namespace con2.game
             {
                 m_recipeUI = Players.Dic[GetOwner().ID].PlayerHUD;
             }
+
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            m_mgm = managers.GetComponentInChildren<MainGameManager>();
+            m_mgm = managers.GetComponentInChildren<AMainManager>();
             m_potionSpawner = m_mgm.GetComponent<OnCompletePotion>();
             NextRecipe();
         }
@@ -39,7 +41,7 @@ namespace con2.game
             SetNewRecipeUI();
             var owner = GetOwner();
             owner.CompletedPotionCount = m_currentRecipeIndex;
-            m_mgm.UpdateRanks();
+            //m_mgm.UpdateRanks();
             m_audienceInteractionManager.SendGameStateUpdate();
             if (m_currentRecipeIndex > 0)
             {

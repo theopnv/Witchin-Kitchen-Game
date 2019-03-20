@@ -11,6 +11,7 @@ namespace con2.game
         public enum MessageType
         {
             error,
+            success,
             arena_event,
             generic,
         }

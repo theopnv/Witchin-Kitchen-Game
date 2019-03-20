@@ -25,11 +25,14 @@ namespace con2.game
         [Tooltip("List of HUD rectangles icons")]
         public List<Sprite> BackgroundRectangles = new List<Sprite>();
 
+        public Action OnPlayerInitialized;
+
         void Start()
         {
             InitPlayer();
             InitHUD();
             InitKitchen();
+            OnPlayerInitialized?.Invoke();
         }
 
         void InitPlayer()
@@ -44,6 +47,8 @@ namespace con2.game
             Owner.ID = OwnerId;
             Owner.Name = PlayersInfo.Name[Owner.ID];
             Owner.Color = ColorsManager.Get().PlayerMeshColors[Owner.ID];
+            Owner.CompletedPotionCount = 0;
+            Owner.CollectedIngredientCount = 0;
         }
 
         void InitKitchen()

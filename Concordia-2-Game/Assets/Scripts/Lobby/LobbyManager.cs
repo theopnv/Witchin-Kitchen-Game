@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using con2.game;
 using con2.messages;
 using SocketIO;
+using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.Networking.NetworkSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace con2.lobby
 {
 
-    public class LobbyManager : MonoBehaviour, IInputConsumer
+    public class LobbyManager : AMainManager, IInputConsumer
     {
         #region Private Variables
 
@@ -28,14 +27,11 @@ namespace con2.lobby
 
         [Tooltip("Controllers detector")]
         [SerializeField] private DetectController _DetectController;
+        [SerializeField] private Text _RoomPin;
+        [SerializeField] private Text _ViewersNb;
 
         private AudienceInteractionManager _AudienceInteractionManager;
-
-        [SerializeField] private Text _ServerWarningText;
-
-        [SerializeField] private Text _RoomId;
-        [SerializeField] private Text _NbViewers;
-
+        private MessageFeedManager _MessagefeedManager;
         private SocketIOComponent _SocketIoComponent;
         private float _ServerTryAgainTimeout = 2f;
 
@@ -55,6 +51,8 @@ namespace con2.lobby
             {
                 ActivatePlayer(controllerState[i], i);
             }
+
+            _MessagefeedManager = GetComponent<MessageFeedManager>();
 
             // Audience & Networking
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
@@ -85,12 +83,12 @@ namespace con2.lobby
 
         #endregion
 
-        #region Custom Methods
+        #region Network
 
         void OnGameUpdated()
         {
-            _RoomId.text = "Room's PIN: " + GameInfo.RoomId;
-            _NbViewers.text = "Number of viewers in the room: " + GameInfo.Viewers.Count;
+            _RoomPin.text = GameInfo.RoomId;
+            _ViewersNb.text = GameInfo.Viewers.Count.ToString();
         }
 
         void OnDisconnectedFromServer()
@@ -105,22 +103,30 @@ namespace con2.lobby
         void ConnectToServer()
         {
             _AudienceInteractionManager.Connect();
-            StartCoroutine(CheckServerConnection());
+            if (!_AudienceInteractionManager.IsConnectedToServer)
+            {
+                StartCoroutine(CheckServerConnection());
+            }
         }
 
         private IEnumerator CheckServerConnection()
         {
             yield return new WaitForSeconds(_ServerTryAgainTimeout);
-            if (!_AudienceInteractionManager.IsConnectedToServer)
+            if (_AudienceInteractionManager.IsConnectedToServer)
             {
-                _ServerWarningText.gameObject.SetActive(true);
-                ConnectToServer();
+                _MessagefeedManager.AddMessageToFeed("Connected to server", MessageFeedManager.MessageType.success);
             }
             else
             {
-                _ServerWarningText.gameObject.SetActive(false);
+                _MessagefeedManager.AddMessageToFeed("Can't reach the server", MessageFeedManager.MessageType.error);
+                _MessagefeedManager.AddMessageToFeed("Check your internet connection", MessageFeedManager.MessageType.error);
+                ConnectToServer();
             }
         }
+
+        #endregion
+
+        #region Controllers
 
         void OnControllerConnected(int i)
         {
@@ -134,10 +140,42 @@ namespace con2.lobby
             ActivatePlayer(false, i);
         }
 
-        public void BackToMenu()
+        public override List<IInputConsumer> GetInputConsumers()
         {
-            _AudienceInteractionManager.SendEndGame(false);
-            SceneManager.LoadSceneAsync(SceneNames.MainMenu);
+            var inputConsumers = new List<IInputConsumer>();
+
+            // Misc.
+            inputConsumers.Add(this);
+            var pmi = GetComponent<PauseMenuInstantiator>();
+            inputConsumers.Add(pmi);
+
+            // Players
+            foreach (var p in game.Players.Dic)
+            {
+                var player = game.Players.GetPlayerByID(p.Key);
+                inputConsumers.Add(player.GetComponent<FightStun>());
+                inputConsumers.Add(player.GetComponent<PlayerInputController>());
+            }
+
+            // Kitchens
+            var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+            var kitchenStations = new List<ACookingMinigame>();
+            foreach (var kitchen in kitchenParents)
+            {
+                var stations = kitchen.GetComponentsInChildren<ACookingMinigame>();
+                kitchenStations.AddRange(stations);
+            }
+            foreach (ACookingMinigame station in kitchenStations)
+            {
+                inputConsumers.Add(station);
+            }
+
+            return inputConsumers;
+        }
+
+        public void OnPlayerInitialized()
+        {
+            GetComponent<InputContextSwitcher>().SetToGameContext();
         }
 
         public bool ConsumeInput(GamepadAction input)
@@ -157,12 +195,16 @@ namespace con2.lobby
             return false;
         }
 
+        #endregion
+
+        #region Players
+        
         private void ActivatePlayer(bool activate, int i)
         {
             if (activate)
             {
                 ++_PlayerNb;
-                GetComponent<SpawnPlayersControllerLobby>().InstantiatePlayer(i);
+                GetComponent<SpawnPlayersControllerLobby>().InstantiatePlayer(i, OnPlayerInitialized);
             }
             else
             {
@@ -188,6 +230,16 @@ namespace con2.lobby
                 playerList.Add(player);
             }
             _AudienceInteractionManager?.SendPlayerCharacteristics(playerList);
+        }
+
+        #endregion
+
+        #region Misc.
+
+        public void BackToMenu()
+        {
+            _AudienceInteractionManager.SendEndGame(false);
+            SceneManager.LoadSceneAsync(SceneNames.MainMenu);
         }
 
         #endregion

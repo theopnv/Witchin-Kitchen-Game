@@ -16,17 +16,10 @@ namespace con2.game
         [SerializeField] private float _PlayerDistanceFromCenter = 2f;
         #endregion
 
-        public override void Awake()
+        public override void Start()
         {
-            base.Awake();
-
             PrepareSpawnZone();
-
-            // Initialize players
-            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
-            {
-                InstantiatePlayer(i);
-            }
+            base.Start();
         }
 
         private void PrepareSpawnZone()

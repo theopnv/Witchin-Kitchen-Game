@@ -8,7 +8,7 @@ using UnityEngine.UI;
 namespace con2.game
 {
 
-    public class MainGameManager : MonoBehaviour, IInputConsumer
+    public class MainGameManager : AMainManager, IInputConsumer
     {
         private AudienceInteractionManager _AudienceInteractionManager;
 
@@ -35,6 +35,39 @@ namespace con2.game
         void OnDisable()
         {
             _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
+        }
+
+        public override List<IInputConsumer> GetInputConsumers()
+        {
+            var inputConsumers = new List<IInputConsumer>();
+
+            // Misc.
+            inputConsumers.Add(this);
+            var pmi = GetComponent<PauseMenuInstantiator>();
+            inputConsumers.Add(pmi);
+
+            // Players
+            foreach (var p in Players.Dic)
+            {
+                var player = Players.GetPlayerByID(p.Key);
+                inputConsumers.Add(player.GetComponent<FightStun>());
+                inputConsumers.Add(player.GetComponent<PlayerInputController>());
+            }
+
+            // Kitchens
+            var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+            var kitchenStations = new List<ACookingMinigame>();
+            foreach (var kitchen in kitchenParents)
+            {
+                var stations = kitchen.GetComponentsInChildren<ACookingMinigame>();
+                kitchenStations.AddRange(stations);
+            }
+            foreach (ACookingMinigame station in kitchenStations)
+            {
+                inputConsumers.Add(station);
+            }
+
+            return inputConsumers;
         }
 
         #region AudienceEvents
@@ -98,7 +131,6 @@ namespace con2.game
 
         #endregion
 
-
         #region ItemSpawning
 
         private ItemSpawner m_itemSpawner;
@@ -115,7 +147,6 @@ namespace con2.game
         }
 
         #endregion
-
 
         #region EndGame
 

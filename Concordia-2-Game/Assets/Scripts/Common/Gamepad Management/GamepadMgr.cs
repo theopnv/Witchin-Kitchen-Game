@@ -12,7 +12,7 @@ namespace con2
 
         private List<Gamepad> gamepads = new List<Gamepad>();
 
-        public void InitializeGampads()
+        public void Awake()
         {
             instance = this;
 
