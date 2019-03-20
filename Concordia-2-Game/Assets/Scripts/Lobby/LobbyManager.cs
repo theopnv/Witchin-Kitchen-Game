@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using con2.game;
 using con2.messages;
 using SocketIO;
 using UnityEngine;
+using UnityEngine.Networking.NetworkSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,12 +15,16 @@ namespace con2.lobby
 
     public class LobbyManager : MonoBehaviour, IInputConsumer
     {
-        [Tooltip("The prefab to use as UI for each player")]
-        public GameObject PlayerUiPrefab;
-
         #region Private Variables
 
-        [SerializeField] private GameObject _PlayersHolder;
+        private int _PlayerNb = 0;
+        private Dictionary<int, Tuple<string, Color>> _Players = new Dictionary<int, Tuple<string, Color>>()
+        {
+            { 0, new Tuple<string, Color>("Gandalf the OG", Color.red) },
+            { 1, new Tuple<string, Color>("Sabrina the Tahini Witch", Color.blue) },
+            { 2, new Tuple<string, Color>("Snape the Punch-master", Color.green) },
+            { 3, new Tuple<string, Color>("Herbione Granger", Color.yellow) },
+        };
 
         [Tooltip("Controllers detector")]
         [SerializeField] private DetectController _DetectController;
@@ -32,7 +38,6 @@ namespace con2.lobby
 
         private SocketIOComponent _SocketIoComponent;
         private float _ServerTryAgainTimeout = 2f;
-        private List<Tuple<bool, PlayerUiManager>> _PlayerUiManagers;
 
         #endregion
 
@@ -44,18 +49,11 @@ namespace con2.lobby
             _DetectController.OnConnected += OnControllerConnected;
             _DetectController.OnDisconnected += OnControllerDisconnected;
 
-            // Player UIs instantiation
-            _PlayerUiManagers = new List<Tuple<bool, PlayerUiManager>>(4);
-            InstantiatePlayerUi(0, "Gandalf the OG", Color.red);
-            InstantiatePlayerUi(1, "Sabrina the Tahini Witch", Color.blue);
-            InstantiatePlayerUi(2, "Snape the Punch-master", Color.green);
-            InstantiatePlayerUi(3, "Herbione Grainger", Color.yellow);
-
             // If controllers are already connected we activate players UIs right from the start
             var controllerState = _DetectController.ControllersState;
             for (var i = 0; i < controllerState.Length; i++)
             {
-                SetPlayerUiVisibility(controllerState[i], i);
+                ActivatePlayer(controllerState[i], i);
             }
 
             // Audience & Networking
@@ -127,30 +125,13 @@ namespace con2.lobby
         void OnControllerConnected(int i)
         {
             Debug.Log("Welcome player " + i);
-            SetPlayerUiVisibility(true, i);
+            ActivatePlayer(true, i);
         }
 
         void OnControllerDisconnected(int i)
         {
             Debug.Log("Player " + i + " is gone");
-            SetPlayerUiVisibility(false, i);
-        }
-
-        void InstantiatePlayerUi(int i, string name, Color color)
-        {
-            var instance = Instantiate(PlayerUiPrefab, _PlayersHolder.transform);
-            var playerUI = new Tuple<bool, PlayerUiManager>(false, instance.GetComponent<PlayerUiManager>());
-            playerUI.Item2.SetActiveCanvas(false);
-            playerUI.Item2.Label.text = name;
-            playerUI.Item2.Color = color;
-            _PlayerUiManagers.Add(playerUI);
-        }
-
-        void SetPlayerUiVisibility(bool inLobby, int i)
-        {
-            var tmp = new Tuple<bool, PlayerUiManager>(inLobby, _PlayerUiManagers[i].Item2);
-            _PlayerUiManagers[i] = tmp;
-            _PlayerUiManagers[i].Item2.SetActiveCanvas(inLobby);
+            ActivatePlayer(false, i);
         }
 
         public void BackToMenu()
@@ -176,25 +157,35 @@ namespace con2.lobby
             return false;
         }
 
+        private void ActivatePlayer(bool activate, int i)
+        {
+            if (activate)
+            {
+                ++_PlayerNb;
+                GetComponent<SpawnPlayersControllerLobby>().InstantiatePlayer(i);
+            }
+            else
+            {
+                --_PlayerNb;
+            }
+        }
+
         private void MakePlayerList()
         {
             var playerList = new List<Player>();
-            for (var i = 0; i < _PlayerUiManagers.Count; i++)
+            for (var i = 0; i < _PlayerNb; i++)
             {
-                if (_PlayerUiManagers[i].Item1)
-                {
-                    PlayersInfo.Name[i] = _PlayerUiManagers[i].Item2.Label.text;
-                    PlayersInfo.Color[i] = _PlayerUiManagers[i].Item2.Color;
-                    PlayersInfo.PlayerNumber = i + 1;
+                PlayersInfo.Name[i] = _Players[i].Item1;
+                PlayersInfo.Color[i] = _Players[i].Item2;
+                PlayersInfo.PlayerNumber = _PlayerNb;
 
-                    var player = new Player
-                    {
-                        id = i,
-                        name = PlayersInfo.Name[i],
-                        color = "#" + ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
-                    };
-                    playerList.Add(player);
-                }
+                var player = new Player
+                {
+                    id = i,
+                    name = PlayersInfo.Name[i],
+                    color = "#" + ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
+                };
+                playerList.Add(player);
             }
             _AudienceInteractionManager?.SendPlayerCharacteristics(playerList);
         }
@@ -212,27 +203,26 @@ namespace con2.lobby
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                SetPlayerUiVisibility(true, 0);
+                ActivatePlayer(true, 0);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                SetPlayerUiVisibility(true, 1);
+                ActivatePlayer(true, 1);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                SetPlayerUiVisibility(true, 2);
+                ActivatePlayer(true, 2);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                SetPlayerUiVisibility(true, 3);
+                ActivatePlayer(true, 3);
             }
         }
 
         #endregion
-
     }
 
 }

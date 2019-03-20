@@ -35,16 +35,23 @@ namespace con2.game
             var middle = Vector3.zero;
             var furthestFromMiddle = Vector3.zero;
 
-            foreach (var t in Players.Dic)
+            if (Players.Dic.Count != 0)
             {
-                var playerPosition = t.Value.gameObject.transform.position;
-                middle += playerPosition;
-                if (playerPosition.magnitude > furthestFromMiddle.magnitude)
-                    furthestFromMiddle = playerPosition;
+                foreach (var t in Players.Dic)
+                {
+                    var playerPosition = t.Value.gameObject.transform.position;
+                    middle += playerPosition;
+                    if (playerPosition.magnitude > furthestFromMiddle.magnitude)
+                        furthestFromMiddle = playerPosition;
+                }
+                middle /= (3 * Players.Dic.Count);
+            }
+            else
+            {
+                middle = Vector3.zero;
             }
 
             //Average the positions with the x3 to compensate for the middle
-            middle /= (3 * Players.Dic.Count);
             middle += m_zoomFactor*m_initialDistanceFromCenter.normalized*furthestFromMiddle.magnitude;  //zoom
             middle += m_initialDistanceFromCenter;  //Keeps camera above the arena, pointed at 'middle'
             return middle;

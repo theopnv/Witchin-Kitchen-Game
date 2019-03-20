@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using con2.messages;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,13 +15,11 @@ namespace con2.game
         [HideInInspector]
         public PlayerManager Owner;
         [HideInInspector]
-        public Action OnPlayerInstantiated;
+        public Vector3 PlayerSpawnPosition;
 
         [SerializeField] private GameObject _FemalePrefab;
         [SerializeField] private GameObject _MalePrefab;
         [SerializeField] private GameObject _PlayerHUDPrefab;
-
-        [SerializeField] private float _PlayerDistanceFromCenter = 2f;
 
         [SerializeField]
         [Tooltip("List of HUD rectangles icons")]
@@ -31,30 +30,14 @@ namespace con2.game
             InitPlayer();
             InitHUD();
             InitKitchen();
-            OnPlayerInstantiated?.Invoke();
         }
 
         void InitPlayer()
         {
-            var playersShiftMagicVar = PlayersInfo.PlayerNumber == 2
-                ? 180
-                : PlayersInfo.PlayerNumber == 3
-                    ? 150
-                    : 135;
-
-            var increment = 360 / (PlayersInfo.PlayerNumber != 0 ? PlayersInfo.PlayerNumber : 1);
-            var radians = (increment * OwnerId + playersShiftMagicVar) * Mathf.Deg2Rad;
-            var pos = new Vector3()
-            {
-                x = Mathf.Cos(radians),
-                y = 0,
-                z = Mathf.Sin(radians),
-            };
-            pos *= _PlayerDistanceFromCenter;
             var player = Instantiate(
-            OwnerId % 2 == 0 ? _MalePrefab : _FemalePrefab,
-            pos, Quaternion.identity);
-            player.transform.forward = -pos;
+                OwnerId % 2 == 0 ? _MalePrefab : _FemalePrefab,
+                PlayerSpawnPosition, Quaternion.identity);
+            player.transform.forward = -PlayerSpawnPosition;
 
             Owner = player.GetComponent<PlayerManager>();
 
