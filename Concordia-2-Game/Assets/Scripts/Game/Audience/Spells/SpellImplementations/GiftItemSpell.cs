@@ -22,7 +22,7 @@ namespace con2.game
             var neededItem = FindNeededIngredient(targetPlayer);
             giftComponent.SetIngredientType(neededItem.Type);
             giftComponent.SetContents(neededItem.Prefab);
-            giftComponent.SetColor(ColorsManager.Get().PlayerMeshColors[_TargetedPlayer.id]);
+            giftComponent.SetColor(ColorsManager.Get().PlayerGiftColors[_TargetedPlayer.id]);
             yield return null;
         }
 

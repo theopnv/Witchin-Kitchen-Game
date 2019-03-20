@@ -61,7 +61,7 @@ namespace con2
                 players.Add(new Player
                 {
                     id = i,
-                    color = "#" + ColorUtility.ToHtmlStringRGBA(player.Color),
+                    color = "#" + ColorUtility.ToHtmlStringRGBA(ColorsManager.Get().PlayerAppColors[i]),
                     name = player.Name,
                     potions = player.CompletedPotionCount,
                 });
@@ -84,7 +84,7 @@ namespace con2
                 .ThenByDescending(x => x.CollectedIngredientCount)
                 .Select(x => new Player()
                 {
-                    color = ColorUtility.ToHtmlStringRGBA(x.Color),
+                    color = ColorUtility.ToHtmlStringRGBA(ColorsManager.Get().PlayerAppColors[x.ID]),
                     id = x.ID,
                     name = x.Name,
                     ingredients = x.CollectedIngredientCount,

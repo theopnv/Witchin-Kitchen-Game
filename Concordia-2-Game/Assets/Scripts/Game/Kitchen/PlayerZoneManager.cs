@@ -60,7 +60,7 @@ namespace con2.game
 
             Owner.ID = OwnerId;
             Owner.Name = PlayersInfo.Name[Owner.ID];
-            Owner.Color = ColorsManager.Get().PlayerMeshColors[Owner.ID];
+            Owner.Texture = ColorsManager.Get().PlayerColorTextures[Owner.ID];
         }
 
         void InitKitchen()

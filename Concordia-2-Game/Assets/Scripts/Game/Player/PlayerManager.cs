@@ -41,15 +41,10 @@ namespace con2.game
             }
         }
 
-        private Color _Color;
-        public Color Color
-        {
-            get => _Color;
-            set
-            {
-                _Color = value;
+        public Texture Texture {
+            set {
                 var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
-                skinRenderer.material.color = value;
+                skinRenderer.material.mainTexture = value;
                 Players.Dic[ID] = this;
             }
         }
