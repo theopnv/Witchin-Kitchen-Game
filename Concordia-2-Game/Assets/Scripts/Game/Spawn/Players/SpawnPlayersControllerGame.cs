@@ -16,15 +16,13 @@ namespace con2.game
         [SerializeField] private float _PlayerDistanceFromCenter = 2f;
         #endregion
 
-        public void Start()
+        public void Awake()
         {
             PrepareSpawnZone();
         }
 
         private void PrepareSpawnZone()
         {
-            Debug.Log(PlayersInfo.PlayerNumber);
-
             var playersShiftMagicVar = PlayersInfo.PlayerNumber == 2
                 ? 180
                 : PlayersInfo.PlayerNumber == 3

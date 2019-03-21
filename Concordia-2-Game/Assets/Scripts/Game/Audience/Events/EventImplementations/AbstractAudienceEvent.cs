@@ -21,7 +21,7 @@ namespace con2.game
         {
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             var eventManager = managers.GetComponentInChildren<EventManager>();
-            var m_mainGameManager = managers.GetComponentInChildren<MainGameManager>();
+            m_mainGameManager = managers.GetComponentInChildren<MainGameManager>();
             _MessageFeedManager = managers.GetComponentInChildren<MessageFeedManager>();
 
             eventManager.SetUp();
