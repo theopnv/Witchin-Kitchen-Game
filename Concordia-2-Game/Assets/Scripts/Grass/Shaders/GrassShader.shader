@@ -2,6 +2,9 @@
 {
     Properties
     {
+        _FreezeColor("Freeze color", Color) = (1, 1, 1, 1)
+        _FreezeFactor("Freeze factor", Float) = 0.0
+
         _Color("Color", Color) = (1, 1, 1, 1)
         _Glossiness("Smoothness", Range(0,1)) = 0.5
         _Metallic("Metallic", Range(0,1)) = 0.0
@@ -35,6 +38,9 @@
         #pragma multi_compile_instancing
 
         #include "UnityCG.cginc"
+
+        float4 _FreezeColor;
+        float _FreezeFactor;
 
         half _Glossiness;
         half _Metallic;
@@ -103,6 +109,7 @@
         void surf(Input IN, inout SurfaceOutputStandard o)
         {
             float4 color = UNITY_ACCESS_INSTANCED_PROP(Props, _Color);
+            color = lerp(color, _FreezeColor, _FreezeFactor);
 
             fixed4 c = color;
             o.Albedo = c.rgb;
