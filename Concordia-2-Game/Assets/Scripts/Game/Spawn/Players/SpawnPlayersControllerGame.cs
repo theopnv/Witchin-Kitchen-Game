@@ -16,7 +16,7 @@ namespace con2.game
         [SerializeField] private float _PlayerDistanceFromCenter = 2f;
         #endregion
 
-        public void Start()
+        public void Awake()
         {
             PrepareSpawnZone();
         }
