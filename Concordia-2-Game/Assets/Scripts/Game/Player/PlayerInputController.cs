@@ -23,6 +23,11 @@ public class PlayerInputController : MonoBehaviour, IInputConsumer
 
     public bool ConsumeInput(GamepadAction input)
     {
+        if (m_InputConsumers == null)
+        {
+            return false;
+        }
+
         foreach (IInputConsumer consumer in m_InputConsumers)
         {
             if (consumer.ConsumeInput(input))

@@ -167,11 +167,6 @@ namespace con2.lobby
             return inputConsumers;
         }
 
-        public void OnPlayerInitialized()
-        {
-            GetComponent<InputContextSwitcher>().SetToGameContext();
-        }
-
         public bool ConsumeInput(GamepadAction input)
         {
             if (input.GetActionID() == GamepadAction.ID.INTERACT)

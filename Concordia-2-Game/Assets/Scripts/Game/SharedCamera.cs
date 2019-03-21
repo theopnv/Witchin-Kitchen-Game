@@ -15,15 +15,17 @@ namespace con2.game
         private Vector3 velocity = Vector3.zero;
 
         private Vector3 camPos;
-        
+
         private Vector3 m_initialDistanceFromCenter;
-        
+
+        private bool activateCamera = false;
+
         void Start()
         {
             // Snap at start to avoid interpolation
             m_initialDistanceFromCenter = transform.position;
         }
-        
+
         void LateUpdate()
         {
             camPos = getNewCamTargetPos();

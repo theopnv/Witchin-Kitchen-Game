@@ -16,10 +16,9 @@ namespace con2.game
         [SerializeField] private float _PlayerDistanceFromCenter = 2f;
         #endregion
 
-        public override void Start()
+        public void Start()
         {
             PrepareSpawnZone();
-            base.Start();
         }
 
         private void PrepareSpawnZone()

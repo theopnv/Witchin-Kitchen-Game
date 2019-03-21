@@ -17,6 +17,11 @@ namespace con2.game
         // Start is called before the first frame update
         void Start()
         {
+            // Initialize players
+            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
+            {
+                FindObjectOfType<SpawnPlayersControllerGame>().InstantiatePlayer(i, OnPlayerInitialized);
+            }
             InitializeAudienceEvents();
             InitializeItemSpawning();
             InitializeEndGame();
