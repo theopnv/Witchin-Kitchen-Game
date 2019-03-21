@@ -19,10 +19,17 @@ namespace con2.game
         private GameObject m_ground;
         private PickableObject m_thisObj;
 
+        private MainGameManager m_mainGameManager;
+
+        void Awake()
+        {
+            m_mainGameManager = FindObjectOfType<MainGameManager>();
+        }
+
         // Use this for initialization
         void Start()
         {
-            var players = Players.Dic;
+            var players = m_mainGameManager.Players;
             foreach (KeyValuePair<int, PlayerManager> player in players)
             {
                 m_players.Add(player.Value.gameObject);

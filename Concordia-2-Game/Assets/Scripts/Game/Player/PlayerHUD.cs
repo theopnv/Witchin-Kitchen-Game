@@ -12,22 +12,24 @@ namespace con2.game
         public Text Message;
         public GameObject RecipeIconsParent;
         public Text Score;
+        private PlayerManager _Manager;
 
         void Start()
         {
             var detectController = FindObjectOfType<DetectController>();
+            _Manager = GetComponent<PlayerManager>();
             detectController.OnDisconnected += i =>
             {
                 if (i == OwnerId)
                 {
-                    Players.GetPlayerByID(OwnerId).SendMessageToPlayerInHUD("Your controller was disconnected.", Color.red, true);
+                    _Manager.SendMessageToPlayerInHUD("Your controller was disconnected.", Color.red, true);
                 }
             };
             detectController.OnConnected += i =>
             {
                 if (i == OwnerId)
                 {
-                    Players.GetPlayerByID(OwnerId).SendMessageToPlayerInHUD("", Color.red);
+                    _Manager.SendMessageToPlayerInHUD("", Color.red);
                 }
             };
         }

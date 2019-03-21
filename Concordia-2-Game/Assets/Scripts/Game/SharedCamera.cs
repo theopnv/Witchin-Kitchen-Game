@@ -20,6 +20,13 @@ namespace con2.game
 
         private bool activateCamera = false;
 
+        private AMainManager m_mainManager;
+
+        void Awake()
+        {
+            m_mainManager = FindObjectOfType<AMainManager>();
+        }
+
         void Start()
         {
             // Snap at start to avoid interpolation
@@ -37,16 +44,16 @@ namespace con2.game
             var middle = Vector3.zero;
             var furthestFromMiddle = Vector3.zero;
 
-            if (Players.Dic.Count != 0)
+            if (m_mainManager.Players.Count != 0)
             {
-                foreach (var t in Players.Dic)
+                foreach (var t in m_mainManager.Players)
                 {
                     var playerPosition = t.Value.gameObject.transform.position;
                     middle += playerPosition;
                     if (playerPosition.magnitude > furthestFromMiddle.magnitude)
                         furthestFromMiddle = playerPosition;
                 }
-                middle /= (3 * Players.Dic.Count);
+                middle /= (3 * m_mainManager.Players.Count);
             }
             else
             {

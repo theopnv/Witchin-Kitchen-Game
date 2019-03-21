@@ -18,6 +18,8 @@ namespace con2.game
         [SerializeField]
         protected GameObject m_prompt;
 
+        protected AMainManager m_mainManager;
+
         [HideInInspector]
         public PlayerManager Owner;
         public KitchenStation KitchenStation;
@@ -34,6 +36,11 @@ namespace con2.game
 
         //Pass player input on to the non-abstract minigame if the player is in range and facing the station
         public abstract bool TryToConsumeInput(GamepadAction input);
+
+        private void Awake()
+        {
+            m_mainManager = FindObjectOfType<AMainManager>();
+        }
 
         // Start is called before the first frame update
         private void Start()
@@ -103,7 +110,7 @@ namespace con2.game
 
         public bool ConsumeInput(GamepadAction input)
         {
-            var interactingPlayer = Players.GetPlayerByID(input.GetPlayerId());
+            var interactingPlayer = m_mainManager.Players[input.GetPlayerId()];
             var noOwner = Owner == null;
             var samePlayer = Owner.ID == interactingPlayer.ID;
             if (m_started && (noOwner || samePlayer) && CheckPlayerIsNear(interactingPlayer.gameObject))

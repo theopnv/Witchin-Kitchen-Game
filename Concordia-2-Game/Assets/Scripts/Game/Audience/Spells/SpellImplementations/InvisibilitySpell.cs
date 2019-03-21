@@ -16,7 +16,7 @@ namespace con2.game
 
         public override IEnumerator SpellImplementation()
         {
-            var targetPlayer = Players.GetPlayerByID(_TargetedPlayer.id);
+            var targetPlayer = m_mainGameManager.Players[_TargetedPlayer.id];
             var skin = targetPlayer.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().gameObject;
             var puff = targetPlayer.transform.Find("Puff").gameObject;
 

@@ -20,20 +20,24 @@ namespace con2.game
 
         public bool m_TestComplete = false;
 
-        void Start()
+        void Awake()
         {
-            m_thisStation = GetComponent<KitchenStation>();
-            m_itemSpawner = FindObjectOfType<ItemSpawner>();
-            m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
-            if (m_recipeUI == null)
-            {
-                var player = Players.Dic[Owner.ID];
-                m_recipeUI = player.PlayerHUD;
-            }
-
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             m_mgm = managers.GetComponentInChildren<AMainManager>();
             m_potionSpawner = m_mgm.GetComponent<OnCompletePotion>();
+            m_thisStation = GetComponent<KitchenStation>();
+            m_itemSpawner = managers.GetComponentInChildren<ItemSpawner>();
+            m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+        }
+
+        void Start()
+        {
+            if (m_recipeUI == null)
+            {
+                var player = m_mgm.Players[Owner.ID];
+                m_recipeUI = player.PlayerHUD;
+            }
+
             NextRecipe();
         }
 

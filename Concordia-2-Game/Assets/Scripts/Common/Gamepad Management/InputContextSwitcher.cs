@@ -10,7 +10,6 @@ namespace con2
     {
         Func<int, List<IInputConsumer>> 
             f_menuContext, 
-            f_lobbyContext, 
             f_gameContext;
 
         public void Start()
@@ -27,17 +26,13 @@ namespace con2
                 case SceneNames.MainMenu:
                     SetToMenuContext();
                     break;
-                case SceneNames.Lobby:
-                case SceneNames.Game:
-                    SetToLobbyContext();
-                    break;
                 default: break;
             }
         }
 
-        public void SetToGameContext()
+        public void SetToGameContext(int i)
         {
-            SwitchContext(f_gameContext);
+            SwitchContext(f_gameContext, i);
         }
 
         public void SetToMenuContext()
@@ -45,15 +40,16 @@ namespace con2
             SwitchContext(f_menuContext);
         }
 
-        public void SetToLobbyContext()
+        private static void SwitchContext(Func<int, List<IInputConsumer>> contextFunction, int i = -1)
         {
-            SwitchContext(f_lobbyContext);
-        }
-
-        private static void SwitchContext(Func<int, List<IInputConsumer>> contextFunction)
-        {
-            //Ask gpm for number of player, use that number to set contexts (with playercontroller, and only allow menu input for p1)
-            for (int i = 0; i < PlayersInfo.PlayerNumber; i++)
+            if (i == -1)
+            {
+                for (i = 0; i < PlayersInfo.PlayerNumber; i++)
+                {
+                    GamepadMgr.Pad(i).SwitchGamepadContext(contextFunction(i), i);
+                }
+            }
+            else
             {
                 GamepadMgr.Pad(i).SwitchGamepadContext(contextFunction(i), i);
             }

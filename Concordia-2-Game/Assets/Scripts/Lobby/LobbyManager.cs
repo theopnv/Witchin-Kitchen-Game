@@ -23,7 +23,7 @@ namespace con2.lobby
             { 2, new Tuple<bool, string, Color>(false, "Snape the Punch-master", Color.green) },
             { 3, new Tuple<bool, string, Color>(false, "Herbione Granger", Color.yellow) },
         };
-
+        
         [Tooltip("Controllers detector")]
         [SerializeField] private DetectController _DetectController;
         [SerializeField] private Text _RoomPin;
@@ -147,7 +147,7 @@ namespace con2.lobby
             inputConsumers.Add(this);
 
             // Fight
-            var player = game.Players.GetPlayerByID(playerIndex);
+            var player = Players[playerIndex];
             inputConsumers.Add(player.GetComponent<FightStun>());
 
             // Kitchens

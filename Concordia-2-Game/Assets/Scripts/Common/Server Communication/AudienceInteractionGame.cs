@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using con2.game;
 using con2.messages;
 using Newtonsoft.Json;
 using UnityEngine;
 using SocketIO;
 using Debug = UnityEngine.Debug;
-using Players = con2.game.Players;
 
 namespace con2
 {
@@ -40,7 +40,8 @@ namespace con2
             var player = new Player() {id = playerId};
             if (playerId != -1)
             {
-                player.name = Players.GetPlayerByID(playerId).Name;
+                var manager = FindObjectOfType<AMainManager>();
+                player.name = manager.Players[playerId].Name;
             }
 
             var spellRequest = new SpellRequest()
@@ -55,9 +56,10 @@ namespace con2
         public void SendGameStateUpdate()
         {
             var players = new List<Player>();
-            for (var i = 0; i < Players.Dic.Count; i++)
+            var manager = FindObjectOfType<AMainManager>();
+            for (var i = 0; i < manager.Players.Count; i++)
             {
-                var player = Players.GetPlayerByID(i);
+                var player = manager.Players[i];
                 players.Add(new Player
                 {
                     id = i,
@@ -78,7 +80,8 @@ namespace con2
         
         public void SendGameOutcome()
         {
-            List<Player> leaderboards = Players.Dic
+            var manager = FindObjectOfType<AMainManager>();
+            List<Player> leaderboards = manager.Players
                 .Select(x => x.Value)
                 .OrderByDescending(x => x.CompletedPotionCount)
                 .ThenByDescending(x => x.CollectedIngredientCount)

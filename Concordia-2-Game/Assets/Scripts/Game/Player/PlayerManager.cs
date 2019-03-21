@@ -18,14 +18,6 @@ namespace con2.game
             {
                 _ID = value;
                 GetComponent<PlayerInputController>()?.SetPlayerIndex(_ID);
-                if (Players.Dic.ContainsKey(ID))
-                {
-                    Players.Dic[ID] = this;
-                }
-                else
-                {
-                    Players.Dic.Add(ID, this);
-                }
             }
         }
 
@@ -37,7 +29,6 @@ namespace con2.game
             {
                 _Name = value;
                 gameObject.name = _Name;
-                Players.Dic[ID] = this;
             }
         }
 
@@ -50,7 +41,6 @@ namespace con2.game
                 _Color = value;
                 var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
                 skinRenderer.material.color = value;
-                Players.Dic[ID] = this;
             }
         }
 
@@ -62,7 +52,6 @@ namespace con2.game
             set
             {
                 _CompletedPotionCount = value;
-                Players.Dic[ID] = this;
                 if (_PlayerHUD)
                 {
                     _PlayerHUD.Score.text = _CompletedPotionCount.ToString();
@@ -78,7 +67,6 @@ namespace con2.game
             set
             {
                 _CollectedIngredientCount = value;
-                Players.Dic[ID] = this;
             }
         }
 
@@ -90,7 +78,6 @@ namespace con2.game
             set
             {
                 _Rank = value;
-                Players.Dic[ID] = this;
             }
         }
 
@@ -109,7 +96,6 @@ namespace con2.game
             set
             {
                 _PlayerHUD = value;
-                Players.Dic[ID] = this;
             }
         }
 

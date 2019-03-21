@@ -52,7 +52,7 @@ namespace con2.game
             inputConsumers.Add(pmi);
 
             // Players
-            var player = Players.GetPlayerByID(playerIndex);
+            var player = Players[playerIndex];
             inputConsumers.Add(player.GetComponent<FightStun>());
 
             // Kitchens
@@ -232,11 +232,10 @@ namespace con2.game
         public void DetermineWinner()
         {
             m_finalRankings = new List<List<PlayerManager>>();
-            var players = Players.Dic;
             List<PlayerManager> playerScores = new List<PlayerManager>();
-            for (int i = 0; i < players.Count; i++)
+            for (int i = 0; i < Players.Count; i++)
             {
-                playerScores.Add(players[i]);
+                playerScores.Add(Players[i]);
             }
 
             List<List<PlayerManager>> rankings = playerScores.GroupBy(x => x.CompletedPotionCount)
@@ -259,11 +258,10 @@ namespace con2.game
 
         public void UpdateRanks()
         {
-            var players = Players.Dic;
             List<PlayerManager> playerScores = new List<PlayerManager>();         
-            for (int i = 0; i < players.Count; i++)
+            for (int i = 0; i < Players.Count; i++)
             {
-                playerScores.Add(players[i]);
+                playerScores.Add(Players[i]);
             }
 
             List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.CompletedPotionCount)
@@ -274,9 +272,9 @@ namespace con2.game
             switch (scoreGroups.Count)
             {
                 case 1:
-                    for (int i = 0; i < players.Count; i++)     // When all players are even (e.g. at start), no one is in first
+                    for (int i = 0; i < Players.Count; i++)     // When all players are even (e.g. at start), no one is in first
                     {
-                        players[i].PlayerRank = PlayerManager.Rank.MIDDLE;
+                        Players[i].PlayerRank = PlayerManager.Rank.MIDDLE;
                     }
                     break;
                 default:

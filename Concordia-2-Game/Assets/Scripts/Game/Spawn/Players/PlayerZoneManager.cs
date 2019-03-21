@@ -26,17 +26,17 @@ namespace con2.game
         [Tooltip("List of HUD rectangles icons")]
         public List<Sprite> BackgroundRectangles = new List<Sprite>();
 
-        public Action OnPlayerInitialized;
+        public Action<PlayerManager> OnPlayerInitialized;
 
         void Start()
         {
-            InitPlayer();
+            var owner = InitPlayer();
             InitHUD();
             InitKitchen();
-            OnPlayerInitialized?.Invoke();
+            OnPlayerInitialized?.Invoke(owner);
         }
 
-        void InitPlayer()
+        PlayerManager InitPlayer()
         {
             var player = Instantiate(
                 OwnerId % 2 == 0 ? _MalePrefab : _FemalePrefab,
@@ -50,6 +50,8 @@ namespace con2.game
             Owner.Color = ColorsManager.Get().PlayerMeshColors[Owner.ID];
             Owner.CompletedPotionCount = 0;
             Owner.CollectedIngredientCount = 0;
+
+            return Owner;
         }
 
         void InitKitchen()

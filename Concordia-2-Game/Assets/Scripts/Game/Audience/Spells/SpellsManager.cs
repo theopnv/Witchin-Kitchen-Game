@@ -21,6 +21,7 @@ namespace con2.game
         [SerializeField] private EventManager _EventManager;
 
         private AudienceInteractionManager _AudienceInteractionManager;
+        private MainGameManager _MainGameManager;
 
         private int _CurrentCastSpeller = 0;
 
@@ -43,6 +44,7 @@ namespace con2.game
 
         private void Start()
         {
+            _MainGameManager = FindObjectOfType<MainGameManager>();
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _AudienceInteractionManager.OnSpellCasted += OnSpellCasted;
         }
@@ -113,7 +115,7 @@ namespace con2.game
         private void LogSpellInPlayerHUD(Spell spell)
         {
             var message = spell.caster.name + " casted " + Spells.EventList[(Spells.SpellID) spell.spellId] + " on you";
-            var player = Players.GetPlayerByID(spell.targetedPlayer.id);
+            var player = _MainGameManager.Players[spell.targetedPlayer.id];
             player.SendMessageToPlayerInHUD(message, Color.white);
         }
 

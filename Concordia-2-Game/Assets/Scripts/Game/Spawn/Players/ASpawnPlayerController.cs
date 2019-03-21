@@ -13,7 +13,7 @@ namespace con2.game
         public abstract Transform GetZoneSpawnPosition(int i);
         public abstract Vector3 GetPlayerSpawnPositionInZone(int i);
 
-        public void InstantiatePlayer(int i, Action onPlayerInitialized = null)
+        public void InstantiatePlayer(int i, Action<PlayerManager> onPlayerInitialized = null)
         {
             var instance = Instantiate(_PlayerZonePrefab, GetZoneSpawnPosition(i));
             var playerZoneManager = instance.GetComponent<PlayerZoneManager>();
