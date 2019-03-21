@@ -6,6 +6,8 @@ namespace con2.game
 
     public class ExplosiveItem : AHitAllInRange
     {
+        public CamShakeMgr.Intensity ShakeIntensity = CamShakeMgr.Intensity.TINY;
+
         private bool m_explodeOnContact = false;
         [HideInInspector] public GameObject m_launcher;
         private bool m_exploded = false;
@@ -54,6 +56,10 @@ namespace con2.game
             {
                 m_exploded = true;
                 Hit();
+
+                if (m_didStun)
+                    ShakeIntensity = CamShakeMgr.Intensity.MEDIUM;
+                CamShakeMgr.Get().Shake(ShakeIntensity);
 
                 Rigidbody body = GetComponent<Rigidbody>();
                 body.constraints = RigidbodyConstraints.FreezeAll;

@@ -8,11 +8,13 @@ public abstract class AHitAllInRange : MonoBehaviour
 
     private List<KeyValuePair<GameObject, IPunchable[]>> m_punchablesInRadius;
     [HideInInspector] public List<GameObject> m_immuneTargets;
+    [HideInInspector] public bool m_didStun;
 
     private void Awake()
     {
         m_immuneTargets = new List<GameObject>();
         m_punchablesInRadius = new List<KeyValuePair<GameObject, IPunchable[]>>();
+        m_didStun = false;
         OnStart();
     }
 
@@ -38,6 +40,8 @@ public abstract class AHitAllInRange : MonoBehaviour
 
     public void Hit()
     {
+        m_didStun = false;
+
         for (int i = 0; i < m_punchablesInRadius.Count; i++)
         {
             KeyValuePair<GameObject, IPunchable[]> target = m_punchablesInRadius[i];
@@ -52,6 +56,7 @@ public abstract class AHitAllInRange : MonoBehaviour
                 {
                     Vector3 hitVector = (target.Key.transform.position - transform.position).normalized * m_strength;
                     punchableComponent.Punch(ModulateHitVector(hitVector), m_stunTime);
+                    m_didStun = true;
                 }
             }
         }
