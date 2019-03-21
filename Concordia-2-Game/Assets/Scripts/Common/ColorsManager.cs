@@ -14,12 +14,18 @@ namespace con2
         }
 
 
+        public Texture[] PlayerColorTextures = new Texture[4];
+
         public Color[] PlayerMeshColors = new Color[4];
 
         public Color[] CauldronLiquidColors = new Color[4];
 
         [ColorUsageAttribute(true, true)]
         public Color[] CauldronBubblesColors = new Color[4];
+
+        public Color[] PlayerAppColors = new Color[4];
+
+        public Color[] PlayerGiftColors = new Color[4];
 
         void Awake()
         {

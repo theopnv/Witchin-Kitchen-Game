@@ -26,6 +26,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_type: 3
+--- !u!114 &4500991509052742901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4322102322715745239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f673db42e40ade04cb270e2a30e2d4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineMaterial: {fileID: 2100000, guid: 229fcbd8d96f449489294dbe5830530a, type: 2}
+  Thickness: 0.1
 --- !u!114 &5055534162228238874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,7 +66,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bounceFilter: 0.01
---- !u!114 &3383022250578281333
+--- !u!114 &1656819016556012647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4322102322715745233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55e71f1ec427784d9062a75d84a8454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5059458429382890812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4322102322715745235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55e71f1ec427784d9062a75d84a8454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6281510322876677813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,11 +99,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4322102322715745237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec56a916337799f45887b53ebf468467, type: 3}
+  m_Script: {fileID: 11500000, guid: f55e71f1ec427784d9062a75d84a8454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.03
 --- !u!1001 &4322102322715778417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,6 +174,18 @@ PrefabInstance:
 --- !u!1 &4322102322715745239 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: 3cbfdb0292c27a846a130ce643a08d69,
+    type: 3}
+  m_PrefabInstance: {fileID: 4322102322715778417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4322102322715745233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 3cbfdb0292c27a846a130ce643a08d69,
+    type: 3}
+  m_PrefabInstance: {fileID: 4322102322715778417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4322102322715745235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 3cbfdb0292c27a846a130ce643a08d69,
     type: 3}
   m_PrefabInstance: {fileID: 4322102322715778417}
   m_PrefabAsset: {fileID: 0}

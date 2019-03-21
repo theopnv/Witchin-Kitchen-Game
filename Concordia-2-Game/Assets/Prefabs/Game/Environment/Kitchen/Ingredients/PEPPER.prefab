@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2568805682542890929}
   - component: {fileID: 2568805682539990931}
   - component: {fileID: 2568805682540989779}
-  - component: {fileID: 6205433821193937710}
+  - component: {fileID: 839551708611912241}
   m_Layer: 0
   m_Name: Stem_Geo
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6205433821193937710
+--- !u!114 &839551708611912241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,11 +87,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2568805682543252369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec56a916337799f45887b53ebf468467, type: 3}
+  m_Script: {fileID: 11500000, guid: f55e71f1ec427784d9062a75d84a8454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.03
 --- !u!1 &2568805682543252371
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +101,7 @@ GameObject:
   - component: {fileID: 2568805682542890931}
   - component: {fileID: 2568805682539990933}
   - component: {fileID: 2568805682540989781}
-  - component: {fileID: 3958107544329451038}
+  - component: {fileID: 237012269826284540}
   m_Layer: 0
   m_Name: Pepper_Geo
   m_TagString: Untagged
@@ -170,7 +168,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3958107544329451038
+--- !u!114 &237012269826284540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,11 +177,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2568805682543252371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec56a916337799f45887b53ebf468467, type: 3}
+  m_Script: {fileID: 11500000, guid: f55e71f1ec427784d9062a75d84a8454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.03
 --- !u!1 &2568805682543252373
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +191,6 @@ GameObject:
   - component: {fileID: 2568805682542890933}
   - component: {fileID: 2568805682539990935}
   - component: {fileID: 2568805682540989783}
-  - component: {fileID: 2072280606987706872}
   m_Layer: 0
   m_Name: Leaves_Geo
   m_TagString: Untagged
@@ -262,20 +257,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2072280606987706872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2568805682543252373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec56a916337799f45887b53ebf468467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.03
 --- !u!1 &4166776755432027155
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +269,7 @@ GameObject:
   - component: {fileID: 885212343196166465}
   - component: {fileID: 7659370405728741646}
   - component: {fileID: 2012165649423204778}
+  - component: {fileID: 3854781324076686573}
   m_Layer: 0
   m_Name: Ingredient
   m_TagString: Untagged
@@ -351,6 +333,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3854781324076686573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4166776755432027155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f673db42e40ade04cb270e2a30e2d4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineMaterial: {fileID: 2100000, guid: 229fcbd8d96f449489294dbe5830530a, type: 2}
+  Thickness: 0.1
 --- !u!1001 &7820617728595579067
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -65,6 +65,8 @@ public class Grass : MonoBehaviour
     public float WindDirectionModulationStrength = 0.5f;
     public float RollingWindPositionScale = 0.001f;
     public Vector3 Scale = new Vector3(1.0f, 1.0f, 1.0f);
+    public Color FreezeColor;
+    public float FreezeFactor = 0.0f;
     private Vector3 WindDirectionModulated = new Vector3();
     private Texture2D RollingWindTex;
     private Vector2 RollingWindOffset = new Vector2();
@@ -208,6 +210,8 @@ public class Grass : MonoBehaviour
             propertyBlock.SetFloat("_MeshHeight", MeshHeight);
             propertyBlock.SetVector("_Scale", Scale);
             propertyBlock.SetTexture("_Displacement", DisplacementMap.Get().rt);
+            propertyBlock.SetColor("_FreezeColor", FreezeColor);
+            propertyBlock.SetFloat("_FreezeFactor", FreezeFactor);
 
             var grassBounds = new Vector4();
             grassBounds.x = targetBounds.center.x - targetBounds.extents.x;
