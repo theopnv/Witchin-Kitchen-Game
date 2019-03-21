@@ -4716,7 +4716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5da56935b6bc2c40b4d42d9c7c8468a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NetworkAdsDuration: 10
+  m_NetworkAdsDuration: 15
   _NetworkAdsCanvasPrefab: {fileID: 7062139143320713761, guid: 768e9330d6e1f894097ef746afdd2d07,
     type: 3}
 --- !u!114 &773999206
@@ -10515,6 +10515,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1448121867}
     m_Modifications:
+    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
+      propertyPath: m_Name
+      value: spoon
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.509
@@ -10570,10 +10574,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: de137343678494c4681798ca3a7624d2, type: 3}
-      propertyPath: m_Name
-      value: spoon
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: de137343678494c4681798ca3a7624d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
