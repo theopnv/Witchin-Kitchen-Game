@@ -14,6 +14,14 @@ namespace con2.game
 
         private MessageFeedManager _MessageFeedManager;
 
+        void Awake()
+        {
+            if (Application.isEditor && PlayersInfo.PlayerNumber == 0)
+            {
+                PlayersInfo.PlayerNumber = 4;
+            }
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -34,6 +42,7 @@ namespace con2.game
 
         void Update()
         {
+            base.Update();
             UpdateEndGame();
         }
 

@@ -15,14 +15,6 @@ namespace con2.lobby
     public class LobbyManager : AMainManager, IInputConsumer
     {
         #region Private Variables
-
-        private Dictionary<int, Tuple<bool, string, Color>> _Players = new Dictionary<int, Tuple<bool, string, Color>>()
-        {
-            { 0, new Tuple<bool, string, Color>(false, "Gandalf the OG", Color.red) },
-            { 1, new Tuple<bool, string, Color>(false, "Sabrina the Tahini Witch", Color.blue) },
-            { 2, new Tuple<bool, string, Color>(false, "Snape the Punch-master", Color.green) },
-            { 3, new Tuple<bool, string, Color>(false, "Herbione Granger", Color.yellow) },
-        };
         
         [Tooltip("Controllers detector")]
         [SerializeField] private DetectController _DetectController;
@@ -66,7 +58,7 @@ namespace con2.lobby
 
         void Update()
         {
-            DevMode();
+            base.Update();
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
@@ -187,25 +179,6 @@ namespace con2.lobby
         #endregion
 
         #region Players
-        
-        private void ActivatePlayer(bool activate, int i)
-        {
-            if (activate)
-            {
-                if (!_Players[i].Item1)
-                {
-                    _Players[i] = new Tuple<bool, string, Color>(true, _Players[i].Item2, _Players[i].Item3);
-                    PlayersInfo.Name[i] = _Players[i].Item2;
-                    PlayersInfo.Color[i] = _Players[i].Item3;
-                    ++PlayersInfo.PlayerNumber;
-                    GetComponent<SpawnPlayersControllerLobby>().InstantiatePlayer(i, OnPlayerInitialized);
-                }
-            }
-            else
-            {
-                --PlayersInfo.PlayerNumber;
-            }
-        }
 
         private void MakePlayerList()
         {
@@ -235,37 +208,6 @@ namespace con2.lobby
 
         #endregion
 
-        #region Dev Mode
-
-        void DevMode()
-        {
-            ActivatePlayersFromKeyboard();
-        }
-
-        void ActivatePlayersFromKeyboard()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                ActivatePlayer(true, 0);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                ActivatePlayer(true, 1);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                ActivatePlayer(true, 2);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                ActivatePlayer(true, 3);
-            }
-        }
-
-        #endregion
     }
 
 }
