@@ -43,6 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40924781d754c2f46885b30e5b7f8ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerColorTextures:
+  - {fileID: 2800000, guid: 08c182c642981a0438215ccdf4e7ddc3, type: 3}
+  - {fileID: 2800000, guid: cd004675988364140aef7c4dce489e80, type: 3}
+  - {fileID: 2800000, guid: 25367c0beb6794b4391a0d6c856ef2e8, type: 3}
+  - {fileID: 2800000, guid: 433e4eb1aae7935458aee777ab64e8d3, type: 3}
   PlayerMeshColors:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0, g: 0.9747648, b: 1, a: 1}
@@ -58,3 +63,13 @@ MonoBehaviour:
   - {r: 0.44501045, g: 1.9053825, b: 1.9766747, a: 1}
   - {r: 0.62094486, g: 1.9766746, b: 0.4450105, a: 1}
   - {r: 1.8956214, g: 1.9766747, b: 0.44501045, a: 1}
+  PlayerAppColors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0.97647065, b: 1, a: 1}
+  - {r: 0.15294118, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.909804, b: 0, a: 1}
+  PlayerGiftColors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0.97647065, b: 1, a: 1}
+  - {r: 0.15294118, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.909804, b: 0, a: 1}
