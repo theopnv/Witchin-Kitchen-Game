@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 1530401459715735349}
   - component: {fileID: 1686375123811575693}
   - component: {fileID: 5817765546517969983}
+  - component: {fileID: 8057159021907760443}
   m_Layer: 0
   m_Name: Ingredient
   m_TagString: Untagged
@@ -85,6 +86,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxSpeedFractionWhenHolding: 0.75
+--- !u!114 &8057159021907760443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050941798615541391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f673db42e40ade04cb270e2a30e2d4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineMaterial: {fileID: 2100000, guid: 229fcbd8d96f449489294dbe5830530a, type: 2}
+  Thickness: 0.1
 --- !u!1 &2337762778466084445
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +111,7 @@ GameObject:
   - component: {fileID: 2337762778466384509}
   - component: {fileID: 2337762778467154525}
   - component: {fileID: 2337762778468284573}
-  - component: {fileID: 6537388831148312679}
+  - component: {fileID: 4393242443149745151}
   m_Layer: 0
   m_Name: Eye_GEO
   m_TagString: Untagged
@@ -164,7 +179,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6537388831148312679
+--- !u!114 &4393242443149745151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,11 +188,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2337762778466084445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec56a916337799f45887b53ebf468467, type: 3}
+  m_Script: {fileID: 11500000, guid: f55e71f1ec427784d9062a75d84a8454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.03
 --- !u!1001 &210225203949848058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -275,6 +288,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7a67b1217d83f7a4887791c418ed93d0, type: 2}
+    - target: {fileID: 1028785531022391640, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da633f4c7854fd459d05e444cbd1952, type: 3}
 --- !u!1 &2135384641246065995 stripped

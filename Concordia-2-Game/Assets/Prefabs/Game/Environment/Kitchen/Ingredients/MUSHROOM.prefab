@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7487982122396268401}
   - component: {fileID: 2851349808905881810}
   - component: {fileID: 3875601467930385552}
+  - component: {fileID: 5186833654930715112}
   m_Layer: 0
   m_Name: Ingredient
   m_TagString: Untagged
@@ -74,6 +75,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxSpeedFractionWhenHolding: 0.85
+--- !u!114 &5186833654930715112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205655844366206168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f673db42e40ade04cb270e2a30e2d4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineMaterial: {fileID: 2100000, guid: 229fcbd8d96f449489294dbe5830530a, type: 2}
+  Thickness: 0.1
 --- !u!1 &6176417845398591833
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +100,7 @@ GameObject:
   - component: {fileID: 6176417845398357369}
   - component: {fileID: 6176417845399651679}
   - component: {fileID: 6176417845400782751}
-  - component: {fileID: 413101997477325580}
+  - component: {fileID: 6917728133253076256}
   m_Layer: 0
   m_Name: Stem_GEO
   m_TagString: Untagged
@@ -152,7 +167,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &413101997477325580
+--- !u!114 &6917728133253076256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,11 +176,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6176417845398591833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec56a916337799f45887b53ebf468467, type: 3}
+  m_Script: {fileID: 11500000, guid: f55e71f1ec427784d9062a75d84a8454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.03
 --- !u!1 &6176417845398591837
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +190,7 @@ GameObject:
   - component: {fileID: 6176417845398357373}
   - component: {fileID: 6176417845399651677}
   - component: {fileID: 6176417845400782749}
-  - component: {fileID: 1157934097677124902}
+  - component: {fileID: 1416582893080083951}
   m_Layer: 0
   m_Name: Cap_GEO
   m_TagString: Untagged
@@ -244,7 +257,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1157934097677124902
+--- !u!114 &1416582893080083951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,11 +266,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6176417845398591837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec56a916337799f45887b53ebf468467, type: 3}
+  m_Script: {fileID: 11500000, guid: f55e71f1ec427784d9062a75d84a8454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-  OutlineWidth: 0.03
 --- !u!1001 &7558062843887274209
 PrefabInstance:
   m_ObjectHideFlags: 0
