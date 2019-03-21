@@ -9,11 +9,14 @@ namespace con2.game
     {
         private Recipe m_currentPotionRecipe;
         private int m_currentRecipeIndex = -1;
-        public Text m_recipeUI, m_score;
+        public PlayerHUD m_recipeUI;
         private KitchenStation m_thisStation;
         private MainGameManager m_mgm;
         private ItemSpawner m_itemSpawner;
+        private OnCompletePotion m_potionSpawner;
         private AudienceInteractionManager m_audienceInteractionManager;
+
+        public bool m_TestComplete = false;
 
         void Start()
         {
@@ -22,31 +25,37 @@ namespace con2.game
             m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             if (m_recipeUI == null)
             {
-                m_recipeUI = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Recipe;
-            }
-            if (m_score == null)
-            {
-                m_score = Players.Dic[m_thisStation.GetOwner().ID].PlayerHUD.Score;
+                m_recipeUI = Players.Dic[GetOwner().ID].PlayerHUD;
             }
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             m_mgm = managers.GetComponentInChildren<MainGameManager>();
+            m_potionSpawner = m_mgm.GetComponent<OnCompletePotion>();
             NextRecipe();
         }
 
         void NextRecipe()
         {
             m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
-            m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
-            var owner = m_thisStation.GetOwner();
-            owner.Score = m_currentRecipeIndex;
-            m_score.text = owner.Score.ToString();
+            SetNewRecipeUI();
+            var owner = GetOwner();
+            owner.CompletedPotionCount = m_currentRecipeIndex;
             m_mgm.UpdateRanks();
             m_audienceInteractionManager.SendGameStateUpdate();
             if (m_currentRecipeIndex > 0)
             {
                 var spellManager = FindObjectOfType<SpellsManager>();
-                spellManager.LaunchSpellRequest();
+                spellManager.LaunchSpellRequest(owner.ID);
             }
+        }
+
+        void SetNewRecipeUI()
+        {
+            m_currentPotionRecipe.SetNewRecipeUI(m_recipeUI);
+        }
+
+        void UpdateRecipeUI(Ingredient collected)
+        {
+            m_currentPotionRecipe.UpdateRecipeUI(m_recipeUI, collected);
         }
 
         public bool CollectIngredient(Ingredient collectedIngredient)
@@ -54,8 +63,14 @@ namespace con2.game
             if (m_currentPotionRecipe.IsIngredientNeeded(collectedIngredient) && !m_thisStation.IsStoringIngredient())
             {
                 m_currentPotionRecipe.CollectIngredient(collectedIngredient);
-                m_recipeUI.text = m_currentPotionRecipe.GetRecipeUI();
-                m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
+                UpdateRecipeUI(collectedIngredient);
+                if (collectedIngredient != Ingredient.NEWT_EYE)
+                {
+                    --m_itemSpawner.SpawnedItemsCount[collectedIngredient];
+                    m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
+                }
+                var owner = GetOwner();
+                owner.CollectedIngredientCount++;
                 return true;
             }
             return false;
@@ -77,7 +92,14 @@ namespace con2.game
             if (m_currentPotionRecipe.IsComplete())
             {
                 //You did it!
-                m_recipeUI.text = "You made a potion, keep going!";
+                m_potionSpawner.OnPotionComplete(this);
+                NextRecipe();
+            }
+
+            if (m_TestComplete)
+            {
+                m_TestComplete = false;
+                m_potionSpawner.OnPotionComplete(this);
                 NextRecipe();
             }
         }
@@ -85,6 +107,16 @@ namespace con2.game
         public int GetNumCompletedPotions()
         {
             return m_currentRecipeIndex;
+        }
+
+        public PlayerManager GetOwner()
+        {
+            return m_thisStation.GetOwner();
+        }
+
+        public Ingredient GetNextNeededIngredient()
+        {
+            return m_currentPotionRecipe.GetNextNeededIngredient();
         }
     }
 
@@ -143,27 +175,43 @@ namespace con2.game
             m_isComplete = complete;
         }
 
-        public string GetRecipeUI()
+        public void UpdateRecipeUI(PlayerHUD recipeUI, Ingredient collected)
         {
-            string recipeUI = "";
+            List<Image> newIcons = new List<Image>();
             foreach (IngredientStatus status in m_fullRecipe)
             {
-                if (status.m_collected == false)
-                {
-                    recipeUI += "X - " + status.m_type + "\n";
-                }
-                else
-                {
-                    char checkmark = '\u2713';
-                    recipeUI += checkmark.ToString() + " - " + status.m_type + "\n";
-                }
+                Image icon = GlobalRecipeList.IconSprites[status.m_type];
+                newIcons.Add(icon);
             }
-            return recipeUI;
+            recipeUI.CollectIngredient(collected);
+        }
+
+        public void SetNewRecipeUI(PlayerHUD recipeUI)
+        {
+            List<Image> newIcons = new List<Image>();
+            foreach (IngredientStatus status in m_fullRecipe)
+            {
+                newIcons.Add(GlobalRecipeList.IconSprites[status.m_type]);
+            }
+            recipeUI.SetNewRecipeIcons(newIcons);
         }
 
         public bool IsComplete()
         {
             return m_isComplete;
+        }
+
+        public Ingredient GetNextNeededIngredient()
+        {
+            foreach (IngredientStatus i in m_fullRecipe)
+            {
+                if (!i.m_collected)
+                {
+                    return i.m_type;
+                }
+            }
+            //If nothing needed, then return random ingredient
+            return (Ingredient)Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT);
         }
 
         public class IngredientStatus

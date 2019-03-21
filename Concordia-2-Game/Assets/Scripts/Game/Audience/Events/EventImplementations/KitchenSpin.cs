@@ -7,12 +7,13 @@ namespace con2.game
 
     public class KitchenSpin : MonoBehaviour
     {
-        private bool m_isSpinning;
+        private bool m_isSpinning = false;
+        private float m_spinSpeed;
         private Vector3 m_spinDir;
         private Dictionary<GameObject, GameObject> m_objectsInSpinZoneAndTheirOriginalParents = new Dictionary<GameObject, GameObject>();
         private GameObject m_floor;
 
-        private static List<string> m_keyTags = new List<string> { Tags.PLAYER_TAG, Tags.INGREDIENT, Tags.PROJECTILE };
+        private static List<string> m_keyTags = new List<string> { Tags.PLAYER_TAG, Tags.INGREDIENT, Tags.PROJECTILE, Tags.KITCHEN };
 
         private void Start()
         {
@@ -30,7 +31,7 @@ namespace con2.game
         {
             if (m_isSpinning)
             {
-                m_floor.transform.Rotate(m_spinDir * Time.deltaTime);
+                m_floor.transform.Rotate(m_spinDir * Time.deltaTime * m_spinSpeed);
             }
         }
 
@@ -67,7 +68,10 @@ namespace con2.game
             if (p)
                 parentObject = p.transform.gameObject;
 
-            m_objectsInSpinZoneAndTheirOriginalParents.Add(collidingObject, parentObject);
+            if (!m_objectsInSpinZoneAndTheirOriginalParents.ContainsKey(collidingObject))
+            {
+                m_objectsInSpinZoneAndTheirOriginalParents.Add(collidingObject, parentObject);
+            }
 
 
             if (m_isSpinning)
@@ -119,9 +123,14 @@ namespace con2.game
             }
         }
 
-        public void SetIsSpinning(bool doSpin)
+        public void SetSpinSpeed(float speed)
         {
-            m_isSpinning = doSpin;
+            m_spinSpeed = speed;
+        }
+
+        public void SetIsSpinning(bool spin)
+        {
+            m_isSpinning = spin;
         }
 
         public void SetSpinDir(Vector3 dir)

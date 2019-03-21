@@ -41,30 +41,35 @@ namespace con2.game
             }
         }
 
-        private Color _Color;
-        public Color Color
-        {
-            get => _Color;
-            set
-            {
-                _Color = value;
-                var renderers = GetComponentsInChildren<Renderer>();
-                foreach (var renderer in renderers)
-                { 
-                    renderer.material.color = value;
-                }
+        public Texture Texture {
+            set {
+                var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+                skinRenderer.material.mainTexture = value;
                 Players.Dic[ID] = this;
             }
         }
 
-        private int _Score;
+        private int _CompletedPotionCount;
 
-        public int Score
+        public int CompletedPotionCount
         {
-            get => _Score;
+            get => _CompletedPotionCount;
             set
             {
-                _Score = value;
+                _CompletedPotionCount = value;
+                Players.Dic[ID] = this;
+                _PlayerHUD.Score.text = _CompletedPotionCount.ToString();
+            }
+        }
+
+        private int _CollectedIngredientCount;
+
+        public int CollectedIngredientCount
+        {
+            get => _CollectedIngredientCount;
+            set
+            {
+                _CollectedIngredientCount = value;
                 Players.Dic[ID] = this;
             }
         }

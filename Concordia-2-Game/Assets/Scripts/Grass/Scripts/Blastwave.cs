@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class Blastwave : MonoBehaviour
 {
     public AnimationCurve MinRingRadius;
     public AnimationCurve MaxRingRadius;
     public AnimationCurve Intensity;
     public AnimationCurve Scale;
+
+    [Range(0.0f, 100.0f)]
+    public float ScaleMultiplier = 5.0f;
 
     [Range(0.0f, 1.0f)]
     public float Playback = 0.0f;
@@ -21,10 +23,17 @@ public class Blastwave : MonoBehaviour
     private bool Playing = false;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Renderer = GetComponent<Renderer>();
         Mesh = GetComponent<MeshFilter>();
+
+        /*
+        foreach (var v in Mesh.sharedMesh.vertices)
+        {
+            print("vert: " + v);
+        }
+        */
     }
 
     public void Play()
@@ -36,9 +45,11 @@ public class Blastwave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = Quaternion.AngleAxis(90.0f, Vector3.right);
+
         if (!Playing)
         {
-            Renderer.sharedMaterial.SetFloat("_Intensity", 0.0f);
+            Renderer.material.SetFloat("_Intensity", 0.0f);
             return;
         }
 
@@ -57,13 +68,17 @@ public class Blastwave : MonoBehaviour
         var min = MinRingRadius.Evaluate(Playback);
         var max = MaxRingRadius.Evaluate(Playback);
         var intensity = Intensity.Evaluate(Playback);
-        var scale = Scale.Evaluate(Playback);
-
-        transform.rotation = Quaternion.identity;
+        var scale = Scale.Evaluate(Playback) * ScaleMultiplier;
+        
         transform.localScale = new Vector3(scale, scale, scale);
 
-        Renderer.sharedMaterial.SetFloat("_MinRingRadius", Mesh.sharedMesh.bounds.extents.x * min);
-        Renderer.sharedMaterial.SetFloat("_MaxRingRadius", Mesh.sharedMesh.bounds.extents.x * max);
-        Renderer.sharedMaterial.SetFloat("_Intensity", intensity);
+        Renderer.material.SetFloat("_MinRingRadius", Mesh.sharedMesh.bounds.extents.x * min);
+        Renderer.material.SetFloat("_MaxRingRadius", Mesh.sharedMesh.bounds.extents.x * max);
+        Renderer.material.SetFloat("_Intensity", intensity);
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(Renderer.material);
     }
 }

@@ -18,6 +18,7 @@ namespace con2.game
         private float m_lastMashTime = 0;
 
         private SpoonMash m_masher;
+        private MashAGame m_mashUI;
 
         public override void BalanceMinigame()
         {
@@ -40,10 +41,10 @@ namespace con2.game
             m_currentNumberOfPresses = 0;
             m_lastMashTime = 0;
 
-            m_prompt.text = "Mash 'A'!";
-
             m_masher = GetComponentInChildren<SpoonMash>();
             m_masher.StartMash();
+
+            m_mashUI = m_prompt.GetComponent<MashAGame>();
         }
 
         public override bool TryToConsumeInput(GamepadAction input)
@@ -53,6 +54,7 @@ namespace con2.game
                 m_lastMashTime = Time.time;
                 m_currentNumberOfPresses++;
                 m_masher.Mash();
+                m_mashUI.MakingProgress();
                 if (m_currentNumberOfPresses >= m_numberOfPressesRequired)
                 {
                     EndMinigame();

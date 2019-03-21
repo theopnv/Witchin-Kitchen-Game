@@ -9,7 +9,6 @@ namespace con2.game
         PEPPER,
         NEWT_EYE,
         MUSHROOM,
-        FLOWER,
         FISH,
         PUMPKIN,
         NOT_AN_INGREDIENT

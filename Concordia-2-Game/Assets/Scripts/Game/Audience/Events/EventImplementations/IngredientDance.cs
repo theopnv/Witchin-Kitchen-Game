@@ -16,6 +16,9 @@ namespace con2.game
         private List<GameObject> m_players = new List<GameObject>();
         private float m_danceDistance = 3.0f;
 
+        private GameObject m_ground;
+        private PickableObject m_thisObj;
+
         // Use this for initialization
         void Start()
         {
@@ -24,21 +27,28 @@ namespace con2.game
             {
                 m_players.Add(player.Value.gameObject);
             }
+
+            m_ground = GameObject.Find("Ground");
+
+            m_thisObj = GetComponent<PickableObject>();
         }
 
         private void Update()
         {
             if (m_shouldDance)
             {
-                MoveAway();
                 Wiggle();
-
                 var body = GetComponent<Rigidbody>();
-                if (Mathf.Abs(body.velocity.y) <= m_bounceFilter)
+                if ((transform.position.y - m_ground.transform.position.y) < 1.5f)
                 {
-                    var vel = body.velocity;
-                    vel += Vector3.up * m_bounceIntensity;
-                    body.velocity = vel;
+                    MoveAway();
+                    if (Mathf.Abs(body.velocity.y) <= m_bounceFilter)
+                    {
+                        //Bounce
+                        var vel = body.velocity;
+                        vel += Vector3.up * m_bounceIntensity;
+                        body.velocity = vel;
+                    }
                 }
             }
         }
@@ -50,18 +60,21 @@ namespace con2.game
 
         private void MoveAway()
         {
-            Vector3 pos = transform.position;
-            Vector3 newpos = pos;
-            foreach (var player in m_players)
+            if (!m_thisObj.IsHeld())
             {
-                Vector3 separation = pos - player.transform.position;
-
-                if (separation.magnitude <= m_danceDistance)
+                Vector3 pos = transform.position;
+                Vector3 newpos = pos;
+                foreach (var player in m_players)
                 {
-                    newpos += separation.normalized * Time.deltaTime * 3;
+                    Vector3 separation = pos - player.transform.position;
+
+                    if (separation.magnitude <= m_danceDistance)
+                    {
+                        newpos += separation.normalized * Time.deltaTime * 3;
+                    }
                 }
+                transform.position = newpos;
             }
-            transform.position = newpos;
         }
 
         private void Wiggle()

@@ -16,7 +16,7 @@ namespace con2
 
         private AudienceInteractionManager _AudienceInteractionManager;
 
-        void Start()
+        void Awake()
         {
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             if (_AudienceInteractionManager == null)
@@ -42,11 +42,15 @@ namespace con2
             repo.RegisterCommand("ev_im", EventIngredientMorph);
             repo.RegisterCommand("ev_ks", EventKitchenSpin);
             repo.RegisterCommand("ev_id", EventIngredientDance);
+            repo.RegisterCommand("ev_gg", EventGrassGrowth);
 
             repo.RegisterCommand("spell_dm", SpellDiscoMania);
             repo.RegisterCommand("spell_mmp", SpellMegaMagePunch);
             repo.RegisterCommand("spell_fb", SpellFireballForAll);
             repo.RegisterCommand("spell_rs", SpellRocketSpeed);
+            repo.RegisterCommand("spell_gi", SpellGiftItem);
+            repo.RegisterCommand("spell_gb", SpellGiftBomb);
+            repo.RegisterCommand("spell_iv", SpellInvisibility);
 
             repo.RegisterCommand("game_over", GameOver);
         }
@@ -87,10 +91,14 @@ namespace con2
                         "- 'ev_im': Simulates the Ingredient Morph (im) event",
                         "- 'ev_ks': Simulates the Kitchen Spin (ks) event",
                         "- 'ev_id': Simulates the Ingredient Dance (id) event",
+                        "- 'ev_gg': Simulates the Grass Growth (gg) event",
                         "- 'spell_dm': Simulates the Disco Mania (dm) spell on player 1",
                         "- 'spell_mmp': Simulates the Mega Mage Punch (mmp) spell on player 1",
                         "- 'spell_fb': Simulates the Fireball For All (fb) spell on player 1",
-                        "- 'spell_rs': Simulates the Rocket Speed (rs) spell on player 1");
+                        "- 'spell_rs': Simulates the Rocket Speed (rs) spell on player 1",
+                        "- 'spell_gi': Simulates the Gift Item (gi) spell on player 1",
+                        "- 'spell_gb': Simulates the Gift Bomb (gb) spell on player 1",
+                        "- 'spell_iv': Simulates the Invisibility (iv) spell on player 1");
 
                     help = string.Join(
                         Environment.NewLine,
@@ -264,6 +272,17 @@ namespace con2
             return "Will start the Ingredient Dance event in 2 seconds";
         }
 
+        private string EventGrassGrowth(string[] args)
+        {
+            if (GetCurrentSceneName() != SceneNames.Game)
+            {
+                return "You must be in the " + SceneNames.Game + " scene to start this command";
+            }
+
+            StartCoroutine("SimulateEvent", Events.EventID.grass_growth);
+            return "Will start the Grass Growth event in 2 seconds";
+        }
+
         private string SpellDiscoMania(string[] args)
         {
             StartCoroutine("SimulateSpell", Spells.SpellID.disco_mania);
@@ -288,6 +307,24 @@ namespace con2
             return "Will cast the Rocket Speed spell on player 1 in 2 seconds";
         }
 
+        private string SpellGiftItem(string[] args)
+        {
+            StartCoroutine("SimulateSpell", Spells.SpellID.gift_item);
+            return "Will cast the Gift Item spell on player 1 in 2 seconds";
+        }
+
+        private string SpellGiftBomb(string[] args)
+        {
+            StartCoroutine("SimulateSpell", Spells.SpellID.gift_bomb);
+            return "Will cast the Gift Bomb spell on player 1 in 2 seconds";
+        }
+
+        private string SpellInvisibility(string[] args)
+        {
+            StartCoroutine("SimulateSpell", Spells.SpellID.invisibility);
+            return "Will cast the Invisibility spell on player 1 in 2 seconds";
+        }
+
         private IEnumerator SimulateSpell(Spells.SpellID id)
         {
             yield return new WaitForSeconds(2);
@@ -296,7 +333,7 @@ namespace con2
             {
                 spellId = (int)id,
                 targetedPlayer = new messages.Player() { id = 0 },
-                caster = new Viewer { color = ColorUtility.ToHtmlStringRGBA(Color.red), name = "Smeagol", socketId = ""}
+                caster = new Viewer { color = ColorUtility.ToHtmlStringRGBA(Color.red), name = "God", socketId = ""}
             };
             var spellsManager = FindObjectOfType<SpellsManager>();
             spellsManager?.OnSpellCasted(spell);

@@ -46,7 +46,7 @@ namespace con2.game
 
         private IEnumerator QuitGame()
         {
-            _AudienceInteractionManager?.ExitRoom(false);
+            _AudienceInteractionManager.SendEndGame(false);
             const string msg = "Disconnected from server. Game will quit in 5 seconds.";
             _MessageFeedManager.AddMessageToFeed(msg, MessageFeedManager.MessageType.error);
             yield return new WaitForSeconds(5);
@@ -111,7 +111,7 @@ namespace con2.game
         //example function
         private void ModulateSpawnRate(float timeChange)
         {
-            m_itemSpawner.SpawnableItems[Ingredient.PEPPER].SpawnDelay += timeChange;
+            //m_itemSpawner.SpawnableItems[Ingredient.PEPPER].SpawnDelay += timeChange;
         }
 
         #endregion
@@ -121,13 +121,17 @@ namespace con2.game
 
         [Header("EndGame")]
         public Text m_winnerText;
-        public Text m_rematchText, m_clock;
+        public Text m_gameOverText, m_rematchText, m_clock;
+        public GameObject m_backdrop;
+        private List<List<PlayerManager>> m_finalRankings;
         private bool m_gameOver = false, m_acceptingInput = false;
-        public static int REMATCH_TIMER = 10, GAME_TIMER = 240;
+        public int REMATCH_TIMER = 10, GAME_TIMER = 240;
         [SerializeField] private int m_dominationDifference = 3;
 
         private void InitializeEndGame()
         {
+            m_backdrop.SetActive(false);
+            m_gameOverText.enabled = false;
             m_winnerText.enabled = false;
             m_rematchText.enabled = false;
             m_gameOver = false;
@@ -139,6 +143,10 @@ namespace con2.game
             {
                 int remainingTime = (int)(GAME_TIMER - Time.timeSinceLevelLoad);
                 m_clock.text = FormatRemainingTime(remainingTime);
+                if (remainingTime == 10)
+                {
+                    m_clock.fontSize = 200;
+                }
                 if (remainingTime <= 0)
                 {
                     GameOver();
@@ -149,7 +157,13 @@ namespace con2.game
         private string FormatRemainingTime(int time)
         {
             int sec = time % 60;
-            return time / 60 + ":" + (sec > 9 ? sec.ToString() : "0" + sec);
+            var timeString = "";
+            if (time > 10)
+                timeString = time / 60 + ":" + (sec > 9 ? sec.ToString() : "0" + sec);
+            else
+                timeString = time.ToString();
+
+            return timeString;
         }
 
         public void GameOver()
@@ -157,29 +171,57 @@ namespace con2.game
             if (!m_gameOver)
             {
                 m_gameOver = true;
-                var winnerPlayer = DetermineWinner();
-                m_winnerText.text = winnerPlayer.Name + " is the winner!";
-                _AudienceInteractionManager?.ExitRoom(true, winnerPlayer.ID);                StartCoroutine(BackToMainMenuAfterShortPause());
-            }
+                m_gameOverText.enabled = true;
+                m_clock.enabled = false;
+
+                DetermineWinner();
+                StartCoroutine(ShowLeaderboard());
+               }
         }
 
-        public PlayerManager DetermineWinner()
+        private IEnumerator ShowLeaderboard()
         {
-            var players = Players.Dic;
-            PlayerManager winner = null;
-            var mostPotions = -1;
-
-            for (int i = 0; i < players.Count; i++)
+            yield return new WaitForSeconds(2.0f);
+            m_backdrop.SetActive(true);
+            m_winnerText.text = "";
+            foreach (var scoregroup in m_finalRankings)
             {
-                var numPotions = players[i].Score;
-                if (numPotions > mostPotions)
+                foreach (var player in scoregroup)
                 {
-                    winner = players[i];
-                    mostPotions = numPotions;
+                    var count = player.CollectedIngredientCount;
+                    m_winnerText.text += player.Name + " collected " + count + " ingredient" + (count == 1 ? "" : "s") + "\n\n";
                 }
             }
+            _AudienceInteractionManager?.SendGameOutcome();
+            StartCoroutine(BackToMainMenuAfterShortPause());
+        }
 
-            return winner;
+        public void DetermineWinner()
+        {
+            m_finalRankings = new List<List<PlayerManager>>();
+            var players = Players.Dic;
+            List<PlayerManager> playerScores = new List<PlayerManager>();
+            for (int i = 0; i < players.Count; i++)
+            {
+                playerScores.Add(players[i]);
+            }
+
+            List<List<PlayerManager>> rankings = playerScores.GroupBy(x => x.CompletedPotionCount)
+                                             .Select(x => x.ToList())
+                                             .OrderByDescending(x => x[0].CompletedPotionCount)
+                                             .ToList();
+
+            for (int i = 0; i < rankings.Count; i++)
+            {
+                List<List<PlayerManager>> tieBreaker = rankings[i].GroupBy(x => x.CollectedIngredientCount)
+                                 .Select(x => x.ToList())
+                                 .OrderByDescending(x => x[0].CollectedIngredientCount)
+                                 .ToList();
+                foreach (var scoreGroup in tieBreaker)
+                {
+                    m_finalRankings.Add(scoreGroup);
+                }
+            }
         }
 
         public void UpdateRanks()
@@ -191,9 +233,9 @@ namespace con2.game
                 playerScores.Add(players[i]);
             }
 
-            List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.Score)
+            List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.CompletedPotionCount)
                                              .Select(x => x.ToList())
-                                             .OrderByDescending(x => x[0].Score)
+                                             .OrderByDescending(x => x[0].CompletedPotionCount)
                                              .ToList();
 
             switch (scoreGroups.Count)
@@ -228,7 +270,7 @@ namespace con2.game
 
         private bool IsDominating(List<PlayerManager> group1, List<PlayerManager> group2)
         {
-            return group1[0].Score - group2[0].Score >= m_dominationDifference;
+            return group1[0].CompletedPotionCount - group2[0].CompletedPotionCount >= m_dominationDifference;
         }
 
         public bool ConsumeInput(GamepadAction input)
@@ -238,16 +280,20 @@ namespace con2.game
                 if (input.GetActionID().Equals(con2.GamepadAction.ID.START)
                     || input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
                 {
+                    _AudienceInteractionManager.SendEndGame(true);
                     SceneManager.LoadScene(SceneNames.Game);
-                    m_gameOver = false;
                     m_acceptingInput = false;
+                    m_winnerText.text = "";
+                    m_rematchText.enabled = false;
                     return true;
                 }
-                else if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
+
+                if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
                 {
                     SceneManager.LoadScene(SceneNames.MainMenu);
-                    m_gameOver = false;
                     m_acceptingInput = false;
+                    m_winnerText.enabled = false;
+                    m_rematchText.enabled = false;
                     return true;
                 }
             }
@@ -264,13 +310,14 @@ namespace con2.game
             {
                 m_rematchText.text = "Rematch?\n" + i;
                 yield return new WaitForSeconds(1);
-                if (i == 9)
+                if (i == REMATCH_TIMER - 1)
                 {
                     m_acceptingInput = true;
                 }
             }
 
             m_gameOver = false;
+            _AudienceInteractionManager.SendEndGame(false);
             SceneManager.LoadScene(SceneNames.MainMenu);
         }
 
