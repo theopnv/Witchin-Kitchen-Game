@@ -6,6 +6,10 @@ namespace con2.game
 {
     public class IngredientMorphController : AbstractAudienceEvent
     {
+        public float m_swapDelay = 3.0f;
+        public int m_numberOfSwaps = 5;
+        public GameObject m_smokePuffPrefab;
+
         void Start()
         {
             SetUpEvent();
@@ -16,10 +20,23 @@ namespace con2.game
 
         public override IEnumerator EventImplementation()
         {
+            _MessageFeedManager.AddMessageToFeed("The ingredients were morphed!", MessageFeedManager.MessageType.arena_event);
+
+            int count = 0;
+            while (count < m_numberOfSwaps)
+            {
+                count++;
+                DoSwap();
+                yield return new WaitForSeconds(m_swapDelay);
+            }
+
+            yield return null;
+        }
+
+        private void DoSwap()
+        {
             IngredientMorph[] allIngredients = FindObjectsOfType<IngredientMorph>();
             List<GameObject> innerIngredients = new List<GameObject>();
-
-            _MessageFeedManager.AddMessageToFeed("The ingredients were morphed!", MessageFeedManager.MessageType.arena_event);
 
             foreach (IngredientMorph ingredient in allIngredients)
             {
@@ -40,8 +57,6 @@ namespace con2.game
                 var pickUpSystem = players[j].GetComponent<PlayerPickUpDropObject>();
                 pickUpSystem.UpdateHeldObjectWeight();
             }
-
-            yield return null;
         }
 
         public override Events.EventID GetEventID()
@@ -51,13 +66,9 @@ namespace con2.game
 
         private void Shuffle(List<GameObject> list)
         {
-            for (int i = 0; i < list.Count; i++)
-            {
-                int k = Random.Range(0, list.Count);
-                GameObject temp = list[k];
-                list[k] = list[i];
-                list[i] = temp;
-            }
+            var temp = list[0];
+            list.RemoveAt(0);
+            list.Add(temp);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using con2.messages;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -33,10 +34,21 @@ namespace con2
             _Socket.Emit(Command.LAUNCH_POLL, new JSONObject(serialized));
         }
 
-        public void SendSpellCastRequest(Viewer viewer)
+        public void SendSpellCastRequest(int playerId, Viewer viewer)
         {
             Debug.Log("SendSpellCastRequest");
-            var serialized = JsonConvert.SerializeObject(viewer);
+            var player = new Player() {id = playerId};
+            if (playerId != -1)
+            {
+                player.name = Players.GetPlayerByID(playerId).Name;
+            }
+
+            var spellRequest = new SpellRequest()
+            {
+                fromPlayer = player,
+                targetedViewer = viewer,
+            };
+            var serialized = JsonConvert.SerializeObject(spellRequest);
             _Socket.Emit(Command.LAUNCH_SPELL_CAST, new JSONObject(serialized));
         }
 
@@ -49,9 +61,9 @@ namespace con2
                 players.Add(new Player
                 {
                     id = i,
-                    color = ColorUtility.ToHtmlStringRGBA(player.Color),
+                    color = "#" + ColorUtility.ToHtmlStringRGBA(player.Color),
                     name = player.Name,
-                    score = player.Score,
+                    potions = player.CompletedPotionCount,
                 });
             }
 
@@ -61,7 +73,31 @@ namespace con2
             };
 
             var serialized = JsonConvert.SerializeObject(game);
-            _Socket.Emit(Command.SEND_GAME_STATE, new JSONObject(serialized));
+            _Socket?.Emit(Command.SEND_GAME_STATE, new JSONObject(serialized));
+        }
+        
+        public void SendGameOutcome()
+        {
+            List<Player> leaderboards = Players.Dic
+                .Select(x => x.Value)
+                .OrderByDescending(x => x.CompletedPotionCount)
+                .ThenByDescending(x => x.CollectedIngredientCount)
+                .Select(x => new Player()
+                {
+                    color = ColorUtility.ToHtmlStringRGBA(x.Color),
+                    id = x.ID,
+                    name = x.Name,
+                    ingredients = x.CollectedIngredientCount,
+                    potions = x.CompletedPotionCount,
+                }).ToList();
+
+            var gameOutcome = new GameOutcome()
+            {
+                leaderboards = leaderboards.ToArray(),
+            };
+
+            var serialized = JsonConvert.SerializeObject(gameOutcome);
+            _Socket.Emit(Command.GAME_OUTCOME, new JSONObject(serialized));
         }
 
         #endregion
@@ -72,7 +108,6 @@ namespace con2
         {
             if ((int)content.code % 10 == 0) // Success codes always have their unit number equal to 0 (cf. protocol)
             {
-                Debug.Log(content.content);
                 switch (content.code)
                 {
                     default: break;

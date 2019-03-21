@@ -1,0 +1,10 @@
+
+Type: Amatic SC, Bold | VA: 60; Vertical Scale: 60%; leading: 110pt
+Font scale: 100pt (used in image)
+
+Regular font colour: #3b3b3b
+Highlighted font colour: #121212
+
+Rectangle opacity: 30%
+
+

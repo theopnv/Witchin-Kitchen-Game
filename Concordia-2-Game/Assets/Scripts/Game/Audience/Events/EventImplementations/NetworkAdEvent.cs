@@ -23,7 +23,7 @@ public class NetworkAdEvent : AbstractAudienceEvent
     public override IEnumerator EventImplementation()
     {
         _NetworkAdsCanvasInstance = Instantiate(_NetworkAdsCanvasPrefab);
-        _MessageFeedManager.AddMessageToFeed("The audience spammed you with important ads!", MessageFeedManager.MessageType.arena_event);
+        _MessageFeedManager.AddMessageToFeed("This is ad time...", MessageFeedManager.MessageType.arena_event);
         
         yield return new WaitForSeconds(m_NetworkAdsDuration);
         Destroy(_NetworkAdsCanvasInstance);

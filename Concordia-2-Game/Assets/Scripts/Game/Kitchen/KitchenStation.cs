@@ -13,6 +13,8 @@ namespace con2.game
         protected RecipeManager m_recipeManager;
         private PlayerManager m_owner;
 
+        [SerializeField] GameObject HitPrefab;
+
         protected abstract void OnAwake();
         protected abstract void OnSetOwner(PlayerManager owner);
         public abstract bool ShouldAcceptIngredient(Ingredient type);
@@ -42,7 +44,18 @@ namespace con2.game
                     var nextMinigame = Random.Range(0, m_miniGames.Length);
                     m_miniGames[nextMinigame].StartMinigame();
                 }
+                else
+                {
+                    var burst = Instantiate(HitPrefab, collision.GetContact(0).point, Quaternion.LookRotation(collision.GetContact(0).normal));
+                    StartCoroutine(DestroyWhenComplete(burst));
+                }
             }
+        }
+
+        private IEnumerator DestroyWhenComplete(GameObject obj)
+        {
+            yield return new WaitForSeconds(1.0f);
+            GameObject.Destroy(obj);
         }
 
         public void SetOwner(PlayerManager owner)

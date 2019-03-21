@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using ProBuilder2.Common;
 using UnityEngine;
 
 namespace con2.game
@@ -10,9 +11,13 @@ namespace con2.game
     {
         #region Private Variables
 
-        [SerializeField] private Transform[] _PlayerZoneSpawnPositions;
+        [SerializeField] private GameObject _SpawnPointPrefab;
 
         [SerializeField] private GameObject _PlayerZonePrefab;
+
+        [SerializeField] private float _KitchensDistanceFromCenter = 4f;
+
+        private List<Transform> _PlayerZoneSpawnPositions;
 
         private int _NbPlayersInstantiated = 0;
 
@@ -20,11 +25,12 @@ namespace con2.game
 
         void Awake()
         {
-            Debug.Log(PlayersInfo.PlayerNumber);
+            PrepareSpawnZone();
+
             // Initialize players
             for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
             {
-                var instance = Instantiate(_PlayerZonePrefab, _PlayerZoneSpawnPositions[i].transform);
+                var instance = Instantiate(_PlayerZonePrefab, _PlayerZoneSpawnPositions[i]);
                 var playerZoneManager = instance.GetComponent<PlayerZoneManager>();
                 playerZoneManager.OwnerId = i;
                 playerZoneManager.OnPlayerInstantiated += OnPlayerInstantiated;
@@ -44,6 +50,32 @@ namespace con2.game
             }
         }
 
+        private void PrepareSpawnZone()
+        {
+            Debug.Log(PlayersInfo.PlayerNumber);
+
+            var playersShiftMagicVar = PlayersInfo.PlayerNumber == 2
+                ? 180
+                : PlayersInfo.PlayerNumber == 3
+                    ? 150
+                    : 135;
+
+            var increment = 360 / (PlayersInfo.PlayerNumber != 0 ? PlayersInfo.PlayerNumber : 1);
+            _PlayerZoneSpawnPositions = new List<Transform>();
+            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
+            {
+                var radians = (increment * i + playersShiftMagicVar) * Mathf.Deg2Rad;
+                var pos = new Vector3()
+                {
+                    x = Mathf.Cos(radians),
+                    y = 0,
+                    z = Mathf.Sin(radians),
+                };
+                pos *= _KitchensDistanceFromCenter;
+                var spawnPoint = Instantiate(_SpawnPointPrefab, pos, Quaternion.identity);
+                _PlayerZoneSpawnPositions.Add(spawnPoint.transform);
+            }
+        }
 
     }
 }

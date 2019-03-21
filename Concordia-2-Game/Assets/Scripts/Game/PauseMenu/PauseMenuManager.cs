@@ -19,7 +19,7 @@ namespace con2.game
 
         public void OnExitClick()
         {
-            _AudienceInteractionManager.ExitRoom(false);
+            _AudienceInteractionManager.SendEndGame(false);
 
             SceneManager.LoadSceneAsync(SceneNames.MainMenu);
         }

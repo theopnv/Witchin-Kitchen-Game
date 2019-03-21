@@ -3,86 +3,103 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFireball : MonoBehaviour, IInputConsumer
+namespace con2.game
 {
-    [SerializeField] private GameObject m_fireballPrefab;
-    [SerializeField] private GameObject m_spawnLocation;
-    [SerializeField] public float m_reloadSeconds, m_recoil;
-
-    private GameObject m_spawnParent;
-    private Rigidbody m_player;
-    private bool m_canCastFireball = true;
-
-    public void Start()
+    public class PlayerFireball : MonoBehaviour, IInputConsumer
     {
-        m_spawnParent = GameObject.Find("Environment");
-        Transform parent = transform.parent;
-        if (parent)
-        {
-            m_player = parent.gameObject.GetComponent<Rigidbody>();
-        }
-    }
+        [SerializeField] private GameObject m_fireballPrefab;
+        [SerializeField] private GameObject _FireballIndicatorPrefab;
+        [SerializeField] private GameObject m_spawnLocation;
+        [SerializeField] public float m_reloadSeconds, m_recoil;
 
-    public bool ConsumeInput(GamepadAction input)
-    {
-        if (!m_canCastFireball)
-            return false;
+        private Rigidbody m_player;
+        public FireballEmberIndicator m_indicator;
+        private bool m_canCastFireball = true;
 
-        if (input.GetActionID().Equals(con2.GamepadAction.ID.RIGHT_TRIGGER))
+        public void Start()
         {
-            if (input.m_axisValue > 0.5)
+            Transform parent = transform.parent;
+            if (parent)
             {
-                CastFireball();
-                return true;
+                m_player = parent.gameObject.GetComponent<Rigidbody>();
+                var fireballIndicatior = Instantiate(_FireballIndicatorPrefab);
+                m_indicator = fireballIndicatior.GetComponent<FireballEmberIndicator>();
+                m_indicator.SetPlayer(m_player.gameObject);
             }
         }
 
-        return false;
-    }
-
-    public void CastFireball()
-    {
-        //The enviroment (terrain) is the parent of the fireball, but we position it initially based on the player
-        GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnLocation.transform.position, m_spawnLocation.transform.rotation, m_spawnParent.transform);
-        newFireball.transform.forward = m_spawnLocation.transform.forward;
-        newFireball.GetComponent<Projectile>().m_launcher = transform.parent.gameObject;
-
-        Recoil();
-
-        StartCoroutine(FireballCooldown());
-    }
-
-    public void FireballTurret(GameObject launcher)
-    {
-        if (m_spawnLocation)
+        public bool ConsumeInput(GamepadAction input)
         {
-            GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnLocation.transform.position, m_spawnLocation.transform.rotation, m_spawnParent.transform);
-            newFireball.transform.forward = m_spawnLocation.transform.forward;
-            Projectile projectile = newFireball.GetComponent<Projectile>();
-            projectile.m_launcher = launcher;
-            projectile.m_immuneTargets.Add(launcher);           
+            if (!m_canCastFireball)
+                return false;
+
+            if (input.GetActionID().Equals(con2.GamepadAction.ID.RIGHT_TRIGGER))
+            {
+                if (input.m_axisValue > 0.5)
+                {
+                    CastFireball();
+                    return true;
+                }
+            }
+
+            return false;
         }
-    }
 
-    private void Recoil()
-    {
-        m_player.AddForce(-transform.forward * m_recoil, ForceMode.VelocityChange);
-    }
+        public void CastFireball()
+        {
+            //We position the fireball initially based on the player
+            GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnLocation.transform.position, m_spawnLocation.transform.rotation);
+            newFireball.transform.forward = m_spawnLocation.transform.forward;
+            SetUpExplosive(newFireball, transform.parent.gameObject, false);
 
-    public void SetCanCast(bool canCast)
-    {
-        m_canCastFireball = canCast;
-    }
+            Recoil();
 
-    private IEnumerator FireballCooldown()
-    {
-        m_canCastFireball = false;
-        yield return new WaitForSeconds(m_reloadSeconds);
-        m_canCastFireball = true;
-    }
+            StartCoroutine(FireballCooldown());
+        }
 
-    public void ModulateReloadTime(float reloadModulator)
-    {
-        m_reloadSeconds *= reloadModulator;
+        public void FireballTurret(GameObject launcher)
+        {
+            if (m_spawnLocation)
+            {
+                GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnLocation.transform.position, m_spawnLocation.transform.rotation);
+                newFireball.transform.forward = m_spawnLocation.transform.forward;
+                SetUpExplosive(newFireball, launcher, true);
+            }
+        }
+
+        private void SetUpExplosive(GameObject newFireball, GameObject launcher, bool immuneLauncher)
+        {
+            ExplosiveItem explosive = newFireball.GetComponent<ExplosiveItem>();
+            explosive.m_launcher = launcher;
+
+            if (immuneLauncher)
+            {
+                explosive.m_immuneTargets.Add(launcher);
+            }
+        }
+
+        private void Recoil()
+        {
+            m_player.AddForce(-transform.forward * m_recoil, ForceMode.VelocityChange);
+        }
+
+        public void SetCanCast(bool canCast)
+        {
+            m_canCastFireball = canCast;
+        }
+
+        private IEnumerator FireballCooldown()
+        {
+            m_canCastFireball = false;
+            m_indicator.SetCharged(false);
+            yield return new WaitForSeconds(m_reloadSeconds);
+            m_canCastFireball = true;
+            m_indicator.SetCharged(true);
+        }
+
+        public void ModulateReloadTime(float reloadModulator)
+        {
+            m_reloadSeconds *= reloadModulator;
+        }
     }
 }

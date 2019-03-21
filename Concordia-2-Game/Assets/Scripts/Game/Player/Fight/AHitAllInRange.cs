@@ -7,7 +7,7 @@ public abstract class AHitAllInRange : MonoBehaviour
     [SerializeField] protected float m_strength, m_stunTime;
 
     private List<KeyValuePair<GameObject, IPunchable[]>> m_punchablesInRadius;
-    public List<GameObject> m_immuneTargets;
+    [HideInInspector] public List<GameObject> m_immuneTargets;
 
     private void Awake()
     {

@@ -18,7 +18,7 @@ namespace con2.game
 
         public float ShadowLightDuration;
 
-        public float Radius; // Change this if we want a square/rectangular map.
+        public float X_Radius, Z_Radius;
 
         public int YSpawn;
 
@@ -47,6 +47,8 @@ namespace con2.game
 
         public override void EventStart()
         {
+            _MessageFeedManager.AddMessageToFeed("Run, run! The audience sent meteorites!", MessageFeedManager.MessageType.arena_event);
+
             _SpawningFrequencies = new Queue<float>();
             var defaultFrequency = Duration / NumberOfMeteors; // e.g 15 meteors in 10 seconds = 1.5 meteors in 1 sec
             var adjustedFrequency = defaultFrequency / 2; // Randomize the frequencies a bit (make spawning more natural)
@@ -64,9 +66,9 @@ namespace con2.game
             yield return new WaitForSeconds(_SpawningFrequencies.Dequeue());
 
             var groundPosition = new Vector3(
-                Random.Range(transform.position.x - Radius, transform.position.x + Radius),
+                Random.Range(transform.position.x - X_Radius, transform.position.x + X_Radius),
                 0,
-                Random.Range(transform.position.z - Radius, transform.position.z + Radius));
+                Random.Range(transform.position.z - Z_Radius, transform.position.z + Z_Radius));
 
             var vector3Angle = new Vector3(
                 Mathf.Cos(Mathf.Deg2Rad * Angle), 

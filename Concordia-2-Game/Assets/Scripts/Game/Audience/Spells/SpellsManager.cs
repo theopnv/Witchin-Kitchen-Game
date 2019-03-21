@@ -57,7 +57,7 @@ namespace con2.game
             _LastSpellCasted += Time.deltaTime;
             if (_LastSpellCasted >= _SpellFrequency)
             {
-                LaunchSpellRequest();
+                LaunchSpellRequest(-1); // Send -1 as playerId if no player completed a potion
             }
         }
 
@@ -65,13 +65,13 @@ namespace con2.game
 
         #region Custom methods
 
-        public void LaunchSpellRequest()
+        public void LaunchSpellRequest(int playerId)
         {
             if (GameInfo.Viewers.Count > 0)
             {
                 var viewer = GameInfo.Viewers[_CurrentCastSpeller];
                 _LastSpellCasted = 0f;
-                _AudienceInteractionManager.SendSpellCastRequest(viewer);
+                _AudienceInteractionManager.SendSpellCastRequest(playerId, viewer);
 
                 ++_CurrentCastSpeller;
                 if (_CurrentCastSpeller >= GameInfo.Viewers.Count)
@@ -114,7 +114,7 @@ namespace con2.game
         {
             var message = spell.caster.name + " casted " + Spells.EventList[(Spells.SpellID) spell.spellId] + " on you";
             var player = Players.GetPlayerByID(spell.targetedPlayer.id);
-            player.SendMessageToPlayerInHUD(message, Color.magenta);
+            player.SendMessageToPlayerInHUD(message, Color.white);
         }
 
         #endregion
