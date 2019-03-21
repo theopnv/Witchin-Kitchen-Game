@@ -52,7 +52,7 @@ namespace con2.game
             }
 
             //Average the positions with the x3 to compensate for the middle
-            middle += m_zoomFactor*m_initialDistanceFromCenter.normalized*furthestFromMiddle.magnitude;  //zoom
+            middle += m_zoomFactor * m_initialDistanceFromCenter.normalized * furthestFromMiddle.magnitude;  //zoom
             middle += m_initialDistanceFromCenter;  //Keeps camera above the arena, pointed at 'middle'
             return middle;
         }
