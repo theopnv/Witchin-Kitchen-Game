@@ -1024,9 +1024,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 213108574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b2afed6479d10a4f936c19f66e1cec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Radius: 1
 --- !u!1001 &221097365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2545,9 +2546,66 @@ MonoBehaviour:
   m_GameObject: {fileID: 508981967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3715dcfabd3e92b4790510e3e1651212, type: 3}
+  m_Script: {fileID: 11500000, guid: d1cc9f2d6ad5ede46b1b8e579eccd30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MinX: -14
+  _MaxX: 14
+  _MinZ: -9
+  _MaxZ: 9
+  _ForbiddenAreas:
+  - {fileID: 1085581706}
+  SpawnableItemsList:
+  - Type: 0
+    Prefab: {fileID: 8340910405799370762, guid: de53b678d6e39ea41a94cfa6883e159d,
+      type: 3}
+    UseTimerMode: 1
+    SpawnDelay: 20
+    FirstSpawnDelay: 0
+    MaxNbOfInstances: 4
+    ActivateRandomPosMode: 1
+    Area: {fileID: 0}
+    TimeSinceSpawn: 0
+  - Type: 1
+    Prefab: {fileID: 4223523222216322606, guid: 45764d7e8ef4d2e4eba1bd2099847369,
+      type: 3}
+    UseTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
+    MaxNbOfInstances: 1
+    ActivateRandomPosMode: 0
+    Area: {fileID: 213108576}
+    TimeSinceSpawn: 0
+  - Type: 3
+    Prefab: {fileID: 5532703018747530490, guid: a6990a6bcd7d62c44a87719b2aa8889d,
+      type: 3}
+    UseTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
+    MaxNbOfInstances: 1
+    ActivateRandomPosMode: 0
+    Area: {fileID: 737448633}
+    TimeSinceSpawn: 0
+  - Type: 4
+    Prefab: {fileID: 2149888162642991435, guid: 44e1da904c5e2dd44af8772bc983d4dd,
+      type: 3}
+    UseTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
+    MaxNbOfInstances: 1
+    ActivateRandomPosMode: 0
+    Area: {fileID: 1593869648}
+    TimeSinceSpawn: 0
+  - Type: 2
+    Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
+      type: 3}
+    UseTimerMode: 0
+    SpawnDelay: 0
+    FirstSpawnDelay: 0
+    MaxNbOfInstances: 1
+    ActivateRandomPosMode: 0
+    Area: {fileID: 1010139671}
+    TimeSinceSpawn: 0
 --- !u!1001 &515072138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3926,9 +3984,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 737448631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b2afed6479d10a4f936c19f66e1cec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Radius: 3
 --- !u!4 &745659840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 416322322, guid: 4986aec3cbcf04a4e935f5b1e61c68cb,
@@ -5927,9 +5986,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1010139669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b2afed6479d10a4f936c19f66e1cec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Radius: 2
 --- !u!1 &1032917599
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,9 +6207,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1085581704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b2afed6479d10a4f936c19f66e1cec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Radius: 5
 --- !u!1001 &1085937427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8149,9 +8210,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1593869646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443d79c9f0ad40342a0874635d3a0094, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b2afed6479d10a4f936c19f66e1cec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Radius: 1.5
 --- !u!1 &1600214972
 GameObject:
   m_ObjectHideFlags: 0
