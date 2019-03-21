@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using con2.messages;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,37 +11,34 @@ namespace con2.game
 
     public class MainGameManager : AMainManager, IInputConsumer
     {
-        private AudienceInteractionManager _AudienceInteractionManager;
-
-        private MessageFeedManager _MessageFeedManager;
-
-        void Awake()
+        protected override void Awake()
         {
-            if (Application.isEditor && PlayersInfo.PlayerNumber == 0)
+            base.Awake();
+            if (Application.isEditor
+                && GameInfo.PlayerNumber != 4)
             {
-                PlayersInfo.PlayerNumber = 4;
+                GameInfo.PlayerNumber = 4;
             }
         }
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
-            // Initialize players
-            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
+            base.Start();
+
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
             {
-                FindObjectOfType<SpawnPlayersControllerGame>().InstantiatePlayer(i, OnPlayerInitialized);
+                ActivatePlayer(true, i);
             }
+
             InitializeAudienceEvents();
             InitializeItemSpawning();
             InitializeEndGame();
 
-            _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
-
-            _MessageFeedManager = FindObjectOfType<MessageFeedManager>();
         }
 
-        void Update()
+        protected override void Update()
         {
             base.Update();
             UpdateEndGame();
@@ -61,7 +59,7 @@ namespace con2.game
             inputConsumers.Add(pmi);
 
             // Players
-            var player = Players[playerIndex];
+            var player = PlayersInstances[playerIndex];
             inputConsumers.Add(player.GetComponent<FightStun>());
 
             // Kitchens
@@ -99,11 +97,11 @@ namespace con2.game
 
         [Header("AudienceEvents")]
         EventManager m_audienceEventManager;
-        public int 
-            m_maxEventVoteTime = 20, 
-            m_firstPollTime = 30, 
-            m_poll_frequency = 60, 
-            m_max_poll_number = 3, 
+        public int
+            m_maxEventVoteTime = 20,
+            m_firstPollTime = 30,
+            m_poll_frequency = 60,
+            m_max_poll_number = 3,
             m_poll_number = 0;
 
         private void InitializeAudienceEvents()
@@ -218,7 +216,7 @@ namespace con2.game
 
                 DetermineWinner();
                 StartCoroutine(ShowLeaderboard());
-               }
+            }
         }
 
         private IEnumerator ShowLeaderboard()
@@ -241,10 +239,10 @@ namespace con2.game
         public void DetermineWinner()
         {
             m_finalRankings = new List<List<PlayerManager>>();
-            List<PlayerManager> playerScores = new List<PlayerManager>();
-            for (int i = 0; i < Players.Count; i++)
+            var playerScores = new List<PlayerManager>();
+            for (int i = 0; i < PlayersInstances.Count; i++)
             {
-                playerScores.Add(Players[i]);
+                playerScores.Add(GetPlayerById(i));
             }
 
             List<List<PlayerManager>> rankings = playerScores.GroupBy(x => x.CompletedPotionCount)
@@ -267,10 +265,10 @@ namespace con2.game
 
         public void UpdateRanks()
         {
-            List<PlayerManager> playerScores = new List<PlayerManager>();         
-            for (int i = 0; i < Players.Count; i++)
+            List<PlayerManager> playerScores = new List<PlayerManager>();
+            for (int i = 0; i < PlayersInstances.Count; i++)
             {
-                playerScores.Add(Players[i]);
+                playerScores.Add(GetPlayerById(i));
             }
 
             List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.CompletedPotionCount)
@@ -281,13 +279,13 @@ namespace con2.game
             switch (scoreGroups.Count)
             {
                 case 1:
-                    for (int i = 0; i < Players.Count; i++)     // When all players are even (e.g. at start), no one is in first
+                    for (int i = 0; i < PlayersInstances.Count; i++)     // When all players are even (e.g. at start), no one is in first
                     {
-                        Players[i].PlayerRank = PlayerManager.Rank.MIDDLE;
+                        GetPlayerById(i).PlayerRank = PlayerManager.Rank.MIDDLE;
                     }
                     break;
                 default:
-                    RankGroup(scoreGroups[0], PlayerManager.Rank.FIRST);    
+                    RankGroup(scoreGroups[0], PlayerManager.Rank.FIRST);
                     for (int i = 1; i < scoreGroups.Count; i++)
                     {
                         if (IsDominating(scoreGroups[0], scoreGroups[i]))

@@ -37,11 +37,11 @@ namespace con2
         public void SendSpellCastRequest(int playerId, Viewer viewer)
         {
             Debug.Log("SendSpellCastRequest");
-            var player = new Player() {id = playerId};
+            var player = new messages.Player() {id = playerId};
             if (playerId != -1)
             {
                 var manager = FindObjectOfType<AMainManager>();
-                player.name = manager.Players[playerId].Name;
+                player.name = manager.GetPlayerById(playerId).Name;
             }
 
             var spellRequest = new SpellRequest()
@@ -55,12 +55,12 @@ namespace con2
 
         public void SendGameStateUpdate()
         {
-            var players = new List<Player>();
+            var players = new List<messages.Player>();
             var manager = FindObjectOfType<AMainManager>();
-            for (var i = 0; i < manager.Players.Count; i++)
+            for (var i = 0; i < manager.PlayersInstances.Count; i++)
             {
-                var player = manager.Players[i];
-                players.Add(new Player
+                var player = manager.GetPlayerById(i);
+                players.Add(new messages.Player
                 {
                     id = i,
                     color = "#" + ColorUtility.ToHtmlStringRGBA(ColorsManager.Get().PlayerAppColors[i]),
@@ -81,11 +81,11 @@ namespace con2
         public void SendGameOutcome()
         {
             var manager = FindObjectOfType<AMainManager>();
-            List<Player> leaderboards = manager.Players
+            List<messages.Player> leaderboards = manager.PlayersInstances
                 .Select(x => x.Value)
                 .OrderByDescending(x => x.CompletedPotionCount)
                 .ThenByDescending(x => x.CollectedIngredientCount)
-                .Select(x => new Player()
+                .Select(x => new messages.Player()
                 {
                     color = ColorUtility.ToHtmlStringRGBA(ColorsManager.Get().PlayerAppColors[x.ID]),
                     id = x.ID,

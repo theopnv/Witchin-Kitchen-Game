@@ -115,7 +115,7 @@ namespace con2.game
         private void LogSpellInPlayerHUD(Spell spell)
         {
             var message = spell.caster.name + " casted " + Spells.EventList[(Spells.SpellID) spell.spellId] + " on you";
-            var player = _MainGameManager.Players[spell.targetedPlayer.id];
+            var player = _MainGameManager.GetPlayerById(spell.targetedPlayer.id);
             player.SendMessageToPlayerInHUD(message, Color.white);
         }
 

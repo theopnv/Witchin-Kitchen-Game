@@ -40,41 +40,22 @@ namespace con2.game
         }
 
         private int _CompletedPotionCount;
-
         public int CompletedPotionCount
         {
             get => _CompletedPotionCount;
             set
             {
                 _CompletedPotionCount = value;
-                if (_PlayerHUD)
+                if (PlayerHUD)
                 {
-                    _PlayerHUD.Score.text = _CompletedPotionCount.ToString();
+                    PlayerHUD.Score.text = _CompletedPotionCount.ToString();
                 }
             }
         }
 
-        private int _CollectedIngredientCount;
+        public int CollectedIngredientCount { get; set; }
 
-        public int CollectedIngredientCount
-        {
-            get => _CollectedIngredientCount;
-            set
-            {
-                _CollectedIngredientCount = value;
-            }
-        }
-
-        private Rank _Rank;
-
-        public Rank PlayerRank
-        {
-            get => _Rank;
-            set
-            {
-                _Rank = value;
-            }
-        }
+        public Rank PlayerRank { get; set; }
 
         public enum Rank
         {
@@ -83,21 +64,12 @@ namespace con2.game
             LAST
         }
 
-        private PlayerHUD _PlayerHUD;
-
-        public PlayerHUD PlayerHUD
-        {
-            get => _PlayerHUD;
-            set
-            {
-                _PlayerHUD = value;
-            }
-        }
+        public PlayerHUD PlayerHUD { get; set; }
 
         public void SendMessageToPlayerInHUD(string message, Color color, bool stick = false)
         {
-            _PlayerHUD.Message.color = color;
-            _PlayerHUD.Message.text = message;
+            PlayerHUD.Message.color = color;
+            PlayerHUD.Message.text = message;
             if (!stick)
             {
                 StartCoroutine(RemoveMessage());
@@ -107,7 +79,7 @@ namespace con2.game
         private IEnumerator RemoveMessage()
         {
             yield return new WaitForSeconds(5f);
-            _PlayerHUD.Message.text = "";
+            PlayerHUD.Message.text = "";
         }
 
         #endregion

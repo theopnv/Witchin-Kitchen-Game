@@ -24,9 +24,9 @@ namespace con2.game
                 eventManager.AddSubscriber((Spells.SpellID)i, this);
         }
 
-        public void ActivateSpellMode(Player targetedPlayer)
+        public void ActivateSpellMode(messages.Player targetedPlayer)
         {
-            m_lightningThing.EndObject = m_mainGameManager.Players[targetedPlayer.id].gameObject;
+            m_lightningThing.EndObject = m_mainGameManager.GetPlayerById(targetedPlayer.id).gameObject;
             StartCoroutine(TriggerLightning());
         }
 

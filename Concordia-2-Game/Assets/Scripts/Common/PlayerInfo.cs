@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using con2.messages;
 using UnityEngine;
 
@@ -8,17 +9,24 @@ namespace con2
     {
         public static string RoomId = "0000";
         public static List<Viewer> Viewers = new List<Viewer>();
+        public static int PlayerNumber = 0;
     }
 
-    /// <summary>
-    /// Static class to pass player data from lobby scene to game scene
-    /// Unfortunately we can't use an array of static PlayerInfo[] because arrays
-    /// can't be made of static types. We therefore have to use arrays for each attribute.
-    /// </summary>
-    public static class PlayersInfo
+    public class Player
     {
-        public static int PlayerNumber = 0; // Default value
-        public static Color[] Color = new Color[4];
-        public static string[] Name = new string[4];
+        public string Name;
     }
+
+    public static class Players
+    {
+        public static Dictionary<int, Player> Info = new Dictionary<int, Player>()
+        {
+            { 0, new Player() { Name = "Gandalf the OG"} },
+            { 1, new Player() { Name = "Sabrina the Tahini Witch"} },
+            { 2, new Player() { Name = "Snape the Punch-master"} },
+            { 3, new Player() { Name = "Herbione Granger"} },
+        };
+
+    }
+
 }

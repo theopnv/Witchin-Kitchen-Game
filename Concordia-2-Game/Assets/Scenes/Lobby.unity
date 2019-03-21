@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_potionPrefab: {fileID: 2285153345642673686, guid: ae5c186bc22019c4eb953a5ed6020507,
     type: 3}
-  m_audienceInterface: {fileID: 0}
+  m_audienceInterface: {fileID: 1289698462}
 --- !u!114 &1273105656
 MonoBehaviour:
   m_ObjectHideFlags: 0

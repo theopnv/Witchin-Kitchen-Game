@@ -37,7 +37,7 @@ namespace con2
         #region Unity API
 
         // Start is called before the first frame update
-        private void Start()
+        private void Awake()
         {
             ControllersState = new bool[4];
             InvokeRepeating("UpdateControllersState", 0, _refreshFrequence);

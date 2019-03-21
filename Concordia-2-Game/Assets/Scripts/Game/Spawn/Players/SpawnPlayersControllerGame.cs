@@ -16,22 +16,22 @@ namespace con2.game
         [SerializeField] private float _PlayerDistanceFromCenter = 2f;
         #endregion
 
-        public void Awake()
+        public void Start()
         {
             PrepareSpawnZone();
         }
 
         private void PrepareSpawnZone()
         {
-            var playersShiftMagicVar = PlayersInfo.PlayerNumber == 2
+            var playersShiftMagicVar = GameInfo.PlayerNumber == 2
                 ? 180
-                : PlayersInfo.PlayerNumber == 3
+                : GameInfo.PlayerNumber == 3
                     ? 150
                     : 135;
 
-            var increment = 360 / (PlayersInfo.PlayerNumber != 0 ? PlayersInfo.PlayerNumber : 1);
+            var increment = 360 / (GameInfo.PlayerNumber != 0 ? GameInfo.PlayerNumber : 1);
             _PlayerZoneSpawnPositions = new List<Transform>();
-            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
             {
                 var radians = (increment * i + playersShiftMagicVar) * Mathf.Deg2Rad;
                 var pos = new Vector3()
@@ -48,18 +48,22 @@ namespace con2.game
 
         public override Transform GetZoneSpawnPosition(int i)
         {
+            if (_PlayerZoneSpawnPositions == null || _PlayerZoneSpawnPositions.Count == 0)
+            {
+                PrepareSpawnZone();
+            }
             return _PlayerZoneSpawnPositions[i];
         }
 
         public override Vector3 GetPlayerSpawnPositionInZone(int i)
         {
-            var playersShiftMagicVar = PlayersInfo.PlayerNumber == 2
+            var playersShiftMagicVar = GameInfo.PlayerNumber == 2
                 ? 180
-                : PlayersInfo.PlayerNumber == 3
+                : GameInfo.PlayerNumber == 3
                     ? 150
                     : 135;
 
-            var increment = 360 / (PlayersInfo.PlayerNumber != 0 ? PlayersInfo.PlayerNumber : 1);
+            var increment = 360 / (GameInfo.PlayerNumber != 0 ? GameInfo.PlayerNumber : 1);
             var radians = (increment * i + playersShiftMagicVar) * Mathf.Deg2Rad;
             var pos = new Vector3()
             {

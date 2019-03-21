@@ -51,7 +51,7 @@ namespace con2.game
                 ingredient.Morph(innerIngredients[i++]);
             }
 
-            var players = m_mainGameManager.Players;
+            var players = m_mainGameManager.PlayersInstances;
             for (int j = 0; j < players.Count; j++)
             {
                 var pickUpSystem = players[j].GetComponent<PlayerPickUpDropObject>();

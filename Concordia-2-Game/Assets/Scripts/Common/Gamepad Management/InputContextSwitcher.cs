@@ -44,7 +44,7 @@ namespace con2
         {
             if (i == -1)
             {
-                for (i = 0; i < PlayersInfo.PlayerNumber; i++)
+                for (i = 0; i < GameInfo.PlayerNumber; i++)
                 {
                     GamepadMgr.Pad(i).SwitchGamepadContext(contextFunction(i), i);
                 }

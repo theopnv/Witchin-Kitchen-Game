@@ -17,7 +17,7 @@ public class MegaMagePunch : ASpell
 
     public override IEnumerator SpellImplementation()
     {
-        var player = m_mainGameManager.Players[_TargetedPlayer.id];
+        var player = m_mainGameManager.GetPlayerById(_TargetedPlayer.id);
         var playerPunch = player.GetComponentInChildren<PlayerPunch>();
         var playerTransform = player.gameObject.transform;
 

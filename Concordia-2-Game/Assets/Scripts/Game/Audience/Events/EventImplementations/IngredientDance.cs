@@ -29,8 +29,8 @@ namespace con2.game
         // Use this for initialization
         void Start()
         {
-            var players = m_mainGameManager.Players;
-            foreach (KeyValuePair<int, PlayerManager> player in players)
+            var players = m_mainGameManager.PlayersInstances;
+            foreach (var player in players)
             {
                 m_players.Add(player.Value.gameObject);
             }

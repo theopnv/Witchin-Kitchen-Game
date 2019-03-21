@@ -110,7 +110,7 @@ namespace con2.game
 
         public bool ConsumeInput(GamepadAction input)
         {
-            var interactingPlayer = m_mainManager.Players[input.GetPlayerId()];
+            var interactingPlayer = m_mainManager.GetPlayerById(input.GetPlayerId());
             var noOwner = Owner == null;
             var samePlayer = Owner.ID == interactingPlayer.ID;
             if (m_started && (noOwner || samePlayer) && CheckPlayerIsNear(interactingPlayer.gameObject))

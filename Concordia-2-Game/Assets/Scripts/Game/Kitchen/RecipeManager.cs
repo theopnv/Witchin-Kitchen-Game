@@ -34,7 +34,7 @@ namespace con2.game
         {
             if (m_recipeUI == null)
             {
-                var player = m_mgm.Players[Owner.ID];
+                var player = m_mgm.GetPlayerById(Owner.ID);
                 m_recipeUI = player.PlayerHUD;
             }
 

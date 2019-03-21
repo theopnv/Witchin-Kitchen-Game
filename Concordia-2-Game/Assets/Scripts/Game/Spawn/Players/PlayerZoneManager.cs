@@ -46,7 +46,7 @@ namespace con2.game
             Owner = player.GetComponent<PlayerManager>();
 
             Owner.ID = OwnerId;
-            Owner.Name = PlayersInfo.Name[Owner.ID];
+            Owner.Name = Players.Info[OwnerId].Name;
             Owner.Texture = ColorsManager.Get().PlayerColorTextures[Owner.ID];
             Owner.CompletedPotionCount = 0;
             Owner.CollectedIngredientCount = 0;

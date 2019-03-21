@@ -8,6 +8,7 @@ using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using WebSocketSharp;
 
 namespace con2.lobby
 {
@@ -15,40 +16,32 @@ namespace con2.lobby
     public class LobbyManager : AMainManager, IInputConsumer
     {
         #region Private Variables
-        
-        [Tooltip("Controllers detector")]
-        [SerializeField] private DetectController _DetectController;
-        [SerializeField] private Text _RoomPin;
-        [SerializeField] private Text _ViewersNb;
 
-        private AudienceInteractionManager _AudienceInteractionManager;
-        private MessageFeedManager _MessagefeedManager;
-        private SocketIOComponent _SocketIoComponent;
         private float _ServerTryAgainTimeout = 2f;
 
         #endregion
 
         #region Unity API
 
-        void Start()
+        protected override void Start()
         {
+            base.Start();
+
             // Subscription to controllers events
             _DetectController.OnConnected += OnControllerConnected;
             _DetectController.OnDisconnected += OnControllerDisconnected;
 
-            // If controllers are already connected we activate players UIs right from the start
             var controllerState = _DetectController.ControllersState;
             for (var i = 0; i < controllerState.Length; i++)
             {
+                ++GameInfo.PlayerNumber;
                 ActivatePlayer(controllerState[i], i);
             }
 
-            _MessagefeedManager = GetComponent<MessageFeedManager>();
-
             // Audience & Networking
-            _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _AudienceInteractionManager.OnGameUpdated += OnGameUpdated;
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
+
             var hostAddress = PlayerPrefs.GetString(PlayerPrefsKeys.HOST_ADDRESS) + SocketInfo.SUFFIX_ADDRESS;
             Debug.Log("Host address is: " + hostAddress);
 
@@ -56,13 +49,13 @@ namespace con2.lobby
             ConnectToServer();
         }
 
-        void Update()
+        protected override void Update()
         {
             base.Update();
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                MakePlayerList();
+                _AudienceInteractionManager?.SendPlayerCharacteristics(PlayersInstances.Values.ToList());
             }
         }
 
@@ -105,12 +98,12 @@ namespace con2.lobby
             yield return new WaitForSeconds(_ServerTryAgainTimeout);
             if (_AudienceInteractionManager.IsConnectedToServer)
             {
-                _MessagefeedManager.AddMessageToFeed("Connected to server", MessageFeedManager.MessageType.success);
+                _MessageFeedManager.AddMessageToFeed("Connected to server", MessageFeedManager.MessageType.success);
             }
             else
             {
-                _MessagefeedManager.AddMessageToFeed("Can't reach the server", MessageFeedManager.MessageType.error);
-                _MessagefeedManager.AddMessageToFeed("Check your internet connection", MessageFeedManager.MessageType.error);
+                _MessageFeedManager.AddMessageToFeed("Can't reach the server", MessageFeedManager.MessageType.error);
+                _MessageFeedManager.AddMessageToFeed("Check your internet connection", MessageFeedManager.MessageType.error);
                 ConnectToServer();
             }
         }
@@ -122,6 +115,7 @@ namespace con2.lobby
         void OnControllerConnected(int i)
         {
             Debug.Log("Welcome player " + i);
+            ++GameInfo.PlayerNumber;
             ActivatePlayer(true, i);
         }
 
@@ -139,7 +133,7 @@ namespace con2.lobby
             inputConsumers.Add(this);
 
             // Fight
-            var player = Players[playerIndex];
+            var player = PlayersInstances[playerIndex];
             inputConsumers.Add(player.GetComponent<FightStun>());
 
             // Kitchens
@@ -163,7 +157,7 @@ namespace con2.lobby
         {
             if (input.GetActionID() == GamepadAction.ID.INTERACT)
             {
-                MakePlayerList();
+                _AudienceInteractionManager?.SendPlayerCharacteristics(PlayersInstances.Values.ToList());
                 return true;
             }
 
@@ -174,26 +168,6 @@ namespace con2.lobby
             }
 
             return false;
-        }
-
-        #endregion
-
-        #region Players
-
-        private void MakePlayerList()
-        {
-            var playerList = new List<Player>();
-            for (var i = 0; i < PlayersInfo.PlayerNumber; i++)
-            {
-                var player = new Player
-                {
-                    id = i,
-                    name = PlayersInfo.Name[i],
-                    color = "#" + ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
-                };
-                playerList.Add(player);
-            }
-            _AudienceInteractionManager?.SendPlayerCharacteristics(playerList);
         }
 
         #endregion

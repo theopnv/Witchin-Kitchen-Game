@@ -30,9 +30,7 @@ namespace con2
 
             // All scenes
             repo.RegisterCommand("reload", Reload);
-            repo.RegisterCommand("game1", Game1);
-            repo.RegisterCommand("game2", Game2);
-
+            
             // Game
             repo.RegisterCommand("continuous_events", ContinuousEvents);
             repo.RegisterCommand("random_event", RandomEvent);
@@ -62,9 +60,7 @@ namespace con2
                 "Such hacking skills, much technology, wow (ง ͠° ͟ل͜ ͡°)ง",
                 "",
                 "List of available commands for all scenes:",
-                "- 'reload': Reloads the current scene",
-                "- 'game1': Starts Game scene with 1 player (red) and with no communication with the server",
-                "- 'game2': Starts Game scene with 2 players (red and blue) and with no communication with the server");
+                "- 'reload': Reloads the current scene");
             var help = commonMessage;
             var currentSceneName = GetCurrentSceneName();
 
@@ -121,30 +117,6 @@ namespace con2
             var currentSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadSceneAsync(currentSceneName);
             return "Reloaded the scene";
-        }
-
-        public string Game1(string[] args)
-        {
-            PlayersInfo.Color[0] = Color.red;
-            PlayersInfo.PlayerNumber = 1;
-
-            LoadGameScene();
-            return "Started Game scene with 1 player";
-        }
-
-        public string Game2(string[] args)
-        {
-            PlayersInfo.Color[0] = Color.red;
-            PlayersInfo.Color[1] = Color.blue;
-            PlayersInfo.PlayerNumber = 2;
-
-            LoadGameScene();
-            return "Started Game scene with 2 players";
-        }
-
-        private void LoadGameScene()
-        {
-            SceneManager.LoadSceneAsync(SceneNames.Game);
         }
 
         #endregion

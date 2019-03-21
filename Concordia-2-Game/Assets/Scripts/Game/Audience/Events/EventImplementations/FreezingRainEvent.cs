@@ -24,7 +24,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
 
     public override IEnumerator EventImplementation()
     {
-        var players = m_mainGameManager.Players;
+        var players = m_mainGameManager.PlayersInstances;
 
         m_playerMovementControllers = new PlayerMovement[players.Count];
         for (int i = 0; i < players.Count; i++)
