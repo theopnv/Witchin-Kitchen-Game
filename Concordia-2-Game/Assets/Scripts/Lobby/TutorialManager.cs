@@ -19,9 +19,39 @@ namespace con2.lobby
 
         private Dictionary<int, int> _PlayersProgression = new Dictionary<int, int>();
 
+        private int _CurrentInstructionIdx;
+        private Dictionary<int, string> _Instructions = new Dictionary<int, string>()
+        {
+            { 0, "Welcome to Witchin' Kitchen, candidates!\r\nToday's crazy show is broadcasted all over the world. It's time to show that you're the best witch or wizard!" },
+            { 1, "Your goal is to complete potions. Your cauldron will be your most precious ally.\r\nTry to grab this ingredient over there and to throw it into!"},
+            { 2, "You scored one point! At each potion, the audience gets to cast a spell on one of you. Get ready!"},
+            { 3, "Oh oh! The audience casted Disco Mania on you.\r\nYour controls are inverted for 10 seconds."},
+            { 4, "Two weapons are at your disposal in the arena:\r\nHit [B] to punch your opponents and [Right Trigger] to throw fireballs."},
+            { 5, "Hit [B] to punch your opponents and [Right Trigger] to throw fireballs.\r\nThrow a fireball at one of your opponents to launch the game!"},
+        };
+
+        private int GetMinPlayerIndx()
+        {
+            return _PlayersProgression.OrderBy(p => p.Value).First().Key;
+        }
+
+        private int GetMaxPlayerIndx()
+        {
+            return _PlayersProgression.OrderByDescending(p => p.Value).First().Key;
+        }
+
+        private void LevelUpPlayersProgression(int playerIdx)
+        {
+            ++_PlayersProgression[playerIdx];
+            _CurrentInstructionIdx = _PlayersProgression[playerIdx] > 5 
+                ? _PlayersProgression[GetMinPlayerIndx()] 
+                : _PlayersProgression[GetMaxPlayerIndx()];
+            _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
+        }
+
         public void Start()
         {
-            _CurrentInstruction.text = "Welcome to Witchin' Kitchen, candidates!\r\nToday's crazy show is broadcasted all over the world. It's time to show that you're the best witch or wizard!";
+            _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
         }
 
         public void Run()
@@ -53,21 +83,18 @@ namespace con2.lobby
 
         private IEnumerator Potion()
         {
-            _CurrentInstruction.text = "Your goal is to complete potions. Your cauldron will be your most precious ally.\r\nTry to grab this ingredient over there and to throw it into!";
+            ++_CurrentInstructionIdx;
+            _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
             _ItemSpawner.SpawnableItems[Ingredient.MUSHROOM].AskToInstantiate();
             yield return null;
         }
 
         private void _1_CompletedPotion(int playerIdx)
         {
-            if (_PlayersProgression.Values.Max() <= 0)
-            {
-                _CurrentInstruction.text = "You scored one point! At each potion, the audience gets to cast a spell on one of you. Get ready!";
-            }
-
-            if (_PlayersProgression[playerIdx] <= 0)
+            if (_PlayersProgression[playerIdx] <= 1)
             {
                 _PlayersProgression[playerIdx] = 1;
+                LevelUpPlayersProgression(playerIdx);
                 StartCoroutine(_2_CastSpells(playerIdx));
             }
         }
@@ -75,7 +102,7 @@ namespace con2.lobby
         private IEnumerator _2_CastSpells(int playerIdx)
         {
             yield return new WaitForSeconds(10);
-            _CurrentInstruction.text = "Oh oh! The audience casted Disco Mania on you.\r\nYour controls are inverted for 10 seconds.";
+            LevelUpPlayersProgression(playerIdx);
 
             _SpellsManager.OnSpellCasted(new Spell()
             {
@@ -86,7 +113,6 @@ namespace con2.lobby
                     id = playerIdx,
                 }
             });
-            _PlayersProgression[playerIdx] = 2;
 
             yield return _3_FireballPunch(playerIdx);
         }
@@ -94,11 +120,9 @@ namespace con2.lobby
         private IEnumerator _3_FireballPunch(int playerIdx)
         {
             yield return new WaitForSeconds(10);
-            _CurrentInstruction.text = "Two weapons are at your disposal in the arena:\r\nHit [B] to punch your opponents and [Right Trigger] to throw fireballs.";
+            LevelUpPlayersProgression(playerIdx);
             yield return new WaitForSeconds(10);
-            _CurrentInstruction.text =
-                "Hit [B] to punch your opponents and [Right Trigger] to throw fireballs.\r\nThrow a fireball at one of your opponents to launch the game!";
-            _PlayersProgression[playerIdx] = 3;
+            LevelUpPlayersProgression(playerIdx);
         }
 
         #endregion
