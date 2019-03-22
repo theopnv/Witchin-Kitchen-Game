@@ -2585,7 +2585,7 @@ MonoBehaviour:
     UseTimerMode: 1
     SpawnDelay: 20
     FirstSpawnDelay: 0
-    MaxNbOfInstances: 4
+    MaxNbOfInstances: 2
     ActivateRandomPosMode: 1
     Area: {fileID: 0}
     TimeSinceSpawn: 0

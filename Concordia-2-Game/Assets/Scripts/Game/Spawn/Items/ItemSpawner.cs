@@ -29,6 +29,8 @@ namespace con2.game
         private List<SpawnableItem> SpawnableItemsList = new List<SpawnableItem>();
 
         public Dictionary<Ingredient, int> SpawnedItemsCount;
+
+        private bool _AllowSpawn = false;
         public bool SpawnFromStart = true;
 
         /// <summary>
@@ -45,6 +47,7 @@ namespace con2.game
         void Start()
         {
             ComputeForbiddenRanges();
+            _AllowSpawn = SpawnFromStart;
 
             SpawnableItems = new Dictionary<Ingredient, SpawnableItem>();
             SpawnedItemsCount = new Dictionary<Ingredient, int>();
@@ -52,10 +55,14 @@ namespace con2.game
             {
                 SpawnedItemsCount[item.Type] = 0;
                 SpawnableItems.Add(item.Type, item);
-                item.AskToInstantiate += () => InstantiateOnMap(item);
+                item.TimeSinceSpawn = -item.FirstSpawnDelay;
+                item.AskToInstantiate += () =>
+                {
+                    _AllowSpawn = true;
+                    InstantiateOnMap(item);
+                };
                 if (SpawnFromStart)
                 {
-                    item.TimeSinceSpawn = -item.FirstSpawnDelay;
                     InstantiateOnMap(item);
                 }
             }
@@ -93,7 +100,8 @@ namespace con2.game
                 item.TimeSinceSpawn += Time.deltaTime;
                 if (item.UseTimerMode 
                     && item.TimeSinceSpawn >= item.SpawnDelay
-                    && SpawnedItemsCount[item.Type] >= item.MaxNbOfInstances)
+                    && SpawnedItemsCount[item.Type] < item.MaxNbOfInstances
+                    && _AllowSpawn)
                 {
                     InstantiateOnMap(item);
                     item.TimeSinceSpawn = 0f;
