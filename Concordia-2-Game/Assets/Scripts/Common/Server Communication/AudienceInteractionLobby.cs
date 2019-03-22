@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -19,6 +20,8 @@ namespace con2
     /// </summary>
     public partial class AudienceInteractionManager : MonoBehaviour
     {
+        public Action<Base> OnReceivedMessage;
+
         void LobbyStart()
         {
             _Socket.On(Command.GAME_CREATED, OnGameCreated);
@@ -73,21 +76,7 @@ namespace con2
 
         private void OnLobbyMessage(Base content)
         {
-            if ((int)content.code % 10 == 0) // Success codes always have their unit number equal to 0 (cf. protocol)
-            {
-                Debug.Log(content.content);
-                switch (content.code)
-                {
-                    case Code.register_players_success:
-                        SceneManager.LoadSceneAsync(SceneNames.Game);
-                        break;
-                    default: break;
-                }
-            }
-            else
-            {
-                Debug.LogError(content.content);
-            }
+            OnReceivedMessage?.Invoke(content);
         }
 
         private void OnGameCreated(SocketIOEvent e)

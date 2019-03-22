@@ -18,6 +18,7 @@ namespace con2.lobby
         #region Private Variables
 
         private float _ServerTryAgainTimeout = 2f;
+        [SerializeField] private GameObject _LoadingPanel;
 
         #endregion
 
@@ -41,6 +42,7 @@ namespace con2.lobby
             // Audience & Networking
             _AudienceInteractionManager.OnGameUpdated += OnGameUpdated;
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
+            _AudienceInteractionManager.OnReceivedMessage += OnReceivedMessage;
 
             var hostAddress = PlayerPrefs.GetString(PlayerPrefsKeys.HOST_ADDRESS) + SocketInfo.SUFFIX_ADDRESS;
             Debug.Log("Host address is: " + hostAddress);
@@ -55,7 +57,7 @@ namespace con2.lobby
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                _AudienceInteractionManager?.SendPlayerCharacteristics(PlayersInstances.Values.ToList());
+                StartGameLoad();
             }
         }
 
@@ -63,6 +65,7 @@ namespace con2.lobby
         {
             _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
             _AudienceInteractionManager.OnGameUpdated -= OnGameUpdated;
+            _AudienceInteractionManager.OnReceivedMessage -= OnReceivedMessage;
         }
 
         #endregion
@@ -108,7 +111,42 @@ namespace con2.lobby
             }
         }
 
+        private void OnReceivedMessage(messages.Base content)
+        {
+            if ((int)content.code % 10 == 0) // Success codes always have their unit number equal to 0 (cf. protocol)
+            {
+                Debug.Log(content.content);
+                switch (content.code)
+                {
+                    case Code.register_players_success:
+                        StartCoroutine(ExitLobby());
+                        break;
+                    default: break;
+                }
+            }
+            else
+            {
+                Debug.LogError(content.content);
+            }
+        }
+
         #endregion
+
+        public void StartGameLoad()
+        {
+            _LoadingPanel.SetActive(true);
+            _AudienceInteractionManager?.SendPlayerCharacteristics(PlayersInstances.Values.ToList());
+        }
+
+        private IEnumerator ExitLobby()
+        {
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
+            {
+                GamepadMgr.Pad(i).BlockGamepad(true);
+            }
+            yield return new WaitForSeconds(4f);
+            SceneManager.LoadSceneAsync(SceneNames.Game);
+        }
 
         #region Controllers
 
@@ -157,7 +195,7 @@ namespace con2.lobby
         {
             if (input.GetActionID() == GamepadAction.ID.INTERACT)
             {
-                _AudienceInteractionManager?.SendPlayerCharacteristics(PlayersInstances.Values.ToList());
+                StartGameLoad();
                 return true;
             }
 

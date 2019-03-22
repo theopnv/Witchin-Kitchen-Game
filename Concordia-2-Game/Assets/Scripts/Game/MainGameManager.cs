@@ -11,6 +11,9 @@ namespace con2.game
 
     public class MainGameManager : AMainManager, IInputConsumer
     {
+        [SerializeField] private GameObject _LoadingPanel;
+        private const float LOADING_TIME = 4f;
+
         protected override void Awake()
         {
             base.Awake();
@@ -36,6 +39,8 @@ namespace con2.game
             InitializeEndGame();
 
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
+
+            StartCoroutine(ExitLoadingScreen());
         }
 
         protected override void Update()
@@ -47,6 +52,16 @@ namespace con2.game
         void OnDisable()
         {
             _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
+        }
+
+        private IEnumerator ExitLoadingScreen()
+        {
+            yield return new WaitForSeconds(LOADING_TIME);
+            _LoadingPanel.SetActive(false);
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
+            {
+                GamepadMgr.Pad(i).BlockGamepad(false);
+            }
         }
 
         public override List<IInputConsumer> GetInputConsumers(int playerIndex)
@@ -165,7 +180,7 @@ namespace con2.game
         public GameObject m_backdrop;
         private List<List<PlayerManager>> m_finalRankings;
         private bool m_gameOver = false, m_acceptingInput = false;
-        public int REMATCH_TIMER = 10, GAME_TIMER = 240;
+        public float REMATCH_TIMER = 10, GAME_TIMER = 240 + LOADING_TIME;
         [SerializeField] private int m_dominationDifference = 3;
 
         private void InitializeEndGame()
@@ -344,7 +359,7 @@ namespace con2.game
             m_winnerText.enabled = true;
             yield return new WaitForSeconds(0.5f);
             m_rematchText.enabled = true;
-            for (int i = REMATCH_TIMER; i >= 0; i--)
+            for (var i = REMATCH_TIMER; i >= 0; i--)
             {
                 m_rematchText.text = "Rematch?\n" + i;
                 yield return new WaitForSeconds(1);

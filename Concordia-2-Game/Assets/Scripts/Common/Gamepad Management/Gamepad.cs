@@ -54,6 +54,7 @@ namespace con2
         private Dictionary<InputID, List<GamepadAction.ID>> inputToAction; // One to many
 
         private int m_playerID;
+        private bool m_blockGamepad;
 
         public Gamepad(int playerID)
         {
@@ -134,6 +135,10 @@ namespace con2
         // Internal use only
         public void Poll()
         {
+            if (m_blockGamepad)
+            {
+                return;
+            }
 
             foreach (InputID inputID in inputToAction.Keys)
             {
@@ -186,6 +191,11 @@ namespace con2
                     action.defaultInputID = inputID;
                 }
             }
+        }
+
+        public void BlockGamepad(bool block)
+        {
+            m_blockGamepad = block;
         }
     }
 }
