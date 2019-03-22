@@ -37,7 +37,7 @@ namespace con2
         {
             if (TargetBody != null)
             {
-                Particles.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.forward, -TargetBody.velocity);
+                Particles.gameObject.transform.forward = Quaternion.AngleAxis(20.0f, TargetBody.transform.right) * -TargetBody.velocity;
 
                 var speed = TargetBody.velocity.magnitude;
                 var falloff = Falloff.Evaluate(Mathf.Clamp01(speed / MaxSpeed));
