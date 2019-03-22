@@ -10,7 +10,7 @@ namespace con2.game
         public GameObject m_potionPrefab;
         public Image m_audienceInterface;
 
-        public void OnPotionComplete(RecipeManager cauldron)
+        public void OnPotionComplete(ARecipeManager cauldron)
         {
             var potionObj = Instantiate(m_potionPrefab, cauldron.transform.position + new Vector3(0, 3, 0), Quaternion.identity);
             var potion = potionObj.GetComponent<FlyingPotion>();

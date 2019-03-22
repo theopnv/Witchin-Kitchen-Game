@@ -6,56 +6,42 @@ using UnityEngine.UI;
 
 namespace con2.game
 {
-    public class RecipeManager : MonoBehaviour
+    public abstract class ARecipeManager : MonoBehaviour
     {
-        private Recipe m_currentPotionRecipe;
-        private int m_currentRecipeIndex = -1;
+        protected Recipe m_currentPotionRecipe;
+        protected int m_currentRecipeIndex = -1;
         [HideInInspector] public PlayerHUD m_recipeUI;
         [HideInInspector] public PlayerManager Owner;
-        private KitchenStation m_thisStation;
-        private AMainManager m_mgm;
-        private ItemSpawner m_itemSpawner;
-        private OnCompletePotion m_potionSpawner;
-        private AudienceInteractionManager m_audienceInteractionManager;
+        protected KitchenStation m_thisStation;
+        protected ItemSpawner m_itemSpawner;
+        protected OnCompletePotion m_potionSpawner;
+        protected AudienceInteractionManager m_audienceInteractionManager;
 
         public bool m_TestComplete = false;
 
-        void Awake()
+        protected virtual void Awake()
         {
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
-            m_mgm = managers.GetComponentInChildren<AMainManager>();
-            m_potionSpawner = m_mgm.GetComponent<OnCompletePotion>();
             m_thisStation = GetComponent<KitchenStation>();
             m_itemSpawner = managers.GetComponentInChildren<ItemSpawner>();
             m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
         }
 
-        void Start()
+        protected virtual void Start()
         {
             if (m_recipeUI == null)
             {
-                var player = m_mgm.GetPlayerById(Owner.ID);
+                var player = GetMainManager().GetPlayerById(Owner.ID);
                 m_recipeUI = player.PlayerHUD;
             }
 
             NextRecipe();
         }
 
-        void NextRecipe()
-        {
-            m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
-            SetNewRecipeUI();
-            Owner.CompletedPotionCount = m_currentRecipeIndex;
-            //m_mgm.UpdateRanks();
-            m_audienceInteractionManager.SendGameStateUpdate();
-            if (m_currentRecipeIndex > 0)
-            {
-                var spellManager = FindObjectOfType<SpellsManager>();
-                spellManager.LaunchSpellRequest(Owner.ID);
-            }
-        }
+        protected abstract void NextRecipe();
+        protected abstract AMainManager GetMainManager();
 
-        void SetNewRecipeUI()
+        protected void SetNewRecipeUI()
         {
             m_currentPotionRecipe.SetNewRecipeUI(m_recipeUI);
         }

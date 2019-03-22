@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using con2.messages;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace con2.game
@@ -59,8 +60,6 @@ namespace con2.game
             _Kitchen.SetActive(true);
             var km = GetComponentInChildren<KitchenManager>();
             km.SetOwner(Owner);
-            var rm = GetComponentInChildren<RecipeManager>();
-            rm.Owner = Owner;
         }
 
         void InitHUD()

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace con2.game
 {
@@ -9,22 +10,24 @@ namespace con2.game
         private ItemSpawner m_itemSpawner;
         private ACookingMinigame[] m_miniGames;
         protected Ingredient m_storedIngredient;
-        protected RecipeManager m_recipeManager;
+        protected ARecipeManager MARecipeManager;
         private PlayerManager m_owner;
         [SerializeField] GameObject HitPrefab;
 
-        protected abstract void OnAwake();
         protected abstract void OnSetOwner(PlayerManager owner);
         public abstract bool ShouldAcceptIngredient(Ingredient type);
         protected abstract void OnCollectIngredient();
         public abstract void ProcessIngredient();
 
-        private void Awake()
+        protected virtual void Awake()
         {
             m_miniGames = GetComponents<ACookingMinigame>();
-            m_recipeManager = GetComponent<RecipeManager>();
+        }
+
+        protected virtual void Start()
+        {
             m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
-            OnAwake();
+            MARecipeManager = GetComponent<ARecipeManager>();
         }
 
         private void OnCollisionEnter(Collision collision)

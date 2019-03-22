@@ -18,7 +18,10 @@ namespace con2.game
 
         public void Start()
         {
-            PrepareSpawnZone();
+            if (_PlayerZoneSpawnPositions == null || _PlayerZoneSpawnPositions.Count == 0)
+            {
+                PrepareSpawnZone();
+            }
         }
 
         private void PrepareSpawnZone()

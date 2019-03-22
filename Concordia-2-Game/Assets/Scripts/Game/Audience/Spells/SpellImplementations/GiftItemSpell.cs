@@ -33,7 +33,7 @@ namespace con2.game
             {
                 if (cauldron.GetOwner().Equals(pm))
                 {
-                    var rm = cauldron.GetComponent<RecipeManager>();
+                    var rm = cauldron.GetComponent<ARecipeManager>();
                     Ingredient neededIngredient = rm.GetNextNeededIngredient();
                     var itemSpawner = FindObjectOfType<ItemSpawner>();
                     return itemSpawner.SpawnableItems[neededIngredient];
