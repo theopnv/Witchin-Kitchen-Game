@@ -29,6 +29,7 @@ namespace con2.game
         private List<SpawnableItem> SpawnableItemsList = new List<SpawnableItem>();
 
         public Dictionary<Ingredient, int> SpawnedItemsCount;
+        public bool SpawnFromStart = true;
 
         /// <summary>
         /// This dictionary is used if UseTimerMode is false (Trigger Mode)
@@ -50,10 +51,13 @@ namespace con2.game
             foreach (var item in SpawnableItemsList)
             {
                 SpawnedItemsCount[item.Type] = 0;
-                item.TimeSinceSpawn = -item.FirstSpawnDelay;
-                item.AskToInstantiate += () => InstantiateOnMap(item);
                 SpawnableItems.Add(item.Type, item);
-                InstantiateOnMap(item);
+                item.AskToInstantiate += () => InstantiateOnMap(item);
+                if (SpawnFromStart)
+                {
+                    item.TimeSinceSpawn = -item.FirstSpawnDelay;
+                    InstantiateOnMap(item);
+                }
             }
         }
 

@@ -19,11 +19,11 @@ namespace con2.game
         private GameObject m_ground;
         private PickableObject m_thisObj;
 
-        private MainGameManager m_mainGameManager;
+        private AMainManager m_mainGameManager;
 
         void Awake()
         {
-            m_mainGameManager = FindObjectOfType<MainGameManager>();
+            m_mainGameManager = FindObjectOfType<AMainManager>();
         }
 
         // Use this for initialization

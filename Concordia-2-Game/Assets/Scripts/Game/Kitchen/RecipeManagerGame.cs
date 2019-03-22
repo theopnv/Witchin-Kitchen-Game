@@ -39,6 +39,11 @@ namespace con2.game
             }
         }
 
+        public override void ProcessIngredient(Ingredient ingredient)
+        {
+            m_currentPotionRecipe.ProcessIngredient(ingredient);
+        }
+
         protected override AMainManager GetMainManager() => m_mgm;
     }
 

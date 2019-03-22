@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using con2.lobby;
 using UnityEngine;
@@ -9,7 +10,11 @@ namespace con2.game
 {
     public class RecipeManagerLobby : ARecipeManager
     {
+        public Action OnProcessedIngredient;
+        public Action OnCompletedPotion;
         private LobbyManager m_mgm;
+
+        protected override AMainManager GetMainManager() => m_mgm;
 
         protected override void Awake()
         {
@@ -20,20 +25,32 @@ namespace con2.game
             m_potionSpawner = m_mgm.GetComponent<OnCompletePotion>();
         }
 
-        protected override void NextRecipe()
+        protected override void Update()
         {
-            m_currentPotionRecipe = new Recipe(GlobalRecipeList.GetNextRecipe(++m_currentRecipeIndex));
-            SetNewRecipeUI();
-            Owner.CompletedPotionCount = m_currentRecipeIndex;
-            m_audienceInteractionManager?.SendGameStateUpdate();
-            if (m_currentRecipeIndex > 0)
+            if (m_currentPotionRecipe.IsComplete())
             {
-                var spellManager = FindObjectOfType<SpellsManager>();
-                spellManager.LaunchSpellRequest(Owner.ID);
+                OnCompletedPotion?.Invoke();
             }
+            base.Update();
         }
 
-        protected override AMainManager GetMainManager() => m_mgm;
+        protected override void NextRecipe()
+        {
+            var list = new Ingredient[2]
+            {
+                Ingredient.MUSHROOM,
+                Ingredient.MUSHROOM
+            };
+            m_currentPotionRecipe = new Recipe(list);
+            SetNewRecipeUI();
+            Owner.CompletedPotionCount = ++m_currentRecipeIndex;
+        }
+
+        public override void ProcessIngredient(Ingredient ingredient)
+        {
+            m_currentPotionRecipe.ProcessIngredient(ingredient);
+            OnProcessedIngredient?.Invoke();
+        }
     }
 
 

@@ -68,13 +68,10 @@ namespace con2.game
             return false;
         }
 
-        public void ProcessIngredient(Ingredient ingredient)
-        {
-            m_currentPotionRecipe.ProcessIngredient(ingredient);
-        }
+        public abstract void ProcessIngredient(Ingredient ingredient);
 
         // Update is called once per frame
-        void Update()
+        protected virtual void Update()
         {
             if (m_currentPotionRecipe == null)
             {
@@ -145,15 +142,12 @@ namespace con2.game
 
         public void ProcessIngredient(Ingredient ingredient)
         {
-            IngredientStatus missingIngredientOfThisType = m_fullRecipe.Find(
-                delegate (IngredientStatus temp)
-                {
-                    return !temp.m_processed && temp.m_type == ingredient;
-                }
-              );
+            var missingIngredientOfThisType = m_fullRecipe.Find(
+                temp => !temp.m_processed && temp.m_type == ingredient
+            );
             missingIngredientOfThisType.m_processed = true;
 
-            bool complete = true;
+            var complete = true;
             foreach (IngredientStatus status in m_fullRecipe)
             {
                 if (status.m_processed == false)

@@ -19,6 +19,7 @@ namespace con2.lobby
 
         private float _ServerTryAgainTimeout = 2f;
         [SerializeField] private GameObject _LoadingPanel;
+        [SerializeField] private TutorialManager _TutorialManager;
 
         #endregion
 
@@ -154,6 +155,7 @@ namespace con2.lobby
             Debug.Log("Welcome player " + i);
             ++GameInfo.PlayerNumber;
             ActivatePlayer(true, i);
+            _TutorialManager.Run();
         }
 
         void OnControllerDisconnected(int i)
@@ -192,17 +194,22 @@ namespace con2.lobby
 
         public bool ConsumeInput(GamepadAction input)
         {
-            if (input.GetActionID() == GamepadAction.ID.INTERACT)
+            if (input.GetActionID() == GamepadAction.ID.START)
             {
                 StartGameLoad();
                 return true;
             }
+            //if (input.GetActionID() == GamepadAction.ID.INTERACT)
+            //{
+            //    StartGameLoad();
+            //    return true;
+            //}
 
-            if (input.GetActionID() == GamepadAction.ID.PUNCH)
-            {
-                BackToMenu();
-                return true;
-            }
+            //if (input.GetActionID() == GamepadAction.ID.PUNCH)
+            //{
+            //    BackToMenu();
+            //    return true;
+            //}
 
             return false;
         }

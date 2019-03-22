@@ -37,6 +37,11 @@ namespace con2.game
                     "SpawnableItemsList"),
                 true);
             serializedObject.ApplyModifiedProperties();
+            EditorGUILayout.PropertyField(
+                serializedObject.FindProperty(
+                    "SpawnFromStart"),
+                true);
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }
