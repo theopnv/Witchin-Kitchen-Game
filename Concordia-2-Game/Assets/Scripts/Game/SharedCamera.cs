@@ -48,10 +48,13 @@ namespace con2.game
             {
                 foreach (var t in m_mainManager.PlayersInstances)
                 {
-                    var playerPosition = t.Value.gameObject.transform.position;
-                    middle += playerPosition;
-                    if (playerPosition.magnitude > furthestFromMiddle.magnitude)
-                        furthestFromMiddle = playerPosition;
+                    if (t.Value != null)
+                    {
+                        var playerPosition = t.Value.gameObject.transform.position;
+                        middle += playerPosition;
+                        if (playerPosition.magnitude > furthestFromMiddle.magnitude)
+                            furthestFromMiddle = playerPosition;
+                    }
                 }
                 middle /= (3 * m_mainManager.PlayersInstances.Count);
             }

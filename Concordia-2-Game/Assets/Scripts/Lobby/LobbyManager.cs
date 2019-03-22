@@ -31,14 +31,7 @@ namespace con2.lobby
             // Subscription to controllers events
             _DetectController.OnConnected += OnControllerConnected;
             _DetectController.OnDisconnected += OnControllerDisconnected;
-
-            var controllerState = _DetectController.ControllersState;
-            for (var i = 0; i < controllerState.Length; i++)
-            {
-                ++GameInfo.PlayerNumber;
-                ActivatePlayer(controllerState[i], i);
-            }
-
+            
             // Audience & Networking
             _AudienceInteractionManager.OnGameUpdated += OnGameUpdated;
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
@@ -126,7 +119,7 @@ namespace con2.lobby
             }
             else
             {
-                Debug.LogError(content.content);
+                Debug.LogError(content.code + ": " + content.content);
             }
         }
 
@@ -134,6 +127,11 @@ namespace con2.lobby
 
         public void StartGameLoad()
         {
+            if (!_AudienceInteractionManager.IsConnectedToServer
+                || GameInfo.RoomId == "0000")
+            {
+                return;
+            }
             _LoadingPanel.SetActive(true);
             _AudienceInteractionManager?.SendPlayerCharacteristics(PlayersInstances.Values.ToList());
         }

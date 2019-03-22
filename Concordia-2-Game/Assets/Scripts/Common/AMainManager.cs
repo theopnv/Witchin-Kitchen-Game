@@ -66,8 +66,11 @@ namespace con2
             }
             else
             {
+                GamepadMgr.Pad(i).SwitchGamepadContext(new List<IInputConsumer>(), i);
+                var playerZone = PlayersInstances[i].GetComponentInParent<PlayerZoneManager>();
+                Destroy(playerZone.gameObject);
+                PlayersInstances.Remove(i);
                 --GameInfo.PlayerNumber;
-                // TODO: Destroy instance
             }
         }
 

@@ -82,6 +82,14 @@ namespace con2.game
             PlayerHUD.Message.text = "";
         }
 
+        void OnDisable()
+        {
+            if (PlayerHUD)
+            {
+                Destroy(PlayerHUD.gameObject);
+            }
+        }
+
         #endregion
 
     }

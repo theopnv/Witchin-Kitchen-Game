@@ -35,7 +35,6 @@ namespace con2.game
             }
 
             InitializeAudienceEvents();
-            InitializeItemSpawning();
             InitializeEndGame();
 
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
@@ -151,23 +150,6 @@ namespace con2.game
             }
 
             m_audienceEventManager.StartPoll((Events.EventID)eventA, (Events.EventID)eventB, m_maxEventVoteTime);
-        }
-
-        #endregion
-
-        #region ItemSpawning
-
-        private ItemSpawner m_itemSpawner;
-
-        private void InitializeItemSpawning()
-        {
-            m_itemSpawner = GetComponent<ItemSpawner>();
-        }
-
-        //example function
-        private void ModulateSpawnRate(float timeChange)
-        {
-            //m_itemSpawner.SpawnableItems[Ingredient.PEPPER].SpawnDelay += timeChange;
         }
 
         #endregion

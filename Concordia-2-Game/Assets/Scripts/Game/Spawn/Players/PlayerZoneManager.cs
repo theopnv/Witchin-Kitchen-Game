@@ -43,6 +43,7 @@ namespace con2.game
                 OwnerId % 2 == 0 ? _MalePrefab : _FemalePrefab,
                 PlayerSpawnPosition, Quaternion.identity);
             player.transform.forward = -PlayerSpawnPosition;
+            player.transform.SetParent(transform);
 
             Owner = player.GetComponent<PlayerManager>();
 
@@ -67,6 +68,7 @@ namespace con2.game
             var playersHUDZone = GameObject.FindGameObjectWithTag(Tags.PLAYERS_HUD_ZONE);
             var instance = Instantiate(_PlayerHUDPrefab, playersHUDZone.transform);
             Owner.PlayerHUD = instance.GetComponent<PlayerHUD>();
+            Owner.PlayerHUD.Manager = Owner;
             Owner.PlayerHUD.OwnerId = Owner.ID;
             var name = instance.transform.Find("Organizer/Recipe/Name");
             var rect = name.GetComponentInChildren<Image>();

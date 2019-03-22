@@ -8,30 +8,40 @@ namespace con2.game
 
     public class PlayerHUD : MonoBehaviour
     {
+        private DetectController _DetectController;
         public int OwnerId = -1;
         public Text Message;
         public GameObject RecipeIconsParent;
         public Text Score;
-        private PlayerManager _Manager;
+        public PlayerManager Manager;
 
         void Start()
         {
-            var detectController = FindObjectOfType<DetectController>();
-            _Manager = GetComponent<PlayerManager>();
-            detectController.OnDisconnected += i =>
+            _DetectController = FindObjectOfType<DetectController>();
+            _DetectController.OnConnected += OnConnected;
+            _DetectController.OnDisconnected += OnDisconnected;
+        }
+
+        void OnDisable()
+        {
+            _DetectController.OnConnected -= OnConnected;
+            _DetectController.OnDisconnected -= OnDisconnected;
+        }
+
+        void OnConnected(int i)
+        {
+            if (i == OwnerId)
             {
-                if (i == OwnerId)
-                {
-                    _Manager.SendMessageToPlayerInHUD("Your controller was disconnected.", Color.red, true);
-                }
-            };
-            detectController.OnConnected += i =>
+                Manager?.SendMessageToPlayerInHUD("", Color.red);
+            }
+        }
+
+        void OnDisconnected(int i)
+        {
+            if (i == OwnerId)
             {
-                if (i == OwnerId)
-                {
-                    _Manager.SendMessageToPlayerInHUD("", Color.red);
-                }
-            };
+                Manager?.SendMessageToPlayerInHUD("Your controller was disconnected.", Color.red, true);
+            }
         }
 
         public void CollectIngredient(Ingredient type)
