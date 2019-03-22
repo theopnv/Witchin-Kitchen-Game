@@ -44,6 +44,8 @@ namespace con2.game
             if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
             {
                 Hit();
+                if (m_didStun)
+                    CamShakeMgr.Get().ShakeTiny();
                 StartCoroutine(PunchCooldown());
                 return true;
             }
