@@ -133,6 +133,7 @@ namespace con2.lobby
                 return;
             }
             _LoadingPanel.SetActive(true);
+            _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
             _AudienceInteractionManager?.SendPlayerCharacteristics(PlayersInstances.Values.ToList());
         }
 
@@ -142,7 +143,7 @@ namespace con2.lobby
             {
                 GamepadMgr.Pad(i).BlockGamepad(true);
             }
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadSceneAsync(SceneNames.Game);
         }
 

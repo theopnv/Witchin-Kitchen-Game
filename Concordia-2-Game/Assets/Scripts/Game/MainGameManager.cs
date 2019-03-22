@@ -12,7 +12,7 @@ namespace con2.game
     public class MainGameManager : AMainManager, IInputConsumer
     {
         [SerializeField] private GameObject _LoadingPanel;
-        private const float LOADING_TIME = 4f;
+        private const float LOADING_TIME = 2f;
 
         protected override void Awake()
         {
@@ -55,6 +55,9 @@ namespace con2.game
 
         private IEnumerator ExitLoadingScreen()
         {
+            _LoadingPanel.SetActive(true);
+            _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
+
             yield return new WaitForSeconds(LOADING_TIME);
             _LoadingPanel.SetActive(false);
             for (var i = 0; i < GameInfo.PlayerNumber; i++)
