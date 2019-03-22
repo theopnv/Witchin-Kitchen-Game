@@ -9,11 +9,11 @@ public class CamShake : MonoBehaviour
     public bool debugMode = false;//Test-run/Call ShakeCamera() on start
 
     public float shakeAmount;//The amount to shake this frame.
-    [Range (1.0f, 5.0f)]
+    [Range (0.0f, 5.0f)]
     public float shakeAmountMax = 3f;
 
     public float shakeDuration;//The duration this frame.
-    [Range(1.0f, 5.0f)]
+    [Range(0.0f, 5.0f)]
     public float shakeDurationMax = 3f;
 
     //Readonly values...
@@ -51,7 +51,7 @@ public class CamShake : MonoBehaviour
 
     public void ShakeCamera(float amount, float duration)
     {
-        shakeAmount += amount;//Add to the current amount.
+        shakeAmount += Mathf.Max(0.0f, amount - shakeAmount);//Add to the current amount.
         shakeAmount = Mathf.Min(shakeAmount, shakeAmountMax);
         startAmount = shakeAmount;//Reset the start amount, to determine percentage.
 
