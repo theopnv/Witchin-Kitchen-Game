@@ -47,7 +47,7 @@ namespace con2
             return null;
         }
 
-        public void OnPlayerInitialized(PlayerManager player)
+        public virtual void OnPlayerInitialized(PlayerManager player)
         {
             if (!PlayersInstances.ContainsKey(player.ID))
             {

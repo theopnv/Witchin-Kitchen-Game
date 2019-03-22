@@ -3029,6 +3029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26a457ddc7a2bb498cee450eccd37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _DetectController: {fileID: 1360604513}
   _LobbyManager: {fileID: 1273105651}
   _CurrentInstruction: {fileID: 837755447}
   _ItemSpawner: {fileID: 1769308873}

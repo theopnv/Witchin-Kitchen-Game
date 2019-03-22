@@ -126,6 +126,12 @@ namespace con2.lobby
 
         #endregion
 
+        public override void OnPlayerInitialized(PlayerManager playerManager)
+        {
+            base.OnPlayerInitialized(playerManager);
+            _TutorialManager.OnPlayerInitialized(playerManager);
+        }
+
         public void StartGameLoad()
         {
             if (!_AudienceInteractionManager.IsConnectedToServer

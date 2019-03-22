@@ -10,8 +10,7 @@ namespace con2.game
 {
     public class RecipeManagerLobby : ARecipeManager
     {
-        public Action OnProcessedIngredient;
-        public Action OnCompletedPotion;
+        public Action<int> OnCompletedPotion;
         private LobbyManager m_mgm;
 
         protected override AMainManager GetMainManager() => m_mgm;
@@ -29,17 +28,16 @@ namespace con2.game
         {
             if (m_currentPotionRecipe.IsComplete())
             {
-                OnCompletedPotion?.Invoke();
+                OnCompletedPotion?.Invoke(Owner.ID);
             }
             base.Update();
         }
 
         protected override void NextRecipe()
         {
-            var list = new Ingredient[2]
+            var list = new Ingredient[1]
             {
                 Ingredient.MUSHROOM,
-                Ingredient.MUSHROOM
             };
             m_currentPotionRecipe = new Recipe(list);
             SetNewRecipeUI();
@@ -49,7 +47,6 @@ namespace con2.game
         public override void ProcessIngredient(Ingredient ingredient)
         {
             m_currentPotionRecipe.ProcessIngredient(ingredient);
-            OnProcessedIngredient?.Invoke();
         }
     }
 
