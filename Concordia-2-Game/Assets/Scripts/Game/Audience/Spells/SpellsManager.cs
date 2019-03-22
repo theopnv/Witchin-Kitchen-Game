@@ -93,7 +93,7 @@ namespace con2.game
             if (spell.caster == null)
             {
                 spell.caster = new Viewer();
-                spell.caster.name = "The Game";
+                spell.caster.name = "The Audience";
             }
 
             Debug.Log(spell.caster.name + " casted a spell: " + Spells.EventList[(Spells.SpellID)spell.spellId]);

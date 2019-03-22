@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 244377548}
   - component: {fileID: 244377547}
   m_Layer: 5
-  m_Name: TytorialPanel
+  m_Name: TutorialPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,7 +596,7 @@ Transform:
   m_GameObject: {fileID: 421036251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.45, z: 0}
-  m_LocalScale: {x: 50, y: 1, z: 50}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 1588037382}
   m_RootOrder: 0
@@ -3029,7 +3029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26a457ddc7a2bb498cee450eccd37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DetectController: {fileID: 1360604513}
   _LobbyManager: {fileID: 1273105651}
   _CurrentInstruction: {fileID: 837755447}
   _ItemSpawner: {fileID: 1769308873}

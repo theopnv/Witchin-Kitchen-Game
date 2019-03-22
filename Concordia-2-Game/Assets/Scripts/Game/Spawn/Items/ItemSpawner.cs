@@ -148,7 +148,7 @@ namespace con2.game
 
                 if (trials == 10)
                 {
-                    Debug.LogError("A Forbidden zone is overlapping too much with the " + itemType + " spawn zone. Please make the zones smaller or change their position.");
+                    Debug.LogWarning("A Forbidden zone is overlapping too much with the " + itemType + " spawn zone. Please make the zones smaller or change their position.");
                     point = tmp;
                 }
             } while (float.IsNaN(point));

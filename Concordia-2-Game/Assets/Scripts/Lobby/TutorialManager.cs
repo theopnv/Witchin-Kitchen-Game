@@ -28,12 +28,8 @@ namespace con2.lobby
             { 3, "Oh oh! The audience casted Disco Mania on you.\r\nYour controls are inverted for 10 seconds."},
             { 4, "Two weapons are at your disposal in the arena:\r\nHit [B] to punch your opponents and [Right Trigger] to throw fireballs."},
             { 5, "Hit [B] to punch your opponents and [Right Trigger] to throw fireballs.\r\nThrow a fireball at one of your opponents to launch the game!"},
+            { 6, "Well Done! May the best win! \r\nLaunching the game in a few seconds..."},
         };
-
-        private int GetMinPlayerIndx()
-        {
-            return _PlayersProgression.OrderBy(p => p.Value).First().Key;
-        }
 
         private int GetMaxPlayerIndx()
         {
@@ -43,10 +39,20 @@ namespace con2.lobby
         private void LevelUpPlayersProgression(int playerIdx)
         {
             ++_PlayersProgression[playerIdx];
-            _CurrentInstructionIdx = _PlayersProgression[playerIdx] > 5 
-                ? _PlayersProgression[GetMinPlayerIndx()] 
-                : _PlayersProgression[GetMaxPlayerIndx()];
-            _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
+            if (_PlayersProgression[playerIdx] > 5)
+            {
+                _PlayersProgression.Remove(playerIdx);
+            }
+
+            if (_PlayersProgression.Count > 0)
+            {
+                _CurrentInstructionIdx = _PlayersProgression[GetMaxPlayerIndx()];
+                _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
+            }
+            else
+            {
+                StartCoroutine(EndTutorial());
+            }
         }
 
         public void Start()
@@ -63,7 +69,7 @@ namespace con2.lobby
         {
             if (!_PlayersProgression.ContainsKey(player.ID))
             {
-                _PlayersProgression.Add(player.ID, 0);
+                _PlayersProgression.Add(player.ID, 1);
             }
             var recipeManagers = FindObjectsOfType<RecipeManagerLobby>();
             var recipeManager = recipeManagers.FirstOrDefault(r => r.Owner.ID == player.ID);
@@ -71,6 +77,9 @@ namespace con2.lobby
             {
                 recipeManager.OnCompletedPotion += _1_CompletedPotion;
             }
+
+            var fireballManager = player.GetComponentInChildren<PlayerFireball>();
+            fireballManager.OnFireballCasted += () => OnFireBallCasted(player.ID);
         }
 
         #region Instructions
@@ -93,7 +102,6 @@ namespace con2.lobby
         {
             if (_PlayersProgression[playerIdx] <= 1)
             {
-                _PlayersProgression[playerIdx] = 1;
                 LevelUpPlayersProgression(playerIdx);
                 StartCoroutine(_2_CastSpells(playerIdx));
             }
@@ -123,6 +131,27 @@ namespace con2.lobby
             LevelUpPlayersProgression(playerIdx);
             yield return new WaitForSeconds(10);
             LevelUpPlayersProgression(playerIdx);
+        }
+
+        private void OnFireBallCasted(int playerIdx)
+        {
+            if (_PlayersProgression[playerIdx] >= 5)
+            {
+                LevelUpPlayersProgression(playerIdx);
+            }
+        }
+
+        private IEnumerator EndTutorial()
+        {
+            _CurrentInstruction.text = _Instructions[6];
+            yield return new WaitForSeconds(5);
+            CloseInstructionsPanel();
+            _LobbyManager.StartGameLoad();
+        }
+
+        public void CloseInstructionsPanel()
+        {
+            _CurrentInstruction.transform.parent.gameObject.SetActive(false);
         }
 
         #endregion

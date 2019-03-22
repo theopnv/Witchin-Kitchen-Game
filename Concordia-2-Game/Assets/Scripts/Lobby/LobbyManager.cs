@@ -139,6 +139,8 @@ namespace con2.lobby
             {
                 return;
             }
+
+            _TutorialManager.CloseInstructionsPanel();
             _LoadingPanel.SetActive(true);
             _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
             _AudienceInteractionManager?.SendPlayerCharacteristics(PlayersInstances.Values.ToList());
@@ -161,7 +163,10 @@ namespace con2.lobby
             Debug.Log("Welcome player " + i);
             ++GameInfo.PlayerNumber;
             ActivatePlayer(true, i);
-            _TutorialManager.Run();
+            if (GameInfo.PlayerNumber <= 1)
+            {
+                _TutorialManager.Run();
+            }
         }
 
         void OnControllerDisconnected(int i)
