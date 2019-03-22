@@ -165,7 +165,7 @@ namespace con2.game
         public GameObject m_backdrop;
         private List<List<PlayerManager>> m_finalRankings;
         private bool m_gameOver = false, m_acceptingInput = false;
-        public float REMATCH_TIMER = 10, GAME_TIMER = 240 + LOADING_TIME;
+        public float REMATCH_TIMER = 10, GAME_TIMER = 240;
         [SerializeField] private int m_dominationDifference = 3;
 
         private void InitializeEndGame()
@@ -181,7 +181,7 @@ namespace con2.game
         {
             if (!m_gameOver)
             {
-                int remainingTime = (int)(GAME_TIMER - Time.timeSinceLevelLoad);
+                int remainingTime = (int)(GAME_TIMER + LOADING_TIME - Time.timeSinceLevelLoad);
                 m_clock.text = FormatRemainingTime(remainingTime);
                 if (remainingTime == 10)
                 {
