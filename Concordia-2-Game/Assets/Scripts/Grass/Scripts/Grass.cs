@@ -131,27 +131,10 @@ public class Grass : MonoBehaviour
                 
                 Vector3 origin = pos + new Vector3(0.0f, 100.0f, 0.0f);
                 RaycastHit hitInfo;
-                if (Physics.Raycast(origin, Vector3.down, out hitInfo))
+                int layerMask = 1 << Grass.GRASS_SURFACE_LAYER_MASK; // Ignore all but grass surfaces
+                if (Physics.Raycast(origin, Vector3.down, out hitInfo, Mathf.Infinity, layerMask))
                 {
-                    if (hitInfo.transform.gameObject != null &&
-                        (hitInfo.transform.gameObject.layer & GRASS_SURFACE_LAYER_MASK) > 0)
-                    {
-                        pos.y = hitInfo.point.y;
-                    }
-                    else
-                    {
-                        //if (hitInfo.transform.gameObject == null)
-                        //{
-                        //    print("noname");
-                        //}
-                        //else
-                        //{
-                        //    print(hitInfo.transform.gameObject.name);
-                        //    print(hitInfo.transform.gameObject.layer);
-                        //}
-
-                        continue;
-                    }
+                    pos.y = hitInfo.point.y;
                 }
                 else
                 {
