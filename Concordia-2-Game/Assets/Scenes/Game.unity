@@ -6084,9 +6084,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugMode: 0
   shakeAmount: 0
-  shakeAmountMax: 1
+  shakeAmountMax: 0.75
   shakeDuration: 0
-  shakeDurationMax: 2
+  shakeDurationMax: 1.5
   smooth: 0
   smoothAmount: 5
 --- !u!114 &930326416

@@ -61,7 +61,7 @@ namespace con2
 
         public void ShakeSmall()
         {
-            shake.ShakeCamera(0.5f, 0.4f);
+            shake.ShakeCamera(0.5f, 0.5f);
         }
 
         public void ShakeMedium()

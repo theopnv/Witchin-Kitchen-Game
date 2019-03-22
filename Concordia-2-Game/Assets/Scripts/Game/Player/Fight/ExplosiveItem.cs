@@ -58,7 +58,7 @@ namespace con2.game
                 Hit();
 
                 if (m_didStun)
-                    ShakeIntensity = CamShakeMgr.Intensity.MEDIUM;
+                    ShakeIntensity = CamShakeMgr.Intensity.SMALL;
                 CamShakeMgr.Get().Shake(ShakeIntensity);
 
                 Rigidbody body = GetComponent<Rigidbody>();

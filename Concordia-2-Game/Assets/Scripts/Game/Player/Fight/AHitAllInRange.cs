@@ -56,7 +56,8 @@ public abstract class AHitAllInRange : MonoBehaviour
                 {
                     Vector3 hitVector = (target.Key.transform.position - transform.position).normalized * m_strength;
                     punchableComponent.Punch(ModulateHitVector(hitVector), m_stunTime);
-                    m_didStun = true;
+                    if (target.Key.tag == "Player")
+                        m_didStun = true;
                 }
             }
         }
