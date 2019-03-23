@@ -50,6 +50,8 @@ namespace con2.game
                     var burst = Instantiate(HitPrefab, collision.GetContact(0).point, Quaternion.LookRotation(collision.GetContact(0).normal));
                     StartCoroutine(DestroyWhenComplete(burst));
                 }
+
+                ingredient.ResetAimAssist();
             }
         }
 
@@ -68,6 +70,10 @@ namespace con2.game
         public void SetOwner(PlayerManager owner)
         {
             m_owner = owner;
+
+            var aimAssistSystem = owner.gameObject.GetComponent<PlayerPickUpDropObject>();
+            aimAssistSystem.SetAimAssistedStation(this.gameObject);
+
             foreach (var game in m_miniGames)
             {
                 game.Owner = m_owner;
