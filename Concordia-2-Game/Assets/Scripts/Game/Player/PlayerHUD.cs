@@ -13,7 +13,13 @@ namespace con2.game
         public Text Message;
         public GameObject RecipeIconsParent;
         public Text Score;
+        [HideInInspector]
         public PlayerManager Manager;
+
+        [SerializeField] private GameObject RegularHUD;
+        [SerializeField] private GameObject ReadyPanel;
+        [SerializeField] private Text ReadyPanelName;
+        [SerializeField] private Text ReadyPanelMessage;
 
         void Start()
         {
@@ -42,6 +48,17 @@ namespace con2.game
             {
                 Manager?.SendMessageToPlayerInHUD("Your controller was disconnected.", Color.red, true);
             }
+        }
+
+        public void SetReadyActive()
+        {
+            RegularHUD.SetActive(false);
+            ReadyPanel.SetActive(true);
+            ReadyPanelMessage.color = ColorsManager.Get().PlayerMeshColors[Manager.ID];
+            ReadyPanelName.text = Manager.Name;
+
+            var rect = ReadyPanelName.transform.parent.GetComponentInChildren<Image>();
+            rect.color = ColorsManager.Get().PlayerMeshColors[Manager.ID];
         }
 
         public void CollectIngredient(Ingredient type)

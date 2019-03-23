@@ -142,6 +142,7 @@ namespace con2.lobby
             if (_PlayersProgression[playerIdx] >= 5)
             {
                 LevelUpPlayersProgression(playerIdx);
+                _LobbyManager.PlayersInstances[playerIdx].PlayerHUD.SetReadyActive();
             }
         }
 

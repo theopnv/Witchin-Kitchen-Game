@@ -23,10 +23,6 @@ namespace con2.game
         [SerializeField] private GameObject _MalePrefab;
         [SerializeField] private GameObject _PlayerHUDPrefab;
 
-        [SerializeField]
-        [Tooltip("List of HUD rectangles icons")]
-        public List<Sprite> BackgroundRectangles = new List<Sprite>();
-
         public Action<PlayerManager> OnPlayerInitialized;
 
         void Start()
@@ -72,7 +68,6 @@ namespace con2.game
             Owner.PlayerHUD.OwnerId = Owner.ID;
             var name = instance.transform.Find("Organizer/Recipe/Name");
             var rect = name.GetComponentInChildren<Image>();
-            rect.sprite = BackgroundRectangles[Owner.ID];
             rect.color = ColorsManager.Get().PlayerMeshColors[Owner.ID];
             name.GetComponentInChildren<Text>().text = Owner.Name;
         }

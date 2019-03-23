@@ -201,6 +201,7 @@ namespace con2.lobby
         void OnFireballCasted(int i)
         {
             _PlayersStatuses[i] = true;
+            PlayersInstances[i].PlayerHUD.SetReadyActive();
             if (_PlayersStatuses.All(p => p.Value))
             {
                 StartCoroutine(StartGame());
