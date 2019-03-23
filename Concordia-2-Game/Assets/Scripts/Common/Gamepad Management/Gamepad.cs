@@ -46,6 +46,7 @@ namespace con2
         public static readonly InputID INP_VERTICAL2 = new InputID("Vertical2");
         public static readonly InputID INP_PUNCH = new InputID("Punch");
         public static readonly InputID INP_INTERACT = new InputID("Interact");
+        public static readonly InputID INP_XBUTTON = new InputID("XButton");
         public static readonly InputID INP_START = new InputID("Start");
         public static readonly InputID INP_LEFT_TRIGGER = new InputID("LeftTrigger");
         public static readonly InputID INP_RIGHT_TRIGGER = new InputID("RightTrigger");
@@ -99,6 +100,7 @@ namespace con2
         {
             addMapping(INP_PUNCH, GamepadAction.ID.PUNCH);
             addMapping(INP_INTERACT, GamepadAction.ID.INTERACT);
+            addMapping(INP_XBUTTON, GamepadAction.ID.XBUTTON);
             addMapping(INP_START, GamepadAction.ID.START);
 
             addMapping(INP_HORIZONTAL, GamepadAction.ID.HORIZONTAL);

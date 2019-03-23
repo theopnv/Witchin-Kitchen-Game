@@ -5375,7 +5375,7 @@ MonoBehaviour:
   Owner: {fileID: 0}
   KitchenStation: {fileID: 0}
   m_started: 0
-  m_inputToMash: 2
+  m_inputToMash: 3
   m_timeToLoseProgress: 1
 --- !u!114 &6998479052935030917
 MonoBehaviour:
@@ -10462,7 +10462,7 @@ GameObject:
   - component: {fileID: 786061456332881098}
   - component: {fileID: 6326799013553125195}
   m_Layer: 0
-  m_Name: MashAPrompt
+  m_Name: MashXPrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10685,7 +10685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6580967724236997304
 Transform:
   m_ObjectHideFlags: 0
@@ -10870,7 +10870,7 @@ GameObject:
   - component: {fileID: 6387345345495603267}
   - component: {fileID: 3528499050206879914}
   m_Layer: 0
-  m_Name: 360_A
+  m_Name: 360_X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10927,7 +10927,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6f7fbc189a4d2424485c5e78082dcbfb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94d81991074c796499585b3ea27293a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11096,6 +11096,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6580967724236997304}
     m_Modifications:
+    - target: {fileID: 100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
+      propertyPath: m_Name
+      value: firepit
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11151,10 +11155,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
-      propertyPath: m_Name
-      value: firepit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
