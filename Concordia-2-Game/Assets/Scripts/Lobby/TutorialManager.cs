@@ -28,7 +28,7 @@ namespace con2.lobby
             { 2, "You scored one point! At each potion, the audience gets to cast a spell on one of you. Get ready!"},
             { 3, "Oh oh! The audience casted Disco Mania on you.\r\nYour controls are inverted for 10 seconds."},
             { 4, "Two weapons are at your disposal in the arena:\r\nHit [B] to punch your opponents and [Right Trigger] to throw fireballs."},
-            { 5, "Hit [B] to punch your opponents and [Right Trigger] to throw fireballs.\r\nThrow a fireball at one of your opponents to launch the game!"},
+            { 5, "Hit [B] to punch your opponents and [Right Trigger] to throw fireballs.\r\nThrow a fireball at one of your opponents to ready up!"},
         };
 
         private int GetMaxPlayerIndx()

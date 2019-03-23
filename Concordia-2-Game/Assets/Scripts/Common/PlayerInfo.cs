@@ -22,8 +22,8 @@ namespace con2
         public static Dictionary<int, Player> Info = new Dictionary<int, Player>()
         {
             { 0, new Player() { Name = "Gandalf the OG"} },
-            { 1, new Player() { Name = "Sabrina the Tahini Witch"} },
-            { 2, new Player() { Name = "Snape the Punch-master"} },
+            { 1, new Player() { Name = "Sabrina the Witch"} },
+            { 2, new Player() { Name = "Bake-o Malfoy"} },
             { 3, new Player() { Name = "Herbione Granger"} },
         };
 

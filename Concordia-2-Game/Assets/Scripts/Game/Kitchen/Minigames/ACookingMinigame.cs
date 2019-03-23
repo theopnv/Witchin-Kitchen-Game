@@ -1,8 +1,4 @@
-﻿using con2;
-using con2.game;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,10 +39,11 @@ namespace con2.game
         }
 
         // Start is called before the first frame update
-        private void Start()
+        public void SetOwner(PlayerManager owner)
         {
             m_promptBackground.enabled = false;
             m_prompt.SetActive(false);
+            Owner = owner;
             m_playerHolding = Owner.gameObject.GetComponentInChildren<PlayerPickUpDropObject>();
         }
 

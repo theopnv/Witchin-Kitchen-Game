@@ -5,7 +5,6 @@ using con2.game;
 using con2.main_menu;
 using con2.messages;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using WebSocketSharp;
@@ -135,7 +134,7 @@ namespace con2.lobby
         private void SetInstructionText()
         {
             _InstructionsText.transform.parent.gameObject.SetActive(true);
-            _InstructionsText.text = "Launch a fireball with [Right Trigger] when you are ready.";
+            _InstructionsText.text = "Launch a fireball with [Right Trigger] to ready up.";
         }
 
         public override void OnPlayerInitialized(PlayerManager playerManager)
