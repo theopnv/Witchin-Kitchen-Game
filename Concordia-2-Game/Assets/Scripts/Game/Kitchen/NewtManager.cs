@@ -43,7 +43,7 @@ namespace con2.game
                 pos.x -= 1f; // Shift instantiation on the side a bit to avoid colliders overlapping and making the newt jump 20 feet high
                 var newEye = Instantiate(m_eyeIngredientPrefab, pos, Quaternion.identity);
                 var eyePickable = newEye.GetComponent<PickableObject>();
-                var playerPickup = newParent.parent.gameObject.GetComponent<PlayerPickUpDropObject>();
+                var playerPickup = newParent.gameObject.GetComponentInParent<PlayerPickUpDropObject>();
                 playerPickup.ForcePickUpObject(eyePickable);
 
                 //Swap out eye for an eyepatch

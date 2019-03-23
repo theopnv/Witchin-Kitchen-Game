@@ -86,12 +86,19 @@ namespace con2.game
         // Pick up a nearby object
         private void PickUpObject()
         {
+            var tempHeld = m_heldObject;
+
             // Have the object adjust its physics, and tell us if it can be grabbed now
             if (m_heldObject.PickUp(m_characterHands))
             {
-                // Slow down the player
-                m_speedReduction = m_heldObject.GetMaxSpeedFractionWhenHolding();
-                m_playerMovement.MaxMovementSpeed *= m_speedReduction;
+                if (tempHeld.Equals(m_heldObject))  // if we actually picked up the thing we were trying to pick up (fkn newt side effects)
+                {
+                    // Slow down the player
+                    m_speedReduction = m_heldObject.GetMaxSpeedFractionWhenHolding();
+                    m_playerMovement.MaxMovementSpeed *= m_speedReduction;
+
+                    Debug.Log("Multiplying speed by " + m_speedReduction + ", grabbing " + m_heldObject.name);
+                }
             }
             else
             {
@@ -119,7 +126,9 @@ namespace con2.game
         private void DropObject(Vector3 throwVector)
         {
             // Restore max movement speed
-            m_playerMovement.MaxMovementSpeed /= m_heldObject.GetMaxSpeedFractionWhenHolding();
+            m_playerMovement.MaxMovementSpeed /= m_speedReduction;
+
+            Debug.Log("Dividing speed by " + m_speedReduction + ", throwing " + m_heldObject.name);
 
             // Have the object adjust its physics and get thrown
             m_heldObject.Drop(throwVector);
