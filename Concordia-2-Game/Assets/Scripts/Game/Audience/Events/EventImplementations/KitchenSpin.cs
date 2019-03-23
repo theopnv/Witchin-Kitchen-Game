@@ -15,7 +15,7 @@ namespace con2.game
 
         private static List<string> m_keyTags = new List<string> { Tags.PLAYER_TAG, Tags.INGREDIENT, Tags.PROJECTILE, Tags.KITCHEN };
 
-        private void Start()
+        public void Run()
         {
             //Kitchens must spin
             var kitchens = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
