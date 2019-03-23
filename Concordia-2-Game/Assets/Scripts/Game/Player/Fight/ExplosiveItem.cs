@@ -38,11 +38,6 @@ namespace con2.game
 
         }
 
-        protected override Vector3 ModulateHitVector(Vector3 hitVector)
-        {
-            return hitVector;
-        }
-
         protected override void OnStart()
         {
             

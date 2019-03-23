@@ -33,7 +33,7 @@ namespace con2.game
 
                 var gift = Instantiate(m_contentsPrefab, transform.position, new Quaternion(0, 0, 0, 0));
                 var giftPickable = gift.GetComponent<PickableObject>();
-                var playerPickup = newParent.parent.gameObject.GetComponent<PlayerPickUpDropObject>();
+                var playerPickup = newParent.gameObject.GetComponentInParent<PlayerPickUpDropObject>();
                 playerPickup.ForcePickUpObject(giftPickable);
 
                 if (m_type == Ingredient.NOT_AN_INGREDIENT)
