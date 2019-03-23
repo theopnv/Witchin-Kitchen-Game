@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using con2.messages;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -55,6 +54,10 @@ namespace con2.game
 
         private IEnumerator ExitLoadingScreen()
         {
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
+            {
+                GamepadMgr.Pad(i).BlockGamepad(true);
+            }
             _LoadingPanel.SetActive(true);
             _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
 

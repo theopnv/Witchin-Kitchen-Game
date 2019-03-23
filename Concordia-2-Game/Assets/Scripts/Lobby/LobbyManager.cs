@@ -168,7 +168,11 @@ namespace con2.lobby
             {
                 return;
             }
-            
+
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
+            {
+                GamepadMgr.Pad(i).BlockGamepad(true);
+            }
             _LoadingPanel.SetActive(true);
             _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
             _AudienceInteractionManager?.SendPlayerCharacteristics(Ext.ToList(PlayersInstances.Values));
@@ -176,10 +180,6 @@ namespace con2.lobby
 
         private IEnumerator ExitLobby()
         {
-            for (var i = 0; i < GameInfo.PlayerNumber; i++)
-            {
-                GamepadMgr.Pad(i).BlockGamepad(true);
-            }
             yield return new WaitForSeconds(2f);
             SceneManager.LoadSceneAsync(SceneNames.Game);
         }
@@ -252,17 +252,6 @@ namespace con2.lobby
                 StartGameLoad();
                 return true;
             }
-            //if (input.GetActionID() == GamepadAction.ID.INTERACT)
-            //{
-            //    StartGameLoad();
-            //    return true;
-            //}
-
-            //if (input.GetActionID() == GamepadAction.ID.PUNCH)
-            //{
-            //    BackToMenu();
-            //    return true;
-            //}
 
             return false;
         }
