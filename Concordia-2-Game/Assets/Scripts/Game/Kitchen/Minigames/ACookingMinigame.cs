@@ -11,7 +11,7 @@ namespace con2.game
 
     public abstract class ACookingMinigame : MonoBehaviour, IInputConsumer
     {
-        public const float INTERACTION_DISTANCE = 2.0f, FACING_DEGREE = 30.0f;
+        public const float INTERACTION_DISTANCE = 2.5f, FACING_DEGREE = 45.0f;
 
         [SerializeField]
         protected Image m_promptBackground;
