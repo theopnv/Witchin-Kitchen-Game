@@ -121,8 +121,12 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     public void ModulateMovementSpeed(float movementModulator)
     {
+        MovementSpeed *= movementModulator;
+    }
+
+    public void ModulateMaxMovementSpeed(float movementModulator)
+    {
         MaxMovementSpeed *= movementModulator;
-        MovementSpeed *= 1.0f / movementModulator;
     }
 
     public void ModulateRotationSpeed(float rotationModulator)

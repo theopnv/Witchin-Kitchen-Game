@@ -6,6 +6,8 @@ namespace con2.game
 {
     public class PlayerPunch : AHitAllInRange, IInputConsumer
     {
+        public CamShakeMgr.Intensity ShakeIntensity = CamShakeMgr.Intensity.TINY;
+
         public float m_punchUpwardsForce = 4.0f;
 
         private bool m_canPunch = true;
@@ -45,7 +47,7 @@ namespace con2.game
             {
                 Hit();
                 if (m_didStun)
-                    CamShakeMgr.Get().ShakeTiny();
+                    CamShakeMgr.Get().Shake(ShakeIntensity);
                 StartCoroutine(PunchCooldown());
                 return true;
             }
@@ -57,6 +59,11 @@ namespace con2.game
         {
             hitVector.y = m_punchUpwardsForce;
             return hitVector;
+        }
+
+        public void ModulatePunchCooldown(float punchCooldownhMultiplier)
+        {
+            m_reloadSeconds *= punchCooldownhMultiplier;
         }
 
         public void ModulatePunchStrength(float punchStrengthMultiplier)

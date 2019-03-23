@@ -19,15 +19,29 @@ public class MegaMagePunch : ASpell
     {
         var player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
         var playerPunch = player.GetComponentInChildren<PlayerPunch>();
-        var playerTransform = player.gameObject.transform;
+        var playerMovement = player.GetComponentInChildren<PlayerMovement>();
+        var hitbox = playerPunch.gameObject.transform;
+        var hitboxScale = hitbox.localScale;
+        var charModel = player.GetComponentInChildren<Animator>().gameObject.transform;
 
         playerPunch.ModulatePunchStrength(m_megaMageMultiplier);
-        playerTransform.localScale *= m_sizeScaler;
+        playerPunch.ModulatePunchCooldown(1.0f / m_megaMageMultiplier);
+        var originalShake = playerPunch.ShakeIntensity;
+        playerPunch.ShakeIntensity = CamShakeMgr.Intensity.MEDIUM;
+        playerMovement.ModulateMovementSpeed(m_sizeScaler);
+        playerMovement.ModulateMaxMovementSpeed(m_sizeScaler);
+        hitbox.localScale = new Vector3(hitboxScale.x * m_sizeScaler, hitboxScale.y, hitboxScale.z * m_sizeScaler);
+        charModel.localScale *= m_sizeScaler;
 
         yield return new WaitForSeconds(m_megaMagePunchDuration);
 
         playerPunch.ModulatePunchStrength(1.0f / m_megaMageMultiplier);
-        playerTransform.localScale /= m_sizeScaler;
+        playerPunch.ModulatePunchCooldown(m_megaMageMultiplier);
+        playerPunch.ShakeIntensity = originalShake;
+        playerMovement.ModulateMovementSpeed(1.0f / m_sizeScaler);
+        playerMovement.ModulateMaxMovementSpeed(1.0f / m_sizeScaler);
+        hitbox.localScale = new Vector3(hitboxScale.x / m_sizeScaler, hitboxScale.y, hitboxScale.z / m_sizeScaler);
+        charModel.localScale /= m_sizeScaler;
     }
 
     public override Spells.SpellID GetSpellID()

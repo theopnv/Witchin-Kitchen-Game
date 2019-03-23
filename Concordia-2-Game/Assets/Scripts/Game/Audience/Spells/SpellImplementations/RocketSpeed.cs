@@ -22,12 +22,14 @@ namespace con2.game
             var playerMovement = player.GetComponentInChildren<PlayerMovement>();
             var rainbowTrail = player.GetComponentInChildren<TrailRenderer>();
 
+            playerMovement.ModulateMaxMovementSpeed(m_movementModulator);
             playerMovement.ModulateMovementSpeed(m_movementModulator);
             playerMovement.ModulateRotationSpeed(m_rotationModulator);
             rainbowTrail.emitting = true;
 
             yield return new WaitForSeconds(m_rocketSpeedDuration);
 
+            playerMovement.ModulateMaxMovementSpeed(1.0f / m_movementModulator);
             playerMovement.ModulateMovementSpeed(1.0f / m_movementModulator);
             playerMovement.ModulateRotationSpeed(1.0f / m_rotationModulator);
             rainbowTrail.emitting = false;
