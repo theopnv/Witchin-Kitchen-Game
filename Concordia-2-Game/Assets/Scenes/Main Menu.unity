@@ -3368,7 +3368,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1592231247}
   - component: {fileID: 1592231248}
-  - component: {fileID: 1592231249}
   m_Layer: 5
   m_Name: GamepadManager
   m_TagString: Untagged
@@ -3405,18 +3404,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc4492285a43d0b489a012bef25e5799, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1592231249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592231246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c40c70a307192c46896bb079b4daccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1593741564
@@ -4650,7 +4637,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2094004649}
   - component: {fileID: 2094004650}
-  - component: {fileID: 2094004651}
   m_Layer: 5
   m_Name: InputContextSwitcher
   m_TagString: Untagged
@@ -4687,18 +4673,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 601f50d73eee7a346b31c5bb3c7f564c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2094004651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094004648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c40c70a307192c46896bb079b4daccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2114673747
