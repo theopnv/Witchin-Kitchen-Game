@@ -8,6 +8,11 @@ public class MegaMagePunch : ASpell
 {
     public float m_megaMagePunchDuration = 10.0f, m_megaMageMultiplier = 2.0f, m_sizeScaler = 1.2f;
 
+    public AnimationCurve ScaleAnim;
+    protected Vector3 OriginalScale;
+    protected float StartTime;
+    protected bool Playing = false;
+
     // Start is called before the first frame update
 
     void Start()
@@ -31,7 +36,10 @@ public class MegaMagePunch : ASpell
         playerMovement.ModulateMovementSpeed(m_sizeScaler);
         playerMovement.ModulateMaxMovementSpeed(m_sizeScaler);
         hitbox.localScale = new Vector3(hitboxScale.x * m_sizeScaler, hitboxScale.y, hitboxScale.z * m_sizeScaler);
-        charModel.localScale *= m_sizeScaler;
+
+        Playing = true;
+        StartTime = Time.time;
+        OriginalScale = charModel.localScale;
 
         yield return new WaitForSeconds(m_megaMagePunchDuration);
 
@@ -41,11 +49,28 @@ public class MegaMagePunch : ASpell
         playerMovement.ModulateMovementSpeed(1.0f / m_sizeScaler);
         playerMovement.ModulateMaxMovementSpeed(1.0f / m_sizeScaler);
         hitbox.localScale = new Vector3(hitboxScale.x / m_sizeScaler, hitboxScale.y, hitboxScale.z / m_sizeScaler);
-        charModel.localScale /= m_sizeScaler;
+
+        Playing = false;
+        charModel.localScale = OriginalScale;
     }
 
     public override Spells.SpellID GetSpellID()
     {
         return Spells.SpellID.mega_mage_punch;
+    }
+
+    protected void Update()
+    {
+        if (Playing)
+        {
+            var elapsed = Time.time - StartTime;
+            var progress = Mathf.Clamp01(elapsed / m_megaMagePunchDuration);
+
+            var player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
+            var charModel = player.GetComponentInChildren<Animator>().gameObject.transform;
+
+            var scale = ScaleAnim.Evaluate(progress);
+            charModel.localScale = OriginalScale * scale;
+        }
     }
 }
