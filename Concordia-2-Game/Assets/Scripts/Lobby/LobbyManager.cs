@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using con2.game;
+using con2.main_menu;
 using con2.messages;
-using SocketIO;
-using UnityEditor.VersionControl;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using WebSocketSharp;
 
 namespace con2.lobby
@@ -20,7 +20,9 @@ namespace con2.lobby
         private float _ServerTryAgainTimeout = 2f;
         [SerializeField] private GameObject _LoadingPanel;
         [SerializeField] private TutorialManager _TutorialManager;
+        [SerializeField] private TextMeshProUGUI _InstructionsText;
 
+        private Dictionary<int, bool> _PlayersStatuses = new Dictionary<int, bool>();
         #endregion
 
         #region Unity API
@@ -95,6 +97,10 @@ namespace con2.lobby
             yield return new WaitForSeconds(_ServerTryAgainTimeout);
             if (_AudienceInteractionManager.IsConnectedToServer)
             {
+                if (!MenuInfo.DoTutorial)
+                {
+                    SetInstructionText();
+                }
                 _MessageFeedManager.AddMessageToFeed("Connected to server", MessageFeedManager.MessageType.success);
             }
             else
@@ -126,10 +132,38 @@ namespace con2.lobby
 
         #endregion
 
+        private void SetInstructionText()
+        {
+            _InstructionsText.transform.parent.gameObject.SetActive(true);
+            _InstructionsText.text = "Launch a fireball with [Right Trigger] when you are ready.";
+        }
+
         public override void OnPlayerInitialized(PlayerManager playerManager)
         {
             base.OnPlayerInitialized(playerManager);
-            _TutorialManager.OnPlayerInitialized(playerManager);
+            if (MenuInfo.DoTutorial)
+            {
+                if (GameInfo.PlayerNumber <= 1)
+                {
+                    _TutorialManager.Run();
+                }
+                _TutorialManager.OnPlayerInitialized(playerManager);
+            }
+            else
+            {
+                _PlayersStatuses.Add(playerManager.ID, false);
+                var fireballManager = playerManager.GetComponentInChildren<PlayerFireball>();
+                fireballManager.OnFireballCasted += () => OnFireballCasted(playerManager.ID);
+            }
+        }
+
+        public IEnumerator StartGame()
+        {
+            _InstructionsText.text = "May the best win! \r\nLaunching the game in a few seconds...";
+
+            yield return new WaitForSeconds(4);
+            _InstructionsText.transform.parent.gameObject.SetActive(false);
+            StartGameLoad();
         }
 
         public void StartGameLoad()
@@ -139,11 +173,10 @@ namespace con2.lobby
             {
                 return;
             }
-
-            _TutorialManager.CloseInstructionsPanel();
+            
             _LoadingPanel.SetActive(true);
             _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
-            _AudienceInteractionManager?.SendPlayerCharacteristics(PlayersInstances.Values.ToList());
+            _AudienceInteractionManager?.SendPlayerCharacteristics(Ext.ToList(PlayersInstances.Values));
         }
 
         private IEnumerator ExitLobby()
@@ -163,9 +196,14 @@ namespace con2.lobby
             Debug.Log("Welcome player " + i);
             ++GameInfo.PlayerNumber;
             ActivatePlayer(true, i);
-            if (GameInfo.PlayerNumber <= 1)
+        }
+
+        void OnFireballCasted(int i)
+        {
+            _PlayersStatuses[i] = true;
+            if (_PlayersStatuses.All(p => p.Value))
             {
-                _TutorialManager.Run();
+                StartCoroutine(StartGame());
             }
         }
 
@@ -173,6 +211,10 @@ namespace con2.lobby
         {
             Debug.Log("Player " + i + " is gone");
             ActivatePlayer(false, i);
+            if (_PlayersStatuses.ContainsKey(i))
+            {
+                _PlayersStatuses.Remove(i);
+            }
         }
 
         public override List<IInputConsumer> GetInputConsumers(int playerIndex)

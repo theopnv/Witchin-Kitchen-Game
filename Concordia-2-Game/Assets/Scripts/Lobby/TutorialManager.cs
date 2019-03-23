@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using con2.game;
+using con2.main_menu;
 using con2.messages;
 using TMPro;
 using UnityEngine;
@@ -28,7 +29,6 @@ namespace con2.lobby
             { 3, "Oh oh! The audience casted Disco Mania on you.\r\nYour controls are inverted for 10 seconds."},
             { 4, "Two weapons are at your disposal in the arena:\r\nHit [B] to punch your opponents and [Right Trigger] to throw fireballs."},
             { 5, "Hit [B] to punch your opponents and [Right Trigger] to throw fireballs.\r\nThrow a fireball at one of your opponents to launch the game!"},
-            { 6, "Well Done! May the best win! \r\nLaunching the game in a few seconds..."},
         };
 
         private int GetMaxPlayerIndx()
@@ -57,7 +57,11 @@ namespace con2.lobby
 
         public void Start()
         {
-            _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
+            if (MenuInfo.DoTutorial)
+            {
+                _CurrentInstruction.transform.parent.gameObject.SetActive(true);
+                _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
+            }
         }
 
         public void Run()
@@ -143,15 +147,7 @@ namespace con2.lobby
 
         private IEnumerator EndTutorial()
         {
-            _CurrentInstruction.text = _Instructions[6];
-            yield return new WaitForSeconds(5);
-            CloseInstructionsPanel();
-            _LobbyManager.StartGameLoad();
-        }
-
-        public void CloseInstructionsPanel()
-        {
-            _CurrentInstruction.transform.parent.gameObject.SetActive(false);
+            yield return _LobbyManager.StartGame();
         }
 
         #endregion
