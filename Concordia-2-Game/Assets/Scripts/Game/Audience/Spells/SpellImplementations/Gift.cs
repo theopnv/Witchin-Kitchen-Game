@@ -11,10 +11,18 @@ namespace con2.game
         private Ingredient m_type;
         private bool m_contentsSpawned;
 
+        public AnimationCurve DisappearScaleAnim;
+        public float DisappearDuration;
+        protected Vector3 InitialScale;
+        protected float DisappearStartTime;
+        protected bool DisappearPlaying = false;
+
         private void Start()
         {
             var r = transform.GetChild(0).GetChild(0).GetComponent<Renderer>();
             r.material.color = m_color;
+
+            InitialScale = transform.localScale;
         }
 
         public override bool PickUp(Transform newParent)
@@ -38,7 +46,7 @@ namespace con2.game
                     ++spawner.SpawnedItemsCount[m_type];
                 }
 
-                StartCoroutine(DespawnThis());
+                DespawnThis();
 
                 return true;
             }
@@ -55,8 +63,11 @@ namespace con2.game
             m_contentsPrefab = contents;
         }
 
-        private IEnumerator DespawnThis()
+        private void DespawnThis()
         {
+            DisappearPlaying = true;
+            DisappearStartTime = Time.time;
+
             var colliders = GetComponentsInChildren<Collider>();
             foreach (Collider c in colliders)
             {
@@ -64,24 +75,26 @@ namespace con2.game
             }
             var rb = GetComponent<Rigidbody>();
             rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
-
-            var visuals = transform.GetChild(0);
-            var renderers = visuals.GetComponentsInChildren<Renderer>();
-            while (renderers[0].material.color.a > 0.02f)
-            {
-                foreach (Renderer r in renderers)
-                {
-                    var color = r.material.color;
-                    r.material.color = new Color(color.r, color.g, color.b, color.a - Time.deltaTime);
-                }
-                yield return new WaitForEndOfFrame();
-            }
-            Destroy(gameObject);
         }
 
         public void SetColor(Color c)
         {
             m_color = c;
+        }
+
+        public void Update()
+        {
+            if (DisappearPlaying)
+            {
+                var elapsed = Time.time - DisappearStartTime;
+                var progress = Mathf.Clamp01(elapsed / DisappearDuration);
+
+                var scale = DisappearScaleAnim.Evaluate(progress);
+                transform.localScale = scale * InitialScale;
+
+                if (progress >= 1.0f)
+                    Destroy(gameObject);
+            }
         }
     }
 }

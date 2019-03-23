@@ -6,7 +6,7 @@ public class GrassSurface : MonoBehaviour
 {
     private void Awake()
     {
-        gameObject.layer |= Grass.GRASS_SURFACE_LAYER_MASK;
+        gameObject.layer = Grass.GRASS_SURFACE_LAYER_MASK;
     }
 
     // Start is called before the first frame update
