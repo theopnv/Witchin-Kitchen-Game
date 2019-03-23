@@ -34,6 +34,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
         
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
+            player.ModulateMaxMovementSpeed(m_movementModulator);
             player.ModulateMovementSpeed(m_movementModulator);
             player.ModulateRotationSpeed(m_movementModulator);
             var collider = player.GetComponent<CapsuleCollider>();
@@ -60,6 +61,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
 
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
+            player.ModulateMaxMovementSpeed(1.0f / m_movementModulator);
             player.ModulateMovementSpeed(1.0f / m_movementModulator);
             player.ModulateRotationSpeed(1.0f / m_movementModulator);
             var collider = player.GetComponent<CapsuleCollider>();
@@ -68,11 +70,14 @@ public class FreezingRainEvent : AbstractAudienceEvent
 
         foreach (var item in items)
         {
-            var colliders = item.GetComponentsInChildren<Collider>();
-            foreach (var c in colliders)
+            if (item != null)
             {
-                if (!c.isTrigger)
-                    c.material = m_normalItem;
+                var colliders = item.GetComponentsInChildren<Collider>();
+                foreach (var c in colliders)
+                {
+                    if (!c.isTrigger)
+                        c.material = m_normalItem;
+                }
             }
         }
 
