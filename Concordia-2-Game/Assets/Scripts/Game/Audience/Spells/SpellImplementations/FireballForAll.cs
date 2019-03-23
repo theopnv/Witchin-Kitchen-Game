@@ -16,12 +16,13 @@ public class FireballForAll : ASpell
 
     void Start()
     {
+
         SetUpSpell();
     }
 
     public override IEnumerator SpellImplementation()
     {
-        m_player = Players.GetPlayerByID(_TargetedPlayer.id);
+        m_player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
         var playerFireball = m_player.GetComponentInChildren<PlayerFireball>();
         playerFireball.SetCanCast(false);
 

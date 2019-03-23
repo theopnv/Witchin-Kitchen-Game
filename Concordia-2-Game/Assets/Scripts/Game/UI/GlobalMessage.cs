@@ -54,6 +54,7 @@ namespace con2.game
         private readonly Dictionary<MessageFeedManager.MessageType, Color> MessageTypeLookupTable = new Dictionary<MessageFeedManager.MessageType, Color>
         {
             { MessageFeedManager.MessageType.error, Color.red },
+            { MessageFeedManager.MessageType.success, Color.green },
             { MessageFeedManager.MessageType.arena_event, Color.cyan },
             { MessageFeedManager.MessageType.generic, Color.white },
         };

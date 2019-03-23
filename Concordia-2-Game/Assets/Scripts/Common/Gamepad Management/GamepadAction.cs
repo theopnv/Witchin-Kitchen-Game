@@ -65,17 +65,6 @@ namespace con2
                 {
                     ConsumeInput();
                 }
-
-                /*
-                if (pressed && PressedEvent != null)
-                {
-                    ConsumeInput(PressedEvent);
-
-                if (justReleased && JustReleasedEvent != null)
-                {
-                    ConsumeInput(JustReleasedEvent);
-                }
-                */
             }
             else
             {

@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using con2.game;
 using con2.messages;
 using UnityEngine.SceneManagement;
@@ -16,6 +17,8 @@ namespace con2
 
         private AudienceInteractionManager _AudienceInteractionManager;
 
+        private int _CurTestIdx = 0;
+
         void Awake()
         {
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
@@ -30,9 +33,7 @@ namespace con2
 
             // All scenes
             repo.RegisterCommand("reload", Reload);
-            repo.RegisterCommand("game1", Game1);
-            repo.RegisterCommand("game2", Game2);
-
+            
             // Game
             repo.RegisterCommand("continuous_events", ContinuousEvents);
             repo.RegisterCommand("random_event", RandomEvent);
@@ -53,6 +54,8 @@ namespace con2
             repo.RegisterCommand("spell_iv", SpellInvisibility);
 
             repo.RegisterCommand("game_over", GameOver);
+            repo.RegisterCommand("test", Test);
+            repo.RegisterCommand("test_chain", TestChain);
         }
 
         public string Help(string[] args)
@@ -62,9 +65,7 @@ namespace con2
                 "Such hacking skills, much technology, wow (ง ͠° ͟ل͜ ͡°)ง",
                 "",
                 "List of available commands for all scenes:",
-                "- 'reload': Reloads the current scene",
-                "- 'game1': Starts Game scene with 1 player (red) and with no communication with the server",
-                "- 'game2': Starts Game scene with 2 players (red and blue) and with no communication with the server");
+                "- 'reload': Reloads the current scene");
             var help = commonMessage;
             var currentSceneName = GetCurrentSceneName();
 
@@ -121,30 +122,6 @@ namespace con2
             var currentSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadSceneAsync(currentSceneName);
             return "Reloaded the scene";
-        }
-
-        public string Game1(string[] args)
-        {
-            PlayersInfo.Color[0] = Color.red;
-            PlayersInfo.PlayerNumber = 1;
-
-            LoadGameScene();
-            return "Started Game scene with 1 player";
-        }
-
-        public string Game2(string[] args)
-        {
-            PlayersInfo.Color[0] = Color.red;
-            PlayersInfo.Color[1] = Color.blue;
-            PlayersInfo.PlayerNumber = 2;
-
-            LoadGameScene();
-            return "Started Game scene with 2 players";
-        }
-
-        private void LoadGameScene()
-        {
-            SceneManager.LoadSceneAsync(SceneNames.Game);
         }
 
         #endregion
@@ -354,6 +331,54 @@ namespace con2
 
         #endregion
 
+
+        private string Test(string[] args)
+        {
+            List<Func<string>> list = new List<Func<string>>();
+            list.Add(() => EventFreezingRain(args));
+            list.Add(() => EventNetworkAds(args));
+            list.Add(() => EventMeteoritesFalling(args));
+            list.Add(() => EventIngredientMorph(args));
+            list.Add(() => EventKitchenSpin(args));
+            list.Add(() => EventIngredientDance(args));
+            list.Add(() => EventGrassGrowth(args));
+            list.Add(() => SpellDiscoMania(args));
+            list.Add(() => SpellMegaMagePunch(args));
+            list.Add(() => SpellFireballForAll(args));
+            list.Add(() => SpellRocketSpeed(args));
+            list.Add(() => SpellGiftItem(args));
+            list.Add(() => SpellGiftBomb(args));
+            list.Add(() => SpellInvisibility(args));
+
+            var mainGameManager = FindObjectOfType<MainGameManager>();
+            mainGameManager.GAME_TIMER = 10000;
+
+            var action = list[_CurTestIdx];
+            var retStr = action.Invoke();
+
+            _CurTestIdx++;
+            if (_CurTestIdx >= list.Count)
+                _CurTestIdx = 0;
+
+            return "Launching test " + _CurTestIdx + "/" + list.Count + ": " + retStr;
+        }
+
+        private string TestChain(string[] args)
+        {
+            Test(args);
+            StartCoroutine(CallNextTest(args));
+            return "Launching tests";
+        }
+
+        private IEnumerator CallNextTest(string[] args)
+        {
+            if (_CurTestIdx == 0)
+            {
+                yield return null;
+            }
+            yield return new WaitForSeconds(10f);
+            TestChain(args);
+        }
 
     }
 }

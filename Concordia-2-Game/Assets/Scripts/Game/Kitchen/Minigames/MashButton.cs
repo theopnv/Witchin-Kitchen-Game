@@ -22,7 +22,7 @@ namespace con2.game
 
         public override void BalanceMinigame()
         {
-            switch (m_stationOwner.PlayerRank)
+            switch (Owner.PlayerRank)
             {
                 case PlayerManager.Rank.FIRST:
                     m_numberOfPressesRequired = 16;

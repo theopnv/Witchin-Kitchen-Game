@@ -1,25 +1,29 @@
-﻿using con2.game;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-namespace con2.game 
+namespace con2.game
 {
     public class KitchenManager : MonoBehaviour
     {
-        public void SetOwner(int ownerId)
+        public void SetOwner(PlayerManager owner)
         {
-            var owner = Players.GetPlayerByID(ownerId);
-            if (owner == null)
+            var stations = GetComponentsInChildren<KitchenStation>();
+            foreach (var station in stations)
             {
-                Debug.LogError("Kitchen owner player " + ownerId + " not found!");
-            }
-            else
-            {
-                var stations = GetComponentsInChildren<KitchenStation>();
-                foreach (var station in stations)
+                station.SetOwner(owner);
+
+                switch (SceneManager.GetActiveScene().name)
                 {
-                    station.SetOwner(owner);
+                    case SceneNames.Lobby:
+                        var rml = station.gameObject.AddComponent<RecipeManagerLobby>();
+                        rml.Owner = owner;
+                        break;
+                    case SceneNames.Game:
+                        var rmg = station.gameObject.AddComponent<RecipeManagerGame>();
+                        rmg.Owner = owner;
+                        break;
+                    default:
+                        break;
                 }
             }
         }

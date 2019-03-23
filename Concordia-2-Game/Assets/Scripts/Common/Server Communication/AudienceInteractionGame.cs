@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using con2.game;
 using con2.messages;
 using Newtonsoft.Json;
 using UnityEngine;
 using SocketIO;
 using Debug = UnityEngine.Debug;
-using Players = con2.game.Players;
 
 namespace con2
 {
@@ -37,10 +37,11 @@ namespace con2
         public void SendSpellCastRequest(int playerId, Viewer viewer)
         {
             Debug.Log("SendSpellCastRequest");
-            var player = new Player() {id = playerId};
+            var player = new messages.Player() {id = playerId};
             if (playerId != -1)
             {
-                player.name = Players.GetPlayerByID(playerId).Name;
+                var manager = FindObjectOfType<AMainManager>();
+                player.name = manager.GetPlayerById(playerId).Name;
             }
 
             var spellRequest = new SpellRequest()
@@ -54,11 +55,12 @@ namespace con2
 
         public void SendGameStateUpdate()
         {
-            var players = new List<Player>();
-            for (var i = 0; i < Players.Dic.Count; i++)
+            var players = new List<messages.Player>();
+            var manager = FindObjectOfType<AMainManager>();
+            for (var i = 0; i < manager.PlayersInstances.Count; i++)
             {
-                var player = Players.GetPlayerByID(i);
-                players.Add(new Player
+                var player = manager.GetPlayerById(i);
+                players.Add(new messages.Player
                 {
                     id = i,
                     color = "#" + ColorUtility.ToHtmlStringRGBA(ColorsManager.Get().PlayerAppColors[i]),
@@ -78,11 +80,12 @@ namespace con2
         
         public void SendGameOutcome()
         {
-            List<Player> leaderboards = Players.Dic
+            var manager = FindObjectOfType<AMainManager>();
+            List<messages.Player> leaderboards = manager.PlayersInstances
                 .Select(x => x.Value)
                 .OrderByDescending(x => x.CompletedPotionCount)
                 .ThenByDescending(x => x.CollectedIngredientCount)
-                .Select(x => new Player()
+                .Select(x => new messages.Player()
                 {
                     color = ColorUtility.ToHtmlStringRGBA(ColorsManager.Get().PlayerAppColors[x.ID]),
                     id = x.ID,

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using con2.messages;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,33 +9,91 @@ using UnityEngine.UI;
 namespace con2.game
 {
 
-    public class MainGameManager : MonoBehaviour, IInputConsumer
+    public class MainGameManager : AMainManager, IInputConsumer
     {
-        private AudienceInteractionManager _AudienceInteractionManager;
+        [SerializeField] private GameObject _LoadingPanel;
+        private const float LOADING_TIME = 2f;
 
-        private MessageFeedManager _MessageFeedManager;
-
-        // Start is called before the first frame update
-        void Start()
+        protected override void Awake()
         {
-            InitializeAudienceEvents();
-            InitializeItemSpawning();
-            InitializeEndGame();
-
-            _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
-            _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
-
-            _MessageFeedManager = FindObjectOfType<MessageFeedManager>();
+            base.Awake();
+            if (Application.isEditor
+                && GameInfo.PlayerNumber != 4)
+            {
+                GameInfo.PlayerNumber = 4;
+            }
         }
 
-        void Update()
+        // Start is called before the first frame update
+        protected override void Start()
         {
+            base.Start();
+
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
+            {
+                ActivatePlayer(true, i);
+            }
+
+            InitializeAudienceEvents();
+            InitializeEndGame();
+
+            _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
+
+            StartCoroutine(ExitLoadingScreen());
+        }
+
+        protected override void Update()
+        {
+            base.Update();
             UpdateEndGame();
         }
 
         void OnDisable()
         {
             _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
+        }
+
+        private IEnumerator ExitLoadingScreen()
+        {
+            _LoadingPanel.SetActive(true);
+            _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
+
+            yield return new WaitForSeconds(LOADING_TIME);
+            _LoadingPanel.SetActive(false);
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
+            {
+                GamepadMgr.Pad(i).BlockGamepad(false);
+            }
+        }
+
+        public override List<IInputConsumer> GetInputConsumers(int playerIndex)
+        {
+            var inputConsumers = new List<IInputConsumer>();
+
+            // Misc.
+            inputConsumers.Add(this);
+            var pmi = GetComponent<PauseMenuInstantiator>();
+            inputConsumers.Add(pmi);
+
+            // Players
+            var player = PlayersInstances[playerIndex];
+            inputConsumers.Add(player.GetComponent<FightStun>());
+
+            // Kitchens
+            var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+            var kitchenStations = new List<ACookingMinigame>();
+            foreach (var kitchen in kitchenParents)
+            {
+                var stations = kitchen.GetComponentsInChildren<ACookingMinigame>();
+                kitchenStations.AddRange(stations);
+            }
+            foreach (ACookingMinigame station in kitchenStations)
+            {
+                inputConsumers.Add(station);
+            }
+
+            inputConsumers.Add(player.GetComponent<PlayerInputController>());
+            return inputConsumers;
         }
 
         #region AudienceEvents
@@ -55,11 +114,11 @@ namespace con2.game
 
         [Header("AudienceEvents")]
         EventManager m_audienceEventManager;
-        public int 
-            m_maxEventVoteTime = 20, 
-            m_firstPollTime = 30, 
-            m_poll_frequency = 60, 
-            m_max_poll_number = 3, 
+        public int
+            m_maxEventVoteTime = 20,
+            m_firstPollTime = 30,
+            m_poll_frequency = 60,
+            m_max_poll_number = 3,
             m_poll_number = 0;
 
         private void InitializeAudienceEvents()
@@ -98,25 +157,6 @@ namespace con2.game
 
         #endregion
 
-
-        #region ItemSpawning
-
-        private ItemSpawner m_itemSpawner;
-
-        private void InitializeItemSpawning()
-        {
-            m_itemSpawner = GetComponent<ItemSpawner>();
-        }
-
-        //example function
-        private void ModulateSpawnRate(float timeChange)
-        {
-            //m_itemSpawner.SpawnableItems[Ingredient.PEPPER].SpawnDelay += timeChange;
-        }
-
-        #endregion
-
-
         #region EndGame
 
         [Header("EndGame")]
@@ -125,7 +165,7 @@ namespace con2.game
         public GameObject m_backdrop;
         private List<List<PlayerManager>> m_finalRankings;
         private bool m_gameOver = false, m_acceptingInput = false;
-        public int REMATCH_TIMER = 10, GAME_TIMER = 240;
+        public float REMATCH_TIMER = 10, GAME_TIMER = 240;
         [SerializeField] private int m_dominationDifference = 3;
 
         private void InitializeEndGame()
@@ -141,7 +181,7 @@ namespace con2.game
         {
             if (!m_gameOver)
             {
-                int remainingTime = (int)(GAME_TIMER - Time.timeSinceLevelLoad);
+                int remainingTime = (int)(GAME_TIMER + LOADING_TIME - Time.timeSinceLevelLoad);
                 m_clock.text = FormatRemainingTime(remainingTime);
                 if (remainingTime == 10)
                 {
@@ -176,7 +216,7 @@ namespace con2.game
 
                 DetermineWinner();
                 StartCoroutine(ShowLeaderboard());
-               }
+            }
         }
 
         private IEnumerator ShowLeaderboard()
@@ -199,11 +239,10 @@ namespace con2.game
         public void DetermineWinner()
         {
             m_finalRankings = new List<List<PlayerManager>>();
-            var players = Players.Dic;
-            List<PlayerManager> playerScores = new List<PlayerManager>();
-            for (int i = 0; i < players.Count; i++)
+            var playerScores = new List<PlayerManager>();
+            for (int i = 0; i < PlayersInstances.Count; i++)
             {
-                playerScores.Add(players[i]);
+                playerScores.Add(GetPlayerById(i));
             }
 
             List<List<PlayerManager>> rankings = playerScores.GroupBy(x => x.CompletedPotionCount)
@@ -226,11 +265,10 @@ namespace con2.game
 
         public void UpdateRanks()
         {
-            var players = Players.Dic;
-            List<PlayerManager> playerScores = new List<PlayerManager>();         
-            for (int i = 0; i < players.Count; i++)
+            List<PlayerManager> playerScores = new List<PlayerManager>();
+            for (int i = 0; i < PlayersInstances.Count; i++)
             {
-                playerScores.Add(players[i]);
+                playerScores.Add(GetPlayerById(i));
             }
 
             List<List<PlayerManager>> scoreGroups = playerScores.GroupBy(x => x.CompletedPotionCount)
@@ -241,13 +279,13 @@ namespace con2.game
             switch (scoreGroups.Count)
             {
                 case 1:
-                    for (int i = 0; i < players.Count; i++)     // When all players are even (e.g. at start), no one is in first
+                    for (int i = 0; i < PlayersInstances.Count; i++)     // When all players are even (e.g. at start), no one is in first
                     {
-                        players[i].PlayerRank = PlayerManager.Rank.MIDDLE;
+                        GetPlayerById(i).PlayerRank = PlayerManager.Rank.MIDDLE;
                     }
                     break;
                 default:
-                    RankGroup(scoreGroups[0], PlayerManager.Rank.FIRST);    
+                    RankGroup(scoreGroups[0], PlayerManager.Rank.FIRST);
                     for (int i = 1; i < scoreGroups.Count; i++)
                     {
                         if (IsDominating(scoreGroups[0], scoreGroups[i]))
@@ -306,7 +344,7 @@ namespace con2.game
             m_winnerText.enabled = true;
             yield return new WaitForSeconds(0.5f);
             m_rematchText.enabled = true;
-            for (int i = REMATCH_TIMER; i >= 0; i--)
+            for (var i = REMATCH_TIMER; i >= 0; i--)
             {
                 m_rematchText.text = "Rematch?\n" + i;
                 yield return new WaitForSeconds(1);

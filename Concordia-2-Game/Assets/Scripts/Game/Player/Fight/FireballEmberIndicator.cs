@@ -31,6 +31,7 @@ namespace con2.game
         public void SetPlayer(GameObject player)
         {
             m_player = player;
+            transform.SetParent(player.transform);
         }
     }
 }

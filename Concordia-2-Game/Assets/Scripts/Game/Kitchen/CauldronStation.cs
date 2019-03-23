@@ -9,15 +9,15 @@ namespace con2.game
     {
         private Cauldron m_cauldronFX;
 
-        protected override void OnAwake()
+        protected override void Awake()
         {
-            m_recipeManager = GetComponent<RecipeManager>();
+            base.Awake();
             m_cauldronFX = GetComponent<Cauldron>();
         }
 
         public override bool ShouldAcceptIngredient(Ingredient type)
         {
-            return m_recipeManager.CollectIngredient(type);
+            return MARecipeManager.CollectIngredient(type);
         }
 
         protected override void OnCollectIngredient()
@@ -27,7 +27,7 @@ namespace con2.game
 
         public override void ProcessIngredient()
         {
-            m_recipeManager.ProcessIngredient(m_storedIngredient);  //Add to recipe
+            MARecipeManager.ProcessIngredient(m_storedIngredient);  //Add to recipe
             m_cauldronFX.StopCooking();
             m_storedIngredient = Ingredient.NOT_AN_INGREDIENT;
         }

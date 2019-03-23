@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Sockets;
+using con2.game;
 using con2.messages;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -17,6 +20,8 @@ namespace con2
     /// </summary>
     public partial class AudienceInteractionManager : MonoBehaviour
     {
+        public Action<Base> OnReceivedMessage;
+
         void LobbyStart()
         {
             _Socket.On(Command.GAME_CREATED, OnGameCreated);
@@ -45,14 +50,19 @@ namespace con2
         /// False otherwise
         /// </summary>
         /// <returns></returns>
-        public bool SendPlayerCharacteristics(List<Player> playerList)
+        public bool SendPlayerCharacteristics(List<PlayerManager> playerList)
         {
-            var players = new Players
+            var players = playerList.Select(p => new messages.Player()
             {
-                players = playerList,
-            };
+                id = p.ID,
+                name = p.Name,
+                color = "#" + ColorUtility.ToHtmlStringRGBA(ColorsManager.Get().PlayerAppColors[p.ID]),
 
-            var serialized = JsonConvert.SerializeObject(players);
+            }).ToList();
+
+            var newtorkedList = new messages.Players {players = players};
+
+            var serialized = JsonConvert.SerializeObject(newtorkedList);
             _Socket.Emit(
                 Command.REGISTER_PLAYERS, 
                 new JSONObject(serialized));
@@ -66,21 +76,7 @@ namespace con2
 
         private void OnLobbyMessage(Base content)
         {
-            if ((int)content.code % 10 == 0) // Success codes always have their unit number equal to 0 (cf. protocol)
-            {
-                Debug.Log(content.content);
-                switch (content.code)
-                {
-                    case Code.register_players_success:
-                        SceneManager.LoadSceneAsync(SceneNames.Game);
-                        break;
-                    default: break;
-                }
-            }
-            else
-            {
-                Debug.LogError(content.content);
-            }
+            OnReceivedMessage?.Invoke(content);
         }
 
         private void OnGameCreated(SocketIOEvent e)

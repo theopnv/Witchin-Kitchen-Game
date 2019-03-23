@@ -8,28 +8,57 @@ namespace con2.game
 
     public class PlayerHUD : MonoBehaviour
     {
+        private DetectController _DetectController;
         public int OwnerId = -1;
         public Text Message;
         public GameObject RecipeIconsParent;
         public Text Score;
+        [HideInInspector]
+        public PlayerManager Manager;
+
+        [SerializeField] private GameObject RegularHUD;
+        [SerializeField] private GameObject ReadyPanel;
+        [SerializeField] private Text ReadyPanelName;
+        [SerializeField] private Text ReadyPanelMessage;
 
         void Start()
         {
-            var detectController = FindObjectOfType<DetectController>();
-            detectController.OnDisconnected += i =>
+            _DetectController = FindObjectOfType<DetectController>();
+            _DetectController.OnConnected += OnConnected;
+            _DetectController.OnDisconnected += OnDisconnected;
+        }
+
+        void OnDisable()
+        {
+            _DetectController.OnConnected -= OnConnected;
+            _DetectController.OnDisconnected -= OnDisconnected;
+        }
+
+        void OnConnected(int i)
+        {
+            if (i == OwnerId)
             {
-                if (i == OwnerId)
-                {
-                    Players.GetPlayerByID(OwnerId).SendMessageToPlayerInHUD("Your controller was disconnected.", Color.red, true);
-                }
-            };
-            detectController.OnConnected += i =>
+                Manager?.SendMessageToPlayerInHUD("", Color.red);
+            }
+        }
+
+        void OnDisconnected(int i)
+        {
+            if (i == OwnerId)
             {
-                if (i == OwnerId)
-                {
-                    Players.GetPlayerByID(OwnerId).SendMessageToPlayerInHUD("", Color.red);
-                }
-            };
+                Manager?.SendMessageToPlayerInHUD("Your controller was disconnected.", Color.red, true);
+            }
+        }
+
+        public void SetReadyActive()
+        {
+            RegularHUD.SetActive(false);
+            ReadyPanel.SetActive(true);
+            ReadyPanelMessage.color = ColorsManager.Get().PlayerMeshColors[Manager.ID];
+            ReadyPanelName.text = Manager.Name;
+
+            var rect = ReadyPanelName.transform.parent.GetComponentInChildren<Image>();
+            rect.color = ColorsManager.Get().PlayerMeshColors[Manager.ID];
         }
 
         public void CollectIngredient(Ingredient type)

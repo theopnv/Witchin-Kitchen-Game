@@ -11,6 +11,7 @@ namespace con2.game
     {
         protected Spells.SpellID ID;
         protected messages.Player _TargetedPlayer;
+        protected AMainManager m_mainManager;
 
         public abstract IEnumerator SpellImplementation();
         public abstract Spells.SpellID GetSpellID();
@@ -19,9 +20,8 @@ namespace con2.game
         {
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             var eventManager = managers.GetComponentInChildren<SpellsManager>();
+            m_mainManager = managers.GetComponentInChildren<AMainManager>();
             eventManager.AddSubscriber(GetSpellID(), this);
-
-            var mgm = managers.GetComponentInChildren<MainGameManager>();
         }
 
         public void ActivateSpellMode(messages.Player targetedPlayer)

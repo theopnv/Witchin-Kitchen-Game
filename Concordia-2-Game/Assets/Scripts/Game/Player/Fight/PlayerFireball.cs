@@ -1,4 +1,5 @@
-﻿using con2;
+﻿using System;
+using con2;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace con2.game
         private Rigidbody m_player;
         public FireballEmberIndicator m_indicator;
         private bool m_canCastFireball = true;
+
+        public Action OnFireballCasted;
 
         public void Start()
         {
@@ -51,6 +54,8 @@ namespace con2.game
             GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnLocation.transform.position, m_spawnLocation.transform.rotation);
             newFireball.transform.forward = m_spawnLocation.transform.forward;
             SetUpExplosive(newFireball, transform.parent.gameObject, false);
+
+            OnFireballCasted?.Invoke();
 
             Recoil();
 

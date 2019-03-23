@@ -18,7 +18,7 @@ namespace con2.game
 
         public override IEnumerator SpellImplementation()
         {
-            var player = Players.GetPlayerByID(_TargetedPlayer.id);
+            var player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
             var playerMovement = player.GetComponentInChildren<PlayerMovement>();
             var rainbowTrail = player.GetComponentInChildren<TrailRenderer>();
 

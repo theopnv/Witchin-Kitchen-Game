@@ -21,6 +21,7 @@ namespace con2.game
         [SerializeField] private EventManager _EventManager;
 
         private AudienceInteractionManager _AudienceInteractionManager;
+        private AMainManager _MainManager;
 
         private int _CurrentCastSpeller = 0;
 
@@ -43,6 +44,7 @@ namespace con2.game
 
         private void Start()
         {
+            _MainManager = FindObjectOfType<AMainManager>();
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _AudienceInteractionManager.OnSpellCasted += OnSpellCasted;
         }
@@ -91,7 +93,7 @@ namespace con2.game
             if (spell.caster == null)
             {
                 spell.caster = new Viewer();
-                spell.caster.name = "DevCheats";
+                spell.caster.name = "The Audience";
             }
 
             Debug.Log(spell.caster.name + " casted a spell: " + Spells.EventList[(Spells.SpellID)spell.spellId]);
@@ -113,7 +115,7 @@ namespace con2.game
         private void LogSpellInPlayerHUD(Spell spell)
         {
             var message = spell.caster.name + " casted " + Spells.EventList[(Spells.SpellID) spell.spellId] + " on you";
-            var player = Players.GetPlayerByID(spell.targetedPlayer.id);
+            var player = _MainManager.GetPlayerById(spell.targetedPlayer.id);
             player.SendMessageToPlayerInHUD(message, Color.white);
         }
 

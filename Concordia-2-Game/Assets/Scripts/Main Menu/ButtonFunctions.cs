@@ -8,8 +8,15 @@ namespace con2.main_menu
 
     public class ButtonFunctions : MonoBehaviour
     {
-        public void LoadLobby(string sceneName)
+        public void LoadTutorial()
         {
+            MenuInfo.DoTutorial = true;
+            SceneManager.LoadSceneAsync(SceneNames.Lobby);
+        }
+
+        public void LoadGame(string sceneName)
+        {
+            MenuInfo.DoTutorial = false;
             SceneManager.LoadSceneAsync(SceneNames.Lobby);
         }
 

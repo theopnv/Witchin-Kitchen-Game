@@ -1,67 +1,45 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Linq;
+using con2.game;
+using con2.main_menu;
 using con2.messages;
-using SocketIO;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using WebSocketSharp;
 
 namespace con2.lobby
 {
 
-    public class LobbyManager : MonoBehaviour, IInputConsumer
+    public class LobbyManager : AMainManager, IInputConsumer
     {
-        [Tooltip("The prefab to use as UI for each player")]
-        public GameObject PlayerUiPrefab;
-
         #region Private Variables
 
-        [SerializeField] private GameObject _PlayersHolder;
-
-        [Tooltip("Controllers detector")]
-        [SerializeField] private DetectController _DetectController;
-
-        private AudienceInteractionManager _AudienceInteractionManager;
-
-        [SerializeField] private Text _ServerWarningText;
-
-        [SerializeField] private Text _RoomId;
-        [SerializeField] private Text _NbViewers;
-
-        private SocketIOComponent _SocketIoComponent;
         private float _ServerTryAgainTimeout = 2f;
-        private List<Tuple<bool, PlayerUiManager>> _PlayerUiManagers;
+        [SerializeField] private GameObject _LoadingPanel;
+        [SerializeField] private TutorialManager _TutorialManager;
+        [SerializeField] private TextMeshProUGUI _InstructionsText;
 
+        private Dictionary<int, bool> _PlayersStatuses = new Dictionary<int, bool>();
         #endregion
 
         #region Unity API
 
-        void Start()
+        protected override void Start()
         {
+            base.Start();
+
             // Subscription to controllers events
             _DetectController.OnConnected += OnControllerConnected;
             _DetectController.OnDisconnected += OnControllerDisconnected;
-
-            // Player UIs instantiation
-            _PlayerUiManagers = new List<Tuple<bool, PlayerUiManager>>(4);
-            InstantiatePlayerUi(0, "Gandalf the OG", Color.red);
-            InstantiatePlayerUi(1, "Sabrina the Tahini Witch", Color.blue);
-            InstantiatePlayerUi(2, "Snape the Punch-master", Color.green);
-            InstantiatePlayerUi(3, "Herbione Grainger", Color.yellow);
-
-            // If controllers are already connected we activate players UIs right from the start
-            var controllerState = _DetectController.ControllersState;
-            for (var i = 0; i < controllerState.Length; i++)
-            {
-                SetPlayerUiVisibility(controllerState[i], i);
-            }
-
+            
             // Audience & Networking
-            _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _AudienceInteractionManager.OnGameUpdated += OnGameUpdated;
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
+            _AudienceInteractionManager.OnReceivedMessage += OnReceivedMessage;
+
             var hostAddress = PlayerPrefs.GetString(PlayerPrefsKeys.HOST_ADDRESS) + SocketInfo.SUFFIX_ADDRESS;
             Debug.Log("Host address is: " + hostAddress);
 
@@ -69,13 +47,13 @@ namespace con2.lobby
             ConnectToServer();
         }
 
-        void Update()
+        protected override void Update()
         {
-            DevMode();
+            base.Update();
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                MakePlayerList();
+                StartGameLoad();
             }
         }
 
@@ -83,16 +61,17 @@ namespace con2.lobby
         {
             _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
             _AudienceInteractionManager.OnGameUpdated -= OnGameUpdated;
+            _AudienceInteractionManager.OnReceivedMessage -= OnReceivedMessage;
         }
 
         #endregion
 
-        #region Custom Methods
+        #region Network
 
         void OnGameUpdated()
         {
-            _RoomId.text = "Room's PIN: " + GameInfo.RoomId;
-            _NbViewers.text = "Number of viewers in the room: " + GameInfo.Viewers.Count;
+            _RoomPin.text = GameInfo.RoomId;
+            _ViewersNb.text = GameInfo.Viewers.Count.ToString();
         }
 
         void OnDisconnectedFromServer()
@@ -107,128 +86,196 @@ namespace con2.lobby
         void ConnectToServer()
         {
             _AudienceInteractionManager.Connect();
-            StartCoroutine(CheckServerConnection());
+            if (!_AudienceInteractionManager.IsConnectedToServer)
+            {
+                StartCoroutine(CheckServerConnection());
+            }
         }
 
         private IEnumerator CheckServerConnection()
         {
             yield return new WaitForSeconds(_ServerTryAgainTimeout);
-            if (!_AudienceInteractionManager.IsConnectedToServer)
+            if (_AudienceInteractionManager.IsConnectedToServer)
             {
-                _ServerWarningText.gameObject.SetActive(true);
-                ConnectToServer();
+                if (!MenuInfo.DoTutorial)
+                {
+                    SetInstructionText();
+                }
+                _MessageFeedManager.AddMessageToFeed("Connected to server", MessageFeedManager.MessageType.success);
             }
             else
             {
-                _ServerWarningText.gameObject.SetActive(false);
+                _MessageFeedManager.AddMessageToFeed("Can't reach the server", MessageFeedManager.MessageType.error);
+                _MessageFeedManager.AddMessageToFeed("Check your internet connection", MessageFeedManager.MessageType.error);
+                ConnectToServer();
             }
         }
+
+        private void OnReceivedMessage(messages.Base content)
+        {
+            if ((int)content.code % 10 == 0) // Success codes always have their unit number equal to 0 (cf. protocol)
+            {
+                Debug.Log(content.content);
+                switch (content.code)
+                {
+                    case Code.register_players_success:
+                        StartCoroutine(ExitLobby());
+                        break;
+                    default: break;
+                }
+            }
+            else
+            {
+                Debug.LogError(content.code + ": " + content.content);
+            }
+        }
+
+        #endregion
+
+        private void SetInstructionText()
+        {
+            _InstructionsText.transform.parent.gameObject.SetActive(true);
+            _InstructionsText.text = "Launch a fireball with [Right Trigger] when you are ready.";
+        }
+
+        public override void OnPlayerInitialized(PlayerManager playerManager)
+        {
+            base.OnPlayerInitialized(playerManager);
+            if (MenuInfo.DoTutorial)
+            {
+                _TutorialManager.OnPlayerInitialized(playerManager);
+            }
+            else
+            {
+                _PlayersStatuses.Add(playerManager.ID, false);
+                var fireballManager = playerManager.GetComponentInChildren<PlayerFireball>();
+                fireballManager.OnFireballCasted += () => OnFireballCasted(playerManager.ID);
+            }
+        }
+
+        public IEnumerator StartGame()
+        {
+            _InstructionsText.text = "May the best win! \r\nLaunching the game in a few seconds...";
+
+            yield return new WaitForSeconds(4);
+            _InstructionsText.transform.parent.gameObject.SetActive(false);
+            StartGameLoad();
+        }
+
+        public void StartGameLoad()
+        {
+            if (!_AudienceInteractionManager.IsConnectedToServer
+                || GameInfo.RoomId == "0000")
+            {
+                return;
+            }
+            
+            _LoadingPanel.SetActive(true);
+            _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
+            _AudienceInteractionManager?.SendPlayerCharacteristics(Ext.ToList(PlayersInstances.Values));
+        }
+
+        private IEnumerator ExitLobby()
+        {
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
+            {
+                GamepadMgr.Pad(i).BlockGamepad(true);
+            }
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadSceneAsync(SceneNames.Game);
+        }
+
+        #region Controllers
 
         void OnControllerConnected(int i)
         {
             Debug.Log("Welcome player " + i);
-            SetPlayerUiVisibility(true, i);
+            ++GameInfo.PlayerNumber;
+            ActivatePlayer(true, i);
+            if (GameInfo.PlayerNumber <= 1 && MenuInfo.DoTutorial)
+            {
+                _TutorialManager.Run();
+            }
+        }
+
+        void OnFireballCasted(int i)
+        {
+            _PlayersStatuses[i] = true;
+            PlayersInstances[i].PlayerHUD.SetReadyActive();
+            if (_PlayersStatuses.All(p => p.Value))
+            {
+                StartCoroutine(StartGame());
+            }
         }
 
         void OnControllerDisconnected(int i)
         {
             Debug.Log("Player " + i + " is gone");
-            SetPlayerUiVisibility(false, i);
+            ActivatePlayer(false, i);
+            if (_PlayersStatuses.ContainsKey(i))
+            {
+                _PlayersStatuses.Remove(i);
+            }
         }
 
-        void InstantiatePlayerUi(int i, string name, Color color)
+        public override List<IInputConsumer> GetInputConsumers(int playerIndex)
         {
-            var instance = Instantiate(PlayerUiPrefab, _PlayersHolder.transform);
-            var playerUI = new Tuple<bool, PlayerUiManager>(false, instance.GetComponent<PlayerUiManager>());
-            playerUI.Item2.SetActiveCanvas(false);
-            playerUI.Item2.Label.text = name;
-            playerUI.Item2.Color = color;
-            _PlayerUiManagers.Add(playerUI);
+            var inputConsumers = new List<IInputConsumer>();
+
+            // Misc.
+            inputConsumers.Add(this);
+
+            // Fight
+            var player = PlayersInstances[playerIndex];
+            inputConsumers.Add(player.GetComponent<FightStun>());
+
+            // Kitchens
+            var kitchenParents = GameObject.FindGameObjectsWithTag(Tags.KITCHEN);
+            var kitchenStations = new List<ACookingMinigame>();
+            foreach (var kitchen in kitchenParents)
+            {
+                var stations = kitchen.GetComponentsInChildren<ACookingMinigame>();
+                kitchenStations.AddRange(stations);
+            }
+
+            inputConsumers.AddRange(kitchenStations);
+
+            // Players
+            inputConsumers.Add(player.GetComponent<PlayerInputController>());
+
+            return inputConsumers;
         }
 
-        void SetPlayerUiVisibility(bool inLobby, int i)
+        public bool ConsumeInput(GamepadAction input)
         {
-            var tmp = new Tuple<bool, PlayerUiManager>(inLobby, _PlayerUiManagers[i].Item2);
-            _PlayerUiManagers[i] = tmp;
-            _PlayerUiManagers[i].Item2.SetActiveCanvas(inLobby);
+            if (input.GetActionID() == GamepadAction.ID.START)
+            {
+                StartGameLoad();
+                return true;
+            }
+            //if (input.GetActionID() == GamepadAction.ID.INTERACT)
+            //{
+            //    StartGameLoad();
+            //    return true;
+            //}
+
+            //if (input.GetActionID() == GamepadAction.ID.PUNCH)
+            //{
+            //    BackToMenu();
+            //    return true;
+            //}
+
+            return false;
         }
+
+        #endregion
+
+        #region Misc.
 
         public void BackToMenu()
         {
             _AudienceInteractionManager.SendEndGame(false);
             SceneManager.LoadSceneAsync(SceneNames.MainMenu);
-        }
-
-        public bool ConsumeInput(GamepadAction input)
-        {
-            if (input.GetActionID() == GamepadAction.ID.INTERACT)
-            {
-                MakePlayerList();
-                return true;
-            }
-
-            if (input.GetActionID() == GamepadAction.ID.PUNCH)
-            {
-                BackToMenu();
-                return true;
-            }
-
-            return false;
-        }
-
-        private void MakePlayerList()
-        {
-            var playerList = new List<Player>();
-            for (var i = 0; i < _PlayerUiManagers.Count; i++)
-            {
-                if (_PlayerUiManagers[i].Item1)
-                {
-                    PlayersInfo.Name[i] = _PlayerUiManagers[i].Item2.Label.text;
-                    PlayersInfo.Color[i] = _PlayerUiManagers[i].Item2.Color;
-                    PlayersInfo.PlayerNumber = i + 1;
-
-                    var player = new Player
-                    {
-                        id = i,
-                        name = PlayersInfo.Name[i],
-                        color = "#" + ColorUtility.ToHtmlStringRGBA(PlayersInfo.Color[i])
-                    };
-                    playerList.Add(player);
-                }
-            }
-            _AudienceInteractionManager?.SendPlayerCharacteristics(playerList);
-        }
-
-        #endregion
-
-        #region Dev Mode
-
-        void DevMode()
-        {
-            ActivatePlayersFromKeyboard();
-        }
-
-        void ActivatePlayersFromKeyboard()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                SetPlayerUiVisibility(true, 0);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                SetPlayerUiVisibility(true, 1);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                SetPlayerUiVisibility(true, 2);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                SetPlayerUiVisibility(true, 3);
-            }
         }
 
         #endregion

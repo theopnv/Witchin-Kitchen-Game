@@ -22,7 +22,9 @@ namespace con2.game
         }
 
         public override void EventStart()
-        { }
+        {
+            m_spinner.Run();
+        }
 
         public override IEnumerator EventImplementation()
         {

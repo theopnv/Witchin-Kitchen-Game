@@ -18,9 +18,11 @@ namespace con2.game
         [SerializeField]
         protected GameObject m_prompt;
 
+        protected AMainManager m_mainManager;
+
         [HideInInspector]
-        public PlayerManager m_stationOwner;
-        private KitchenStation m_kitchenStation;
+        public PlayerManager Owner;
+        public KitchenStation KitchenStation;
         private PlayerPickUpDropObject m_playerHolding;
 
         [SerializeField]
@@ -35,12 +37,17 @@ namespace con2.game
         //Pass player input on to the non-abstract minigame if the player is in range and facing the station
         public abstract bool TryToConsumeInput(GamepadAction input);
 
+        private void Awake()
+        {
+            m_mainManager = FindObjectOfType<AMainManager>();
+        }
+
         // Start is called before the first frame update
         private void Start()
         {
             m_promptBackground.enabled = false;
             m_prompt.SetActive(false);
-            m_playerHolding = m_stationOwner.gameObject.GetComponentInChildren<PlayerPickUpDropObject>();
+            m_playerHolding = Owner.gameObject.GetComponentInChildren<PlayerPickUpDropObject>();
         }
 
         // Update is called once per frame
@@ -90,7 +97,7 @@ namespace con2.game
 
         public void EndMinigame()
         {
-            m_kitchenStation.ProcessIngredient();
+            KitchenStation.ProcessIngredient();
 
             //Hide prompt
             m_promptBackground.enabled = false;
@@ -103,9 +110,9 @@ namespace con2.game
 
         public bool ConsumeInput(GamepadAction input)
         {
-            var interactingPlayer = Players.GetPlayerByID(input.GetPlayerId());
-            var noOwner = m_stationOwner == null;
-            var samePlayer = m_stationOwner.ID == interactingPlayer.ID;
+            var interactingPlayer = m_mainManager.GetPlayerById(input.GetPlayerId());
+            var noOwner = Owner == null;
+            var samePlayer = Owner.ID == interactingPlayer.ID;
             if (m_started && (noOwner || samePlayer) && CheckPlayerIsNear(interactingPlayer.gameObject))
             {
                 if (!noOwner && m_playerHolding.IsHoldingObject())
@@ -115,17 +122,6 @@ namespace con2.game
                 return TryToConsumeInput(input);
             }
             return false;
-        }
-
-        public void SetStationOwner(PlayerManager owner, KitchenStation kitchenStation)
-        {
-            m_kitchenStation = kitchenStation;
-            m_stationOwner = owner;
-        }
-
-        public PlayerManager GetStationOwner()
-        {
-            return m_stationOwner;
         }
     }
 
