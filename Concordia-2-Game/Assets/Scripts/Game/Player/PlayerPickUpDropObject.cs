@@ -96,8 +96,6 @@ namespace con2.game
                     // Slow down the player
                     m_speedReduction = m_heldObject.GetMaxSpeedFractionWhenHolding();
                     m_playerMovement.MaxMovementSpeed *= m_speedReduction;
-
-                    Debug.Log("Multiplying speed by " + m_speedReduction + ", grabbing " + m_heldObject.name);
                 }
             }
             else
@@ -127,8 +125,6 @@ namespace con2.game
         {
             // Restore max movement speed
             m_playerMovement.MaxMovementSpeed /= m_speedReduction;
-
-            Debug.Log("Dividing speed by " + m_speedReduction + ", throwing " + m_heldObject.name);
 
             // Have the object adjust its physics and get thrown
             m_heldObject.Drop(throwVector);

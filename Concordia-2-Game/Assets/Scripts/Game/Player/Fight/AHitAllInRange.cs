@@ -65,6 +65,11 @@ public abstract class AHitAllInRange : MonoBehaviour
         AfterHitting();
     }
 
-    protected abstract Vector3 ModulateHitVector(Vector3 hitVector);
+    protected virtual Vector3 ModulateHitVector(Vector3 hitVector)
+    {
+        hitVector.y = 1.0f; //small upward force on all regular hits so objects don't drag on the ground
+        return hitVector;
+    }
+
     protected abstract void AfterHitting();
 }

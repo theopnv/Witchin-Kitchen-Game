@@ -61,7 +61,7 @@ namespace con2.game
 
         public new void Punch(Vector3 knockVelocity, float stunTime)
         {
-            m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
+            m_rb.AddForce(0.4f * knockVelocity, ForceMode.VelocityChange);  //The newt shouldn't fly too far when hit
 
             if (m_eyeCount > 0)
             {

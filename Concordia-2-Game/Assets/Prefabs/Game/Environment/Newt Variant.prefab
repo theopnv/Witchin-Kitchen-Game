@@ -131,7 +131,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4223523222216322606}
-  m_Material: {fileID: 13400000, guid: f41269f201b07cb419cea6afd1a1fcd9, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -165,19 +165,6 @@ MonoBehaviour:
   m_lerpSpeedz: 10
   m_eyeIngredientPrefab: {fileID: 2135384641246065995, guid: 0652c01fbe9564a46a3ba33d08f586b7,
     type: 3}
---- !u!114 &8216381678525545477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4223523222216322606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d29fe69f55881ed42a7ba1cf2c0a6f5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_lerpSpeedz: 10
 --- !u!1 &6095864287538356265
 GameObject:
   m_ObjectHideFlags: 0
