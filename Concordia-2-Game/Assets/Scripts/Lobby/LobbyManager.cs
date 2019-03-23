@@ -143,10 +143,6 @@ namespace con2.lobby
             base.OnPlayerInitialized(playerManager);
             if (MenuInfo.DoTutorial)
             {
-                if (GameInfo.PlayerNumber <= 1)
-                {
-                    _TutorialManager.Run();
-                }
                 _TutorialManager.OnPlayerInitialized(playerManager);
             }
             else
@@ -196,6 +192,10 @@ namespace con2.lobby
             Debug.Log("Welcome player " + i);
             ++GameInfo.PlayerNumber;
             ActivatePlayer(true, i);
+            if (GameInfo.PlayerNumber <= 1)
+            {
+                _TutorialManager.Run();
+            }
         }
 
         void OnFireballCasted(int i)
