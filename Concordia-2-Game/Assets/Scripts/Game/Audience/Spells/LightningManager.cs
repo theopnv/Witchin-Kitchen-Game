@@ -11,12 +11,12 @@ namespace con2.game
         private LightningBoltScript m_lightningThing;
         public float m_timeBetweenStrikes = 0.1f;
         public int m_numOfStrikes = 3;
-        private MainGameManager m_mainGameManager;
+        private AMainManager m_mainManager;
 
         void Start()
         {
             m_lightningThing = GetComponent<LightningBoltScript>();
-            m_mainGameManager = FindObjectOfType<MainGameManager>();
+            m_mainManager = FindObjectOfType<AMainManager>();
 
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             var eventManager = managers.GetComponentInChildren<SpellsManager>();
@@ -26,7 +26,7 @@ namespace con2.game
 
         public void ActivateSpellMode(messages.Player targetedPlayer)
         {
-            m_lightningThing.EndObject = m_mainGameManager.GetPlayerById(targetedPlayer.id).gameObject;
+            m_lightningThing.EndObject = m_mainManager.GetPlayerById(targetedPlayer.id).gameObject;
             StartCoroutine(TriggerLightning());
         }
 
