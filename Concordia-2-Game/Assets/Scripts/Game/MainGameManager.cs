@@ -38,13 +38,18 @@ namespace con2.game
 
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
 
+            // Comment if you want to start the game scene right from the start
             StartCoroutine(ExitLoadingScreen());
+            // End
         }
 
         protected override void Update()
         {
             base.Update();
-            UpdateEndGame();
+            if (!m_countdown)
+            {
+                UpdateEndGame();
+            }
         }
 
         void OnDisable()
@@ -63,10 +68,7 @@ namespace con2.game
 
             yield return new WaitForSeconds(LOADING_TIME);
             _LoadingPanel.SetActive(false);
-            for (var i = 0; i < GameInfo.PlayerNumber; i++)
-            {
-                GamepadMgr.Pad(i).BlockGamepad(false);
-            }
+            yield return StartGame();
         }
 
         public override List<IInputConsumer> GetInputConsumers(int playerIndex)
@@ -169,7 +171,30 @@ namespace con2.game
         private List<List<PlayerManager>> m_finalRankings;
         private bool m_gameOver = false, m_acceptingInput = false;
         public float REMATCH_TIMER = 10, GAME_TIMER = 240;
+        private bool m_countdown = false;
+        private const int COUNTDOWN_TIME = 3;
         [SerializeField] private int m_dominationDifference = 3;
+
+        private IEnumerator StartGame()
+        {
+            m_countdown = true;
+            var fontSize = m_clock.fontSize;
+            m_clock.fontSize = 200;
+            m_clock.text = "3";
+            yield return new WaitForSeconds(1);
+            m_clock.text = "2";
+            yield return new WaitForSeconds(1);
+            m_clock.text = "1";
+            yield return new WaitForSeconds(1);
+
+            m_clock.fontSize = fontSize;
+            for (var i = 0; i < GameInfo.PlayerNumber; i++)
+            {
+                GamepadMgr.Pad(i).BlockGamepad(false);
+            }
+
+            m_countdown = false;
+        }
 
         private void InitializeEndGame()
         {
@@ -184,7 +209,7 @@ namespace con2.game
         {
             if (!m_gameOver)
             {
-                int remainingTime = (int)(GAME_TIMER + LOADING_TIME - Time.timeSinceLevelLoad);
+                int remainingTime = (int)(GAME_TIMER + LOADING_TIME + COUNTDOWN_TIME - Time.timeSinceLevelLoad);
                 m_clock.text = FormatRemainingTime(remainingTime);
                 if (remainingTime == 10)
                 {
