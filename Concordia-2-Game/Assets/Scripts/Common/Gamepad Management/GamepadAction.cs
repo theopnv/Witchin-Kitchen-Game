@@ -13,6 +13,7 @@ namespace con2
             __BUTTONS__,
             PUNCH,
             INTERACT,
+            XBUTTON,
             START,
             __AXES__,
             HORIZONTAL,
