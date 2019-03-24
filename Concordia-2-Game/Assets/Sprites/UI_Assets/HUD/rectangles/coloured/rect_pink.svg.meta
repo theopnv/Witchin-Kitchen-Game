@@ -37,16 +37,16 @@ ScriptedImporter:
   spriteData:
     TessellationDetail: 0
     SpriteRect:
-      name: 
+      name: rect_pink
       originalName: 
       pivot: {x: 0, y: 0}
       alignment: 0
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 15, y: 10, z: 15, w: 10}
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 0
-        height: 0
+        width: 256
+        height: 42
       spriteID: e63ca3805711b8a40bbf222230a17644
     PhysicsOutlines: []
