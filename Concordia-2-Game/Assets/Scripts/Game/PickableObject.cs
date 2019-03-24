@@ -7,6 +7,8 @@ namespace con2.game
     {
         protected Rigidbody m_rb;
         private bool m_isHeld = false;
+        private Vector3 m_aimAssistTarget;
+        private float m_aimAssistSpeed;
 
         public float m_lerpSpeedz = 10.0f;
 
@@ -19,6 +21,22 @@ namespace con2.game
         {
             m_rb = GetComponent<Rigidbody>();
             audioSource = GetComponent<AudioSource>();
+        }
+
+        private void Update()
+        {
+            if (m_aimAssistTarget != Vector3.zero)
+            {
+                var pos = transform.position;
+                m_aimAssistTarget = new Vector3(m_aimAssistTarget.x, pos.y, m_aimAssistTarget.z);   //ignore height in aim assist, do not interfere with gravity
+                var newpos = Vector3.Lerp(pos, m_aimAssistTarget, Time.deltaTime * m_aimAssistSpeed);
+                transform.position = new Vector3(newpos.x, pos.y, newpos.z);
+
+                if (transform.position.y <= 0.75f || Vector3.Distance(transform.position, m_aimAssistTarget) < 0.3f)  //The item hits the ground anyway, even aim assist couldn't help this player...
+                {
+                    ResetAimAssist();
+                }
+            }
         }
 
         // Called by the carrying player's Update() to force the object to follow it
@@ -60,6 +78,8 @@ namespace con2.game
                 m_rb.velocity = Vector3.zero;
                 m_rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
+                ResetAimAssist();
+
                 return true;
             }
 
@@ -87,6 +107,22 @@ namespace con2.game
             transform.parent = null;
 
             m_dropTimestamp = Time.time;
+
+            ResetAimAssist();
+        }
+
+        public void AimAssistFly(Vector3 targetLocation, Vector3 throwVector)
+        {
+            Drop(throwVector * 0.5f);
+
+            m_aimAssistTarget = targetLocation;
+            m_aimAssistSpeed = throwVector.magnitude / 2.0f;
+        }
+
+        public void ResetAimAssist()
+        {
+            m_aimAssistTarget = Vector3.zero;
+            m_aimAssistSpeed = 0;
         }
 
         public void Punch(Vector3 knockVelocity, float stunTime)
@@ -101,6 +137,9 @@ namespace con2.game
 
                 audioSource.clip = slapSound;
                 audioSource.Play();
+
+                ResetAimAssist();
+
             }
         }
 

@@ -176,7 +176,7 @@ namespace con2.game
                     item.ActivateRandomPosMode ? 0 : item.Area.transform.position.x,
                     item.ActivateRandomPosMode ? 0 : item.Area.Radius,
                     item.Type),
-                y = 1f,
+                y = 0.33f,
                 z = FindValidPoint(
                     item.ActivateRandomPosMode,
                     _MinZ,
