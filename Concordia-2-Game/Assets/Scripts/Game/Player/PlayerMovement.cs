@@ -75,13 +75,14 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
         // If player asked for input
         if (!Mathf.Approximately(movementDirection.magnitude, 0.0f))
         {
-            m_rb.AddForce(movementDirection * MovementSpeed * MovementRotationSpeed * Time.deltaTime, ForceMode.Acceleration);
-
-            // Cap movement speed
-            if (m_rb.velocity.magnitude > MaxMovementSpeed)
-            {
-                m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, MaxMovementSpeed);
-            }
+            m_rb.velocity += movementDirection * MovementSpeed * MovementRotationSpeed * Time.deltaTime;
+        }
+        
+        // Cap movement speed
+        var maxVel = MaxMovementSpeed * (1.0f + Mathf.Clamp01(1.0f - m_stun.getMovementModifier() * 200.0f) * 2.0f);
+        if (m_rb.velocity.magnitude > maxVel)
+        {
+            m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, maxVel);
         }
 
         // Gravity
@@ -107,7 +108,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     public void Punch(Vector3 knockVelocity, float stunTime)
     {
-        m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
+        m_rb.velocity = knockVelocity;
         m_stun.Stun(stunTime);
         audioSource.Play();
     }

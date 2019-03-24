@@ -213,27 +213,27 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.01651001
-      inSlope: 0.054995023
-      outSlope: 0.054995023
-      tangentMode: 34
+      value: -0.00008967146
+      inSlope: 0.027776744
+      outSlope: 0.027776744
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.12571983
     - serializedVersion: 3
-      time: 0.47185898
-      value: 0.042459905
-      inSlope: 0.36214548
-      outSlope: 0.36214548
+      time: 0.8701744
+      value: 0.07328266
+      inSlope: 0.3357614
+      outSlope: 0.3357614
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.29056704
-      outWeight: 0.57006097
+      outWeight: 0.4218355
     - serializedVersion: 3
       time: 1
       value: 1.01651
-      inSlope: 1.8442993
-      outSlope: 1.8442993
+      inSlope: 7.265342
+      outSlope: 7.265342
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -368,6 +368,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
+    - target: {fileID: 864814535936138647, guid: bba6b6f0710e5d442a2b5158ef853a62,
+        type: 3}
+      propertyPath: m_Name
+      value: Trail
+      objectReference: {fileID: 0}
     - target: {fileID: 864814535936138640, guid: bba6b6f0710e5d442a2b5158ef853a62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -422,11 +427,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 864814535936138647, guid: bba6b6f0710e5d442a2b5158ef853a62,
-        type: 3}
-      propertyPath: m_Name
-      value: Trail
       objectReference: {fileID: 0}
     - target: {fileID: 5557739069633728855, guid: bba6b6f0710e5d442a2b5158ef853a62,
         type: 3}
@@ -628,11 +628,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
-    - target: {fileID: 5648356612434751487, guid: 6679f5c57e4cdaf4f84e491721e56128,
-        type: 3}
-      propertyPath: m_Name
-      value: PunchGrabBox
-      objectReference: {fileID: 0}
     - target: {fileID: 1202443438745480667, guid: 6679f5c57e4cdaf4f84e491721e56128,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -688,6 +683,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5648356612434751487, guid: 6679f5c57e4cdaf4f84e491721e56128,
+        type: 3}
+      propertyPath: m_Name
+      value: PunchGrabBox
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6679f5c57e4cdaf4f84e491721e56128, type: 3}
 --- !u!4 &4927486777165307857 stripped
@@ -703,6 +703,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
+    - target: {fileID: 1482552317, guid: ab90e35ef38ca6f40aef07e489039fd3, type: 3}
+      propertyPath: m_Name
+      value: StunStars
+      objectReference: {fileID: 0}
     - target: {fileID: 1482552321, guid: ab90e35ef38ca6f40aef07e489039fd3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -759,10 +763,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1482552317, guid: ab90e35ef38ca6f40aef07e489039fd3, type: 3}
-      propertyPath: m_Name
-      value: StunStars
-      objectReference: {fileID: 0}
     - target: {fileID: 1482552318, guid: ab90e35ef38ca6f40aef07e489039fd3, type: 3}
       propertyPath: FollowTarget
       value: 
@@ -790,6 +790,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
+    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
+        type: 3}
+      propertyPath: m_Name
+      value: RainbowTrail
+      objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526967, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -854,11 +859,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
-        type: 3}
-      propertyPath: m_Name
-      value: RainbowTrail
       objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526966, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
@@ -966,6 +966,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
+    - target: {fileID: 1599718021928974, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
+      propertyPath: m_Name
+      value: Puff
+      objectReference: {fileID: 0}
     - target: {fileID: 4777701302679384, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1021,10 +1025,6 @@ PrefabInstance:
     - target: {fileID: 4777701302679384, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.5000012
-      objectReference: {fileID: 0}
-    - target: {fileID: 1599718021928974, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
-      propertyPath: m_Name
-      value: Puff
       objectReference: {fileID: 0}
     - target: {fileID: 198738731738625552, guid: 21461e6c060baf044ac3e717ed4170cb,
         type: 3}
