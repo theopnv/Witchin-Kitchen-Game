@@ -251,6 +251,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0c5f4ff2705ba4facbc2d35933e04e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4952925361436835048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381974467171228231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d399af7a09c543640982f92072f3f122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8409025430241478021
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +325,7 @@ MonoBehaviour:
   m_stunTime: 1.33
   m_immuneTargets: []
   m_didStun: 0
+  ShakeIntensity: 0
   m_punchUpwardsForce: 5
   m_reloadSeconds: 2
 --- !u!114 &3677432393688158852
@@ -422,6 +435,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
+    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
+        type: 3}
+      propertyPath: m_Name
+      value: DisplacementCircle
+      objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -491,11 +509,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
-        type: 3}
-      propertyPath: m_Name
-      value: DisplacementCircle
       objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601365, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
@@ -604,6 +617,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
+    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
+        type: 3}
+      propertyPath: m_Name
+      value: RainbowTrail
+      objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526967, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -668,11 +686,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
-        type: 3}
-      propertyPath: m_Name
-      value: RainbowTrail
       objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526966, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
@@ -761,6 +774,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f90dbc29190efca45a0cd02db70aa626, type: 3}
+--- !u!1 &8381974467171228231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100090, guid: f90dbc29190efca45a0cd02db70aa626,
+    type: 3}
+  m_PrefabInstance: {fileID: 8381974467171261629}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8381974467171386983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400090, guid: f90dbc29190efca45a0cd02db70aa626,
@@ -774,6 +793,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
+    - target: {fileID: 1599718021928974, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
+      propertyPath: m_Name
+      value: Puff
+      objectReference: {fileID: 0}
     - target: {fileID: 4777701302679384, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -934,10 +957,6 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1599718021928974, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
-      propertyPath: m_Name
-      value: Puff
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}

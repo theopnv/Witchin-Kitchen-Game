@@ -19,6 +19,8 @@ namespace con2.game
 
         public Action OnFireballCasted;
 
+        private AnimControl m_anim;
+
         public void Start()
         {
             Transform parent = transform.parent;
@@ -29,6 +31,8 @@ namespace con2.game
                 m_indicator = fireballIndicatior.GetComponent<FireballEmberIndicator>();
                 m_indicator.SetPlayer(m_player.gameObject);
             }
+
+            m_anim = transform.parent.GetComponentInChildren<AnimControl>();
         }
 
         public bool ConsumeInput(GamepadAction input)
@@ -50,6 +54,8 @@ namespace con2.game
 
         public void CastFireball()
         {
+            m_anim.Spell();
+
             //We position the fireball initially based on the player
             GameObject newFireball = Instantiate(m_fireballPrefab, m_spawnLocation.transform.position, m_spawnLocation.transform.rotation);
             newFireball.transform.forward = m_spawnLocation.transform.forward;

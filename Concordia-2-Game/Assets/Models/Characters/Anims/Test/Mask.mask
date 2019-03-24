@@ -1,0 +1,1119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mask
+  m_Mask: 01000000010000000100000000000000000000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Geometry
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L/WitchRig_Published:Knee_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L/WitchRig_Published:Knee_L/WitchRig_Published:Ankle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L/WitchRig_Published:Knee_L/WitchRig_Published:Ankle_L/WitchRig_Published:Toes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L/WitchRig_Published:Knee_L/WitchRig_Published:Ankle_L/WitchRig_Published:Toes_L/WitchRig_Published:ToesEnd_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R/WitchRig_Published:Knee_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R/WitchRig_Published:Knee_R/WitchRig_Published:Ankle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R/WitchRig_Published:Knee_R/WitchRig_Published:Ankle_R/WitchRig_Published:Toes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R/WitchRig_Published:Knee_R/WitchRig_Published:Ankle_R/WitchRig_Published:Toes_R/WitchRig_Published:ToesEnd_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Neck_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Neck_M/WitchRig_Published:Head_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Neck_M/WitchRig_Published:Head_M/WitchRig_Published:Eye_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Neck_M/WitchRig_Published:Head_M/WitchRig_Published:Eye_L/WitchRig_Published:EyeEnd_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Neck_M/WitchRig_Published:Head_M/WitchRig_Published:Eye_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Neck_M/WitchRig_Published:Head_M/WitchRig_Published:Eye_R/WitchRig_Published:EyeEnd_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Neck_M/WitchRig_Published:Head_M/WitchRig_Published:HeadEnd_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Neck_M/WitchRig_Published:Head_M/WitchRig_Published:Jaw_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Neck_M/WitchRig_Published:Head_M/WitchRig_Published:Jaw_M/WitchRig_Published:JawEnd_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L/WitchRig_Published:Shoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L/WitchRig_Published:Shoulder_L/WitchRig_Published:ShoulderPart1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L/WitchRig_Published:Shoulder_L/WitchRig_Published:ShoulderPart1_L/WitchRig_Published:ShoulderPart2_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L/WitchRig_Published:Shoulder_L/WitchRig_Published:ShoulderPart1_L/WitchRig_Published:ShoulderPart2_L/WitchRig_Published:Elbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L/WitchRig_Published:Shoulder_L/WitchRig_Published:ShoulderPart1_L/WitchRig_Published:ShoulderPart2_L/WitchRig_Published:Elbow_L/WitchRig_Published:Wrist_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L/WitchRig_Published:Shoulder_L/WitchRig_Published:ShoulderPart1_L/WitchRig_Published:ShoulderPart2_L/WitchRig_Published:Elbow_L/WitchRig_Published:Wrist_L/WitchRig_Published:MiddleFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L/WitchRig_Published:Shoulder_L/WitchRig_Published:ShoulderPart1_L/WitchRig_Published:ShoulderPart2_L/WitchRig_Published:Elbow_L/WitchRig_Published:Wrist_L/WitchRig_Published:MiddleFinger1_L/WitchRig_Published:MiddleFinger2_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L/WitchRig_Published:Shoulder_L/WitchRig_Published:ShoulderPart1_L/WitchRig_Published:ShoulderPart2_L/WitchRig_Published:Elbow_L/WitchRig_Published:Wrist_L/WitchRig_Published:ThumbFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_L/WitchRig_Published:Shoulder_L/WitchRig_Published:ShoulderPart1_L/WitchRig_Published:ShoulderPart2_L/WitchRig_Published:Elbow_L/WitchRig_Published:Wrist_L/WitchRig_Published:ThumbFinger1_L/WitchRig_Published:ThumbFinger2_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R/WitchRig_Published:Shoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R/WitchRig_Published:Shoulder_R/WitchRig_Published:ShoulderPart1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R/WitchRig_Published:Shoulder_R/WitchRig_Published:ShoulderPart1_R/WitchRig_Published:ShoulderPart2_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R/WitchRig_Published:Shoulder_R/WitchRig_Published:ShoulderPart1_R/WitchRig_Published:ShoulderPart2_R/WitchRig_Published:Elbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R/WitchRig_Published:Shoulder_R/WitchRig_Published:ShoulderPart1_R/WitchRig_Published:ShoulderPart2_R/WitchRig_Published:Elbow_R/WitchRig_Published:Wrist_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R/WitchRig_Published:Shoulder_R/WitchRig_Published:ShoulderPart1_R/WitchRig_Published:ShoulderPart2_R/WitchRig_Published:Elbow_R/WitchRig_Published:Wrist_R/WitchRig_Published:MiddleFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R/WitchRig_Published:Shoulder_R/WitchRig_Published:ShoulderPart1_R/WitchRig_Published:ShoulderPart2_R/WitchRig_Published:Elbow_R/WitchRig_Published:Wrist_R/WitchRig_Published:MiddleFinger1_R/WitchRig_Published:MiddleFinger2_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R/WitchRig_Published:Shoulder_R/WitchRig_Published:ShoulderPart1_R/WitchRig_Published:ShoulderPart2_R/WitchRig_Published:Elbow_R/WitchRig_Published:Wrist_R/WitchRig_Published:ThumbFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M/WitchRig_Published:Scapula_R/WitchRig_Published:Shoulder_R/WitchRig_Published:ShoulderPart1_R/WitchRig_Published:ShoulderPart2_R/WitchRig_Published:Elbow_R/WitchRig_Published:Wrist_R/WitchRig_Published:ThumbFinger1_R/WitchRig_Published:ThumbFinger2_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee/WitchRig_Published:Ankle
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee/WitchRig_Published:Ankle/WitchRig_Published:Heel
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee/WitchRig_Published:Ankle/WitchRig_Published:Toes
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee/WitchRig_Published:Ankle/WitchRig_Published:Toes/WitchRig_Published:ToesEnd
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Neck
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Neck/WitchRig_Published:Head
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Neck/WitchRig_Published:Head/WitchRig_Published:Eye
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Neck/WitchRig_Published:Head/WitchRig_Published:Eye/WitchRig_Published:EyeEnd
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Neck/WitchRig_Published:Head/WitchRig_Published:HeadEnd
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Neck/WitchRig_Published:Head/WitchRig_Published:Jaw
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Neck/WitchRig_Published:Head/WitchRig_Published:Jaw/WitchRig_Published:JawEnd
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Scapula
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Scapula/WitchRig_Published:Shoulder
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Scapula/WitchRig_Published:Shoulder/WitchRig_Published:Elbow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Scapula/WitchRig_Published:Shoulder/WitchRig_Published:Elbow/WitchRig_Published:Wrist
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Scapula/WitchRig_Published:Shoulder/WitchRig_Published:Elbow/WitchRig_Published:Wrist/WitchRig_Published:MiddleFinger1
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Scapula/WitchRig_Published:Shoulder/WitchRig_Published:Elbow/WitchRig_Published:Wrist/WitchRig_Published:MiddleFinger1/WitchRig_Published:MiddleFinger2
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Scapula/WitchRig_Published:Shoulder/WitchRig_Published:Elbow/WitchRig_Published:Wrist/WitchRig_Published:ThumbFinger1
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest/WitchRig_Published:Scapula/WitchRig_Published:Shoulder/WitchRig_Published:Elbow/WitchRig_Published:Wrist/WitchRig_Published:ThumbFinger1/WitchRig_Published:ThumbFinger2
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye/WitchRig_Published:AimOffsetEye
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye/WitchRig_Published:AimOffsetEye/WitchRig_Published:AimFollowEye
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye/WitchRig_Published:AimOffsetEye/WitchRig_Published:AimFollowEye/WitchRig_Published:AimEye_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye/WitchRig_Published:AimOffsetEye/WitchRig_Published:AimFollowEye/WitchRig_Published:AimEye_M/WitchRig_Published:AimOffsetEye_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye/WitchRig_Published:AimOffsetEye/WitchRig_Published:AimFollowEye/WitchRig_Published:AimEye_M/WitchRig_Published:AimOffsetEye_L/WitchRig_Published:AimEye_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye/WitchRig_Published:AimOffsetEye/WitchRig_Published:AimFollowEye/WitchRig_Published:AimEye_M/WitchRig_Published:AimOffsetEye_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye/WitchRig_Published:AimOffsetEye/WitchRig_Published:AimFollowEye/WitchRig_Published:AimEye_M/WitchRig_Published:AimOffsetEye_R/WitchRig_Published:AimEye_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye/WitchRig_Published:AimOffsetEye/WitchRig_Published:AimFollowOffEye
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:AimSystem/WitchRig_Published:AimEye/WitchRig_Published:AimOffsetEye/WitchRig_Published:AimFollowOnEye
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:BendSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:ConstraintSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:DrivingSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:DrivingSystem/WitchRig_Published:Fingers_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:DrivingSystem/WitchRig_Published:Fingers_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:DynamicSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintArm_L/WitchRig_Published:FKIKArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintArm_R/WitchRig_Published:FKIKArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintLeg_L/WitchRig_Published:FKIKLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintLeg_R/WitchRig_Published:FKIKLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintSpine_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKIKSystem/WitchRig_Published:FKIKParentConstraintSpine_M/WitchRig_Published:FKIKSpine_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:AlignIKToRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M/WitchRig_Published:HipSwingerStabilizer
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M/WitchRig_Published:HipSwingerStabilizer/WitchRig_Published:FKExtraSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M/WitchRig_Published:HipSwingerStabilizer/WitchRig_Published:FKExtraSpine1_M/WitchRig_Published:FKSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M/WitchRig_Published:HipSwingerStabilizer/WitchRig_Published:FKExtraSpine1_M/WitchRig_Published:FKSpine1_M/WitchRig_Published:FKXSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M/WitchRig_Published:HipSwingerStabilizer/WitchRig_Published:FKExtraSpine1_M/WitchRig_Published:FKSpine1_M/WitchRig_Published:FKXSpine1_M/WitchRig_Published:FKOffsetChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M/WitchRig_Published:HipSwingerStabilizer/WitchRig_Published:FKExtraSpine1_M/WitchRig_Published:FKSpine1_M/WitchRig_Published:FKXSpine1_M/WitchRig_Published:FKOffsetChest_M/WitchRig_Published:FKExtraChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M/WitchRig_Published:HipSwingerStabilizer/WitchRig_Published:FKExtraSpine1_M/WitchRig_Published:FKSpine1_M/WitchRig_Published:FKXSpine1_M/WitchRig_Published:FKOffsetChest_M/WitchRig_Published:FKExtraChest_M/WitchRig_Published:FKChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M/WitchRig_Published:HipSwingerStabilizer/WitchRig_Published:FKExtraSpine1_M/WitchRig_Published:FKSpine1_M/WitchRig_Published:FKXSpine1_M/WitchRig_Published:FKOffsetChest_M/WitchRig_Published:FKExtraChest_M/WitchRig_Published:FKChest_M/WitchRig_Published:FKXChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:FKXRoot_M/WitchRig_Published:FKOffsetSpine1_M/WitchRig_Published:HipSwingerStabilizer/WitchRig_Published:FKExtraSpine1_M/WitchRig_Published:FKSpine1_M/WitchRig_Published:FKXSpine1_M/WitchRig_Published:FKOffsetChest_M/WitchRig_Published:FKExtraChest_M/WitchRig_Published:FKChest_M/WitchRig_Published:FKXChest_M/WitchRig_Published:AlignIKToChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:HipSwingerOffset_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:HipSwingerOffset_M/WitchRig_Published:HipSwinger_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:HipSwingerStabilizerTarget
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:HipSwingReverse
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKOffsetRoot_M/WitchRig_Published:FKExtraRoot_M/WitchRig_Published:FKRoot_M/WitchRig_Published:HipSwingReverse/WitchRig_Published:HipSwingReverseRoot
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_L/WitchRig_Published:FKOffsetEye_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_L/WitchRig_Published:FKOffsetEye_L/WitchRig_Published:FKExtraEye_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_L/WitchRig_Published:FKOffsetEye_L/WitchRig_Published:FKExtraEye_L/WitchRig_Published:FKEye_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_L/WitchRig_Published:FKOffsetEye_L/WitchRig_Published:FKExtraEye_L/WitchRig_Published:FKEye_L/WitchRig_Published:FKXEye_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_R/WitchRig_Published:FKOffsetEye_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_R/WitchRig_Published:FKOffsetEye_R/WitchRig_Published:FKExtraEye_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_R/WitchRig_Published:FKOffsetEye_R/WitchRig_Published:FKExtraEye_R/WitchRig_Published:FKEye_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKAimEye_R/WitchRig_Published:FKOffsetEye_R/WitchRig_Published:FKExtraEye_R/WitchRig_Published:FKEye_R/WitchRig_Published:FKXEye_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKOffsetJaw_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKOffsetJaw_M/WitchRig_Published:FKExtraJaw_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKOffsetJaw_M/WitchRig_Published:FKExtraJaw_M/WitchRig_Published:FKJaw_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetNeck_M/WitchRig_Published:FKExtraNeck_M/WitchRig_Published:FKNeck_M/WitchRig_Published:FKXNeck_M/WitchRig_Published:FKOffsetHead_M/WitchRig_Published:FKGlobalStaticHead_M/WitchRig_Published:FKGlobalHead_M/WitchRig_Published:FKExtraHead_M/WitchRig_Published:FKHead_M/WitchRig_Published:FKXHead_M/WitchRig_Published:FKOffsetJaw_M/WitchRig_Published:FKExtraJaw_M/WitchRig_Published:FKJaw_M/WitchRig_Published:FKXJaw_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetScapula_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetScapula_L/WitchRig_Published:FKExtraScapula_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetScapula_L/WitchRig_Published:FKExtraScapula_L/WitchRig_Published:FKScapula_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetScapula_L/WitchRig_Published:FKExtraScapula_L/WitchRig_Published:FKScapula_L/WitchRig_Published:FKXScapula_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetScapula_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetScapula_R/WitchRig_Published:FKExtraScapula_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetScapula_R/WitchRig_Published:FKExtraScapula_R/WitchRig_Published:FKScapula_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToChest_M/WitchRig_Published:FKOffsetScapula_R/WitchRig_Published:FKExtraScapula_R/WitchRig_Published:FKScapula_R/WitchRig_Published:FKXScapula_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:AlignIKToHip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L/WitchRig_Published:FKExtraAnkle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L/WitchRig_Published:FKExtraAnkle_L/WitchRig_Published:FKAnkle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L/WitchRig_Published:FKExtraAnkle_L/WitchRig_Published:FKAnkle_L/WitchRig_Published:FKXAnkle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L/WitchRig_Published:FKExtraAnkle_L/WitchRig_Published:FKAnkle_L/WitchRig_Published:FKXAnkle_L/WitchRig_Published:AlignIKToAnkle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L/WitchRig_Published:FKExtraAnkle_L/WitchRig_Published:FKAnkle_L/WitchRig_Published:FKXAnkle_L/WitchRig_Published:FKOffsetToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L/WitchRig_Published:FKExtraAnkle_L/WitchRig_Published:FKAnkle_L/WitchRig_Published:FKXAnkle_L/WitchRig_Published:FKOffsetToes_L/WitchRig_Published:FKExtraToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L/WitchRig_Published:FKExtraAnkle_L/WitchRig_Published:FKAnkle_L/WitchRig_Published:FKXAnkle_L/WitchRig_Published:FKOffsetToes_L/WitchRig_Published:FKExtraToes_L/WitchRig_Published:FKToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L/WitchRig_Published:FKExtraAnkle_L/WitchRig_Published:FKAnkle_L/WitchRig_Published:FKXAnkle_L/WitchRig_Published:FKOffsetToes_L/WitchRig_Published:FKExtraToes_L/WitchRig_Published:FKToes_L/WitchRig_Published:FKXToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_L/WitchRig_Published:FKExtraHip_L/WitchRig_Published:FKHip_L/WitchRig_Published:FKXHip_L/WitchRig_Published:FKOffsetKnee_L/WitchRig_Published:FKExtraKnee_L/WitchRig_Published:FKKnee_L/WitchRig_Published:FKXKnee_L/WitchRig_Published:FKOffsetAnkle_L/WitchRig_Published:FKExtraAnkle_L/WitchRig_Published:FKAnkle_L/WitchRig_Published:FKXAnkle_L/WitchRig_Published:FKOffsetToes_L/WitchRig_Published:FKExtraToes_L/WitchRig_Published:FKToes_L/WitchRig_Published:FKXToes_L/WitchRig_Published:AlignIKToToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:AlignIKToHip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R/WitchRig_Published:FKExtraAnkle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R/WitchRig_Published:FKExtraAnkle_R/WitchRig_Published:FKAnkle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R/WitchRig_Published:FKExtraAnkle_R/WitchRig_Published:FKAnkle_R/WitchRig_Published:FKXAnkle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R/WitchRig_Published:FKExtraAnkle_R/WitchRig_Published:FKAnkle_R/WitchRig_Published:FKXAnkle_R/WitchRig_Published:AlignIKToAnkle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R/WitchRig_Published:FKExtraAnkle_R/WitchRig_Published:FKAnkle_R/WitchRig_Published:FKXAnkle_R/WitchRig_Published:FKOffsetToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R/WitchRig_Published:FKExtraAnkle_R/WitchRig_Published:FKAnkle_R/WitchRig_Published:FKXAnkle_R/WitchRig_Published:FKOffsetToes_R/WitchRig_Published:FKExtraToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R/WitchRig_Published:FKExtraAnkle_R/WitchRig_Published:FKAnkle_R/WitchRig_Published:FKXAnkle_R/WitchRig_Published:FKOffsetToes_R/WitchRig_Published:FKExtraToes_R/WitchRig_Published:FKToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R/WitchRig_Published:FKExtraAnkle_R/WitchRig_Published:FKAnkle_R/WitchRig_Published:FKXAnkle_R/WitchRig_Published:FKOffsetToes_R/WitchRig_Published:FKExtraToes_R/WitchRig_Published:FKToes_R/WitchRig_Published:FKXToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToRoot_M/WitchRig_Published:FKOffsetHip_R/WitchRig_Published:FKExtraHip_R/WitchRig_Published:FKHip_R/WitchRig_Published:FKXHip_R/WitchRig_Published:FKOffsetKnee_R/WitchRig_Published:FKExtraKnee_R/WitchRig_Published:FKKnee_R/WitchRig_Published:FKXKnee_R/WitchRig_Published:FKOffsetAnkle_R/WitchRig_Published:FKExtraAnkle_R/WitchRig_Published:FKAnkle_R/WitchRig_Published:FKXAnkle_R/WitchRig_Published:FKOffsetToes_R/WitchRig_Published:FKExtraToes_R/WitchRig_Published:FKToes_R/WitchRig_Published:FKXToes_R/WitchRig_Published:AlignIKToToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:AlignIKToShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:FKOffsetElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:FKOffsetElbow_L/WitchRig_Published:FKExtraElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:FKOffsetElbow_L/WitchRig_Published:FKExtraElbow_L/WitchRig_Published:FKElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:FKOffsetElbow_L/WitchRig_Published:FKExtraElbow_L/WitchRig_Published:FKElbow_L/WitchRig_Published:FKXElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:FKOffsetElbow_L/WitchRig_Published:FKExtraElbow_L/WitchRig_Published:FKElbow_L/WitchRig_Published:FKXElbow_L/WitchRig_Published:FKOffsetWrist_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:FKOffsetElbow_L/WitchRig_Published:FKExtraElbow_L/WitchRig_Published:FKElbow_L/WitchRig_Published:FKXElbow_L/WitchRig_Published:FKOffsetWrist_L/WitchRig_Published:FKExtraWrist_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:FKOffsetElbow_L/WitchRig_Published:FKExtraElbow_L/WitchRig_Published:FKElbow_L/WitchRig_Published:FKXElbow_L/WitchRig_Published:FKOffsetWrist_L/WitchRig_Published:FKExtraWrist_L/WitchRig_Published:FKWrist_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:FKOffsetElbow_L/WitchRig_Published:FKExtraElbow_L/WitchRig_Published:FKElbow_L/WitchRig_Published:FKXElbow_L/WitchRig_Published:FKOffsetWrist_L/WitchRig_Published:FKExtraWrist_L/WitchRig_Published:FKWrist_L/WitchRig_Published:FKXWrist_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_L/WitchRig_Published:FKOffsetShoulder_L/WitchRig_Published:FKExtraShoulder_L/WitchRig_Published:FKShoulder_L/WitchRig_Published:FKXShoulder_L/WitchRig_Published:FKOffsetElbow_L/WitchRig_Published:FKExtraElbow_L/WitchRig_Published:FKElbow_L/WitchRig_Published:FKXElbow_L/WitchRig_Published:FKOffsetWrist_L/WitchRig_Published:FKExtraWrist_L/WitchRig_Published:FKWrist_L/WitchRig_Published:FKXWrist_L/WitchRig_Published:AlignIKToWrist_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:AlignIKToShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:FKOffsetElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:FKOffsetElbow_R/WitchRig_Published:FKExtraElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:FKOffsetElbow_R/WitchRig_Published:FKExtraElbow_R/WitchRig_Published:FKElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:FKOffsetElbow_R/WitchRig_Published:FKExtraElbow_R/WitchRig_Published:FKElbow_R/WitchRig_Published:FKXElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:FKOffsetElbow_R/WitchRig_Published:FKExtraElbow_R/WitchRig_Published:FKElbow_R/WitchRig_Published:FKXElbow_R/WitchRig_Published:FKOffsetWrist_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:FKOffsetElbow_R/WitchRig_Published:FKExtraElbow_R/WitchRig_Published:FKElbow_R/WitchRig_Published:FKXElbow_R/WitchRig_Published:FKOffsetWrist_R/WitchRig_Published:FKExtraWrist_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:FKOffsetElbow_R/WitchRig_Published:FKExtraElbow_R/WitchRig_Published:FKElbow_R/WitchRig_Published:FKXElbow_R/WitchRig_Published:FKOffsetWrist_R/WitchRig_Published:FKExtraWrist_R/WitchRig_Published:FKWrist_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:FKOffsetElbow_R/WitchRig_Published:FKExtraElbow_R/WitchRig_Published:FKElbow_R/WitchRig_Published:FKXElbow_R/WitchRig_Published:FKOffsetWrist_R/WitchRig_Published:FKExtraWrist_R/WitchRig_Published:FKWrist_R/WitchRig_Published:FKXWrist_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToScapula_R/WitchRig_Published:FKOffsetShoulder_R/WitchRig_Published:FKExtraShoulder_R/WitchRig_Published:FKShoulder_R/WitchRig_Published:FKXShoulder_R/WitchRig_Published:FKOffsetElbow_R/WitchRig_Published:FKExtraElbow_R/WitchRig_Published:FKElbow_R/WitchRig_Published:FKXElbow_R/WitchRig_Published:FKOffsetWrist_R/WitchRig_Published:FKExtraWrist_R/WitchRig_Published:FKWrist_R/WitchRig_Published:FKXWrist_R/WitchRig_Published:AlignIKToWrist_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L/WitchRig_Published:FKOffsetMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L/WitchRig_Published:FKOffsetMiddleFinger1_L/WitchRig_Published:SDK1FKMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L/WitchRig_Published:FKOffsetMiddleFinger1_L/WitchRig_Published:SDK1FKMiddleFinger1_L/WitchRig_Published:FKExtraMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L/WitchRig_Published:FKOffsetMiddleFinger1_L/WitchRig_Published:SDK1FKMiddleFinger1_L/WitchRig_Published:FKExtraMiddleFinger1_L/WitchRig_Published:FKMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L/WitchRig_Published:FKOffsetMiddleFinger1_L/WitchRig_Published:SDK1FKMiddleFinger1_L/WitchRig_Published:FKExtraMiddleFinger1_L/WitchRig_Published:FKMiddleFinger1_L/WitchRig_Published:FKXMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L/WitchRig_Published:FKOffsetThumbFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L/WitchRig_Published:FKOffsetThumbFinger1_L/WitchRig_Published:FKExtraThumbFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L/WitchRig_Published:FKOffsetThumbFinger1_L/WitchRig_Published:FKExtraThumbFinger1_L/WitchRig_Published:FKThumbFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_L/WitchRig_Published:FKOffsetThumbFinger1_L/WitchRig_Published:FKExtraThumbFinger1_L/WitchRig_Published:FKThumbFinger1_L/WitchRig_Published:FKXThumbFinger1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R/WitchRig_Published:FKOffsetMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R/WitchRig_Published:FKOffsetMiddleFinger1_R/WitchRig_Published:SDK1FKMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R/WitchRig_Published:FKOffsetMiddleFinger1_R/WitchRig_Published:SDK1FKMiddleFinger1_R/WitchRig_Published:FKExtraMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R/WitchRig_Published:FKOffsetMiddleFinger1_R/WitchRig_Published:SDK1FKMiddleFinger1_R/WitchRig_Published:FKExtraMiddleFinger1_R/WitchRig_Published:FKMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R/WitchRig_Published:FKOffsetMiddleFinger1_R/WitchRig_Published:SDK1FKMiddleFinger1_R/WitchRig_Published:FKExtraMiddleFinger1_R/WitchRig_Published:FKMiddleFinger1_R/WitchRig_Published:FKXMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R/WitchRig_Published:FKOffsetThumbFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R/WitchRig_Published:FKOffsetThumbFinger1_R/WitchRig_Published:FKExtraThumbFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R/WitchRig_Published:FKOffsetThumbFinger1_R/WitchRig_Published:FKExtraThumbFinger1_R/WitchRig_Published:FKThumbFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:FKSystem/WitchRig_Published:FKParentConstraintToWrist_R/WitchRig_Published:FKOffsetThumbFinger1_R/WitchRig_Published:FKExtraThumbFinger1_R/WitchRig_Published:FKThumbFinger1_R/WitchRig_Published:FKXThumbFinger1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:GlobalSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:GlobalSystem/WitchRig_Published:GlobalOffsetHead_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:GlobalSystem/WitchRig_Published:GlobalOffsetHead_M/WitchRig_Published:GlobalHead_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKCurve
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKCurve/WitchRig_Published:IKSpineCurve_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetArm_LFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetArm_LFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetArm_RFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetArm_RFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetSpine2_MFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetSpine2_MFollowFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetSpine2_MFollowFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetSpine2_MFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetSpine2_MStaticFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetSpine2_MStaticFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetSpine3_MFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:IKOffsetSpine3_MFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:PoleOffsetArm_LFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:PoleOffsetArm_LFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:PoleOffsetArm_RFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:PoleOffsetArm_RFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:PoleOffsetLeg_LFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:PoleOffsetLeg_LFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:PoleOffsetLeg_RFollow
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKFollow/WitchRig_Published:PoleOffsetLeg_RFollowNoScale
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_L/WitchRig_Published:IKExtraArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_L/WitchRig_Published:IKExtraArm_L/WitchRig_Published:IKArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_L/WitchRig_Published:IKExtraArm_L/WitchRig_Published:IKArm_L/WitchRig_Published:IKArmHandle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_L/WitchRig_Published:IKExtraArm_L/WitchRig_Published:IKArm_L/WitchRig_Published:IKFKAlignedOffsetArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_L/WitchRig_Published:IKExtraArm_L/WitchRig_Published:IKArm_L/WitchRig_Published:IKFKAlignedOffsetArm_L/WitchRig_Published:IKFKAlignedArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_L/WitchRig_Published:IKExtraArm_L/WitchRig_Published:IKArm_L/WitchRig_Published:IKmessureConstrainToArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_R/WitchRig_Published:IKExtraArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_R/WitchRig_Published:IKExtraArm_R/WitchRig_Published:IKArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_R/WitchRig_Published:IKExtraArm_R/WitchRig_Published:IKArm_R/WitchRig_Published:IKArmHandle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_R/WitchRig_Published:IKExtraArm_R/WitchRig_Published:IKArm_R/WitchRig_Published:IKFKAlignedOffsetArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_R/WitchRig_Published:IKExtraArm_R/WitchRig_Published:IKArm_R/WitchRig_Published:IKFKAlignedOffsetArm_R/WitchRig_Published:IKFKAlignedArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetArm_R/WitchRig_Published:IKExtraArm_R/WitchRig_Published:IKArm_R/WitchRig_Published:IKmessureConstrainToArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetConstrainedSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetConstrainedSpine1_M/WitchRig_Published:IKOffsetSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetConstrainedSpine1_M/WitchRig_Published:IKOffsetSpine1_M/WitchRig_Published:IKExtraSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetConstrainedSpine1_M/WitchRig_Published:IKOffsetSpine1_M/WitchRig_Published:IKExtraSpine1_M/WitchRig_Published:IKSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetConstrainedSpine1_M/WitchRig_Published:IKOffsetSpine1_M/WitchRig_Published:IKExtraSpine1_M/WitchRig_Published:IKSpine1_M/WitchRig_Published:IKOffsetSpine2_MFollowStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetConstrainedSpine1_M/WitchRig_Published:IKOffsetSpine1_M/WitchRig_Published:IKExtraSpine1_M/WitchRig_Published:IKSpine1_M/WitchRig_Published:IKSpine1LocalOrient1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetConstrainedSpine1_M/WitchRig_Published:IKOffsetSpine1_M/WitchRig_Published:IKExtraSpine1_M/WitchRig_Published:IKSpine1_M/WitchRig_Published:IKSpine1LocalOrient1_M/WitchRig_Published:IKSpine1LocalOrient2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetConstrainedSpine1_M/WitchRig_Published:IKOffsetSpine1_M/WitchRig_Published:IKExtraSpine1_M/WitchRig_Published:IKSpine1_M/WitchRig_Published:IKSpine1LocalOrient1_M/WitchRig_Published:IKSpine1LocalOrient2_M/WitchRig_Published:IKSpine1LocalOrient3_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetConstrainedSpine1_M/WitchRig_Published:IKOffsetSpine1_M/WitchRig_Published:IKExtraSpine1_M/WitchRig_Published:IKSpine1_M/WitchRig_Published:IKSpineLocator0_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetcvSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetcvSpine1_M/WitchRig_Published:IKExtracvSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetcvSpine1_M/WitchRig_Published:IKExtracvSpine1_M/WitchRig_Published:IKcvSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetcvSpine1_M/WitchRig_Published:IKExtracvSpine1_M/WitchRig_Published:IKcvSpine1_M/WitchRig_Published:IKSpineLocator1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:IKFKAlignedOffsetLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:IKFKAlignedOffsetLeg_L/WitchRig_Published:IKFKAlignedLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:IKLegFootRoll_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:IKOffsetToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:IKOffsetToes_L/WitchRig_Published:IKExtraToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:IKOffsetToes_L/WitchRig_Published:IKExtraToes_L/WitchRig_Published:IKToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:IKOffsetToes_L/WitchRig_Published:IKExtraToes_L/WitchRig_Published:IKToes_L/WitchRig_Published:IKToesHandle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:RollOffsetToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:RollOffsetToes_L/WitchRig_Published:RollRollerToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:RollOffsetToes_L/WitchRig_Published:RollRollerToes_L/WitchRig_Published:RollExtraToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:RollOffsetToes_L/WitchRig_Published:RollRollerToes_L/WitchRig_Published:RollExtraToes_L/WitchRig_Published:RollToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:RollOffsetToes_L/WitchRig_Published:RollRollerToes_L/WitchRig_Published:RollExtraToes_L/WitchRig_Published:RollToes_L/WitchRig_Published:IKAnkleHandle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:RollOffsetToes_L/WitchRig_Published:RollRollerToes_L/WitchRig_Published:RollExtraToes_L/WitchRig_Published:RollToes_L/WitchRig_Published:IKLegHandle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_L/WitchRig_Published:IKExtraLeg_L/WitchRig_Published:IKLeg_L/WitchRig_Published:RollOffsetHeel_L/WitchRig_Published:RollRollerHeel_L/WitchRig_Published:RollExtraHeel_L/WitchRig_Published:RollHeel_L/WitchRig_Published:RollOffsetToesEnd_L/WitchRig_Published:RollRollerToesEnd_L/WitchRig_Published:RollExtraToesEnd_L/WitchRig_Published:RollToesEnd_L/WitchRig_Published:RollOffsetToes_L/WitchRig_Published:RollRollerToes_L/WitchRig_Published:RollExtraToes_L/WitchRig_Published:RollToes_L/WitchRig_Published:IKmessureConstrainToLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:IKFKAlignedOffsetLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:IKFKAlignedOffsetLeg_R/WitchRig_Published:IKFKAlignedLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:IKLegFootRoll_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:IKOffsetToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:IKOffsetToes_R/WitchRig_Published:IKExtraToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:IKOffsetToes_R/WitchRig_Published:IKExtraToes_R/WitchRig_Published:IKToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:IKOffsetToes_R/WitchRig_Published:IKExtraToes_R/WitchRig_Published:IKToes_R/WitchRig_Published:IKToesHandle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:RollOffsetToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:RollOffsetToes_R/WitchRig_Published:RollRollerToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:RollOffsetToes_R/WitchRig_Published:RollRollerToes_R/WitchRig_Published:RollExtraToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:RollOffsetToes_R/WitchRig_Published:RollRollerToes_R/WitchRig_Published:RollExtraToes_R/WitchRig_Published:RollToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:RollOffsetToes_R/WitchRig_Published:RollRollerToes_R/WitchRig_Published:RollExtraToes_R/WitchRig_Published:RollToes_R/WitchRig_Published:IKAnkleHandle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:RollOffsetToes_R/WitchRig_Published:RollRollerToes_R/WitchRig_Published:RollExtraToes_R/WitchRig_Published:RollToes_R/WitchRig_Published:IKLegHandle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetLeg_R/WitchRig_Published:IKExtraLeg_R/WitchRig_Published:IKLeg_R/WitchRig_Published:RollOffsetHeel_R/WitchRig_Published:RollRollerHeel_R/WitchRig_Published:RollExtraHeel_R/WitchRig_Published:RollHeel_R/WitchRig_Published:RollOffsetToesEnd_R/WitchRig_Published:RollRollerToesEnd_R/WitchRig_Published:RollExtraToesEnd_R/WitchRig_Published:RollToesEnd_R/WitchRig_Published:RollOffsetToes_R/WitchRig_Published:RollRollerToes_R/WitchRig_Published:RollExtraToes_R/WitchRig_Published:RollToes_R/WitchRig_Published:IKmessureConstrainToLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine2_M/WitchRig_Published:IKExtraSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine2_M/WitchRig_Published:IKExtraSpine2_M/WitchRig_Published:IKSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine2_M/WitchRig_Published:IKExtraSpine2_M/WitchRig_Published:IKSpine2_M/WitchRig_Published:IKSpine2LocalOrient1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine2_M/WitchRig_Published:IKExtraSpine2_M/WitchRig_Published:IKSpine2_M/WitchRig_Published:IKSpine2LocalOrient1_M/WitchRig_Published:IKSpine2LocalOrient2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine2_M/WitchRig_Published:IKSpine2LocalOrient3_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine3_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine3_M/WitchRig_Published:IKExtraSpine3_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine3_M/WitchRig_Published:IKExtraSpine3_M/WitchRig_Published:IKSpine3_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine3_M/WitchRig_Published:IKExtraSpine3_M/WitchRig_Published:IKSpine3_M/WitchRig_Published:IKSpine3LocalOrient1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine3_M/WitchRig_Published:IKExtraSpine3_M/WitchRig_Published:IKSpine3_M/WitchRig_Published:IKSpine3LocalOrient1_M/WitchRig_Published:IKSpine3LocalOrient2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKOffsetSpine3_M/WitchRig_Published:IKExtraSpine3_M/WitchRig_Published:IKSpine3_M/WitchRig_Published:IKSpineLocator2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKRootConstraint
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKScalerChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKScalerRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKScalerSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:IKSpineHandle_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleAimLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleAimLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetArm_L/WitchRig_Published:PoleExtraArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetArm_L/WitchRig_Published:PoleExtraArm_L/WitchRig_Published:PoleArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetArm_R/WitchRig_Published:PoleExtraArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetArm_R/WitchRig_Published:PoleExtraArm_R/WitchRig_Published:PoleArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetLeg_L/WitchRig_Published:PoleExtraLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetLeg_L/WitchRig_Published:PoleExtraLeg_L/WitchRig_Published:PoleLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetLeg_R/WitchRig_Published:PoleExtraLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKHandle/WitchRig_Published:PoleOffsetLeg_R/WitchRig_Published:PoleExtraLeg_R/WitchRig_Published:PoleLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset2_M/WitchRig_Published:IKAcChestFollowOffset_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset2_M/WitchRig_Published:IKAcSpine1FollowOffset_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset3_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset3_M/WitchRig_Published:IKAcPociXformChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset3_M/WitchRig_Published:IKAcPociXformRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset3_M/WitchRig_Published:IKAcPociXformSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset_M/WitchRig_Published:IKAcChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset_M/WitchRig_Published:IKAcRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKAcSpineOffset_M/WitchRig_Published:IKAcSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKMessureFromHip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKX2Hip_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKXKnee_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKXKnee_L/WitchRig_Published:IKX2Knee_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKXKnee_L/WitchRig_Published:IKXAnkle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKXKnee_L/WitchRig_Published:IKXAnkle_L/WitchRig_Published:IKX2Ankle_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKXKnee_L/WitchRig_Published:IKXAnkle_L/WitchRig_Published:IKXToes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKXKnee_L/WitchRig_Published:IKXAnkle_L/WitchRig_Published:IKXToes_L/WitchRig_Published:IKX2Toes_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKXKnee_L/WitchRig_Published:IKXAnkle_L/WitchRig_Published:IKXToes_L/WitchRig_Published:IKXToesEnd_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKXKnee_L/WitchRig_Published:IKXAnkle_L/WitchRig_Published:IKXToes_L/WitchRig_Published:IKXToesEnd_L/WitchRig_Published:IKX2ToesEnd_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_L/WitchRig_Published:IKXOffsetHip_L/WitchRig_Published:IKXHip_L/WitchRig_Published:IKXKnee_L/WitchRig_Published:PoleAnnotationLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKMessureFromHip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKX2Hip_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKXKnee_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKXKnee_R/WitchRig_Published:IKX2Knee_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKXKnee_R/WitchRig_Published:IKXAnkle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKXKnee_R/WitchRig_Published:IKXAnkle_R/WitchRig_Published:IKX2Ankle_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKXKnee_R/WitchRig_Published:IKXAnkle_R/WitchRig_Published:IKXToes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKXKnee_R/WitchRig_Published:IKXAnkle_R/WitchRig_Published:IKXToes_R/WitchRig_Published:IKX2Toes_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKXKnee_R/WitchRig_Published:IKXAnkle_R/WitchRig_Published:IKXToes_R/WitchRig_Published:IKXToesEnd_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKXKnee_R/WitchRig_Published:IKXAnkle_R/WitchRig_Published:IKXToes_R/WitchRig_Published:IKXToesEnd_R/WitchRig_Published:IKX2ToesEnd_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintHip_R/WitchRig_Published:IKXOffsetHip_R/WitchRig_Published:IKXHip_R/WitchRig_Published:IKXKnee_R/WitchRig_Published:PoleAnnotationLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKfake0Spine_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKfake0Spine_M/WitchRig_Published:IKFixedOrientRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKfake0Spine_M/WitchRig_Published:IKFixedOrientRoot_M/WitchRig_Published:IKAcRootFollowOffset_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKfake0Spine_M/WitchRig_Published:IKFixedOrientRoot_M/WitchRig_Published:IKSpRootFollowOffset_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKfake0Spine_M/WitchRig_Published:IKSpSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKfake0Spine_M/WitchRig_Published:IKSpSpine1_M/WitchRig_Published:IKSpChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKfake0Spine_M/WitchRig_Published:IKSpSpine1_M/WitchRig_Published:IKSpChest_M/WitchRig_Published:IKfake1Spine_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKXOffsetRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKXOffsetRoot_M/WitchRig_Published:IKXRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKXOffsetRoot_M/WitchRig_Published:IKXRoot_M/WitchRig_Published:IKX2Root_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKXOffsetRoot_M/WitchRig_Published:IKXRoot_M/WitchRig_Published:IKXSpine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKXOffsetRoot_M/WitchRig_Published:IKXRoot_M/WitchRig_Published:IKXSpine1_M/WitchRig_Published:IKX2Spine1_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKXOffsetRoot_M/WitchRig_Published:IKXRoot_M/WitchRig_Published:IKXSpine1_M/WitchRig_Published:IKXChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintRoot_M/WitchRig_Published:IKXOffsetRoot_M/WitchRig_Published:IKXRoot_M/WitchRig_Published:IKXSpine1_M/WitchRig_Published:IKXChest_M/WitchRig_Published:IKX2Chest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L/WitchRig_Published:IKMessureFromShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L/WitchRig_Published:IKXOffsetShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L/WitchRig_Published:IKXOffsetShoulder_L/WitchRig_Published:IKXShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L/WitchRig_Published:IKXOffsetShoulder_L/WitchRig_Published:IKXShoulder_L/WitchRig_Published:IKX2Shoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L/WitchRig_Published:IKXOffsetShoulder_L/WitchRig_Published:IKXShoulder_L/WitchRig_Published:IKXElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L/WitchRig_Published:IKXOffsetShoulder_L/WitchRig_Published:IKXShoulder_L/WitchRig_Published:IKXElbow_L/WitchRig_Published:IKX2Elbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L/WitchRig_Published:IKXOffsetShoulder_L/WitchRig_Published:IKXShoulder_L/WitchRig_Published:IKXElbow_L/WitchRig_Published:IKXWrist_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L/WitchRig_Published:IKXOffsetShoulder_L/WitchRig_Published:IKXShoulder_L/WitchRig_Published:IKXElbow_L/WitchRig_Published:IKXWrist_L/WitchRig_Published:IKX2Wrist_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_L/WitchRig_Published:IKXOffsetShoulder_L/WitchRig_Published:IKXShoulder_L/WitchRig_Published:IKXElbow_L/WitchRig_Published:PoleAnnotationArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R/WitchRig_Published:IKMessureFromShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R/WitchRig_Published:IKXOffsetShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R/WitchRig_Published:IKXOffsetShoulder_R/WitchRig_Published:IKXShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R/WitchRig_Published:IKXOffsetShoulder_R/WitchRig_Published:IKXShoulder_R/WitchRig_Published:IKX2Shoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R/WitchRig_Published:IKXOffsetShoulder_R/WitchRig_Published:IKXShoulder_R/WitchRig_Published:IKXElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R/WitchRig_Published:IKXOffsetShoulder_R/WitchRig_Published:IKXShoulder_R/WitchRig_Published:IKXElbow_R/WitchRig_Published:IKX2Elbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R/WitchRig_Published:IKXOffsetShoulder_R/WitchRig_Published:IKXShoulder_R/WitchRig_Published:IKXElbow_R/WitchRig_Published:IKXWrist_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R/WitchRig_Published:IKXOffsetShoulder_R/WitchRig_Published:IKXShoulder_R/WitchRig_Published:IKXElbow_R/WitchRig_Published:IKXWrist_R/WitchRig_Published:IKX2Wrist_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKParentConstraintShoulder_R/WitchRig_Published:IKXOffsetShoulder_R/WitchRig_Published:IKXShoulder_R/WitchRig_Published:IKXElbow_R/WitchRig_Published:PoleAnnotationArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKSpSpineOffset_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKSpSpineOffset_M/WitchRig_Published:IKSpChestFollowOffset_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKSpSpineOffset_M/WitchRig_Published:IKSpRoot_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKJoints/WitchRig_Published:IKSpSpineOffset_M/WitchRig_Published:IKSpSpine1FollowOffset_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKdistanceArm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKdistanceArm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKdistanceLeg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKdistanceLeg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKmessureLoc1Arm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKmessureLoc1Arm_L/WitchRig_Published:IKmessureLoc2Arm_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKmessureLoc1Arm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKmessureLoc1Arm_R/WitchRig_Published:IKmessureLoc2Arm_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKmessureLoc1Leg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKmessureLoc1Leg_L/WitchRig_Published:IKmessureLoc2Leg_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKmessureLoc1Leg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKMessure/WitchRig_Published:IKmessureLoc1Leg_R/WitchRig_Published:IKmessureLoc2Leg_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic/WitchRig_Published:IKOffsetArm_LStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic/WitchRig_Published:IKOffsetArm_RStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic/WitchRig_Published:IKOffsetSpine2_MStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic/WitchRig_Published:IKOffsetSpine2_MStaticStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic/WitchRig_Published:IKOffsetSpine3_MStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic/WitchRig_Published:PoleOffsetArm_LStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic/WitchRig_Published:PoleOffsetArm_RStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic/WitchRig_Published:PoleOffsetLeg_LStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:IKSystem/WitchRig_Published:IKStatic/WitchRig_Published:PoleOffsetLeg_RStatic
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:RootSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:RootSystem/WitchRig_Published:LegLockConstrained
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:RootSystem/WitchRig_Published:RootOffsetX_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:RootSystem/WitchRig_Published:RootOffsetX_M/WitchRig_Published:RootExtraX_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:RootSystem/WitchRig_Published:RootOffsetX_M/WitchRig_Published:RootExtraX_M/WitchRig_Published:RootX_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:RootSystem/WitchRig_Published:RootOffsetX_M/WitchRig_Published:RootExtraX_M/WitchRig_Published:RootX_M/WitchRig_Published:RootSpineAligned
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:RootSystem/WitchRig_Published:RootOffsetX_M/WitchRig_Published:RootExtraX_M/WitchRig_Published:RootX_M/WitchRig_Published:RootZeroXform
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:FKIKMixElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:FKIKMixElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetChest_M/WitchRig_Published:TwistFollowChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetChest_M/WitchRig_Published:TwistFollowChest_M/WitchRig_Published:UnTwistIKChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetElbow_L/WitchRig_Published:TwistFollowElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetElbow_L/WitchRig_Published:TwistFollowElbow_L/WitchRig_Published:UnTwistIKElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetElbow_R/WitchRig_Published:TwistFollowElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetElbow_R/WitchRig_Published:TwistFollowElbow_R/WitchRig_Published:UnTwistIKElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetShoulder_L/WitchRig_Published:TwistFollowShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetShoulder_L/WitchRig_Published:TwistFollowShoulder_L/WitchRig_Published:UnTwistIKShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetShoulder_R/WitchRig_Published:TwistFollowShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetShoulder_R/WitchRig_Published:TwistFollowShoulder_R/WitchRig_Published:UnTwistIKShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetSpine2_M/WitchRig_Published:TwistFollowSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowOffsetSpine2_M/WitchRig_Published:TwistFollowSpine2_M/WitchRig_Published:UnTwistIKSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetChest_M/WitchRig_Published:TwistFollowParentChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetChest_M/WitchRig_Published:TwistFollowParentChest_M/WitchRig_Published:UnTwistChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetChest_M/WitchRig_Published:TwistFollowParentChest_M/WitchRig_Published:UnTwistChest_M/WitchRig_Published:TwistBalancerChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetChest_M/WitchRig_Published:TwistFollowParentChest_M/WitchRig_Published:UnTwistChest_M/WitchRig_Published:UnTwistEndChest_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_L/WitchRig_Published:TwistFollowParentElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_L/WitchRig_Published:TwistFollowParentElbow_L/WitchRig_Published:UnTwistElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_L/WitchRig_Published:TwistFollowParentElbow_L/WitchRig_Published:UnTwistElbow_L/WitchRig_Published:TwistBalancerElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_L/WitchRig_Published:TwistFollowParentElbow_L/WitchRig_Published:UnTwistElbow_L/WitchRig_Published:TwisterElbow0_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_L/WitchRig_Published:TwistFollowParentElbow_L/WitchRig_Published:UnTwistElbow_L/WitchRig_Published:TwisterElbow1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_L/WitchRig_Published:TwistFollowParentElbow_L/WitchRig_Published:UnTwistElbow_L/WitchRig_Published:TwisterElbow2_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_L/WitchRig_Published:TwistFollowParentElbow_L/WitchRig_Published:UnTwistElbow_L/WitchRig_Published:UnTwistEndElbow_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_R/WitchRig_Published:TwistFollowParentElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_R/WitchRig_Published:TwistFollowParentElbow_R/WitchRig_Published:UnTwistElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_R/WitchRig_Published:TwistFollowParentElbow_R/WitchRig_Published:UnTwistElbow_R/WitchRig_Published:TwistBalancerElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_R/WitchRig_Published:TwistFollowParentElbow_R/WitchRig_Published:UnTwistElbow_R/WitchRig_Published:TwisterElbow0_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_R/WitchRig_Published:TwistFollowParentElbow_R/WitchRig_Published:UnTwistElbow_R/WitchRig_Published:TwisterElbow1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_R/WitchRig_Published:TwistFollowParentElbow_R/WitchRig_Published:UnTwistElbow_R/WitchRig_Published:TwisterElbow2_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetElbow_R/WitchRig_Published:TwistFollowParentElbow_R/WitchRig_Published:UnTwistElbow_R/WitchRig_Published:UnTwistEndElbow_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_L/WitchRig_Published:TwistFollowParentShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_L/WitchRig_Published:TwistFollowParentShoulder_L/WitchRig_Published:UnTwistShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_L/WitchRig_Published:TwistFollowParentShoulder_L/WitchRig_Published:UnTwistShoulder_L/WitchRig_Published:TwistBalancerShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_L/WitchRig_Published:TwistFollowParentShoulder_L/WitchRig_Published:UnTwistShoulder_L/WitchRig_Published:TwisterShoulder0_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_L/WitchRig_Published:TwistFollowParentShoulder_L/WitchRig_Published:UnTwistShoulder_L/WitchRig_Published:TwisterShoulder1_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_L/WitchRig_Published:TwistFollowParentShoulder_L/WitchRig_Published:UnTwistShoulder_L/WitchRig_Published:TwisterShoulder2_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_L/WitchRig_Published:TwistFollowParentShoulder_L/WitchRig_Published:UnTwistShoulder_L/WitchRig_Published:UnTwistEndShoulder_L
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_R/WitchRig_Published:TwistFollowParentShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_R/WitchRig_Published:TwistFollowParentShoulder_R/WitchRig_Published:UnTwistShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_R/WitchRig_Published:TwistFollowParentShoulder_R/WitchRig_Published:UnTwistShoulder_R/WitchRig_Published:TwistBalancerShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_R/WitchRig_Published:TwistFollowParentShoulder_R/WitchRig_Published:UnTwistShoulder_R/WitchRig_Published:TwisterShoulder0_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_R/WitchRig_Published:TwistFollowParentShoulder_R/WitchRig_Published:UnTwistShoulder_R/WitchRig_Published:TwisterShoulder1_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_R/WitchRig_Published:TwistFollowParentShoulder_R/WitchRig_Published:UnTwistShoulder_R/WitchRig_Published:TwisterShoulder2_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetShoulder_R/WitchRig_Published:TwistFollowParentShoulder_R/WitchRig_Published:UnTwistShoulder_R/WitchRig_Published:UnTwistEndShoulder_R
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetSpine2_M/WitchRig_Published:TwistFollowParentSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetSpine2_M/WitchRig_Published:TwistFollowParentSpine2_M/WitchRig_Published:UnTwistSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetSpine2_M/WitchRig_Published:TwistFollowParentSpine2_M/WitchRig_Published:UnTwistSpine2_M/WitchRig_Published:TwistBalancerSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:MotionSystem/WitchRig_Published:TwistSystem/WitchRig_Published:TwistFollowParentOffsetSpine2_M/WitchRig_Published:TwistFollowParentSpine2_M/WitchRig_Published:UnTwistSpine2_M/WitchRig_Published:UnTwistEndSpine2_M
+    m_Weight: 1
+  - m_Path: WitchRig_Published:model:geo
+    m_Weight: 1
+  - m_Path: WitchRig_Published:model:geo/WitchRig_Published:model:NEWWIZ
+    m_Weight: 1
