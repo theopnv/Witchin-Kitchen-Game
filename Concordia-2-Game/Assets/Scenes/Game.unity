@@ -321,7 +321,7 @@ MonoBehaviour:
   m_poll_number: 0
   m_clock: {fileID: 477752801}
   m_gameOverText: {fileID: 2102123435}
-  GAME_TIMER: 10
+  GAME_TIMER: 240
 --- !u!114 &10916644
 MonoBehaviour:
   m_ObjectHideFlags: 0
