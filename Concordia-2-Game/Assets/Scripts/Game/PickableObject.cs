@@ -14,9 +14,13 @@ namespace con2.game
 
         private float m_dropTimestamp;
 
+        protected AudioSource audioSource;
+        public AudioClip slapSound;
+
         void Start()
         {
             m_rb = GetComponent<Rigidbody>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void Update()
@@ -131,7 +135,11 @@ namespace con2.game
                 }
                 m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
 
+                audioSource.clip = slapSound;
+                audioSource.Play();
+
                 ResetAimAssist();
+
             }
         }
 
