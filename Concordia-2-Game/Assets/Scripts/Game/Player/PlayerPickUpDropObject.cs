@@ -19,6 +19,10 @@ namespace con2.game
         //Objects in range to be grabbed
         private List<KeyValuePair<GameObject, PickableObject>> m_nearbyObjects;
 
+        //Player's cauldron
+        private GameObject m_ownedCauldron;
+        public const float AIM_ASSIST_THROW_DISTANCE = 4.0f, AIM_ASSIST_FACING_DEGREE = 30.0f;
+
         void Start()
         {
             m_playerRB = GetComponent<Rigidbody>();
@@ -126,8 +130,15 @@ namespace con2.game
             // Restore max movement speed
             m_playerMovement.MaxMovementSpeed /= m_speedReduction;
 
-            // Have the object adjust its physics and get thrown
-            m_heldObject.Drop(throwVector);
+            if (CheckNearAimAssistedStation())
+            {
+                m_heldObject.AimAssistFly(m_ownedCauldron.transform.position, throwVector);
+            }
+            else
+            {
+                // Have the object adjust its physics and get thrown normally
+                m_heldObject.Drop(throwVector);
+            }
 
             // Reset picked up object
             m_heldObject = null;
@@ -150,6 +161,35 @@ namespace con2.game
             return m_heldObject;
         }
 
+        #region AimAssist
+
+        public void SetAimAssistedStation(GameObject station)
+        {
+            m_ownedCauldron = station;
+        }
+
+        protected bool CheckNearAimAssistedStation()
+        {
+            float distanceToKitchenStation = (transform.position - m_ownedCauldron.transform.position).magnitude;
+            if (distanceToKitchenStation <= AIM_ASSIST_THROW_DISTANCE && CheckFacingAimAssistedStation())
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool CheckFacingAimAssistedStation()
+        {
+            Vector3 playerFacing = this.transform.TransformDirection(Vector3.forward);
+            Vector3 playerToStation = m_ownedCauldron.transform.position - transform.position;
+            double currentAngle = Mathf.Acos(Vector3.Dot(playerFacing, playerToStation) / (playerFacing.magnitude * playerToStation.magnitude));
+            return currentAngle <= Mathf.Deg2Rad * 2 * AIM_ASSIST_FACING_DEGREE;
+        }
+
+        #endregion
+
+        #region RangeTriggers
+
         private void OnTriggerEnter(Collider other)
         {
             PickableObject pickable = other.gameObject.GetComponent<PickableObject>();
@@ -164,5 +204,7 @@ namespace con2.game
             KeyValuePair<GameObject, PickableObject> leavingObject = m_nearbyObjects.Find(item => item.Key.Equals(other.gameObject));
             m_nearbyObjects.Remove(leavingObject);
         }
+
+        #endregion
     }
 }
