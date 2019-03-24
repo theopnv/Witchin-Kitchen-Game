@@ -20,6 +20,8 @@ namespace con2.game
 
         private MessageFeedManager _MessageFeedManager;
 
+        private AudioSource audioSource;
+
         #endregion
 
         #region Unity API
@@ -28,6 +30,8 @@ namespace con2.game
         {
             SetUp();
             _MessageFeedManager = FindObjectOfType<MessageFeedManager>();
+
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void OnDisable()
@@ -121,6 +125,8 @@ namespace con2.game
                       Events.EventList[(Events.EventID)chosenEvent.id] +
                       " was voted");
             var key = (Events.EventID)chosenEvent.id;
+
+            audioSource.Play();
 
             if (_EventSubscribers.ContainsKey(key))
             {
