@@ -143,8 +143,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.48746243
     - serializedVersion: 3
-      time: 0.5800628
-      value: 2.4957585
+      time: 0.5902367
+      value: 1.9168055
       inSlope: 1.2102029
       outSlope: 1.2102029
       tangentMode: 0
@@ -152,8 +152,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.73948085
-      value: 1.611729
+      time: 0.72782314
+      value: 1.471989
       inSlope: -6.359714
       outSlope: -6.359714
       tangentMode: 0
@@ -172,8 +172,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Impulse: 40
-  TempGravity: 15.5
+  Impulse: 11.3
+  TempGravity: 40
   ScaleObject: {fileID: 2254253588430205105}
   OwnBody: {fileID: 8567040025154033238}
   AutoPlay: 1

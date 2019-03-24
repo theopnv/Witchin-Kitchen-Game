@@ -289,7 +289,7 @@ PrefabInstance:
     - target: {fileID: 1601566905637200740, guid: 8d760422faf219047a166349d106c787,
         type: 3}
       propertyPath: TempGravity
-      value: 15.5
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1601566905637200740, guid: 8d760422faf219047a166349d106c787,
         type: 3}
@@ -299,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 1601566905637200740, guid: 8d760422faf219047a166349d106c787,
         type: 3}
       propertyPath: Impulse
-      value: 40
+      value: 11.3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3780054209357208126, guid: 8d760422faf219047a166349d106c787, type: 3}

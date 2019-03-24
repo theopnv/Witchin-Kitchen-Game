@@ -43,7 +43,7 @@ public class SpawnBounce : MonoBehaviour
     public void Play()
     {
         OwnBody.freezeRotation = true;
-        OwnBody.AddForce(Vector3.up * Impulse, ForceMode.Impulse);
+        OwnBody.AddForce(Vector3.up * Impulse, ForceMode.VelocityChange);
 
         StartTime = Time.time;
         Playing = true;
