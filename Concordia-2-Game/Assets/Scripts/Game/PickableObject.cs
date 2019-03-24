@@ -12,9 +12,13 @@ namespace con2.game
 
         private float m_dropTimestamp;
 
+        protected AudioSource audioSource;
+        public AudioClip slapSound;
+
         void Start()
         {
             m_rb = GetComponent<Rigidbody>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         // Called by the carrying player's Update() to force the object to follow it
@@ -94,6 +98,9 @@ namespace con2.game
                     m_rb = GetComponent<Rigidbody>();
                 }
                 m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
+
+                audioSource.clip = slapSound;
+                audioSource.Play();
             }
         }
 

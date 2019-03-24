@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 8073675624379183575}
   - component: {fileID: 7504540862884185469}
   - component: {fileID: 3492940367591867776}
+  - component: {fileID: 1150681706384746102}
   m_Layer: 0
   m_Name: Male
   m_TagString: Player
@@ -111,7 +112,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
-  - {fileID: 3062392311616866209}
+  - {fileID: 7205232096759904299}
   - {fileID: 6666661479843300618}
   - {fileID: 2255676148737742683}
   - {fileID: 4725768194649651297}
@@ -251,103 +252,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0c5f4ff2705ba4facbc2d35933e04e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8409025430241478021
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3062392311616866209}
-  - component: {fileID: 5995220471323906308}
-  - component: {fileID: 2362262089927488196}
-  - component: {fileID: 3677432393688158852}
-  - component: {fileID: 1756221683444084083}
-  m_Layer: 0
-  m_Name: PunchGrabBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3062392311616866209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8409025430241478021}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.61, z: 1.7}
-  m_LocalScale: {x: 2, y: 4, z: 2}
-  m_Children: []
-  m_Father: {fileID: 7389057155434458317}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5995220471323906308
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8409025430241478021}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.75, z: 1.5}
-  m_Center: {x: 0, y: 0.125, z: 0}
---- !u!114 &2362262089927488196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8409025430241478021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c608d04748013e3428257bdc117b2e3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_strength: 10
-  m_stunTime: 1.33
-  m_immuneTargets: []
-  m_didStun: 0
-  ShakeIntensity: 0
-  m_punchUpwardsForce: 5
-  m_reloadSeconds: 2
---- !u!114 &3677432393688158852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8409025430241478021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa1f9b9299bc61242843e391fa2302b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fireballPrefab: {fileID: 2061191736115989615, guid: afc0f1c562ef2434581dc4d750d2ec1f,
-    type: 3}
-  _FireballIndicatorPrefab: {fileID: 4565021023995713173, guid: 05544762bb303a944bf170ff12bbf93d,
-    type: 3}
-  m_spawnLocation: {fileID: 8409025430241478021}
-  m_reloadSeconds: 15
-  m_recoil: 10
-  m_indicator: {fileID: 0}
---- !u!82 &1756221683444084083
+--- !u!82 &1150681706384746102
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8409025430241478021}
+  m_GameObject: {fileID: 7389057155434458313}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6917c69ee99dfc54e861508a10388a92, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6fd8abdba4a7ea042a7228ad4936bec6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -520,6 +435,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
+    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
+        type: 3}
+      propertyPath: m_Name
+      value: DisplacementCircle
+      objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -589,11 +509,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
-        type: 3}
-      propertyPath: m_Name
-      value: DisplacementCircle
       objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601365, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
@@ -790,6 +705,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6889083751279990956}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8309650957871977968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7389057155434458317}
+    m_Modifications:
+    - target: {fileID: 5648356612434751487, guid: 6679f5c57e4cdaf4f84e491721e56128,
+        type: 3}
+      propertyPath: m_Name
+      value: PunchGrabBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202443438745480667, guid: 6679f5c57e4cdaf4f84e491721e56128,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202443438745480667, guid: 6679f5c57e4cdaf4f84e491721e56128,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202443438745480667, guid: 6679f5c57e4cdaf4f84e491721e56128,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202443438745480667, guid: 6679f5c57e4cdaf4f84e491721e56128,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6679f5c57e4cdaf4f84e491721e56128, type: 3}
+--- !u!4 &7205232096759904299 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1202443438745480667, guid: 6679f5c57e4cdaf4f84e491721e56128,
+    type: 3}
+  m_PrefabInstance: {fileID: 8309650957871977968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8381974467171261629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -872,6 +827,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
+    - target: {fileID: 1599718021928974, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
+      propertyPath: m_Name
+      value: Puff
+      objectReference: {fileID: 0}
     - target: {fileID: 4777701302679384, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1032,10 +991,6 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1599718021928974, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
-      propertyPath: m_Name
-      value: Puff
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}

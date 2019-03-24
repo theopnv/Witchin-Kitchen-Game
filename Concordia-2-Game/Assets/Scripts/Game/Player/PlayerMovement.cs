@@ -27,10 +27,13 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     private bool m_movementIsInverted = false;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         m_stun = GetComponent<FightStun>();
         m_rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public bool ConsumeInput(GamepadAction input)
@@ -106,6 +109,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
     {
         m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
         m_stun.Stun(stunTime);
+        audioSource.Play();
     }
 
     // Public API
