@@ -11,6 +11,7 @@ namespace con2.game
         public float m_throwForce = 5;
         private Rigidbody m_playerRB;
         private PlayerMovement m_playerMovement;
+        private AnimControl m_anim;
 
         // The actual pickable object
         private PickableObject m_heldObject;
@@ -23,6 +24,7 @@ namespace con2.game
         {
             m_playerRB = GetComponent<Rigidbody>();
             m_playerMovement = GetComponent<PlayerMovement>();
+            m_anim = GetComponentInChildren<AnimControl>();
             m_nearbyObjects = new List<KeyValuePair<GameObject, PickableObject>>();
         }
 
@@ -93,6 +95,8 @@ namespace con2.game
             {
                 if (tempHeld.Equals(m_heldObject))  // if we actually picked up the thing we were trying to pick up (fkn newt side effects)
                 {
+                    m_anim.Carry();
+
                     // Slow down the player
                     m_speedReduction = m_heldObject.GetMaxSpeedFractionWhenHolding();
                     m_playerMovement.MaxMovementSpeed *= m_speedReduction;
@@ -123,6 +127,8 @@ namespace con2.game
         // Drop the object in hands
         private void DropObject(Vector3 throwVector)
         {
+            m_anim.Drop();
+
             // Restore max movement speed
             m_playerMovement.MaxMovementSpeed /= m_speedReduction;
 
