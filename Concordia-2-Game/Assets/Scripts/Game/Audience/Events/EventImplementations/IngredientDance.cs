@@ -18,6 +18,7 @@ namespace con2.game
 
         private GameObject m_ground;
         private PickableObject m_thisObj;
+        private TrailRenderer m_trail;
 
         private AMainManager m_mainGameManager;
 
@@ -38,15 +39,27 @@ namespace con2.game
             m_ground = GameObject.Find("Ground");
 
             m_thisObj = GetComponent<PickableObject>();
+
+            m_trail = GetComponentInChildren<TrailRenderer>();
+            m_trail.emitting = false;
+
+            m_headingAngle = Random.Range(0.0f, 2f * Mathf.PI);
+            m_trailHeadingAngle = Random.Range(0.0f, 2f * Mathf.PI);
         }
+
+        private float m_trailHeadingAngle = 0.0f;
+        private float m_trailHeadingAngleMultiplier = 40.0f;
+        private float m_trailCircleRadius = 0.3f;
 
         private void Update()
         {
+            m_trail.emitting = m_shouldDance && !m_thisObj.IsHeld();
+
             if (m_shouldDance)
             {
                 Wiggle();
                 var body = GetComponent<Rigidbody>();
-                if ((transform.position.y - m_ground.transform.position.y) < 1.5f)
+                if ((transform.position.y - m_ground.transform.position.y) < 1.7f)
                 {
                     MoveAway();
                     if (Mathf.Abs(body.velocity.y) <= m_bounceFilter)
@@ -57,6 +70,11 @@ namespace con2.game
                         body.velocity = vel;
                     }
                 }
+
+                var dir = new Vector3(Mathf.Cos(m_trailHeadingAngle), 0.0f, Mathf.Sin(m_trailHeadingAngle));
+                m_trail.transform.position = transform.position + m_trailCircleRadius * dir;
+
+                m_trailHeadingAngle += Time.deltaTime * m_trailHeadingAngleMultiplier;
             }
         }
 
@@ -65,21 +83,41 @@ namespace con2.game
             m_shouldDance = shouldDance;
         }
 
+        private float m_headingAngle = 0.0f;
+        private float m_headingAngleMultiplier = 2.0f;
+
         private void MoveAway()
         {
             if (!m_thisObj.IsHeld())
             {
                 Vector3 pos = transform.position;
                 Vector3 newpos = pos;
+                var aPlayerIsInRange = false;
+
                 foreach (var player in m_players)
                 {
                     Vector3 separation = pos - player.transform.position;
 
                     if (separation.magnitude <= m_danceDistance)
                     {
+                        aPlayerIsInRange = true;
                         newpos += separation.normalized * Time.deltaTime * 3;
                     }
                 }
+
+                if (!aPlayerIsInRange)
+                {
+                    var dir = new Vector3(Mathf.Cos(m_headingAngle), 0.0f, Mathf.Sin(m_headingAngle));
+                    newpos += dir * Time.deltaTime * 1.5f;
+
+                    m_headingAngle += Time.deltaTime * m_headingAngleMultiplier;
+                }
+                else
+                {
+                    var dir = newpos - transform.position;
+                    m_headingAngle = Mathf.Atan2(newpos.y, newpos.y);
+                }
+
                 transform.position = newpos;
             }
         }
