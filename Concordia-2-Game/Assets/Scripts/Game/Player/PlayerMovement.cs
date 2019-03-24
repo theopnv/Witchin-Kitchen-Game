@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
         // If player asked for input
         if (!Mathf.Approximately(movementDirection.magnitude, 0.0f))
         {
-            m_rb.velocity += movementDirection * MovementSpeed * MovementRotationSpeed * Time.deltaTime;
+            m_rb.velocity += movementDirection * MovementSpeed * Time.deltaTime;
         }
         
         // Cap movement speed
