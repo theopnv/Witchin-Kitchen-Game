@@ -5,11 +5,11 @@ using UnityEngine.EventSystems;
 
 public class OnSelectButton : MonoBehaviour, ISelectHandler
 {
-    public new AudioSource audio;
+    public AudioSource audioSource;
 
     //Do this when the selectable UI object is selected.
     public void OnSelect(BaseEventData eventData)
     {
-        audio.Play();
+        audioSource.Play();
     }
 }

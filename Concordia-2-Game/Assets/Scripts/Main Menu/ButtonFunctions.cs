@@ -45,9 +45,9 @@ namespace con2.main_menu
                 });
 
                 var buttonSel = button.gameObject.AddComponent<OnSelectButton>();
-                buttonSel.audio = button.gameObject.AddComponent<AudioSource>();
-                buttonSel.audio.playOnAwake = false;
-                buttonSel.audio.clip = switchNoise;
+                buttonSel.audioSource = button.gameObject.AddComponent<AudioSource>();
+                buttonSel.audioSource.playOnAwake = false;
+                buttonSel.audioSource.clip = switchNoise;
             }
         }
     }
