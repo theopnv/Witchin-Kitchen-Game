@@ -7,16 +7,10 @@ public class MenuModelAnims : MonoBehaviour
 
     protected int CarryTrigger;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Anim = GetComponent<Animator>();
-
-        CarryTrigger = Animator.StringToHash("Carry");
-    }
-
     public void Carry()
     {
+        Anim = GetComponent<Animator>();
+        CarryTrigger = Animator.StringToHash("Carry");
         SetTrigger(CarryTrigger);
     }
 
