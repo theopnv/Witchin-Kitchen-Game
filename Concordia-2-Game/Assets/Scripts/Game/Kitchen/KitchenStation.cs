@@ -70,7 +70,7 @@ namespace con2.game
             m_owner = owner;
             foreach (var game in m_miniGames)
             {
-                game.Owner = m_owner;
+                game.SetOwner(m_owner);
                 game.KitchenStation = this;
             }
             OnSetOwner(m_owner);
