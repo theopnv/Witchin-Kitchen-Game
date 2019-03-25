@@ -30,7 +30,7 @@ namespace con2.game
 
         #region Mechanics
 
-        public static Ingredient m_featuredIngredient;
+        public static Ingredient m_featuredIngredient = Ingredient.NOT_AN_INGREDIENT;
         private static List<Ingredient[]> m_sharedRecipeList = new List<Ingredient[]>();
 
         //Synchronize this method because I'm suspicious of what will happen when all cauldrons call Start() ...
@@ -48,8 +48,12 @@ namespace con2.game
         private static Ingredient[] GenerateRandomRecipe(int numIngredients)
         {
             var recipe = new Ingredient[numIngredients];
-            recipe[0] = m_featuredIngredient;
-            for (var i = 1; i < numIngredients; i++)
+            var i = 0;
+            if (m_featuredIngredient != Ingredient.NOT_AN_INGREDIENT)
+            {
+                recipe[i++] = m_featuredIngredient;
+            }
+            for (; i < numIngredients; i++)
             {
                 recipe[i] = (Ingredient)Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT);
             }

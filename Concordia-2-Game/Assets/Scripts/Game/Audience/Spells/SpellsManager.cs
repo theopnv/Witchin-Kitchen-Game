@@ -5,6 +5,7 @@ using System.Linq;
 using con2.game;
 using con2.messages;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace con2.game
@@ -57,7 +58,7 @@ namespace con2.game
         void Update()
         {
             _LastSpellCasted += Time.deltaTime;
-            if (_LastSpellCasted >= _SpellFrequency)
+            if (_LastSpellCasted >= _SpellFrequency && SceneManager.GetActiveScene().name == SceneNames.Game)
             {
                 LaunchSpellRequest(-1); // Send -1 as playerId if no player completed a potion
             }

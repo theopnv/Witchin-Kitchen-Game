@@ -32,10 +32,9 @@ namespace con2.game
             m_audienceInteractionManager.OnReceivedIngredientPollResults -= OnReceivedIngredientPollResults;
         }
 
-        private void OnReceivedIngredientPollResults(IngredientPoll igPoll)
+        private void OnReceivedIngredientPollResults(IngredientPoll poll)
         {
-            GlobalRecipeList.m_featuredIngredient =
-                (Ingredient)igPoll.ingredients.OrderBy(i => i.votes).First().id;
+            GlobalRecipeList.m_featuredIngredient = (game.Ingredient)poll.ingredients.OrderByDescending(i => i.votes).First().id;
         }
 
         protected override void NextRecipe()

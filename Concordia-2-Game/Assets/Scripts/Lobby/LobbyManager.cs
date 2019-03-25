@@ -38,6 +38,7 @@ namespace con2.lobby
             _AudienceInteractionManager.OnGameUpdated += OnGameUpdated;
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
             _AudienceInteractionManager.OnReceivedMessage += OnReceivedMessage;
+            _AudienceInteractionManager.OnReceivedIngredientPollResults += OnReceivedIngredientPollResults;
 
             var hostAddress = PlayerPrefs.GetString(PlayerPrefsKeys.HOST_ADDRESS) + SocketInfo.SUFFIX_ADDRESS;
             Debug.Log("Host address is: " + hostAddress);
@@ -119,7 +120,7 @@ namespace con2.lobby
                 switch (content.code)
                 {
                     case Code.register_players_success:
-                        StartCoroutine(ExitLobby());
+                        SceneManager.LoadSceneAsync(SceneNames.Game);
                         break;
                     default: break;
                 }
@@ -188,12 +189,12 @@ namespace con2.lobby
             _LoadingPanel.SetActive(true);
             _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
             _AudienceInteractionManager?.SendPlayerCharacteristics(Ext.ToList(PlayersInstances.Values));
+            _AudienceInteractionManager?.SendStopIngredientPoll();
         }
 
-        private IEnumerator ExitLobby()
+        private void OnReceivedIngredientPollResults(IngredientPoll poll)
         {
-            yield return new WaitForSeconds(2f);
-            SceneManager.LoadSceneAsync(SceneNames.Game);
+            GlobalRecipeList.m_featuredIngredient = (game.Ingredient)poll.ingredients.OrderByDescending(i => i.votes).First().id;
         }
 
         #region Controllers
