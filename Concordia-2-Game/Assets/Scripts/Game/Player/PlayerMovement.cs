@@ -57,10 +57,12 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
     {
         movementDirection.y = 0.0f;
 
-        if (movementDirection.sqrMagnitude > 1)
+        if (movementDirection.magnitude > 1f)
         {
             movementDirection.Normalize();
         }
+        
+        var slowFactor = movementDirection.magnitude;
 
         movementDirection *= MovementSpeed;
 
@@ -69,7 +71,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
         if(m_movementIsInverted)
         {
-            movementDirection *= -1;
+            movementDirection *= -1f;
         }
 
         // If player asked for input
@@ -79,7 +81,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
         }
         
         // Cap movement speed
-        var maxVel = MaxMovementSpeed * (1.0f + Mathf.Clamp01(1.0f - m_stun.getMovementModifier() * 200.0f) * 2.0f);
+        var maxVel = MaxMovementSpeed * (slowFactor + Mathf.Clamp01(1.0f - m_stun.getMovementModifier() * 200.0f) * 2.0f);
         if (m_rb.velocity.magnitude > maxVel)
         {
             m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, maxVel);
