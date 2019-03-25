@@ -13,7 +13,7 @@ using Ingredient = con2.game.Ingredient;
 namespace con2.lobby
 {
 
-    public class LobbyManager : AMainManager, IInputConsumer
+    public class LobbyManager : AMainManager
     {
         #region Private Variables
 
@@ -245,7 +245,8 @@ namespace con2.lobby
             var inputConsumers = new List<IInputConsumer>();
 
             // Misc.
-            inputConsumers.Add(this);
+            var pmi = GetComponent<PauseMenuInstantiator>();
+            inputConsumers.Add(pmi);
 
             // Fight
             var player = PlayersInstances[playerIndex];
@@ -266,17 +267,6 @@ namespace con2.lobby
             inputConsumers.Add(player.GetComponent<PlayerInputController>());
 
             return inputConsumers;
-        }
-
-        public bool ConsumeInput(GamepadAction input)
-        {
-            if (input.GetActionID() == GamepadAction.ID.START)
-            {
-                StartGameLoad();
-                return true;
-            }
-
-            return false;
         }
 
         #endregion
