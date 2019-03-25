@@ -29,11 +29,16 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     private AudioSource audioSource;
 
+    private AnimControl m_anim;
+    private bool m_running = false;
+    private float m_runSpeed = 1.0f;
+
     void Start()
     {
         m_stun = GetComponent<FightStun>();
         m_rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        m_anim = GetComponentInChildren<AnimControl>();
     }
 
     public bool ConsumeInput(GamepadAction input)
@@ -51,6 +56,12 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
             return true;
         }
         return false;
+    }
+
+    private void Update()
+    {
+        m_anim.SetRunning(m_running);
+        m_anim.SetRunSpeed(m_runSpeed);
     }
 
     private void FixedUpdate()
@@ -83,6 +94,9 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
                 m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, MaxMovementSpeed);
             }
         }
+
+        m_running = movementDirection.magnitude > 0.0f;
+        m_runSpeed = Mathf.Lerp(0.5f, 1.0f, m_rb.velocity.magnitude / MaxMovementSpeed);
 
         // Gravity
         m_rb.AddForce(Vector3.down * Gravity, ForceMode.Acceleration);
