@@ -8,6 +8,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using WebSocketSharp;
+using Ingredient = con2.game.Ingredient;
 
 namespace con2.lobby
 {
@@ -141,7 +142,16 @@ namespace con2.lobby
             {
                 ingredientB = Random.Range(0, (int) game.Ingredient.NOT_AN_INGREDIENT);
             } while (ingredientB == ingredientA);
-            _AudienceInteractionManager.SendStartIngredientPoll(ingredientA, ingredientB);
+
+            StartCoroutine(WaitBeforeSendingBecauseIfNotSometimesTheServerHasntMadeTheRoom(ingredientA, ingredientB));
+        }
+
+        private IEnumerator WaitBeforeSendingBecauseIfNotSometimesTheServerHasntMadeTheRoom(int a, int b)
+        {
+            // This method name is way too long but it's 2:30am and at least it's explicit
+            yield return new WaitForSeconds(1);
+            // I'm not proud of this function though
+            _AudienceInteractionManager.SendStartIngredientPoll(a, b);
         }
 
         private void SetInstructionText()
