@@ -56,6 +56,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
         floor.material = m_frozenFloor;
 
         m_freeze.PlayFreeze();
+        PlayerMovement.MovementDirectionLag = 0.965f;
 
         yield return new WaitForSeconds(m_freezingRainDuration);
 
@@ -84,6 +85,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
         floor.material = m_normalFloor;
 
         m_freeze.PlayThaw();
+        PlayerMovement.MovementDirectionLag = 0.0f;
     }
 
     public override Events.EventID GetEventID()

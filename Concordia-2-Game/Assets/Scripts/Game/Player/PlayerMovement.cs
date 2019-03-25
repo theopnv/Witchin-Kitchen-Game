@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 {
+    static public float MovementDirectionLag = 0.0f;
+
     [Range(0.0f, 300.0f)]
     public float MovementSpeed;
 
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
     public float FacingRotationSpeed;
 
     private Vector3 movementDirection = new Vector3();
+    private Vector3 prevMovementDirection = new Vector3();
     FightStun m_stun;
     Rigidbody m_rb;
 
@@ -74,6 +77,10 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
             movementDirection *= -1f;
         }
 
+        var frozenDir = Vector3.Slerp(prevMovementDirection.normalized, movementDirection.normalized, 1.0f - MovementDirectionLag);
+        var frozenLen = Mathf.Lerp(prevMovementDirection.magnitude, movementDirection.magnitude, 1.0f - MovementDirectionLag);
+        movementDirection = frozenDir.normalized * frozenLen;
+
         // If player asked for input
         if (!Mathf.Approximately(movementDirection.magnitude, 0.0f))
         {
@@ -105,6 +112,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
             transform.rotation = facing;
         }
 
+        prevMovementDirection = movementDirection;
         movementDirection.x = 0.0f;
         movementDirection.y = 0.0f;
         movementDirection.z = 0.0f;
