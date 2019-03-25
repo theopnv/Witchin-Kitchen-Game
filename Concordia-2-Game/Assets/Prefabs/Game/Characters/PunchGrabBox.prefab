@@ -62,7 +62,6 @@ MonoBehaviour:
   m_strength: 10
   m_stunTime: 1.33
   m_immuneTargets: []
-  m_didStun: 0
   ShakeIntensity: 0
   m_punchUpwardsForce: 5
   m_reloadSeconds: 2
@@ -96,10 +95,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 37b5cb0792137964b8fff43b33095964, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 42ccc3628ad8966458c3a49edc090595, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.3
+  m_Pitch: 0.5
   Loop: 0
   Mute: 0
   Spatialize: 0
