@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
     {
         m_anim.SetRunning(m_running);
         m_anim.SetRunSpeed(m_runSpeed);
+        m_anim.SetDizzy(m_stun.getMovementModifier() < 0.5f || (!m_running && m_stun.getMovementModifier() < 0.99f));
     }
 
     private void FixedUpdate()
