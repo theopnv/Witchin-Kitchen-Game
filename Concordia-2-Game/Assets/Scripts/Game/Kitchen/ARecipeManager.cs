@@ -17,6 +17,8 @@ namespace con2.game
         protected OnCompletePotion m_potionSpawner;
         protected AudienceInteractionManager m_audienceInteractionManager;
 
+        [HideInInspector] private ScoringFeedback m_scoringFeedback;
+
         public bool m_TestComplete = false;
 
         protected virtual void Awake()
@@ -25,6 +27,7 @@ namespace con2.game
             m_thisStation = GetComponent<KitchenStation>();
             m_itemSpawner = managers.GetComponentInChildren<ItemSpawner>();
             m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            m_scoringFeedback = GetComponentInChildren<ScoringFeedback>();
         }
 
         protected virtual void Start()
@@ -68,7 +71,10 @@ namespace con2.game
             return false;
         }
 
-        public abstract void ProcessIngredient(Ingredient ingredient);
+        public virtual void ProcessIngredient(Ingredient ingredient)
+        {
+            m_scoringFeedback.ActivateProcessedIngredient();
+        }
 
         // Update is called once per frame
         protected virtual void Update()
@@ -81,6 +87,7 @@ namespace con2.game
             if (m_currentPotionRecipe.IsComplete())
             {
                 //You did it!
+                m_scoringFeedback.ActivateScored();
                 m_potionSpawner.OnPotionComplete(this);
                 NextRecipe();
             }
