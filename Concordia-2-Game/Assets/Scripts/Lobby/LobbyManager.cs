@@ -101,6 +101,7 @@ namespace con2.lobby
                     SetInstructionText();
                 }
                 _MessageFeedManager.AddMessageToFeed("Connected to server", MessageFeedManager.MessageType.success);
+                PrepareIngredientPoll();
             }
             else
             {
@@ -130,6 +131,17 @@ namespace con2.lobby
         }
 
         #endregion
+
+        private void PrepareIngredientPoll()
+        {
+            var ingredientA = Random.Range(0, (int)game.Ingredient.NOT_AN_INGREDIENT);
+            int ingredientB;
+            do
+            {
+                ingredientB = Random.Range(0, (int) game.Ingredient.NOT_AN_INGREDIENT);
+            } while (ingredientB == ingredientA);
+            _AudienceInteractionManager.SendStartIngredientPoll(ingredientA, ingredientB);
+        }
 
         private void SetInstructionText()
         {

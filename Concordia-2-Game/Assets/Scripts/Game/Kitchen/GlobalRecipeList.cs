@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +30,7 @@ namespace con2.game
 
         #region Mechanics
 
+        public static Ingredient m_featuredIngredient;
         private static List<Ingredient[]> m_sharedRecipeList = new List<Ingredient[]>();
 
         //Synchronize this method because I'm suspicious of what will happen when all cauldrons call Start() ...
@@ -45,14 +47,17 @@ namespace con2.game
 
         private static Ingredient[] GenerateRandomRecipe(int numIngredients)
         {
-            Ingredient[] recipe = new Ingredient[numIngredients];
-            for (int i = 0; i < numIngredients; i++)
+            var recipe = new Ingredient[numIngredients];
+            recipe[0] = m_featuredIngredient;
+            for (var i = 1; i < numIngredients; i++)
             {
                 recipe[i] = (Ingredient)Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT);
             }
+            var rnd = new System.Random();
+            recipe = recipe.OrderBy(x => rnd.Next()).ToArray();
             return recipe;
         }
 
-        #endregion
+       #endregion
     }
 }

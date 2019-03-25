@@ -98,7 +98,7 @@ namespace con2.lobby
         {
             ++_CurrentInstructionIdx;
             _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
-            _ItemSpawner.SpawnableItems[Ingredient.MUSHROOM].AskToInstantiate();
+            _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].AskToInstantiate();
             yield return null;
         }
 
