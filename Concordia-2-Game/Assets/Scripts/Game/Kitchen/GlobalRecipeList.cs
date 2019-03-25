@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -39,7 +40,7 @@ namespace con2.game
         {
             if (currentRecipeIndex >= m_sharedRecipeList.Count)
             {
-                m_sharedRecipeList.Add(GenerateRandomRecipe(Random.Range(2,4)));
+                m_sharedRecipeList.Add(GenerateRandomRecipe(UnityEngine.Random.Range(2,4)));
             }
 
             return m_sharedRecipeList[currentRecipeIndex];
@@ -55,7 +56,15 @@ namespace con2.game
             }
             for (; i < numIngredients; i++)
             {
-                recipe[i] = (Ingredient)Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT);
+                var ing = Ingredient.NOT_AN_INGREDIENT;
+                int pos = 0;
+                int tries = 0;
+                while (pos > -1)    //no duplicate ingredients in recipes
+                {
+                    ing = (Ingredient)UnityEngine.Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT);
+                    pos = Array.IndexOf(recipe, ing);
+                }
+                recipe[i] = ing;
             }
             var rnd = new System.Random();
             recipe = recipe.OrderBy(x => rnd.Next()).ToArray();

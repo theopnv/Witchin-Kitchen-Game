@@ -26,19 +26,29 @@ namespace con2.game
 
         public void ActivateSpellMode(messages.Player targetedPlayer)
         {
-            m_lightningThing.EndObject = m_mainManager.GetPlayerById(targetedPlayer.id).gameObject;
-            StartCoroutine(TriggerLightning());
+            var player = m_mainManager.GetPlayerById(targetedPlayer.id).gameObject;
+            m_lightningThing.EndObject = player;
+            var light = player.GetComponentInChildren<Light>();
+            StartCoroutine(TriggerLightning(light));
         }
 
-        private IEnumerator TriggerLightning()
+        private IEnumerator TriggerLightning(Light strikeLight)
         {
             int i = m_numOfStrikes;
             while (i > 0)
             {
                 i--;
                 m_lightningThing.Trigger();
+                StartCoroutine(FlickerLight(strikeLight));
                 yield return new WaitForSeconds(m_timeBetweenStrikes);
             }
+        }
+
+        private IEnumerator FlickerLight(Light strikeLight)
+        {
+            strikeLight.enabled = true;
+            yield return new WaitForSeconds(m_timeBetweenStrikes / 2.0f);
+            strikeLight.enabled = false;
         }
     }
 }

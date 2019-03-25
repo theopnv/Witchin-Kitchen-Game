@@ -7,6 +7,7 @@ namespace con2.game
     public class ExplosiveItem : AHitAllInRange
     {
         public CamShakeMgr.Intensity ShakeIntensity = CamShakeMgr.Intensity.TINY;
+        private AudioSource audioSource;
 
         private bool m_explodeOnContact = false;
         [HideInInspector] public GameObject m_launcher;
@@ -40,7 +41,7 @@ namespace con2.game
 
         protected override void OnStart()
         {
-            
+            audioSource = GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
@@ -51,6 +52,8 @@ namespace con2.game
             {
                 m_exploded = true;
                 Hit();
+
+                audioSource.Play();
 
                 if (m_didStun)
                     ShakeIntensity = CamShakeMgr.Intensity.SMALL;

@@ -8,6 +8,8 @@ namespace con2.game
     {
         public CamShakeMgr.Intensity ShakeIntensity = CamShakeMgr.Intensity.TINY;
 
+        private AudioSource audioSource;
+
         public float m_punchUpwardsForce = 4.0f;
 
         private bool m_canPunch = true;
@@ -17,6 +19,7 @@ namespace con2.game
         private Color m_startColor;
         private Color m_noPunchColor = new Color(1.0f, 1.0f, 1.0f);
         private MeshRenderer m_renderer;
+        private AnimControl m_anim;
 
         protected override void OnStart()
         {
@@ -25,6 +28,10 @@ namespace con2.game
             m_startColor = GetComponent<MeshRenderer>().material.color;
             m_renderer = GetComponent<MeshRenderer>();
             */
+
+            audioSource = GetComponent<AudioSource>();
+
+            m_anim = transform.parent.GetComponentInChildren<AnimControl>();
         }
 
         void Update()
@@ -45,7 +52,10 @@ namespace con2.game
 
             if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
             {
+                m_anim.Slap();
+
                 Hit();
+                audioSource.Play();
                 if (m_didStun)
                     CamShakeMgr.Get().Shake(ShakeIntensity);
                 StartCoroutine(PunchCooldown());
