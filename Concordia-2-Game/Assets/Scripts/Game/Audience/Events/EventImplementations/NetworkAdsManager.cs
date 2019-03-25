@@ -107,8 +107,7 @@ namespace con2.game
             _combo4FireBladesDown.gameObject.SetActive(false);
             _combo4ApronUp.gameObject.SetActive(false);
 
-            //switch (SuiteNumbers[_index])
-            switch (3)
+            switch (SuiteNumbers[_index])
             {
                 case 0:
                     _combo1FireBlades.gameObject.SetActive(true);
