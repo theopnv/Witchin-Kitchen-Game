@@ -12,6 +12,7 @@ namespace con2.game
         public float m_timeBetweenStrikes = 0.1f;
         public int m_numOfStrikes = 3;
         private AMainManager m_mainManager;
+        [SerializeField] private AudioSource audioSource;
 
         void Start()
         {
@@ -28,6 +29,7 @@ namespace con2.game
         {
             var player = m_mainManager.GetPlayerById(targetedPlayer.id).gameObject;
             m_lightningThing.EndObject = player;
+            audioSource.Play();
             var light = player.GetComponentInChildren<Light>();
             StartCoroutine(TriggerLightning(light));
         }

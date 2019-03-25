@@ -39,7 +39,7 @@ namespace con2.game
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
 
             // Comment if you want to start the game scene right from the start
-            //StartCoroutine(ExitLoadingScreen());
+            StartCoroutine(ExitLoadingScreen());
             // End
         }
 
@@ -59,6 +59,8 @@ namespace con2.game
 
         private IEnumerator ExitLoadingScreen()
         {
+            AudioListener.volume = 0.0f;
+
             for (var i = 0; i < GameInfo.PlayerNumber; i++)
             {
                 GamepadMgr.Pad(i).BlockGamepad(true);
@@ -68,6 +70,7 @@ namespace con2.game
 
             yield return new WaitForSeconds(LOADING_TIME);
             _LoadingPanel.SetActive(false);
+            AudioListener.volume = 1f;
             yield return StartGame();
         }
 
@@ -176,6 +179,12 @@ namespace con2.game
 
         private IEnumerator StartGame()
         {
+            var audioSource = GetComponent<AudioSource>();
+            if (audioSource)
+            {
+                audioSource.PlayDelayed(0.1f); //Start trumpet
+            }
+
             m_countdown = true;
             var fontSize = m_clock.fontSize;
             m_clock.fontSize = 200;
@@ -191,6 +200,9 @@ namespace con2.game
             {
                 GamepadMgr.Pad(i).BlockGamepad(false);
             }
+
+            var gameMusic = GameObject.Find("ArenaMusic").GetComponent<AudioSource>();
+            gameMusic.Play();
 
             m_countdown = false;
         }
