@@ -42,6 +42,7 @@ namespace con2.game
 
         public override void ProcessIngredient(Ingredient ingredient)
         {
+            base.ProcessIngredient(ingredient);
             m_currentPotionRecipe.ProcessIngredient(ingredient);
         }
     }
