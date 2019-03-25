@@ -8,6 +8,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using WebSocketSharp;
+using Ingredient = con2.game.Ingredient;
 
 namespace con2.lobby
 {
@@ -38,6 +39,7 @@ namespace con2.lobby
             _AudienceInteractionManager.OnGameUpdated += OnGameUpdated;
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
             _AudienceInteractionManager.OnReceivedMessage += OnReceivedMessage;
+            _AudienceInteractionManager.OnReceivedIngredientPollResults += OnReceivedIngredientPollResults;
 
             var hostAddress = PlayerPrefs.GetString(PlayerPrefsKeys.HOST_ADDRESS) + SocketInfo.SUFFIX_ADDRESS;
             Debug.Log("Host address is: " + hostAddress);
@@ -101,6 +103,7 @@ namespace con2.lobby
                     SetInstructionText();
                 }
                 _MessageFeedManager.AddMessageToFeed("Connected to server", MessageFeedManager.MessageType.success);
+                PrepareIngredientPoll();
             }
             else
             {
@@ -118,7 +121,7 @@ namespace con2.lobby
                 switch (content.code)
                 {
                     case Code.register_players_success:
-                        StartCoroutine(ExitLobby());
+                        SceneManager.LoadSceneAsync(SceneNames.Game);
                         break;
                     default: break;
                 }
@@ -130,6 +133,26 @@ namespace con2.lobby
         }
 
         #endregion
+
+        private void PrepareIngredientPoll()
+        {
+            var ingredientA = Random.Range(0, (int)game.Ingredient.NOT_AN_INGREDIENT);
+            int ingredientB;
+            do
+            {
+                ingredientB = Random.Range(0, (int) game.Ingredient.NOT_AN_INGREDIENT);
+            } while (ingredientB == ingredientA);
+
+            StartCoroutine(WaitBeforeSendingBecauseIfNotSometimesTheServerHasntMadeTheRoom(ingredientA, ingredientB));
+        }
+
+        private IEnumerator WaitBeforeSendingBecauseIfNotSometimesTheServerHasntMadeTheRoom(int a, int b)
+        {
+            // This method name is way too long but it's 2:30am and at least it's explicit
+            yield return new WaitForSeconds(1);
+            // I'm not proud of this function though
+            _AudienceInteractionManager.SendStartIngredientPoll(a, b);
+        }
 
         private void SetInstructionText()
         {
@@ -176,12 +199,12 @@ namespace con2.lobby
             _LoadingPanel.SetActive(true);
             _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
             _AudienceInteractionManager?.SendPlayerCharacteristics(Ext.ToList(PlayersInstances.Values));
+            _AudienceInteractionManager?.SendStopIngredientPoll();
         }
 
-        private IEnumerator ExitLobby()
+        private void OnReceivedIngredientPollResults(IngredientPoll poll)
         {
-            yield return new WaitForSeconds(2f);
-            SceneManager.LoadSceneAsync(SceneNames.Game);
+            GlobalRecipeList.m_featuredIngredient = (game.Ingredient)poll.ingredients.OrderByDescending(i => i.votes).First().id;
         }
 
         #region Controllers

@@ -26,6 +26,8 @@ namespace con2.messages
         public const string LAUNCH_SPELL_CAST = "launchSpellCast";
         public const string SEND_GAME_STATE = "updateGameState";
         public const string GAME_OUTCOME = "gameOutcome";
+        public const string START_INGREDIENT_POLL = "ingredientPoll";
+        public const string STOP_INGREDIENT_POLL = "stopIngredientPoll";
 
         // Received
         public const string MESSAGE = "message";
@@ -33,6 +35,8 @@ namespace con2.messages
         public const string GAME_UPDATE = "gameUpdate";
         public const string RECEIVE_VOTES = "event";
         public const string SPELL_CAST_REQUEST = "spell";
+        public const string INGREDIENT_POLL_RESULTS = "ingredientPollResults";
+
     }
 
     public enum Code
@@ -125,6 +129,17 @@ namespace con2.messages
     public class EndGame
     {
         public bool doRematch;
+    }
+
+    public class IngredientPoll
+    {
+        public List<Ingredient> ingredients;
+    }
+
+    public class Ingredient
+    {
+        public int id;
+        public int votes;
     }
 
     public static class SocketInfo

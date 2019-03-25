@@ -20,7 +20,7 @@ namespace con2.game
 
         private MessageFeedManager _MessageFeedManager;
 
-        private AudioSource audioSource;
+        [SerializeField] private AudioSource _AudioSource;
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace con2.game
             SetUp();
             _MessageFeedManager = FindObjectOfType<MessageFeedManager>();
 
-            audioSource = GetComponent<AudioSource>();
+            _AudioSource = GetComponent<AudioSource>();
         }
 
         private void OnDisable()
@@ -126,7 +126,7 @@ namespace con2.game
                       " was voted");
             var key = (Events.EventID)chosenEvent.id;
 
-            audioSource.Play();
+            _AudioSource?.Play();
 
             if (_EventSubscribers.ContainsKey(key))
             {
