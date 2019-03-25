@@ -69,11 +69,8 @@ namespace con2
             }
             else
             {
-                if (Math.Abs(movementDirection) > 0.001 || m_actionID == ID.RIGHT_TRIGGER || m_actionID == ID.LEFT_TRIGGER)
-                {
-                    m_axisValue = movementDirection;
-                    ConsumeInput();
-                }
+                m_axisValue = movementDirection;
+                ConsumeInput();
             }
         }
 

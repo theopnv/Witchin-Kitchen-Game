@@ -67,27 +67,28 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     private void FixedUpdate()
     {
-        movementDirection.y = 0.0f;
+        var moveD = movementDirection;
+        moveD.y = 0.0f;
 
-        if (movementDirection.sqrMagnitude > 1)
+        if (moveD.sqrMagnitude > 1)
         {
-            movementDirection.Normalize();
+            moveD.Normalize();
         }
 
-        movementDirection *= MovementSpeed;
+        moveD *= MovementSpeed;
 
         // Apply stun factor
-        movementDirection *= m_stun.getMovementModifier();
+        moveD *= m_stun.getMovementModifier();
 
         if(m_movementIsInverted)
         {
-            movementDirection *= -1;
+            moveD *= -1;
         }
 
         // If player asked for input
-        if (!Mathf.Approximately(movementDirection.magnitude, 0.0f))
+        if (!Mathf.Approximately(moveD.magnitude, 0.0f))
         {
-            m_rb.AddForce(movementDirection * MovementSpeed * MovementRotationSpeed * Time.deltaTime, ForceMode.Acceleration);
+            m_rb.AddForce(moveD * MovementSpeed * MovementRotationSpeed * Time.deltaTime, ForceMode.Acceleration);
 
             // Cap movement speed
             if (m_rb.velocity.magnitude > MaxMovementSpeed)
@@ -96,17 +97,17 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
             }
         }
 
-        m_running = movementDirection.magnitude > 0.0f;
+        m_running = movementDirection.magnitude > 0.1f;
         m_runSpeed = Mathf.Lerp(0.5f, 1.0f, m_rb.velocity.magnitude / MaxMovementSpeed);
 
         // Gravity
         m_rb.AddForce(Vector3.down * Gravity, ForceMode.Acceleration);
 
         // Smooth rotation according to velocity
-        bool nonZeroInput = movementDirection.magnitude > 0.1f;
+        bool nonZeroInput = moveD.magnitude > 0.1f;
         if (nonZeroInput)
         {
-            Vector3 targetRotation = movementDirection.normalized;
+            Vector3 targetRotation = moveD.normalized;
 
             Quaternion facing = new Quaternion();
             facing.SetLookRotation(targetRotation);
@@ -114,10 +115,6 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
             transform.rotation = facing;
         }
-
-        movementDirection.x = 0.0f;
-        movementDirection.y = 0.0f;
-        movementDirection.z = 0.0f;
     }
 
     public void Punch(Vector3 knockVelocity, float stunTime)
