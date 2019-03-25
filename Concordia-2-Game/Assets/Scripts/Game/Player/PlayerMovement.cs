@@ -82,6 +82,8 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
         
         // Cap movement speed
         var maxVel = MaxMovementSpeed * (slowFactor + Mathf.Clamp01(1.0f - m_stun.getMovementModifier() * 200.0f) * 2.0f);
+        if (m_stun.getMovementModifier() == 1.0f)
+            maxVel = MaxMovementSpeed;
         if (m_rb.velocity.magnitude > maxVel)
         {
             m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, maxVel);
