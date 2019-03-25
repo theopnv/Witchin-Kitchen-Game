@@ -16,6 +16,12 @@ namespace con2
 
         public Texture[] PlayerColorTextures = new Texture[4];
 
+        public Texture[] PlayerNormalTextures = new Texture[4];
+
+        public Texture[] PlayerOcclusionTextures = new Texture[4];
+
+        public Texture[] PlayerRoughnessTextures = new Texture[4];
+
         public Color[] PlayerMeshColors = new Color[4];
 
         public Color[] CauldronLiquidColors = new Color[4];
