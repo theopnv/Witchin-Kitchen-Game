@@ -886,6 +886,22 @@ InputManager:
     axis: 9
     joyNum: 1
   - serializedVersion: 3
+    m_Name: RightTrigger P1
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: r
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.01
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
     m_Name: RightTrigger P2
     descriptiveName: 
     descriptiveNegativeName: 
