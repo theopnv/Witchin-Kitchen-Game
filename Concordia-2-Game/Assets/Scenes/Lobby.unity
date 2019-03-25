@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17526956, g: 0.21928315, b: 0.30159438, a: 1}
+  m_IndirectSpecularColor: {r: 0.17526998, g: 0.21928388, b: 0.3015955, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2162,6 +2162,7 @@ GameObject:
   - component: {fileID: 1273105655}
   - component: {fileID: 1273105656}
   - component: {fileID: 1273105657}
+  - component: {fileID: 1273105658}
   m_Layer: 0
   m_Name: LobbyManager
   m_TagString: Untagged
@@ -2307,6 +2308,20 @@ MonoBehaviour:
   _GlobalMessagePrefab: {fileID: 4345727725033474270, guid: d40a536ec69f9044388da84d94a618d7,
     type: 3}
   TimeBeforeFade: 15
+--- !u!114 &1273105658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273105649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da4e9a9bb5932c4daa8b44c88d15de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PauseUIPrefab: {fileID: 8345916005018547158, guid: b7faa1a229bf8524f81e23af35ae510a,
+    type: 3}
 --- !u!1 &1289698460
 GameObject:
   m_ObjectHideFlags: 0
