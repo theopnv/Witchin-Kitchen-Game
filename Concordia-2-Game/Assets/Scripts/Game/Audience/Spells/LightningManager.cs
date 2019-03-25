@@ -12,13 +12,12 @@ namespace con2.game
         public float m_timeBetweenStrikes = 0.1f;
         public int m_numOfStrikes = 3;
         private AMainManager m_mainManager;
-        private AudioSource audioSource;
+        [SerializeField] private AudioSource audioSource;
 
         void Start()
         {
             m_lightningThing = GetComponent<LightningBoltScript>();
             m_mainManager = FindObjectOfType<AMainManager>();
-            audioSource = GetComponent<AudioSource>();
 
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
             var eventManager = managers.GetComponentInChildren<SpellsManager>();
