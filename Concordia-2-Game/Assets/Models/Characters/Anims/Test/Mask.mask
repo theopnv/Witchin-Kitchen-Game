@@ -22,25 +22,25 @@ AvatarMask:
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M
     m_Weight: 1
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L/WitchRig_Published:Knee_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L/WitchRig_Published:Knee_L/WitchRig_Published:Ankle_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L/WitchRig_Published:Knee_L/WitchRig_Published:Ankle_L/WitchRig_Published:Toes_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_L/WitchRig_Published:Knee_L/WitchRig_Published:Ankle_L/WitchRig_Published:Toes_L/WitchRig_Published:ToesEnd_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R/WitchRig_Published:Knee_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R/WitchRig_Published:Knee_R/WitchRig_Published:Ankle_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R/WitchRig_Published:Knee_R/WitchRig_Published:Ankle_R/WitchRig_Published:Toes_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Hip_R/WitchRig_Published:Knee_R/WitchRig_Published:Ankle_R/WitchRig_Published:Toes_R/WitchRig_Published:ToesEnd_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M
     m_Weight: 1
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:DeformationSystem/WitchRig_Published:Root_M/WitchRig_Published:Spine1_M/WitchRig_Published:Chest_M
@@ -108,17 +108,17 @@ AvatarMask:
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root
     m_Weight: 1
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee/WitchRig_Published:Ankle
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee/WitchRig_Published:Ankle/WitchRig_Published:Heel
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee/WitchRig_Published:Ankle/WitchRig_Published:Toes
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Hip/WitchRig_Published:Knee/WitchRig_Published:Ankle/WitchRig_Published:Toes/WitchRig_Published:ToesEnd
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1
     m_Weight: 1
   - m_Path: WitchRig_Published:Group/WitchRig_Published:Main/WitchRig_Published:FitSkeleton/WitchRig_Published:Root/WitchRig_Published:Spine1/WitchRig_Published:Chest
