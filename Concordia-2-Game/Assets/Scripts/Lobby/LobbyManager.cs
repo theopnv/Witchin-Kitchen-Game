@@ -270,9 +270,9 @@ namespace con2.lobby
 
         public bool ConsumeInput(GamepadAction input)
         {
-            if (input.GetActionID() == GamepadAction.ID.START)
+            if (Application.isEditor && input.GetActionID() == GamepadAction.ID.START)
             {
-                StartGameLoad();
+                StartCoroutine(StartGame());
                 return true;
             }
 
