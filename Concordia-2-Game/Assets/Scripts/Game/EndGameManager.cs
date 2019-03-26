@@ -78,7 +78,6 @@ namespace con2.game
             int rank = 0;
             int count = 0;
             bool allCharactersHandled = false;
-            Debug.Log(m_finalRankings.Count + " ranks");
             for (int i = 0; i < avatarContainer.childCount; i++)
             {
                 var a = avatarContainer.GetChild(i);
@@ -116,11 +115,9 @@ namespace con2.game
 
         private IEnumerator BackToMainMenuAfterShortPause()
         {
-            yield return new WaitForSeconds(0.5f);
             m_winnerText.enabled = true;
-            yield return new WaitForSeconds(0.5f);
             m_rematchText.enabled = true;
-            for (var i = REMATCH_TIMER; i >= 0; i--)
+            for (var i = REMATCH_TIMER; i > 0; i--)
             {
                 m_rematchText.text = "Rematch?\n" + i;
                 yield return new WaitForSeconds(1);
