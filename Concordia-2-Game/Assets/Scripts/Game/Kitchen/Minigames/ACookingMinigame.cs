@@ -13,6 +13,8 @@ namespace con2.game
         protected Image m_promptBackground;
         [SerializeField]
         protected GameObject m_prompt;
+        [SerializeField]
+        protected MoonBeam m_moonBeam;
 
         protected AMainManager m_mainManager;
 
@@ -89,6 +91,8 @@ namespace con2.game
             m_promptBackground.enabled = true;
             m_prompt.SetActive(true);
 
+            m_moonBeam.Show();
+
             m_started = true;
         }
 
@@ -99,6 +103,8 @@ namespace con2.game
             //Hide prompt
             m_promptBackground.enabled = false;
             m_prompt.SetActive(false);
+
+            m_moonBeam.Hide();
 
             m_started = false;
 
