@@ -12,10 +12,8 @@ namespace con2.game
     {
         public ID m_inputToMash = ID.INTERACT;
         private int m_numberOfPressesRequired;
-        public float m_timeToLoseProgress = 1.0f;
 
         private int m_currentNumberOfPresses = 0;
-        private float m_lastMashTime = 0;
 
         private SpoonMash m_masher;
         private MashAGame m_mashUI;
@@ -39,7 +37,6 @@ namespace con2.game
         override public void StartMinigameSpecifics()
         {
             m_currentNumberOfPresses = 0;
-            m_lastMashTime = 0;
 
             m_masher = GetComponentInChildren<SpoonMash>();
             m_masher.StartMash();
@@ -51,7 +48,6 @@ namespace con2.game
         {
             if (input.GetActionID().Equals(m_inputToMash))
             {
-                m_lastMashTime = Time.time;
                 m_currentNumberOfPresses++;
                 m_masher.Mash();
                 m_mashUI.MakingProgress();
@@ -66,14 +62,6 @@ namespace con2.game
 
         override public void UpdateMinigameSpecifics()
         {
-            if (m_currentNumberOfPresses > 0)
-            {
-                if (Time.time - m_lastMashTime > m_timeToLoseProgress)
-                {
-                    m_lastMashTime = Time.time;
-                    m_currentNumberOfPresses--;
-                }
-            }
         }
 
         override public void EndMinigameSpecifics()
