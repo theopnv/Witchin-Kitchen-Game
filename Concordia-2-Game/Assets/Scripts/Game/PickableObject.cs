@@ -13,6 +13,8 @@ namespace con2.game
         public float m_lerpSpeedz = 10.0f;
 
         private float m_dropTimestamp;
+        private bool m_thrownIntentionally = false;
+        private PlayerManager m_lastParentPlayer;
 
         protected AudioSource audioSource;
         public AudioClip slapSound;
@@ -65,8 +67,9 @@ namespace con2.game
             {
                 m_isHeld = true;
 
-                // Reset rotation
+                // Set parent
                 transform.parent = newParent;
+                m_lastParentPlayer = newParent.gameObject.GetComponentInParent<PlayerManager>();
 
                 if (m_rb == null)
                 {
@@ -146,6 +149,19 @@ namespace con2.game
         public bool IsHeld()
         {
             return m_isHeld;
+        }
+
+        public void SetThrownIntentionally(bool onPurpose)
+        {
+            m_thrownIntentionally = onPurpose;
+        }
+
+        public PlayerManager ThrownIntentionallyBy()
+        {
+            if (m_thrownIntentionally && Time.time - m_dropTimestamp < 2.0f)    //Intentional throw expires after 2 sec, at this point whatever happens probably wasn't on purpose
+                return m_lastParentPlayer;
+            else
+                return null;
         }
 
         public float GetMaxSpeedFractionWhenHolding()

@@ -44,7 +44,7 @@ namespace con2.game
             if (input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
             {
                 if (IsHoldingObject())
-                    DropObject(m_playerRB.velocity*0.5f + m_throwForce*transform.forward);
+                    DropObject(m_playerRB.velocity*0.5f + m_throwForce*transform.forward, true);
                 else if (GetNearestItem())
                     PickUpObject();
                 else
@@ -129,12 +129,14 @@ namespace con2.game
         }
 
         // Drop the object in hands
-        private void DropObject(Vector3 throwVector)
+        private void DropObject(Vector3 throwVector, bool thrownOnPurpose)
         {
             m_anim.Drop();
 
             // Restore max movement speed
             m_playerMovement.MaxMovementSpeed /= m_speedReduction;
+
+            m_heldObject.SetThrownIntentionally(thrownOnPurpose);
 
             if (CheckNearAimAssistedStation())
             {
@@ -157,7 +159,7 @@ namespace con2.game
             {
                 m_heldObject.UpdatePosition(Vector3.zero);
                 Vector3 knockVector = -knockVelocity.normalized;
-                DropObject(new Vector3(knockVector.x, 0, knockVector.z) * m_throwForce);
+                DropObject(new Vector3(knockVector.x, 0, knockVector.z) * m_throwForce, false);
             }
         }
 
