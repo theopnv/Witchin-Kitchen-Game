@@ -95,6 +95,8 @@ namespace con2.game
                     {
                         var anim = a.GetComponentInChildren<MenuModelAnims>(true);
                         anim.Carry();
+                        var trophy = a.transform.Find("trophy");
+                        trophy.gameObject.SetActive(true);
                     }
                     else if ( rank == m_finalRankings.Count - 1)
                     {
