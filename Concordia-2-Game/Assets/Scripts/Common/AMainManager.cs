@@ -34,7 +34,6 @@ namespace con2
 
         protected virtual void Update()
         {
-            DevMode();
         }
 
         public PlayerManager GetPlayerById(int i)
@@ -74,44 +73,6 @@ namespace con2
             }
         }
 
-        #region Dev Mode
-
-        void DevMode()
-        {
-            if (Application.isEditor)
-            {
-                ActivatePlayersFromKeyboard();
-            }
-        }
-
-        void ActivatePlayersFromKeyboard()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                ++GameInfo.PlayerNumber;
-                ActivatePlayer(true, 0);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                ++GameInfo.PlayerNumber;
-                ActivatePlayer(true, 1);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                ++GameInfo.PlayerNumber;
-                ActivatePlayer(true, 2);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                ++GameInfo.PlayerNumber;
-                ActivatePlayer(true, 3);
-            }
-        }
-
-        #endregion
     }
 
 }

@@ -18,6 +18,7 @@ namespace con2.game
         {
             base.Start();
 
+            Debug.Log("Starting game with " + GameInfo.PlayerNumber + " players");
             for (var i = 0; i < GameInfo.PlayerNumber; i++)
             {
                 ActivatePlayer(true, i);
