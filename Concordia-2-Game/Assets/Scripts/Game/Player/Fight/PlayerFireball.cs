@@ -40,13 +40,10 @@ namespace con2.game
             if (!m_canCastFireball)
                 return false;
 
-            if (input.GetActionID().Equals(con2.GamepadAction.ID.RIGHT_TRIGGER))
+            if (input.GetActionID().Equals(con2.GamepadAction.ID.XBUTTON))
             {
-                if (input.m_axisValue > 0.5)
-                {
-                    CastFireball();
-                    return true;
-                }
+                CastFireball();
+                return true;
             }
 
             return false;

@@ -14,6 +14,7 @@ namespace con2
             PUNCH,
             INTERACT,
             XBUTTON,
+            YBUTTON,
             START,
             __AXES__,
             HORIZONTAL,
