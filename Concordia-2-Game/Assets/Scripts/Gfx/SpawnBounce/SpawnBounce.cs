@@ -49,6 +49,15 @@ public class SpawnBounce : MonoBehaviour
         Playing = true;
     }
 
+    // Won't cancel the upwards impulse but that's ok since
+    // this is called only for the gift spell where the player
+    // holding the item cancels the impulse.
+    // FreezeRotation isn't cancelled since it should be true while the ingredient is held.
+    public void CancelForGift()
+    {
+        Playing = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
