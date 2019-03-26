@@ -192,6 +192,19 @@ namespace con2.game
             return m_isComplete;
         }
 
+        //Just for tutorial!!
+        public bool NeedsMoreIngredients()
+        {
+            foreach (IngredientStatus i in m_fullRecipe)
+            {
+                if (!i.m_collected)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public Ingredient GetNextNeededIngredient()
         {
             foreach (IngredientStatus i in m_fullRecipe)

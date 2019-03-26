@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 27383cec21329594f8a355053ce3ae58
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bw Surco DEMO
+  fontNames:
+  - Bw Surco DEMO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1cfda76e93d32b84d8f76e195e796244, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,6 +6,7 @@ using con2.main_menu;
 using con2.messages;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace con2.lobby
 {
@@ -18,41 +19,23 @@ namespace con2.lobby
         [SerializeField] private SpellsManager _SpellsManager;
         [SerializeField] private EventManager _EventsManager;
 
-        private Dictionary<int, int> _PlayersProgression = new Dictionary<int, int>();
-
+        private int _PlayersProgression = 1;
         private int _CurrentInstructionIdx;
         private Dictionary<int, string> _Instructions = new Dictionary<int, string>()
         {
-            { 0, "Welcome to Witchin' Kitchen, candidates!\r\nToday's crazy show is broadcasted all over the world. It's time to show that you're the best witch or wizard!" },
-            { 1, "Your goal is to complete potions. Your cauldron will be your most precious ally.\r\nTry to grab this ingredient over there and to throw it into!"},
-            { 2, "You scored one point! At each potion, the audience gets to cast a spell on one of you. Get ready!"},
-            { 3, "Oh oh! The audience casted Disco Mania on you.\r\nYour controls are inverted for 10 seconds."},
-            { 4, "Two weapons are at your disposal in the arena:\r\nHit [B] to punch your opponents and [Right Trigger] to throw fireballs."},
-            { 5, "Hit [B] to punch your opponents and [Right Trigger] to throw fireballs.\r\nThrow a fireball at one of your opponents to ready up!"},
+            { 0, "Welcome to Witchin' Kitchen, competitors!\r\nToday's crazy show is broadcasted all over the world. \r\nCompete to prove that you're the best witch or wizard!" },
+            { 1, "You score points by making potions in your cauldron.\r\nGrab the ingredient you see in your recipe\r\nand then throw it in your cauldron."},
+            { 2, "Once an ingredient is in your cauldron, you'll have to process it.\r\nStand close to the cauldron and do the prompted action."},
+            { 3, "You scored one point! When a potion is made, an audience member\r\ngets to drink it and casts a spell on one of you. Watch out!"},
+            { 4, "Oh no! Audience members cast the spell Disco Mania on all of you.\r\nYour controls are inverted during the spell!"},
+            { 5, "To win, you must fight your opponents to get ingredients before they do.\r\nYou have the short-ranged slap attack [B] with a brief cooldown\r\nand the long-ranged fireballs [X] with a longer cooldown."},
+            { 6, "You can tell your fireball is charged when you see a mini \r\nfireball spinning around your character. Throw a fireball\r\n at one of your opponents to ready up!"},
         };
 
-        private int GetMaxPlayerIndx()
+        private void LevelUpPlayersProgression()
         {
-            return _PlayersProgression.OrderByDescending(p => p.Value).First().Key;
-        }
-
-        private void LevelUpPlayersProgression(int playerIdx)
-        {
-            ++_PlayersProgression[playerIdx];
-            if (_PlayersProgression[playerIdx] > 5)
-            {
-                _PlayersProgression.Remove(playerIdx);
-            }
-
-            if (_PlayersProgression.Count > 0)
-            {
-                _CurrentInstructionIdx = _PlayersProgression[GetMaxPlayerIndx()];
-                _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
-            }
-            else
-            {
-                StartCoroutine(EndTutorial());
-            }
+            _CurrentInstructionIdx = ++_PlayersProgression;
+            _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
         }
 
         public void Start()
@@ -71,78 +54,110 @@ namespace con2.lobby
 
         public void OnPlayerInitialized(PlayerManager player)
         {
-            if (!_PlayersProgression.ContainsKey(player.ID))
-            {
-                _PlayersProgression.Add(player.ID, 1);
-            }
             var recipeManagers = FindObjectsOfType<RecipeManagerLobby>();
             var recipeManager = recipeManagers.FirstOrDefault(r => r.Owner.ID == player.ID);
             if (recipeManager)
             {
+                recipeManager.OnIngredientAdded += _0_IngredientCollected;
                 recipeManager.OnCompletedPotion += _1_CompletedPotion;
             }
 
             var fireballManager = player.GetComponentInChildren<PlayerFireball>();
             fireballManager.OnFireballCasted += () => OnFireBallCasted(player.ID);
+
+            player.PlayerHUD.transform.SetSiblingIndex(player.ID);
         }
 
         #region Instructions
 
         private IEnumerator Welcome()
         {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(10); // TODO set back to 10
             yield return Potion();
         }
 
         private IEnumerator Potion()
         {
+            foreach (var player in _LobbyManager.PlayersInstances)
+            {
+                var pointer = player.Value.PlayerHUD.transform.Find("Pointer");
+                pointer.gameObject.SetActive(true);
+            }
             ++_CurrentInstructionIdx;
             _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
             _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].AskToInstantiate();
+            _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].MaxNbOfInstances = 0;
             yield return null;
         }
 
-        private void _1_CompletedPotion(int playerIdx)
+        private bool ingredientGate = false;
+        private void _0_IngredientCollected(int playerIdx)
         {
-            if (_PlayersProgression[playerIdx] <= 1)
+            if (!ingredientGate)
             {
-                LevelUpPlayersProgression(playerIdx);
-                StartCoroutine(_2_CastSpells(playerIdx));
+                ingredientGate = true;
+                LevelUpPlayersProgression();
+
+                foreach (var player in _LobbyManager.PlayersInstances)
+                {
+                    var pointer = player.Value.PlayerHUD.transform.Find("Pointer");
+                    pointer.gameObject.SetActive(false);
+                }
             }
         }
 
-        private IEnumerator _2_CastSpells(int playerIdx)
+        public Image AudiencePointer;
+        private bool potionGate = false;
+        private void _1_CompletedPotion(int playerIdx)
         {
-            yield return new WaitForSeconds(10);
-            LevelUpPlayersProgression(playerIdx);
-
-            _SpellsManager.OnSpellCasted(new Spell()
+            if (!potionGate)
             {
-                caster = null,
-                spellId = (int)Spells.SpellID.disco_mania,
-                targetedPlayer = new messages.Player()
-                {
-                    id = playerIdx,
-                }
-            });
-
-            yield return _3_FireballPunch(playerIdx);
+                potionGate = true;
+                LevelUpPlayersProgression();
+                StartCoroutine(_2_CastSpells());
+                AudiencePointer.gameObject.SetActive(true);
+                _LobbyManager.PlayersInstances[playerIdx].PlayerHUD.transform.Find("Organizer/Score/ScorePointer").gameObject.SetActive(true);
+            }
         }
 
-        private IEnumerator _3_FireballPunch(int playerIdx)
+        private IEnumerator _2_CastSpells()
         {
             yield return new WaitForSeconds(10);
-            LevelUpPlayersProgression(playerIdx);
+            LevelUpPlayersProgression();
+            AudiencePointer.gameObject.SetActive(false);
+
+            foreach (var player in _LobbyManager.PlayersInstances)
+            {
+                player.Value.PlayerHUD.transform.Find("Organizer/Score/ScorePointer").gameObject.SetActive(false);
+                _SpellsManager.OnSpellCasted(new Spell()
+                {
+                    caster = null,
+                    spellId = (int)Spells.SpellID.disco_mania,
+                    targetedPlayer = new messages.Player()
+                    {
+                        id = player.Value.ID,
+                    }
+                });
+            }
+
+            yield return _3_FireballPunch();
+        }
+
+        private IEnumerator _3_FireballPunch()
+        {
+            yield return new WaitForSeconds(7);
+            _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].MaxNbOfInstances = 1;
+            _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].AskToInstantiate();
+            LevelUpPlayersProgression();
             yield return new WaitForSeconds(10);
-            LevelUpPlayersProgression(playerIdx);
+            LevelUpPlayersProgression();
         }
 
         private void OnFireBallCasted(int playerIdx)
         {
-            if (_PlayersProgression[playerIdx] >= 5)
+            if (_PlayersProgression == _Instructions.Count - 1)
             {
-                LevelUpPlayersProgression(playerIdx);
-                _LobbyManager.PlayersInstances[playerIdx].PlayerHUD.SetReadyActive();
+                _LobbyManager.OnFireballCasted(playerIdx);
             }
         }
 
