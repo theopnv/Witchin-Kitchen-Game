@@ -31,12 +31,6 @@ namespace con2.game
 
         public void UpdateHUD()
         {
-            if (_ViewersNumber == null)
-            {
-                _ViewersNumber = GameObject.FindWithTag("ViewersNumber").GetComponent<Text>();
-                Debug.Log("FUCK ");
-            }
-
             Debug.Log("From UpdateHUD: " + GameInfo.Viewers.Count);
             _ViewersNumber.text = GameInfo.Viewers.Count.ToString();
 
