@@ -169,7 +169,8 @@ namespace con2.game
         [Header("GameManagement")]
         public Text m_clock;
         public Text m_gameOverText;
-        private bool m_gameOver = false, m_acceptingInput = false;
+        public static bool GAME_OVER = false;
+        private bool m_acceptingInput = false;
         public float GAME_TIMER = 240;
         private bool m_countdown = false;
         private const int COUNTDOWN_TIME = 3;
@@ -212,12 +213,12 @@ namespace con2.game
             EGM = FindObjectOfType<EndGameManager>();
             EGM.AudienceInteractionManager = _AudienceInteractionManager;
             m_gameOverText.enabled = false;
-            m_gameOver = false;
+            GAME_OVER = false;
         }
 
         private void UpdateEndGame()
         {
-            if (!m_gameOver)
+            if (!GAME_OVER)
             {
                 int remainingTime = (int)(GAME_TIMER + LOADING_TIME + COUNTDOWN_TIME - Time.timeSinceLevelLoad);
                 m_clock.text = FormatRemainingTime(remainingTime);
@@ -246,9 +247,9 @@ namespace con2.game
 
         public void GameOver()
         {
-            if (!m_gameOver)
+            if (!GAME_OVER)
             {
-                m_gameOver = true;
+                GAME_OVER = true;
                 m_gameOverText.enabled = true;
                 m_clock.enabled = false;
 
