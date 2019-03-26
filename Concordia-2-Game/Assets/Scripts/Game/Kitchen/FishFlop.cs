@@ -25,7 +25,7 @@ namespace con2.game
         {
             Wiggle();
             var body = GetComponentInParent<Rigidbody>();
-            if (Mathf.Abs(body.velocity.y) <= m_bounceFilter && (transform.position.y - m_ground.transform.position.y) < 1.0f)
+            if (Mathf.Abs(body.velocity.y) <= m_bounceFilter && (transform.position.y - m_ground.transform.position.y) < 2.0f)
             {
                 //Bounce
                 var vel = body.velocity;
