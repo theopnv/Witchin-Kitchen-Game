@@ -6,6 +6,7 @@ using con2.main_menu;
 using con2.messages;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace con2.lobby
 {
@@ -71,12 +72,17 @@ namespace con2.lobby
 
         private IEnumerator Welcome()
         {
-            yield return new WaitForSeconds(1); // TODO set back to 10
+            yield return new WaitForSeconds(10); // TODO set back to 10
             yield return Potion();
         }
 
         private IEnumerator Potion()
         {
+            foreach (var player in _LobbyManager.PlayersInstances)
+            {
+                var pointer = player.Value.PlayerHUD.transform.Find("Pointer");
+                pointer.gameObject.SetActive(true);
+            }
             ++_CurrentInstructionIdx;
             _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
             _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].AskToInstantiate();
@@ -91,9 +97,16 @@ namespace con2.lobby
             {
                 ingredientGate = true;
                 LevelUpPlayersProgression();
+
+                foreach (var player in _LobbyManager.PlayersInstances)
+                {
+                    var pointer = player.Value.PlayerHUD.transform.Find("Pointer");
+                    pointer.gameObject.SetActive(false);
+                }
             }
         }
 
+        public Image AudiencePointer;
         private bool potionGate = false;
         private void _1_CompletedPotion(int playerIdx)
         {
@@ -102,6 +115,8 @@ namespace con2.lobby
                 potionGate = true;
                 LevelUpPlayersProgression();
                 StartCoroutine(_2_CastSpells());
+                AudiencePointer.gameObject.SetActive(true);
+                _LobbyManager.PlayersInstances[playerIdx].PlayerHUD.transform.Find("Organizer/Score/ScorePointer").gameObject.SetActive(true);
             }
         }
 
@@ -109,9 +124,11 @@ namespace con2.lobby
         {
             yield return new WaitForSeconds(10);
             LevelUpPlayersProgression();
+            AudiencePointer.gameObject.SetActive(false);
 
             foreach (var player in _LobbyManager.PlayersInstances)
             {
+                player.Value.PlayerHUD.transform.Find("Organizer/Score/ScorePointer").gameObject.SetActive(false);
                 _SpellsManager.OnSpellCasted(new Spell()
                 {
                     caster = null,
