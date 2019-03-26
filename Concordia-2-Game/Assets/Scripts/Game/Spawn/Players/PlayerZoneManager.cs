@@ -46,6 +46,15 @@ namespace con2.game
             Owner.ID = OwnerId;
             Owner.Name = Players.Info[OwnerId].Name;
             Owner.Texture = ColorsManager.Get().PlayerColorTextures[Owner.ID];
+            var normalTex = ColorsManager.Get().PlayerNormalTextures[Owner.ID];
+            if (normalTex != null)
+                Owner.NormalTexture = normalTex;
+            var occlusionTex = ColorsManager.Get().PlayerOcclusionTextures[Owner.ID];
+            if (occlusionTex != null)
+                Owner.OcclusionTexture = occlusionTex;
+            var roughnessTex = ColorsManager.Get().PlayerRoughnessTextures[Owner.ID];
+            if (roughnessTex != null)
+                Owner.RoughnessTexture = roughnessTex;
             Owner.CompletedPotionCount = 0;
             Owner.CollectedIngredientCount = 0;
 

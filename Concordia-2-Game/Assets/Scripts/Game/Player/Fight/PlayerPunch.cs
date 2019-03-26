@@ -53,16 +53,19 @@ namespace con2.game
             if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
             {
                 m_anim.Slap();
-
-                Hit();
-                audioSource.Play();
-                if (m_didStun)
-                    CamShakeMgr.Get().Shake(ShakeIntensity);
+                StartCoroutine(HitAfterShortDelay());
                 StartCoroutine(PunchCooldown());
                 return true;
             }
 
             return false;
+        }
+
+        private IEnumerator HitAfterShortDelay()
+        {
+            audioSource.PlayDelayed(0.1f);
+            yield return new WaitForSeconds(0.2f);
+            Hit(ShakeIntensity);
         }
 
         protected override Vector3 ModulateHitVector(Vector3 hitVector)

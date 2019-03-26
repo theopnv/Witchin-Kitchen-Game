@@ -1,20 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace con2.game
 {
     public class PauseMenuManager : MonoBehaviour
     {
         private AudienceInteractionManager _AudienceInteractionManager;
-
-        // TODO: Block timer and game flow
-        // TODO: Allow gamepad input in pause menu
+        public Button _ExitButton;
 
         void Start()
         {
+            var eventSystem = FindObjectOfType<EventSystem>();
+            eventSystem.SetSelectedGameObject(_ExitButton.gameObject);
+            Time.timeScale = 0;
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+        }
+
+        void OnDisable()
+        {
+            Time.timeScale = 1;
         }
 
         public void OnExitClick()
@@ -23,5 +29,6 @@ namespace con2.game
 
             SceneManager.LoadSceneAsync(SceneNames.MainMenu);
         }
+
     }
 }

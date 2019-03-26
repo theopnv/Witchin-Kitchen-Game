@@ -39,6 +39,27 @@ namespace con2.game
             }
         }
 
+        public Texture NormalTexture {
+            set {
+                var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+                skinRenderer.material.SetTexture("_BumpMap", value);
+            }
+        }
+
+        public Texture OcclusionTexture {
+            set {
+                var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+                skinRenderer.material.SetTexture("_OcclusionMap", value);
+            }
+        }
+
+        public Texture RoughnessTexture {
+            set {
+                var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+                skinRenderer.material.SetTexture("_MetallicGlossMap", value);
+            }
+        }
+
         private int _CompletedPotionCount;
         public int CompletedPotionCount
         {

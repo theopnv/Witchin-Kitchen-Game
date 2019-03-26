@@ -8,7 +8,7 @@ using UnityEngine.UI;
 namespace con2.game
 {
 
-    public class MainGameManager : AMainManager, IInputConsumer
+    public class MainGameManager : AMainManager
     {
         [SerializeField] private GameObject _LoadingPanel;
         private const float LOADING_TIME = 2f;
@@ -59,6 +59,8 @@ namespace con2.game
 
         private IEnumerator ExitLoadingScreen()
         {
+            AudioListener.volume = 0.0f;
+
             for (var i = 0; i < GameInfo.PlayerNumber; i++)
             {
                 GamepadMgr.Pad(i).BlockGamepad(true);
@@ -68,6 +70,7 @@ namespace con2.game
 
             yield return new WaitForSeconds(LOADING_TIME);
             _LoadingPanel.SetActive(false);
+            AudioListener.volume = 1f;
             yield return StartGame();
         }
 
@@ -76,7 +79,6 @@ namespace con2.game
             var inputConsumers = new List<IInputConsumer>();
 
             // Misc.
-            inputConsumers.Add(this);
             var pmi = GetComponent<PauseMenuInstantiator>();
             inputConsumers.Add(pmi);
 
@@ -164,19 +166,25 @@ namespace con2.game
 
         #region EndGame
 
-        [Header("EndGame")]
-        public Text m_winnerText;
-        public Text m_gameOverText, m_rematchText, m_clock;
-        public GameObject m_backdrop;
-        private List<List<PlayerManager>> m_finalRankings;
+        [Header("GameManagement")]
+        public Text m_clock;
+        public Text m_gameOverText;
         private bool m_gameOver = false, m_acceptingInput = false;
-        public float REMATCH_TIMER = 10, GAME_TIMER = 240;
+        public float GAME_TIMER = 240;
         private bool m_countdown = false;
         private const int COUNTDOWN_TIME = 3;
-        [SerializeField] private int m_dominationDifference = 3;
+        private int m_dominationDifference = 3;
+
+        private EndGameManager EGM;
 
         private IEnumerator StartGame()
         {
+            var audioSource = GetComponent<AudioSource>();
+            if (audioSource)
+            {
+                audioSource.PlayDelayed(0.1f); //Start trumpet
+            }
+
             m_countdown = true;
             var fontSize = m_clock.fontSize;
             m_clock.fontSize = 200;
@@ -193,15 +201,17 @@ namespace con2.game
                 GamepadMgr.Pad(i).BlockGamepad(false);
             }
 
+            var gameMusic = GameObject.Find("ArenaMusic").GetComponent<AudioSource>();
+            gameMusic.Play();
+
             m_countdown = false;
         }
 
         private void InitializeEndGame()
         {
-            m_backdrop.SetActive(false);
+            EGM = FindObjectOfType<EndGameManager>();
+            EGM.AudienceInteractionManager = _AudienceInteractionManager;
             m_gameOverText.enabled = false;
-            m_winnerText.enabled = false;
-            m_rematchText.enabled = false;
             m_gameOver = false;
         }
 
@@ -243,6 +253,7 @@ namespace con2.game
                 m_clock.enabled = false;
 
                 DetermineWinner();
+                _AudienceInteractionManager?.SendGameOutcome();
                 StartCoroutine(ShowLeaderboard());
             }
         }
@@ -250,23 +261,12 @@ namespace con2.game
         private IEnumerator ShowLeaderboard()
         {
             yield return new WaitForSeconds(2.0f);
-            m_backdrop.SetActive(true);
-            m_winnerText.text = "";
-            foreach (var scoregroup in m_finalRankings)
-            {
-                foreach (var player in scoregroup)
-                {
-                    var count = player.CollectedIngredientCount;
-                    m_winnerText.text += player.Name + " collected " + count + " ingredient" + (count == 1 ? "" : "s") + "\n\n";
-                }
-            }
-            _AudienceInteractionManager?.SendGameOutcome();
-            StartCoroutine(BackToMainMenuAfterShortPause());
+            SceneManager.LoadScene(SceneNames.Leaderboard);
         }
 
         public void DetermineWinner()
         {
-            m_finalRankings = new List<List<PlayerManager>>();
+            var finalRankings = new List<List<PlayerManager>>();
             var playerScores = new List<PlayerManager>();
             for (int i = 0; i < PlayersInstances.Count; i++)
             {
@@ -286,9 +286,11 @@ namespace con2.game
                                  .ToList();
                 foreach (var scoreGroup in tieBreaker)
                 {
-                    m_finalRankings.Add(scoreGroup);
+                    finalRankings.Add(scoreGroup);
                 }
             }
+
+            EGM.SetFinalRankings(finalRankings);
         }
 
         public void UpdateRanks()
@@ -330,7 +332,6 @@ namespace con2.game
             foreach (PlayerManager player in group)
             {
                 player.PlayerRank = rank;
-                Debug.Log("Player" + player + " is rank " + rank);
             }
         }
 
@@ -339,53 +340,9 @@ namespace con2.game
             return group1[0].CompletedPotionCount - group2[0].CompletedPotionCount >= m_dominationDifference;
         }
 
-        public bool ConsumeInput(GamepadAction input)
-        {
-            if (m_acceptingInput)
-            {
-                if (input.GetActionID().Equals(con2.GamepadAction.ID.START)
-                    || input.GetActionID().Equals(con2.GamepadAction.ID.INTERACT))
-                {
-                    _AudienceInteractionManager.SendEndGame(true);
-                    SceneManager.LoadScene(SceneNames.Game);
-                    m_acceptingInput = false;
-                    m_winnerText.text = "";
-                    m_rematchText.enabled = false;
-                    return true;
-                }
 
-                if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH))
-                {
-                    SceneManager.LoadScene(SceneNames.MainMenu);
-                    m_acceptingInput = false;
-                    m_winnerText.enabled = false;
-                    m_rematchText.enabled = false;
-                    return true;
-                }
-            }
-            return false;
-        }
 
-        private IEnumerator BackToMainMenuAfterShortPause()
-        {
-            yield return new WaitForSeconds(0.5f);
-            m_winnerText.enabled = true;
-            yield return new WaitForSeconds(0.5f);
-            m_rematchText.enabled = true;
-            for (var i = REMATCH_TIMER; i >= 0; i--)
-            {
-                m_rematchText.text = "Rematch?\n" + i;
-                yield return new WaitForSeconds(1);
-                if (i == REMATCH_TIMER - 1)
-                {
-                    m_acceptingInput = true;
-                }
-            }
 
-            m_gameOver = false;
-            _AudienceInteractionManager.SendEndGame(false);
-            SceneManager.LoadScene(SceneNames.MainMenu);
-        }
 
         #endregion
     }

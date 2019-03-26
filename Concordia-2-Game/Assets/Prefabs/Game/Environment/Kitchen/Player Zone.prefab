@@ -55,11 +55,6 @@ MonoBehaviour:
     type: 3}
   _PlayerHUDPrefab: {fileID: 5925793903106845510, guid: 0d3d11cfa2034724aa98222dce43761c,
     type: 3}
-  BackgroundRectangles:
-  - {fileID: 21300000, guid: 3c1a077dad2ea5e4db01329b70fc7120, type: 3}
-  - {fileID: 21300000, guid: 3c1a077dad2ea5e4db01329b70fc7120, type: 3}
-  - {fileID: 21300000, guid: 3c1a077dad2ea5e4db01329b70fc7120, type: 3}
-  - {fileID: 21300000, guid: 3c1a077dad2ea5e4db01329b70fc7120, type: 3}
 --- !u!1 &2486706287073537941
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +92,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2486706285430789234}
     m_Modifications:
+    - target: {fileID: 6580967724236997308, guid: fdcde8f06e51f0642a88bdb3ec5193ce,
+        type: 3}
+      propertyPath: m_Name
+      value: Kitchen base
+      objectReference: {fileID: 0}
     - target: {fileID: 6580967724236997304, guid: fdcde8f06e51f0642a88bdb3ec5193ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -151,11 +151,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6580967724236997308, guid: fdcde8f06e51f0642a88bdb3ec5193ce,
-        type: 3}
-      propertyPath: m_Name
-      value: Kitchen base
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdcde8f06e51f0642a88bdb3ec5193ce, type: 3}

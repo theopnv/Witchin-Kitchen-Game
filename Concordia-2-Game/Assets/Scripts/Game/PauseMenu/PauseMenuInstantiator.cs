@@ -60,12 +60,20 @@ namespace con2.game
 
         public bool ConsumeInput(GamepadAction input)
         {
-            if (input.GetActionID() == GamepadAction.ID.START)
+            switch (input.GetActionID())
             {
-                ActivatePauseUI();
-                return true;
-            }
+                case GamepadAction.ID.START:
+                    ActivatePauseUI();
+                    return true;
+                case GamepadAction.ID.PUNCH:
+                    if (IsPaused)
+                    {
+                        Resume();
+                        return true;
+                    }
 
+                    break;
+            }
             return false;
         }
 

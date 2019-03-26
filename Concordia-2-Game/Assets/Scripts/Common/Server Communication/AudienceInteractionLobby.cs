@@ -11,6 +11,7 @@ using SocketIO;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
+using Ingredient = con2.messages.Ingredient;
 
 namespace con2
 {
@@ -21,10 +22,12 @@ namespace con2
     public partial class AudienceInteractionManager : MonoBehaviour
     {
         public Action<Base> OnReceivedMessage;
+        public Action<IngredientPoll> OnReceivedIngredientPollResults;
 
         void LobbyStart()
         {
             _Socket.On(Command.GAME_CREATED, OnGameCreated);
+            _Socket.On(Command.INGREDIENT_POLL_RESULTS, OnIngredientPollResults);
         }
 
         public void SetURL(string url)
@@ -69,7 +72,28 @@ namespace con2
 
             return true;
         }
-        
+
+        public void SendStartIngredientPoll(int a, int b)
+        {
+            var poll = new IngredientPoll()
+            {
+                ingredients = new List<Ingredient>()
+                {
+                    new Ingredient() {id = a, votes = 0},
+                    new Ingredient() {id = b, votes = 0},
+                }
+            };
+            var serialized = JsonConvert.SerializeObject(poll);
+            _Socket.Emit(
+                Command.START_INGREDIENT_POLL,
+                new JSONObject(serialized));
+        }
+
+        public void SendStopIngredientPoll()
+        {
+            _Socket.Emit(Command.STOP_INGREDIENT_POLL);
+        }
+
         #endregion
 
         #region Receive
@@ -86,6 +110,13 @@ namespace con2
             GameInfo.RoomId = game.pin;
             GameInfo.Viewers = game.viewers;
             OnGameUpdated?.Invoke();
+        }
+
+        private void OnIngredientPollResults(SocketIOEvent e)
+        {
+            Debug.Log("OnIngredientPollResults");
+            var pollResults = JsonConvert.DeserializeObject<IngredientPoll>(e.data.ToString());
+            OnReceivedIngredientPollResults?.Invoke(pollResults);
         }
 
         #endregion

@@ -25,7 +25,10 @@ namespace con2.game
         {
             newIngredient.transform.parent = transform;
             newIngredient.transform.SetPositionAndRotation(transform.position, transform.rotation);
-            GetComponentInChildren<ParticleSystem>().Play();
+            var puff = GetComponentInChildren<ParticleSystem>();
+            var m = puff.main;  //Apparently this has to be split into 2 lines...
+            m.startDelay = 0.0f;
+            puff.Play();
 
             audioSource.clip = morphSound;
             audioSource.Play();
