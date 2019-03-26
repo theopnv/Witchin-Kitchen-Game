@@ -18,7 +18,6 @@ namespace con2.game
 
         [SerializeField] private GameObject RegularHUD;
         [SerializeField] private GameObject ReadyPanel;
-        [SerializeField] private GameObject ReadyPanelRecipe;
         [SerializeField] private Text ReadyPanelMessage;
 
         void Start()
@@ -55,9 +54,6 @@ namespace con2.game
             RegularHUD.SetActive(false);
             ReadyPanel.SetActive(true);
             ReadyPanelMessage.color = ColorsManager.Get().PlayerMeshColors[Manager.ID];
-
-            var rect = ReadyPanelRecipe.transform.GetComponent<Image>();
-            rect.color = ColorsManager.Get().PlayerMeshColors[Manager.ID];
         }
 
         public void CollectIngredient(Ingredient type)
