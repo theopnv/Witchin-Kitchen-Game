@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,15 +27,23 @@ namespace con2.game
 
         void OnDisable()
         {
-            _AudienceManager.OnGameUpdated -= UpdateHUD;
+            if (_AudienceManager)
+            {
+                _AudienceManager.OnGameUpdated -= UpdateHUD;
+            }
         }
 
         public void UpdateHUD()
         {
-            Debug.Log("From UpdateHUD: " + GameInfo.Viewers.Count);
-            _ViewersNumber.text = GameInfo.Viewers.Count.ToString();
-
-            _RoomPin.text = GameInfo.RoomId;
+            try
+            {
+                _ViewersNumber.text = GameInfo.Viewers.Count.ToString();
+                _RoomPin.text = GameInfo.RoomId;
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning(e.Message);
+            }
         }
 
     }
