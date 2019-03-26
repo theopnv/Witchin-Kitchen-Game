@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using con2.game;
 using con2.messages;
 using UnityEngine.SceneManagement;
+using static System.Int32;
 using Event = UnityEngine.Event;
 using Random = System.Random;
 
@@ -33,7 +34,8 @@ namespace con2
 
             // All scenes
             repo.RegisterCommand("reload", Reload);
-            
+            repo.RegisterCommand("game", Game);
+
             // Game
             repo.RegisterCommand("continuous_events", ContinuousEvents);
             repo.RegisterCommand("random_event", RandomEvent);
@@ -65,7 +67,8 @@ namespace con2
                 "Such hacking skills, much technology, wow (ง ͠° ͟ل͜ ͡°)ง",
                 "",
                 "List of available commands for all scenes:",
-                "- 'reload': Reloads the current scene");
+                "- 'reload': Reloads the current scene",
+            "- 'game': Starts Game scene with a specified number of players ('game X')");
             var help = commonMessage;
             var currentSceneName = GetCurrentSceneName();
 
@@ -99,7 +102,9 @@ namespace con2
                         "- 'spell_rs': Simulates the Rocket Speed (rs) spell on player 1",
                         "- 'spell_gi': Simulates the Gift Item (gi) spell on player 1",
                         "- 'spell_gb': Simulates the Gift Bomb (gb) spell on player 1",
-                        "- 'spell_iv': Simulates the Invisibility (iv) spell on player 1");
+                        "- 'spell_iv': Simulates the Invisibility (iv) spell on player 1",
+                        "- 'test': Launches the next test",
+                        "- 'test_chain': Launches a series of tests");
 
                     help = string.Join(
                         Environment.NewLine,
@@ -310,7 +315,7 @@ namespace con2
             {
                 spellId = (int)id,
                 targetedPlayer = new messages.Player() { id = 0 },
-                caster = new Viewer { color = ColorUtility.ToHtmlStringRGBA(Color.red), name = "God", socketId = ""}
+                caster = new Viewer { name = "God", socketId = ""}
             };
             var spellsManager = FindObjectOfType<SpellsManager>();
             spellsManager?.OnSpellCasted(spell);
@@ -331,6 +336,21 @@ namespace con2
 
         #endregion
 
+        public string Game(string[] args)
+        {
+            if (args.Length < 1)
+            {
+                return "First parameter is the number of players (up to 4)";
+            }
+            GameInfo.PlayerNumber = Parse(args[0]);
+            LoadGameScene();
+            return "Started Game scene with " + GameInfo.PlayerNumber + " players";
+        }
+
+        private void LoadGameScene()
+        {
+            SceneManager.LoadSceneAsync(SceneNames.Game);
+        }
 
         private string Test(string[] args)
         {

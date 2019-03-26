@@ -31,6 +31,7 @@ namespace con2.game
             InitHUD();
             InitKitchen();
             OnPlayerInitialized?.Invoke(owner);
+            OnPlayerInitialized = null;
         }
 
         PlayerManager InitPlayer()

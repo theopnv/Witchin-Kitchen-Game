@@ -25,6 +25,7 @@ namespace con2.game
             if (m_currentPotionRecipe.IsComplete())
             {
                 OnCompletedPotion?.Invoke(Owner.ID);
+                OnCompletedPotion = null;
             }
             base.Update();
         }

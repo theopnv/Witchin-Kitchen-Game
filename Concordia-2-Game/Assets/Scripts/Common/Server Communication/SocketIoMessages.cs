@@ -77,7 +77,6 @@ namespace con2.messages
     public class Viewer
     {
         public string socketId;
-        public string color;
         public string name;
     }
 

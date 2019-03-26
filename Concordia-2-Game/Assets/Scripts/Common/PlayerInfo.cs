@@ -7,9 +7,9 @@ namespace con2
 {
     public static class GameInfo
     {
-        public static string RoomId = "0000";
-        public static List<Viewer> Viewers = new List<Viewer>();
-        public static int PlayerNumber = 0;
+        public static string RoomId;
+        public static List<Viewer> Viewers;
+        public static int PlayerNumber;
     }
 
     public class Player
@@ -26,7 +26,6 @@ namespace con2
             { 2, new Player() { Name = "Green"} },
             { 3, new Player() { Name = "Yellow"} },
         };
-
     }
 
 }

@@ -11,8 +11,7 @@ namespace con2
     {
         [Tooltip("Controllers detector")]
         [SerializeField] protected DetectController _DetectController;
-        [SerializeField] protected Text _RoomPin;
-        [SerializeField] protected Text _ViewersNb;
+        [SerializeField] protected AudienceUIManager _AudienceUIManager;
 
         protected AudienceInteractionManager _AudienceInteractionManager;
         protected MessageFeedManager _MessageFeedManager;
@@ -24,7 +23,6 @@ namespace con2
         protected virtual void Awake()
         {
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
-            _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             _MessageFeedManager = FindObjectOfType<MessageFeedManager>();
         }
 
@@ -34,7 +32,6 @@ namespace con2
 
         protected virtual void Update()
         {
-            DevMode();
         }
 
         public PlayerManager GetPlayerById(int i)
@@ -74,44 +71,6 @@ namespace con2
             }
         }
 
-        #region Dev Mode
-
-        void DevMode()
-        {
-            if (Application.isEditor)
-            {
-                ActivatePlayersFromKeyboard();
-            }
-        }
-
-        void ActivatePlayersFromKeyboard()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                ++GameInfo.PlayerNumber;
-                ActivatePlayer(true, 0);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                ++GameInfo.PlayerNumber;
-                ActivatePlayer(true, 1);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                ++GameInfo.PlayerNumber;
-                ActivatePlayer(true, 2);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                ++GameInfo.PlayerNumber;
-                ActivatePlayer(true, 3);
-            }
-        }
-
-        #endregion
     }
 
 }

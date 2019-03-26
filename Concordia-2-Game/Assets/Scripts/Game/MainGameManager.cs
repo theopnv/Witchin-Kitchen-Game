@@ -13,21 +13,12 @@ namespace con2.game
         [SerializeField] private GameObject _LoadingPanel;
         private const float LOADING_TIME = 2f;
 
-        protected override void Awake()
-        {
-            base.Awake();
-            if (Application.isEditor
-                && GameInfo.PlayerNumber != 4)
-            {
-                GameInfo.PlayerNumber = 4;
-            }
-        }
-
         // Start is called before the first frame update
         protected override void Start()
         {
             base.Start();
 
+            Debug.Log("Starting game with " + GameInfo.PlayerNumber + " players");
             for (var i = 0; i < GameInfo.PlayerNumber; i++)
             {
                 ActivatePlayer(true, i);

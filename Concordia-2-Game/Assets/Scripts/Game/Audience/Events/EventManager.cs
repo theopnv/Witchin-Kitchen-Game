@@ -36,7 +36,7 @@ namespace con2.game
 
         private void OnDisable()
         {
-            _AudienceInteractionManager.OnEventVoted += OnReceiveEventVotes;
+            _AudienceInteractionManager.OnEventVoted -= OnReceiveEventVotes;
         }
 
         #endregion

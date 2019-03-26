@@ -23,18 +23,6 @@ namespace con2.game
 
         #endregion
 
-        #region Unity API
-
-        void Update()
-        {
-            if (Input.GetKeyDown("escape"))
-            {
-                ActivatePauseUI();
-            }
-        }
-
-        #endregion
-
         #region Custom Methods
 
         public void Resume()
