@@ -7,7 +7,6 @@ using UnityEngine;
 
 namespace con2.game
 {
-
     public class NetworkAdsManager : MonoBehaviour
     {
         [SerializeField]
@@ -62,6 +61,51 @@ namespace con2.game
         private static int _index = 0;
         private const int NumberOfCombos = 4;
 
+        public float m_MessageDelay;
+        protected bool _DelayIsPassed = false;
+
+        void MessageDelay(float time)
+        {
+            m_MessageDelay = time;
+        }
+
+        private IEnumerator TimerDelay()
+        {
+            yield return new WaitForSeconds(m_MessageDelay);
+            switch (SuiteNumbers[_index])
+            {
+                case 0:
+                    _combo1FireBlades.gameObject.SetActive(true);
+                    _combo1Apron.gameObject.SetActive(true);
+                    _combo1FireBladesUp.gameObject.SetActive(true);
+                    _combo1ApronDown.gameObject.SetActive(true);
+                    break;
+                case 1:
+                    _combo2FireBlades.gameObject.SetActive(true);
+                    _combo2Apron.gameObject.SetActive(true);
+                    _combo2FireBladesDown.gameObject.SetActive(true);
+                    _combo2ApronUp.gameObject.SetActive(true);
+                    break;
+                case 2:
+                    _combo3FireBlades.gameObject.SetActive(true);
+                    _combo3Apron.gameObject.SetActive(true);
+                    _combo3FireBladesUp.gameObject.SetActive(true);
+                    _combo3ApronDown.gameObject.SetActive(true);
+                    break;
+                case 3:
+                    _combo4FireBlades.gameObject.SetActive(true);
+                    _combo4Apron.gameObject.SetActive(true);
+                    _combo4FireBladesDown.gameObject.SetActive(true);
+                    _combo4ApronUp.gameObject.SetActive(true);
+                    break;
+
+            }
+
+            ++_index;
+            if (_index == NumberOfCombos)
+                _index = 0;
+        }
+
         public static int[] UniqueRandomNumbers(int min, int max)
         {
             var rnd = new System.Random();
@@ -107,44 +151,12 @@ namespace con2.game
             _combo4FireBladesDown.gameObject.SetActive(false);
             _combo4ApronUp.gameObject.SetActive(false);
 
-            switch (SuiteNumbers[_index])
-            {
-                case 0:
-                    _combo1FireBlades.gameObject.SetActive(true);
-                    _combo1Apron.gameObject.SetActive(true);
-                    _combo1FireBladesUp.gameObject.SetActive(true);
-                    _combo1ApronDown.gameObject.SetActive(true);
-                    break;
-                case 1:
-                    _combo2FireBlades.gameObject.SetActive(true);
-                    _combo2Apron.gameObject.SetActive(true);
-                    _combo2FireBladesDown.gameObject.SetActive(true);
-                    _combo2ApronUp.gameObject.SetActive(true);
-                    break;
-                case 2:
-                    _combo3FireBlades.gameObject.SetActive(true);
-                    _combo3Apron.gameObject.SetActive(true);
-                    _combo3FireBladesUp.gameObject.SetActive(true);
-                    _combo3ApronDown.gameObject.SetActive(true);
-                    break;
-                case 3:
-                    _combo4FireBlades.gameObject.SetActive(true);
-                    _combo4Apron.gameObject.SetActive(true);
-                    _combo4FireBladesDown.gameObject.SetActive(true);
-                    _combo4ApronUp.gameObject.SetActive(true);
-                    break;
-
-            }
-
-            ++_index;
-            if (_index == NumberOfCombos)
-                _index = 0;
+            StartCoroutine("TimerDelay");
         }
 
         // Update is called once per frame
         void Update()
         {
-
         }
     }
 

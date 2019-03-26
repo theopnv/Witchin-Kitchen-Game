@@ -25,10 +25,6 @@ namespace con2.game
         [SerializeField]
         private GameObject _GlobalMessagePrefab;
 
-
-        // Public
-        public float TimeBeforeFade = 15f;
-
         #region Unity API
 
         // Start is called before the first frame update

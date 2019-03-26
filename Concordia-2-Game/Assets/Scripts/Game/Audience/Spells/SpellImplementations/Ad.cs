@@ -66,13 +66,11 @@ namespace con2.game
 
         private bool InMiddleVerticalDir()
         {
-            var height = GetComponent<RectTransform>().rect.height;
             return transform.localPosition.y < _CenterSquare && transform.localPosition.y > -_CenterSquare;
         }
 
         private bool InMiddleHorizontalDir()
         {
-            var width = GetComponent<RectTransform>().rect.width;
             if (transform.localPosition.x < _CenterSquare && transform.localPosition.x > -_CenterSquare)
                 return true;
             return false;
