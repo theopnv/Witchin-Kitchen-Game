@@ -108,17 +108,17 @@ AvatarMask:
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root
     m_Weight: 1
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee/wizardRig_Published:Ankle
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee/wizardRig_Published:Ankle/wizardRig_Published:Heel
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee/wizardRig_Published:Ankle/wizardRig_Published:Toes
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee/wizardRig_Published:Ankle/wizardRig_Published:Toes/wizardRig_Published:ToesEnd
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1
     m_Weight: 1
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest
