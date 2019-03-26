@@ -96,6 +96,11 @@ namespace con2.game
                         var anim = a.GetComponentInChildren<MenuModelAnims>(true);
                         anim.Carry();
                     }
+                    else if ( rank == m_finalRankings.Count - 1)
+                    {
+                        var anim = a.GetComponentInChildren<MenuModelAnims>(true);
+                        anim.Dizzy();
+                    }
 
                     count++;
                     if (count >= m_finalRankings[rank].Count)
