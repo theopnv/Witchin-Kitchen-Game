@@ -16,7 +16,7 @@ public class EndMenuMusicInGame : MonoBehaviour
     {
         if(scene.name == SceneNames.Game)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
