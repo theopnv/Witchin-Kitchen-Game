@@ -36,7 +36,6 @@ namespace con2.lobby
             _DetectController.OnDisconnected += OnControllerDisconnected;
             
             // Audience & Networking
-            _AudienceInteractionManager.OnGameUpdated += OnGameUpdated;
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
             _AudienceInteractionManager.OnReceivedMessage += OnReceivedMessage;
             _AudienceInteractionManager.OnReceivedIngredientPollResults += OnReceivedIngredientPollResults;
@@ -60,26 +59,23 @@ namespace con2.lobby
 
         void OnDisable()
         {
+            _DetectController.OnConnected -= OnControllerConnected;
+            _DetectController.OnDisconnected -= OnControllerDisconnected;
+
             _AudienceInteractionManager.OnDisconnected -= OnDisconnectedFromServer;
-            _AudienceInteractionManager.OnGameUpdated -= OnGameUpdated;
             _AudienceInteractionManager.OnReceivedMessage -= OnReceivedMessage;
+
+            _AudienceInteractionManager.OnReceivedIngredientPollResults -= OnReceivedIngredientPollResults;
         }
 
         #endregion
 
         #region Network
 
-        void OnGameUpdated()
-        {
-            _RoomPin.text = GameInfo.RoomId;
-            _ViewersNb.text = GameInfo.Viewers.Count.ToString();
-        }
-
         void OnDisconnectedFromServer()
         {
             GameInfo.RoomId = "0000";
             GameInfo.Viewers = new List<Viewer>();
-            OnGameUpdated();
 
             ConnectToServer();
         }

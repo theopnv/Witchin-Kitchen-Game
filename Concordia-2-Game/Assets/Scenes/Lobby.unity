@@ -1440,6 +1440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 844339288}
   - component: {fileID: 844339289}
+  - component: {fileID: 844339290}
   m_Layer: 5
   m_Name: AudienceInfo
   m_TagString: Untagged
@@ -1491,6 +1492,20 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &844339290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844339287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d34b7b2ebe27344a1f91cfb05867ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RoomPin: {fileID: 576321991}
+  _ViewersNumber: {fileID: 1033859692}
 --- !u!1001 &871396004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1892,8 +1907,8 @@ GameObject:
   - component: {fileID: 1033859693}
   - component: {fileID: 1033859692}
   m_Layer: 5
-  m_Name: Viewers Number
-  m_TagString: Untagged
+  m_Name: Number
+  m_TagString: ViewersNumber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2198,8 +2213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _DetectController: {fileID: 1360604513}
-  _RoomPin: {fileID: 576321991}
-  _ViewersNb: {fileID: 1033859692}
+  _AudienceUIManager: {fileID: 844339290}
   _LoadingPanel: {fileID: 991036720}
   _TutorialManager: {fileID: 1918004375}
   _InstructionsText: {fileID: 837755447}
@@ -2651,7 +2665,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1597525262}
-  - component: {fileID: 1597525263}
   m_Layer: 0
   m_Name: Audience
   m_TagString: Untagged
@@ -2674,20 +2687,6 @@ Transform:
   m_Father: {fileID: 366298017}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1597525263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597525261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d34b7b2ebe27344a1f91cfb05867ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _RoomPin: {fileID: 576321991}
-  _ViewersNumber: {fileID: 1033859692}
 --- !u!1 &1706589517
 GameObject:
   m_ObjectHideFlags: 0

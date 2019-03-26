@@ -315,7 +315,7 @@ namespace con2
             {
                 spellId = (int)id,
                 targetedPlayer = new messages.Player() { id = 0 },
-                caster = new Viewer { color = ColorUtility.ToHtmlStringRGBA(Color.red), name = "God", socketId = ""}
+                caster = new Viewer { name = "God", socketId = ""}
             };
             var spellsManager = FindObjectOfType<SpellsManager>();
             spellsManager?.OnSpellCasted(spell);

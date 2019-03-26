@@ -15,6 +15,7 @@ TagManager:
   - Ingredient
   - Projectile
   - FxTemporaire
+  - ViewersNumber
   layers:
   - Default
   - TransparentFX

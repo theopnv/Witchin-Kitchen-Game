@@ -100,7 +100,7 @@ namespace con2
 
         private void OnGameUpdate(SocketIOEvent e)
         {
-            Debug.Log("OnGameUpdate");
+            Debug.Log("OnGameUpdate: " + e.data);
             var game = JsonConvert.DeserializeObject<Game>(e.data.ToString());
             GameInfo.Viewers = game.viewers;
             OnGameUpdated?.Invoke();

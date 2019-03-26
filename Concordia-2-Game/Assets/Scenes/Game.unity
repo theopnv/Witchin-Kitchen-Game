@@ -312,8 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _DetectController: {fileID: 581277800}
-  _RoomPin: {fileID: 703342993}
-  _ViewersNb: {fileID: 1698345665}
+  _AudienceUIManager: {fileID: 2030936567}
   _LoadingPanel: {fileID: 752217720}
   m_maxEventVoteTime: 20
   m_firstPollTime: 30
@@ -6194,7 +6193,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1032917600}
-  - component: {fileID: 1032917601}
   m_Layer: 0
   m_Name: Audience
   m_TagString: Untagged
@@ -6218,20 +6216,6 @@ Transform:
   m_Father: {fileID: 582771356}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1032917601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032917599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d34b7b2ebe27344a1f91cfb05867ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _RoomPin: {fileID: 703342993}
-  _ViewersNumber: {fileID: 1698345665}
 --- !u!1 &1073383114
 GameObject:
   m_ObjectHideFlags: 0
@@ -8506,8 +8490,8 @@ GameObject:
   - component: {fileID: 1698345666}
   - component: {fileID: 1698345665}
   m_Layer: 5
-  m_Name: Viewers Number
-  m_TagString: Untagged
+  m_Name: Number
+  m_TagString: ViewersNumber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10496,6 +10480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2030936565}
   - component: {fileID: 2030936566}
+  - component: {fileID: 2030936567}
   m_Layer: 5
   m_Name: AudienceInfo
   m_TagString: Untagged
@@ -10547,6 +10532,20 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &2030936567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030936564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d34b7b2ebe27344a1f91cfb05867ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RoomPin: {fileID: 703342993}
+  _ViewersNumber: {fileID: 1698345665}
 --- !u!1001 &2035018790
 PrefabInstance:
   m_ObjectHideFlags: 0

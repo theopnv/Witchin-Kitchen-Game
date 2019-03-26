@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using con2.messages;
 using UnityEngine;
 using Key = con2.PlayerPrefsKeys;
 
@@ -15,6 +16,7 @@ namespace con2.main_menu
             // Avoid high CPU usage
             QualitySettings.vSyncCount = 1;
 
+            ResetStaticVars();
 
             // Setting default values in case this is the first time the app is started
             if (!PlayerPrefs.HasKey(Key.HOST_ADDRESS))
@@ -29,6 +31,12 @@ namespace con2.main_menu
             }
         }
 
+        private void ResetStaticVars()
+        {
+            GameInfo.RoomId = "000";
+            GameInfo.Viewers = new List<Viewer>();
+            GameInfo.PlayerNumber = 0;
+        }
     }
 
 }
