@@ -22,25 +22,25 @@ AvatarMask:
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M
     m_Weight: 1
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L/wizardRig_Published:Knee_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L/wizardRig_Published:Knee_L/wizardRig_Published:Ankle_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L/wizardRig_Published:Knee_L/wizardRig_Published:Ankle_L/wizardRig_Published:Toes_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L/wizardRig_Published:Knee_L/wizardRig_Published:Ankle_L/wizardRig_Published:Toes_L/wizardRig_Published:ToesEnd_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R/wizardRig_Published:Knee_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R/wizardRig_Published:Knee_R/wizardRig_Published:Ankle_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R/wizardRig_Published:Knee_R/wizardRig_Published:Ankle_R/wizardRig_Published:Toes_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R/wizardRig_Published:Knee_R/wizardRig_Published:Ankle_R/wizardRig_Published:Toes_R/wizardRig_Published:ToesEnd_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M
     m_Weight: 1
   - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M
