@@ -4999,7 +4999,7 @@ Transform:
   m_GameObject: {fileID: 3317268989409595509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 1.2499999, y: 1.2499999, z: 1.2499999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4824753073269545736}
   m_Father: {fileID: 4824753073205600806}
@@ -5110,7 +5110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4573789593312107587}
   m_LocalRotation: {x: 0.38268346, y: -0, z: -0, w: 0.9238795}
-  m_LocalPosition: {x: -0.046666667, y: 1.3066667, z: 0.33333334}
+  m_LocalPosition: {x: -0.038888887, y: 1.0888889, z: 0.27777776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4824753073205600806}
@@ -5313,7 +5313,7 @@ Transform:
   m_GameObject: {fileID: 4824753073205600801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4824753075078946556}
   - {fileID: 4824753074589885702}
@@ -11240,7 +11240,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.45
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!1 &8526017140730251900
 GameObject:
   m_ObjectHideFlags: 0
@@ -11436,15 +11436,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab0a8611d06d2e479a8da85ed57b11e, type: 3}
