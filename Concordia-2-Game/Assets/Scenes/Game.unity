@@ -364,7 +364,6 @@ MonoBehaviour:
   _MessageFeedPlaceholder: {fileID: 894137371}
   _GlobalMessagePrefab: {fileID: 4345727725033474270, guid: d40a536ec69f9044388da84d94a618d7,
     type: 3}
-  TimeBeforeFade: 15
 --- !u!114 &10916647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5875,11 +5874,11 @@ RectTransform:
   m_Father: {fileID: 719272682}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -25, y: -17.4}
-  m_SizeDelta: {x: 339.8, y: 85.21}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 167}
+  m_SizeDelta: {x: 339.8, y: 85.20999}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &894137373
 MonoBehaviour:
   m_ObjectHideFlags: 0

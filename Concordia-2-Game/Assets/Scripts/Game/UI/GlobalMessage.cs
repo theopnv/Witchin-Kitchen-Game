@@ -58,10 +58,15 @@ namespace con2.game
             { MessageFeedManager.MessageType.generic, Color.white },
         };
 
+        void Start()
+        {
+            _MessageText.alignment = TextAnchor.MiddleCenter;
+        }
+
         void Update()
         {
             _TimeSinceInstantiation += Time.deltaTime;
-            if (!_IsFadingOut && _TimeSinceInstantiation >= 15)
+            if (!_IsFadingOut && _TimeSinceInstantiation >= 3)
             {
                 _IsFadingOut = true;
                 StartCoroutine(FadeOutAfterSeconds());

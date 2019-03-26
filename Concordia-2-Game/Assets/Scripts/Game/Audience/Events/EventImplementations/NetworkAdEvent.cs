@@ -6,6 +6,7 @@ using con2.game;
 public class NetworkAdEvent : AbstractAudienceEvent
 {
     public float m_NetworkAdsDuration = 10.0f;
+    public float m_MessageDelay;
 
     private Gamepad[] m_playerGamepads;
 
@@ -24,6 +25,7 @@ public class NetworkAdEvent : AbstractAudienceEvent
     {
         _NetworkAdsCanvasInstance = Instantiate(_NetworkAdsCanvasPrefab);
         _MessageFeedManager.AddMessageToFeed("This is ad time...", MessageFeedManager.MessageType.arena_event);
+        _NetworkAdsCanvasInstance.SendMessage("MessageDelay", m_MessageDelay);
         
         yield return new WaitForSeconds(m_NetworkAdsDuration);
         Destroy(_NetworkAdsCanvasInstance);
