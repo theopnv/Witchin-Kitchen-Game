@@ -17,6 +17,8 @@ namespace con2.game
         [Tooltip("List of ingredient icons")]
         public List<IngredientIcon> IngredientIcons = new List<IngredientIcon>();
         public static Dictionary<Ingredient, Image> IconSprites;
+        public static Sprite completedIngredient;
+        public Sprite completedIngredientSprite;
 
         private void Start()
         {
@@ -25,6 +27,7 @@ namespace con2.game
             {
                 IconSprites.Add(item.Type, item.Prefab);
             }
+            completedIngredient = completedIngredientSprite; //can't set static sprites in the inspector...
         }
 
         #endregion

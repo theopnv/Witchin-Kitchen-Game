@@ -67,11 +67,12 @@ namespace con2.game
                 var child = RecipeIconsParent.transform.GetChild(i);
                 if (child.GetComponent<IngredientType>().m_type == type)
                 {
-                    var renderer = child.GetComponent<Image>();
-                    var color = renderer.color;
-                    if (color.a > 0.75f)
+                    var icon = child.GetComponent<Image>();
+                    var color = icon.color;
+                    if (color.a > 0.95f)
                     {
-                        renderer.color = new Color(0.5f * color.r, 0.5f * color.g, 0.5f * color.b, 0.3f);
+                        icon.color = new Color(color.r, color.g, color.b, 0.9f);
+                        icon.sprite = GlobalRecipeList.completedIngredient;
                         break;
                     }
                 }

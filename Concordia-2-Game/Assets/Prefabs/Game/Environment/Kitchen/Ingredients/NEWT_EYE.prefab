@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f36c151d2635f43a5c461fac8c0dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_type: 1
+  m_type: 0
 --- !u!114 &5817765546517969983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +213,11 @@ PrefabInstance:
       propertyPath: m_ingredientType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1028785531022391640, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 8247869552462652036, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -268,10 +273,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9140700314993437573, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140700314993437573, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: ScaleObject
+      value: 
+      objectReference: {fileID: 2135384641246065995}
+    - target: {fileID: 9140700314993437573, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: OwnBody
+      value: 
+      objectReference: {fileID: 8362871382624687020}
     - target: {fileID: 6356156231182219705, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732246515721730357, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 335452957193026619, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}
@@ -288,31 +313,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7a67b1217d83f7a4887791c418ed93d0, type: 2}
-    - target: {fileID: 1028785531022391640, guid: 1da633f4c7854fd459d05e444cbd1952,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6732246515721730357, guid: 1da633f4c7854fd459d05e444cbd1952,
-        type: 3}
-      propertyPath: startDelay.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9140700314993437573, guid: 1da633f4c7854fd459d05e444cbd1952,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9140700314993437573, guid: 1da633f4c7854fd459d05e444cbd1952,
-        type: 3}
-      propertyPath: ScaleObject
-      value: 
-      objectReference: {fileID: 2135384641246065995}
-    - target: {fileID: 9140700314993437573, guid: 1da633f4c7854fd459d05e444cbd1952,
-        type: 3}
-      propertyPath: OwnBody
-      value: 
-      objectReference: {fileID: 8362871382624687020}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da633f4c7854fd459d05e444cbd1952, type: 3}
 --- !u!1 &2135384641246065995 stripped
