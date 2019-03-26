@@ -48,16 +48,31 @@ MonoBehaviour:
   - {fileID: 2800000, guid: cd004675988364140aef7c4dce489e80, type: 3}
   - {fileID: 2800000, guid: 25367c0beb6794b4391a0d6c856ef2e8, type: 3}
   - {fileID: 2800000, guid: 433e4eb1aae7935458aee777ab64e8d3, type: 3}
+  PlayerNormalTextures:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PlayerOcclusionTextures:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PlayerRoughnessTextures:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   PlayerMeshColors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 0.9747648, b: 1, a: 1}
-  - {r: 0.15178525, g: 1, b: 0, a: 1}
+  - {r: 0.7830189, g: 0, b: 0, a: 1}
+  - {r: 0.003915994, g: 0.81190836, b: 0.8301887, a: 1}
+  - {r: 0.124385506, g: 0.7830189, b: 0.003693494, a: 1}
   - {r: 1, g: 0.91147983, b: 0, a: 1}
   CauldronLiquidColors:
-  - {r: 1, g: 0, b: 0.6173749, a: 1}
-  - {r: 0, g: 0.88400936, b: 1, a: 1}
-  - {r: 0.2704546, g: 1, b: 0.26886788, a: 1}
-  - {r: 1, g: 0.97164285, b: 0, a: 1}
+  - {r: 0.7843138, g: 0, b: 0, a: 1}
+  - {r: 0.003921569, g: 0.8117648, b: 0.8313726, a: 1}
+  - {r: 0.1254902, g: 0.7843138, b: 0.003921569, a: 1}
+  - {r: 1, g: 0.909804, b: 0, a: 1}
   CauldronBubblesColors:
   - {r: 1.9766747, g: 0.44501045, b: 1.3738204, a: 1}
   - {r: 0.44501045, g: 1.9053825, b: 1.9766747, a: 1}
