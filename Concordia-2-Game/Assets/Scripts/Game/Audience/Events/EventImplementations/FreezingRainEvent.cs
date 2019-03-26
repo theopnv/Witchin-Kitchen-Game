@@ -5,7 +5,7 @@ using con2.game;
 public class FreezingRainEvent : AbstractAudienceEvent
 {
     public float m_freezingRainDuration = 10.0f;
-    public float m_dragFraction = 0.01f, m_movementModulator = 1.5f;
+    public float m_dragFraction = 0.01f, m_movementModulator = 1.5f, m_accelModulator = 1.5f;
     public Freeze m_freeze;
     public GameObject m_floor;
     public PhysicMaterial m_freezePhysicsPlayer, m_originalPhysicsPlayer, m_frozenFloor, m_normalFloor, m_frozenItem, m_normalItem;
@@ -35,7 +35,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
             player.ModulateMaxMovementSpeed(m_movementModulator);
-            player.ModulateMovementSpeed(1.0f / m_movementModulator);
+            player.ModulateMovementSpeed(1.0f / m_accelModulator);
             player.ModulateRotationSpeed(m_movementModulator);
             var collider = player.GetComponent<CapsuleCollider>();
             collider.material = m_freezePhysicsPlayer;
@@ -63,7 +63,7 @@ public class FreezingRainEvent : AbstractAudienceEvent
         foreach (PlayerMovement player in m_playerMovementControllers)
         {
             player.ModulateMaxMovementSpeed(1.0f / m_movementModulator);
-            player.ModulateMovementSpeed(m_movementModulator);
+            player.ModulateMovementSpeed(m_accelModulator);
             player.ModulateRotationSpeed(1.0f / m_movementModulator);
             var collider = player.GetComponent<CapsuleCollider>();
             collider.material = m_originalPhysicsPlayer;

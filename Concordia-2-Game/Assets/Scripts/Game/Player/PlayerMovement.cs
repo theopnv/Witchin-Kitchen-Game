@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
     public float FacingRotationSpeed;
 
     private Vector3 movementDirection = new Vector3();
-    private Vector3 prevMovementDirection = new Vector3();
     FightStun m_stun;
     Rigidbody m_rb;
 
@@ -32,11 +31,16 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     private AudioSource audioSource;
 
+    private AnimControl m_anim;
+    private bool m_running = false;
+    private float m_runSpeed = 1.0f;
+
     void Start()
     {
         m_stun = GetComponent<FightStun>();
         m_rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        m_anim = GetComponentInChildren<AnimControl>();
     }
 
     public bool ConsumeInput(GamepadAction input)
@@ -56,35 +60,39 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
         return false;
     }
 
+    private void Update()
+    {
+        m_anim.SetRunning(m_running);
+        m_anim.SetRunSpeed(m_runSpeed);
+        m_anim.SetDizzy(m_stun.getMovementModifier() < 0.5f || (!m_running && m_stun.getMovementModifier() < 0.99f));
+    }
+
     private void FixedUpdate()
     {
         movementDirection.y = 0.0f;
+        var moveD = movementDirection;
 
-        if (movementDirection.magnitude > 1f)
+        if (moveD.magnitude > 1f)
         {
-            movementDirection.Normalize();
+            moveD.Normalize();
         }
         
-        var slowFactor = movementDirection.magnitude;
+        var slowFactor = moveD.magnitude;
 
-        movementDirection *= MovementSpeed;
+        moveD *= MovementSpeed;
 
         // Apply stun factor
-        movementDirection *= m_stun.getMovementModifier();
+        moveD *= m_stun.getMovementModifier();
 
         if(m_movementIsInverted)
         {
-            movementDirection *= -1f;
+            moveD *= -1f;
         }
 
-        var frozenDir = Vector3.Slerp(prevMovementDirection.normalized, movementDirection.normalized, 1.0f - MovementDirectionLag);
-        var frozenLen = Mathf.Lerp(prevMovementDirection.magnitude, movementDirection.magnitude, 1.0f - MovementDirectionLag);
-        movementDirection = frozenDir.normalized * frozenLen;
-
         // If player asked for input
-        if (!Mathf.Approximately(movementDirection.magnitude, 0.0f))
+        if (!Mathf.Approximately(moveD.magnitude, 0.0f))
         {
-            m_rb.velocity += movementDirection * MovementSpeed * Time.deltaTime;
+            m_rb.velocity += moveD * MovementSpeed * Time.deltaTime;
         }
         
         // Cap movement speed
@@ -96,14 +104,17 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
             m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, maxVel);
         }
 
+        m_running = moveD.magnitude > 0.1f;
+        m_runSpeed = Mathf.Lerp(0.5f, 1.0f, m_rb.velocity.magnitude / MaxMovementSpeed);
+
         // Gravity
         m_rb.AddForce(Vector3.down * Gravity, ForceMode.Acceleration);
 
         // Smooth rotation according to velocity
-        bool nonZeroInput = movementDirection.magnitude > 0.1f;
+        bool nonZeroInput = moveD.magnitude > 0.1f;
         if (nonZeroInput)
         {
-            Vector3 targetRotation = movementDirection.normalized;
+            Vector3 targetRotation = moveD.normalized;
 
             Quaternion facing = new Quaternion();
             facing.SetLookRotation(targetRotation);
@@ -111,11 +122,6 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
             transform.rotation = facing;
         }
-
-        prevMovementDirection = movementDirection;
-        movementDirection.x = 0.0f;
-        movementDirection.y = 0.0f;
-        movementDirection.z = 0.0f;
     }
 
     public void Punch(Vector3 knockVelocity, float stunTime)
