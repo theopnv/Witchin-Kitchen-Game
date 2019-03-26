@@ -1,0 +1,1119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MaskWizard
+  m_Mask: 01000000010000000100000000000000000000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Geometry
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L/wizardRig_Published:Knee_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L/wizardRig_Published:Knee_L/wizardRig_Published:Ankle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L/wizardRig_Published:Knee_L/wizardRig_Published:Ankle_L/wizardRig_Published:Toes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_L/wizardRig_Published:Knee_L/wizardRig_Published:Ankle_L/wizardRig_Published:Toes_L/wizardRig_Published:ToesEnd_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R/wizardRig_Published:Knee_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R/wizardRig_Published:Knee_R/wizardRig_Published:Ankle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R/wizardRig_Published:Knee_R/wizardRig_Published:Ankle_R/wizardRig_Published:Toes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Hip_R/wizardRig_Published:Knee_R/wizardRig_Published:Ankle_R/wizardRig_Published:Toes_R/wizardRig_Published:ToesEnd_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Neck_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Neck_M/wizardRig_Published:Head_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Neck_M/wizardRig_Published:Head_M/wizardRig_Published:Eye_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Neck_M/wizardRig_Published:Head_M/wizardRig_Published:Eye_L/wizardRig_Published:EyeEnd_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Neck_M/wizardRig_Published:Head_M/wizardRig_Published:Eye_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Neck_M/wizardRig_Published:Head_M/wizardRig_Published:Eye_R/wizardRig_Published:EyeEnd_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Neck_M/wizardRig_Published:Head_M/wizardRig_Published:HeadEnd_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Neck_M/wizardRig_Published:Head_M/wizardRig_Published:Jaw_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Neck_M/wizardRig_Published:Head_M/wizardRig_Published:Jaw_M/wizardRig_Published:JawEnd_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L/wizardRig_Published:Shoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L/wizardRig_Published:Shoulder_L/wizardRig_Published:ShoulderPart1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L/wizardRig_Published:Shoulder_L/wizardRig_Published:ShoulderPart1_L/wizardRig_Published:ShoulderPart2_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L/wizardRig_Published:Shoulder_L/wizardRig_Published:ShoulderPart1_L/wizardRig_Published:ShoulderPart2_L/wizardRig_Published:Elbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L/wizardRig_Published:Shoulder_L/wizardRig_Published:ShoulderPart1_L/wizardRig_Published:ShoulderPart2_L/wizardRig_Published:Elbow_L/wizardRig_Published:Wrist_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L/wizardRig_Published:Shoulder_L/wizardRig_Published:ShoulderPart1_L/wizardRig_Published:ShoulderPart2_L/wizardRig_Published:Elbow_L/wizardRig_Published:Wrist_L/wizardRig_Published:MiddleFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L/wizardRig_Published:Shoulder_L/wizardRig_Published:ShoulderPart1_L/wizardRig_Published:ShoulderPart2_L/wizardRig_Published:Elbow_L/wizardRig_Published:Wrist_L/wizardRig_Published:MiddleFinger1_L/wizardRig_Published:MiddleFinger2_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L/wizardRig_Published:Shoulder_L/wizardRig_Published:ShoulderPart1_L/wizardRig_Published:ShoulderPart2_L/wizardRig_Published:Elbow_L/wizardRig_Published:Wrist_L/wizardRig_Published:ThumbFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_L/wizardRig_Published:Shoulder_L/wizardRig_Published:ShoulderPart1_L/wizardRig_Published:ShoulderPart2_L/wizardRig_Published:Elbow_L/wizardRig_Published:Wrist_L/wizardRig_Published:ThumbFinger1_L/wizardRig_Published:ThumbFinger2_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R/wizardRig_Published:Shoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R/wizardRig_Published:Shoulder_R/wizardRig_Published:ShoulderPart1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R/wizardRig_Published:Shoulder_R/wizardRig_Published:ShoulderPart1_R/wizardRig_Published:ShoulderPart2_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R/wizardRig_Published:Shoulder_R/wizardRig_Published:ShoulderPart1_R/wizardRig_Published:ShoulderPart2_R/wizardRig_Published:Elbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R/wizardRig_Published:Shoulder_R/wizardRig_Published:ShoulderPart1_R/wizardRig_Published:ShoulderPart2_R/wizardRig_Published:Elbow_R/wizardRig_Published:Wrist_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R/wizardRig_Published:Shoulder_R/wizardRig_Published:ShoulderPart1_R/wizardRig_Published:ShoulderPart2_R/wizardRig_Published:Elbow_R/wizardRig_Published:Wrist_R/wizardRig_Published:MiddleFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R/wizardRig_Published:Shoulder_R/wizardRig_Published:ShoulderPart1_R/wizardRig_Published:ShoulderPart2_R/wizardRig_Published:Elbow_R/wizardRig_Published:Wrist_R/wizardRig_Published:MiddleFinger1_R/wizardRig_Published:MiddleFinger2_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R/wizardRig_Published:Shoulder_R/wizardRig_Published:ShoulderPart1_R/wizardRig_Published:ShoulderPart2_R/wizardRig_Published:Elbow_R/wizardRig_Published:Wrist_R/wizardRig_Published:ThumbFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:DeformationSystem/wizardRig_Published:Root_M/wizardRig_Published:Spine1_M/wizardRig_Published:Chest_M/wizardRig_Published:Scapula_R/wizardRig_Published:Shoulder_R/wizardRig_Published:ShoulderPart1_R/wizardRig_Published:ShoulderPart2_R/wizardRig_Published:Elbow_R/wizardRig_Published:Wrist_R/wizardRig_Published:ThumbFinger1_R/wizardRig_Published:ThumbFinger2_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee/wizardRig_Published:Ankle
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee/wizardRig_Published:Ankle/wizardRig_Published:Heel
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee/wizardRig_Published:Ankle/wizardRig_Published:Toes
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Hip/wizardRig_Published:Knee/wizardRig_Published:Ankle/wizardRig_Published:Toes/wizardRig_Published:ToesEnd
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Neck
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Neck/wizardRig_Published:Head
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Neck/wizardRig_Published:Head/wizardRig_Published:Eye
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Neck/wizardRig_Published:Head/wizardRig_Published:Eye/wizardRig_Published:EyeEnd
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Neck/wizardRig_Published:Head/wizardRig_Published:HeadEnd
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Neck/wizardRig_Published:Head/wizardRig_Published:Jaw
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Neck/wizardRig_Published:Head/wizardRig_Published:Jaw/wizardRig_Published:JawEnd
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Scapula
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Scapula/wizardRig_Published:Shoulder
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Scapula/wizardRig_Published:Shoulder/wizardRig_Published:Elbow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Scapula/wizardRig_Published:Shoulder/wizardRig_Published:Elbow/wizardRig_Published:Wrist
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Scapula/wizardRig_Published:Shoulder/wizardRig_Published:Elbow/wizardRig_Published:Wrist/wizardRig_Published:MiddleFinger1
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Scapula/wizardRig_Published:Shoulder/wizardRig_Published:Elbow/wizardRig_Published:Wrist/wizardRig_Published:MiddleFinger1/wizardRig_Published:MiddleFinger2
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Scapula/wizardRig_Published:Shoulder/wizardRig_Published:Elbow/wizardRig_Published:Wrist/wizardRig_Published:ThumbFinger1
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:FitSkeleton/wizardRig_Published:Root/wizardRig_Published:Spine1/wizardRig_Published:Chest/wizardRig_Published:Scapula/wizardRig_Published:Shoulder/wizardRig_Published:Elbow/wizardRig_Published:Wrist/wizardRig_Published:ThumbFinger1/wizardRig_Published:ThumbFinger2
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye/wizardRig_Published:AimOffsetEye
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye/wizardRig_Published:AimOffsetEye/wizardRig_Published:AimFollowEye
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye/wizardRig_Published:AimOffsetEye/wizardRig_Published:AimFollowEye/wizardRig_Published:AimEye_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye/wizardRig_Published:AimOffsetEye/wizardRig_Published:AimFollowEye/wizardRig_Published:AimEye_M/wizardRig_Published:AimOffsetEye_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye/wizardRig_Published:AimOffsetEye/wizardRig_Published:AimFollowEye/wizardRig_Published:AimEye_M/wizardRig_Published:AimOffsetEye_L/wizardRig_Published:AimEye_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye/wizardRig_Published:AimOffsetEye/wizardRig_Published:AimFollowEye/wizardRig_Published:AimEye_M/wizardRig_Published:AimOffsetEye_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye/wizardRig_Published:AimOffsetEye/wizardRig_Published:AimFollowEye/wizardRig_Published:AimEye_M/wizardRig_Published:AimOffsetEye_R/wizardRig_Published:AimEye_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye/wizardRig_Published:AimOffsetEye/wizardRig_Published:AimFollowOffEye
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:AimSystem/wizardRig_Published:AimEye/wizardRig_Published:AimOffsetEye/wizardRig_Published:AimFollowOnEye
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:BendSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:ConstraintSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:DrivingSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:DrivingSystem/wizardRig_Published:Fingers_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:DrivingSystem/wizardRig_Published:Fingers_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:DynamicSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintArm_L/wizardRig_Published:FKIKArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintArm_R/wizardRig_Published:FKIKArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintLeg_L/wizardRig_Published:FKIKLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintLeg_R/wizardRig_Published:FKIKLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintSpine_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKIKSystem/wizardRig_Published:FKIKParentConstraintSpine_M/wizardRig_Published:FKIKSpine_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:AlignIKToRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M/wizardRig_Published:HipSwingerStabilizer
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M/wizardRig_Published:HipSwingerStabilizer/wizardRig_Published:FKExtraSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M/wizardRig_Published:HipSwingerStabilizer/wizardRig_Published:FKExtraSpine1_M/wizardRig_Published:FKSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M/wizardRig_Published:HipSwingerStabilizer/wizardRig_Published:FKExtraSpine1_M/wizardRig_Published:FKSpine1_M/wizardRig_Published:FKXSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M/wizardRig_Published:HipSwingerStabilizer/wizardRig_Published:FKExtraSpine1_M/wizardRig_Published:FKSpine1_M/wizardRig_Published:FKXSpine1_M/wizardRig_Published:FKOffsetChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M/wizardRig_Published:HipSwingerStabilizer/wizardRig_Published:FKExtraSpine1_M/wizardRig_Published:FKSpine1_M/wizardRig_Published:FKXSpine1_M/wizardRig_Published:FKOffsetChest_M/wizardRig_Published:FKExtraChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M/wizardRig_Published:HipSwingerStabilizer/wizardRig_Published:FKExtraSpine1_M/wizardRig_Published:FKSpine1_M/wizardRig_Published:FKXSpine1_M/wizardRig_Published:FKOffsetChest_M/wizardRig_Published:FKExtraChest_M/wizardRig_Published:FKChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M/wizardRig_Published:HipSwingerStabilizer/wizardRig_Published:FKExtraSpine1_M/wizardRig_Published:FKSpine1_M/wizardRig_Published:FKXSpine1_M/wizardRig_Published:FKOffsetChest_M/wizardRig_Published:FKExtraChest_M/wizardRig_Published:FKChest_M/wizardRig_Published:FKXChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:FKXRoot_M/wizardRig_Published:FKOffsetSpine1_M/wizardRig_Published:HipSwingerStabilizer/wizardRig_Published:FKExtraSpine1_M/wizardRig_Published:FKSpine1_M/wizardRig_Published:FKXSpine1_M/wizardRig_Published:FKOffsetChest_M/wizardRig_Published:FKExtraChest_M/wizardRig_Published:FKChest_M/wizardRig_Published:FKXChest_M/wizardRig_Published:AlignIKToChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:HipSwingerOffset_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:HipSwingerOffset_M/wizardRig_Published:HipSwinger_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:HipSwingerStabilizerTarget
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:HipSwingReverse
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKOffsetRoot_M/wizardRig_Published:FKExtraRoot_M/wizardRig_Published:FKRoot_M/wizardRig_Published:HipSwingReverse/wizardRig_Published:HipSwingReverseRoot
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_L/wizardRig_Published:FKOffsetEye_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_L/wizardRig_Published:FKOffsetEye_L/wizardRig_Published:FKExtraEye_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_L/wizardRig_Published:FKOffsetEye_L/wizardRig_Published:FKExtraEye_L/wizardRig_Published:FKEye_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_L/wizardRig_Published:FKOffsetEye_L/wizardRig_Published:FKExtraEye_L/wizardRig_Published:FKEye_L/wizardRig_Published:FKXEye_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_R/wizardRig_Published:FKOffsetEye_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_R/wizardRig_Published:FKOffsetEye_R/wizardRig_Published:FKExtraEye_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_R/wizardRig_Published:FKOffsetEye_R/wizardRig_Published:FKExtraEye_R/wizardRig_Published:FKEye_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKAimEye_R/wizardRig_Published:FKOffsetEye_R/wizardRig_Published:FKExtraEye_R/wizardRig_Published:FKEye_R/wizardRig_Published:FKXEye_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKOffsetJaw_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKOffsetJaw_M/wizardRig_Published:FKExtraJaw_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKOffsetJaw_M/wizardRig_Published:FKExtraJaw_M/wizardRig_Published:FKJaw_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetNeck_M/wizardRig_Published:FKExtraNeck_M/wizardRig_Published:FKNeck_M/wizardRig_Published:FKXNeck_M/wizardRig_Published:FKOffsetHead_M/wizardRig_Published:FKGlobalStaticHead_M/wizardRig_Published:FKGlobalHead_M/wizardRig_Published:FKExtraHead_M/wizardRig_Published:FKHead_M/wizardRig_Published:FKXHead_M/wizardRig_Published:FKOffsetJaw_M/wizardRig_Published:FKExtraJaw_M/wizardRig_Published:FKJaw_M/wizardRig_Published:FKXJaw_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetScapula_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetScapula_L/wizardRig_Published:FKExtraScapula_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetScapula_L/wizardRig_Published:FKExtraScapula_L/wizardRig_Published:FKScapula_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetScapula_L/wizardRig_Published:FKExtraScapula_L/wizardRig_Published:FKScapula_L/wizardRig_Published:FKXScapula_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetScapula_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetScapula_R/wizardRig_Published:FKExtraScapula_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetScapula_R/wizardRig_Published:FKExtraScapula_R/wizardRig_Published:FKScapula_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToChest_M/wizardRig_Published:FKOffsetScapula_R/wizardRig_Published:FKExtraScapula_R/wizardRig_Published:FKScapula_R/wizardRig_Published:FKXScapula_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:AlignIKToHip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L/wizardRig_Published:FKExtraAnkle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L/wizardRig_Published:FKExtraAnkle_L/wizardRig_Published:FKAnkle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L/wizardRig_Published:FKExtraAnkle_L/wizardRig_Published:FKAnkle_L/wizardRig_Published:FKXAnkle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L/wizardRig_Published:FKExtraAnkle_L/wizardRig_Published:FKAnkle_L/wizardRig_Published:FKXAnkle_L/wizardRig_Published:AlignIKToAnkle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L/wizardRig_Published:FKExtraAnkle_L/wizardRig_Published:FKAnkle_L/wizardRig_Published:FKXAnkle_L/wizardRig_Published:FKOffsetToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L/wizardRig_Published:FKExtraAnkle_L/wizardRig_Published:FKAnkle_L/wizardRig_Published:FKXAnkle_L/wizardRig_Published:FKOffsetToes_L/wizardRig_Published:FKExtraToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L/wizardRig_Published:FKExtraAnkle_L/wizardRig_Published:FKAnkle_L/wizardRig_Published:FKXAnkle_L/wizardRig_Published:FKOffsetToes_L/wizardRig_Published:FKExtraToes_L/wizardRig_Published:FKToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L/wizardRig_Published:FKExtraAnkle_L/wizardRig_Published:FKAnkle_L/wizardRig_Published:FKXAnkle_L/wizardRig_Published:FKOffsetToes_L/wizardRig_Published:FKExtraToes_L/wizardRig_Published:FKToes_L/wizardRig_Published:FKXToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_L/wizardRig_Published:FKExtraHip_L/wizardRig_Published:FKHip_L/wizardRig_Published:FKXHip_L/wizardRig_Published:FKOffsetKnee_L/wizardRig_Published:FKExtraKnee_L/wizardRig_Published:FKKnee_L/wizardRig_Published:FKXKnee_L/wizardRig_Published:FKOffsetAnkle_L/wizardRig_Published:FKExtraAnkle_L/wizardRig_Published:FKAnkle_L/wizardRig_Published:FKXAnkle_L/wizardRig_Published:FKOffsetToes_L/wizardRig_Published:FKExtraToes_L/wizardRig_Published:FKToes_L/wizardRig_Published:FKXToes_L/wizardRig_Published:AlignIKToToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:AlignIKToHip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R/wizardRig_Published:FKExtraAnkle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R/wizardRig_Published:FKExtraAnkle_R/wizardRig_Published:FKAnkle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R/wizardRig_Published:FKExtraAnkle_R/wizardRig_Published:FKAnkle_R/wizardRig_Published:FKXAnkle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R/wizardRig_Published:FKExtraAnkle_R/wizardRig_Published:FKAnkle_R/wizardRig_Published:FKXAnkle_R/wizardRig_Published:AlignIKToAnkle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R/wizardRig_Published:FKExtraAnkle_R/wizardRig_Published:FKAnkle_R/wizardRig_Published:FKXAnkle_R/wizardRig_Published:FKOffsetToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R/wizardRig_Published:FKExtraAnkle_R/wizardRig_Published:FKAnkle_R/wizardRig_Published:FKXAnkle_R/wizardRig_Published:FKOffsetToes_R/wizardRig_Published:FKExtraToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R/wizardRig_Published:FKExtraAnkle_R/wizardRig_Published:FKAnkle_R/wizardRig_Published:FKXAnkle_R/wizardRig_Published:FKOffsetToes_R/wizardRig_Published:FKExtraToes_R/wizardRig_Published:FKToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R/wizardRig_Published:FKExtraAnkle_R/wizardRig_Published:FKAnkle_R/wizardRig_Published:FKXAnkle_R/wizardRig_Published:FKOffsetToes_R/wizardRig_Published:FKExtraToes_R/wizardRig_Published:FKToes_R/wizardRig_Published:FKXToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToRoot_M/wizardRig_Published:FKOffsetHip_R/wizardRig_Published:FKExtraHip_R/wizardRig_Published:FKHip_R/wizardRig_Published:FKXHip_R/wizardRig_Published:FKOffsetKnee_R/wizardRig_Published:FKExtraKnee_R/wizardRig_Published:FKKnee_R/wizardRig_Published:FKXKnee_R/wizardRig_Published:FKOffsetAnkle_R/wizardRig_Published:FKExtraAnkle_R/wizardRig_Published:FKAnkle_R/wizardRig_Published:FKXAnkle_R/wizardRig_Published:FKOffsetToes_R/wizardRig_Published:FKExtraToes_R/wizardRig_Published:FKToes_R/wizardRig_Published:FKXToes_R/wizardRig_Published:AlignIKToToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:AlignIKToShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:FKOffsetElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:FKOffsetElbow_L/wizardRig_Published:FKExtraElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:FKOffsetElbow_L/wizardRig_Published:FKExtraElbow_L/wizardRig_Published:FKElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:FKOffsetElbow_L/wizardRig_Published:FKExtraElbow_L/wizardRig_Published:FKElbow_L/wizardRig_Published:FKXElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:FKOffsetElbow_L/wizardRig_Published:FKExtraElbow_L/wizardRig_Published:FKElbow_L/wizardRig_Published:FKXElbow_L/wizardRig_Published:FKOffsetWrist_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:FKOffsetElbow_L/wizardRig_Published:FKExtraElbow_L/wizardRig_Published:FKElbow_L/wizardRig_Published:FKXElbow_L/wizardRig_Published:FKOffsetWrist_L/wizardRig_Published:FKExtraWrist_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:FKOffsetElbow_L/wizardRig_Published:FKExtraElbow_L/wizardRig_Published:FKElbow_L/wizardRig_Published:FKXElbow_L/wizardRig_Published:FKOffsetWrist_L/wizardRig_Published:FKExtraWrist_L/wizardRig_Published:FKWrist_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:FKOffsetElbow_L/wizardRig_Published:FKExtraElbow_L/wizardRig_Published:FKElbow_L/wizardRig_Published:FKXElbow_L/wizardRig_Published:FKOffsetWrist_L/wizardRig_Published:FKExtraWrist_L/wizardRig_Published:FKWrist_L/wizardRig_Published:FKXWrist_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_L/wizardRig_Published:FKOffsetShoulder_L/wizardRig_Published:FKExtraShoulder_L/wizardRig_Published:FKShoulder_L/wizardRig_Published:FKXShoulder_L/wizardRig_Published:FKOffsetElbow_L/wizardRig_Published:FKExtraElbow_L/wizardRig_Published:FKElbow_L/wizardRig_Published:FKXElbow_L/wizardRig_Published:FKOffsetWrist_L/wizardRig_Published:FKExtraWrist_L/wizardRig_Published:FKWrist_L/wizardRig_Published:FKXWrist_L/wizardRig_Published:AlignIKToWrist_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:AlignIKToShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:FKOffsetElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:FKOffsetElbow_R/wizardRig_Published:FKExtraElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:FKOffsetElbow_R/wizardRig_Published:FKExtraElbow_R/wizardRig_Published:FKElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:FKOffsetElbow_R/wizardRig_Published:FKExtraElbow_R/wizardRig_Published:FKElbow_R/wizardRig_Published:FKXElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:FKOffsetElbow_R/wizardRig_Published:FKExtraElbow_R/wizardRig_Published:FKElbow_R/wizardRig_Published:FKXElbow_R/wizardRig_Published:FKOffsetWrist_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:FKOffsetElbow_R/wizardRig_Published:FKExtraElbow_R/wizardRig_Published:FKElbow_R/wizardRig_Published:FKXElbow_R/wizardRig_Published:FKOffsetWrist_R/wizardRig_Published:FKExtraWrist_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:FKOffsetElbow_R/wizardRig_Published:FKExtraElbow_R/wizardRig_Published:FKElbow_R/wizardRig_Published:FKXElbow_R/wizardRig_Published:FKOffsetWrist_R/wizardRig_Published:FKExtraWrist_R/wizardRig_Published:FKWrist_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:FKOffsetElbow_R/wizardRig_Published:FKExtraElbow_R/wizardRig_Published:FKElbow_R/wizardRig_Published:FKXElbow_R/wizardRig_Published:FKOffsetWrist_R/wizardRig_Published:FKExtraWrist_R/wizardRig_Published:FKWrist_R/wizardRig_Published:FKXWrist_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToScapula_R/wizardRig_Published:FKOffsetShoulder_R/wizardRig_Published:FKExtraShoulder_R/wizardRig_Published:FKShoulder_R/wizardRig_Published:FKXShoulder_R/wizardRig_Published:FKOffsetElbow_R/wizardRig_Published:FKExtraElbow_R/wizardRig_Published:FKElbow_R/wizardRig_Published:FKXElbow_R/wizardRig_Published:FKOffsetWrist_R/wizardRig_Published:FKExtraWrist_R/wizardRig_Published:FKWrist_R/wizardRig_Published:FKXWrist_R/wizardRig_Published:AlignIKToWrist_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L/wizardRig_Published:FKOffsetMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L/wizardRig_Published:FKOffsetMiddleFinger1_L/wizardRig_Published:SDK1FKMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L/wizardRig_Published:FKOffsetMiddleFinger1_L/wizardRig_Published:SDK1FKMiddleFinger1_L/wizardRig_Published:FKExtraMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L/wizardRig_Published:FKOffsetMiddleFinger1_L/wizardRig_Published:SDK1FKMiddleFinger1_L/wizardRig_Published:FKExtraMiddleFinger1_L/wizardRig_Published:FKMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L/wizardRig_Published:FKOffsetMiddleFinger1_L/wizardRig_Published:SDK1FKMiddleFinger1_L/wizardRig_Published:FKExtraMiddleFinger1_L/wizardRig_Published:FKMiddleFinger1_L/wizardRig_Published:FKXMiddleFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L/wizardRig_Published:FKOffsetThumbFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L/wizardRig_Published:FKOffsetThumbFinger1_L/wizardRig_Published:FKExtraThumbFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L/wizardRig_Published:FKOffsetThumbFinger1_L/wizardRig_Published:FKExtraThumbFinger1_L/wizardRig_Published:FKThumbFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_L/wizardRig_Published:FKOffsetThumbFinger1_L/wizardRig_Published:FKExtraThumbFinger1_L/wizardRig_Published:FKThumbFinger1_L/wizardRig_Published:FKXThumbFinger1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R/wizardRig_Published:FKOffsetMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R/wizardRig_Published:FKOffsetMiddleFinger1_R/wizardRig_Published:SDK1FKMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R/wizardRig_Published:FKOffsetMiddleFinger1_R/wizardRig_Published:SDK1FKMiddleFinger1_R/wizardRig_Published:FKExtraMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R/wizardRig_Published:FKOffsetMiddleFinger1_R/wizardRig_Published:SDK1FKMiddleFinger1_R/wizardRig_Published:FKExtraMiddleFinger1_R/wizardRig_Published:FKMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R/wizardRig_Published:FKOffsetMiddleFinger1_R/wizardRig_Published:SDK1FKMiddleFinger1_R/wizardRig_Published:FKExtraMiddleFinger1_R/wizardRig_Published:FKMiddleFinger1_R/wizardRig_Published:FKXMiddleFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R/wizardRig_Published:FKOffsetThumbFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R/wizardRig_Published:FKOffsetThumbFinger1_R/wizardRig_Published:FKExtraThumbFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R/wizardRig_Published:FKOffsetThumbFinger1_R/wizardRig_Published:FKExtraThumbFinger1_R/wizardRig_Published:FKThumbFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:FKSystem/wizardRig_Published:FKParentConstraintToWrist_R/wizardRig_Published:FKOffsetThumbFinger1_R/wizardRig_Published:FKExtraThumbFinger1_R/wizardRig_Published:FKThumbFinger1_R/wizardRig_Published:FKXThumbFinger1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:GlobalSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:GlobalSystem/wizardRig_Published:GlobalOffsetHead_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:GlobalSystem/wizardRig_Published:GlobalOffsetHead_M/wizardRig_Published:GlobalHead_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKCurve
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKCurve/wizardRig_Published:IKSpineCurve_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetArm_LFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetArm_LFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetArm_RFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetArm_RFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetSpine2_MFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetSpine2_MFollowFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetSpine2_MFollowFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetSpine2_MFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetSpine2_MStaticFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetSpine2_MStaticFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetSpine3_MFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:IKOffsetSpine3_MFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:PoleOffsetArm_LFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:PoleOffsetArm_LFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:PoleOffsetArm_RFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:PoleOffsetArm_RFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:PoleOffsetLeg_LFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:PoleOffsetLeg_LFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:PoleOffsetLeg_RFollow
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKFollow/wizardRig_Published:PoleOffsetLeg_RFollowNoScale
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_L/wizardRig_Published:IKExtraArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_L/wizardRig_Published:IKExtraArm_L/wizardRig_Published:IKArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_L/wizardRig_Published:IKExtraArm_L/wizardRig_Published:IKArm_L/wizardRig_Published:IKArmHandle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_L/wizardRig_Published:IKExtraArm_L/wizardRig_Published:IKArm_L/wizardRig_Published:IKFKAlignedOffsetArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_L/wizardRig_Published:IKExtraArm_L/wizardRig_Published:IKArm_L/wizardRig_Published:IKFKAlignedOffsetArm_L/wizardRig_Published:IKFKAlignedArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_L/wizardRig_Published:IKExtraArm_L/wizardRig_Published:IKArm_L/wizardRig_Published:IKmessureConstrainToArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_R/wizardRig_Published:IKExtraArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_R/wizardRig_Published:IKExtraArm_R/wizardRig_Published:IKArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_R/wizardRig_Published:IKExtraArm_R/wizardRig_Published:IKArm_R/wizardRig_Published:IKArmHandle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_R/wizardRig_Published:IKExtraArm_R/wizardRig_Published:IKArm_R/wizardRig_Published:IKFKAlignedOffsetArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_R/wizardRig_Published:IKExtraArm_R/wizardRig_Published:IKArm_R/wizardRig_Published:IKFKAlignedOffsetArm_R/wizardRig_Published:IKFKAlignedArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetArm_R/wizardRig_Published:IKExtraArm_R/wizardRig_Published:IKArm_R/wizardRig_Published:IKmessureConstrainToArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetConstrainedSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetConstrainedSpine1_M/wizardRig_Published:IKOffsetSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetConstrainedSpine1_M/wizardRig_Published:IKOffsetSpine1_M/wizardRig_Published:IKExtraSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetConstrainedSpine1_M/wizardRig_Published:IKOffsetSpine1_M/wizardRig_Published:IKExtraSpine1_M/wizardRig_Published:IKSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetConstrainedSpine1_M/wizardRig_Published:IKOffsetSpine1_M/wizardRig_Published:IKExtraSpine1_M/wizardRig_Published:IKSpine1_M/wizardRig_Published:IKOffsetSpine2_MFollowStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetConstrainedSpine1_M/wizardRig_Published:IKOffsetSpine1_M/wizardRig_Published:IKExtraSpine1_M/wizardRig_Published:IKSpine1_M/wizardRig_Published:IKSpine1LocalOrient1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetConstrainedSpine1_M/wizardRig_Published:IKOffsetSpine1_M/wizardRig_Published:IKExtraSpine1_M/wizardRig_Published:IKSpine1_M/wizardRig_Published:IKSpine1LocalOrient1_M/wizardRig_Published:IKSpine1LocalOrient2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetConstrainedSpine1_M/wizardRig_Published:IKOffsetSpine1_M/wizardRig_Published:IKExtraSpine1_M/wizardRig_Published:IKSpine1_M/wizardRig_Published:IKSpine1LocalOrient1_M/wizardRig_Published:IKSpine1LocalOrient2_M/wizardRig_Published:IKSpine1LocalOrient3_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetConstrainedSpine1_M/wizardRig_Published:IKOffsetSpine1_M/wizardRig_Published:IKExtraSpine1_M/wizardRig_Published:IKSpine1_M/wizardRig_Published:IKSpineLocator0_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetcvSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetcvSpine1_M/wizardRig_Published:IKExtracvSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetcvSpine1_M/wizardRig_Published:IKExtracvSpine1_M/wizardRig_Published:IKcvSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetcvSpine1_M/wizardRig_Published:IKExtracvSpine1_M/wizardRig_Published:IKcvSpine1_M/wizardRig_Published:IKSpineLocator1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:IKFKAlignedOffsetLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:IKFKAlignedOffsetLeg_L/wizardRig_Published:IKFKAlignedLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:IKLegFootRoll_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:IKOffsetToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:IKOffsetToes_L/wizardRig_Published:IKExtraToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:IKOffsetToes_L/wizardRig_Published:IKExtraToes_L/wizardRig_Published:IKToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:IKOffsetToes_L/wizardRig_Published:IKExtraToes_L/wizardRig_Published:IKToes_L/wizardRig_Published:IKToesHandle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:RollOffsetToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:RollOffsetToes_L/wizardRig_Published:RollRollerToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:RollOffsetToes_L/wizardRig_Published:RollRollerToes_L/wizardRig_Published:RollExtraToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:RollOffsetToes_L/wizardRig_Published:RollRollerToes_L/wizardRig_Published:RollExtraToes_L/wizardRig_Published:RollToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:RollOffsetToes_L/wizardRig_Published:RollRollerToes_L/wizardRig_Published:RollExtraToes_L/wizardRig_Published:RollToes_L/wizardRig_Published:IKAnkleHandle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:RollOffsetToes_L/wizardRig_Published:RollRollerToes_L/wizardRig_Published:RollExtraToes_L/wizardRig_Published:RollToes_L/wizardRig_Published:IKLegHandle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_L/wizardRig_Published:IKExtraLeg_L/wizardRig_Published:IKLeg_L/wizardRig_Published:RollOffsetHeel_L/wizardRig_Published:RollRollerHeel_L/wizardRig_Published:RollExtraHeel_L/wizardRig_Published:RollHeel_L/wizardRig_Published:RollOffsetToesEnd_L/wizardRig_Published:RollRollerToesEnd_L/wizardRig_Published:RollExtraToesEnd_L/wizardRig_Published:RollToesEnd_L/wizardRig_Published:RollOffsetToes_L/wizardRig_Published:RollRollerToes_L/wizardRig_Published:RollExtraToes_L/wizardRig_Published:RollToes_L/wizardRig_Published:IKmessureConstrainToLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:IKFKAlignedOffsetLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:IKFKAlignedOffsetLeg_R/wizardRig_Published:IKFKAlignedLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:IKLegFootRoll_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:IKOffsetToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:IKOffsetToes_R/wizardRig_Published:IKExtraToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:IKOffsetToes_R/wizardRig_Published:IKExtraToes_R/wizardRig_Published:IKToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:IKOffsetToes_R/wizardRig_Published:IKExtraToes_R/wizardRig_Published:IKToes_R/wizardRig_Published:IKToesHandle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:RollOffsetToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:RollOffsetToes_R/wizardRig_Published:RollRollerToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:RollOffsetToes_R/wizardRig_Published:RollRollerToes_R/wizardRig_Published:RollExtraToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:RollOffsetToes_R/wizardRig_Published:RollRollerToes_R/wizardRig_Published:RollExtraToes_R/wizardRig_Published:RollToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:RollOffsetToes_R/wizardRig_Published:RollRollerToes_R/wizardRig_Published:RollExtraToes_R/wizardRig_Published:RollToes_R/wizardRig_Published:IKAnkleHandle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:RollOffsetToes_R/wizardRig_Published:RollRollerToes_R/wizardRig_Published:RollExtraToes_R/wizardRig_Published:RollToes_R/wizardRig_Published:IKLegHandle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetLeg_R/wizardRig_Published:IKExtraLeg_R/wizardRig_Published:IKLeg_R/wizardRig_Published:RollOffsetHeel_R/wizardRig_Published:RollRollerHeel_R/wizardRig_Published:RollExtraHeel_R/wizardRig_Published:RollHeel_R/wizardRig_Published:RollOffsetToesEnd_R/wizardRig_Published:RollRollerToesEnd_R/wizardRig_Published:RollExtraToesEnd_R/wizardRig_Published:RollToesEnd_R/wizardRig_Published:RollOffsetToes_R/wizardRig_Published:RollRollerToes_R/wizardRig_Published:RollExtraToes_R/wizardRig_Published:RollToes_R/wizardRig_Published:IKmessureConstrainToLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine2_M/wizardRig_Published:IKExtraSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine2_M/wizardRig_Published:IKExtraSpine2_M/wizardRig_Published:IKSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine2_M/wizardRig_Published:IKExtraSpine2_M/wizardRig_Published:IKSpine2_M/wizardRig_Published:IKSpine2LocalOrient1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine2_M/wizardRig_Published:IKExtraSpine2_M/wizardRig_Published:IKSpine2_M/wizardRig_Published:IKSpine2LocalOrient1_M/wizardRig_Published:IKSpine2LocalOrient2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine2_M/wizardRig_Published:IKSpine2LocalOrient3_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine3_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine3_M/wizardRig_Published:IKExtraSpine3_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine3_M/wizardRig_Published:IKExtraSpine3_M/wizardRig_Published:IKSpine3_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine3_M/wizardRig_Published:IKExtraSpine3_M/wizardRig_Published:IKSpine3_M/wizardRig_Published:IKSpine3LocalOrient1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine3_M/wizardRig_Published:IKExtraSpine3_M/wizardRig_Published:IKSpine3_M/wizardRig_Published:IKSpine3LocalOrient1_M/wizardRig_Published:IKSpine3LocalOrient2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKOffsetSpine3_M/wizardRig_Published:IKExtraSpine3_M/wizardRig_Published:IKSpine3_M/wizardRig_Published:IKSpineLocator2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKRootConstraint
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKScalerChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKScalerRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKScalerSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:IKSpineHandle_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleAimLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleAimLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetArm_L/wizardRig_Published:PoleExtraArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetArm_L/wizardRig_Published:PoleExtraArm_L/wizardRig_Published:PoleArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetArm_R/wizardRig_Published:PoleExtraArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetArm_R/wizardRig_Published:PoleExtraArm_R/wizardRig_Published:PoleArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetLeg_L/wizardRig_Published:PoleExtraLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetLeg_L/wizardRig_Published:PoleExtraLeg_L/wizardRig_Published:PoleLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetLeg_R/wizardRig_Published:PoleExtraLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKHandle/wizardRig_Published:PoleOffsetLeg_R/wizardRig_Published:PoleExtraLeg_R/wizardRig_Published:PoleLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset2_M/wizardRig_Published:IKAcChestFollowOffset_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset2_M/wizardRig_Published:IKAcSpine1FollowOffset_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset3_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset3_M/wizardRig_Published:IKAcPociXformChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset3_M/wizardRig_Published:IKAcPociXformRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset3_M/wizardRig_Published:IKAcPociXformSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset_M/wizardRig_Published:IKAcChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset_M/wizardRig_Published:IKAcRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKAcSpineOffset_M/wizardRig_Published:IKAcSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKMessureFromHip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKX2Hip_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKXKnee_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKXKnee_L/wizardRig_Published:IKX2Knee_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKXKnee_L/wizardRig_Published:IKXAnkle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKXKnee_L/wizardRig_Published:IKXAnkle_L/wizardRig_Published:IKX2Ankle_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKXKnee_L/wizardRig_Published:IKXAnkle_L/wizardRig_Published:IKXToes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKXKnee_L/wizardRig_Published:IKXAnkle_L/wizardRig_Published:IKXToes_L/wizardRig_Published:IKX2Toes_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKXKnee_L/wizardRig_Published:IKXAnkle_L/wizardRig_Published:IKXToes_L/wizardRig_Published:IKXToesEnd_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKXKnee_L/wizardRig_Published:IKXAnkle_L/wizardRig_Published:IKXToes_L/wizardRig_Published:IKXToesEnd_L/wizardRig_Published:IKX2ToesEnd_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_L/wizardRig_Published:IKXOffsetHip_L/wizardRig_Published:IKXHip_L/wizardRig_Published:IKXKnee_L/wizardRig_Published:PoleAnnotationLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKMessureFromHip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKX2Hip_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKXKnee_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKXKnee_R/wizardRig_Published:IKX2Knee_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKXKnee_R/wizardRig_Published:IKXAnkle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKXKnee_R/wizardRig_Published:IKXAnkle_R/wizardRig_Published:IKX2Ankle_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKXKnee_R/wizardRig_Published:IKXAnkle_R/wizardRig_Published:IKXToes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKXKnee_R/wizardRig_Published:IKXAnkle_R/wizardRig_Published:IKXToes_R/wizardRig_Published:IKX2Toes_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKXKnee_R/wizardRig_Published:IKXAnkle_R/wizardRig_Published:IKXToes_R/wizardRig_Published:IKXToesEnd_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKXKnee_R/wizardRig_Published:IKXAnkle_R/wizardRig_Published:IKXToes_R/wizardRig_Published:IKXToesEnd_R/wizardRig_Published:IKX2ToesEnd_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintHip_R/wizardRig_Published:IKXOffsetHip_R/wizardRig_Published:IKXHip_R/wizardRig_Published:IKXKnee_R/wizardRig_Published:PoleAnnotationLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKfake0Spine_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKfake0Spine_M/wizardRig_Published:IKFixedOrientRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKfake0Spine_M/wizardRig_Published:IKFixedOrientRoot_M/wizardRig_Published:IKAcRootFollowOffset_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKfake0Spine_M/wizardRig_Published:IKFixedOrientRoot_M/wizardRig_Published:IKSpRootFollowOffset_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKfake0Spine_M/wizardRig_Published:IKSpSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKfake0Spine_M/wizardRig_Published:IKSpSpine1_M/wizardRig_Published:IKSpChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKfake0Spine_M/wizardRig_Published:IKSpSpine1_M/wizardRig_Published:IKSpChest_M/wizardRig_Published:IKfake1Spine_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKXOffsetRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKXOffsetRoot_M/wizardRig_Published:IKXRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKXOffsetRoot_M/wizardRig_Published:IKXRoot_M/wizardRig_Published:IKX2Root_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKXOffsetRoot_M/wizardRig_Published:IKXRoot_M/wizardRig_Published:IKXSpine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKXOffsetRoot_M/wizardRig_Published:IKXRoot_M/wizardRig_Published:IKXSpine1_M/wizardRig_Published:IKX2Spine1_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKXOffsetRoot_M/wizardRig_Published:IKXRoot_M/wizardRig_Published:IKXSpine1_M/wizardRig_Published:IKXChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintRoot_M/wizardRig_Published:IKXOffsetRoot_M/wizardRig_Published:IKXRoot_M/wizardRig_Published:IKXSpine1_M/wizardRig_Published:IKXChest_M/wizardRig_Published:IKX2Chest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L/wizardRig_Published:IKMessureFromShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L/wizardRig_Published:IKXOffsetShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L/wizardRig_Published:IKXOffsetShoulder_L/wizardRig_Published:IKXShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L/wizardRig_Published:IKXOffsetShoulder_L/wizardRig_Published:IKXShoulder_L/wizardRig_Published:IKX2Shoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L/wizardRig_Published:IKXOffsetShoulder_L/wizardRig_Published:IKXShoulder_L/wizardRig_Published:IKXElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L/wizardRig_Published:IKXOffsetShoulder_L/wizardRig_Published:IKXShoulder_L/wizardRig_Published:IKXElbow_L/wizardRig_Published:IKX2Elbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L/wizardRig_Published:IKXOffsetShoulder_L/wizardRig_Published:IKXShoulder_L/wizardRig_Published:IKXElbow_L/wizardRig_Published:IKXWrist_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L/wizardRig_Published:IKXOffsetShoulder_L/wizardRig_Published:IKXShoulder_L/wizardRig_Published:IKXElbow_L/wizardRig_Published:IKXWrist_L/wizardRig_Published:IKX2Wrist_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_L/wizardRig_Published:IKXOffsetShoulder_L/wizardRig_Published:IKXShoulder_L/wizardRig_Published:IKXElbow_L/wizardRig_Published:PoleAnnotationArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R/wizardRig_Published:IKMessureFromShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R/wizardRig_Published:IKXOffsetShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R/wizardRig_Published:IKXOffsetShoulder_R/wizardRig_Published:IKXShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R/wizardRig_Published:IKXOffsetShoulder_R/wizardRig_Published:IKXShoulder_R/wizardRig_Published:IKX2Shoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R/wizardRig_Published:IKXOffsetShoulder_R/wizardRig_Published:IKXShoulder_R/wizardRig_Published:IKXElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R/wizardRig_Published:IKXOffsetShoulder_R/wizardRig_Published:IKXShoulder_R/wizardRig_Published:IKXElbow_R/wizardRig_Published:IKX2Elbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R/wizardRig_Published:IKXOffsetShoulder_R/wizardRig_Published:IKXShoulder_R/wizardRig_Published:IKXElbow_R/wizardRig_Published:IKXWrist_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R/wizardRig_Published:IKXOffsetShoulder_R/wizardRig_Published:IKXShoulder_R/wizardRig_Published:IKXElbow_R/wizardRig_Published:IKXWrist_R/wizardRig_Published:IKX2Wrist_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKParentConstraintShoulder_R/wizardRig_Published:IKXOffsetShoulder_R/wizardRig_Published:IKXShoulder_R/wizardRig_Published:IKXElbow_R/wizardRig_Published:PoleAnnotationArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKSpSpineOffset_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKSpSpineOffset_M/wizardRig_Published:IKSpChestFollowOffset_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKSpSpineOffset_M/wizardRig_Published:IKSpRoot_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKJoints/wizardRig_Published:IKSpSpineOffset_M/wizardRig_Published:IKSpSpine1FollowOffset_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKdistanceArm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKdistanceArm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKdistanceLeg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKdistanceLeg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKmessureLoc1Arm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKmessureLoc1Arm_L/wizardRig_Published:IKmessureLoc2Arm_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKmessureLoc1Arm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKmessureLoc1Arm_R/wizardRig_Published:IKmessureLoc2Arm_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKmessureLoc1Leg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKmessureLoc1Leg_L/wizardRig_Published:IKmessureLoc2Leg_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKmessureLoc1Leg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKMessure/wizardRig_Published:IKmessureLoc1Leg_R/wizardRig_Published:IKmessureLoc2Leg_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic/wizardRig_Published:IKOffsetArm_LStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic/wizardRig_Published:IKOffsetArm_RStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic/wizardRig_Published:IKOffsetSpine2_MStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic/wizardRig_Published:IKOffsetSpine2_MStaticStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic/wizardRig_Published:IKOffsetSpine3_MStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic/wizardRig_Published:PoleOffsetArm_LStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic/wizardRig_Published:PoleOffsetArm_RStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic/wizardRig_Published:PoleOffsetLeg_LStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:IKSystem/wizardRig_Published:IKStatic/wizardRig_Published:PoleOffsetLeg_RStatic
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:RootSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:RootSystem/wizardRig_Published:LegLockConstrained
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:RootSystem/wizardRig_Published:RootOffsetX_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:RootSystem/wizardRig_Published:RootOffsetX_M/wizardRig_Published:RootExtraX_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:RootSystem/wizardRig_Published:RootOffsetX_M/wizardRig_Published:RootExtraX_M/wizardRig_Published:RootX_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:RootSystem/wizardRig_Published:RootOffsetX_M/wizardRig_Published:RootExtraX_M/wizardRig_Published:RootX_M/wizardRig_Published:RootSpineAligned
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:RootSystem/wizardRig_Published:RootOffsetX_M/wizardRig_Published:RootExtraX_M/wizardRig_Published:RootX_M/wizardRig_Published:RootZeroXform
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:FKIKMixElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:FKIKMixElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetChest_M/wizardRig_Published:TwistFollowChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetChest_M/wizardRig_Published:TwistFollowChest_M/wizardRig_Published:UnTwistIKChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetElbow_L/wizardRig_Published:TwistFollowElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetElbow_L/wizardRig_Published:TwistFollowElbow_L/wizardRig_Published:UnTwistIKElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetElbow_R/wizardRig_Published:TwistFollowElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetElbow_R/wizardRig_Published:TwistFollowElbow_R/wizardRig_Published:UnTwistIKElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetShoulder_L/wizardRig_Published:TwistFollowShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetShoulder_L/wizardRig_Published:TwistFollowShoulder_L/wizardRig_Published:UnTwistIKShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetShoulder_R/wizardRig_Published:TwistFollowShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetShoulder_R/wizardRig_Published:TwistFollowShoulder_R/wizardRig_Published:UnTwistIKShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetSpine2_M/wizardRig_Published:TwistFollowSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowOffsetSpine2_M/wizardRig_Published:TwistFollowSpine2_M/wizardRig_Published:UnTwistIKSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetChest_M/wizardRig_Published:TwistFollowParentChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetChest_M/wizardRig_Published:TwistFollowParentChest_M/wizardRig_Published:UnTwistChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetChest_M/wizardRig_Published:TwistFollowParentChest_M/wizardRig_Published:UnTwistChest_M/wizardRig_Published:TwistBalancerChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetChest_M/wizardRig_Published:TwistFollowParentChest_M/wizardRig_Published:UnTwistChest_M/wizardRig_Published:UnTwistEndChest_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_L/wizardRig_Published:TwistFollowParentElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_L/wizardRig_Published:TwistFollowParentElbow_L/wizardRig_Published:UnTwistElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_L/wizardRig_Published:TwistFollowParentElbow_L/wizardRig_Published:UnTwistElbow_L/wizardRig_Published:TwistBalancerElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_L/wizardRig_Published:TwistFollowParentElbow_L/wizardRig_Published:UnTwistElbow_L/wizardRig_Published:TwisterElbow0_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_L/wizardRig_Published:TwistFollowParentElbow_L/wizardRig_Published:UnTwistElbow_L/wizardRig_Published:TwisterElbow1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_L/wizardRig_Published:TwistFollowParentElbow_L/wizardRig_Published:UnTwistElbow_L/wizardRig_Published:TwisterElbow2_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_L/wizardRig_Published:TwistFollowParentElbow_L/wizardRig_Published:UnTwistElbow_L/wizardRig_Published:UnTwistEndElbow_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_R/wizardRig_Published:TwistFollowParentElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_R/wizardRig_Published:TwistFollowParentElbow_R/wizardRig_Published:UnTwistElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_R/wizardRig_Published:TwistFollowParentElbow_R/wizardRig_Published:UnTwistElbow_R/wizardRig_Published:TwistBalancerElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_R/wizardRig_Published:TwistFollowParentElbow_R/wizardRig_Published:UnTwistElbow_R/wizardRig_Published:TwisterElbow0_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_R/wizardRig_Published:TwistFollowParentElbow_R/wizardRig_Published:UnTwistElbow_R/wizardRig_Published:TwisterElbow1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_R/wizardRig_Published:TwistFollowParentElbow_R/wizardRig_Published:UnTwistElbow_R/wizardRig_Published:TwisterElbow2_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetElbow_R/wizardRig_Published:TwistFollowParentElbow_R/wizardRig_Published:UnTwistElbow_R/wizardRig_Published:UnTwistEndElbow_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_L/wizardRig_Published:TwistFollowParentShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_L/wizardRig_Published:TwistFollowParentShoulder_L/wizardRig_Published:UnTwistShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_L/wizardRig_Published:TwistFollowParentShoulder_L/wizardRig_Published:UnTwistShoulder_L/wizardRig_Published:TwistBalancerShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_L/wizardRig_Published:TwistFollowParentShoulder_L/wizardRig_Published:UnTwistShoulder_L/wizardRig_Published:TwisterShoulder0_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_L/wizardRig_Published:TwistFollowParentShoulder_L/wizardRig_Published:UnTwistShoulder_L/wizardRig_Published:TwisterShoulder1_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_L/wizardRig_Published:TwistFollowParentShoulder_L/wizardRig_Published:UnTwistShoulder_L/wizardRig_Published:TwisterShoulder2_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_L/wizardRig_Published:TwistFollowParentShoulder_L/wizardRig_Published:UnTwistShoulder_L/wizardRig_Published:UnTwistEndShoulder_L
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_R/wizardRig_Published:TwistFollowParentShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_R/wizardRig_Published:TwistFollowParentShoulder_R/wizardRig_Published:UnTwistShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_R/wizardRig_Published:TwistFollowParentShoulder_R/wizardRig_Published:UnTwistShoulder_R/wizardRig_Published:TwistBalancerShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_R/wizardRig_Published:TwistFollowParentShoulder_R/wizardRig_Published:UnTwistShoulder_R/wizardRig_Published:TwisterShoulder0_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_R/wizardRig_Published:TwistFollowParentShoulder_R/wizardRig_Published:UnTwistShoulder_R/wizardRig_Published:TwisterShoulder1_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_R/wizardRig_Published:TwistFollowParentShoulder_R/wizardRig_Published:UnTwistShoulder_R/wizardRig_Published:TwisterShoulder2_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetShoulder_R/wizardRig_Published:TwistFollowParentShoulder_R/wizardRig_Published:UnTwistShoulder_R/wizardRig_Published:UnTwistEndShoulder_R
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetSpine2_M/wizardRig_Published:TwistFollowParentSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetSpine2_M/wizardRig_Published:TwistFollowParentSpine2_M/wizardRig_Published:UnTwistSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetSpine2_M/wizardRig_Published:TwistFollowParentSpine2_M/wizardRig_Published:UnTwistSpine2_M/wizardRig_Published:TwistBalancerSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:Group/wizardRig_Published:Main/wizardRig_Published:MotionSystem/wizardRig_Published:TwistSystem/wizardRig_Published:TwistFollowParentOffsetSpine2_M/wizardRig_Published:TwistFollowParentSpine2_M/wizardRig_Published:UnTwistSpine2_M/wizardRig_Published:UnTwistEndSpine2_M
+    m_Weight: 1
+  - m_Path: wizardRig_Published:model:geo
+    m_Weight: 1
+  - m_Path: wizardRig_Published:model:geo/wizardRig_Published:model:WizardBody
+    m_Weight: 1
