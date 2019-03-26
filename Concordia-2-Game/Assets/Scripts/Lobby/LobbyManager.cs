@@ -7,6 +7,7 @@ using con2.messages;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using WebSocketSharp;
 using Ingredient = con2.game.Ingredient;
 
@@ -21,9 +22,12 @@ namespace con2.lobby
         [SerializeField] private GameObject _LoadingPanel;
         [SerializeField] private TutorialManager _TutorialManager;
         [SerializeField] private TextMeshProUGUI _InstructionsText;
+        private int _MaxPlayers = 4;
 
         private Dictionary<int, bool> _PlayersStatuses = new Dictionary<int, bool>();
         #endregion
+
+        public GameObject JoinPrompt;
 
         #region Unity API
 
@@ -32,7 +36,6 @@ namespace con2.lobby
             base.Start();
 
             // Subscription to controllers events
-            _DetectController.OnConnected += OnControllerConnected;
             _DetectController.OnDisconnected += OnControllerDisconnected;
             
             // Audience & Networking
@@ -55,6 +58,26 @@ namespace con2.lobby
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 StartGameLoad();
+            }
+
+            if (PlayersInstances.Count < _MaxPlayers)
+            {
+                if (Input.GetKeyDown(KeyCode.Joystick1Button0) && !PlayersInstances.ContainsKey(0))
+                {
+                    PressAToJoin(0);
+                }
+                if (Input.GetKeyDown(KeyCode.Joystick2Button0) && !PlayersInstances.ContainsKey(1))
+                {
+                    PressAToJoin(1);
+                }
+                if (Input.GetKeyDown(KeyCode.Joystick3Button0) && !PlayersInstances.ContainsKey(2))
+                {
+                    PressAToJoin(2);
+                }
+                if (Input.GetKeyDown(KeyCode.Joystick4Button0) && !PlayersInstances.ContainsKey(3))
+                {
+                    PressAToJoin(3);
+                }
             }
         }
 
@@ -157,7 +180,7 @@ namespace con2.lobby
         private void SetInstructionText()
         {
             _InstructionsText.transform.parent.gameObject.SetActive(true);
-            _InstructionsText.text = "Launch a fireball with [Right Trigger] to ready up.";
+            _InstructionsText.text = "Launch a fireball with X to ready up.";
         }
 
         public override void OnPlayerInitialized(PlayerManager playerManager)
@@ -173,11 +196,15 @@ namespace con2.lobby
                 var fireballManager = playerManager.GetComponentInChildren<PlayerFireball>();
                 fireballManager.OnFireballCasted += () => OnFireballCasted(playerManager.ID);
             }
+
+            JoinPrompt.transform.SetAsLastSibling();
+            if (playerManager.ID + 1 >= _MaxPlayers)
+                JoinPrompt.SetActive(false);
         }
 
         public IEnumerator StartGame()
         {
-            _InstructionsText.text = "May the best win! \r\nLaunching the game in a few seconds...";
+            _InstructionsText.text = "May the best witch or wizard win! \r\nLaunching the game in a few seconds...";
 
             yield return new WaitForSeconds(4);
             _InstructionsText.transform.parent.gameObject.SetActive(false);
@@ -209,7 +236,7 @@ namespace con2.lobby
 
         #region Controllers
 
-        void OnControllerConnected(int i)
+        private void PressAToJoin(int i)
         {
             Debug.Log("Welcome player " + i);
             ++GameInfo.PlayerNumber;
@@ -220,7 +247,7 @@ namespace con2.lobby
             }
         }
 
-        void OnFireballCasted(int i)
+        public void OnFireballCasted(int i)
         {
             _PlayersStatuses[i] = true;
             PlayersInstances[i].PlayerHUD.SetReadyActive();

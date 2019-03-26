@@ -483,7 +483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000019073486}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 300, y: 125.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5925793903106845508
@@ -528,7 +528,6 @@ MonoBehaviour:
   Manager: {fileID: 0}
   RegularHUD: {fileID: 397832702897955336}
   ReadyPanel: {fileID: 4532856265391009256}
-  ReadyPanelRecipe: {fileID: 3561627232275870423}
   ReadyPanelMessage: {fileID: 7063928546469087676}
 --- !u!1 &5925793903726636422
 GameObject:

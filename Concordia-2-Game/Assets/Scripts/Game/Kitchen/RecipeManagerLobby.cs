@@ -6,6 +6,7 @@ namespace con2.game
 {
     public class RecipeManagerLobby : ARecipeManager
     {
+        public Action<int> OnIngredientAdded;
         public Action<int> OnCompletedPotion;
         private LobbyManager m_mgm;
 
@@ -22,9 +23,16 @@ namespace con2.game
 
         protected override void Update()
         {
-            if (m_currentPotionRecipe.IsComplete())
+            if (m_currentPotionRecipe != null)  //This was causing a bug towards the end of the tutorial that cuts off player control
             {
-                OnCompletedPotion?.Invoke(Owner.ID);
+                if (!m_currentPotionRecipe.NeedsMoreIngredients())
+                {
+                    OnIngredientAdded?.Invoke(Owner.ID);
+                }
+                if (m_currentPotionRecipe.IsComplete())
+                {
+                    OnCompletedPotion?.Invoke(Owner.ID);
+                }
             }
             base.Update();
         }
