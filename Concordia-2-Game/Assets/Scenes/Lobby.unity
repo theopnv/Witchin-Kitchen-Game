@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17526998, g: 0.21928388, b: 0.3015955, a: 1}
+  m_IndirectSpecularColor: {r: 0.17526956, g: 0.21928315, b: 0.30159438, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -387,7 +387,8 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 422583209}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3778123303071362186, guid: 929b78556a473724ea32078fabbbbbe4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 929b78556a473724ea32078fabbbbbe4, type: 3}
 --- !u!4 &97123744 stripped
 Transform:
@@ -2291,21 +2292,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientIcons:
-  - Type: 0
-    Prefab: {fileID: 8846902297067964224, guid: d7d59fe47d26cfc43a3ccced5bd1060d,
-      type: 3}
-  - Type: 1
-    Prefab: {fileID: 8573396863440492179, guid: 3093c54538e1f0644b633a6656444763,
-      type: 3}
   - Type: 2
-    Prefab: {fileID: 8846902297067964224, guid: 0dfceb1d59fb02c40801aefeece6f99d,
-      type: 3}
-  - Type: 4
-    Prefab: {fileID: 8846902297067964224, guid: fb9b723aeb232c840850368b2661fc65,
-      type: 3}
-  - Type: 3
     Prefab: {fileID: 8846902297067964224, guid: 5850a1e0de0f6fb43a0d96c9807a981b,
       type: 3}
+  - Type: 0
+    Prefab: {fileID: 8573396863440492179, guid: 3093c54538e1f0644b633a6656444763,
+      type: 3}
+  - Type: 1
+    Prefab: {fileID: 8846902297067964224, guid: 0dfceb1d59fb02c40801aefeece6f99d,
+      type: 3}
+  - Type: 3
+    Prefab: {fileID: 8846902297067964224, guid: fb9b723aeb232c840850368b2661fc65,
+      type: 3}
+  completedIngredientSprite: {fileID: 21300000, guid: a88b86912cb713e4fa18aeb1cd04db93,
+    type: 3}
 --- !u!114 &1273105657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   _ForbiddenAreas:
   - {fileID: 818724161}
   SpawnableItemsList:
-  - Type: 2
+  - Type: 1
     Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
       type: 3}
     UseTimerMode: 1
@@ -2846,6 +2846,16 @@ PrefabInstance:
     - target: {fileID: 6943530549464558824, guid: 4b55bcfbfb0f2f64eadbc48c30107ffd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363309735312785419, guid: 4b55bcfbfb0f2f64eadbc48c30107ffd,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363309735312785419, guid: 4b55bcfbfb0f2f64eadbc48c30107ffd,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

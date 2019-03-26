@@ -124,10 +124,16 @@ namespace con2.game
             Debug.Log("Results of the poll: " +
                       Events.EventList[(Events.EventID)chosenEvent.id] +
                       " was voted");
-            var key = (Events.EventID)chosenEvent.id;
 
             _AudioSource?.Play();
+            StartCoroutine(LaunchEventAfterDelay(chosenEvent));
+        }
 
+        private IEnumerator LaunchEventAfterDelay(Event chosenEvent)
+        {
+            yield return new WaitForSeconds(3.0f);
+
+            var key = (Events.EventID)chosenEvent.id;
             if (_EventSubscribers.ContainsKey(key))
             {
                 _EventSubscribers[key]

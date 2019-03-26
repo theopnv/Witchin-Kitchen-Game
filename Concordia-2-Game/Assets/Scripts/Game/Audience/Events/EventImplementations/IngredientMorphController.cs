@@ -25,9 +25,9 @@ namespace con2.game
             int count = 0;
             while (count < m_numberOfSwaps)
             {
-                yield return new WaitForSeconds(m_swapDelay);
                 count++;
                 DoSwap();
+                yield return new WaitForSeconds(m_swapDelay);
             }
 
             yield return null;

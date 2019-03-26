@@ -91,6 +91,14 @@ namespace con2.game
 
         public void OnSpellCasted(Spell spell)
         {
+            StartCoroutine(LaunchSpellAfterDelay(spell));
+            //Add audio "Audience Spell!"
+        }
+
+        private IEnumerator LaunchSpellAfterDelay(Spell spell)
+        {
+            yield return new WaitForSeconds(1.0f);
+
             if (spell.caster == null)
             {
                 spell.caster = new Viewer();

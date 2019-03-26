@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 {
+    static public float MovementDirectionLag = 0.0f;
+
     [Range(0.0f, 300.0f)]
     public float MovementSpeed;
 
@@ -67,13 +69,15 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     private void FixedUpdate()
     {
+        movementDirection.y = 0.0f;
         var moveD = movementDirection;
-        moveD.y = 0.0f;
 
-        if (moveD.sqrMagnitude > 1)
+        if (moveD.magnitude > 1f)
         {
             moveD.Normalize();
         }
+        
+        var slowFactor = moveD.magnitude;
 
         moveD *= MovementSpeed;
 
@@ -82,22 +86,25 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
         if(m_movementIsInverted)
         {
-            moveD *= -1;
+            moveD *= -1f;
         }
 
         // If player asked for input
         if (!Mathf.Approximately(moveD.magnitude, 0.0f))
         {
-            m_rb.AddForce(moveD * MovementSpeed * MovementRotationSpeed * Time.deltaTime, ForceMode.Acceleration);
-
-            // Cap movement speed
-            if (m_rb.velocity.magnitude > MaxMovementSpeed)
-            {
-                m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, MaxMovementSpeed);
-            }
+            m_rb.velocity += moveD * MovementSpeed * Time.deltaTime;
+        }
+        
+        // Cap movement speed
+        var maxVel = MaxMovementSpeed * (slowFactor + Mathf.Clamp01(1.0f - m_stun.getMovementModifier() * 200.0f) * 2.0f);
+        if (m_stun.getMovementModifier() == 1.0f)
+            maxVel = MaxMovementSpeed;
+        if (m_rb.velocity.magnitude > maxVel)
+        {
+            m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, maxVel);
         }
 
-        m_running = movementDirection.magnitude > 0.1f;
+        m_running = moveD.magnitude > 0.1f;
         m_runSpeed = Mathf.Lerp(0.5f, 1.0f, m_rb.velocity.magnitude / MaxMovementSpeed);
 
         // Gravity
@@ -119,7 +126,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     public void Punch(Vector3 knockVelocity, float stunTime)
     {
-        m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
+        m_rb.velocity = knockVelocity;
         m_stun.Stun(stunTime);
         audioSource.Play();
     }

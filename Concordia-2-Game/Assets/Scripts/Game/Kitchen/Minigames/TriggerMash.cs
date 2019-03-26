@@ -12,10 +12,7 @@ namespace con2.game
         private bool m_expectingLeft = true, m_leftWasRaised = true, m_rightWasRaised = true;
 
         private int m_numberOfPressesRequired;
-        public float m_timeToLoseProgress = 1.0f;
-
         private int m_currentNumberOfPresses = 0;
-        private float m_lastMashTime = 0;
 
         private SpoonTap m_tapper;
         private TriggerMashGame m_mashUI;
@@ -39,7 +36,6 @@ namespace con2.game
         override public void StartMinigameSpecifics()
         {
             m_currentNumberOfPresses = 0;
-            m_lastMashTime = 0;
 
             m_tapper = GetComponentInChildren<SpoonTap>();
             m_tapper.StartTap();
@@ -86,7 +82,6 @@ namespace con2.game
 
         private void AcceptMash()
         {
-            m_lastMashTime = Time.time;
             m_currentNumberOfPresses++;
 
             if (m_currentNumberOfPresses >= m_numberOfPressesRequired)
@@ -101,14 +96,6 @@ namespace con2.game
 
         override public void UpdateMinigameSpecifics()
         {
-            if (m_currentNumberOfPresses > 0)
-            {
-                if (Time.time - m_lastMashTime > m_timeToLoseProgress)
-                {
-                    m_lastMashTime = Time.time;
-                    m_currentNumberOfPresses--;
-                }
-            }
         }
 
         override public void EndMinigameSpecifics()
