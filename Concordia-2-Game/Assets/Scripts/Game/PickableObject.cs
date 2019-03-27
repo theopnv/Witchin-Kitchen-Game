@@ -11,6 +11,8 @@ namespace con2.game
         private float m_aimAssistSpeed;
 
         public float m_lerpSpeedz = 10.0f;
+        private float m_startTime;
+        private float m_lerpTime = 0.33f;
 
         private float m_dropTimestamp;
         private bool m_thrownIntentionally = false;
@@ -49,7 +51,11 @@ namespace con2.game
                 var parent = transform.parent;
                 if (parent)
                 {
-                    transform.position = Vector3.Lerp(transform.position, parent.position, Time.deltaTime * m_lerpSpeedz);
+                    var elapsed = Time.time - m_startTime;
+                    var progress = Mathf.Clamp01(elapsed / m_lerpTime);
+                    var lerpFactor = Mathf.Lerp(Time.deltaTime * m_lerpSpeedz, 1.0f, progress);
+
+                    transform.position = Vector3.Lerp(transform.position, parent.position, lerpFactor);
                     m_rb.velocity = currentVel / m_rb.mass;
                 }
                 else
@@ -82,6 +88,8 @@ namespace con2.game
                 m_rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
                 ResetAimAssist();
+
+                m_startTime = Time.time;
 
                 return true;
             }
