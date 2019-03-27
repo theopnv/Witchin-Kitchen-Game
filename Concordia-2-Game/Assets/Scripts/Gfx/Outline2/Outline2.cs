@@ -10,7 +10,7 @@ public class Outline2 : MonoBehaviour
     public float Thickness = 0.25f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         var children = GetComponentsInChildren<Outline2Marker>();
         foreach (var child in children)
