@@ -103,6 +103,7 @@ namespace con2
                         "- 'spell_gi': Simulates the Gift Item (gi) spell on player 1",
                         "- 'spell_gb': Simulates the Gift Bomb (gb) spell on player 1",
                         "- 'spell_iv': Simulates the Invisibility (iv) spell on player 1",
+                        "- 'game_over': Ends the game",
                         "- 'test': Launches the next test",
                         "- 'test_chain': Launches a series of tests");
 
