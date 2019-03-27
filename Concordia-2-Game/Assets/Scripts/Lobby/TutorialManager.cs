@@ -25,7 +25,7 @@ namespace con2.lobby
         {
             { 0, "Welcome to Witchin' Kitchen, competitors!\r\nToday's crazy show is broadcasted all over the world. \r\nCompete to prove that you're the best witch or wizard!" },
             { 1, "You score points by making potions in your cauldron.\r\nGrab the ingredient you see in your recipe\r\nand then throw it in your cauldron."},
-            { 2, "Once an ingredient is in your cauldron, you'll have to process it.\r\nStand close to the cauldron and do the prompted action."},
+            { 2, "Once an ingredient is in your cauldron,\r\n you'll have to process it.\r\nStand close to the cauldron and do the prompted action."},
             { 3, "You scored one point!\r\nWhen a potion is made, an audience member gets to drink it to casts a spell on one of you. Watch out!"},
             { 4, "Oh no! Audience members cast the spell\r\nDisco Mania on all of you.\r\nYour controls are inverted during the spell!"},
             { 5, "To win, you must fight your opponents to get ingredients before they do.\r\nYou have the short-ranged slap attack [B] with a brief cooldown\r\nand the long-ranged fireballs [X] with a longer cooldown."},
