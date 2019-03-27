@@ -2647,7 +2647,7 @@ MonoBehaviour:
   _ForbiddenAreas:
   - {fileID: 1085581706}
   SpawnableItemsList:
-  - Type: 2
+  - Type: 1
     Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
       type: 3}
     UseTimerMode: 0
@@ -2657,7 +2657,7 @@ MonoBehaviour:
     ActivateRandomPosMode: 0
     Area: {fileID: 1010139671}
     TimeSinceSpawn: 0
-  - Type: 1
+  - Type: 0
     Prefab: {fileID: 4223523222216322606, guid: 45764d7e8ef4d2e4eba1bd2099847369,
       type: 3}
     UseTimerMode: 0
@@ -2667,7 +2667,7 @@ MonoBehaviour:
     ActivateRandomPosMode: 0
     Area: {fileID: 213108576}
     TimeSinceSpawn: 0
-  - Type: 3
+  - Type: 2
     Prefab: {fileID: 5532703018747530490, guid: a6990a6bcd7d62c44a87719b2aa8889d,
       type: 3}
     UseTimerMode: 0
@@ -2677,7 +2677,7 @@ MonoBehaviour:
     ActivateRandomPosMode: 0
     Area: {fileID: 737448633}
     TimeSinceSpawn: 0
-  - Type: 4
+  - Type: 3
     Prefab: {fileID: 2149888162642991435, guid: 44e1da904c5e2dd44af8772bc983d4dd,
       type: 3}
     UseTimerMode: 0
@@ -4649,6 +4649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NetworkAdsDuration: 15
+  m_MessageDelay: 0
   _NetworkAdsCanvasPrefab: {fileID: 7062139143320713761, guid: 768e9330d6e1f894097ef746afdd2d07,
     type: 3}
 --- !u!114 &773999206
