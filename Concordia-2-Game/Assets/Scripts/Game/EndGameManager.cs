@@ -67,7 +67,7 @@ namespace con2.game
                 foreach (var player in scoregroup)
                 {
                     var count = player.CollectedIngredientCount;
-                    m_winnerText.text += player.Name + " collected " + count + " ingredient" + (count == 1 ? "" : "s") + "\n\n";
+                    m_winnerText.text += player.Name + " got " + count + " ingredient" + (count == 1 ? "" : "s") + "\n\n";
                 }
             }
         }
@@ -86,21 +86,23 @@ namespace con2.game
                     //Set color and correct model
                     SkinnedMeshRenderer[] skinRenderer = a.GetComponentsInChildren<SkinnedMeshRenderer>();
                     var id = m_finalRankings[rank][count].ID;
-                    skinRenderer[id % 2].material.mainTexture = ColorsManager.Get().PlayerColorTextures[id];
+                    var model = skinRenderer[id % 2];
+                    model.material.mainTexture = ColorsManager.Get().PlayerColorTextures[id];
                     skinRenderer[(id + 1) % 2].gameObject.SetActive(false);
 
                     //Scale based on rank
                     a.gameObject.transform.localScale *= (MaxNumPlayers + 0.5f - rank)/2.0f; //add 0.5 so the player in 4th is shrunk, not set to 0x scale
+                    a.gameObject.transform.position = new Vector3(0, 0, i*60 - 240);
                     if (rank == 0)
                     {
-                        var anim = a.GetComponentInChildren<MenuModelAnims>(true);
+                        var anim = model.GetComponentInParent<MenuModelAnims>();
                         anim.Carry();
                         var trophy = a.transform.Find("trophy");
                         trophy.gameObject.SetActive(true);
                     }
                     else if ( rank == m_finalRankings.Count - 1)
                     {
-                        var anim = a.GetComponentInChildren<MenuModelAnims>(true);
+                        var anim = model.GetComponentInParent<MenuModelAnims>();
                         anim.Dizzy();
                     }
 
