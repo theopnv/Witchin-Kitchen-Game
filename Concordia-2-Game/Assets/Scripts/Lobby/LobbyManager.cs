@@ -25,7 +25,7 @@ namespace con2.lobby
         private Dictionary<int, bool> _PlayersStatuses = new Dictionary<int, bool>();
         #endregion
 
-        public GameObject JoinPrompt;
+        public GameObject JoinPrompt, TempInvisibleWalls;
 
         #region Unity API
 
@@ -188,16 +188,18 @@ namespace con2.lobby
             base.OnPlayerInitialized(playerManager);
             _PlayersStatuses.Add(playerManager.ID, false);
 
-            if (MenuInfo.DoTutorial)
-            {
+            //if (MenuInfo.DoTutorial)
+           // {
                 _TutorialManager.OnPlayerInitialized(playerManager);
-            }
+            /*}
             else
             {
+                TempInvisibleWalls.SetActive(false);
                 SetInstructionText();
                 var fireballManager = playerManager.GetComponentInChildren<PlayerFireball>();
                 fireballManager.OnFireballCasted += () => OnFireballCasted(playerManager.ID);
             }
+            */
 
             JoinPrompt.transform.SetAsLastSibling();
             if (playerManager.ID + 1 >= _MaxPlayers)
