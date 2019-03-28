@@ -4288,7 +4288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HideAtStart: 0
   PlayOutAtStart: 0
-  Duration: 0.3
+  Duration: 0.15
   FillColor: {r: 1, g: 1, b: 1, a: 0}
   AlphaAnimIn:
     serializedVersion: 2
