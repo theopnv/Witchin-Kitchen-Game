@@ -52,6 +52,10 @@ namespace con2.game
         private static Ingredient[] GenerateRandomRecipe(int numIngredients)
         {
             var recipe = new Ingredient[numIngredients];
+            for (int j = 0; j < numIngredients; j++)    //otherwise the whole array initializes to value 0 of Ingredient, and then that ingredient is filtered out of all recipes by the duplicates filter
+            {
+                recipe[j] = Ingredient.NOT_AN_INGREDIENT;
+            }
             var i = 0;
             if (m_featuredIngredient != Ingredient.NOT_AN_INGREDIENT)
             {
@@ -61,7 +65,6 @@ namespace con2.game
             {
                 var ing = Ingredient.NOT_AN_INGREDIENT;
                 int pos = 0;
-                int tries = 0;
                 while (pos > -1)    //no duplicate ingredients in recipes
                 {
                     ing = (Ingredient)UnityEngine.Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT);

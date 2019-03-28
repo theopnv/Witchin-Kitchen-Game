@@ -9,6 +9,9 @@ namespace con2.game
 {
     public class ItemSpawner : MonoBehaviour
     {
+        [SerializeField]
+        public float NewtSpawnHeight = 18.0f;
+
         [SerializeField] [Tooltip("[RANDOM POS. MODE] Boundaries of the map")]
         private float _MinX, _MaxX, _MinZ, _MaxZ;
 
@@ -186,6 +189,13 @@ namespace con2.game
                     item.Type)
             };
 
+            // Drop newt from above and register 2 eyes instead of just 1
+            if (item.Type == Ingredient.NEWT_EYE)
+            {
+                ++SpawnedItemsCount[item.Type];
+                position.y = NewtSpawnHeight;
+            }
+            
             Instantiate(item.Prefab, position, Quaternion.identity);
             ++SpawnedItemsCount[item.Type];
         }

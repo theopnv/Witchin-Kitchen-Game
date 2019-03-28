@@ -65,6 +65,12 @@ namespace con2.game
                     --m_itemSpawner.SpawnedItemsCount[collectedIngredient];
                     m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
                 }
+                else
+                {
+                    --m_itemSpawner.SpawnedItemsCount[collectedIngredient];
+                    if (m_itemSpawner.SpawnedItemsCount[collectedIngredient] <= 0)
+                        m_itemSpawner.SpawnableItems[collectedIngredient]?.AskToInstantiate();
+                }
                 if (!MainGameManager.GAME_OVER)
                 {
                     Owner.CollectedIngredientCount++;

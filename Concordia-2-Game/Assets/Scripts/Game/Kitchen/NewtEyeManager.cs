@@ -13,21 +13,21 @@ namespace con2.game
         void Start()
         {
             _pickableObject = GetComponent<PickableObject>();
-            StartCoroutine(RemoveFromScene());
+            //StartCoroutine(RemoveFromScene());
         }
 
-        private IEnumerator RemoveFromScene()
-        {
-            yield return new WaitForSeconds(15f);
-            if (_pickableObject.IsHeld())
-            {
-                yield return RemoveFromScene();
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+        //private IEnumerator RemoveFromScene()
+        //{
+        //    yield return new WaitForSeconds(15f);
+        //    if (_pickableObject.IsHeld())
+        //    {
+        //        yield return RemoveFromScene();
+        //    }
+        //    else
+        //    {
+        //        Destroy(gameObject);
+        //    }
+        //}
 
     }
 

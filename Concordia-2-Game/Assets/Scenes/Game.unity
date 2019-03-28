@@ -2640,6 +2640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cc9f2d6ad5ede46b1b8e579eccd30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NewtSpawnHeight: 20
   _MinX: -14
   _MaxX: 14
   _MinZ: -9
