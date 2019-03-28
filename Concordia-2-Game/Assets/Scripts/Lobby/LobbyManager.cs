@@ -7,9 +7,7 @@ using con2.messages;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using WebSocketSharp;
-using Ingredient = con2.game.Ingredient;
 
 namespace con2.lobby
 {
@@ -188,13 +186,15 @@ namespace con2.lobby
         public override void OnPlayerInitialized(PlayerManager playerManager)
         {
             base.OnPlayerInitialized(playerManager);
+            _PlayersStatuses.Add(playerManager.ID, false);
+
             if (MenuInfo.DoTutorial)
             {
                 _TutorialManager.OnPlayerInitialized(playerManager);
             }
             else
             {
-                _PlayersStatuses.Add(playerManager.ID, false);
+                SetInstructionText();
                 var fireballManager = playerManager.GetComponentInChildren<PlayerFireball>();
                 fireballManager.OnFireballCasted += () => OnFireballCasted(playerManager.ID);
             }
@@ -253,6 +253,13 @@ namespace con2.lobby
         {
             _PlayersStatuses[i] = true;
             PlayersInstances[i].PlayerHUD.SetReadyActive();
+
+            if (GameInfo.PlayerNumber < 2)
+            {
+                _InstructionsText.text = "You must be at least 2 players to play the game.";
+                return;
+            }
+
             if (_PlayersStatuses.All(p => p.Value))
             {
                 StartCoroutine(StartGame());
