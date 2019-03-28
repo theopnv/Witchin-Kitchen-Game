@@ -246,14 +246,20 @@ namespace con2.game
 
                 DetermineWinner();
                 _AudienceInteractionManager?.SendGameOutcome();
-                StartCoroutine(ShowLeaderboard());
+
+                Transition.Get().SequenceIn(ShowLeaderboardWait(), ShowLeaderboard());
             }
+        }
+
+        private IEnumerator ShowLeaderboardWait()
+        {
+            yield return new WaitForSeconds(3.0f);
         }
 
         private IEnumerator ShowLeaderboard()
         {
-            yield return new WaitForSeconds(2.0f);
             SceneManager.LoadScene(SceneNames.Leaderboard);
+            yield return null;
         }
 
         public void DetermineWinner()

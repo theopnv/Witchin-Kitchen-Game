@@ -29,17 +29,29 @@ namespace con2.game
                 if (Input.GetKeyDown(KeyCode.JoystickButton0) ||
                     Input.GetKeyDown(KeyCode.JoystickButton7))
                 {
-                    AudienceInteractionManager.SendEndGame(true);
-                    SceneManager.LoadScene(SceneNames.Game);
-                    Destroy(this);
+                    Transition.Get().SequenceIn(null, _LoadGame());
                 }
 
                 if (Input.GetKeyDown(KeyCode.JoystickButton1))
                 {
-                    SceneManager.LoadScene(SceneNames.MainMenu);
-                    Destroy(this);
+                    Transition.Get().SequenceIn(null, _LoadMainMenu());
                 }
             }
+        }
+
+        protected IEnumerator _LoadGame()
+        {
+            AudienceInteractionManager.SendEndGame(true);
+            SceneManager.LoadScene(SceneNames.Game);
+            Destroy(this);
+            yield return null;
+        }
+
+        protected IEnumerator _LoadMainMenu()
+        {
+            SceneManager.LoadScene(SceneNames.MainMenu);
+            Destroy(this);
+            yield return null;
         }
 
         public void SetFinalRankings(List<List<PlayerManager>> ranks)
@@ -136,8 +148,14 @@ namespace con2.game
                 }
             }
 
+            Transition.Get().SequenceIn(null, _BackToMainMenu());
+        }
+
+        protected IEnumerator _BackToMainMenu()
+        {
             AudienceInteractionManager.SendEndGame(false);
             SceneManager.LoadScene(SceneNames.MainMenu);
+            yield return null;
         }
     }
 }
