@@ -61,8 +61,15 @@ namespace con2.game
 
             yield return new WaitForSeconds(LOADING_TIME);
             AudioListener.volume = 1f;
+            
+            StartCoroutine(MiniTransition.Get().SequenceOut(null, _HidePanel()));
+            StartCoroutine(StartGame());
+        }
 
-            StartCoroutine(MiniTransition.Get().SequenceOut(null, StartGame()));
+        private IEnumerator _HidePanel()
+        {
+            _LoadingPanel.SetActive(false);
+            yield return null;
         }
 
         public override List<IInputConsumer> GetInputConsumers(int playerIndex)
@@ -171,8 +178,6 @@ namespace con2.game
 
         private IEnumerator StartGame()
         {
-            _LoadingPanel.SetActive(false);
-
             var audioSource = GetComponent<AudioSource>();
             if (audioSource)
             {
