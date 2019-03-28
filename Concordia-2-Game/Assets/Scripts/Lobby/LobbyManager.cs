@@ -186,6 +186,8 @@ namespace con2.lobby
         public override void OnPlayerInitialized(PlayerManager playerManager)
         {
             base.OnPlayerInitialized(playerManager);
+            _PlayersStatuses.Add(playerManager.ID, false);
+
             if (MenuInfo.DoTutorial)
             {
                 _TutorialManager.OnPlayerInitialized(playerManager);
@@ -193,7 +195,6 @@ namespace con2.lobby
             else
             {
                 SetInstructionText();
-                _PlayersStatuses.Add(playerManager.ID, false);
                 var fireballManager = playerManager.GetComponentInChildren<PlayerFireball>();
                 fireballManager.OnFireballCasted += () => OnFireballCasted(playerManager.ID);
             }
