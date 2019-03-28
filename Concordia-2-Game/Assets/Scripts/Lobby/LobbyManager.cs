@@ -7,9 +7,7 @@ using con2.messages;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using WebSocketSharp;
-using Ingredient = con2.game.Ingredient;
 
 namespace con2.lobby
 {
@@ -194,6 +192,7 @@ namespace con2.lobby
             }
             else
             {
+                SetInstructionText();
                 _PlayersStatuses.Add(playerManager.ID, false);
                 var fireballManager = playerManager.GetComponentInChildren<PlayerFireball>();
                 fireballManager.OnFireballCasted += () => OnFireballCasted(playerManager.ID);
@@ -253,6 +252,13 @@ namespace con2.lobby
         {
             _PlayersStatuses[i] = true;
             PlayersInstances[i].PlayerHUD.SetReadyActive();
+
+            if (GameInfo.PlayerNumber < 2)
+            {
+                _InstructionsText.text = "You must be at least 2 players to play the game.";
+                return;
+            }
+
             if (_PlayersStatuses.All(p => p.Value))
             {
                 StartCoroutine(StartGame());
