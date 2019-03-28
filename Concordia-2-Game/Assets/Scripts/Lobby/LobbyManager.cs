@@ -46,6 +46,11 @@ namespace con2.lobby
 
             _AudienceInteractionManager.SetURL(hostAddress);
             ConnectToServer();
+
+            if (!MenuInfo.DoTutorial)
+            {
+                TempInvisibleWalls.SetActive(false);
+            }
         }
 
         protected override void Update()
@@ -194,7 +199,6 @@ namespace con2.lobby
             }
             else
             {
-                TempInvisibleWalls.SetActive(false);
                 SetInstructionText();
                 var fireballManager = playerManager.GetComponentInChildren<PlayerFireball>();
                 fireballManager.OnFireballCasted += () => OnFireballCasted(playerManager.ID);
