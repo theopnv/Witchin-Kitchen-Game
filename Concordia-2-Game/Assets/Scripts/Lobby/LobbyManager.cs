@@ -140,7 +140,7 @@ namespace con2.lobby
                 switch (content.code)
                 {
                     case Code.register_players_success:
-                        Transition.Get().SequenceIn(null, _LoadGame());
+                        StartCoroutine(Transition.Get().SequenceIn(null, _LoadGame()));
                         break;
                     default: break;
                 }
@@ -304,7 +304,7 @@ namespace con2.lobby
 
         public void BackToMenu()
         {
-            Transition.Get().SequenceIn(null, _BackToMenu());
+            StartCoroutine(Transition.Get().SequenceIn(null, _BackToMenu()));
         }
 
         protected IEnumerator _BackToMenu()

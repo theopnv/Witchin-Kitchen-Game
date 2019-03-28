@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace con2
 {
-    public class Transition : MonoBehaviour
+    public class MiniTransition : MonoBehaviour
     {
-        static protected Transition Instance;
+        static protected MiniTransition Instance;
 
-        static public Transition Get()
+        static public MiniTransition Get()
         {
             return Instance;
         }
@@ -26,6 +26,7 @@ namespace con2
         public AnimationCurve AlphaAnimOut;
 
         protected UnityEngine.UI.Image Target;
+        protected TMPro.TextMeshProUGUI Target2;
 
         protected bool Playing = false;
         protected float StartTime;
@@ -36,12 +37,15 @@ namespace con2
             Instance = this;
 
             Target = GetComponentInChildren<UnityEngine.UI.Image>();
+            Target2 = GetComponentInChildren<TMPro.TextMeshProUGUI>();
 
             if (HideAtStart)
             {
                 var col = Target.color;
                 col.a = 0.0f;
                 Target.color = col;
+
+                Target2.alpha = 0.0f;
             }
 
             if (PlayOutAtStart)
@@ -50,14 +54,14 @@ namespace con2
             }
         }
 
-        public IEnumerator SequenceIn(IEnumerator pre = null, IEnumerator post = null)
+        public IEnumerator SequenceOut(IEnumerator pre = null, IEnumerator post = null)
         {
             var sequence = new List<IEnumerator>();
 
             if (pre != null)
                 sequence.Add(pre);
 
-            sequence.Add(PlayIn());
+            sequence.Add(PlayOut());
 
             if (post != null)
                 sequence.Add(post);
@@ -106,6 +110,7 @@ namespace con2
                 col.g = FillColor.g;
                 col.b = FillColor.b;
                 Target.color = col;
+                Target2.alpha = alpha;
             }
         }
     }

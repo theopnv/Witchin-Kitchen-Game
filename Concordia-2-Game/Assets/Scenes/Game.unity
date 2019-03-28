@@ -4274,6 +4274,52 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2118289696288655933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &752217722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752217720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4131ae08ad40c584887da69298b27258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HideAtStart: 0
+  PlayOutAtStart: 0
+  Duration: 0.3
+  FillColor: {r: 1, g: 1, b: 1, a: 0}
+  AlphaAnimIn:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AlphaAnimOut:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.211367
+      outSlope: -2.211367
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04479432
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &762396595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11712,6 +11758,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320107239094431777, guid: 6c2b44483a33d1840b7a369bfcaba650,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579829279240451133, guid: 6c2b44483a33d1840b7a369bfcaba650,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579829279240451133, guid: 6c2b44483a33d1840b7a369bfcaba650,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579829279240451133, guid: 6c2b44483a33d1840b7a369bfcaba650,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579829279240451133, guid: 6c2b44483a33d1840b7a369bfcaba650,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4291743438
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c2b44483a33d1840b7a369bfcaba650, type: 3}

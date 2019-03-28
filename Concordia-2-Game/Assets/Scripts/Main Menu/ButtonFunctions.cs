@@ -11,7 +11,7 @@ namespace con2.main_menu
     {
         public void LoadTutorial()
         {
-            Transition.Get().SequenceIn(null, _loadTutorial());
+            StartCoroutine(Transition.Get().SequenceIn(null, _loadTutorial()));
         }
 
         protected IEnumerator _loadTutorial()
@@ -23,7 +23,7 @@ namespace con2.main_menu
 
         public void LoadGame(string sceneName)
         {
-            Transition.Get().SequenceIn(null, _loadGame());
+            StartCoroutine(Transition.Get().SequenceIn(null, _loadGame()));
         }
 
         protected IEnumerator _loadGame()

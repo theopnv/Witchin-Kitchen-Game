@@ -29,12 +29,12 @@ namespace con2.game
                 if (Input.GetKeyDown(KeyCode.JoystickButton0) ||
                     Input.GetKeyDown(KeyCode.JoystickButton7))
                 {
-                    Transition.Get().SequenceIn(null, _LoadGame());
+                    StartCoroutine(Transition.Get().SequenceIn(null, _LoadGame()));
                 }
 
                 if (Input.GetKeyDown(KeyCode.JoystickButton1))
                 {
-                    Transition.Get().SequenceIn(null, _LoadMainMenu());
+                    StartCoroutine(Transition.Get().SequenceIn(null, _LoadMainMenu()));
                 }
             }
         }
@@ -148,7 +148,7 @@ namespace con2.game
                 }
             }
 
-            Transition.Get().SequenceIn(null, _BackToMainMenu());
+            StartCoroutine(Transition.Get().SequenceIn(null, _BackToMainMenu()));
         }
 
         protected IEnumerator _BackToMainMenu()
