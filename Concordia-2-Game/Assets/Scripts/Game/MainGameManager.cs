@@ -11,7 +11,7 @@ namespace con2.game
     public class MainGameManager : AMainManager
     {
         [SerializeField] private GameObject _LoadingPanel;
-        private const float LOADING_TIME = 2f;
+        private const float LOADING_TIME = 4f;
 
         // Start is called before the first frame update
         protected override void Start()
@@ -60,9 +60,16 @@ namespace con2.game
             _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
 
             yield return new WaitForSeconds(LOADING_TIME);
-            _LoadingPanel.SetActive(false);
             AudioListener.volume = 1f;
-            yield return StartGame();
+            
+            StartCoroutine(MiniTransition.Get().SequenceOut(null, _HidePanel()));
+            StartCoroutine(StartGame());
+        }
+
+        private IEnumerator _HidePanel()
+        {
+            _LoadingPanel.SetActive(false);
+            yield return null;
         }
 
         public override List<IInputConsumer> GetInputConsumers(int playerIndex)
@@ -246,14 +253,20 @@ namespace con2.game
 
                 DetermineWinner();
                 _AudienceInteractionManager?.SendGameOutcome();
-                StartCoroutine(ShowLeaderboard());
+
+                StartCoroutine(Transition.Get().SequenceIn(ShowLeaderboardWait(), ShowLeaderboard()));
             }
+        }
+
+        private IEnumerator ShowLeaderboardWait()
+        {
+            yield return new WaitForSeconds(3.0f);
         }
 
         private IEnumerator ShowLeaderboard()
         {
-            yield return new WaitForSeconds(2.0f);
             SceneManager.LoadScene(SceneNames.Leaderboard);
+            yield return null;
         }
 
         public void DetermineWinner()

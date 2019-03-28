@@ -140,7 +140,7 @@ namespace con2.lobby
                 switch (content.code)
                 {
                     case Code.register_players_success:
-                        SceneManager.LoadSceneAsync(SceneNames.Game);
+                        StartCoroutine(Transition.Get().SequenceIn(null, _LoadGame()));
                         break;
                     default: break;
                 }
@@ -149,6 +149,12 @@ namespace con2.lobby
             {
                 Debug.LogError(content.code + ": " + content.content);
             }
+        }
+
+        protected IEnumerator _LoadGame()
+        {
+            SceneManager.LoadSceneAsync(SceneNames.Game);
+            yield return null;
         }
 
         #endregion
@@ -202,7 +208,7 @@ namespace con2.lobby
         {
             _InstructionsText.text = "May the best witch or wizard win! \r\nLaunching the game in a few seconds...";
 
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(3);
             _InstructionsText.transform.parent.gameObject.SetActive(false);
             StartGameLoad();
         }
@@ -219,8 +225,8 @@ namespace con2.lobby
             {
                 GamepadMgr.Pad(i).BlockGamepad(true);
             }
-            _LoadingPanel.SetActive(true);
-            _LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
+            //_LoadingPanel.SetActive(true);
+            //_LoadingPanel.GetComponent<LoadingScreenManager>().Title.text = "Loading...";
             _AudienceInteractionManager?.SendPlayerCharacteristics(Ext.ToList(PlayersInstances.Values));
             _AudienceInteractionManager?.SendStopIngredientPoll();
         }
@@ -298,8 +304,14 @@ namespace con2.lobby
 
         public void BackToMenu()
         {
+            StartCoroutine(Transition.Get().SequenceIn(null, _BackToMenu()));
+        }
+
+        protected IEnumerator _BackToMenu()
+        {
             _AudienceInteractionManager.SendEndGame(false);
             SceneManager.LoadSceneAsync(SceneNames.MainMenu);
+            yield return null;
         }
 
         #endregion

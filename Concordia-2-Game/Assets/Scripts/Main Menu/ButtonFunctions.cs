@@ -11,14 +11,26 @@ namespace con2.main_menu
     {
         public void LoadTutorial()
         {
+            StartCoroutine(Transition.Get().SequenceIn(null, _loadTutorial()));
+        }
+
+        protected IEnumerator _loadTutorial()
+        {
             MenuInfo.DoTutorial = true;
             SceneManager.LoadSceneAsync(SceneNames.Lobby);
+            yield return null;
         }
 
         public void LoadGame(string sceneName)
         {
+            StartCoroutine(Transition.Get().SequenceIn(null, _loadGame()));
+        }
+
+        protected IEnumerator _loadGame()
+        {
             MenuInfo.DoTutorial = false;
             SceneManager.LoadSceneAsync(SceneNames.Lobby);
+            yield return null;
         }
 
         public void OnSettingsClick()
