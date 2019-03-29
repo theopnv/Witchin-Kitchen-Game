@@ -24,7 +24,7 @@ namespace con2.lobby
         private Dictionary<int, string> _Instructions = new Dictionary<int, string>()
         {
             { 0, "Welcome to Witchin' Kitchen, competitors!\r\nCompete to prove that you're the best witch or wizard!" },
-            { 1, "Score points by making potions.\r\nFollow the recipe is in your bottom HUD.\r\nGrab and Throw <sprite=0> an ingredient in your cauldron."},
+            { 1, "Score points by making potions.\r\nFollow the recipe in your bottom HUD.\r\nGrab and Throw <sprite=0> an ingredient in your cauldron."},
             { 2, "Process the ingredients in you cauldron with the prompted action."},
             { 3, "You scored one point!\r\nWhen a potion is made, an audience member\r\nwill cast a spell on one of you. Watch out!"},
             { 4, "Oh no! The audience members cast the spell\r\nDisco Mania on each of you.\r\nYour controls are inverted during the spell!"},

@@ -12,9 +12,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
   m_Name: xbox-0
   m_EditorClassIdentifier: 
-  hashCode: 0
-  material: {fileID: 0}
+  hashCode: 288430672
+  material: {fileID: 21143085215306972}
   materialHashCode: 0
-  spriteSheet: {fileID: 0}
-  spriteInfoList: []
+  spriteSheet: {fileID: 2800000, guid: 2e7be061544c42b4cb7de10cff22738c, type: 3}
+  spriteInfoList:
+  - id: 0
+    x: 0
+    y: 172
+    width: 84
+    height: 84
+    xOffset: 0
+    yOffset: 84
+    xAdvance: 84
+    scale: 1
+    name: 360_A
+    hashCode: 61182923
+    unicode: 221434
+    pivot: {x: 0, y: 0}
+    sprite: {fileID: 0}
+  - id: 1
+    x: 84
+    y: 172
+    width: 84
+    height: 84
+    xOffset: 0
+    yOffset: 84
+    xAdvance: 84
+    scale: 1
+    name: 360_B
+    hashCode: 61182920
+    unicode: 221435
+    pivot: {x: 0, y: 0}
+    sprite: {fileID: 0}
+  - id: 2
+    x: 168
+    y: 172
+    width: 84
+    height: 84
+    xOffset: 0
+    yOffset: 84
+    xAdvance: 84
+    scale: 1
+    name: 360_X
+    hashCode: 61182930
+    unicode: 221439
+    pivot: {x: 0, y: 0}
+    sprite: {fileID: 0}
+  - id: 3
+    x: 0
+    y: 88
+    width: 84
+    height: 84
+    xOffset: 0
+    yOffset: 84
+    xAdvance: 84
+    scale: 1
+    name: 360_Y
+    hashCode: 61182931
+    unicode: 221439
+    pivot: {x: 0, y: 0}
+    sprite: {fileID: 0}
   fallbackSpriteAssets: []
+--- !u!21 &21143085215306972
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextMeshPro/Sprite
+  m_Shader: {fileID: 4800000, guid: cf81c85f95fe47e1a27f6ae460cf182c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 2e7be061544c42b4cb7de10cff22738c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
