@@ -79,12 +79,7 @@ public class MegaMagePunch : ASpell
             var scale = ScaleAnim.Evaluate(progress);
             charModel.localScale = OriginalScale * scale;
 
-            var icons = instantiatedPrompt.GetComponentsInChildren<Image>();
-            var color = icons[0].color;
-            foreach (var icon in icons)
-            {
-                icon.color = new Color(color.r, color.g, color.b, Mathf.Clamp(scale, 0.0f, 1.0f));
-            }
+            instantiatedPrompt.transform.localScale = scale/2.0f * Vector3.one;
             instantiatedPrompt.transform.position = player.transform.position + new Vector3(1.5f, 5, 0);
         }
     }
