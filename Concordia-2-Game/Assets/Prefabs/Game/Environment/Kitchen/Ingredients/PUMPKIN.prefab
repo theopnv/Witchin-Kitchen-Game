@@ -186,7 +186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5437259465057028820
 Transform:
   m_ObjectHideFlags: 0
@@ -463,11 +463,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PUMPKIN
       objectReference: {fileID: 0}
-    - target: {fileID: 281462420110277038, guid: 1da633f4c7854fd459d05e444cbd1952,
-        type: 3}
-      propertyPath: m_ingredientType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8247869552462652036, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -522,6 +517,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 281462420110277038, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: m_ingredientType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028785531022391640, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9140700314993437573, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}

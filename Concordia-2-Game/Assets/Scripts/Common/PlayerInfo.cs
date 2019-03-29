@@ -21,10 +21,10 @@ namespace con2
     {
         public static Dictionary<int, Player> Info = new Dictionary<int, Player>()
         {
-            { 0, new Player() { Name = "Red"} },
+            { 0, new Player() { Name = "Orange"} },
             { 1, new Player() { Name = "Blue"} },
-            { 2, new Player() { Name = "Green"} },
-            { 3, new Player() { Name = "Yellow"} },
+            { 2, new Player() { Name = "Yellow"} },
+            { 3, new Player() { Name = "Pink"} },
         };
     }
 
