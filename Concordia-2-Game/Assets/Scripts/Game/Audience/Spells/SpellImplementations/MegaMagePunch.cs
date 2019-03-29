@@ -38,6 +38,7 @@ public class MegaMagePunch : ASpell
         playerPunch.ShakeIntensity = CamShakeMgr.Intensity.MEDIUM;
         playerMovement.ModulateMovementSpeed(m_sizeScaler);
         playerMovement.ModulateMaxMovementSpeed(m_sizeScaler);
+        playerMovement.SetImmunity(true);
         hitbox.localScale = new Vector3(hitboxScale.x * m_sizeScaler, hitboxScale.y, hitboxScale.z * m_sizeScaler);
 
         Playing = true;
@@ -53,6 +54,7 @@ public class MegaMagePunch : ASpell
         playerPunch.ShakeIntensity = originalShake;
         playerMovement.ModulateMovementSpeed(1.0f / m_sizeScaler);
         playerMovement.ModulateMaxMovementSpeed(1.0f / m_sizeScaler);
+        playerMovement.SetImmunity(false);
         hitbox.localScale = new Vector3(hitboxScale.x / m_sizeScaler, hitboxScale.y, hitboxScale.z / m_sizeScaler);
 
         Destroy(instantiatedPrompt.gameObject);
