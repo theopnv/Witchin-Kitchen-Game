@@ -458,6 +458,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2254253588430205105, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: m_Name
+      value: PUMPKIN
+      objectReference: {fileID: 0}
     - target: {fileID: 8247869552462652036, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -513,10 +518,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2254253588430205105, guid: 1da633f4c7854fd459d05e444cbd1952,
+    - target: {fileID: 281462420110277038, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}
-      propertyPath: m_Name
-      value: PUMPKIN
+      propertyPath: m_ingredientType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028785531022391640, guid: 1da633f4c7854fd459d05e444cbd1952,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9140700314993437573, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}
@@ -528,11 +538,6 @@ PrefabInstance:
       propertyPath: OwnBody
       value: 
       objectReference: {fileID: 8392851350495641516}
-    - target: {fileID: 281462420110277038, guid: 1da633f4c7854fd459d05e444cbd1952,
-        type: 3}
-      propertyPath: m_ingredientType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6356156231182219705, guid: 1da633f4c7854fd459d05e444cbd1952,
         type: 3}
       propertyPath: m_RootOrder
