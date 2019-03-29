@@ -1123,6 +1123,7 @@ GameObject:
   - component: {fileID: 8325852682819089887}
   - component: {fileID: 3159072838977598754}
   - component: {fileID: 755982484651090570}
+  - component: {fileID: 3953961514307792013}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1378,6 +1379,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3953961514307792013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017638658279021675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed46bd1224cd66a44bccb2b1e8712502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &735582002825160746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1465,6 +1478,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
+    - target: {fileID: 5648356612434751487, guid: 6679f5c57e4cdaf4f84e491721e56128,
+        type: 3}
+      propertyPath: m_Name
+      value: PunchGrabBox
+      objectReference: {fileID: 0}
     - target: {fileID: 1202443438745480667, guid: 6679f5c57e4cdaf4f84e491721e56128,
         type: 3}
       propertyPath: m_RootOrder
@@ -1485,11 +1503,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5648356612434751487, guid: 6679f5c57e4cdaf4f84e491721e56128,
-        type: 3}
-      propertyPath: m_Name
-      value: PunchGrabBox
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6679f5c57e4cdaf4f84e491721e56128, type: 3}
 --- !u!4 &3589913528455673603 stripped
@@ -1505,6 +1518,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
+    - target: {fileID: 1011476266396574302, guid: 6ce1ef4f9f123d341ba77685962b9db7,
+        type: 3}
+      propertyPath: m_Name
+      value: LightningFlash
+      objectReference: {fileID: 0}
     - target: {fileID: 2315446383823256909, guid: 6ce1ef4f9f123d341ba77685962b9db7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1560,11 +1578,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1011476266396574302, guid: 6ce1ef4f9f123d341ba77685962b9db7,
-        type: 3}
-      propertyPath: m_Name
-      value: LightningFlash
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ce1ef4f9f123d341ba77685962b9db7, type: 3}
 --- !u!4 &2235409754638998757 stripped
@@ -1580,6 +1593,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
+    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
+        type: 3}
+      propertyPath: m_Name
+      value: RainbowTrail
+      objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526967, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1644,11 +1662,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
-        type: 3}
-      propertyPath: m_Name
-      value: RainbowTrail
       objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526966, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
@@ -1762,6 +1775,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
+    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
+        type: 3}
+      propertyPath: m_Name
+      value: DisplacementCircle
+      objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1832,11 +1850,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
-        type: 3}
-      propertyPath: m_Name
-      value: DisplacementCircle
-      objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601365, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: Intensity
@@ -1857,6 +1870,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9017638658279021679}
     m_Modifications:
+    - target: {fileID: 1599718021928974, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
+      propertyPath: m_Name
+      value: Puff
+      objectReference: {fileID: 0}
     - target: {fileID: 4777701302679384, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1912,10 +1929,6 @@ PrefabInstance:
     - target: {fileID: 4777701302679384, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.5000012
-      objectReference: {fileID: 0}
-    - target: {fileID: 1599718021928974, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
-      propertyPath: m_Name
-      value: Puff
       objectReference: {fileID: 0}
     - target: {fileID: 198738731738625552, guid: 21461e6c060baf044ac3e717ed4170cb,
         type: 3}

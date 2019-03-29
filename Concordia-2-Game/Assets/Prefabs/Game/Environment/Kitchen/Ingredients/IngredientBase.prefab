@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6671750083203961567}
   - component: {fileID: 9140700314993437573}
   - component: {fileID: 8886429053882378689}
+  - component: {fileID: 3064509304320439074}
   m_Layer: 12
   m_Name: IngredientBase
   m_TagString: Ingredient
@@ -276,6 +277,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3064509304320439074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254253588430205105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed46bd1224cd66a44bccb2b1e8712502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5409328345506341165
 PrefabInstance:
   m_ObjectHideFlags: 0
