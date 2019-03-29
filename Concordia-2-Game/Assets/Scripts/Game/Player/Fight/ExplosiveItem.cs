@@ -53,6 +53,10 @@ namespace con2.game
                 m_exploded = true;
                 Hit(ShakeIntensity);
 
+                // Explosive items, unlike punch, should still shake the screen even if no one was hit
+                if (!m_stunnedSomething)
+                    CamShakeMgr.Get().Shake(ShakeIntensity);
+
                 audioSource.Play();
 
                 Rigidbody body = GetComponent<Rigidbody>();
