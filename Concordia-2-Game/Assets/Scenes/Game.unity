@@ -2258,7 +2258,7 @@ Transform:
   - {fileID: 1022124238}
   - {fileID: 486730691}
   m_Father: {fileID: 2025846224}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295535645
 GameObject:
@@ -13089,6 +13089,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  promptPrefab: {fileID: 5108354524584509003, guid: 5a8d99ae0b734f642826ab65babb69d5,
+    type: 3}
 --- !u!114 &1825916754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14815,12 +14817,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1891111794}
-  - {fileID: 1676443296}
-  - {fileID: 219319811}
+  - {fileID: 294331520}
   - {fileID: 1751178314}
   - {fileID: 950959586}
   - {fileID: 1559139818}
-  - {fileID: 294331520}
+  - {fileID: 219319811}
+  - {fileID: 1676443296}
   - {fileID: 1203728526}
   m_Father: {fileID: 1492311963}
   m_RootOrder: 3
