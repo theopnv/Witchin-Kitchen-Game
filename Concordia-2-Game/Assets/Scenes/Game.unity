@@ -15957,6 +15957,11 @@ PrefabInstance:
       propertyPath: instanceMap
       value: 
       objectReference: {fileID: 2800000, guid: 816be3d019f917741bcd6ff05ad1638e, type: 3}
+    - target: {fileID: 3956997745309066665, guid: 929b78556a473724ea32078fabbbbbe4,
+        type: 3}
+      propertyPath: prefabScale
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3778123301875425944, guid: 929b78556a473724ea32078fabbbbbe4,
         type: 3}
       propertyPath: m_LocalPosition.x
