@@ -180,7 +180,7 @@ namespace con2.lobby
         private void SetInstructionText()
         {
             _InstructionsText.transform.parent.gameObject.SetActive(true);
-            _InstructionsText.text = "Launch a fireball with X to ready up.";
+            _InstructionsText.text = "Launch a fireball with <sprite=2> to ready up.";
         }
 
         public override void OnPlayerInitialized(PlayerManager playerManager)
