@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 10916642}
   - component: {fileID: 10916647}
   - component: {fileID: 10916648}
+  - component: {fileID: 10916650}
   - component: {fileID: 10916649}
   m_Layer: 0
   m_Name: MainGameManager
@@ -314,13 +315,15 @@ MonoBehaviour:
   _AudienceUIManager: {fileID: 2030936567}
   _LoadingPanel: {fileID: 752217720}
   m_maxEventVoteTime: 20
-  m_firstPollTime: 30
+  m_firstPollTime: 40
   m_poll_frequency: 60
   m_max_poll_number: 3
   m_poll_number: 0
   m_clock: {fileID: 477752801}
   m_gameOverText: {fileID: 2102123435}
   GAME_TIMER: 240
+  ClockTick: {fileID: 8300000, guid: 32646e1073de1914d9a6a60df50ecd76, type: 3}
+  voteCue: {fileID: 8300000, guid: 818a2b21f26c2274a8de709aeca26c38, type: 3}
 --- !u!114 &10916644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +494,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &10916650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10916640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac43472a7b829147b7367ec7a151e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cheers:
+  - {fileID: 8300000, guid: eac4f9051d447db48812c5f337eeaa25, type: 3}
+  - {fileID: 8300000, guid: 2269f4724242ec44e96271da6463c40e, type: 3}
+  - {fileID: 8300000, guid: 9d28f82fadc63994a945f4b4edfb3a04, type: 3}
+  - {fileID: 8300000, guid: 8784ebfaae8dfff4f9d2d0619022fdac, type: 3}
 --- !u!1001 &13281190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4656,7 +4676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d6ae315ac823644a1256bfc1f86650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AudioSource: {fileID: 773999211}
+  eventHorn: {fileID: 8300000, guid: cf9a998db830d564fa7682983a7557d1, type: 3}
 --- !u!114 &773999204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4669,6 +4689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1edbaec6115f7524886a194368981fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  announcement: {fileID: 8300000, guid: b81e86e8f3ef67e409faa38e96b8fe50, type: 3}
   m_freezingRainDuration: 10
   m_dragFraction: 0.5
   m_movementModulator: 2
@@ -4695,6 +4716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5da56935b6bc2c40b4d42d9c7c8468a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  announcement: {fileID: 8300000, guid: 64a1bf2c32648ef4bb7027f7d96c383b, type: 3}
   m_NetworkAdsDuration: 15
   m_MessageDelay: 0
   _NetworkAdsCanvasPrefab: {fileID: 7062139143320713761, guid: 768e9330d6e1f894097ef746afdd2d07,
@@ -4711,6 +4733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2a547f32fb54749b4f4d39c1be9274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  announcement: {fileID: 8300000, guid: 6cb6a9b40f00701498e3619164411568, type: 3}
   Angle: 60
   NumberOfMeteors: 20
   Duration: 8
@@ -4795,6 +4818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d805077dcdbb254683d377719c06865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  announcement: {fileID: 8300000, guid: 65019faa3a37ffe419d9f49055d11996, type: 3}
   m_swapDelay: 3
   m_numberOfSwaps: 5
   m_smokePuffPrefab: {fileID: 0}
@@ -4810,6 +4834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9eae65790079c540aa4633b6eaef954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  announcement: {fileID: 8300000, guid: 4147c3a346720374c85e5a2823e16301, type: 3}
   m_spinBase: {fileID: 113913494}
 --- !u!114 &773999209
 MonoBehaviour:
@@ -4823,6 +4848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49da5f72ab9ce34a8fd6bd0b7f22db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  announcement: {fileID: 8300000, guid: fd9ba15c80c3b714c9cf95abaa9eb49f, type: 3}
   m_ingredientDanceDuration: 20
 --- !u!114 &773999210
 MonoBehaviour:
@@ -4836,6 +4862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d075257e88cf50c4faa72664d3321a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  announcement: {fileID: 8300000, guid: 64fdeef728379914fbf59391a179e071, type: 3}
   m_grassGrowthEventLength: 20
   m_gazon: {fileID: 2016537470}
   ScaleAnim:

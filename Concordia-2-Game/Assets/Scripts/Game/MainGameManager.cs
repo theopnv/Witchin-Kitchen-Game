@@ -158,6 +158,8 @@ namespace con2.game
             }
 
             m_audienceEventManager.StartPoll((Events.EventID)eventA, (Events.EventID)eventB, m_maxEventVoteTime);
+            m_audioSource.clip = voteCue;
+            m_audioSource.Play();
         }
 
         #endregion
@@ -176,12 +178,16 @@ namespace con2.game
 
         private EndGameManager EGM;
 
+        private AudioSource m_audioSource;
+        public AudioClip ClockTick, voteCue;
+        private Cheering cheers;
+
         private IEnumerator StartGame()
         {
-            var audioSource = GetComponent<AudioSource>();
-            if (audioSource)
+            m_audioSource = GetComponent<AudioSource>();
+            if (m_audioSource)
             {
-                audioSource.PlayDelayed(0.1f); //Start trumpet
+                m_audioSource.PlayDelayed(0.1f); //Start trumpet
             }
 
             m_countdown = true;
@@ -204,6 +210,9 @@ namespace con2.game
             gameMusic.Play();
 
             m_countdown = false;
+
+            cheers = GetComponent<Cheering>();
+            StartCoroutine(PrepareCheers());
         }
 
         private void InitializeEndGame()
@@ -214,21 +223,77 @@ namespace con2.game
             GAME_OVER = false;
         }
 
+        private bool largeClockStarted = false;
         private void UpdateEndGame()
         {
             if (!GAME_OVER)
             {
                 int remainingTime = (int)(GAME_TIMER + LOADING_TIME + COUNTDOWN_TIME - Time.timeSinceLevelLoad);
                 m_clock.text = FormatRemainingTime(remainingTime);
-                if (remainingTime == 10)
+                if (remainingTime == 10 && !largeClockStarted)
                 {
+                    largeClockStarted = true;
                     m_clock.fontSize = 200;
+                    StartCoroutine(TickingSounds());
                 }
                 if (remainingTime <= 0)
                 {
                     GameOver();
                 }
             }
+        }
+
+        private IEnumerator TickingSounds()
+        {
+            m_audioSource.clip = ClockTick;
+            if (m_audioSource)
+            {
+                int count = 0;
+                while (count < 10)
+                {
+                    count++;
+                    m_audioSource.Play();
+                    yield return new WaitForSeconds(1.0f);
+                }
+            }
+        }
+
+        private IEnumerator PrepareCheers()
+        {
+            //Cheering at occasional intervals
+            yield return new WaitForSeconds(24);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(41);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(40);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(57);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(39);
+            cheers.Cheer(GetLeaderId());
+        }
+
+        private int GetLeaderId()
+        {
+            var finalRankings = new List<List<PlayerManager>>();
+            var playerScores = new List<PlayerManager>();
+            for (int i = 0; i < PlayersInstances.Count; i++)
+            {
+                playerScores.Add(GetPlayerById(i));
+            }
+
+            List<List<PlayerManager>> rankings = playerScores.GroupBy(x => x.CompletedPotionCount)
+                                             .Select(x => x.ToList())
+                                             .OrderByDescending(x => x[0].CompletedPotionCount)
+                                             .ToList();
+
+            List<List<PlayerManager>> tieBreaker = rankings[0].GroupBy(x => x.CollectedIngredientCount)
+                                .Select(x => x.ToList())
+                                .OrderByDescending(x => x[0].CollectedIngredientCount)
+                                .ToList();
+            if (tieBreaker[0].Count > 1)
+                return -1;
+            return tieBreaker[0][0].ID;
         }
 
         private string FormatRemainingTime(int time)
