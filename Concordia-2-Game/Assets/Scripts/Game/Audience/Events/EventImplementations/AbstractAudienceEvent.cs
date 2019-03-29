@@ -17,6 +17,9 @@ namespace con2.game
         public abstract IEnumerator EventImplementation();
         public abstract EventID GetEventID();
 
+        protected AudioSource audioSource;
+        public AudioClip announcement;
+
         public void SetUpEvent()
         {
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);
@@ -36,6 +39,9 @@ namespace con2.game
 
         public IEnumerator RunEvent(Func<IEnumerator> currentEvent)
         {
+            audioSource = GetComponent<AudioSource>();
+            audioSource.clip = announcement;
+            audioSource.Play();
             yield return StartCoroutine(currentEvent());
         }
     }

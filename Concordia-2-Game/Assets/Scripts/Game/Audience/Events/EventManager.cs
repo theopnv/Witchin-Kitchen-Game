@@ -20,7 +20,8 @@ namespace con2.game
 
         private MessageFeedManager _MessageFeedManager;
 
-        [SerializeField] private AudioSource _AudioSource;
+        private AudioSource _AudioSource;
+        public AudioClip eventHorn;
 
         #endregion
 
@@ -125,8 +126,9 @@ namespace con2.game
                       Events.EventList[(Events.EventID)chosenEvent.id] +
                       " was voted");
 
-            _AudioSource?.Play();
             StartCoroutine(LaunchEventAfterDelay(chosenEvent));
+            _AudioSource.clip = eventHorn;
+            _AudioSource?.Play();
         }
 
         private IEnumerator LaunchEventAfterDelay(Event chosenEvent)
