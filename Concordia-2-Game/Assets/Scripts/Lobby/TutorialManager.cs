@@ -29,10 +29,10 @@ namespace con2.lobby
         {
             { 0, "Welcome to Witchin' Kitchen, competitors!\r\nCompete to prove that you're the best witch or wizard!" },
             { 1, "Score points by making potions.\r\nFollow the recipe in your bottom HUD.\r\nGrab and Throw <sprite=0> an ingredient in your cauldron."},
-            { 2, "Process the ingredients in you cauldron with the prompted action."},
-            { 3, "You scored one point!\r\nWhen a potion is made, an audience member\r\nwill cast a spell on one of you. Watch out!"},
+            { 2, "Stand near your cauldron and do the prompted action to process the ingredient."},
+            { 3, "You each scored one point!\r\nWhen a potion is made, an audience member\r\nwill cast a spell on one of you. Watch out!"},
             { 4, "Oh no! The audience members cast the spell\r\nDisco Mania on each of you.\r\nYour controls are inverted during the spell!"},
-            { 5, "Short-ranged slap attack <sprite=1> (brief cooldown)\r\nand long-ranged fireballs <sprite=2> (longer cooldown)."},
+            { 5, "Get ingredients from your enemies by attacking them with your\r\nshort-ranged slap attack <sprite=1> (brief cooldown),\r\nand long-ranged fireballs <sprite=2> (longer cooldown)."},
             { 6, "A mini fireball spinning around you means it is charged.\r\nNow, launch a fireball <sprite=2> to ready up!"},
         };
 
@@ -182,22 +182,21 @@ namespace con2.lobby
             _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].MaxNbOfInstances = 1;
             _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].AskToInstantiate();
             LevelUpPlayersProgression();
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(13);
             LevelUpPlayersProgression();
         }
 
         private IEnumerator RemoveDividers()
         {
-            // TODO change this if needed when Jen's visuals are in
-            var dividerVisuals = _Dividers.GetComponentsInChildren<TextMeshProUGUI>();
+            var dividerVisuals = _Dividers.GetComponentsInChildren<MeshRenderer>();
             var startTime = Time.time;
-            var startColor = dividerVisuals[0].color;
+            var startColor = dividerVisuals[0].material.color;
             while (Time.time - startTime < 1)
             {
                 var newAlpha = Mathf.Lerp(1.0f, 0.0f, Time.time - startTime);
                 foreach (var line in dividerVisuals)
                 {
-                    line.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
+                    line.material.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
                 }
                 yield return new WaitForEndOfFrame();
             }
