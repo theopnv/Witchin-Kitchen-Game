@@ -12,6 +12,7 @@ public static class Tags
         , ARENA_BASE = "ArenaBase"
         , PLAYERS_HUD_ZONE = "PlayersHUDZone"
         , INGREDIENT = "Ingredient"
-        , PROJECTILE = "Projectile";
+        , PROJECTILE = "Projectile"
+        , MENU_MUSIC = "MenuMusic";
 
 }
