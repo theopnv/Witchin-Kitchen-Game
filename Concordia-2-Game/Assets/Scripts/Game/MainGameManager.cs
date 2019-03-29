@@ -176,12 +176,15 @@ namespace con2.game
 
         private EndGameManager EGM;
 
+        private AudioSource m_audioSource;
+        public AudioClip ClockTick;
+
         private IEnumerator StartGame()
         {
-            var audioSource = GetComponent<AudioSource>();
-            if (audioSource)
+            m_audioSource = GetComponent<AudioSource>();
+            if (m_audioSource)
             {
-                audioSource.PlayDelayed(0.1f); //Start trumpet
+                m_audioSource.PlayDelayed(0.1f); //Start trumpet
             }
 
             m_countdown = true;
@@ -214,19 +217,37 @@ namespace con2.game
             GAME_OVER = false;
         }
 
+        private bool largeClockStarted = false;
         private void UpdateEndGame()
         {
             if (!GAME_OVER)
             {
                 int remainingTime = (int)(GAME_TIMER + LOADING_TIME + COUNTDOWN_TIME - Time.timeSinceLevelLoad);
                 m_clock.text = FormatRemainingTime(remainingTime);
-                if (remainingTime == 10)
+                if (remainingTime == 10 && !largeClockStarted)
                 {
+                    largeClockStarted = true;
                     m_clock.fontSize = 200;
+                    StartCoroutine(TickingSounds());
                 }
                 if (remainingTime <= 0)
                 {
                     GameOver();
+                }
+            }
+        }
+
+        private IEnumerator TickingSounds()
+        {
+            m_audioSource.clip = ClockTick;
+            if (m_audioSource)
+            {
+                int count = 0;
+                while (count < 10)
+                {
+                    count++;
+                    m_audioSource.Play();
+                    yield return new WaitForSeconds(1.0f);
                 }
             }
         }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17526998, g: 0.21928388, b: 0.3015955, a: 1}
+  m_IndirectSpecularColor: {r: 0.17526956, g: 0.21928315, b: 0.30159438, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -321,6 +321,7 @@ MonoBehaviour:
   m_clock: {fileID: 477752801}
   m_gameOverText: {fileID: 2102123435}
   GAME_TIMER: 240
+  ClockTick: {fileID: 8300000, guid: 32646e1073de1914d9a6a60df50ecd76, type: 3}
 --- !u!114 &10916644
 MonoBehaviour:
   m_ObjectHideFlags: 0
