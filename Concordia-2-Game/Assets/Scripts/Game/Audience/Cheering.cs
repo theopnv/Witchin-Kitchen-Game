@@ -14,6 +14,8 @@ public class Cheering : MonoBehaviour
 
     public void Cheer(int playerId)
     {
+        if (playerId < 0)   //No cheers if we're tied right now
+            return; 
         audioSource.clip = cheers[playerId];
         StartCoroutine(Cheer());
     }

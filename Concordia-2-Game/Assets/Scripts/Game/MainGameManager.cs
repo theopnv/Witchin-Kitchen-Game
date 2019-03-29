@@ -158,6 +158,8 @@ namespace con2.game
             }
 
             m_audienceEventManager.StartPoll((Events.EventID)eventA, (Events.EventID)eventB, m_maxEventVoteTime);
+            m_audioSource.clip = voteCue;
+            m_audioSource.Play();
         }
 
         #endregion
@@ -177,7 +179,7 @@ namespace con2.game
         private EndGameManager EGM;
 
         private AudioSource m_audioSource;
-        public AudioClip ClockTick;
+        public AudioClip ClockTick, voteCue;
         private Cheering cheers;
 
         private IEnumerator StartGame()
@@ -258,18 +260,16 @@ namespace con2.game
 
         private IEnumerator PrepareCheers()
         {
-            //Cheering at occasional intervals, once I get the event voiceovers in I'll make sure these don't overlap
-            yield return new WaitForSeconds(22);
+            //Cheering at occasional intervals
+            yield return new WaitForSeconds(24);
             cheers.Cheer(GetLeaderId());
             yield return new WaitForSeconds(41);
             cheers.Cheer(GetLeaderId());
-            yield return new WaitForSeconds(30);
+            yield return new WaitForSeconds(40);
             cheers.Cheer(GetLeaderId());
-            yield return new WaitForSeconds(48);
+            yield return new WaitForSeconds(57);
             cheers.Cheer(GetLeaderId());
             yield return new WaitForSeconds(39);
-            cheers.Cheer(GetLeaderId());
-            yield return new WaitForSeconds(31);
             cheers.Cheer(GetLeaderId());
         }
 
@@ -291,7 +291,8 @@ namespace con2.game
                                 .Select(x => x.ToList())
                                 .OrderByDescending(x => x[0].CollectedIngredientCount)
                                 .ToList();
-
+            if (tieBreaker[0].Count > 1)
+                return -1;
             return tieBreaker[0][0].ID;
         }
 
