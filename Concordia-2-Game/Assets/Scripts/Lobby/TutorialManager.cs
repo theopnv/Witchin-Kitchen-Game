@@ -15,11 +15,15 @@ namespace con2.lobby
     {
         [SerializeField] private LobbyManager _LobbyManager;
         [SerializeField] private TextMeshProUGUI _CurrentInstruction;
+        [SerializeField] private GameObject _TutorialMushroomPrefab;
+        [SerializeField] private GameObject[] _FirstItemSpawnerLocations = new GameObject[4];
         [SerializeField] private ItemSpawner _ItemSpawner;
+        [SerializeField] private GameObject _Dividers;
         [SerializeField] private SpellsManager _SpellsManager;
         [SerializeField] private EventManager _EventsManager;
 
         private int _PlayersProgression = 1;
+        private Dictionary<int, bool> _PlayersPotions = new Dictionary<int, bool>();
         private int _CurrentInstructionIdx;
         private Dictionary<int, string> _Instructions = new Dictionary<int, string>()
         {
@@ -66,13 +70,20 @@ namespace con2.lobby
             fireballManager.OnFireballCasted += () => OnFireBallCasted(player.ID);
 
             player.PlayerHUD.transform.SetSiblingIndex(player.ID);
+
+            _PlayersPotions.Add(player.ID, false);
+
+            if (_CurrentInstructionIdx == 1 || _CurrentInstructionIdx == 2)
+            {
+                Instantiate(_TutorialMushroomPrefab, _FirstItemSpawnerLocations[player.ID].transform.position, Quaternion.identity);
+            }
         }
 
         #region Instructions
 
         private IEnumerator Welcome()
         {
-            yield return new WaitForSeconds(10); // TODO set back to 10
+            yield return new WaitForSeconds(10);
             yield return Potion();
         }
 
@@ -85,8 +96,17 @@ namespace con2.lobby
             }
             ++_CurrentInstructionIdx;
             _CurrentInstruction.text = _Instructions[_CurrentInstructionIdx];
-            _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].AskToInstantiate();
-            _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].MaxNbOfInstances = 0;
+
+            int i = 0;
+            foreach (var spawner in _FirstItemSpawnerLocations)
+            {
+                if (_LobbyManager.PlayersInstances.ContainsKey(i))
+                {
+                    Instantiate(_TutorialMushroomPrefab, spawner.transform.position, Quaternion.identity);
+                }
+                i++;
+            }
+
             yield return null;
         }
 
@@ -107,16 +127,27 @@ namespace con2.lobby
         }
 
         public Image AudiencePointer;
-        private bool potionGate = false;
+        private bool potionGate = false, thisStepDone = false;  //guuuhhhh
         private void _1_CompletedPotion(int playerIdx)
         {
-            if (!potionGate)
+            _PlayersPotions[playerIdx] = true;
+            potionGate = true;
+            foreach (var potionStatus in _PlayersPotions)   //Assuming that all players will be in at this point, anyone who joins after doesn't get to make a potion
             {
-                potionGate = true;
+                if (potionStatus.Value == false)
+                    potionGate = false;
+            }
+
+            if (potionGate && !thisStepDone)
+            {
+                thisStepDone = true;
                 LevelUpPlayersProgression();
                 StartCoroutine(_2_CastSpells());
                 AudiencePointer.gameObject.SetActive(true);
-                _LobbyManager.PlayersInstances[playerIdx].PlayerHUD.transform.Find("Organizer/Score/ScorePointer").gameObject.SetActive(true);
+                foreach (var player in _LobbyManager.PlayersInstances)
+                {
+                    player.Value.PlayerHUD.transform.Find("Organizer/Score/ScorePointer").gameObject.SetActive(true);
+                }
             }
         }
 
@@ -145,12 +176,32 @@ namespace con2.lobby
 
         private IEnumerator _3_FireballPunch()
         {
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(10);
+            StartCoroutine(RemoveDividers());
+            yield return new WaitForSeconds(1);
             _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].MaxNbOfInstances = 1;
             _ItemSpawner.SpawnableItems[game.Ingredient.MUSHROOM].AskToInstantiate();
             LevelUpPlayersProgression();
             yield return new WaitForSeconds(10);
             LevelUpPlayersProgression();
+        }
+
+        private IEnumerator RemoveDividers()
+        {
+            // TODO change this if needed when Jen's visuals are in
+            var dividerVisuals = _Dividers.GetComponentsInChildren<TextMeshProUGUI>();
+            var startTime = Time.time;
+            var startColor = dividerVisuals[0].color;
+            while (Time.time - startTime < 1)
+            {
+                var newAlpha = Mathf.Lerp(1.0f, 0.0f, Time.time - startTime);
+                foreach (var line in dividerVisuals)
+                {
+                    line.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
+                }
+                yield return new WaitForEndOfFrame();
+            }
+            _LobbyManager.TempInvisibleWalls.SetActive(false);
         }
 
         private void OnFireBallCasted(int playerIdx)

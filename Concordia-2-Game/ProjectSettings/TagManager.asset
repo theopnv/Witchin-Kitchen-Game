@@ -15,6 +15,7 @@ TagManager:
   - Ingredient
   - Projectile
   - FxTemporaire
+  - MenuMusic
   layers:
   - Default
   - TransparentFX
