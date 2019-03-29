@@ -14,6 +14,11 @@ namespace con2.main_menu
             StartCoroutine(Transition.Get().SequenceIn(null, _loadTutorial()));
         }
 
+        public void LoadMainMenu()
+        {
+            SceneManager.LoadSceneAsync(SceneNames.MainMenu);
+        }
+
         protected IEnumerator _loadTutorial()
         {
             MenuInfo.DoTutorial = true;
