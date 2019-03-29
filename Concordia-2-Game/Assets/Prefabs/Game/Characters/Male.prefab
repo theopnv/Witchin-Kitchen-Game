@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 7504540862884185469}
   - component: {fileID: 3492940367591867776}
   - component: {fileID: 6109727587336067567}
+  - component: {fileID: 884799191277608089}
   m_Layer: 0
   m_Name: Male
   m_TagString: Player
@@ -284,6 +285,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &884799191277608089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389057155434458313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed46bd1224cd66a44bccb2b1e8712502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8999480939007557823
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,11 +679,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
-    - target: {fileID: 5648356612434751487, guid: 6679f5c57e4cdaf4f84e491721e56128,
-        type: 3}
-      propertyPath: m_Name
-      value: PunchGrabBox
-      objectReference: {fileID: 0}
     - target: {fileID: 1202443438745480667, guid: 6679f5c57e4cdaf4f84e491721e56128,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -705,6 +713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648356612434751487, guid: 6679f5c57e4cdaf4f84e491721e56128,
+        type: 3}
+      propertyPath: m_Name
+      value: PunchGrabBox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6679f5c57e4cdaf4f84e491721e56128, type: 3}
@@ -808,11 +821,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389057155434458317}
     m_Modifications:
-    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
-        type: 3}
-      propertyPath: m_Name
-      value: RainbowTrail
-      objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526967, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -877,6 +885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672261044966526968, guid: b8e9e20f556435846b2913b62c0f0d96,
+        type: 3}
+      propertyPath: m_Name
+      value: RainbowTrail
       objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526966, guid: b8e9e20f556435846b2913b62c0f0d96,
         type: 3}
