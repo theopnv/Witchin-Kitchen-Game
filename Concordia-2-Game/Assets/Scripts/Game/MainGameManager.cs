@@ -177,6 +177,8 @@ namespace con2.game
         private int m_dominationDifference = 3;
 
         private EndGameManager EGM;
+        public GameObject borders, title;
+        private int m_currentLeaderId = -1;
 
         private AudioSource m_audioSource;
         public AudioClip ClockTick, voteCue;
@@ -363,6 +365,17 @@ namespace con2.game
             EGM.SetFinalRankings(finalRankings);
         }
 
+        private void SetBorderColor()
+        {
+            var newLeaderId = GetLeaderId();
+            if (newLeaderId != m_currentLeaderId)
+            {
+                m_currentLeaderId = newLeaderId;
+                borders.GetComponentInChildren<MeshRenderer>().material = ColorsManager.Get().PlayerBorderMaterials[newLeaderId];
+                title.GetComponentInChildren<MeshRenderer>().material = ColorsManager.Get().PlayerBorderMaterials[newLeaderId];
+            }
+        }
+
         public void UpdateRanks()
         {
             List<PlayerManager> playerScores = new List<PlayerManager>();
@@ -395,6 +408,7 @@ namespace con2.game
                     }
                     break;
             }
+            SetBorderColor();
         }
 
         private void RankGroup(List<PlayerManager> group, PlayerManager.Rank rank)

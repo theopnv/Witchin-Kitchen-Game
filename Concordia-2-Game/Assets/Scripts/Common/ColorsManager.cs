@@ -16,6 +16,8 @@ namespace con2
 
         public Texture[] PlayerColorTextures = new Texture[4];
 
+        public Material[] PlayerBorderMaterials = new Material[4];
+
         public Texture[] PlayerNormalTextures = new Texture[4];
 
         public Texture[] PlayerOcclusionTextures = new Texture[4];
