@@ -407,7 +407,8 @@ MonoBehaviour:
   m_clock: {fileID: 477752801}
   m_gameOverText: {fileID: 2102123435}
   GAME_TIMER: 240
-  borderMaterial: {fileID: 2100000, guid: ca285b4ed00b35d468ccfe52c2761baf, type: 2}
+  borders: {fileID: 1466883686}
+  title: {fileID: 282838461}
   ClockTick: {fileID: 8300000, guid: 32646e1073de1914d9a6a60df50ecd76, type: 3}
   voteCue: {fileID: 8300000, guid: 818a2b21f26c2274a8de709aeca26c38, type: 3}
 --- !u!114 &10916644
@@ -2139,6 +2140,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4f4422374db06ba4fb2ac5e2931ad8cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471c500e19d2bb640b969164c6764e20, type: 3}
+--- !u!1 &282838461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 3ce0eaf9586d348448345bea1d84795c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1222679188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &292932122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10672,6 +10679,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 416322322, guid: 4986aec3cbcf04a4e935f5b1e61c68cb,
     type: 3}
   m_PrefabInstance: {fileID: 1749745425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1466883686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 7c002035ebdf59541a75cc60bbd6db52,
+    type: 3}
+  m_PrefabInstance: {fileID: 1543921350}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1479507704
 PrefabInstance:
