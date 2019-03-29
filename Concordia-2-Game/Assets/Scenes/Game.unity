@@ -3777,7 +3777,7 @@ MonoBehaviour:
   - {fileID: 1085581706}
   SpawnableItemsList:
   - Type: 1
-    Prefab: {fileID: 8623009745444468816, guid: 8d760422faf219047a166349d106c787,
+    Prefab: {fileID: 8623009745444468816, guid: 88ce17c8ab4705342a01184b328a31ff,
       type: 3}
     UseTimerMode: 0
     SpawnDelay: 0
