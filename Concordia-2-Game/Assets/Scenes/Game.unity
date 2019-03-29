@@ -9489,6 +9489,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  promptPrefab: {fileID: 5108354524584509003, guid: 5a8d99ae0b734f642826ab65babb69d5,
+    type: 3}
 --- !u!114 &1825916754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11787,11 +11789,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6320107239094431777, guid: 6c2b44483a33d1840b7a369bfcaba650,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1579829279240451133, guid: 6c2b44483a33d1840b7a369bfcaba650,
         type: 3}
       propertyPath: m_fontColor.a
@@ -11811,6 +11808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4291743438
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320107239094431777, guid: 6c2b44483a33d1840b7a369bfcaba650,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c2b44483a33d1840b7a369bfcaba650, type: 3}
