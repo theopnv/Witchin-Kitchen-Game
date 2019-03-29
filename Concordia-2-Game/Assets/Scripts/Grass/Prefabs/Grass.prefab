@@ -47,15 +47,24 @@ MonoBehaviour:
   target: {fileID: 0}
   prefab: {fileID: 100000, guid: 84c367e828da88945aef8e81286c5a39, type: 3}
   prefabScale: 40
+  minScale: {x: 0.35, y: 0.25, z: 0.35}
   meshMaterial: {fileID: 2100000, guid: 950c65e3beb946942aca19b2d3dfbc92, type: 2}
-  colorMap: {fileID: 2800000, guid: fc539db6896bea344a7c53d6cda9851b, type: 3}
-  instanceMap: {fileID: 2800000, guid: 481a003cc6b31bd4fa3a3d27ecde8ed9, type: 3}
+  motionVectorsMaterial: {fileID: 0}
+  colorMap: {fileID: 2800000, guid: 0c5a715f25d00c849909ff1a266bfed4, type: 3}
+  instanceMap: {fileID: 2800000, guid: 39029699f95e27942929f90463d40afa, type: 3}
+  heightMap: {fileID: 0}
+  RenderMotionVectors: 1
+  DisplacementStrength: 1
+  Flexibility: 1
   WindStrength: 2
   WindScrollSpeed: 0.1
   WindDirection: {x: 1, y: 0, z: 0}
   WindDirectionModulationTimeScale: 0.1
   WindDirectionModulationStrength: 0.5
   RollingWindPositionScale: 0.001
+  Scale: {x: 1, y: 1, z: 1}
+  FreezeColor: {r: 0, g: 0, b: 0, a: 0}
+  FreezeFactor: 0
 --- !u!114 &181414314283483911
 MonoBehaviour:
   m_ObjectHideFlags: 0

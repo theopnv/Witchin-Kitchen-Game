@@ -261,11 +261,11 @@ namespace con2.game
         private IEnumerator PrepareCheers()
         {
             //Cheering at occasional intervals
-            yield return new WaitForSeconds(24);
+            yield return new WaitForSeconds(22);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(42);
             cheers.Cheer(GetLeaderId());
             yield return new WaitForSeconds(41);
-            cheers.Cheer(GetLeaderId());
-            yield return new WaitForSeconds(40);
             cheers.Cheer(GetLeaderId());
             yield return new WaitForSeconds(57);
             cheers.Cheer(GetLeaderId());
