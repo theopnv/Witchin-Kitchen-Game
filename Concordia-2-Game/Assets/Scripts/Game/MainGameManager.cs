@@ -264,15 +264,15 @@ namespace con2.game
         {
             //Cheering at occasional intervals
             yield return new WaitForSeconds(22);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
             yield return new WaitForSeconds(42);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
             yield return new WaitForSeconds(41);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
             yield return new WaitForSeconds(57);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
             yield return new WaitForSeconds(39);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
         }
 
         private int GetLeaderId()
@@ -294,7 +294,7 @@ namespace con2.game
                                 .OrderByDescending(x => x[0].CollectedIngredientCount)
                                 .ToList();
             if (tieBreaker[0].Count > 1)
-                return -1;
+                return m_currentLeaderId;
             return tieBreaker[0][0].ID;
         }
 
@@ -408,6 +408,10 @@ namespace con2.game
                     }
                     break;
             }
+        }
+
+        public void UpdateRanksForBordersAndCheers()
+        {
             SetBorderColor();
         }
 
