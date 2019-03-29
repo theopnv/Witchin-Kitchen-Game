@@ -36,7 +36,8 @@ namespace con2.game
             if (ingredient && !ingredient.IsHeld())
             {
                 var ingredientType = collision.gameObject.GetComponentInChildren<IngredientType>();
-                if (ingredient.ThrownIntentionallyBy().Equals(m_owner) && ingredientType && ShouldAcceptIngredient(ingredientType.m_type))
+                var thrower = ingredient.ThrownIntentionallyBy();
+                if (thrower && thrower.Equals(m_owner) && ingredientType && ShouldAcceptIngredient(ingredientType.m_type))
                 {
                     OnCollectIngredient();
                     m_storedIngredient = ingredientType.m_type;
