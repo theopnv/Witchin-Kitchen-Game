@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
     FightStun m_stun;
     Rigidbody m_rb;
 
-    private bool m_movementIsInverted = false;
+    private bool m_movementIsInverted = false, m_isImmune = false;
 
     private AudioSource audioSource;
 
@@ -126,9 +126,12 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
 
     public void Punch(Vector3 knockVelocity, float stunTime)
     {
-        m_rb.velocity = knockVelocity;
-        m_stun.Stun(stunTime);
-        audioSource.Play();
+        if (!m_isImmune)
+        {
+            m_rb.velocity = knockVelocity;
+            m_stun.Stun(stunTime);
+            audioSource.Play();
+        }
     }
 
     // Public API
@@ -140,6 +143,11 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
     public void ModulateMovementDrag(float dragFraction)
     {
         m_rb.drag *= dragFraction;  
+    }
+
+    public void SetImmunity(bool isImmuneNow)
+    {
+        m_isImmune = isImmuneNow;
     }
 
     public void ModulateMovementSpeed(float movementModulator)
