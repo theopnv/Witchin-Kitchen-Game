@@ -34,28 +34,72 @@ namespace con2.game
 
         public Texture Texture {
             set {
-                var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+                // Ignore hair skin renderers
+                var skinRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+                SkinnedMeshRenderer skinRenderer = null;
+                foreach (var r in skinRenderers)
+                {
+                    if (r.gameObject.layer != 15)
+                    {
+                        skinRenderer = r;
+                        break;
+                    }
+                }
+
                 skinRenderer.material.mainTexture = value;
             }
         }
 
         public Texture NormalTexture {
             set {
-                var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+                // Ignore hair skin renderers
+                var skinRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+                SkinnedMeshRenderer skinRenderer = null;
+                foreach (var r in skinRenderers)
+                {
+                    if (r.gameObject.layer != 15)
+                    {
+                        skinRenderer = r;
+                        break;
+                    }
+                }
+
                 skinRenderer.material.SetTexture("_BumpMap", value);
             }
         }
 
         public Texture OcclusionTexture {
             set {
-                var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+                // Ignore hair skin renderers
+                var skinRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+                SkinnedMeshRenderer skinRenderer = null;
+                foreach (var r in skinRenderers)
+                {
+                    if (r.gameObject.layer != 15)
+                    {
+                        skinRenderer = r;
+                        break;
+                    }
+                }
+
                 skinRenderer.material.SetTexture("_OcclusionMap", value);
             }
         }
 
         public Texture RoughnessTexture {
             set {
-                var skinRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+                // Ignore hair skin renderers
+                var skinRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+                SkinnedMeshRenderer skinRenderer = null;
+                foreach (var r in skinRenderers)
+                {
+                    if (r.gameObject.layer != 15)
+                    {
+                        skinRenderer = r;
+                        break;
+                    }
+                }
+
                 skinRenderer.material.SetTexture("_MetallicGlossMap", value);
             }
         }
