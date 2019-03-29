@@ -178,6 +178,7 @@ namespace con2.game
 
         private AudioSource m_audioSource;
         public AudioClip ClockTick;
+        private Cheering cheers;
 
         private IEnumerator StartGame()
         {
@@ -207,6 +208,9 @@ namespace con2.game
             gameMusic.Play();
 
             m_countdown = false;
+
+            cheers = GetComponent<Cheering>();
+            StartCoroutine(PrepareCheers());
         }
 
         private void InitializeEndGame()
@@ -250,6 +254,45 @@ namespace con2.game
                     yield return new WaitForSeconds(1.0f);
                 }
             }
+        }
+
+        private IEnumerator PrepareCheers()
+        {
+            //Cheering at occasional intervals, once I get the event voiceovers in I'll make sure these don't overlap
+            yield return new WaitForSeconds(22);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(41);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(30);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(48);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(39);
+            cheers.Cheer(GetLeaderId());
+            yield return new WaitForSeconds(31);
+            cheers.Cheer(GetLeaderId());
+        }
+
+        private int GetLeaderId()
+        {
+            var finalRankings = new List<List<PlayerManager>>();
+            var playerScores = new List<PlayerManager>();
+            for (int i = 0; i < PlayersInstances.Count; i++)
+            {
+                playerScores.Add(GetPlayerById(i));
+            }
+
+            List<List<PlayerManager>> rankings = playerScores.GroupBy(x => x.CompletedPotionCount)
+                                             .Select(x => x.ToList())
+                                             .OrderByDescending(x => x[0].CompletedPotionCount)
+                                             .ToList();
+
+            List<List<PlayerManager>> tieBreaker = rankings[0].GroupBy(x => x.CollectedIngredientCount)
+                                .Select(x => x.ToList())
+                                .OrderByDescending(x => x[0].CollectedIngredientCount)
+                                .ToList();
+
+            return tieBreaker[0][0].ID;
         }
 
         private string FormatRemainingTime(int time)
