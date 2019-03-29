@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 2122944118715605462}
   - component: {fileID: 3390157653350390757}
   - component: {fileID: 2361648163521266122}
+  - component: {fileID: 7911156428615034010}
   m_Layer: 0
   m_Name: Gift
   m_TagString: Untagged
@@ -447,6 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_lerpSpeedz: 10
+  slapSound: {fileID: 0}
   DisappearScaleAnim:
     serializedVersion: 2
     m_Curve:
@@ -508,8 +510,24 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 32
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &7911156428615034010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4329013192419735292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603fe9de2df7be8428062d3b84a7ac5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_bounceIntensity: 4
+  m_bounceFilter: 0.01
+  m_followDistance: 2.5
+  m_followSpeed: 5
 --- !u!1 &4772086776783885702
 GameObject:
   m_ObjectHideFlags: 0

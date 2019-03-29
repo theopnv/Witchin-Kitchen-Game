@@ -25,6 +25,15 @@ namespace con2.game
             InitialScale = transform.localScale;
         }
 
+        public void SetFollowTarget(Transform toFollow)
+        {
+            var followController = GetComponent<FollowGift>();
+            if (followController)
+            {
+                followController.SetFollowTarget(toFollow);
+            }
+        }
+
         public override bool PickUp(Transform newParent)
         {
             if (!m_contentsSpawned)
