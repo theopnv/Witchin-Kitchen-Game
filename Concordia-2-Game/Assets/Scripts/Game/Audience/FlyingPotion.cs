@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FlyingPotion : MonoBehaviour
 {
-    private Vector3 m_destination;
+    private Image m_destination;
     private bool m_holdingposition = true, m_floatUp = true;
     private Transform m_flask;
     private Color m_color;
@@ -25,10 +25,11 @@ public class FlyingPotion : MonoBehaviour
     {
         if (!m_holdingposition)
         {
-            transform.position = Vector3.Lerp(transform.position, m_destination, Time.deltaTime);
-            var difference = Mathf.Clamp((transform.position - m_destination).magnitude, 0.0f, 1.0f);
+            var destination = Camera.main.ScreenToWorldPoint(m_destination.rectTransform.position + new Vector3(0, 0, Camera.main.transform.position.magnitude));
+            transform.position = Vector3.Lerp(transform.position, destination, Time.deltaTime);
+            var difference = Mathf.Clamp((transform.position - destination).magnitude, 0.0f, 1.0f);
             transform.localScale = new Vector3(difference, difference, difference);
-            if (difference <= 0.3)
+            if (difference <= 0.5)
             {
                 GameObject.Destroy(this.gameObject);
             }
@@ -53,7 +54,7 @@ public class FlyingPotion : MonoBehaviour
 
     public void SetDestination(Image destination)
     {
-        m_destination = Camera.main.ScreenToWorldPoint(destination.rectTransform.position + new Vector3(0, 0, Camera.main.transform.position.magnitude));
+        m_destination = destination;
     }
 
     public void SetColor(Color newColor)
