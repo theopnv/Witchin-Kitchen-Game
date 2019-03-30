@@ -48,11 +48,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7fc3f23f55f04614593829b1dbba2bbe, type: 3}
   - {fileID: 2800000, guid: 90632de47ceda0d47ba84fd1433ebd8d, type: 3}
   - {fileID: 2800000, guid: be65bd163b8933345bc9e8172761ff47, type: 3}
-  PlayerBorderMaterials:
-  - {fileID: 2100000, guid: b0333e358401f134a9daefa750ee84db, type: 2}
-  - {fileID: 2100000, guid: be366fa163cec2647abaab0d3ad355e1, type: 2}
-  - {fileID: 2100000, guid: 95616363dcab23d41bc7f8be9a5b9537, type: 2}
-  - {fileID: 2100000, guid: 3e94569ab88dda148ad4e388bbc1cd36, type: 2}
   PlayerNormalTextures:
   - {fileID: 2800000, guid: 7cbb4bac40246db4a9e35fc48134bdf4, type: 3}
   - {fileID: 2800000, guid: b172922668edcda45b45b8855a274576, type: 3}
@@ -93,3 +88,8 @@ MonoBehaviour:
   - {r: 0.3372549, g: 0.8235295, b: 0.75294125, a: 1}
   - {r: 1, g: 0.96470594, b: 0.1137255, a: 1}
   - {r: 0.8745099, g: 0.41176474, b: 0.5137255, a: 1}
+  PlayerBorderColors:
+  - {r: 1, g: 0.23281917, b: 0, a: 0}
+  - {r: 0.24056602, g: 0.9412287, b: 1, a: 0}
+  - {r: 0.99850774, g: 1, b: 0, a: 0}
+  - {r: 1, g: 0.24056602, b: 0.73109365, a: 0}
