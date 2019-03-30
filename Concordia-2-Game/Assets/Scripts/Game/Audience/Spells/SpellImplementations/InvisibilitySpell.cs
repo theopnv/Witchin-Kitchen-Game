@@ -17,26 +17,31 @@ namespace con2.game
         public override IEnumerator SpellImplementation()
         {
             var targetPlayer = m_mainManager.GetPlayerById(_TargetedPlayer.id);
-            var skin = targetPlayer.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().gameObject;
             var puff = targetPlayer.transform.Find("Puff").gameObject;
+            var skins = targetPlayer.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
 
-            if (skin)
+            foreach (var skin in skins)
+            {
+                skin.gameObject.SetActive(false);
+            }
+            if (skins.Length > 0)
             {
                 Debug.Log("Skin found!");
-                skin.SetActive(false);
                 puff.SetActive(false);
                 puff.SetActive(true);
             }
 
             yield return new WaitForSeconds(m_InvisibilityDuration);
 
-            if (skin)
+            foreach (var skin in skins)
             {
-                skin.SetActive(true);
+                skin.gameObject.SetActive(true);
+            }
+            if (skins.Length > 0)
+            {
                 puff.SetActive(false);
                 puff.SetActive(true);
             }
-
         }
 
         public override Spells.SpellID GetSpellID()
