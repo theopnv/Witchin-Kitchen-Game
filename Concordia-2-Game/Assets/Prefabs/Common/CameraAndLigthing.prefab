@@ -454,6 +454,11 @@ PrefabInstance:
       propertyPath: volumeTrigger
       value: 
       objectReference: {fileID: 7542930962586007284}
+    - target: {fileID: 568689141025004984, guid: 8fc749235de0de64ea00df6acf2393fc,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 130359
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fc749235de0de64ea00df6acf2393fc, type: 3}
 --- !u!1 &7542930962586007281 stripped
