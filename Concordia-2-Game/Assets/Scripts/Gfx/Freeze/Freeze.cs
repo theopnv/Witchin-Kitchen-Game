@@ -187,6 +187,8 @@ public class Freeze : MonoBehaviour
                 GrassTarget.Flexibility = OriginalGrassFlexibility * GrassFlexibilityAnimation.Evaluate(Playback);
 
                 GrassTarget.FreezeFactor = Playback;
+                var s = 1.0f - Playback;
+                GrassTarget.Scale = new Vector3(s, s, s);
             }
         }
     }
