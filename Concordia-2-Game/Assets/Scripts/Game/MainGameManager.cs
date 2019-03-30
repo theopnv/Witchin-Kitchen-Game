@@ -177,6 +177,8 @@ namespace con2.game
         private int m_dominationDifference = 3;
 
         private EndGameManager EGM;
+        public GameObject borders, title;
+        private int m_currentLeaderId = -1;
 
         private AudioSource m_audioSource;
         public AudioClip ClockTick, voteCue;
@@ -262,15 +264,15 @@ namespace con2.game
         {
             //Cheering at occasional intervals
             yield return new WaitForSeconds(22);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
             yield return new WaitForSeconds(42);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
             yield return new WaitForSeconds(41);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
             yield return new WaitForSeconds(57);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
             yield return new WaitForSeconds(39);
-            cheers.Cheer(GetLeaderId());
+            cheers.Cheer(m_currentLeaderId);
         }
 
         private int GetLeaderId()
@@ -292,7 +294,7 @@ namespace con2.game
                                 .OrderByDescending(x => x[0].CollectedIngredientCount)
                                 .ToList();
             if (tieBreaker[0].Count > 1)
-                return -1;
+                return m_currentLeaderId;
             return tieBreaker[0][0].ID;
         }
 
@@ -363,6 +365,17 @@ namespace con2.game
             EGM.SetFinalRankings(finalRankings);
         }
 
+        private void SetBorderColor()
+        {
+            var newLeaderId = GetLeaderId();
+            if (newLeaderId != m_currentLeaderId)
+            {
+                m_currentLeaderId = newLeaderId;
+                borders.GetComponentInChildren<MeshRenderer>().material = ColorsManager.Get().PlayerBorderMaterials[newLeaderId];
+                title.GetComponentInChildren<MeshRenderer>().material = ColorsManager.Get().PlayerBorderMaterials[newLeaderId];
+            }
+        }
+
         public void UpdateRanks()
         {
             List<PlayerManager> playerScores = new List<PlayerManager>();
@@ -395,6 +408,11 @@ namespace con2.game
                     }
                     break;
             }
+        }
+
+        public void UpdateRanksForBordersAndCheers()
+        {
+            SetBorderColor();
         }
 
         private void RankGroup(List<PlayerManager> group, PlayerManager.Rank rank)

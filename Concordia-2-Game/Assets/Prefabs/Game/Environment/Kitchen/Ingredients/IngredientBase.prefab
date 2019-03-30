@@ -359,17 +359,17 @@ PrefabInstance:
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601365, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
@@ -379,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 1379316523966601365, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: Intensity
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5890221d57fb2f34092c074d92940db3, type: 3}
@@ -396,11 +396,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8247869552462652036}
     m_Modifications:
-    - target: {fileID: 4672261044966526968, guid: 527fbc4311ecf064ca0ae43d8faad892,
-        type: 3}
-      propertyPath: m_Name
-      value: RainbowTrailSmall
-      objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526967, guid: 527fbc4311ecf064ca0ae43d8faad892,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -455,6 +450,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672261044966526968, guid: 527fbc4311ecf064ca0ae43d8faad892,
+        type: 3}
+      propertyPath: m_Name
+      value: RainbowTrailSmall
       objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526966, guid: 527fbc4311ecf064ca0ae43d8faad892,
         type: 3}

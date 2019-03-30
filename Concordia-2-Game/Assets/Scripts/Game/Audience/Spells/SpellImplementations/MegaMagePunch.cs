@@ -3,6 +3,7 @@ using con2.game;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MegaMagePunch : ASpell
 {
@@ -12,6 +13,8 @@ public class MegaMagePunch : ASpell
     protected Vector3 OriginalScale;
     protected float StartTime;
     protected bool Playing = false;
+    public GameObject promptPrefab;
+    private GameObject instantiatedPrompt;
 
     // Start is called before the first frame update
 
@@ -35,11 +38,14 @@ public class MegaMagePunch : ASpell
         playerPunch.ShakeIntensity = CamShakeMgr.Intensity.MEDIUM;
         playerMovement.ModulateMovementSpeed(m_sizeScaler);
         playerMovement.ModulateMaxMovementSpeed(m_sizeScaler);
+        playerMovement.SetImmunity(true);
         hitbox.localScale = new Vector3(hitboxScale.x * m_sizeScaler, hitboxScale.y, hitboxScale.z * m_sizeScaler);
 
         Playing = true;
         StartTime = Time.time;
         OriginalScale = charModel.localScale;
+
+        instantiatedPrompt = Instantiate(promptPrefab);
 
         yield return new WaitForSeconds(m_megaMagePunchDuration);
 
@@ -48,7 +54,10 @@ public class MegaMagePunch : ASpell
         playerPunch.ShakeIntensity = originalShake;
         playerMovement.ModulateMovementSpeed(1.0f / m_sizeScaler);
         playerMovement.ModulateMaxMovementSpeed(1.0f / m_sizeScaler);
+        playerMovement.SetImmunity(false);
         hitbox.localScale = new Vector3(hitboxScale.x / m_sizeScaler, hitboxScale.y, hitboxScale.z / m_sizeScaler);
+
+        Destroy(instantiatedPrompt.gameObject);
 
         Playing = false;
         charModel.localScale = OriginalScale;
@@ -71,6 +80,9 @@ public class MegaMagePunch : ASpell
 
             var scale = ScaleAnim.Evaluate(progress);
             charModel.localScale = OriginalScale * scale;
+
+            instantiatedPrompt.transform.localScale = scale/2.0f * Vector3.one;
+            instantiatedPrompt.transform.position = player.transform.position + new Vector3(1.5f, 5, 0);
         }
     }
 }
