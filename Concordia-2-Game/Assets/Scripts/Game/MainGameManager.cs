@@ -13,6 +13,14 @@ namespace con2.game
         [SerializeField] private GameObject _LoadingPanel;
         private const float LOADING_TIME = 4f;
 
+        private Material BordersMaterial;
+        private Material BordersTitleMaterial;
+        private bool BordersPlaying = false;
+        private float BordersDuration = 0.17f;
+        private float BordersStartTime;
+        private Color BordersStartColor;
+        private Color BordersEndColor;
+
         // Start is called before the first frame update
         protected override void Start()
         {
@@ -29,6 +37,9 @@ namespace con2.game
 
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
 
+            BordersMaterial = borders.GetComponentInChildren<MeshRenderer>().material;
+            BordersTitleMaterial = title.GetComponentInChildren<MeshRenderer>().material;
+
             // Comment if you want to start the game scene right from the start
             StartCoroutine(ExitLoadingScreen());
             // End
@@ -37,6 +48,19 @@ namespace con2.game
         protected override void Update()
         {
             base.Update();
+
+            if (BordersPlaying)
+            {
+                var elapsed = Time.time - BordersStartTime;
+                var progress = Mathf.Clamp01(elapsed / BordersDuration);
+                if (progress >= 1.0f)
+                    BordersPlaying = false;
+
+                var interpColor = Color.Lerp(BordersStartColor, BordersEndColor, progress);
+                BordersMaterial.color = interpColor;
+                BordersTitleMaterial.color = interpColor;
+            }
+
             if (!m_countdown)
             {
                 UpdateEndGame();
@@ -370,9 +394,14 @@ namespace con2.game
             var newLeaderId = GetLeaderId();
             if (newLeaderId != m_currentLeaderId)
             {
+                BordersStartColor = BordersMaterial.color;
+
                 m_currentLeaderId = newLeaderId;
-                borders.GetComponentInChildren<MeshRenderer>().material = ColorsManager.Get().PlayerBorderMaterials[newLeaderId];
-                title.GetComponentInChildren<MeshRenderer>().material = ColorsManager.Get().PlayerBorderMaterials[newLeaderId];
+
+                BordersEndColor = ColorsManager.Get().PlayerBorderColors[newLeaderId];
+
+                BordersPlaying = true;
+                BordersStartTime = Time.time;
             }
         }
 

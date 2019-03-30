@@ -16,8 +16,6 @@ namespace con2
 
         public Texture[] PlayerColorTextures = new Texture[4];
 
-        public Material[] PlayerBorderMaterials = new Material[4];
-
         public Texture[] PlayerNormalTextures = new Texture[4];
 
         public Texture[] PlayerOcclusionTextures = new Texture[4];
@@ -34,6 +32,9 @@ namespace con2
         public Color[] PlayerAppColors = new Color[4];
 
         public Color[] PlayerGiftColors = new Color[4];
+
+        [ColorUsageAttribute(false, true)]
+        public Color[] PlayerBorderColors = new Color[4];
 
         void Awake()
         {
