@@ -9,11 +9,20 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/MenuScenes/Main Menu.unity
     guid: 62a4ecdd6080af34b9138514cb9d3c0c
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
+    path: Assets/Scenes/MenuScenes/Settings.unity
     guid: 5f66c1c38e0fca742856eb49602a3fd5
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/ConceptArt.unity
+    guid: b509bceea980b864cb110d4a7519749a
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/Controls.unity
+    guid: 3d29c2e914785a14f8a4872827ca2b57
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/Credits.unity
+    guid: 33ae5a5d01f838048acdfb07b2cf330b
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: b78ad7b4ad429a843b150d4cda6c149b
