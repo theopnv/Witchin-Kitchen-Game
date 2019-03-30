@@ -39,7 +39,22 @@ ModelImporter:
     4300004: Eyelid_GEO
     4300006: Eye_GEO
     4300008: Eyelid_GEO
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye_fixed_eyeball_Tex
+    second: {fileID: 2100000, guid: 9d8a7985d4fc332418fb1f6e0179ab7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye_fixed_lambert5
+    second: {fileID: 2100000, guid: c3c017f684769e442bf131704a1cbd7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye_fixed_pupil
+    second: {fileID: 2100000, guid: dd7f6184f5d5e084084a04b48c4414a1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -95,12 +110,12 @@ ModelImporter:
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
+    normalSmoothingSource: 2
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

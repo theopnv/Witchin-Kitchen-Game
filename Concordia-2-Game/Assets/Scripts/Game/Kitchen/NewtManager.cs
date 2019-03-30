@@ -9,7 +9,7 @@ namespace con2.game
     {
         public GameObject m_eyeIngredientPrefab;
         private int m_eyeCount = 2;
-        private GameObject[] m_eyes, m_eyesockets, m_eyepatches;
+        public GameObject[] m_eyes, m_eyesockets, m_eyepatches;
         private ItemSpawner m_itemSpawner;
 
         void Start()
@@ -22,9 +22,11 @@ namespace con2.game
         {
             m_rb = GetComponent<Rigidbody>();
             m_itemSpawner = FindObjectOfType<ItemSpawner>();
-            m_eyes = new[] { transform.Find("EyeBall2/Eye2").gameObject, transform.Find("EyeBall1/Eye1").gameObject };
-            m_eyesockets = new[] { transform.Find("EyeBall2/EyeSocket2").gameObject, transform.Find("EyeBall1/EyeSocket1").gameObject };
-            m_eyepatches = new[] { transform.Find("Eyepatch2").gameObject, transform.Find("Eyepatch1").gameObject };
+
+            // Set directly in Unity inspector because the new hierarchy is very deep
+            //m_eyes = new[] { transform.Find("EyeBall2/Eye2").gameObject, transform.Find("EyeBall1/Eye1").gameObject };
+            //m_eyesockets = new[] { transform.Find("EyeBall2/EyeSocket2").gameObject, transform.Find("EyeBall1/EyeSocket1").gameObject };
+            //m_eyepatches = new[] { transform.Find("Eyepatch2").gameObject, transform.Find("Eyepatch1").gameObject };
         }
 
         public override bool PickUp(Transform newParent)

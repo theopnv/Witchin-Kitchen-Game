@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: 3d89bece01f588b449218367ecb0234e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Anchor
+    100002: Armature
+    100004: BackBottomFinger.L.001
+    100006: BackBottomFinger.L.001_end
+    100008: BackBottomFinger.R
+    100010: BackBottomFinger.R_end
+    100012: BackTopFinger.L.001
+    100014: BackTopFinger.L.001_end
+    100016: BackTopFinger.R
+    100018: BackTopFinger.R_end
+    100020: BottomArm.L.001
+    100022: BottomArm.R
+    100024: BottomLowerArm.L.001
+    100026: BottomLowerArm.R
+    100028: BottomMiddleFinger.L.001
+    100030: BottomMiddleFinger.L.001_end
+    100032: BottomMiddleFinger.R
+    100034: BottomMiddleFinger.R_end
+    100036: EndTail
+    100038: EndTail_end
+    100040: FrontBottomFinger.L.001
+    100042: FrontBottomFinger.L.001_end
+    100044: FrontBottomFinger.R
+    100046: FrontBottomFinger.R_end
+    100048: FrontMiddleFinger.L.001
+    100050: FrontMiddleFinger.L.001_end
+    100052: FrontMiddleFinger.R
+    100054: FrontMiddleFinger.R_end
+    100056: FrontTopFinger.L
+    100058: FrontTopFinger.L_end
+    100060: FrontTopFinger.R
+    100062: FrontTopFinger.R_end
+    100064: Head
+    100066: Head_end
+    100068: LowerTail
+    100070: MiddleTail
+    100072: MiddleTorso
+    100074: Neck
+    100076: //RootNode
+    100078: polySurface3
+    100080: TopArm.L.001
+    100082: TopArm.R
+    100084: TopLowerArm.L.001
+    100086: TopLowerArm.R
+    100088: Waist
+    400000: Anchor
+    400002: Armature
+    400004: BackBottomFinger.L.001
+    400006: BackBottomFinger.L.001_end
+    400008: BackBottomFinger.R
+    400010: BackBottomFinger.R_end
+    400012: BackTopFinger.L.001
+    400014: BackTopFinger.L.001_end
+    400016: BackTopFinger.R
+    400018: BackTopFinger.R_end
+    400020: BottomArm.L.001
+    400022: BottomArm.R
+    400024: BottomLowerArm.L.001
+    400026: BottomLowerArm.R
+    400028: BottomMiddleFinger.L.001
+    400030: BottomMiddleFinger.L.001_end
+    400032: BottomMiddleFinger.R
+    400034: BottomMiddleFinger.R_end
+    400036: EndTail
+    400038: EndTail_end
+    400040: FrontBottomFinger.L.001
+    400042: FrontBottomFinger.L.001_end
+    400044: FrontBottomFinger.R
+    400046: FrontBottomFinger.R_end
+    400048: FrontMiddleFinger.L.001
+    400050: FrontMiddleFinger.L.001_end
+    400052: FrontMiddleFinger.R
+    400054: FrontMiddleFinger.R_end
+    400056: FrontTopFinger.L
+    400058: FrontTopFinger.L_end
+    400060: FrontTopFinger.R
+    400062: FrontTopFinger.R_end
+    400064: Head
+    400066: Head_end
+    400068: LowerTail
+    400070: MiddleTail
+    400072: MiddleTorso
+    400074: Neck
+    400076: //RootNode
+    400078: polySurface3
+    400080: TopArm.L.001
+    400082: TopArm.R
+    400084: TopLowerArm.L.001
+    400086: TopLowerArm.R
+    400088: Waist
+    2100000: eye_fixed_lambert5
+    4300000: polySurface3
+    7400000: Armature|Armature|Armature|NewtIdle|Armature|NewtIdle
+    7400002: Armature|Armature|Armature|NewtWalk|Armature|NewtWalk
+    9500000: //RootNode
+    13700000: polySurface3
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Armature|Armature|NewtIdle|Armature|NewtIdle
+      takeName: Armature|Armature|Armature|NewtIdle|Armature|NewtIdle
+      firstFrame: 0
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Armature|Armature|NewtWalk|Armature|NewtWalk
+      takeName: Armature|Armature|Armature|NewtWalk|Armature|NewtWalk
+      firstFrame: 0
+      lastFrame: 96
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 2
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
