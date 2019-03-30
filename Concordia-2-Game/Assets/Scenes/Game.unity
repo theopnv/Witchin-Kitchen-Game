@@ -13041,7 +13041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_megaMagePunchDuration: 20
-  m_megaMageMultiplier: 5
+  m_megaMageMultiplier: 2.6
   m_sizeScaler: 2
   ScaleAnim:
     serializedVersion: 2

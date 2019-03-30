@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
     Rigidbody m_rb;
 
     private bool m_movementIsInverted = false, m_isImmune = false;
+    private float m_knockStrength = 1.0f;
 
     private AudioSource audioSource;
 
@@ -96,7 +97,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
         }
         
         // Cap movement speed
-        var maxVel = MaxMovementSpeed * (slowFactor + Mathf.Clamp01(1.0f - m_stun.getMovementModifier() * 200.0f) * 2.0f);
+        var maxVel = MaxMovementSpeed * (slowFactor + Mathf.Clamp01(1.0f - m_stun.getMovementModifier() * 200.0f) * 2.0f * m_knockStrength);
         if (m_stun.getMovementModifier() == 1.0f)
             maxVel = MaxMovementSpeed;
         if (m_rb.velocity.magnitude > maxVel)
@@ -128,6 +129,7 @@ public class PlayerMovement : MonoBehaviour, IInputConsumer, IPunchable
     {
         if (!m_isImmune)
         {
+            m_knockStrength = knockVelocity.magnitude;
             m_rb.velocity = knockVelocity;
             m_stun.Stun(stunTime);
             audioSource.Play();
