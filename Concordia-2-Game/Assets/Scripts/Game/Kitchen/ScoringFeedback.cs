@@ -18,15 +18,18 @@ namespace con2.game
         [SerializeField] private Image _ProcessedIngredient;
         private Vector3 _OriginalPosProcessedIng;
         private bool _ProcessedIngredientIsActive;
+        private AudioSource audioSource;
 
         void Start()
         {
             _OriginalPosScored = _Scored.transform.position;
             _OriginalPosProcessedIng = _ProcessedIngredient.transform.position;
+            audioSource = GetComponent<AudioSource>();
         }
 
         public void ActivateScored()
         {
+            audioSource.Play();
             _Scored.gameObject.SetActive(true);
             _Scored.transform.position = _OriginalPosScored;
             _ScoredIsActive = true;
