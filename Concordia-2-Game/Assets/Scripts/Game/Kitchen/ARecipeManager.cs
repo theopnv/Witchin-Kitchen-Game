@@ -16,6 +16,7 @@ namespace con2.game
         protected ItemSpawner m_itemSpawner;
         protected OnCompletePotion m_potionSpawner;
         protected AudienceInteractionManager m_audienceInteractionManager;
+        private MainGameManager m_mgm;
 
         [HideInInspector] private ScoringFeedback m_scoringFeedback;
 
@@ -28,6 +29,7 @@ namespace con2.game
             m_itemSpawner = managers.GetComponentInChildren<ItemSpawner>();
             m_audienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
             m_scoringFeedback = GetComponentInChildren<ScoringFeedback>();
+            m_mgm = FindObjectOfType<MainGameManager>();
         }
 
         protected virtual void Start()
@@ -74,6 +76,8 @@ namespace con2.game
                 if (!MainGameManager.GAME_OVER)
                 {
                     Owner.CollectedIngredientCount++;
+                    if (m_mgm)
+                        m_mgm.UpdateRanksForBordersAndCheers();
                 }
                 return true;
             }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Flash : MonoBehaviour
 {
     private Image thingToFlash;
+    public float flashFrequency = 0.75f;
 
     void Start()
     {
@@ -15,14 +16,7 @@ public class Flash : MonoBehaviour
 
     private void OnEnable()
     {
-        if (SceneManager.GetActiveScene().name == con2.SceneNames.Lobby)
-        {
-            StartCoroutine(FlashParty());
-        }
-        else
-        {
-            this.gameObject.SetActive(false);
-        }
+        StartCoroutine(FlashParty());
     }
 
     private IEnumerator FlashParty()
@@ -30,7 +24,7 @@ public class Flash : MonoBehaviour
         bool tempEnabled = false;
         while (true)
         {
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(flashFrequency);
             thingToFlash.enabled = tempEnabled;
             tempEnabled = !tempEnabled;
         }

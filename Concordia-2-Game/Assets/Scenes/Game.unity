@@ -407,6 +407,8 @@ MonoBehaviour:
   m_clock: {fileID: 477752801}
   m_gameOverText: {fileID: 2102123435}
   GAME_TIMER: 240
+  borders: {fileID: 1466883686}
+  title: {fileID: 282838461}
   ClockTick: {fileID: 8300000, guid: 32646e1073de1914d9a6a60df50ecd76, type: 3}
   voteCue: {fileID: 8300000, guid: 818a2b21f26c2274a8de709aeca26c38, type: 3}
 --- !u!114 &10916644
@@ -2138,6 +2140,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4f4422374db06ba4fb2ac5e2931ad8cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 471c500e19d2bb640b969164c6764e20, type: 3}
+--- !u!1 &282838461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 3ce0eaf9586d348448345bea1d84795c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1222679188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &292932122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7266,7 +7274,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 2
-  m_Spacing: 5
+  m_Spacing: 15
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -10672,6 +10680,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1749745425}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1466883686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 7c002035ebdf59541a75cc60bbd6db52,
+    type: 3}
+  m_PrefabInstance: {fileID: 1543921350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1479507704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13089,6 +13103,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  promptPrefab: {fileID: 5108354524584509003, guid: 5a8d99ae0b734f642826ab65babb69d5,
+    type: 3}
 --- !u!114 &1825916754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15890,11 +15906,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6320107239094431777, guid: 6c2b44483a33d1840b7a369bfcaba650,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1579829279240451133, guid: 6c2b44483a33d1840b7a369bfcaba650,
         type: 3}
       propertyPath: m_fontColor.a
@@ -15914,6 +15925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4291743438
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320107239094431777, guid: 6c2b44483a33d1840b7a369bfcaba650,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c2b44483a33d1840b7a369bfcaba650, type: 3}

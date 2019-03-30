@@ -9,6 +9,8 @@ namespace con2.game
     {
         [SerializeField] protected float m_strength, m_stunTime;
 
+        protected bool m_stunnedSomething = false;
+
         private List<KeyValuePair<GameObject, IPunchable[]>> m_punchablesInRadius;
         [HideInInspector] public List<GameObject> m_immuneTargets;
 
@@ -41,7 +43,7 @@ namespace con2.game
 
         public void Hit(CamShakeMgr.Intensity shakeIntensity)
         {
-            var stunnedSomething = false;
+            m_stunnedSomething = false;
 
             for (int i = 0; i < m_punchablesInRadius.Count; i++)
             {
@@ -58,12 +60,12 @@ namespace con2.game
                         Vector3 hitVector = (target.Key.transform.position - transform.position).normalized * m_strength;
                         punchableComponent.Punch(ModulateHitVector(hitVector), m_stunTime);
                         if (target.Key.tag == "Player")
-                            stunnedSomething = true;
+                            m_stunnedSomething = true;
                     }
                 }
             }
 
-            if (stunnedSomething)
+            if (m_stunnedSomething)
                 CamShakeMgr.Get().Shake(shakeIntensity);
 
             AfterHitting();
