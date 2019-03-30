@@ -52,7 +52,8 @@ namespace con2.game
                 else
                 {
                     var spawnBounce = gift.GetComponent<SpawnBounce>();
-                    spawnBounce.CancelForGift();
+                    if (spawnBounce)
+                        spawnBounce.CancelForGift();
 
                     var spawner = FindObjectOfType<ItemSpawner>();
                     ++spawner.SpawnedItemsCount[m_type];

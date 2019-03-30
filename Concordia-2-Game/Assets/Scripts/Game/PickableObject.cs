@@ -146,8 +146,11 @@ namespace con2.game
                 }
                 m_rb.AddForce(knockVelocity, ForceMode.VelocityChange);
 
-                audioSource.clip = slapSound;
-                audioSource.Play();
+                if (audioSource)
+                {
+                    audioSource.clip = slapSound;
+                    audioSource.Play();
+                }
 
                 ResetAimAssist();
 
