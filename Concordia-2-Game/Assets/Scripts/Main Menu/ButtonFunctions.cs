@@ -14,6 +14,11 @@ namespace con2.main_menu
             StartCoroutine(Transition.Get().SequenceIn(null, _loadTutorial()));
         }
 
+        public void LoadMainMenu()
+        {
+            SceneManager.LoadSceneAsync(SceneNames.MainMenu);
+        }
+
         protected IEnumerator _loadTutorial()
         {
             MenuInfo.DoTutorial = true;
@@ -33,9 +38,24 @@ namespace con2.main_menu
             yield return null;
         }
 
-        public void OnSettingsClick()
+        public void LoadSettingsScene()
         {
             SceneManager.LoadSceneAsync(SceneNames.Settings);
+        }
+
+        public void LoadControlsScene()
+        {
+            SceneManager.LoadSceneAsync(SceneNames.Controls);
+        }
+
+        public void LoadConceptArtScene()
+        {
+            SceneManager.LoadSceneAsync(SceneNames.ConceptArt);
+        }
+
+        public void LoadCreditsScene()
+        {
+            SceneManager.LoadSceneAsync(SceneNames.Credits);
         }
 
         public void QuitGame()

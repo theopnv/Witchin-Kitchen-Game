@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,14 +9,10 @@ namespace con2.main_menu
 
     public class ConceptArtControl : MonoBehaviour
     {
-
-        public GameObject ca1, ca2, ca3, leftArrow, rightArrow;
-        public static bool changing;
-
-        private void OnEnable()
-        {
-            changing = false;
-        }
+        public Sprite[] conceptArts;
+        private int currentImageIndex = 0;
+        public Image conceptArtImage;
+        private bool changing = false;
 
         // Update is called once per frame
         void Update()
@@ -24,45 +21,27 @@ namespace con2.main_menu
             if (!changing && horizontal < -0.9 || Input.GetKeyDown("left"))
             {
                 changing = true;
-                if (ca2.activeInHierarchy)
-                    SwitchPics(ca2, ca1);
-                else if (ca3.activeInHierarchy)
-                    SwitchPics(ca3, ca2);
+                SwitchPics(-1);
                 StartCoroutine(WaitOnChange());
             }
             else if (!changing && horizontal > 0.9 || Input.GetKeyDown("right"))
             {
                 changing = true;
-                if (ca1.activeInHierarchy)
-                    SwitchPics(ca1, ca2);
-                else if (ca2.activeInHierarchy)
-                    SwitchPics(ca2, ca3);
+                SwitchPics(1);
                 StartCoroutine(WaitOnChange());
-            }
-
-            if (ca1.activeInHierarchy && leftArrow.activeInHierarchy)
-                leftArrow.SetActive(false);
-            else if (ca3.activeInHierarchy && rightArrow.activeInHierarchy)
-                rightArrow.SetActive(false);
-            else if (ca2.activeInHierarchy)
-            {
-                if (!leftArrow.activeInHierarchy)
-                    leftArrow.SetActive(true);
-                if (!rightArrow.activeInHierarchy)
-                    rightArrow.SetActive(true);
             }
         }
 
-        private void SwitchPics(GameObject current, GameObject next)
+        private void SwitchPics(int changeDir)
         {
-            current.SetActive(false);
-            next.SetActive(true);
+            currentImageIndex += changeDir;
+            conceptArtImage.sprite = conceptArts[currentImageIndex%conceptArts.Length];
         }
 
         private IEnumerator WaitOnChange()
         {
             yield return new WaitForSeconds(0.3f);
-            ConceptArtControl.changing = false;
+            changing = false;
         }
     }
 
