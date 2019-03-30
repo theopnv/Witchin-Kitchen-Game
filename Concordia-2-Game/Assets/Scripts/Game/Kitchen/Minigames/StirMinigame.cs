@@ -66,13 +66,15 @@ namespace con2.game
             if (input.GetActionID().Equals(con2.GamepadAction.ID.HORIZONTAL2))
             {
                 float joystick = input.m_axisValue;
-                m_pointingDirection.x += joystick;
+                if (Mathf.Abs(joystick) > 0.1f)
+                    m_pointingDirection.x = joystick;
                 return true;
             }
             if (input.GetActionID().Equals(con2.GamepadAction.ID.VERTICAL2))
             {
                 float joystick = input.m_axisValue;
-                m_pointingDirection.y = joystick;
+                if (Mathf.Abs(joystick) > 0.1f)
+                    m_pointingDirection.y = joystick;
                 return true;
             }
             return false;
@@ -80,8 +82,8 @@ namespace con2.game
 
         override public void UpdateMinigameSpecifics()
         {
-            m_pointingDirection.Normalize();
-            if (Vector3.Dot(m_pointingDirection, GOALS[m_currentGoal]) > 0.8f)    //The dot product of two parallel normalized vectors is 1
+            Debug.Log(m_pointingDirection);
+            if (Vector3.Dot(m_pointingDirection.normalized, GOALS[m_currentGoal].normalized) > 0.8f)    //The dot product of two parallel normalized vectors is 1
             {
                 CycleCurrentGoal();
             }
