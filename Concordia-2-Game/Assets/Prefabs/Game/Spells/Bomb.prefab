@@ -463,10 +463,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc8cc93a0f76fd489d348d192eecff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_strength: 2
+  m_strength: 13
   m_stunTime: 5
   m_immuneTargets: []
-  m_didStun: 0
   ShakeIntensity: 0
   m_launcher: {fileID: 0}
 --- !u!135 &2444510274293129231
