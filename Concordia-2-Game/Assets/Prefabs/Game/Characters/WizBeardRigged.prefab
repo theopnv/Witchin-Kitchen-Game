@@ -113,19 +113,19 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_LowTwistLimit:
-    limit: -2
+    limit: -1
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 2
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_Swing1Limit:
     limit: 3
     bounciness: 0
@@ -153,9 +153,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.005
-  m_Direction: 1
+  m_Radius: 0.004
+  m_Height: 0.015
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &724195675297907531
 GameObject:
@@ -222,19 +222,19 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_LowTwistLimit:
-    limit: -2
+    limit: -1
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 2
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_Swing1Limit:
     limit: 3
     bounciness: 0
@@ -262,9 +262,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.005
-  m_Direction: 1
+  m_Radius: 0.004
+  m_Height: 0.02
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1023940618983252404
 GameObject:
@@ -331,8 +331,8 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_LowTwistLimit:
     limit: -2
     bounciness: 0
@@ -342,8 +342,8 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_Swing1Limit:
     limit: 3
     bounciness: 0
@@ -371,9 +371,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.005
-  m_Direction: 1
+  m_Radius: 0.004
+  m_Height: 0.004
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2200255079658508100
 GameObject:
@@ -440,19 +440,19 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_LowTwistLimit:
-    limit: -2
+    limit: -1
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 2
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_Swing1Limit:
     limit: 3
     bounciness: 0
@@ -480,9 +480,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.005
-  m_Direction: 1
+  m_Radius: 0.004
+  m_Height: 0.02
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2960840429187092596
 GameObject:
@@ -707,19 +707,19 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_LowTwistLimit:
-    limit: -2
+    limit: -1
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 2
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_Swing1Limit:
     limit: 3
     bounciness: 0
@@ -747,9 +747,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.005
-  m_Direction: 1
+  m_Radius: 0.004
+  m_Height: 0.004
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3261654900915939140
 GameObject:
@@ -816,19 +816,19 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_LowTwistLimit:
-    limit: -2
+    limit: -1
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 2
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_Swing1Limit:
     limit: 3
     bounciness: 0
@@ -856,9 +856,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.005
-  m_Direction: 1
+  m_Radius: 0.004
+  m_Height: 0.004
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4182666842384798911
 GameObject:
@@ -925,19 +925,19 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_LowTwistLimit:
-    limit: -2
+    limit: -1
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 2
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_Swing1Limit:
     limit: 3
     bounciness: 0
@@ -965,9 +965,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.005
-  m_Direction: 1
+  m_Radius: 0.004
+  m_Height: 0.01
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6306827391485062971
 GameObject:
@@ -1034,19 +1034,19 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_LowTwistLimit:
-    limit: -2
+    limit: -1
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 2
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_Swing1Limit:
     limit: 3
     bounciness: 0
@@ -1074,9 +1074,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.005
-  m_Direction: 1
+  m_Radius: 0.004
+  m_Height: 0.01
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8507595925934731049
 GameObject:
@@ -1173,19 +1173,19 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_LowTwistLimit:
-    limit: -2
+    limit: -1
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 2
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 30
-    damper: 15
+    spring: 500
+    damper: 500
   m_Swing1Limit:
     limit: 3
     bounciness: 0
@@ -1213,7 +1213,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.005
-  m_Height: 0.005
-  m_Direction: 1
+  m_Radius: 0.004
+  m_Height: 0.004
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
