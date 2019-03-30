@@ -15,6 +15,7 @@ namespace con2.game
         [SerializeField] private GameObject _PauseWindow;
         [SerializeField] private Button _ExitButton;
         [SerializeField] private Button _RestartGameButton;
+
         [SerializeField] private GameObject _ConfirmationWindow;
         [SerializeField] private Button _Yes;
         [SerializeField] private Button _No;
@@ -23,9 +24,18 @@ namespace con2.game
         void Start()
         {
             _EventSystem = FindObjectOfType<EventSystem>();
-            _EventSystem.SetSelectedGameObject(_RestartGameButton.gameObject);
-            Time.timeScale = 0;
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+            Time.timeScale = 0;
+
+            if (SceneManager.GetActiveScene().name == SceneNames.Lobby)
+            {
+                _RestartGameButton.gameObject.SetActive(false);
+                _EventSystem.SetSelectedGameObject(_ExitButton.gameObject);
+            }
+            else
+            {
+                _EventSystem.SetSelectedGameObject(_RestartGameButton.gameObject);
+            }
         }
 
         void OnDisable()
@@ -39,6 +49,7 @@ namespace con2.game
                 "Return to menu?",
                 () =>
                 {
+                    Debug.Log("Returning to menu");
                     _AudienceInteractionManager.SendEndGame(false);
                     SceneManager.LoadSceneAsync(SceneNames.MainMenu);
                 },
@@ -51,7 +62,9 @@ namespace con2.game
                 "Restart the game?",
                 () =>
                 {
-                    Debug.Log("RESTART GAME");
+                    Debug.Log("Restarting game");
+                    _AudienceInteractionManager.SendEndGame(true);
+                    SceneManager.LoadSceneAsync(SceneNames.Game);
                 },
                 BackToPause);
         }
@@ -73,7 +86,15 @@ namespace con2.game
             _No.onClick.RemoveAllListeners();
             _PauseWindow.SetActive(true);
             _ConfirmationWindow.SetActive(false);
-            _EventSystem.SetSelectedGameObject(_RestartGameButton.gameObject);
+
+            if (SceneManager.GetActiveScene().name == SceneNames.Lobby)
+            {
+                _EventSystem.SetSelectedGameObject(_ExitButton.gameObject);
+            }
+            else
+            {
+                _EventSystem.SetSelectedGameObject(_RestartGameButton.gameObject);
+            }
         }
 
     }
