@@ -107,7 +107,7 @@ CharacterJoint:
   m_GameObject: {fileID: 672090083355160548}
   m_ConnectedBody: {fileID: 5178511647743632627}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.000000004340383, y: 0.0100000035, z: 2.3283057e-10}
   serializedVersion: 2
@@ -216,7 +216,7 @@ CharacterJoint:
   m_GameObject: {fileID: 724195675297907531}
   m_ConnectedBody: {fileID: 7516432115351115248}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.000000006128964, y: 0.010000004, z: -4.656613e-10}
   serializedVersion: 2
@@ -325,7 +325,7 @@ CharacterJoint:
   m_GameObject: {fileID: 1023940618983252404}
   m_ConnectedBody: {fileID: 6132563990596745744}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: -1.0186338e-10, y: 0.007929482, z: -0.0000000067811916}
   serializedVersion: 2
@@ -434,7 +434,7 @@ CharacterJoint:
   m_GameObject: {fileID: 2200255079658508100}
   m_ConnectedBody: {fileID: 2467986992404921653}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.000000012705125, y: 0.010000003, z: 8.731147e-10}
   serializedVersion: 2
@@ -701,7 +701,7 @@ CharacterJoint:
   m_GameObject: {fileID: 3256424857311053261}
   m_ConnectedBody: {fileID: 8084977708745025441}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.00000000368946, y: 0.010000002, z: 0.0000000016298143}
   serializedVersion: 2
@@ -810,7 +810,7 @@ CharacterJoint:
   m_GameObject: {fileID: 3261654900915939140}
   m_ConnectedBody: {fileID: 5682348774704571952}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.000000009749782, y: 0.010000001, z: 1.4551914e-10}
   serializedVersion: 2
@@ -919,7 +919,7 @@ CharacterJoint:
   m_GameObject: {fileID: 4182666842384798911}
   m_ConnectedBody: {fileID: 718379667351899802}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.00000000725207, y: 0.010000006, z: 6.9849176e-10}
   serializedVersion: 2
@@ -1028,7 +1028,7 @@ CharacterJoint:
   m_GameObject: {fileID: 6306827391485062971}
   m_ConnectedBody: {fileID: 9154967283378406867}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.0000000054780407, y: 0.010000005, z: 0.0000000011641531}
   serializedVersion: 2
@@ -1167,7 +1167,7 @@ CharacterJoint:
   m_GameObject: {fileID: 9081680122197573781}
   m_ConnectedBody: {fileID: 4825382531849805576}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.0000000066739068, y: 0.010000017, z: 0.0000000025611369}
   serializedVersion: 2
