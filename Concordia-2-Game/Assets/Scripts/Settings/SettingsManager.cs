@@ -34,7 +34,6 @@ namespace con2.settings
             }
 
             SetFeedbackText(true, SUCCESSFULLY_SAVED, Color.green);
-
         }
 
         private IEnumerator UnsetFeedbackText()
@@ -42,11 +41,6 @@ namespace con2.settings
             yield return new WaitForSeconds(5);
             _FeedbackText.gameObject.SetActive(false);
             _FeedbackText.text = "";
-        }
-
-        public void OnBackClick()
-        {
-            SceneManager.LoadSceneAsync(SceneNames.MainMenu);
         }
 
         private void SetFeedbackText(bool active, string desc, Color color)

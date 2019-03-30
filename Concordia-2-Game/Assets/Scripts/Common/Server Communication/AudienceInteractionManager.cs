@@ -65,7 +65,8 @@ namespace con2
 
         void OnDisable()
         {
-            _Socket.Close();
+            if (_Socket)
+                _Socket.Close();
         }
 
         /// <summary>
