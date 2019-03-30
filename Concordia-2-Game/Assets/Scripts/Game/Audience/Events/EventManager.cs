@@ -81,7 +81,7 @@ namespace con2.game
             _AudienceInteractionManager?.SendPoll(poll);
             StartCoroutine("StartEvent", pollingTime);
 
-            var msg = "Spectators, vote for an event!";
+            var msg = "Audience, vote for an event!";
             _MessageFeedManager.AddMessageToFeed(msg, MessageFeedManager.MessageType.generic);
         }
 
