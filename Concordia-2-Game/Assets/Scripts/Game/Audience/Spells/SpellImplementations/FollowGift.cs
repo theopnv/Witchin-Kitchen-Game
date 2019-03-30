@@ -16,11 +16,13 @@ namespace con2.game
         [SerializeField] private float m_followDistance = 3.0f, m_followSpeed = 5.0f;
 
         private GameObject m_ground;
+        private Rigidbody m_rb;
 
         // Use this for initialization
         void Start()
         {
             m_ground = GameObject.Find("Ground");
+            m_rb = GetComponent<Rigidbody>();
         }
 
         public void SetFollowTarget(Transform toFollow)
@@ -32,16 +34,15 @@ namespace con2.game
         {
             if (m_followTarget != null)
             {
-                var body = GetComponent<Rigidbody>();
+                Follow();
                 if ((transform.position.y - m_ground.transform.position.y) < 1.7f)
                 {
-                    Follow();
-                    if (Mathf.Abs(body.velocity.y) <= m_bounceFilter)
+                    if (Mathf.Abs(m_rb.velocity.y) <= m_bounceFilter)
                     {
                         //Bounce
-                        var vel = body.velocity;
+                        var vel = m_rb.velocity;
                         vel += Vector3.up * m_bounceIntensity;
-                        body.velocity = vel;
+                        m_rb.velocity = vel;
                     }
                 }
             }
