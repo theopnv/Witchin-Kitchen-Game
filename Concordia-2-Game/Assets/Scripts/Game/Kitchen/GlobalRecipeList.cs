@@ -28,6 +28,8 @@ namespace con2.game
                 IconSprites.Add(item.Type, item.Prefab);
             }
             completedIngredient = completedIngredientSprite; //can't set static sprites in the inspector...
+
+            m_sharedRecipeList = new List<Ingredient[]>();
         }
 
         #endregion
