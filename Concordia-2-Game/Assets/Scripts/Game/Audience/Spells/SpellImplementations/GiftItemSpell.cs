@@ -17,12 +17,13 @@ namespace con2.game
         public override IEnumerator SpellImplementation()
         {
             var targetPlayer = m_mainManager.GetPlayerById(_TargetedPlayer.id);
-            var gift = Instantiate(m_giftPrefab, targetPlayer.transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
+            var gift = Instantiate(m_giftPrefab, targetPlayer.transform.position + new Vector3(0, 2, -2), new Quaternion(0, 0, 0, 0));
             var giftComponent = gift.GetComponent<Gift>();
             var neededItem = FindNeededIngredient(targetPlayer);
             giftComponent.SetIngredientType(neededItem.Type);
             giftComponent.SetContents(neededItem.Prefab);
             giftComponent.SetColor(ColorsManager.Get().PlayerGiftColors[_TargetedPlayer.id]);
+            giftComponent.SetFollowTarget(targetPlayer.transform);
             yield return null;
         }
 
