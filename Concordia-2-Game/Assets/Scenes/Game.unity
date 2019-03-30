@@ -6067,7 +6067,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  TargetScale: 3
+  TargetScale: 5
   FlexibilityAnim:
     serializedVersion: 2
     m_Curve:
@@ -6153,7 +6153,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  TargetDisplacementStrength: 2
+  TargetDisplacementStrength: 1.5
 --- !u!82 &773999211
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15906,6 +15906,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6320107239094431777, guid: 6c2b44483a33d1840b7a369bfcaba650,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1579829279240451133, guid: 6c2b44483a33d1840b7a369bfcaba650,
         type: 3}
       propertyPath: m_fontColor.a
@@ -15925,11 +15930,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4291743438
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320107239094431777, guid: 6c2b44483a33d1840b7a369bfcaba650,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c2b44483a33d1840b7a369bfcaba650, type: 3}
