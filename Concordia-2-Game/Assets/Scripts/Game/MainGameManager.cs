@@ -13,8 +13,7 @@ namespace con2.game
         [SerializeField] private GameObject _LoadingPanel;
         private const float LOADING_TIME = 4f;
 
-        private Material BordersMaterial;
-        private Material BordersTitleMaterial;
+        private SpriteRenderer BordersMaterial;
         private bool BordersPlaying = false;
         private float BordersDuration = 0.17f;
         private float BordersStartTime;
@@ -37,8 +36,7 @@ namespace con2.game
 
             _AudienceInteractionManager.OnDisconnected += OnDisconnectedFromServer;
 
-            BordersMaterial = borders.GetComponentInChildren<MeshRenderer>().material;
-            BordersTitleMaterial = title.GetComponentInChildren<MeshRenderer>().material;
+            BordersMaterial = borders.GetComponent<SpriteRenderer>();
 
             // Comment if you want to start the game scene right from the start
             StartCoroutine(ExitLoadingScreen());
@@ -58,7 +56,6 @@ namespace con2.game
 
                 var interpColor = Color.Lerp(BordersStartColor, BordersEndColor, progress);
                 BordersMaterial.color = interpColor;
-                BordersTitleMaterial.color = interpColor;
             }
 
             if (!m_countdown)
@@ -201,7 +198,7 @@ namespace con2.game
         private int m_dominationDifference = 3;
 
         private EndGameManager EGM;
-        public GameObject borders, title;
+        public GameObject borders;
         private int m_currentLeaderId = -1;
 
         private AudioSource m_audioSource;
@@ -398,7 +395,7 @@ namespace con2.game
 
                 m_currentLeaderId = newLeaderId;
 
-                BordersEndColor = ColorsManager.Get().PlayerBorderColors[newLeaderId];
+                BordersEndColor = ColorsManager.Get().CauldronLiquidColors[newLeaderId];
 
                 BordersPlaying = true;
                 BordersStartTime = Time.time;
