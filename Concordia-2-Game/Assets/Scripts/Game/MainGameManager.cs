@@ -420,7 +420,7 @@ namespace con2.game
 
                 m_currentLeaderId = newLeaderId;
 
-                BordersEndColor = ColorsManager.Get().CauldronLiquidColors[newLeaderId];
+                BordersEndColor = ColorsManager.Get().PlayerBorderColors[newLeaderId];
 
                 BordersPlaying = true;
                 BordersStartTime = Time.time;
