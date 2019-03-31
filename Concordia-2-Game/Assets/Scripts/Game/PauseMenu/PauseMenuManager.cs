@@ -24,11 +24,9 @@ namespace con2.game
 
         void Start()
         {
-            _ArenaMusic = GameObject.FindGameObjectWithTag(Tags.ARENA_MUSIC).GetComponent<AudioSource>();
             _EventSystem = FindObjectOfType<EventSystem>();
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
 
-            _ArenaMusic.Pause();
             Time.timeScale = 0;
 
             if (SceneManager.GetActiveScene().name == SceneNames.Lobby)
@@ -38,6 +36,8 @@ namespace con2.game
             }
             else
             {
+                _ArenaMusic = GameObject.FindGameObjectWithTag(Tags.ARENA_MUSIC).GetComponent<AudioSource>();
+                _ArenaMusic.Pause();
                 _EventSystem.SetSelectedGameObject(_RestartGameButton.gameObject);
             }
         }
