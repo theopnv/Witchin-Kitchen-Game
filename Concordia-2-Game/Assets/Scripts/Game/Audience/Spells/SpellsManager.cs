@@ -70,7 +70,7 @@ namespace con2.game
 
         public void LaunchSpellRequest(int playerId)
         {
-            if (GameInfo.Viewers.Count > 0)
+            if (GameInfo.Viewers?.Count > 0)
             {
                 var viewer = GameInfo.Viewers[_CurrentCastSpeller];
                 _LastSpellCasted = 0f;

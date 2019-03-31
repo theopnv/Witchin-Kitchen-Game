@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9140700314993437573}
   - component: {fileID: 8886429053882378689}
   - component: {fileID: 3064509304320439074}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: IngredientBase
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
@@ -396,6 +396,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8247869552462652036}
     m_Modifications:
+    - target: {fileID: 4672261044966526968, guid: 527fbc4311ecf064ca0ae43d8faad892,
+        type: 3}
+      propertyPath: m_Name
+      value: RainbowTrailSmall
+      objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526967, guid: 527fbc4311ecf064ca0ae43d8faad892,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -450,11 +455,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672261044966526968, guid: 527fbc4311ecf064ca0ae43d8faad892,
-        type: 3}
-      propertyPath: m_Name
-      value: RainbowTrailSmall
       objectReference: {fileID: 0}
     - target: {fileID: 4672261044966526966, guid: 527fbc4311ecf064ca0ae43d8faad892,
         type: 3}

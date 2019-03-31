@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using con2.game;
 using con2.messages;
 using UnityEngine;
 using Key = con2.PlayerPrefsKeys;
@@ -36,6 +37,7 @@ namespace con2.main_menu
             GameInfo.RoomId = "000";
             GameInfo.Viewers = new List<Viewer>();
             GameInfo.PlayerNumber = 0;
+            GameInfo.ThemeIngredient = (int) game.Ingredient.NOT_AN_INGREDIENT;
         }
     }
 

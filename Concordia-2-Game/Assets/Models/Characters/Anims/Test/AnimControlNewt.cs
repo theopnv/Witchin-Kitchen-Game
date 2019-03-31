@@ -21,7 +21,8 @@ public class AnimControlNewt : MonoBehaviour
 
     public void SetWalking(bool running)
     {
-        SetBool(WalkingBool, running);
+        if (Anim.GetBool(WalkingBool) != running)
+            SetBool(WalkingBool, running);
     }
 
 
