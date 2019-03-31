@@ -107,12 +107,32 @@ namespace con2.game
                 var a = avatarContainer.GetChild(i);
                 if (!allCharactersHandled)
                 {
-                    //Set color and correct model
-                    SkinnedMeshRenderer[] skinRenderer = a.GetComponentsInChildren<SkinnedMeshRenderer>();
+                    //Set color and correct model, ignore hair renderers
+                    SkinnedMeshRenderer[] tempRenderers = a.GetComponentsInChildren<SkinnedMeshRenderer>();
+                    SkinnedMeshRenderer[] skinRenderers = new SkinnedMeshRenderer[2];
+                    int j = 0;
+                    foreach (var r in tempRenderers)
+                    {
+                        if (r.gameObject.layer != 15)
+                        {
+                            skinRenderers[j] = r;
+                            j++;
+                        }
+                    }
+
                     var id = m_finalRankings[rank][count].ID;
-                    var model = skinRenderer[id % 2];
+                    var model = skinRenderers[id % 2];
                     model.material.mainTexture = ColorsManager.Get().PlayerColorTextures[id];
-                    skinRenderer[(id + 1) % 2].gameObject.SetActive(false);
+                    var temp = skinRenderers[(id + 1) % 2].transform;
+                    while (temp.parent != null)
+                    {
+                        if (temp.parent.tag == Tags.PLAYER_TAG)
+                        {
+                            temp.parent.gameObject.SetActive(false);
+                            break;
+                        }
+                        temp = temp.parent.transform;
+                    }
 
                     //Scale based on rank
                     a.gameObject.transform.localScale *= (MaxNumPlayers + 0.5f - rank)/2.0f; //add 0.5 so the player in 4th is shrunk, not set to 0x scale
