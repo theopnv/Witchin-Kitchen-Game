@@ -14320,6 +14320,18 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   YDisplacement: 0.19
+--- !u!114 &1919353251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919353248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e786214524a36f846b3cfcb98aa6507c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1932146616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 471c500e19d2bb640b969164c6764e20,

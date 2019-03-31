@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Pulse : MonoBehaviour
 {
+    protected static Pulse Instance;
+
+    public static void Pulsate()
+    {
+        if (Instance != null)
+        {
+            Instance.Play();
+        }
+    }
+
+
     SpriteRenderer Rend;
 
     public bool Debug = false;
@@ -19,11 +30,23 @@ public class Pulse : MonoBehaviour
     protected float StartTime;
     protected Color BaseColor;
     protected float BaseY;
-
-    // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
     {
+        if (Instance == null && gameObject.activeInHierarchy)
+        {
+            Instance = this;
+
+            if (Debug)
+                print("Set pulse isntance to | " + gameObject + " | " + Time.frameCount);
+        }
+
         Rend = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
     }
 
     public void Play()
@@ -32,6 +55,9 @@ public class Pulse : MonoBehaviour
         StartTime = Time.time;
         BaseColor = Rend.color;
         BaseY = transform.position.y;
+
+        if (Debug)
+            print("Play pulse | " + BaseY + " | " + BaseColor + " | " + Time.frameCount);
     }
 
     // Update is called once per frame
@@ -51,17 +77,18 @@ public class Pulse : MonoBehaviour
                 var p = transform.position;
                 p.y = BaseY;
                 transform.position = p;
-                return;
             }
+            else
+            {
+                float func = Mathf.Sin(progress * progress * Frequency * Mathf.PI - Mathf.PI * 0.5f) / 2.0f + 0.5f;
+                var emissive = 1.0f + Intensity * func;
 
-            float func = Mathf.Sin(progress * progress * Frequency * Mathf.PI - Mathf.PI * 0.5f) / 2.0f + 0.5f;
-            var emissive = 1.0f + Intensity * func;
+                Rend.color = BaseColor * emissive;
 
-            Rend.color = BaseColor * emissive;
-
-            var pos = transform.position;
-            pos.y = BaseY + YAnim.Evaluate(progress) * YDisplacement;
-            transform.position = pos;
+                var pos = transform.position;
+                pos.y = BaseY + YAnim.Evaluate(progress) * YDisplacement;
+                transform.position = pos;
+            }
         }
     }
 }

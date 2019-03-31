@@ -133,6 +133,8 @@ namespace con2.game
 
         private IEnumerator LaunchEventAfterDelay(Event chosenEvent)
         {
+            //Pulse.Pulsate();
+
             yield return new WaitForSeconds(3.0f);
 
             var key = (Events.EventID)chosenEvent.id;
