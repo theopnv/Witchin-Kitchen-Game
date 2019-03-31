@@ -259,6 +259,9 @@ namespace con2.game
                 GameInfo.ThemeIngredient = Random.Range(0, (int) Ingredient.NOT_AN_INGREDIENT);
             }
             instance.GetComponent<ThemeIngredientUI>().SetIngredientSprite((Ingredient)GameInfo.ThemeIngredient);
+
+            // Make it render on top of _ThemeIngredientUIPrefab
+            _LoadingPanel.transform.SetAsLastSibling();
         }
 
         private void InitializeEndGame()
