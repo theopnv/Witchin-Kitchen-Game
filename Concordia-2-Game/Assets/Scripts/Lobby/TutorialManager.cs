@@ -188,15 +188,15 @@ namespace con2.lobby
 
         private IEnumerator RemoveDividers()
         {
-            var dividerVisuals = _Dividers.GetComponentsInChildren<MeshRenderer>();
+            var dividerVisuals = _Dividers.GetComponentsInChildren<SpriteRenderer>();
             var startTime = Time.time;
-            var startColor = dividerVisuals[0].material.color;
-            while (Time.time - startTime < 1)
+            var startColor = dividerVisuals[0].color;
+            while (Time.time - startTime < 1.5f)
             {
                 var newAlpha = Mathf.Lerp(1.0f, 0.0f, Time.time - startTime);
                 foreach (var line in dividerVisuals)
                 {
-                    line.material.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
+                    line.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
                 }
                 yield return new WaitForEndOfFrame();
             }
