@@ -3734,7 +3734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cc9f2d6ad5ede46b1b8e579eccd30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewtSpawnHeight: 20
   _MinX: -14
   _MaxX: 14
   _MinZ: -9
@@ -16035,7 +16034,7 @@ PrefabInstance:
     - target: {fileID: 3778123301875425951, guid: 929b78556a473724ea32078fabbbbbe4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3956997745309066665, guid: 929b78556a473724ea32078fabbbbbe4,
         type: 3}
