@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,6 +35,9 @@ namespace con2
 
         [ColorUsageAttribute(false, true)]
         public Color[] PlayerForceFieldColors = new Color[4];
+
+        [ColorUsageAttribute(false, true)]
+        public Color[] PlayerBorderColors = new Color[4];
 
         void Awake()
         {

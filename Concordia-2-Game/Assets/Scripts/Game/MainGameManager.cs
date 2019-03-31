@@ -417,8 +417,10 @@ namespace con2.game
             if (newLeaderId != m_currentLeaderId)
             {
                 BordersStartColor = BordersMaterial.color;
-                BordersEndColor = ColorsManager.Get().CauldronLiquidColors[newLeaderId];
 
+                m_currentLeaderId = newLeaderId;
+
+                BordersEndColor = ColorsManager.Get().PlayerBorderColors[newLeaderId];
                 BordersPlaying = true;
                 BordersStartTime = Time.time;
 
