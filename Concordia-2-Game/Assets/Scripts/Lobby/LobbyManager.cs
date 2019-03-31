@@ -239,7 +239,6 @@ namespace con2.lobby
         private void OnReceivedIngredientPollResults(IngredientPoll poll)
         {
             GameInfo.ThemeIngredient = poll.ingredients.OrderByDescending(i => i.votes).First().id;
-            GlobalRecipeList.m_featuredIngredient = (game.Ingredient)GameInfo.ThemeIngredient;
         }
 
         #region Controllers
