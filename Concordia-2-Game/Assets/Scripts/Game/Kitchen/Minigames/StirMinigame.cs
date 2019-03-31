@@ -82,7 +82,6 @@ namespace con2.game
 
         override public void UpdateMinigameSpecifics()
         {
-            Debug.Log(m_pointingDirection);
             if (Vector3.Dot(m_pointingDirection.normalized, GOALS[m_currentGoal].normalized) > 0.8f)    //The dot product of two parallel normalized vectors is 1
             {
                 CycleCurrentGoal();

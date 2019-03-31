@@ -11,6 +11,7 @@ namespace con2.game
     {
         private AudienceInteractionManager _AudienceInteractionManager;
         private EventSystem _EventSystem;
+        private AudioSource _ArenaMusic;
 
         [SerializeField] private GameObject _PauseWindow;
         [SerializeField] private Button _ExitButton;
@@ -23,8 +24,11 @@ namespace con2.game
 
         void Start()
         {
+            _ArenaMusic = GameObject.FindGameObjectWithTag(Tags.ARENA_MUSIC).GetComponent<AudioSource>();
             _EventSystem = FindObjectOfType<EventSystem>();
             _AudienceInteractionManager = FindObjectOfType<AudienceInteractionManager>();
+
+            _ArenaMusic.Pause();
             Time.timeScale = 0;
 
             if (SceneManager.GetActiveScene().name == SceneNames.Lobby)
@@ -41,6 +45,7 @@ namespace con2.game
         void OnDisable()
         {
             Time.timeScale = 1;
+            _ArenaMusic?.UnPause();
         }
 
         public void OnExitClick()
