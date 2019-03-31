@@ -45,7 +45,10 @@ namespace con2.game
         void OnDisable()
         {
             Time.timeScale = 1;
-            _ArenaMusic?.UnPause();
+            if (_ArenaMusic)
+            {
+                _ArenaMusic?.UnPause();
+            }
         }
 
         public void OnExitClick()
