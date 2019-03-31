@@ -16,6 +16,18 @@ namespace con2.game
         private bool m_acceptingInput = false;
         private List<List<PlayerManager>> m_finalRankings;
 
+        private static EndGameManager instance = null;
+        void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+                return;
+            }
+            Destroy(gameObject);
+        }
+
+
         // Start is called before the first frame update
         void Start()
         {
