@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17520827, g: 0.21920127, b: 0.30150953, a: 1}
+  m_IndirectSpecularColor: {r: 0.17520803, g: 0.2192008, b: 0.30150837, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -400,7 +400,7 @@ MonoBehaviour:
   _AudienceUIManager: {fileID: 2030936567}
   _LoadingPanel: {fileID: 752217720}
   m_maxEventVoteTime: 20
-  m_firstPollTime: 30
+  m_firstPollTime: 40
   m_poll_frequency: 60
   m_max_poll_number: 3
   m_poll_number: 0
@@ -16018,6 +16018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gazon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778123301875425951, guid: 929b78556a473724ea32078fabbbbbe4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3956997745309066665, guid: 929b78556a473724ea32078fabbbbbe4,
         type: 3}
