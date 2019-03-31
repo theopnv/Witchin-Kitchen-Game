@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 1410545703240633373}
   - component: {fileID: 6753078129000179359}
   - component: {fileID: 2681862369437722027}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Newt Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,6 +499,9 @@ MonoBehaviour:
   m_eyepatches:
   - {fileID: 866781693447260517}
   - {fileID: 1298009992050035852}
+  restLocation: {x: 11, y: 0, z: -7}
+  exitLocation: {x: 4, y: 0, z: -15}
+  m_movementSpeed: 6
 --- !u!114 &2681862369437722027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,6 +913,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4223523222216684046}
     m_Modifications:
+    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
+        type: 3}
+      propertyPath: m_Name
+      value: DisplacementCircle (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -980,11 +988,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
-        type: 3}
-      propertyPath: m_Name
-      value: DisplacementCircle (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5890221d57fb2f34092c074d92940db3, type: 3}
 --- !u!4 &2064650639744373630 stripped
@@ -1000,6 +1003,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4223523222216684046}
     m_Modifications:
+    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
+        type: 3}
+      propertyPath: m_Name
+      value: DisplacementCircle
+      objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1070,11 +1078,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
-        type: 3}
-      propertyPath: m_Name
-      value: DisplacementCircle
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5890221d57fb2f34092c074d92940db3, type: 3}
 --- !u!4 &952090310946274359 stripped
@@ -1090,6 +1093,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4223523222216684046}
     m_Modifications:
+    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
+        type: 3}
+      propertyPath: m_Name
+      value: DisplacementCircle (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1160,11 +1168,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
-        type: 3}
-      propertyPath: m_Name
-      value: DisplacementCircle (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5890221d57fb2f34092c074d92940db3, type: 3}
 --- !u!4 &2542290239254631008 stripped
@@ -1202,7 +1205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 3d89bece01f588b449218367ecb0234e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 3d89bece01f588b449218367ecb0234e, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1210,7 +1213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 3d89bece01f588b449218367ecb0234e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 3d89bece01f588b449218367ecb0234e, type: 3}
       propertyPath: m_RootOrder
@@ -1222,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 3d89bece01f588b449218367ecb0234e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 3d89bece01f588b449218367ecb0234e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1541,6 +1544,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4223523222216684046}
     m_Modifications:
+    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
+        type: 3}
+      propertyPath: m_Name
+      value: DisplacementCircle (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 1379316523966601364, guid: 5890221d57fb2f34092c074d92940db3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1610,11 +1618,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379316523966601360, guid: 5890221d57fb2f34092c074d92940db3,
-        type: 3}
-      propertyPath: m_Name
-      value: DisplacementCircle (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5890221d57fb2f34092c074d92940db3, type: 3}
