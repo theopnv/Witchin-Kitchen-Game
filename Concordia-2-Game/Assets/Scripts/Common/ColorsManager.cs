@@ -33,6 +33,9 @@ namespace con2
 
         public Color[] PlayerGiftColors = new Color[4];
 
+        [ColorUsageAttribute(false, true)]
+        public Color[] PlayerForceFieldColors = new Color[4];
+
         void Awake()
         {
             Instance = this;
