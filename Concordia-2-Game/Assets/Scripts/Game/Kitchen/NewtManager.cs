@@ -10,23 +10,54 @@ namespace con2.game
         public GameObject m_eyeIngredientPrefab;
         private int m_eyeCount = 2;
         public GameObject[] m_eyes, m_eyesockets, m_eyepatches;
-        private ItemSpawner m_itemSpawner;
+
+        public Vector3 restLocation, exitLocation;
+        public float m_movementSpeed;
+        private Vector3 currentGoal;
+        private AnimControlNewt anim;
 
         void Start()
         {
             Initialize();
             audioSource = GetComponent<AudioSource>();
+            anim = GetComponent<AnimControlNewt>();
+
+            currentGoal = restLocation;
         }
 
         private void Initialize()
         {
             m_rb = GetComponent<Rigidbody>();
-            m_itemSpawner = FindObjectOfType<ItemSpawner>();
+        }
 
-            // Set directly in Unity inspector because the new hierarchy is very deep
-            //m_eyes = new[] { transform.Find("EyeBall2/Eye2").gameObject, transform.Find("EyeBall1/Eye1").gameObject };
-            //m_eyesockets = new[] { transform.Find("EyeBall2/EyeSocket2").gameObject, transform.Find("EyeBall1/EyeSocket1").gameObject };
-            //m_eyepatches = new[] { transform.Find("Eyepatch2").gameObject, transform.Find("Eyepatch1").gameObject };
+        private void Update()
+        {
+            var dist = currentGoal - transform.position;
+            if (Mathf.Abs(dist.magnitude) > 2.0f)
+            {
+                anim.SetWalking(true);
+            }
+            else if (currentGoal.Equals(exitLocation))
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                anim.SetWalking(false);
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            var dist = currentGoal - transform.position;
+            if (Mathf.Abs(dist.magnitude) > 2.0f)
+            {
+                m_rb.velocity = dist.normalized * m_movementSpeed;
+
+                Quaternion facing = new Quaternion();
+                facing.SetLookRotation(new Vector3(dist.x, 0, dist.z));
+                transform.rotation = Quaternion.Slerp(transform.rotation, facing, 2 * Time.deltaTime);
+            }
         }
 
         public override bool PickUp(Transform newParent)
@@ -54,7 +85,7 @@ namespace con2.game
                 StartCoroutine(AddBandage());
                 if (m_eyeCount <= 0)
                 {
-                    StartCoroutine(Despawn());
+                    currentGoal = exitLocation;
                 }
 
                 return true;
@@ -83,7 +114,7 @@ namespace con2.game
                 StartCoroutine(AddBandage());
                 if (m_eyeCount <= 0)
                 {
-                    StartCoroutine(Despawn());
+                    currentGoal = exitLocation;
                 }
             }
         }
@@ -93,14 +124,6 @@ namespace con2.game
             yield return new WaitForSeconds(0.5f);
             m_eyesockets[m_eyeCount].SetActive(false);
             m_eyepatches[m_eyeCount].SetActive(true);
-        }
-
-        private IEnumerator Despawn()
-        {
-            yield return new WaitForSeconds(1.5f);
-            //--m_itemSpawner.SpawnedItemsCount[Ingredient.NEWT_EYE];
-            //m_itemSpawner.SpawnableItems[Ingredient.NEWT_EYE]?.AskToInstantiate();
-            Destroy(gameObject);
         }
     }
 }
