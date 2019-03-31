@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace con2.game
 {
@@ -35,8 +36,7 @@ namespace con2.game
         #endregion
 
         #region Mechanics
-
-        public static Ingredient m_featuredIngredient = Ingredient.NOT_AN_INGREDIENT;
+        
         private static List<Ingredient[]> m_sharedRecipeList = new List<Ingredient[]>();
 
         //Synchronize this method because I'm suspicious of what will happen when all cauldrons call Start() ...
@@ -59,10 +59,12 @@ namespace con2.game
                 recipe[j] = Ingredient.NOT_AN_INGREDIENT;
             }
             var i = 0;
-            if (m_featuredIngredient != Ingredient.NOT_AN_INGREDIENT)
+
+            if ((Ingredient)GameInfo.ThemeIngredient == Ingredient.NOT_AN_INGREDIENT)
             {
-                recipe[i++] = m_featuredIngredient;
+                GameInfo.ThemeIngredient = Random.Range(0, (int)Ingredient.NOT_AN_INGREDIENT);
             }
+            recipe[i++] = (Ingredient)GameInfo.ThemeIngredient;
             for (; i < numIngredients; i++)
             {
                 var ing = Ingredient.NOT_AN_INGREDIENT;

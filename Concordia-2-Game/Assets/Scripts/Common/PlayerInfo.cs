@@ -10,6 +10,7 @@ namespace con2
         public static string RoomId;
         public static List<Viewer> Viewers;
         public static int PlayerNumber;
+        public static int ThemeIngredient;
     }
 
     public class Player

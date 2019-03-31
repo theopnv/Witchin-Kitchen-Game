@@ -412,6 +412,9 @@ MonoBehaviour:
   borders: {fileID: 1919353248}
   ClockTick: {fileID: 8300000, guid: 32646e1073de1914d9a6a60df50ecd76, type: 3}
   voteCue: {fileID: 8300000, guid: 818a2b21f26c2274a8de709aeca26c38, type: 3}
+  _MainCanvas: {fileID: 719272685}
+  _ThemeIngredientUIPrefab: {fileID: 5031835443171668458, guid: f39a4ef54a0535f4095e983e290d7a68,
+    type: 3}
 --- !u!114 &10916644
 MonoBehaviour:
   m_ObjectHideFlags: 0

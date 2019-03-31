@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using con2.messages;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -196,7 +197,7 @@ namespace con2.game
         private bool m_acceptingInput = false;
         public float GAME_TIMER = 240;
         private bool m_countdown = false;
-        private const int COUNTDOWN_TIME = 3;
+        private const int COUNTDOWN_TIME = 5;
         private int m_dominationDifference = 3;
 
         private EndGameManager EGM;
@@ -207,6 +208,9 @@ namespace con2.game
         public AudioClip ClockTick, voteCue;
         private Cheering cheers;
 
+        [SerializeField] private Canvas _MainCanvas;
+        [SerializeField] private GameObject _ThemeIngredientUIPrefab;
+
         private IEnumerator StartGame()
         {
             m_audioSource = GetComponent<AudioSource>();
@@ -215,9 +219,14 @@ namespace con2.game
                 m_audioSource.PlayDelayed(0.1f); //Start trumpet
             }
 
+            ShowIngredientTheme();
             m_countdown = true;
             var fontSize = m_clock.fontSize;
             m_clock.fontSize = 200;
+            m_clock.text = "5";
+            yield return new WaitForSeconds(1);
+            m_clock.text = "4";
+            yield return new WaitForSeconds(1);
             m_clock.text = "3";
             yield return new WaitForSeconds(1);
             m_clock.text = "2";
@@ -240,6 +249,16 @@ namespace con2.game
 
             cheers = GetComponent<Cheering>();
             StartCoroutine(PrepareCheers());
+        }
+
+        private void ShowIngredientTheme()
+        {
+            var instance = Instantiate(_ThemeIngredientUIPrefab, _MainCanvas.transform);
+            if ((Ingredient)GameInfo.ThemeIngredient == Ingredient.NOT_AN_INGREDIENT)
+            {
+                GameInfo.ThemeIngredient = Random.Range(0, (int) Ingredient.NOT_AN_INGREDIENT);
+            }
+            instance.GetComponent<ThemeIngredientUI>().SetIngredientSprite((Ingredient)GameInfo.ThemeIngredient);
         }
 
         private void InitializeEndGame()
@@ -304,7 +323,7 @@ namespace con2.game
 
         private int GetLeaderId()
         {
-            var finalRankings = new List<List<PlayerManager>>();
+            new List<List<PlayerManager>>();
             var playerScores = new List<PlayerManager>();
             for (int i = 0; i < PlayersInstances.Count; i++)
             {
