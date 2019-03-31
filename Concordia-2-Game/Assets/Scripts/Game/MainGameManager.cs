@@ -417,13 +417,15 @@ namespace con2.game
             if (newLeaderId != m_currentLeaderId)
             {
                 BordersStartColor = BordersMaterial.color;
-
-                m_currentLeaderId = newLeaderId;
-
                 BordersEndColor = ColorsManager.Get().CauldronLiquidColors[newLeaderId];
 
                 BordersPlaying = true;
                 BordersStartTime = Time.time;
+
+                PlayersInstances[newLeaderId].PlayerHUD.GetComponent<GrowShrinkEffect>().Grow();
+                if (m_currentLeaderId != -1)
+                    PlayersInstances[m_currentLeaderId].PlayerHUD.GetComponent<GrowShrinkEffect>().Shrink();
+                m_currentLeaderId = newLeaderId;
             }
         }
 
