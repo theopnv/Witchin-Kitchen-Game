@@ -20,6 +20,8 @@ namespace con2.game
         private Color BordersStartColor;
         private Color BordersEndColor;
 
+        public Transform topRightClock, centeredClock;
+
         // Start is called before the first frame update
         protected override void Start()
         {
@@ -224,6 +226,8 @@ namespace con2.game
             yield return new WaitForSeconds(1);
 
             m_clock.fontSize = fontSize;
+            m_clock.rectTransform.parent = topRightClock;
+            m_clock.rectTransform.localPosition = Vector3.zero;
             for (var i = 0; i < GameInfo.PlayerNumber; i++)
             {
                 GamepadMgr.Pad(i).BlockGamepad(false);
@@ -255,6 +259,8 @@ namespace con2.game
                 m_clock.text = FormatRemainingTime(remainingTime);
                 if (remainingTime == 10 && !largeClockStarted)
                 {
+                    m_clock.rectTransform.parent = centeredClock;
+                    m_clock.rectTransform.localPosition = Vector3.zero;
                     largeClockStarted = true;
                     m_clock.fontSize = 200;
                     StartCoroutine(TickingSounds());
