@@ -49,6 +49,10 @@ namespace con2.game
                 else
                 {
                     var burst = Instantiate(HitPrefab, collision.GetContact(0).point, Quaternion.LookRotation(collision.GetContact(0).normal));
+                    var burstMat = burst.gameObject.GetComponentInChildren<ParticleSystemRenderer>().material;
+                    var trailMat = burst.gameObject.GetComponentInChildren<ParticleSystemRenderer>().trailMaterial;
+                    burstMat.SetColor("_EmissionColor", ColorsManager.Get().PlayerForceFieldColors[m_owner.ID]);
+                    trailMat.SetColor("_EmissionColor", ColorsManager.Get().PlayerForceFieldColors[m_owner.ID]);
                     StartCoroutine(DestroyWhenComplete(burst));
                 }
 

@@ -16543,6 +16543,11 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 130359
       objectReference: {fileID: 0}
+    - target: {fileID: 1059165344754330084, guid: 4b55bcfbfb0f2f64eadbc48c30107ffd,
+        type: 3}
+      propertyPath: m_TagString
+      value: ArenaMusic
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7542930962586007286, guid: 4b55bcfbfb0f2f64eadbc48c30107ffd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4b55bcfbfb0f2f64eadbc48c30107ffd, type: 3}

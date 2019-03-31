@@ -16,6 +16,7 @@ TagManager:
   - Projectile
   - FxTemporaire
   - MenuMusic
+  - ArenaMusic
   layers:
   - Default
   - TransparentFX
