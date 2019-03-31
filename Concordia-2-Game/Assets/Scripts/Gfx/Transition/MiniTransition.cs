@@ -27,6 +27,7 @@ namespace con2
 
         protected UnityEngine.UI.Image Target;
         protected TMPro.TextMeshProUGUI Target2;
+        protected UnityEngine.UI.Image Target3;
 
         protected bool Playing = false;
         protected float StartTime;
@@ -36,8 +37,13 @@ namespace con2
         {
             Instance = this;
 
-            Target = GetComponentInChildren<UnityEngine.UI.Image>();
+            var imgs = GetComponentsInChildren<UnityEngine.UI.Image>();
+
+            Target = imgs[0];
             Target2 = GetComponentInChildren<TMPro.TextMeshProUGUI>();
+            Target3 = imgs[1];
+
+            var mat = GetComponent<Material>();
 
             if (HideAtStart)
             {
@@ -46,6 +52,10 @@ namespace con2
                 Target.color = col;
 
                 Target2.alpha = 0.0f;
+
+                var col3 = Target3.color;
+                col3.a = 0.0f;
+                Target3.color = col3;
             }
 
             if (PlayOutAtStart)
@@ -111,6 +121,12 @@ namespace con2
                 col.b = FillColor.b;
                 Target.color = col;
                 Target2.alpha = alpha;
+                var col3 = Target3.color;
+                col3.a = alpha;
+                col3.r = FillColor.r;
+                col3.g = FillColor.g;
+                col3.b = FillColor.b;
+                Target3.color = col3;
             }
         }
     }
