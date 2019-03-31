@@ -421,9 +421,13 @@ namespace con2.game
                 m_currentLeaderId = newLeaderId;
 
                 BordersEndColor = ColorsManager.Get().PlayerBorderColors[newLeaderId];
-
                 BordersPlaying = true;
                 BordersStartTime = Time.time;
+
+                PlayersInstances[newLeaderId].PlayerHUD.GetComponent<GrowShrinkEffect>().Grow();
+                if (m_currentLeaderId != -1)
+                    PlayersInstances[m_currentLeaderId].PlayerHUD.GetComponent<GrowShrinkEffect>().Shrink();
+                m_currentLeaderId = newLeaderId;
             }
         }
 

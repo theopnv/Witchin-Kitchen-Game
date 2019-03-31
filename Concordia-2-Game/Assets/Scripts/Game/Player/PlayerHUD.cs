@@ -69,6 +69,7 @@ namespace con2.game
                     {
                         icon.color = new Color(color.r, color.g, color.b, 0.9f);
                         icon.sprite = GlobalRecipeList.completedIngredient;
+                        icon.preserveAspect = true;
                         break;
                     }
                 }
