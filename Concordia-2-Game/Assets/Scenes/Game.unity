@@ -14319,7 +14319,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  YDisplacement: 0.33
+  YDisplacement: 0.19
 --- !u!4 &1932146616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 471c500e19d2bb640b969164c6764e20,
