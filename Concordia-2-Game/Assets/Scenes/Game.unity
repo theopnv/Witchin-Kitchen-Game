@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17520803, g: 0.2192008, b: 0.30150837, a: 1}
+  m_IndirectSpecularColor: {r: 0.17520827, g: 0.21920127, b: 0.30150953, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14261,6 +14261,65 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1281569629}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1919353250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919353248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1740d93985e094e875ce674a97fad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debug: 1
+  Duration: 3
+  Frequency: 20
+  Intensity: 0.5
+  YAnim:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.3634331
+      outSlope: 2.3634331
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.050645422
+    - serializedVersion: 3
+      time: 0.9353244
+      value: 0.9960965
+      inSlope: 0.10487749
+      outSlope: 0.10487749
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9453504
+      value: 0.7388369
+      inSlope: -14.850819
+      outSlope: -14.850819
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.05436401
+    - serializedVersion: 3
+      time: 1
+      value: 0.0000017993152
+      inSlope: -0.3846704
+      outSlope: -0.3846704
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  YDisplacement: 0.33
 --- !u!4 &1932146616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 471c500e19d2bb640b969164c6764e20,
