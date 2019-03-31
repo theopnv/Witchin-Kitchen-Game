@@ -5,8 +5,8 @@ using UnityEngine;
 public class CheapInsurancePolicy : MonoBehaviour
 {
     // DON'T FORGET TO CHANGE IF BOUNDS CHANGE FOR SOME REASON!
-    // In world position (X=left/right, Y=bottom/top, Z=front/back):
-    static public Vector3 Min = new Vector3(-22, -40, -16);
+    // In world position (X=left/right, Y=bottom/top, Z=back/front):
+    static public Vector3 Min = new Vector3(-22, -40, -18);
     static public Vector3 Max = new Vector3(22, 40, 16);
 
     // The teleport point. Should be above the camera's view but below the top bounding wall.

@@ -35,12 +35,6 @@ namespace con2.game
             var dist = currentGoal - transform.position;
             if (Mathf.Abs(dist.magnitude) > 2.0f)
             {
-                m_rb.velocity = dist.normalized * m_movementSpeed;
-
-                Quaternion facing = new Quaternion();
-                facing.SetLookRotation(new Vector3(dist.x, 0, dist.z));
-                transform.rotation = Quaternion.Slerp(transform.rotation, facing, 2*Time.deltaTime);
-
                 anim.SetWalking(true);
             }
             else if (currentGoal.Equals(exitLocation))
@@ -50,6 +44,19 @@ namespace con2.game
             else
             {
                 anim.SetWalking(false);
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            var dist = currentGoal - transform.position;
+            if (Mathf.Abs(dist.magnitude) > 2.0f)
+            {
+                m_rb.velocity = dist.normalized * m_movementSpeed;
+
+                Quaternion facing = new Quaternion();
+                facing.SetLookRotation(new Vector3(dist.x, 0, dist.z));
+                transform.rotation = Quaternion.Slerp(transform.rotation, facing, 2 * Time.deltaTime);
             }
         }
 
