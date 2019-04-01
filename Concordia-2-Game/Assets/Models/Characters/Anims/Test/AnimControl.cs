@@ -14,6 +14,7 @@ public class AnimControl : MonoBehaviour
     protected int RunningBool;
     protected int RunSpeedFloat;
     protected int DizzyBool;
+    protected int CarryingBool;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class AnimControl : MonoBehaviour
         RunningBool = Animator.StringToHash("Running");
         RunSpeedFloat = Animator.StringToHash("RunSpeed");
         DizzyBool = Animator.StringToHash("Dizzy");
+        CarryingBool = Animator.StringToHash("Carrying");
     }
 
     // Update is called once per frame
@@ -45,11 +47,13 @@ public class AnimControl : MonoBehaviour
     public void Carry()
     {
         SetTrigger(CarryTrigger);
+        SetBool(CarryingBool, true);
     }
 
     public void Drop()
     {
         SetTrigger(DropTrigger);
+        SetBool(CarryingBool, false);
     }
 
     public void Spell()
