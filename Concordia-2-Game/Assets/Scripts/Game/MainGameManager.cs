@@ -421,8 +421,6 @@ namespace con2.game
             {
                 BordersStartColor = BordersMaterial.color;
 
-                m_currentLeaderId = newLeaderId;
-
                 BordersEndColor = ColorsManager.Get().PlayerBorderColors[newLeaderId];
                 BordersPlaying = true;
                 BordersStartTime = Time.time;
