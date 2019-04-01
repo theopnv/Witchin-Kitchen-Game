@@ -136,11 +136,6 @@ namespace con2
             return input + " P" + (m_playerID + 1);
         }
 
-        private string getInputForPlayerIdxWithIdOffset(string input)
-        {
-            return input + " P" + (m_playerID + 2);
-        }
-
         // Internal use only
         public void Poll()
         {
@@ -161,17 +156,6 @@ namespace con2
                     var pressed = Input.GetButton(getInputForPlayerIdx(inputID.Value));
                     var justReleased = Input.GetButtonUp(getInputForPlayerIdx(inputID.Value));
                     var axisValue = Input.GetAxis(getInputForPlayerIdx(inputID.Value));
-
-                    //Accept input from the "5th" controller if this controller is lost...
-                    var temp = Input.GetJoystickNames();
-                    if (temp[m_playerID] == "")
-                    {
-                        justPressed = justPressed || Input.GetButtonDown(getInputForPlayerIdxWithIdOffset(inputID.Value));
-                        pressed = pressed || Input.GetButton(getInputForPlayerIdxWithIdOffset(inputID.Value));
-                        justReleased = justReleased || Input.GetButtonUp(getInputForPlayerIdxWithIdOffset(inputID.Value));
-                        axisValue += Input.GetAxis(getInputForPlayerIdxWithIdOffset(inputID.Value));
-                    }
-
                     action.SetNewInput(justPressed, pressed, justReleased, axisValue);
                 }
             }

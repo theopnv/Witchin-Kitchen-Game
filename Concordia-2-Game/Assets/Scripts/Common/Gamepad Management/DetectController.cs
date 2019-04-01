@@ -49,20 +49,6 @@ namespace con2
         {
             var temp = Input.GetJoystickNames();
 
-            //CRUSH empty controller slots if we're registering more than 4 controllers
-            //This may shuffle player controllers aronud, but better than not being able to use a 4th controller
-            var temp2 = new String[4];
-            int j = 0;
-            if (temp.Length > 4)
-            {
-                foreach(var input in temp)
-                {
-                    if (input != "")
-                        temp2[j++] = input;
-                }
-                temp = temp2;
-            }
-
             // Check whether array contains anything
             if (temp.Length > 0)
             {
