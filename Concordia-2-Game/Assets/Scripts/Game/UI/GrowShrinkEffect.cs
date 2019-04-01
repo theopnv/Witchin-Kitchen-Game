@@ -10,12 +10,12 @@ namespace con2.game
 
         public void Grow()
         {
-            StartCoroutine(Scale(1.0f, _maxScale));
+            StartCoroutine(Scale(_maxScale, 1.0f));
         }
 
         public void Shrink()
         {
-            StartCoroutine(Scale(_maxScale, 1.0f));
+            StartCoroutine(Scale(1.0f, _maxScale));
         }
 
         private IEnumerator Scale(float startScale, float endScale)
