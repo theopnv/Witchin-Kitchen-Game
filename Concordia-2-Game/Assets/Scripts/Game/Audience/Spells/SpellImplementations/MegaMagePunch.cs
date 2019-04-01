@@ -25,42 +25,47 @@ public class MegaMagePunch : ASpell
 
     public override IEnumerator SpellImplementation()
     {
-        var player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
-        var playerPunch = player.GetComponentInChildren<PlayerPunch>();
-        var playerMovement = player.GetComponentInChildren<PlayerMovement>();
-        var hitbox = playerPunch.gameObject.transform;
-        var hitboxScale = hitbox.localScale;
-        var charModel = player.GetComponentInChildren<Animator>().gameObject.transform;
+        if (!m_inProgress)
+        {
+            m_inProgress = true;
+            var player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
+            var playerPunch = player.GetComponentInChildren<PlayerPunch>();
+            var playerMovement = player.GetComponentInChildren<PlayerMovement>();
+            var hitbox = playerPunch.gameObject.transform;
+            var hitboxScale = hitbox.localScale;
+            var charModel = player.GetComponentInChildren<Animator>().gameObject.transform;
 
-        playerPunch.ModulatePunchStrength(m_megaMageMultiplier);
-        playerPunch.ModulatePunchCooldown(1.0f / m_megaMageMultiplier);
-        var originalShake = playerPunch.ShakeIntensity;
-        playerPunch.ShakeIntensity = CamShakeMgr.Intensity.MEDIUM;
-        playerMovement.ModulateMovementSpeed(m_sizeScaler);
-        playerMovement.ModulateMaxMovementSpeed(m_sizeScaler);
-        playerMovement.SetImmunity(true);
-        hitbox.localScale = new Vector3(hitboxScale.x * m_sizeScaler, hitboxScale.y, hitboxScale.z * m_sizeScaler);
+            playerPunch.ModulatePunchStrength(m_megaMageMultiplier);
+            playerPunch.ModulatePunchCooldown(1.0f / m_megaMageMultiplier);
+            var originalShake = playerPunch.ShakeIntensity;
+            playerPunch.ShakeIntensity = CamShakeMgr.Intensity.MEDIUM;
+            playerMovement.ModulateMovementSpeed(m_sizeScaler);
+            playerMovement.ModulateMaxMovementSpeed(m_sizeScaler);
+            playerMovement.SetImmunity(true);
+            hitbox.localScale = new Vector3(hitboxScale.x * m_sizeScaler, hitboxScale.y, hitboxScale.z * m_sizeScaler);
 
-        Playing = true;
-        StartTime = Time.time;
-        OriginalScale = charModel.localScale;
+            Playing = true;
+            StartTime = Time.time;
+            OriginalScale = charModel.localScale;
 
-        instantiatedPrompt = Instantiate(promptPrefab);
+            instantiatedPrompt = Instantiate(promptPrefab);
 
-        yield return new WaitForSeconds(m_megaMagePunchDuration);
+            yield return new WaitForSeconds(m_megaMagePunchDuration);
+            m_inProgress = false;
 
-        playerPunch.ModulatePunchStrength(1.0f / m_megaMageMultiplier);
-        playerPunch.ModulatePunchCooldown(m_megaMageMultiplier);
-        playerPunch.ShakeIntensity = originalShake;
-        playerMovement.ModulateMovementSpeed(1.0f / m_sizeScaler);
-        playerMovement.ModulateMaxMovementSpeed(1.0f / m_sizeScaler);
-        playerMovement.SetImmunity(false);
-        hitbox.localScale = new Vector3(hitboxScale.x / m_sizeScaler, hitboxScale.y, hitboxScale.z / m_sizeScaler);
+            playerPunch.ModulatePunchStrength(1.0f / m_megaMageMultiplier);
+            playerPunch.ModulatePunchCooldown(m_megaMageMultiplier);
+            playerPunch.ShakeIntensity = originalShake;
+            playerMovement.ModulateMovementSpeed(1.0f / m_sizeScaler);
+            playerMovement.ModulateMaxMovementSpeed(1.0f / m_sizeScaler);
+            playerMovement.SetImmunity(false);
+            hitbox.localScale = new Vector3(hitboxScale.x / m_sizeScaler, hitboxScale.y, hitboxScale.z / m_sizeScaler);
 
-        Destroy(instantiatedPrompt.gameObject);
+            Destroy(instantiatedPrompt.gameObject);
 
-        Playing = false;
-        charModel.localScale = OriginalScale;
+            Playing = false;
+            charModel.localScale = OriginalScale;
+        }
     }
 
     public override Spells.SpellID GetSpellID()

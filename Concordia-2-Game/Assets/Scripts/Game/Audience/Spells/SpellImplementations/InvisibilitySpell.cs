@@ -16,31 +16,37 @@ namespace con2.game
 
         public override IEnumerator SpellImplementation()
         {
-            var targetPlayer = m_mainManager.GetPlayerById(_TargetedPlayer.id);
-            var puff = targetPlayer.transform.Find("Puff").gameObject;
-            var skins = targetPlayer.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
+            if (!m_inProgress)
+            {
+                m_inProgress = true;
+                var targetPlayer = m_mainManager.GetPlayerById(_TargetedPlayer.id);
+                var puff = targetPlayer.transform.Find("Puff").gameObject;
+                var skins = targetPlayer.gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
 
-            foreach (var skin in skins)
-            {
-                skin.gameObject.SetActive(false);
-            }
-            if (skins.Length > 0)
-            {
-                Debug.Log("Skin found!");
-                puff.SetActive(false);
-                puff.SetActive(true);
-            }
+                foreach (var skin in skins)
+                {
+                    skin.gameObject.SetActive(false);
+                }
+                if (skins.Length > 0)
+                {
+                    Debug.Log("Skin found!");
+                    puff.SetActive(false);
+                    puff.SetActive(true);
+                }
 
-            yield return new WaitForSeconds(m_InvisibilityDuration);
+                yield return new WaitForSeconds(m_InvisibilityDuration);
 
-            foreach (var skin in skins)
-            {
-                skin.gameObject.SetActive(true);
-            }
-            if (skins.Length > 0)
-            {
-                puff.SetActive(false);
-                puff.SetActive(true);
+                foreach (var skin in skins)
+                {
+                    skin.gameObject.SetActive(true);
+                }
+                if (skins.Length > 0)
+                {
+                    puff.SetActive(false);
+                    puff.SetActive(true);
+                }
+
+                m_inProgress = false;
             }
         }
 

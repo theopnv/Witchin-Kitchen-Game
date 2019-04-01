@@ -18,21 +18,27 @@ namespace con2.game
 
         public override IEnumerator SpellImplementation()
         {
-            var player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
-            var playerMovement = player.GetComponentInChildren<PlayerMovement>();
-            var rainbowTrail = player.GetComponentInChildren<TrailRenderer>();
+            if (!m_inProgress)
+            {
+                m_inProgress = true;
+                var player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
+                var playerMovement = player.GetComponentInChildren<PlayerMovement>();
+                var rainbowTrail = player.GetComponentInChildren<TrailRenderer>();
 
-            playerMovement.ModulateMaxMovementSpeed(m_movementModulator);
-            playerMovement.ModulateMovementSpeed(m_movementModulator);
-            playerMovement.ModulateRotationSpeed(m_rotationModulator);
-            rainbowTrail.emitting = true;
+                playerMovement.ModulateMaxMovementSpeed(m_movementModulator);
+                playerMovement.ModulateMovementSpeed(m_movementModulator);
+                playerMovement.ModulateRotationSpeed(m_rotationModulator);
+                rainbowTrail.emitting = true;
 
-            yield return new WaitForSeconds(m_rocketSpeedDuration);
+                yield return new WaitForSeconds(m_rocketSpeedDuration);
 
-            playerMovement.ModulateMaxMovementSpeed(1.0f / m_movementModulator);
-            playerMovement.ModulateMovementSpeed(1.0f / m_movementModulator);
-            playerMovement.ModulateRotationSpeed(1.0f / m_rotationModulator);
-            rainbowTrail.emitting = false;
+                playerMovement.ModulateMaxMovementSpeed(1.0f / m_movementModulator);
+                playerMovement.ModulateMovementSpeed(1.0f / m_movementModulator);
+                playerMovement.ModulateRotationSpeed(1.0f / m_rotationModulator);
+                rainbowTrail.emitting = false;
+
+                m_inProgress = false;
+            }
         }
 
         public override Spells.SpellID GetSpellID()
