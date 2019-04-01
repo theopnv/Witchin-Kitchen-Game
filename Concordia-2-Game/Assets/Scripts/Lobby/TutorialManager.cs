@@ -76,7 +76,10 @@ namespace con2.lobby
                 p.Value.PlayerHUD.transform.SetSiblingIndex(p.Value.ID);
             }
 
-            _PlayersPotions.Add(player.ID, false);
+            if (!_PlayersPotions.ContainsKey(player.ID))
+            {
+                _PlayersPotions.Add(player.ID, false);
+            }
 
             if (_CurrentInstructionIdx == 1 || _CurrentInstructionIdx == 2)
             {
