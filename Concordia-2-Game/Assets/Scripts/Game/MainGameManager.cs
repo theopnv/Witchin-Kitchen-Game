@@ -129,16 +129,13 @@ namespace con2.game
 
         public void OnDisconnectedFromServer()
         {
-            StartCoroutine(QuitGame());
+            QuitGame();
         }
 
-        private IEnumerator QuitGame()
+        private void QuitGame()
         {
-            _AudienceInteractionManager.SendEndGame(false);
-            const string msg = "Disconnected from server. Game will quit in 5 seconds.";
+            const string msg = "Disconnected from server. Please check your internet connection.";
             _MessageFeedManager.AddMessageToFeed(msg, MessageFeedManager.MessageType.error);
-            yield return new WaitForSeconds(5);
-            SceneManager.LoadSceneAsync(SceneNames.MainMenu);
         }
 
         [Header("AudienceEvents")]
