@@ -64,19 +64,30 @@ namespace con2.lobby
 
             if (PlayersInstances.Count < _MaxPlayers)
             {
-                if (Input.GetKeyDown(KeyCode.Joystick1Button0) && !PlayersInstances.ContainsKey(0))
+                //Accept input from the "5th" controller if this controller is lost...
+                var temp = Input.GetJoystickNames();
+
+                if ((Input.GetKeyDown(KeyCode.Joystick1Button0) 
+                    || temp[0] == "" && Input.GetKeyDown(KeyCode.Joystick5Button0))
+                    && !PlayersInstances.ContainsKey(0))
                 {
                     PressAToJoin(0);
                 }
-                if (Input.GetKeyDown(KeyCode.Joystick2Button0) && !PlayersInstances.ContainsKey(1))
+                if ((Input.GetKeyDown(KeyCode.Joystick2Button0)
+                    || temp[1] == "" && Input.GetKeyDown(KeyCode.Joystick5Button0))
+                    && !PlayersInstances.ContainsKey(1))
                 {
                     PressAToJoin(1);
                 }
-                if (Input.GetKeyDown(KeyCode.Joystick3Button0) && !PlayersInstances.ContainsKey(2))
+                if ((Input.GetKeyDown(KeyCode.Joystick3Button0)
+                    || temp[2] == "" && Input.GetKeyDown(KeyCode.Joystick5Button0))
+                    && !PlayersInstances.ContainsKey(2))
                 {
                     PressAToJoin(2);
                 }
-                if (Input.GetKeyDown(KeyCode.Joystick4Button0) && !PlayersInstances.ContainsKey(3))
+                if ((Input.GetKeyDown(KeyCode.Joystick4Button0)
+                    || temp[3] == "" && Input.GetKeyDown(KeyCode.Joystick5Button0))
+                    && !PlayersInstances.ContainsKey(3))
                 {
                     PressAToJoin(3);
                 }
