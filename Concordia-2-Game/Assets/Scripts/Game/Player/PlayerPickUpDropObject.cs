@@ -35,7 +35,7 @@ namespace con2.game
         public bool ConsumeInput(GamepadAction input)
         {
             if (input.GetActionID().Equals(con2.GamepadAction.ID.PUNCH)
-                || input.GetActionID().Equals(con2.GamepadAction.ID.RIGHT_TRIGGER))
+                || input.GetActionID().Equals(con2.GamepadAction.ID.XBUTTON))
             {
                 if (IsHoldingObject())
                     return true;
