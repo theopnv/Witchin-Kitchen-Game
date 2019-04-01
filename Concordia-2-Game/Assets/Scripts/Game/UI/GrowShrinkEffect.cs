@@ -10,20 +10,23 @@ namespace con2.game
 
         public void Grow()
         {
-            StartCoroutine(Scale(_maxScale, 1.0f));
+            Debug.Log("gRRRROWWWW");
+            StartCoroutine(Scale(1.0f, _maxScale));
         }
 
         public void Shrink()
         {
-            StartCoroutine(Scale(1.0f, _maxScale));
+            Debug.Log("shhhRIIIIIIINNNKKK");
+            StartCoroutine(Scale(_maxScale, 1.0f));
         }
 
         private IEnumerator Scale(float startScale, float endScale)
         {
             var startTime = Time.time;
-            while (Time.time - startTime < 0.5f)
+            while (Time.time - startTime <= 0.5f)
             {
                 float scaleComponent = Mathf.Lerp(startScale, endScale, (Time.time - startTime)/0.5f);
+                Debug.Log(scaleComponent);
                 transform.localScale = scaleComponent * Vector3.one;
                 yield return new WaitForEndOfFrame();
             }
