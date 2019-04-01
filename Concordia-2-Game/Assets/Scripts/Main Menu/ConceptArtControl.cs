@@ -35,7 +35,8 @@ namespace con2.main_menu
         private void SwitchPics(int changeDir)
         {
             currentImageIndex += changeDir;
-            conceptArtImage.sprite = conceptArts[currentImageIndex%conceptArts.Length];
+            var len = conceptArts.Length;
+            conceptArtImage.sprite = conceptArts[((currentImageIndex % len) + len)%len];
         }
 
         private IEnumerator WaitOnChange()
