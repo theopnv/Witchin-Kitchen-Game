@@ -22,23 +22,28 @@ public class FireballForAll : ASpell
 
     public override IEnumerator SpellImplementation()
     {
-        m_player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
-        var playerFireball = m_player.GetComponentInChildren<PlayerFireball>();
-        playerFireball.SetCanCast(false);
+        if (!m_inProgress)
+        {
+            m_inProgress = true;
+            m_player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
+            var playerFireball = m_player.GetComponentInChildren<PlayerFireball>();
+            playerFireball.SetCanCast(false);
 
-        m_fireballer = Instantiate(m_fireballerPrefab); 
+            m_fireballer = Instantiate(m_fireballerPrefab);
 
-        m_doneRotation = false;
-        StartCoroutine(Cast());
-        StartCoroutine(RotateSpawner(playerFireball));
+            m_doneRotation = false;
+            StartCoroutine(Cast());
+            StartCoroutine(RotateSpawner(playerFireball));
 
-        yield return null;
+            yield return null;
+        }
     }
 
     public IEnumerator RotateSpawner(PlayerFireball playerFireball)
     {
         yield return new WaitForSeconds(m_FireballForAllDuration);
 
+        m_inProgress = false;
         m_doneRotation = true;
         playerFireball.SetCanCast(true);
         Destroy(m_fireballer);

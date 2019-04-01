@@ -19,27 +19,31 @@ namespace con2.game
 
         public override IEnumerator SpellImplementation()
         {
-            var startExitPos = new Vector3 (20, 5, 20);
+            if (!m_inProgress)
+            {
+                m_inProgress = true;
+                var startExitPos = new Vector3(20, 5, 20);
 
-            var discoball = Instantiate(m_discoBallPrefab, startExitPos, new Quaternion(0, 0, 0, 0));
-            var discoballController = discoball.GetComponent<DiscoBall>();
-            var targetPlayer = m_mainManager.GetPlayerById(_TargetedPlayer.id);
-            discoballController.FollowTarget = targetPlayer.gameObject;
+                var discoball = Instantiate(m_discoBallPrefab, startExitPos, new Quaternion(0, 0, 0, 0));
+                var discoballController = discoball.GetComponent<DiscoBall>();
+                var targetPlayer = m_mainManager.GetPlayerById(_TargetedPlayer.id);
+                discoballController.FollowTarget = targetPlayer.gameObject;
 
-            var playerMovement = targetPlayer.GetComponent<PlayerMovement>();
-            playerMovement.InvertMovement();
+                var playerMovement = targetPlayer.GetComponent<PlayerMovement>();
+                playerMovement.InvertMovement();
 
 
-            yield return new WaitForSeconds(m_DiscoManiaDuration);
+                yield return new WaitForSeconds(m_DiscoManiaDuration);
 
-            playerMovement.InvertMovement();
+                playerMovement.InvertMovement();
+                m_inProgress = false;
 
-            GameObject leaveTarget = Instantiate(new GameObject(), startExitPos, new Quaternion(0, 0, 0, 0));
-            discoballController.FollowTarget = leaveTarget;
-            yield return new WaitForSeconds(3);     //Allow the discoball to fly away like when it entered
-            Destroy(discoball);
-            Destroy(leaveTarget);
-
+                GameObject leaveTarget = Instantiate(new GameObject(), startExitPos, new Quaternion(0, 0, 0, 0));
+                discoballController.FollowTarget = leaveTarget;
+                yield return new WaitForSeconds(3);     //Allow the discoball to fly away like when it entered
+                Destroy(discoball);
+                Destroy(leaveTarget);
+            }
         }
 
         public override Spells.SpellID GetSpellID()

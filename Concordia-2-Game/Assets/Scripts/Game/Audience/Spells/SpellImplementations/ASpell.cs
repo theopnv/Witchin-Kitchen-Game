@@ -16,6 +16,8 @@ namespace con2.game
         public abstract IEnumerator SpellImplementation();
         public abstract Spells.SpellID GetSpellID();
 
+        protected bool m_inProgress = false;
+
         public void SetUpSpell()
         {
             var managers = GameObject.FindGameObjectWithTag(Tags.MANAGERS_TAG);

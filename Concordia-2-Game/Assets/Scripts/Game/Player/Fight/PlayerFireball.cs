@@ -32,7 +32,7 @@ namespace con2.game
                 m_indicator.SetPlayer(m_player.gameObject);
             }
 
-            m_anim = transform.parent.GetComponentInChildren<AnimControl>();
+            m_anim = transform?.parent?.GetComponentInChildren<AnimControl>();
         }
 
         public bool ConsumeInput(GamepadAction input)
