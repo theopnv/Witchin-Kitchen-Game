@@ -10,13 +10,11 @@ namespace con2.game
 
         public void Grow()
         {
-            Debug.Log("gRRRROWWWW");
             StartCoroutine(Scale(1.0f, _maxScale));
         }
 
         public void Shrink()
         {
-            Debug.Log("shhhRIIIIIIINNNKKK");
             StartCoroutine(Scale(_maxScale, 1.0f));
         }
 
@@ -26,7 +24,6 @@ namespace con2.game
             while (Time.time - startTime <= 0.5f)
             {
                 float scaleComponent = Mathf.Lerp(startScale, endScale, (Time.time - startTime)/0.5f);
-                Debug.Log(scaleComponent);
                 transform.localScale = scaleComponent * Vector3.one;
                 yield return new WaitForEndOfFrame();
             }
