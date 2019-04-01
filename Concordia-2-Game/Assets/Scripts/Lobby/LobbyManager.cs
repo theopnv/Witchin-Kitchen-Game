@@ -205,7 +205,7 @@ namespace con2.lobby
             }            
 
             JoinPrompt.transform.SetAsLastSibling();
-            if (playerManager.ID + 1 >= _MaxPlayers)
+            if (PlayersInstances.Count + 1 >= _MaxPlayers)
                 JoinPrompt.SetActive(false);
         }
 
@@ -278,6 +278,11 @@ namespace con2.lobby
             if (_PlayersStatuses.ContainsKey(i))
             {
                 _PlayersStatuses.Remove(i);
+                if (PlayersInstances.Count + 1 < _MaxPlayers)
+                {
+                    JoinPrompt.SetActive(true);
+                    JoinPrompt.transform.SetAsLastSibling();
+                }
             }
         }
 
