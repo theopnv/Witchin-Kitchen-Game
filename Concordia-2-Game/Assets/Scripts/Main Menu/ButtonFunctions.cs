@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 namespace con2.main_menu
 {
-
     public class ButtonFunctions : MonoBehaviour
     {
+        // Credits and attribution
+        public static string CREDITS_DOC_URL = "https://docs.google.com/document/d/1PH4Si2lHkjPLwk_vJrEr5LwYgHm-KrcigfE7ZMkKtX4/edit?usp=sharing";
+
         public void LoadTutorial()
         {
             StartCoroutine(Transition.Get().SequenceIn(null, _loadTutorial()));
@@ -56,6 +58,11 @@ namespace con2.main_menu
         public void LoadCreditsScene()
         {
             SceneManager.LoadSceneAsync(SceneNames.Credits);
+        }
+
+        public void ShowCredits()
+        {
+            Application.OpenURL(CREDITS_DOC_URL);
         }
 
         public void QuitGame()
