@@ -99,9 +99,4 @@ public class MegaMagePunch : ASpell
             instantiatedPrompt.transform.position = player.transform.position + new Vector3(1.5f, 5, 0);
         }
     }
-
-    private void MaintainIngredientSize(GameObject obj)
-    {
-        
-    }
 }
