@@ -169,6 +169,15 @@ namespace con2.game
             return m_heldObject;
         }
 
+        // Get the value of mIsHoldingObject
+        public Transform GetHeldObject()
+        {
+            if (IsHoldingObject())
+                return m_heldObject.transform;
+            else
+                return null;
+        }
+
         #region AimAssist
 
         public void SetAimAssistedStation(GameObject station)
