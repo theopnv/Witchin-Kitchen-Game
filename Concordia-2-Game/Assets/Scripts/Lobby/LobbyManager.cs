@@ -64,19 +64,23 @@ namespace con2.lobby
 
             if (PlayersInstances.Count < _MaxPlayers)
             {
-                if (Input.GetKeyDown(KeyCode.Joystick1Button0) && !PlayersInstances.ContainsKey(0))
+                if ((Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Alpha1))
+                    && !PlayersInstances.ContainsKey(0))
                 {
                     PressAToJoin(0);
                 }
-                if (Input.GetKeyDown(KeyCode.Joystick2Button0) && !PlayersInstances.ContainsKey(1))
+                if ((Input.GetKeyDown(KeyCode.Joystick2Button0) || Input.GetKeyDown(KeyCode.Alpha2))
+                    && !PlayersInstances.ContainsKey(1))
                 {
                     PressAToJoin(1);
                 }
-                if (Input.GetKeyDown(KeyCode.Joystick3Button0) && !PlayersInstances.ContainsKey(2))
+                if ((Input.GetKeyDown(KeyCode.Joystick3Button0) || Input.GetKeyDown(KeyCode.Alpha3))
+                    && !PlayersInstances.ContainsKey(2))
                 {
                     PressAToJoin(2);
                 }
-                if (Input.GetKeyDown(KeyCode.Joystick4Button0) && !PlayersInstances.ContainsKey(3))
+                if ((Input.GetKeyDown(KeyCode.Joystick4Button0) || Input.GetKeyDown(KeyCode.Alpha4))
+                    && !PlayersInstances.ContainsKey(3))
                 {
                     PressAToJoin(3);
                 }
@@ -202,7 +206,13 @@ namespace con2.lobby
                 SetInstructionText();
                 var fireballManager = playerManager.GetComponentInChildren<PlayerFireball>();
                 fireballManager.OnFireballCasted += () => OnFireballCasted(playerManager.ID);
-            }            
+            }
+
+            Debug.Log(playerManager.ID);
+            foreach (var p in PlayersInstances)
+            {
+                p.Value.PlayerHUD.transform.SetSiblingIndex(p.Value.ID);
+            }
 
             JoinPrompt.transform.SetAsLastSibling();
             if (PlayersInstances.Count + 1 >= _MaxPlayers)
