@@ -15,6 +15,7 @@ public class MegaMagePunch : ASpell
     protected bool Playing = false;
     public GameObject promptPrefab;
     private GameObject instantiatedPrompt;
+    private PlayerPickUpDropObject m_ppdo;
 
     // Start is called before the first frame update
 
@@ -31,6 +32,7 @@ public class MegaMagePunch : ASpell
             var player = m_mainManager.GetPlayerById(_TargetedPlayer.id);
             var playerPunch = player.GetComponentInChildren<PlayerPunch>();
             var playerMovement = player.GetComponentInChildren<PlayerMovement>();
+            m_ppdo = player.GetComponentInChildren<PlayerPickUpDropObject>();
             var hitbox = playerPunch.gameObject.transform;
             var hitboxScale = hitbox.localScale;
             var charModel = player.GetComponentInChildren<Animator>().gameObject.transform;
@@ -65,6 +67,7 @@ public class MegaMagePunch : ASpell
 
             Playing = false;
             charModel.localScale = OriginalScale;
+            m_ppdo = null;
         }
     }
 
@@ -86,8 +89,19 @@ public class MegaMagePunch : ASpell
             var scale = ScaleAnim.Evaluate(progress);
             charModel.localScale = OriginalScale * scale;
 
+            var ingredient = m_ppdo.GetHeldObject();
+            if (ingredient)
+            {
+                ingredient.localScale = Vector3.one / scale;
+            }
+
             instantiatedPrompt.transform.localScale = scale/2.0f * Vector3.one;
             instantiatedPrompt.transform.position = player.transform.position + new Vector3(1.5f, 5, 0);
         }
+    }
+
+    private void MaintainIngredientSize(GameObject obj)
+    {
+        
     }
 }
