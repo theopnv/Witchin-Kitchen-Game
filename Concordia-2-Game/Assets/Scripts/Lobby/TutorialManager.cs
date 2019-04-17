@@ -69,13 +69,6 @@ namespace con2.lobby
             var fireballManager = player.GetComponentInChildren<PlayerFireball>();
             fireballManager.OnFireballCasted += () => OnFireBallCasted(player.ID);
 
-            Debug.Log(player.ID);
-            var players = _LobbyManager.PlayersInstances;
-            foreach (var p in players)
-            {
-                p.Value.PlayerHUD.transform.SetSiblingIndex(p.Value.ID);
-            }
-
             if (!_PlayersPotions.ContainsKey(player.ID))
             {
                 _PlayersPotions.Add(player.ID, false);
