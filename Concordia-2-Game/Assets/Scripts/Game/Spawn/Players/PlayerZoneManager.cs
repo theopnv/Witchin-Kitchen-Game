@@ -78,7 +78,7 @@ namespace con2.game
             Owner.PlayerHUD.OwnerId = Owner.ID;
             var backdrop = instance.transform.Find("Organizer");
             var rect = backdrop.GetComponent<Image>();
-            rect.color = ColorsManager.Get().PlayerMeshColors[Owner.ID];
+            rect.color = ColorsManager.Get().CauldronLiquidColors[Owner.ID];
         }
     }
 
