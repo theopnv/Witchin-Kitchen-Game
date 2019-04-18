@@ -61,7 +61,7 @@ public class MegaMagePunch : ASpell
             playerMovement.ModulateMovementSpeed(1.0f / m_sizeScaler);
             playerMovement.ModulateMaxMovementSpeed(1.0f / m_sizeScaler);
             playerMovement.SetImmunity(false);
-            hitbox.localScale = new Vector3(hitboxScale.x / m_sizeScaler, hitboxScale.y, hitboxScale.z / m_sizeScaler);
+            hitbox.localScale = new Vector3(hitboxScale.x, hitboxScale.y, hitboxScale.z);
 
             Destroy(instantiatedPrompt.gameObject);
 
