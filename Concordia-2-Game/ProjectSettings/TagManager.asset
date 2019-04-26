@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - PlayerCapsule
+  - Managers
+  - Kitchen
+  - Menu
+  - ArenaBase
+  - Cauldron
+  - PlayersHUDZone
+  - GrassSurface
+  - Ingredient
+  - Projectile
+  - FxTemporaire
+  - MenuMusic
+  - ArenaMusic
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - GrassDisplacement
+  - GrassSurface
+  - GrassGeometry
+  - Ingredient
+  - InvisibleWall
+  - Meteor
+  - Hair
+  - HairObstacle
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Lightning
+    uniqueID: 1871210567
+    locked: 0

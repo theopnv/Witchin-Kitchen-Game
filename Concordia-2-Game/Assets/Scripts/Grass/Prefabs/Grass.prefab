@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &181414314283483912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181414314283483910}
+  - component: {fileID: 181414314283483913}
+  - component: {fileID: 181414314283483911}
+  m_Layer: 0
+  m_Name: Grass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &181414314283483910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181414314283483912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &181414314283483913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181414314283483912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05338fc4034282f4594ec069e14f7419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  prefab: {fileID: 100000, guid: 84c367e828da88945aef8e81286c5a39, type: 3}
+  prefabScale: 40
+  minScale: {x: 0.35, y: 0.25, z: 0.35}
+  meshMaterial: {fileID: 2100000, guid: 950c65e3beb946942aca19b2d3dfbc92, type: 2}
+  motionVectorsMaterial: {fileID: 0}
+  colorMap: {fileID: 2800000, guid: 0c5a715f25d00c849909ff1a266bfed4, type: 3}
+  instanceMap: {fileID: 2800000, guid: 39029699f95e27942929f90463d40afa, type: 3}
+  heightMap: {fileID: 0}
+  RenderMotionVectors: 1
+  DisplacementStrength: 1
+  Flexibility: 1
+  WindStrength: 2
+  WindScrollSpeed: 0.1
+  WindDirection: {x: 1, y: 0, z: 0}
+  WindDirectionModulationTimeScale: 0.1
+  WindDirectionModulationStrength: 0.5
+  RollingWindPositionScale: 0.001
+  Scale: {x: 1, y: 1, z: 1}
+  FreezeColor: {r: 0, g: 0, b: 0, a: 0}
+  FreezeFactor: 0
+--- !u!114 &181414314283483911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181414314283483912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d615f35228c0e46935d2de62e8800c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixSize: 128
+  xOrg: 0
+  yOrg: 0
+  scale: 0.125
+  octaves: 4
+  persistence: 0.3
+  noiseTex: {fileID: 0}

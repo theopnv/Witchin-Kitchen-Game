@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "360_A.png",
+	"frame": {"x":0,"y":0,"w":84,"h":84},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":8,"w":84,"h":84},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "360_B.png",
+	"frame": {"x":84,"y":0,"w":84,"h":84},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":8,"w":84,"h":84},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "360_X.png",
+	"frame": {"x":168,"y":0,"w":84,"h":84},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":8,"w":84,"h":84},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "360_Y.png",
+	"frame": {"x":0,"y":84,"w":84,"h":84},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":8,"w":84,"h":84},
+	"sourceSize": {"w":100,"h":100}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "xbox-0.png",
+	"format": "RGBA8888",
+	"size": {"w":256,"h":256},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:fe8bb328b632c68a13c24db165fc3c47:ae9ec1a3ed72416724ebc1dae77bce63:dae85373bb7720eb9e1f291a76aed441$"
+}
+}

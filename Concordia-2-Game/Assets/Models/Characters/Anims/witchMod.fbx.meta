@@ -1,0 +1,3973 @@
+fileFormatVersion: 2
+guid: 8fa36812c2b69914ba34f6037d1feb6d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: WitchRig_Published:AimEye
+    100004: WitchRig_Published:AimEye_L
+    100006: WitchRig_Published:AimEye_M
+    100008: WitchRig_Published:AimEye_R
+    100010: WitchRig_Published:AimFollowEye
+    100012: WitchRig_Published:AimFollowOffEye
+    100014: WitchRig_Published:AimFollowOnEye
+    100016: WitchRig_Published:AimOffsetEye
+    100018: WitchRig_Published:AimOffsetEye_L
+    100020: WitchRig_Published:AimOffsetEye_R
+    100022: WitchRig_Published:AimSystem
+    100024: WitchRig_Published:AlignIKToAnkle_L
+    100026: WitchRig_Published:AlignIKToAnkle_R
+    100028: WitchRig_Published:AlignIKToChest_M
+    100030: WitchRig_Published:AlignIKToHip_L
+    100032: WitchRig_Published:AlignIKToHip_R
+    100034: WitchRig_Published:AlignIKToRoot_M
+    100036: WitchRig_Published:AlignIKToShoulder_L
+    100038: WitchRig_Published:AlignIKToShoulder_R
+    100040: WitchRig_Published:AlignIKToToes_L
+    100042: WitchRig_Published:AlignIKToToes_R
+    100044: WitchRig_Published:AlignIKToWrist_L
+    100046: WitchRig_Published:AlignIKToWrist_R
+    100048: WitchRig_Published:Ankle
+    100050: WitchRig_Published:Ankle_L
+    100052: WitchRig_Published:Ankle_R
+    100054: WitchRig_Published:BendSystem
+    100056: WitchRig_Published:Chest
+    100058: WitchRig_Published:Chest_M
+    100060: WitchRig_Published:ConstraintSystem
+    100062: WitchRig_Published:DeformationSystem
+    100064: WitchRig_Published:DrivingSystem
+    100066: WitchRig_Published:DynamicSystem
+    100068: WitchRig_Published:Elbow
+    100070: WitchRig_Published:Elbow_L
+    100072: WitchRig_Published:Elbow_R
+    100074: WitchRig_Published:Eye
+    100076: WitchRig_Published:Eye_L
+    100078: WitchRig_Published:Eye_R
+    100080: WitchRig_Published:EyeEnd
+    100082: WitchRig_Published:EyeEnd_L
+    100084: WitchRig_Published:EyeEnd_R
+    100086: WitchRig_Published:Fingers_L
+    100088: WitchRig_Published:Fingers_R
+    100090: WitchRig_Published:FitSkeleton
+    100092: WitchRig_Published:FKAimEye_L
+    100094: WitchRig_Published:FKAimEye_R
+    100096: WitchRig_Published:FKAnkle_L
+    100098: WitchRig_Published:FKAnkle_R
+    100100: WitchRig_Published:FKChest_M
+    100102: WitchRig_Published:FKElbow_L
+    100104: WitchRig_Published:FKElbow_R
+    100106: WitchRig_Published:FKExtraAnkle_L
+    100108: WitchRig_Published:FKExtraAnkle_R
+    100110: WitchRig_Published:FKExtraChest_M
+    100112: WitchRig_Published:FKExtraElbow_L
+    100114: WitchRig_Published:FKExtraElbow_R
+    100116: WitchRig_Published:FKExtraEye_L
+    100118: WitchRig_Published:FKExtraEye_R
+    100120: WitchRig_Published:FKExtraHead_M
+    100122: WitchRig_Published:FKExtraHip_L
+    100124: WitchRig_Published:FKExtraHip_R
+    100126: WitchRig_Published:FKExtraJaw_M
+    100128: WitchRig_Published:FKExtraKnee_L
+    100130: WitchRig_Published:FKExtraKnee_R
+    100132: WitchRig_Published:FKExtraMiddleFinger1_L
+    100134: WitchRig_Published:FKExtraMiddleFinger1_R
+    100136: WitchRig_Published:FKExtraNeck_M
+    100138: WitchRig_Published:FKExtraRoot_M
+    100140: WitchRig_Published:FKExtraScapula_L
+    100142: WitchRig_Published:FKExtraScapula_R
+    100144: WitchRig_Published:FKExtraShoulder_L
+    100146: WitchRig_Published:FKExtraShoulder_R
+    100148: WitchRig_Published:FKExtraSpine1_M
+    100150: WitchRig_Published:FKExtraThumbFinger1_L
+    100152: WitchRig_Published:FKExtraThumbFinger1_R
+    100154: WitchRig_Published:FKExtraToes_L
+    100156: WitchRig_Published:FKExtraToes_R
+    100158: WitchRig_Published:FKExtraWrist_L
+    100160: WitchRig_Published:FKExtraWrist_R
+    100162: WitchRig_Published:FKEye_L
+    100164: WitchRig_Published:FKEye_R
+    100166: WitchRig_Published:FKGlobalHead_M
+    100168: WitchRig_Published:FKGlobalStaticHead_M
+    100170: WitchRig_Published:FKHead_M
+    100172: WitchRig_Published:FKHip_L
+    100174: WitchRig_Published:FKHip_R
+    100176: WitchRig_Published:FKIKArm_L
+    100178: WitchRig_Published:FKIKArm_R
+    100180: WitchRig_Published:FKIKLeg_L
+    100182: WitchRig_Published:FKIKLeg_R
+    100184: WitchRig_Published:FKIKMixElbow_L
+    100186: WitchRig_Published:FKIKMixElbow_R
+    100188: WitchRig_Published:FKIKParentConstraintArm_L
+    100190: WitchRig_Published:FKIKParentConstraintArm_R
+    100192: WitchRig_Published:FKIKParentConstraintLeg_L
+    100194: WitchRig_Published:FKIKParentConstraintLeg_R
+    100196: WitchRig_Published:FKIKParentConstraintSpine_M
+    100198: WitchRig_Published:FKIKSpine_M
+    100200: WitchRig_Published:FKIKSystem
+    100202: WitchRig_Published:FKJaw_M
+    100204: WitchRig_Published:FKKnee_L
+    100206: WitchRig_Published:FKKnee_R
+    100208: WitchRig_Published:FKMiddleFinger1_L
+    100210: WitchRig_Published:FKMiddleFinger1_R
+    100212: WitchRig_Published:FKNeck_M
+    100214: WitchRig_Published:FKOffsetAnkle_L
+    100216: WitchRig_Published:FKOffsetAnkle_R
+    100218: WitchRig_Published:FKOffsetChest_M
+    100220: WitchRig_Published:FKOffsetElbow_L
+    100222: WitchRig_Published:FKOffsetElbow_R
+    100224: WitchRig_Published:FKOffsetEye_L
+    100226: WitchRig_Published:FKOffsetEye_R
+    100228: WitchRig_Published:FKOffsetHead_M
+    100230: WitchRig_Published:FKOffsetHip_L
+    100232: WitchRig_Published:FKOffsetHip_R
+    100234: WitchRig_Published:FKOffsetJaw_M
+    100236: WitchRig_Published:FKOffsetKnee_L
+    100238: WitchRig_Published:FKOffsetKnee_R
+    100240: WitchRig_Published:FKOffsetMiddleFinger1_L
+    100242: WitchRig_Published:FKOffsetMiddleFinger1_R
+    100244: WitchRig_Published:FKOffsetNeck_M
+    100246: WitchRig_Published:FKOffsetRoot_M
+    100248: WitchRig_Published:FKOffsetScapula_L
+    100250: WitchRig_Published:FKOffsetScapula_R
+    100252: WitchRig_Published:FKOffsetShoulder_L
+    100254: WitchRig_Published:FKOffsetShoulder_R
+    100256: WitchRig_Published:FKOffsetSpine1_M
+    100258: WitchRig_Published:FKOffsetThumbFinger1_L
+    100260: WitchRig_Published:FKOffsetThumbFinger1_R
+    100262: WitchRig_Published:FKOffsetToes_L
+    100264: WitchRig_Published:FKOffsetToes_R
+    100266: WitchRig_Published:FKOffsetWrist_L
+    100268: WitchRig_Published:FKOffsetWrist_R
+    100270: WitchRig_Published:FKParentConstraintToChest_M
+    100272: WitchRig_Published:FKParentConstraintToRoot_M
+    100274: WitchRig_Published:FKParentConstraintToScapula_L
+    100276: WitchRig_Published:FKParentConstraintToScapula_R
+    100278: WitchRig_Published:FKParentConstraintToWrist_L
+    100280: WitchRig_Published:FKParentConstraintToWrist_R
+    100282: WitchRig_Published:FKRoot_M
+    100284: WitchRig_Published:FKScapula_L
+    100286: WitchRig_Published:FKScapula_R
+    100288: WitchRig_Published:FKShoulder_L
+    100290: WitchRig_Published:FKShoulder_R
+    100292: WitchRig_Published:FKSpine1_M
+    100294: WitchRig_Published:FKSystem
+    100296: WitchRig_Published:FKThumbFinger1_L
+    100298: WitchRig_Published:FKThumbFinger1_R
+    100300: WitchRig_Published:FKToes_L
+    100302: WitchRig_Published:FKToes_R
+    100304: WitchRig_Published:FKWrist_L
+    100306: WitchRig_Published:FKWrist_R
+    100308: WitchRig_Published:FKXAnkle_L
+    100310: WitchRig_Published:FKXAnkle_R
+    100312: WitchRig_Published:FKXChest_M
+    100314: WitchRig_Published:FKXElbow_L
+    100316: WitchRig_Published:FKXElbow_R
+    100318: WitchRig_Published:FKXEye_L
+    100320: WitchRig_Published:FKXEye_R
+    100322: WitchRig_Published:FKXHead_M
+    100324: WitchRig_Published:FKXHip_L
+    100326: WitchRig_Published:FKXHip_R
+    100328: WitchRig_Published:FKXJaw_M
+    100330: WitchRig_Published:FKXKnee_L
+    100332: WitchRig_Published:FKXKnee_R
+    100334: WitchRig_Published:FKXMiddleFinger1_L
+    100336: WitchRig_Published:FKXMiddleFinger1_R
+    100338: WitchRig_Published:FKXNeck_M
+    100340: WitchRig_Published:FKXRoot_M
+    100342: WitchRig_Published:FKXScapula_L
+    100344: WitchRig_Published:FKXScapula_R
+    100346: WitchRig_Published:FKXShoulder_L
+    100348: WitchRig_Published:FKXShoulder_R
+    100350: WitchRig_Published:FKXSpine1_M
+    100352: WitchRig_Published:FKXThumbFinger1_L
+    100354: WitchRig_Published:FKXThumbFinger1_R
+    100356: WitchRig_Published:FKXToes_L
+    100358: WitchRig_Published:FKXToes_R
+    100360: WitchRig_Published:FKXWrist_L
+    100362: WitchRig_Published:FKXWrist_R
+    100364: WitchRig_Published:Geometry
+    100366: WitchRig_Published:GlobalHead_M
+    100368: WitchRig_Published:GlobalOffsetHead_M
+    100370: WitchRig_Published:GlobalSystem
+    100372: WitchRig_Published:Group
+    100374: WitchRig_Published:Head
+    100376: WitchRig_Published:Head_M
+    100378: WitchRig_Published:HeadEnd
+    100380: WitchRig_Published:HeadEnd_M
+    100382: WitchRig_Published:Heel
+    100384: WitchRig_Published:Hip
+    100386: WitchRig_Published:Hip_L
+    100388: WitchRig_Published:Hip_R
+    100390: WitchRig_Published:HipSwinger_M
+    100392: WitchRig_Published:HipSwingerOffset_M
+    100394: WitchRig_Published:HipSwingerStabilizer
+    100396: WitchRig_Published:HipSwingerStabilizerTarget
+    100398: WitchRig_Published:HipSwingReverse
+    100400: WitchRig_Published:HipSwingReverseRoot
+    100402: WitchRig_Published:IKAcChest_M
+    100404: WitchRig_Published:IKAcChestFollowOffset_M
+    100406: WitchRig_Published:IKAcPociXformChest_M
+    100408: WitchRig_Published:IKAcPociXformRoot_M
+    100410: WitchRig_Published:IKAcPociXformSpine1_M
+    100412: WitchRig_Published:IKAcRoot_M
+    100414: WitchRig_Published:IKAcRootFollowOffset_M
+    100416: WitchRig_Published:IKAcSpine1_M
+    100418: WitchRig_Published:IKAcSpine1FollowOffset_M
+    100420: WitchRig_Published:IKAcSpineOffset2_M
+    100422: WitchRig_Published:IKAcSpineOffset3_M
+    100424: WitchRig_Published:IKAcSpineOffset_M
+    100426: WitchRig_Published:IKAnkleHandle_L
+    100428: WitchRig_Published:IKAnkleHandle_R
+    100430: WitchRig_Published:IKArm_L
+    100432: WitchRig_Published:IKArm_R
+    100434: WitchRig_Published:IKArmHandle_L
+    100436: WitchRig_Published:IKArmHandle_R
+    100438: WitchRig_Published:IKCurve
+    100440: WitchRig_Published:IKcvSpine1_M
+    100442: WitchRig_Published:IKdistanceArm_L
+    100444: WitchRig_Published:IKdistanceArm_R
+    100446: WitchRig_Published:IKdistanceLeg_L
+    100448: WitchRig_Published:IKdistanceLeg_R
+    100450: WitchRig_Published:IKExtraArm_L
+    100452: WitchRig_Published:IKExtraArm_R
+    100454: WitchRig_Published:IKExtracvSpine1_M
+    100456: WitchRig_Published:IKExtraLeg_L
+    100458: WitchRig_Published:IKExtraLeg_R
+    100460: WitchRig_Published:IKExtraSpine1_M
+    100462: WitchRig_Published:IKExtraSpine2_M
+    100464: WitchRig_Published:IKExtraSpine3_M
+    100466: WitchRig_Published:IKExtraToes_L
+    100468: WitchRig_Published:IKExtraToes_R
+    100470: WitchRig_Published:IKfake0Spine_M
+    100472: WitchRig_Published:IKfake1Spine_M
+    100474: WitchRig_Published:IKFixedOrientRoot_M
+    100476: WitchRig_Published:IKFKAlignedArm_L
+    100478: WitchRig_Published:IKFKAlignedArm_R
+    100480: WitchRig_Published:IKFKAlignedLeg_L
+    100482: WitchRig_Published:IKFKAlignedLeg_R
+    100484: WitchRig_Published:IKFKAlignedOffsetArm_L
+    100486: WitchRig_Published:IKFKAlignedOffsetArm_R
+    100488: WitchRig_Published:IKFKAlignedOffsetLeg_L
+    100490: WitchRig_Published:IKFKAlignedOffsetLeg_R
+    100492: WitchRig_Published:IKFollow
+    100494: WitchRig_Published:IKHandle
+    100496: WitchRig_Published:IKJoints
+    100498: WitchRig_Published:IKLeg_L
+    100500: WitchRig_Published:IKLeg_R
+    100502: WitchRig_Published:IKLegFootRoll_L
+    100504: WitchRig_Published:IKLegFootRoll_R
+    100506: WitchRig_Published:IKLegHandle_L
+    100508: WitchRig_Published:IKLegHandle_R
+    100510: WitchRig_Published:IKMessure
+    100512: WitchRig_Published:IKmessureConstrainToArm_L
+    100514: WitchRig_Published:IKmessureConstrainToArm_R
+    100516: WitchRig_Published:IKmessureConstrainToLeg_L
+    100518: WitchRig_Published:IKmessureConstrainToLeg_R
+    100520: WitchRig_Published:IKMessureFromHip_L
+    100522: WitchRig_Published:IKMessureFromHip_R
+    100524: WitchRig_Published:IKMessureFromShoulder_L
+    100526: WitchRig_Published:IKMessureFromShoulder_R
+    100528: WitchRig_Published:IKmessureLoc1Arm_L
+    100530: WitchRig_Published:IKmessureLoc1Arm_R
+    100532: WitchRig_Published:IKmessureLoc1Leg_L
+    100534: WitchRig_Published:IKmessureLoc1Leg_R
+    100536: WitchRig_Published:IKmessureLoc2Arm_L
+    100538: WitchRig_Published:IKmessureLoc2Arm_R
+    100540: WitchRig_Published:IKmessureLoc2Leg_L
+    100542: WitchRig_Published:IKmessureLoc2Leg_R
+    100544: WitchRig_Published:IKOffsetArm_L
+    100546: WitchRig_Published:IKOffsetArm_LFollow
+    100548: WitchRig_Published:IKOffsetArm_LFollowNoScale
+    100550: WitchRig_Published:IKOffsetArm_LStatic
+    100552: WitchRig_Published:IKOffsetArm_R
+    100554: WitchRig_Published:IKOffsetArm_RFollow
+    100556: WitchRig_Published:IKOffsetArm_RFollowNoScale
+    100558: WitchRig_Published:IKOffsetArm_RStatic
+    100560: WitchRig_Published:IKOffsetConstrainedSpine1_M
+    100562: WitchRig_Published:IKOffsetcvSpine1_M
+    100564: WitchRig_Published:IKOffsetLeg_L
+    100566: WitchRig_Published:IKOffsetLeg_R
+    100568: WitchRig_Published:IKOffsetSpine1_M
+    100570: WitchRig_Published:IKOffsetSpine2_M
+    100572: WitchRig_Published:IKOffsetSpine2_MFollow
+    100574: WitchRig_Published:IKOffsetSpine2_MFollowFollow
+    100576: WitchRig_Published:IKOffsetSpine2_MFollowFollowNoScale
+    100578: WitchRig_Published:IKOffsetSpine2_MFollowNoScale
+    100580: WitchRig_Published:IKOffsetSpine2_MFollowStatic
+    100582: WitchRig_Published:IKOffsetSpine2_MStatic
+    100584: WitchRig_Published:IKOffsetSpine2_MStaticFollow
+    100586: WitchRig_Published:IKOffsetSpine2_MStaticFollowNoScale
+    100588: WitchRig_Published:IKOffsetSpine2_MStaticStatic
+    100590: WitchRig_Published:IKOffsetSpine3_M
+    100592: WitchRig_Published:IKOffsetSpine3_MFollow
+    100594: WitchRig_Published:IKOffsetSpine3_MFollowNoScale
+    100596: WitchRig_Published:IKOffsetSpine3_MStatic
+    100598: WitchRig_Published:IKOffsetToes_L
+    100600: WitchRig_Published:IKOffsetToes_R
+    100602: WitchRig_Published:IKParentConstraintHip_L
+    100604: WitchRig_Published:IKParentConstraintHip_R
+    100606: WitchRig_Published:IKParentConstraintRoot_M
+    100608: WitchRig_Published:IKParentConstraintShoulder_L
+    100610: WitchRig_Published:IKParentConstraintShoulder_R
+    100612: WitchRig_Published:IKRootConstraint
+    100614: WitchRig_Published:IKScalerChest_M
+    100616: WitchRig_Published:IKScalerRoot_M
+    100618: WitchRig_Published:IKScalerSpine1_M
+    100620: WitchRig_Published:IKSpChest_M
+    100622: WitchRig_Published:IKSpChestFollowOffset_M
+    100624: WitchRig_Published:IKSpine1_M
+    100626: WitchRig_Published:IKSpine1LocalOrient1_M
+    100628: WitchRig_Published:IKSpine1LocalOrient2_M
+    100630: WitchRig_Published:IKSpine1LocalOrient3_M
+    100632: WitchRig_Published:IKSpine2_M
+    100634: WitchRig_Published:IKSpine2LocalOrient1_M
+    100636: WitchRig_Published:IKSpine2LocalOrient2_M
+    100638: WitchRig_Published:IKSpine2LocalOrient3_M
+    100640: WitchRig_Published:IKSpine3_M
+    100642: WitchRig_Published:IKSpine3LocalOrient1_M
+    100644: WitchRig_Published:IKSpine3LocalOrient2_M
+    100646: WitchRig_Published:IKSpineCurve_M
+    100648: WitchRig_Published:IKSpineHandle_M
+    100650: WitchRig_Published:IKSpineLocator0_M
+    100652: WitchRig_Published:IKSpineLocator1_M
+    100654: WitchRig_Published:IKSpineLocator2_M
+    100656: WitchRig_Published:IKSpRoot_M
+    100658: WitchRig_Published:IKSpRootFollowOffset_M
+    100660: WitchRig_Published:IKSpSpine1_M
+    100662: WitchRig_Published:IKSpSpine1FollowOffset_M
+    100664: WitchRig_Published:IKSpSpineOffset_M
+    100666: WitchRig_Published:IKStatic
+    100668: WitchRig_Published:IKSystem
+    100670: WitchRig_Published:IKToes_L
+    100672: WitchRig_Published:IKToes_R
+    100674: WitchRig_Published:IKToesHandle_L
+    100676: WitchRig_Published:IKToesHandle_R
+    100678: WitchRig_Published:IKX2Ankle_L
+    100680: WitchRig_Published:IKX2Ankle_R
+    100682: WitchRig_Published:IKX2Chest_M
+    100684: WitchRig_Published:IKX2Elbow_L
+    100686: WitchRig_Published:IKX2Elbow_R
+    100688: WitchRig_Published:IKX2Hip_L
+    100690: WitchRig_Published:IKX2Hip_R
+    100692: WitchRig_Published:IKX2Knee_L
+    100694: WitchRig_Published:IKX2Knee_R
+    100696: WitchRig_Published:IKX2Root_M
+    100698: WitchRig_Published:IKX2Shoulder_L
+    100700: WitchRig_Published:IKX2Shoulder_R
+    100702: WitchRig_Published:IKX2Spine1_M
+    100704: WitchRig_Published:IKX2Toes_L
+    100706: WitchRig_Published:IKX2Toes_R
+    100708: WitchRig_Published:IKX2ToesEnd_L
+    100710: WitchRig_Published:IKX2ToesEnd_R
+    100712: WitchRig_Published:IKX2Wrist_L
+    100714: WitchRig_Published:IKX2Wrist_R
+    100716: WitchRig_Published:IKXAnkle_L
+    100718: WitchRig_Published:IKXAnkle_R
+    100720: WitchRig_Published:IKXChest_M
+    100722: WitchRig_Published:IKXElbow_L
+    100724: WitchRig_Published:IKXElbow_R
+    100726: WitchRig_Published:IKXHip_L
+    100728: WitchRig_Published:IKXHip_R
+    100730: WitchRig_Published:IKXKnee_L
+    100732: WitchRig_Published:IKXKnee_R
+    100734: WitchRig_Published:IKXOffsetHip_L
+    100736: WitchRig_Published:IKXOffsetHip_R
+    100738: WitchRig_Published:IKXOffsetRoot_M
+    100740: WitchRig_Published:IKXOffsetShoulder_L
+    100742: WitchRig_Published:IKXOffsetShoulder_R
+    100744: WitchRig_Published:IKXRoot_M
+    100746: WitchRig_Published:IKXShoulder_L
+    100748: WitchRig_Published:IKXShoulder_R
+    100750: WitchRig_Published:IKXSpine1_M
+    100752: WitchRig_Published:IKXToes_L
+    100754: WitchRig_Published:IKXToes_R
+    100756: WitchRig_Published:IKXToesEnd_L
+    100758: WitchRig_Published:IKXToesEnd_R
+    100760: WitchRig_Published:IKXWrist_L
+    100762: WitchRig_Published:IKXWrist_R
+    100764: WitchRig_Published:Jaw
+    100766: WitchRig_Published:Jaw_M
+    100768: WitchRig_Published:JawEnd
+    100770: WitchRig_Published:JawEnd_M
+    100772: WitchRig_Published:Knee
+    100774: WitchRig_Published:Knee_L
+    100776: WitchRig_Published:Knee_R
+    100778: WitchRig_Published:LegLockConstrained
+    100780: WitchRig_Published:Main
+    100782: WitchRig_Published:MiddleFinger1
+    100784: WitchRig_Published:MiddleFinger1_L
+    100786: WitchRig_Published:MiddleFinger1_R
+    100788: WitchRig_Published:MiddleFinger2
+    100790: WitchRig_Published:MiddleFinger2_L
+    100792: WitchRig_Published:MiddleFinger2_R
+    100794: WitchRig_Published:model:geo
+    100796: WitchRig_Published:model:NEWWIZ
+    100798: WitchRig_Published:MotionSystem
+    100800: WitchRig_Published:Neck
+    100802: WitchRig_Published:Neck_M
+    100804: WitchRig_Published:PoleAimLeg_L
+    100806: WitchRig_Published:PoleAimLeg_R
+    100808: WitchRig_Published:PoleAnnotationArm_L
+    100810: WitchRig_Published:PoleAnnotationArm_R
+    100812: WitchRig_Published:PoleAnnotationLeg_L
+    100814: WitchRig_Published:PoleAnnotationLeg_R
+    100816: WitchRig_Published:PoleArm_L
+    100818: WitchRig_Published:PoleArm_R
+    100820: WitchRig_Published:PoleExtraArm_L
+    100822: WitchRig_Published:PoleExtraArm_R
+    100824: WitchRig_Published:PoleExtraLeg_L
+    100826: WitchRig_Published:PoleExtraLeg_R
+    100828: WitchRig_Published:PoleLeg_L
+    100830: WitchRig_Published:PoleLeg_R
+    100832: WitchRig_Published:PoleOffsetArm_L
+    100834: WitchRig_Published:PoleOffsetArm_LFollow
+    100836: WitchRig_Published:PoleOffsetArm_LFollowNoScale
+    100838: WitchRig_Published:PoleOffsetArm_LStatic
+    100840: WitchRig_Published:PoleOffsetArm_R
+    100842: WitchRig_Published:PoleOffsetArm_RFollow
+    100844: WitchRig_Published:PoleOffsetArm_RFollowNoScale
+    100846: WitchRig_Published:PoleOffsetArm_RStatic
+    100848: WitchRig_Published:PoleOffsetLeg_L
+    100850: WitchRig_Published:PoleOffsetLeg_LFollow
+    100852: WitchRig_Published:PoleOffsetLeg_LFollowNoScale
+    100854: WitchRig_Published:PoleOffsetLeg_LStatic
+    100856: WitchRig_Published:PoleOffsetLeg_R
+    100858: WitchRig_Published:PoleOffsetLeg_RFollow
+    100860: WitchRig_Published:PoleOffsetLeg_RFollowNoScale
+    100862: WitchRig_Published:PoleOffsetLeg_RStatic
+    100864: WitchRig_Published:RollExtraHeel_L
+    100866: WitchRig_Published:RollExtraHeel_R
+    100868: WitchRig_Published:RollExtraToes_L
+    100870: WitchRig_Published:RollExtraToes_R
+    100872: WitchRig_Published:RollExtraToesEnd_L
+    100874: WitchRig_Published:RollExtraToesEnd_R
+    100876: WitchRig_Published:RollHeel_L
+    100878: WitchRig_Published:RollHeel_R
+    100880: WitchRig_Published:RollOffsetHeel_L
+    100882: WitchRig_Published:RollOffsetHeel_R
+    100884: WitchRig_Published:RollOffsetToes_L
+    100886: WitchRig_Published:RollOffsetToes_R
+    100888: WitchRig_Published:RollOffsetToesEnd_L
+    100890: WitchRig_Published:RollOffsetToesEnd_R
+    100892: WitchRig_Published:RollRollerHeel_L
+    100894: WitchRig_Published:RollRollerHeel_R
+    100896: WitchRig_Published:RollRollerToes_L
+    100898: WitchRig_Published:RollRollerToes_R
+    100900: WitchRig_Published:RollRollerToesEnd_L
+    100902: WitchRig_Published:RollRollerToesEnd_R
+    100904: WitchRig_Published:RollToes_L
+    100906: WitchRig_Published:RollToes_R
+    100908: WitchRig_Published:RollToesEnd_L
+    100910: WitchRig_Published:RollToesEnd_R
+    100912: WitchRig_Published:Root
+    100914: WitchRig_Published:Root_M
+    100916: WitchRig_Published:RootExtraX_M
+    100918: WitchRig_Published:RootOffsetX_M
+    100920: WitchRig_Published:RootSpineAligned
+    100922: WitchRig_Published:RootSystem
+    100924: WitchRig_Published:RootX_M
+    100926: WitchRig_Published:RootZeroXform
+    100928: WitchRig_Published:Scapula
+    100930: WitchRig_Published:Scapula_L
+    100932: WitchRig_Published:Scapula_R
+    100934: WitchRig_Published:SDK1FKMiddleFinger1_L
+    100936: WitchRig_Published:SDK1FKMiddleFinger1_R
+    100938: WitchRig_Published:Shoulder
+    100940: WitchRig_Published:Shoulder_L
+    100942: WitchRig_Published:Shoulder_R
+    100944: WitchRig_Published:ShoulderPart1_L
+    100946: WitchRig_Published:ShoulderPart1_R
+    100948: WitchRig_Published:ShoulderPart2_L
+    100950: WitchRig_Published:ShoulderPart2_R
+    100952: WitchRig_Published:Spine1
+    100954: WitchRig_Published:Spine1_M
+    100956: WitchRig_Published:ThumbFinger1
+    100958: WitchRig_Published:ThumbFinger1_L
+    100960: WitchRig_Published:ThumbFinger1_R
+    100962: WitchRig_Published:ThumbFinger2
+    100964: WitchRig_Published:ThumbFinger2_L
+    100966: WitchRig_Published:ThumbFinger2_R
+    100968: WitchRig_Published:Toes
+    100970: WitchRig_Published:Toes_L
+    100972: WitchRig_Published:Toes_R
+    100974: WitchRig_Published:ToesEnd
+    100976: WitchRig_Published:ToesEnd_L
+    100978: WitchRig_Published:ToesEnd_R
+    100980: WitchRig_Published:TwistBalancerChest_M
+    100982: WitchRig_Published:TwistBalancerElbow_L
+    100984: WitchRig_Published:TwistBalancerElbow_R
+    100986: WitchRig_Published:TwistBalancerShoulder_L
+    100988: WitchRig_Published:TwistBalancerShoulder_R
+    100990: WitchRig_Published:TwistBalancerSpine2_M
+    100992: WitchRig_Published:TwisterElbow0_L
+    100994: WitchRig_Published:TwisterElbow0_R
+    100996: WitchRig_Published:TwisterElbow1_L
+    100998: WitchRig_Published:TwisterElbow1_R
+    101000: WitchRig_Published:TwisterElbow2_L
+    101002: WitchRig_Published:TwisterElbow2_R
+    101004: WitchRig_Published:TwisterShoulder0_L
+    101006: WitchRig_Published:TwisterShoulder0_R
+    101008: WitchRig_Published:TwisterShoulder1_L
+    101010: WitchRig_Published:TwisterShoulder1_R
+    101012: WitchRig_Published:TwisterShoulder2_L
+    101014: WitchRig_Published:TwisterShoulder2_R
+    101016: WitchRig_Published:TwistFollowChest_M
+    101018: WitchRig_Published:TwistFollowElbow_L
+    101020: WitchRig_Published:TwistFollowElbow_R
+    101022: WitchRig_Published:TwistFollowOffsetChest_M
+    101024: WitchRig_Published:TwistFollowOffsetElbow_L
+    101026: WitchRig_Published:TwistFollowOffsetElbow_R
+    101028: WitchRig_Published:TwistFollowOffsetShoulder_L
+    101030: WitchRig_Published:TwistFollowOffsetShoulder_R
+    101032: WitchRig_Published:TwistFollowOffsetSpine2_M
+    101034: WitchRig_Published:TwistFollowParentChest_M
+    101036: WitchRig_Published:TwistFollowParentElbow_L
+    101038: WitchRig_Published:TwistFollowParentElbow_R
+    101040: WitchRig_Published:TwistFollowParentOffsetChest_M
+    101042: WitchRig_Published:TwistFollowParentOffsetElbow_L
+    101044: WitchRig_Published:TwistFollowParentOffsetElbow_R
+    101046: WitchRig_Published:TwistFollowParentOffsetShoulder_L
+    101048: WitchRig_Published:TwistFollowParentOffsetShoulder_R
+    101050: WitchRig_Published:TwistFollowParentOffsetSpine2_M
+    101052: WitchRig_Published:TwistFollowParentShoulder_L
+    101054: WitchRig_Published:TwistFollowParentShoulder_R
+    101056: WitchRig_Published:TwistFollowParentSpine2_M
+    101058: WitchRig_Published:TwistFollowShoulder_L
+    101060: WitchRig_Published:TwistFollowShoulder_R
+    101062: WitchRig_Published:TwistFollowSpine2_M
+    101064: WitchRig_Published:TwistSystem
+    101066: WitchRig_Published:UnTwistChest_M
+    101068: WitchRig_Published:UnTwistElbow_L
+    101070: WitchRig_Published:UnTwistElbow_R
+    101072: WitchRig_Published:UnTwistEndChest_M
+    101074: WitchRig_Published:UnTwistEndElbow_L
+    101076: WitchRig_Published:UnTwistEndElbow_R
+    101078: WitchRig_Published:UnTwistEndShoulder_L
+    101080: WitchRig_Published:UnTwistEndShoulder_R
+    101082: WitchRig_Published:UnTwistEndSpine2_M
+    101084: WitchRig_Published:UnTwistIKChest_M
+    101086: WitchRig_Published:UnTwistIKElbow_L
+    101088: WitchRig_Published:UnTwistIKElbow_R
+    101090: WitchRig_Published:UnTwistIKShoulder_L
+    101092: WitchRig_Published:UnTwistIKShoulder_R
+    101094: WitchRig_Published:UnTwistIKSpine2_M
+    101096: WitchRig_Published:UnTwistShoulder_L
+    101098: WitchRig_Published:UnTwistShoulder_R
+    101100: WitchRig_Published:UnTwistSpine2_M
+    101102: WitchRig_Published:Wrist
+    101104: WitchRig_Published:Wrist_L
+    101106: WitchRig_Published:Wrist_R
+    400000: //RootNode
+    400002: WitchRig_Published:AimEye
+    400004: WitchRig_Published:AimEye_L
+    400006: WitchRig_Published:AimEye_M
+    400008: WitchRig_Published:AimEye_R
+    400010: WitchRig_Published:AimFollowEye
+    400012: WitchRig_Published:AimFollowOffEye
+    400014: WitchRig_Published:AimFollowOnEye
+    400016: WitchRig_Published:AimOffsetEye
+    400018: WitchRig_Published:AimOffsetEye_L
+    400020: WitchRig_Published:AimOffsetEye_R
+    400022: WitchRig_Published:AimSystem
+    400024: WitchRig_Published:AlignIKToAnkle_L
+    400026: WitchRig_Published:AlignIKToAnkle_R
+    400028: WitchRig_Published:AlignIKToChest_M
+    400030: WitchRig_Published:AlignIKToHip_L
+    400032: WitchRig_Published:AlignIKToHip_R
+    400034: WitchRig_Published:AlignIKToRoot_M
+    400036: WitchRig_Published:AlignIKToShoulder_L
+    400038: WitchRig_Published:AlignIKToShoulder_R
+    400040: WitchRig_Published:AlignIKToToes_L
+    400042: WitchRig_Published:AlignIKToToes_R
+    400044: WitchRig_Published:AlignIKToWrist_L
+    400046: WitchRig_Published:AlignIKToWrist_R
+    400048: WitchRig_Published:Ankle
+    400050: WitchRig_Published:Ankle_L
+    400052: WitchRig_Published:Ankle_R
+    400054: WitchRig_Published:BendSystem
+    400056: WitchRig_Published:Chest
+    400058: WitchRig_Published:Chest_M
+    400060: WitchRig_Published:ConstraintSystem
+    400062: WitchRig_Published:DeformationSystem
+    400064: WitchRig_Published:DrivingSystem
+    400066: WitchRig_Published:DynamicSystem
+    400068: WitchRig_Published:Elbow
+    400070: WitchRig_Published:Elbow_L
+    400072: WitchRig_Published:Elbow_R
+    400074: WitchRig_Published:Eye
+    400076: WitchRig_Published:Eye_L
+    400078: WitchRig_Published:Eye_R
+    400080: WitchRig_Published:EyeEnd
+    400082: WitchRig_Published:EyeEnd_L
+    400084: WitchRig_Published:EyeEnd_R
+    400086: WitchRig_Published:Fingers_L
+    400088: WitchRig_Published:Fingers_R
+    400090: WitchRig_Published:FitSkeleton
+    400092: WitchRig_Published:FKAimEye_L
+    400094: WitchRig_Published:FKAimEye_R
+    400096: WitchRig_Published:FKAnkle_L
+    400098: WitchRig_Published:FKAnkle_R
+    400100: WitchRig_Published:FKChest_M
+    400102: WitchRig_Published:FKElbow_L
+    400104: WitchRig_Published:FKElbow_R
+    400106: WitchRig_Published:FKExtraAnkle_L
+    400108: WitchRig_Published:FKExtraAnkle_R
+    400110: WitchRig_Published:FKExtraChest_M
+    400112: WitchRig_Published:FKExtraElbow_L
+    400114: WitchRig_Published:FKExtraElbow_R
+    400116: WitchRig_Published:FKExtraEye_L
+    400118: WitchRig_Published:FKExtraEye_R
+    400120: WitchRig_Published:FKExtraHead_M
+    400122: WitchRig_Published:FKExtraHip_L
+    400124: WitchRig_Published:FKExtraHip_R
+    400126: WitchRig_Published:FKExtraJaw_M
+    400128: WitchRig_Published:FKExtraKnee_L
+    400130: WitchRig_Published:FKExtraKnee_R
+    400132: WitchRig_Published:FKExtraMiddleFinger1_L
+    400134: WitchRig_Published:FKExtraMiddleFinger1_R
+    400136: WitchRig_Published:FKExtraNeck_M
+    400138: WitchRig_Published:FKExtraRoot_M
+    400140: WitchRig_Published:FKExtraScapula_L
+    400142: WitchRig_Published:FKExtraScapula_R
+    400144: WitchRig_Published:FKExtraShoulder_L
+    400146: WitchRig_Published:FKExtraShoulder_R
+    400148: WitchRig_Published:FKExtraSpine1_M
+    400150: WitchRig_Published:FKExtraThumbFinger1_L
+    400152: WitchRig_Published:FKExtraThumbFinger1_R
+    400154: WitchRig_Published:FKExtraToes_L
+    400156: WitchRig_Published:FKExtraToes_R
+    400158: WitchRig_Published:FKExtraWrist_L
+    400160: WitchRig_Published:FKExtraWrist_R
+    400162: WitchRig_Published:FKEye_L
+    400164: WitchRig_Published:FKEye_R
+    400166: WitchRig_Published:FKGlobalHead_M
+    400168: WitchRig_Published:FKGlobalStaticHead_M
+    400170: WitchRig_Published:FKHead_M
+    400172: WitchRig_Published:FKHip_L
+    400174: WitchRig_Published:FKHip_R
+    400176: WitchRig_Published:FKIKArm_L
+    400178: WitchRig_Published:FKIKArm_R
+    400180: WitchRig_Published:FKIKLeg_L
+    400182: WitchRig_Published:FKIKLeg_R
+    400184: WitchRig_Published:FKIKMixElbow_L
+    400186: WitchRig_Published:FKIKMixElbow_R
+    400188: WitchRig_Published:FKIKParentConstraintArm_L
+    400190: WitchRig_Published:FKIKParentConstraintArm_R
+    400192: WitchRig_Published:FKIKParentConstraintLeg_L
+    400194: WitchRig_Published:FKIKParentConstraintLeg_R
+    400196: WitchRig_Published:FKIKParentConstraintSpine_M
+    400198: WitchRig_Published:FKIKSpine_M
+    400200: WitchRig_Published:FKIKSystem
+    400202: WitchRig_Published:FKJaw_M
+    400204: WitchRig_Published:FKKnee_L
+    400206: WitchRig_Published:FKKnee_R
+    400208: WitchRig_Published:FKMiddleFinger1_L
+    400210: WitchRig_Published:FKMiddleFinger1_R
+    400212: WitchRig_Published:FKNeck_M
+    400214: WitchRig_Published:FKOffsetAnkle_L
+    400216: WitchRig_Published:FKOffsetAnkle_R
+    400218: WitchRig_Published:FKOffsetChest_M
+    400220: WitchRig_Published:FKOffsetElbow_L
+    400222: WitchRig_Published:FKOffsetElbow_R
+    400224: WitchRig_Published:FKOffsetEye_L
+    400226: WitchRig_Published:FKOffsetEye_R
+    400228: WitchRig_Published:FKOffsetHead_M
+    400230: WitchRig_Published:FKOffsetHip_L
+    400232: WitchRig_Published:FKOffsetHip_R
+    400234: WitchRig_Published:FKOffsetJaw_M
+    400236: WitchRig_Published:FKOffsetKnee_L
+    400238: WitchRig_Published:FKOffsetKnee_R
+    400240: WitchRig_Published:FKOffsetMiddleFinger1_L
+    400242: WitchRig_Published:FKOffsetMiddleFinger1_R
+    400244: WitchRig_Published:FKOffsetNeck_M
+    400246: WitchRig_Published:FKOffsetRoot_M
+    400248: WitchRig_Published:FKOffsetScapula_L
+    400250: WitchRig_Published:FKOffsetScapula_R
+    400252: WitchRig_Published:FKOffsetShoulder_L
+    400254: WitchRig_Published:FKOffsetShoulder_R
+    400256: WitchRig_Published:FKOffsetSpine1_M
+    400258: WitchRig_Published:FKOffsetThumbFinger1_L
+    400260: WitchRig_Published:FKOffsetThumbFinger1_R
+    400262: WitchRig_Published:FKOffsetToes_L
+    400264: WitchRig_Published:FKOffsetToes_R
+    400266: WitchRig_Published:FKOffsetWrist_L
+    400268: WitchRig_Published:FKOffsetWrist_R
+    400270: WitchRig_Published:FKParentConstraintToChest_M
+    400272: WitchRig_Published:FKParentConstraintToRoot_M
+    400274: WitchRig_Published:FKParentConstraintToScapula_L
+    400276: WitchRig_Published:FKParentConstraintToScapula_R
+    400278: WitchRig_Published:FKParentConstraintToWrist_L
+    400280: WitchRig_Published:FKParentConstraintToWrist_R
+    400282: WitchRig_Published:FKRoot_M
+    400284: WitchRig_Published:FKScapula_L
+    400286: WitchRig_Published:FKScapula_R
+    400288: WitchRig_Published:FKShoulder_L
+    400290: WitchRig_Published:FKShoulder_R
+    400292: WitchRig_Published:FKSpine1_M
+    400294: WitchRig_Published:FKSystem
+    400296: WitchRig_Published:FKThumbFinger1_L
+    400298: WitchRig_Published:FKThumbFinger1_R
+    400300: WitchRig_Published:FKToes_L
+    400302: WitchRig_Published:FKToes_R
+    400304: WitchRig_Published:FKWrist_L
+    400306: WitchRig_Published:FKWrist_R
+    400308: WitchRig_Published:FKXAnkle_L
+    400310: WitchRig_Published:FKXAnkle_R
+    400312: WitchRig_Published:FKXChest_M
+    400314: WitchRig_Published:FKXElbow_L
+    400316: WitchRig_Published:FKXElbow_R
+    400318: WitchRig_Published:FKXEye_L
+    400320: WitchRig_Published:FKXEye_R
+    400322: WitchRig_Published:FKXHead_M
+    400324: WitchRig_Published:FKXHip_L
+    400326: WitchRig_Published:FKXHip_R
+    400328: WitchRig_Published:FKXJaw_M
+    400330: WitchRig_Published:FKXKnee_L
+    400332: WitchRig_Published:FKXKnee_R
+    400334: WitchRig_Published:FKXMiddleFinger1_L
+    400336: WitchRig_Published:FKXMiddleFinger1_R
+    400338: WitchRig_Published:FKXNeck_M
+    400340: WitchRig_Published:FKXRoot_M
+    400342: WitchRig_Published:FKXScapula_L
+    400344: WitchRig_Published:FKXScapula_R
+    400346: WitchRig_Published:FKXShoulder_L
+    400348: WitchRig_Published:FKXShoulder_R
+    400350: WitchRig_Published:FKXSpine1_M
+    400352: WitchRig_Published:FKXThumbFinger1_L
+    400354: WitchRig_Published:FKXThumbFinger1_R
+    400356: WitchRig_Published:FKXToes_L
+    400358: WitchRig_Published:FKXToes_R
+    400360: WitchRig_Published:FKXWrist_L
+    400362: WitchRig_Published:FKXWrist_R
+    400364: WitchRig_Published:Geometry
+    400366: WitchRig_Published:GlobalHead_M
+    400368: WitchRig_Published:GlobalOffsetHead_M
+    400370: WitchRig_Published:GlobalSystem
+    400372: WitchRig_Published:Group
+    400374: WitchRig_Published:Head
+    400376: WitchRig_Published:Head_M
+    400378: WitchRig_Published:HeadEnd
+    400380: WitchRig_Published:HeadEnd_M
+    400382: WitchRig_Published:Heel
+    400384: WitchRig_Published:Hip
+    400386: WitchRig_Published:Hip_L
+    400388: WitchRig_Published:Hip_R
+    400390: WitchRig_Published:HipSwinger_M
+    400392: WitchRig_Published:HipSwingerOffset_M
+    400394: WitchRig_Published:HipSwingerStabilizer
+    400396: WitchRig_Published:HipSwingerStabilizerTarget
+    400398: WitchRig_Published:HipSwingReverse
+    400400: WitchRig_Published:HipSwingReverseRoot
+    400402: WitchRig_Published:IKAcChest_M
+    400404: WitchRig_Published:IKAcChestFollowOffset_M
+    400406: WitchRig_Published:IKAcPociXformChest_M
+    400408: WitchRig_Published:IKAcPociXformRoot_M
+    400410: WitchRig_Published:IKAcPociXformSpine1_M
+    400412: WitchRig_Published:IKAcRoot_M
+    400414: WitchRig_Published:IKAcRootFollowOffset_M
+    400416: WitchRig_Published:IKAcSpine1_M
+    400418: WitchRig_Published:IKAcSpine1FollowOffset_M
+    400420: WitchRig_Published:IKAcSpineOffset2_M
+    400422: WitchRig_Published:IKAcSpineOffset3_M
+    400424: WitchRig_Published:IKAcSpineOffset_M
+    400426: WitchRig_Published:IKAnkleHandle_L
+    400428: WitchRig_Published:IKAnkleHandle_R
+    400430: WitchRig_Published:IKArm_L
+    400432: WitchRig_Published:IKArm_R
+    400434: WitchRig_Published:IKArmHandle_L
+    400436: WitchRig_Published:IKArmHandle_R
+    400438: WitchRig_Published:IKCurve
+    400440: WitchRig_Published:IKcvSpine1_M
+    400442: WitchRig_Published:IKdistanceArm_L
+    400444: WitchRig_Published:IKdistanceArm_R
+    400446: WitchRig_Published:IKdistanceLeg_L
+    400448: WitchRig_Published:IKdistanceLeg_R
+    400450: WitchRig_Published:IKExtraArm_L
+    400452: WitchRig_Published:IKExtraArm_R
+    400454: WitchRig_Published:IKExtracvSpine1_M
+    400456: WitchRig_Published:IKExtraLeg_L
+    400458: WitchRig_Published:IKExtraLeg_R
+    400460: WitchRig_Published:IKExtraSpine1_M
+    400462: WitchRig_Published:IKExtraSpine2_M
+    400464: WitchRig_Published:IKExtraSpine3_M
+    400466: WitchRig_Published:IKExtraToes_L
+    400468: WitchRig_Published:IKExtraToes_R
+    400470: WitchRig_Published:IKfake0Spine_M
+    400472: WitchRig_Published:IKfake1Spine_M
+    400474: WitchRig_Published:IKFixedOrientRoot_M
+    400476: WitchRig_Published:IKFKAlignedArm_L
+    400478: WitchRig_Published:IKFKAlignedArm_R
+    400480: WitchRig_Published:IKFKAlignedLeg_L
+    400482: WitchRig_Published:IKFKAlignedLeg_R
+    400484: WitchRig_Published:IKFKAlignedOffsetArm_L
+    400486: WitchRig_Published:IKFKAlignedOffsetArm_R
+    400488: WitchRig_Published:IKFKAlignedOffsetLeg_L
+    400490: WitchRig_Published:IKFKAlignedOffsetLeg_R
+    400492: WitchRig_Published:IKFollow
+    400494: WitchRig_Published:IKHandle
+    400496: WitchRig_Published:IKJoints
+    400498: WitchRig_Published:IKLeg_L
+    400500: WitchRig_Published:IKLeg_R
+    400502: WitchRig_Published:IKLegFootRoll_L
+    400504: WitchRig_Published:IKLegFootRoll_R
+    400506: WitchRig_Published:IKLegHandle_L
+    400508: WitchRig_Published:IKLegHandle_R
+    400510: WitchRig_Published:IKMessure
+    400512: WitchRig_Published:IKmessureConstrainToArm_L
+    400514: WitchRig_Published:IKmessureConstrainToArm_R
+    400516: WitchRig_Published:IKmessureConstrainToLeg_L
+    400518: WitchRig_Published:IKmessureConstrainToLeg_R
+    400520: WitchRig_Published:IKMessureFromHip_L
+    400522: WitchRig_Published:IKMessureFromHip_R
+    400524: WitchRig_Published:IKMessureFromShoulder_L
+    400526: WitchRig_Published:IKMessureFromShoulder_R
+    400528: WitchRig_Published:IKmessureLoc1Arm_L
+    400530: WitchRig_Published:IKmessureLoc1Arm_R
+    400532: WitchRig_Published:IKmessureLoc1Leg_L
+    400534: WitchRig_Published:IKmessureLoc1Leg_R
+    400536: WitchRig_Published:IKmessureLoc2Arm_L
+    400538: WitchRig_Published:IKmessureLoc2Arm_R
+    400540: WitchRig_Published:IKmessureLoc2Leg_L
+    400542: WitchRig_Published:IKmessureLoc2Leg_R
+    400544: WitchRig_Published:IKOffsetArm_L
+    400546: WitchRig_Published:IKOffsetArm_LFollow
+    400548: WitchRig_Published:IKOffsetArm_LFollowNoScale
+    400550: WitchRig_Published:IKOffsetArm_LStatic
+    400552: WitchRig_Published:IKOffsetArm_R
+    400554: WitchRig_Published:IKOffsetArm_RFollow
+    400556: WitchRig_Published:IKOffsetArm_RFollowNoScale
+    400558: WitchRig_Published:IKOffsetArm_RStatic
+    400560: WitchRig_Published:IKOffsetConstrainedSpine1_M
+    400562: WitchRig_Published:IKOffsetcvSpine1_M
+    400564: WitchRig_Published:IKOffsetLeg_L
+    400566: WitchRig_Published:IKOffsetLeg_R
+    400568: WitchRig_Published:IKOffsetSpine1_M
+    400570: WitchRig_Published:IKOffsetSpine2_M
+    400572: WitchRig_Published:IKOffsetSpine2_MFollow
+    400574: WitchRig_Published:IKOffsetSpine2_MFollowFollow
+    400576: WitchRig_Published:IKOffsetSpine2_MFollowFollowNoScale
+    400578: WitchRig_Published:IKOffsetSpine2_MFollowNoScale
+    400580: WitchRig_Published:IKOffsetSpine2_MFollowStatic
+    400582: WitchRig_Published:IKOffsetSpine2_MStatic
+    400584: WitchRig_Published:IKOffsetSpine2_MStaticFollow
+    400586: WitchRig_Published:IKOffsetSpine2_MStaticFollowNoScale
+    400588: WitchRig_Published:IKOffsetSpine2_MStaticStatic
+    400590: WitchRig_Published:IKOffsetSpine3_M
+    400592: WitchRig_Published:IKOffsetSpine3_MFollow
+    400594: WitchRig_Published:IKOffsetSpine3_MFollowNoScale
+    400596: WitchRig_Published:IKOffsetSpine3_MStatic
+    400598: WitchRig_Published:IKOffsetToes_L
+    400600: WitchRig_Published:IKOffsetToes_R
+    400602: WitchRig_Published:IKParentConstraintHip_L
+    400604: WitchRig_Published:IKParentConstraintHip_R
+    400606: WitchRig_Published:IKParentConstraintRoot_M
+    400608: WitchRig_Published:IKParentConstraintShoulder_L
+    400610: WitchRig_Published:IKParentConstraintShoulder_R
+    400612: WitchRig_Published:IKRootConstraint
+    400614: WitchRig_Published:IKScalerChest_M
+    400616: WitchRig_Published:IKScalerRoot_M
+    400618: WitchRig_Published:IKScalerSpine1_M
+    400620: WitchRig_Published:IKSpChest_M
+    400622: WitchRig_Published:IKSpChestFollowOffset_M
+    400624: WitchRig_Published:IKSpine1_M
+    400626: WitchRig_Published:IKSpine1LocalOrient1_M
+    400628: WitchRig_Published:IKSpine1LocalOrient2_M
+    400630: WitchRig_Published:IKSpine1LocalOrient3_M
+    400632: WitchRig_Published:IKSpine2_M
+    400634: WitchRig_Published:IKSpine2LocalOrient1_M
+    400636: WitchRig_Published:IKSpine2LocalOrient2_M
+    400638: WitchRig_Published:IKSpine2LocalOrient3_M
+    400640: WitchRig_Published:IKSpine3_M
+    400642: WitchRig_Published:IKSpine3LocalOrient1_M
+    400644: WitchRig_Published:IKSpine3LocalOrient2_M
+    400646: WitchRig_Published:IKSpineCurve_M
+    400648: WitchRig_Published:IKSpineHandle_M
+    400650: WitchRig_Published:IKSpineLocator0_M
+    400652: WitchRig_Published:IKSpineLocator1_M
+    400654: WitchRig_Published:IKSpineLocator2_M
+    400656: WitchRig_Published:IKSpRoot_M
+    400658: WitchRig_Published:IKSpRootFollowOffset_M
+    400660: WitchRig_Published:IKSpSpine1_M
+    400662: WitchRig_Published:IKSpSpine1FollowOffset_M
+    400664: WitchRig_Published:IKSpSpineOffset_M
+    400666: WitchRig_Published:IKStatic
+    400668: WitchRig_Published:IKSystem
+    400670: WitchRig_Published:IKToes_L
+    400672: WitchRig_Published:IKToes_R
+    400674: WitchRig_Published:IKToesHandle_L
+    400676: WitchRig_Published:IKToesHandle_R
+    400678: WitchRig_Published:IKX2Ankle_L
+    400680: WitchRig_Published:IKX2Ankle_R
+    400682: WitchRig_Published:IKX2Chest_M
+    400684: WitchRig_Published:IKX2Elbow_L
+    400686: WitchRig_Published:IKX2Elbow_R
+    400688: WitchRig_Published:IKX2Hip_L
+    400690: WitchRig_Published:IKX2Hip_R
+    400692: WitchRig_Published:IKX2Knee_L
+    400694: WitchRig_Published:IKX2Knee_R
+    400696: WitchRig_Published:IKX2Root_M
+    400698: WitchRig_Published:IKX2Shoulder_L
+    400700: WitchRig_Published:IKX2Shoulder_R
+    400702: WitchRig_Published:IKX2Spine1_M
+    400704: WitchRig_Published:IKX2Toes_L
+    400706: WitchRig_Published:IKX2Toes_R
+    400708: WitchRig_Published:IKX2ToesEnd_L
+    400710: WitchRig_Published:IKX2ToesEnd_R
+    400712: WitchRig_Published:IKX2Wrist_L
+    400714: WitchRig_Published:IKX2Wrist_R
+    400716: WitchRig_Published:IKXAnkle_L
+    400718: WitchRig_Published:IKXAnkle_R
+    400720: WitchRig_Published:IKXChest_M
+    400722: WitchRig_Published:IKXElbow_L
+    400724: WitchRig_Published:IKXElbow_R
+    400726: WitchRig_Published:IKXHip_L
+    400728: WitchRig_Published:IKXHip_R
+    400730: WitchRig_Published:IKXKnee_L
+    400732: WitchRig_Published:IKXKnee_R
+    400734: WitchRig_Published:IKXOffsetHip_L
+    400736: WitchRig_Published:IKXOffsetHip_R
+    400738: WitchRig_Published:IKXOffsetRoot_M
+    400740: WitchRig_Published:IKXOffsetShoulder_L
+    400742: WitchRig_Published:IKXOffsetShoulder_R
+    400744: WitchRig_Published:IKXRoot_M
+    400746: WitchRig_Published:IKXShoulder_L
+    400748: WitchRig_Published:IKXShoulder_R
+    400750: WitchRig_Published:IKXSpine1_M
+    400752: WitchRig_Published:IKXToes_L
+    400754: WitchRig_Published:IKXToes_R
+    400756: WitchRig_Published:IKXToesEnd_L
+    400758: WitchRig_Published:IKXToesEnd_R
+    400760: WitchRig_Published:IKXWrist_L
+    400762: WitchRig_Published:IKXWrist_R
+    400764: WitchRig_Published:Jaw
+    400766: WitchRig_Published:Jaw_M
+    400768: WitchRig_Published:JawEnd
+    400770: WitchRig_Published:JawEnd_M
+    400772: WitchRig_Published:Knee
+    400774: WitchRig_Published:Knee_L
+    400776: WitchRig_Published:Knee_R
+    400778: WitchRig_Published:LegLockConstrained
+    400780: WitchRig_Published:Main
+    400782: WitchRig_Published:MiddleFinger1
+    400784: WitchRig_Published:MiddleFinger1_L
+    400786: WitchRig_Published:MiddleFinger1_R
+    400788: WitchRig_Published:MiddleFinger2
+    400790: WitchRig_Published:MiddleFinger2_L
+    400792: WitchRig_Published:MiddleFinger2_R
+    400794: WitchRig_Published:model:geo
+    400796: WitchRig_Published:model:NEWWIZ
+    400798: WitchRig_Published:MotionSystem
+    400800: WitchRig_Published:Neck
+    400802: WitchRig_Published:Neck_M
+    400804: WitchRig_Published:PoleAimLeg_L
+    400806: WitchRig_Published:PoleAimLeg_R
+    400808: WitchRig_Published:PoleAnnotationArm_L
+    400810: WitchRig_Published:PoleAnnotationArm_R
+    400812: WitchRig_Published:PoleAnnotationLeg_L
+    400814: WitchRig_Published:PoleAnnotationLeg_R
+    400816: WitchRig_Published:PoleArm_L
+    400818: WitchRig_Published:PoleArm_R
+    400820: WitchRig_Published:PoleExtraArm_L
+    400822: WitchRig_Published:PoleExtraArm_R
+    400824: WitchRig_Published:PoleExtraLeg_L
+    400826: WitchRig_Published:PoleExtraLeg_R
+    400828: WitchRig_Published:PoleLeg_L
+    400830: WitchRig_Published:PoleLeg_R
+    400832: WitchRig_Published:PoleOffsetArm_L
+    400834: WitchRig_Published:PoleOffsetArm_LFollow
+    400836: WitchRig_Published:PoleOffsetArm_LFollowNoScale
+    400838: WitchRig_Published:PoleOffsetArm_LStatic
+    400840: WitchRig_Published:PoleOffsetArm_R
+    400842: WitchRig_Published:PoleOffsetArm_RFollow
+    400844: WitchRig_Published:PoleOffsetArm_RFollowNoScale
+    400846: WitchRig_Published:PoleOffsetArm_RStatic
+    400848: WitchRig_Published:PoleOffsetLeg_L
+    400850: WitchRig_Published:PoleOffsetLeg_LFollow
+    400852: WitchRig_Published:PoleOffsetLeg_LFollowNoScale
+    400854: WitchRig_Published:PoleOffsetLeg_LStatic
+    400856: WitchRig_Published:PoleOffsetLeg_R
+    400858: WitchRig_Published:PoleOffsetLeg_RFollow
+    400860: WitchRig_Published:PoleOffsetLeg_RFollowNoScale
+    400862: WitchRig_Published:PoleOffsetLeg_RStatic
+    400864: WitchRig_Published:RollExtraHeel_L
+    400866: WitchRig_Published:RollExtraHeel_R
+    400868: WitchRig_Published:RollExtraToes_L
+    400870: WitchRig_Published:RollExtraToes_R
+    400872: WitchRig_Published:RollExtraToesEnd_L
+    400874: WitchRig_Published:RollExtraToesEnd_R
+    400876: WitchRig_Published:RollHeel_L
+    400878: WitchRig_Published:RollHeel_R
+    400880: WitchRig_Published:RollOffsetHeel_L
+    400882: WitchRig_Published:RollOffsetHeel_R
+    400884: WitchRig_Published:RollOffsetToes_L
+    400886: WitchRig_Published:RollOffsetToes_R
+    400888: WitchRig_Published:RollOffsetToesEnd_L
+    400890: WitchRig_Published:RollOffsetToesEnd_R
+    400892: WitchRig_Published:RollRollerHeel_L
+    400894: WitchRig_Published:RollRollerHeel_R
+    400896: WitchRig_Published:RollRollerToes_L
+    400898: WitchRig_Published:RollRollerToes_R
+    400900: WitchRig_Published:RollRollerToesEnd_L
+    400902: WitchRig_Published:RollRollerToesEnd_R
+    400904: WitchRig_Published:RollToes_L
+    400906: WitchRig_Published:RollToes_R
+    400908: WitchRig_Published:RollToesEnd_L
+    400910: WitchRig_Published:RollToesEnd_R
+    400912: WitchRig_Published:Root
+    400914: WitchRig_Published:Root_M
+    400916: WitchRig_Published:RootExtraX_M
+    400918: WitchRig_Published:RootOffsetX_M
+    400920: WitchRig_Published:RootSpineAligned
+    400922: WitchRig_Published:RootSystem
+    400924: WitchRig_Published:RootX_M
+    400926: WitchRig_Published:RootZeroXform
+    400928: WitchRig_Published:Scapula
+    400930: WitchRig_Published:Scapula_L
+    400932: WitchRig_Published:Scapula_R
+    400934: WitchRig_Published:SDK1FKMiddleFinger1_L
+    400936: WitchRig_Published:SDK1FKMiddleFinger1_R
+    400938: WitchRig_Published:Shoulder
+    400940: WitchRig_Published:Shoulder_L
+    400942: WitchRig_Published:Shoulder_R
+    400944: WitchRig_Published:ShoulderPart1_L
+    400946: WitchRig_Published:ShoulderPart1_R
+    400948: WitchRig_Published:ShoulderPart2_L
+    400950: WitchRig_Published:ShoulderPart2_R
+    400952: WitchRig_Published:Spine1
+    400954: WitchRig_Published:Spine1_M
+    400956: WitchRig_Published:ThumbFinger1
+    400958: WitchRig_Published:ThumbFinger1_L
+    400960: WitchRig_Published:ThumbFinger1_R
+    400962: WitchRig_Published:ThumbFinger2
+    400964: WitchRig_Published:ThumbFinger2_L
+    400966: WitchRig_Published:ThumbFinger2_R
+    400968: WitchRig_Published:Toes
+    400970: WitchRig_Published:Toes_L
+    400972: WitchRig_Published:Toes_R
+    400974: WitchRig_Published:ToesEnd
+    400976: WitchRig_Published:ToesEnd_L
+    400978: WitchRig_Published:ToesEnd_R
+    400980: WitchRig_Published:TwistBalancerChest_M
+    400982: WitchRig_Published:TwistBalancerElbow_L
+    400984: WitchRig_Published:TwistBalancerElbow_R
+    400986: WitchRig_Published:TwistBalancerShoulder_L
+    400988: WitchRig_Published:TwistBalancerShoulder_R
+    400990: WitchRig_Published:TwistBalancerSpine2_M
+    400992: WitchRig_Published:TwisterElbow0_L
+    400994: WitchRig_Published:TwisterElbow0_R
+    400996: WitchRig_Published:TwisterElbow1_L
+    400998: WitchRig_Published:TwisterElbow1_R
+    401000: WitchRig_Published:TwisterElbow2_L
+    401002: WitchRig_Published:TwisterElbow2_R
+    401004: WitchRig_Published:TwisterShoulder0_L
+    401006: WitchRig_Published:TwisterShoulder0_R
+    401008: WitchRig_Published:TwisterShoulder1_L
+    401010: WitchRig_Published:TwisterShoulder1_R
+    401012: WitchRig_Published:TwisterShoulder2_L
+    401014: WitchRig_Published:TwisterShoulder2_R
+    401016: WitchRig_Published:TwistFollowChest_M
+    401018: WitchRig_Published:TwistFollowElbow_L
+    401020: WitchRig_Published:TwistFollowElbow_R
+    401022: WitchRig_Published:TwistFollowOffsetChest_M
+    401024: WitchRig_Published:TwistFollowOffsetElbow_L
+    401026: WitchRig_Published:TwistFollowOffsetElbow_R
+    401028: WitchRig_Published:TwistFollowOffsetShoulder_L
+    401030: WitchRig_Published:TwistFollowOffsetShoulder_R
+    401032: WitchRig_Published:TwistFollowOffsetSpine2_M
+    401034: WitchRig_Published:TwistFollowParentChest_M
+    401036: WitchRig_Published:TwistFollowParentElbow_L
+    401038: WitchRig_Published:TwistFollowParentElbow_R
+    401040: WitchRig_Published:TwistFollowParentOffsetChest_M
+    401042: WitchRig_Published:TwistFollowParentOffsetElbow_L
+    401044: WitchRig_Published:TwistFollowParentOffsetElbow_R
+    401046: WitchRig_Published:TwistFollowParentOffsetShoulder_L
+    401048: WitchRig_Published:TwistFollowParentOffsetShoulder_R
+    401050: WitchRig_Published:TwistFollowParentOffsetSpine2_M
+    401052: WitchRig_Published:TwistFollowParentShoulder_L
+    401054: WitchRig_Published:TwistFollowParentShoulder_R
+    401056: WitchRig_Published:TwistFollowParentSpine2_M
+    401058: WitchRig_Published:TwistFollowShoulder_L
+    401060: WitchRig_Published:TwistFollowShoulder_R
+    401062: WitchRig_Published:TwistFollowSpine2_M
+    401064: WitchRig_Published:TwistSystem
+    401066: WitchRig_Published:UnTwistChest_M
+    401068: WitchRig_Published:UnTwistElbow_L
+    401070: WitchRig_Published:UnTwistElbow_R
+    401072: WitchRig_Published:UnTwistEndChest_M
+    401074: WitchRig_Published:UnTwistEndElbow_L
+    401076: WitchRig_Published:UnTwistEndElbow_R
+    401078: WitchRig_Published:UnTwistEndShoulder_L
+    401080: WitchRig_Published:UnTwistEndShoulder_R
+    401082: WitchRig_Published:UnTwistEndSpine2_M
+    401084: WitchRig_Published:UnTwistIKChest_M
+    401086: WitchRig_Published:UnTwistIKElbow_L
+    401088: WitchRig_Published:UnTwistIKElbow_R
+    401090: WitchRig_Published:UnTwistIKShoulder_L
+    401092: WitchRig_Published:UnTwistIKShoulder_R
+    401094: WitchRig_Published:UnTwistIKSpine2_M
+    401096: WitchRig_Published:UnTwistShoulder_L
+    401098: WitchRig_Published:UnTwistShoulder_R
+    401100: WitchRig_Published:UnTwistSpine2_M
+    401102: WitchRig_Published:Wrist
+    401104: WitchRig_Published:Wrist_L
+    401106: WitchRig_Published:Wrist_R
+    2100000: WitchRig_Published_model_Material.006
+    4300000: WitchRig_Published:model:NEWWIZ
+    9500000: //RootNode
+    13700000: WitchRig_Published:model:NEWWIZ
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 2
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton:
+    - name: witchMod(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Group
+      parentName: witchMod(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Geometry
+      parentName: WitchRig_Published:Group
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Main
+      parentName: WitchRig_Published:Group
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:DeformationSystem
+      parentName: WitchRig_Published:Main
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Root_M
+      parentName: WitchRig_Published:DeformationSystem
+      position: {x: -1.9709482e-17, y: 1.0497282, z: -0.017717207}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Hip_L
+      parentName: WitchRig_Published:Root_M
+      position: {x: 0.008106448, y: -0.006151325, z: 0.0748791}
+      rotation: {x: 0.9288953, y: 0.0035592022, z: 0.15001658, w: -0.33857927}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Knee_L
+      parentName: WitchRig_Published:Hip_L
+      position: {x: 0.4453255, y: 0, z: 7.105427e-17}
+      rotation: {x: 0, y: 0, z: 0.2743186, w: 0.96163887}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Ankle_L
+      parentName: WitchRig_Published:Knee_L
+      position: {x: 0.5808392, y: -6.2616577e-16, z: -1.065814e-15}
+      rotation: {x: -0.14423671, y: -0.0822257, z: -0.19460712, w: 0.9667279}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Toes_L
+      parentName: WitchRig_Published:Ankle_L
+      position: {x: 0.04469634, y: -0.04786527, z: -7.105427e-17}
+      rotation: {x: 0.012689935, y: 0.011281442, z: -0.6644724, w: 0.7471199}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ToesEnd_L
+      parentName: WitchRig_Published:Toes_L
+      position: {x: 0.024580287, y: 1.6653345e-16, z: -5.034748e-10}
+      rotation: {x: 0.0000001924356, y: 0.0000032868159, z: -6.3250045e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Hip_R
+      parentName: WitchRig_Published:Root_M
+      position: {x: 0.008106448, y: -0.006151325, z: -0.0748791}
+      rotation: {x: -0.08560339, y: 0.9507995, z: -0.28958437, w: -0.06923304}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Knee_R
+      parentName: WitchRig_Published:Hip_R
+      position: {x: -0.4453255, y: -7.105427e-17, z: -5.8619773e-16}
+      rotation: {x: 0, y: 0, z: 0.30446318, w: 0.9525241}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Ankle_R
+      parentName: WitchRig_Published:Knee_R
+      position: {x: -0.5808392, y: 7.81597e-16, z: 6.3948843e-16}
+      rotation: {x: -0.22624296, y: 0.026911851, z: -0.16519968, w: 0.9595827}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Toes_R
+      parentName: WitchRig_Published:Ankle_R
+      position: {x: -0.04469634, y: 0.04786527, z: -1.7763568e-17}
+      rotation: {x: 0.012687789, y: 0.011283489, z: -0.66446793, w: 0.7471239}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ToesEnd_R
+      parentName: WitchRig_Published:Toes_R
+      position: {x: -0.024580287, y: -6.2663206e-14, z: 0.00000016153136}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Spine1_M
+      parentName: WitchRig_Published:Root_M
+      position: {x: -0.25812313, y: 8.881784e-18, z: -1.3390612e-16}
+      rotation: {x: 0.12055942, y: -0.0009773527, z: -0.008045807, w: 0.99267304}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Chest_M
+      parentName: WitchRig_Published:Spine1_M
+      position: {x: -0.15516192, y: 8.881784e-18, z: -3.375078e-16}
+      rotation: {x: 0.044028986, y: -0.006184868, z: -0.13896891, w: 0.9892982}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Neck_M
+      parentName: WitchRig_Published:Chest_M
+      position: {x: -0.2189584, y: 4.973799e-16, z: -2.375877e-16}
+      rotation: {x: 0, y: 0, z: 0.07734476, w: 0.9970044}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Head_M
+      parentName: WitchRig_Published:Neck_M
+      position: {x: -0.11545718, y: 5.3290704e-17, z: 4.4408918e-17}
+      rotation: {x: -0.04503049, y: 0.011444656, z: -0.2460558, w: 0.96814144}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Eye_L
+      parentName: WitchRig_Published:Head_M
+      position: {x: -0.050292566, y: 0.09927271, z: 0.03423012}
+      rotation: {x: 0, y: 0, z: -0.65728927, w: 0.7536384}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:EyeEnd_L
+      parentName: WitchRig_Published:Eye_L
+      position: {x: -0.039799307, y: -2.842171e-16, z: 1.5365487e-15}
+      rotation: {x: -0.13868622, y: -0.0022722934, z: -0.00015833313, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Eye_R
+      parentName: WitchRig_Published:Head_M
+      position: {x: -0.050292566, y: 0.09927271, z: -0.03423012}
+      rotation: {x: 0, y: 0, z: -0.65728927, w: 0.7536384}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:EyeEnd_R
+      parentName: WitchRig_Published:Eye_R
+      position: {x: -0.039799307, y: -2.842171e-16, z: -1.6697754e-15}
+      rotation: {x: 0.13868622, y: 0.0022722934, z: -0.00015833313, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:HeadEnd_M
+      parentName: WitchRig_Published:Head_M
+      position: {x: -0.15422204, y: -6.3238302e-15, z: -6.3632556e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Jaw_M
+      parentName: WitchRig_Published:Head_M
+      position: {x: 0.022314334, y: 0.04399531, z: 3.1974422e-16}
+      rotation: {x: 0, y: 0, z: -0.7962927, w: 0.60491157}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:JawEnd_M
+      parentName: WitchRig_Published:Jaw_M
+      position: {x: -0.12721518, y: 8.5265126e-16, z: -1.6398524e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Scapula_L
+      parentName: WitchRig_Published:Chest_M
+      position: {x: -0.08031419, y: 0.030707335, z: 0.07443098}
+      rotation: {x: 0.5680414, y: -0.42592984, z: 0.48752704, w: 0.50816363}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Shoulder_L
+      parentName: WitchRig_Published:Scapula_L
+      position: {x: 0.10201863, y: 3.9790393e-15, z: -1.7763568e-17}
+      rotation: {x: -0.03202306, y: -0.051316272, z: -0.016723508, w: 0.9980288}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ShoulderPart1_L
+      parentName: WitchRig_Published:Shoulder_L
+      position: {x: 0.060032103, y: 0, z: 0}
+      rotation: {x: -0.006373161, y: 0.076463476, z: 0.07731542, w: 0.99404985}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ShoulderPart2_L
+      parentName: WitchRig_Published:ShoulderPart1_L
+      position: {x: 0.060032103, y: -7.105427e-16, z: 0}
+      rotation: {x: -0.006411305, y: 0, z: -0, w: 0.99997944}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Elbow_L
+      parentName: WitchRig_Published:ShoulderPart2_L
+      position: {x: 0.060032103, y: -4.2632563e-16, z: -7.105427e-17}
+      rotation: {x: 0.029724859, y: 0.045108553, z: 0.0005028025, w: 0.9985397}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Wrist_L
+      parentName: WitchRig_Published:Elbow_L
+      position: {x: 0.4436539, y: 3.126388e-15, z: -1.5916157e-14}
+      rotation: {x: 0.6710874, y: -0.1437654, z: 0.011541948, w: 0.7272139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:MiddleFinger1_L
+      parentName: WitchRig_Published:Wrist_L
+      position: {x: 0.06903065, y: 7.105427e-16, z: -1.847411e-15}
+      rotation: {x: -0.017008783, y: 0.031825125, z: -0.05072041, w: 0.99806076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:MiddleFinger2_L
+      parentName: WitchRig_Published:MiddleFinger1_L
+      position: {x: 0.08613787, y: -6.5725204e-16, z: 3.694822e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ThumbFinger1_L
+      parentName: WitchRig_Published:Wrist_L
+      position: {x: 0.052710574, y: -0.054496024, z: -0.0054625445}
+      rotation: {x: -0.45773095, y: 0.08140731, z: -0.119925335, w: 0.87719625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ThumbFinger2_L
+      parentName: WitchRig_Published:ThumbFinger1_L
+      position: {x: 0.061848596, y: 1.2789769e-15, z: 8.5265126e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Scapula_R
+      parentName: WitchRig_Published:Chest_M
+      position: {x: -0.08033454, y: 0.03070316, z: -0.0748064}
+      rotation: {x: 0.42592984, y: 0.5680414, z: 0.50816363, w: -0.48752704}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Shoulder_R
+      parentName: WitchRig_Published:Scapula_R
+      position: {x: -0.10201863, y: -4.5474734e-15, z: 0}
+      rotation: {x: 0.0036155726, y: -0.0023640094, z: -0.061976172, w: 0.99806833}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ShoulderPart1_R
+      parentName: WitchRig_Published:Shoulder_R
+      position: {x: -0.060032103, y: 2.842171e-16, z: 1.7763568e-17}
+      rotation: {x: 0.020588214, y: -0.03332965, z: 0.110103324, w: 0.99314785}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ShoulderPart2_R
+      parentName: WitchRig_Published:ShoulderPart1_R
+      position: {x: -0.060032103, y: 0, z: 8.8817837e-17}
+      rotation: {x: 0.02072572, y: 0, z: -0, w: 0.9997852}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Elbow_R
+      parentName: WitchRig_Published:ShoulderPart2_R
+      position: {x: -0.060032103, y: 4.2632563e-16, z: -3.5527136e-17}
+      rotation: {x: 0.11150752, y: 0.013326391, z: 0.026439862, w: 0.9933225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Wrist_R
+      parentName: WitchRig_Published:Elbow_R
+      position: {x: -0.4436539, y: -2.131628e-15, z: 1.6200374e-14}
+      rotation: {x: 0.6710874, y: -0.1437654, z: 0.011541948, w: 0.7272139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:MiddleFinger1_R
+      parentName: WitchRig_Published:Wrist_R
+      position: {x: -0.06903065, y: -1.4210854e-16, z: 2.131628e-15}
+      rotation: {x: -0.017008783, y: 0.031825125, z: -0.05072041, w: 0.99806076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:MiddleFinger2_R
+      parentName: WitchRig_Published:MiddleFinger1_R
+      position: {x: -0.08613787, y: 6.217249e-16, z: -2.8421708e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ThumbFinger1_R
+      parentName: WitchRig_Published:Wrist_R
+      position: {x: -0.052710574, y: 0.054496024, z: 0.0054625445}
+      rotation: {x: -0.45773095, y: 0.08140731, z: -0.119925335, w: 0.87719625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ThumbFinger2_R
+      parentName: WitchRig_Published:ThumbFinger1_R
+      position: {x: -0.061848596, y: 9.947598e-16, z: -1.4210854e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FitSkeleton
+      parentName: WitchRig_Published:Main
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Root
+      parentName: WitchRig_Published:FitSkeleton
+      position: {x: -1.9709482e-17, y: 1.0925603, z: -0.017717207}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Hip
+      parentName: WitchRig_Published:Root
+      position: {x: 0.008106448, y: -0.006151325, z: -0.0748791}
+      rotation: {x: 0.014878914, y: 0.9823765, z: 0.18460126, w: 0.025247041}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Knee
+      parentName: WitchRig_Published:Hip
+      position: {x: -0.4453255, y: -1.7763567e-16, z: 3.5527136e-17}
+      rotation: {x: 0, y: 0, z: 0.0489478, w: 0.99880135}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Ankle
+      parentName: WitchRig_Published:Knee
+      position: {x: -0.5808392, y: 5.4178885e-16, z: 1.4033218e-15}
+      rotation: {x: 0.1694666, y: 0.007602872, z: -0.016084712, w: 0.98537534}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Heel
+      parentName: WitchRig_Published:Ankle
+      position: {x: -0.047307033, y: -0.028417157, z: -0.00096556277}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Toes
+      parentName: WitchRig_Published:Ankle
+      position: {x: -0.04469634, y: 0.04786527, z: 1.7763568e-17}
+      rotation: {x: 0.012690341, y: 0.011286728, z: -0.6644734, w: 0.7471189}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ToesEnd
+      parentName: WitchRig_Published:Toes
+      position: {x: -0.024580287, y: -3.0198067e-16, z: 1.8651746e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Spine1
+      parentName: WitchRig_Published:Root
+      position: {x: -0.25812313, y: -5.3290704e-17, z: -1.3390612e-16}
+      rotation: {x: -4.6223836e-33, y: -1.1510189e-15, z: -0.008105738, w: 0.99996716}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Chest
+      parentName: WitchRig_Published:Spine1
+      position: {x: -0.15516192, y: 8.8817837e-17, z: -3.5717688e-16}
+      rotation: {x: 3.8631035e-32, y: -3.066675e-16, z: -0.076238744, w: 0.9970896}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Neck
+      parentName: WitchRig_Published:Chest
+      position: {x: -0.2189584, y: 2.1316282e-16, z: -1.3390398e-16}
+      rotation: {x: 0, y: 0, z: 0.12432167, w: 0.992242}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Head
+      parentName: WitchRig_Published:Neck
+      position: {x: -0.11545718, y: 4.973799e-16, z: 7.277047e-18}
+      rotation: {x: 0, y: 0, z: -0.15538613, w: 0.9878538}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Eye
+      parentName: WitchRig_Published:Head
+      position: {x: -0.050292566, y: 0.09927271, z: -0.03423012}
+      rotation: {x: 0, y: 0, z: -0.65728927, w: 0.7536384}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:EyeEnd
+      parentName: WitchRig_Published:Eye
+      position: {x: -0.039799307, y: -8.5265126e-16, z: -1.6164847e-15}
+      rotation: {x: 0.13868622, y: 0.0022722934, z: -0.00015833313, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:HeadEnd
+      parentName: WitchRig_Published:Head
+      position: {x: -0.15422204, y: -6.3593573e-15, z: -6.032548e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Jaw
+      parentName: WitchRig_Published:Head
+      position: {x: 0.022314334, y: 0.04399531, z: 3.6436528e-16}
+      rotation: {x: -1.30409315e-30, y: -1.02939025e-14, z: -0.7962927, w: 0.60491157}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:JawEnd
+      parentName: WitchRig_Published:Jaw
+      position: {x: -0.12721518, y: -2.842171e-16, z: -1.5843123e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Scapula
+      parentName: WitchRig_Published:Chest
+      position: {x: -0.07059304, y: 0.03270213, z: -0.074618496}
+      rotation: {x: 0.42592984, y: 0.5680414, z: 0.50816363, w: -0.48752704}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Shoulder
+      parentName: WitchRig_Published:Scapula
+      position: {x: -0.10201863, y: -2.8421708e-15, z: 5.3290704e-17}
+      rotation: {x: -0.0008888791, y: -0.01430462, z: -0.06201331, w: 0.9979724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Elbow
+      parentName: WitchRig_Published:Shoulder
+      position: {x: -0.18009631, y: 8.5265126e-16, z: 4.4408918e-17}
+      rotation: {x: 0, y: 0, z: -0.16215304, w: 0.9867656}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Wrist
+      parentName: WitchRig_Published:Elbow
+      position: {x: -0.4436539, y: -2.8421708e-15, z: 1.6138202e-14}
+      rotation: {x: 0.6710874, y: -0.1437654, z: 0.011541948, w: 0.7272139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:MiddleFinger1
+      parentName: WitchRig_Published:Wrist
+      position: {x: -0.06903065, y: -1.2434498e-16, z: 1.9895197e-15}
+      rotation: {x: -0.017008783, y: 0.031825125, z: -0.05072041, w: 0.99806076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:MiddleFinger2
+      parentName: WitchRig_Published:MiddleFinger1
+      position: {x: -0.08613787, y: 2.664535e-16, z: -1.9895197e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ThumbFinger1
+      parentName: WitchRig_Published:Wrist
+      position: {x: -0.052710574, y: 0.054496024, z: 0.0054625445}
+      rotation: {x: -0.45773095, y: 0.08140731, z: -0.119925335, w: 0.87719625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ThumbFinger2
+      parentName: WitchRig_Published:ThumbFinger1
+      position: {x: -0.061848596, y: 2.842171e-16, z: -4.2632563e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:MotionSystem
+      parentName: WitchRig_Published:Main
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AimSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AimEye
+      parentName: WitchRig_Published:AimSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AimOffsetEye
+      parentName: WitchRig_Published:AimEye
+      position: {x: -0, y: 1.8725679, z: 0.27821133}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AimFollowEye
+      parentName: WitchRig_Published:AimOffsetEye
+      position: {x: -0.09119127, y: -0.21784689, z: 0.02915394}
+      rotation: {x: 0.1978916, y: -0.11644347, z: 0.049000494, w: 0.97204876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AimEye_M
+      parentName: WitchRig_Published:AimFollowEye
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AimOffsetEye_L
+      parentName: WitchRig_Published:AimEye_M
+      position: {x: -0.03423012, y: 8.5265126e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.2, y: 0.2, z: 0.2}
+    - name: WitchRig_Published:AimEye_L
+      parentName: WitchRig_Published:AimOffsetEye_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AimOffsetEye_R
+      parentName: WitchRig_Published:AimEye_M
+      position: {x: 0.03423012, y: 2.842171e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.2, y: 0.2, z: 0.2}
+    - name: WitchRig_Published:AimEye_R
+      parentName: WitchRig_Published:AimOffsetEye_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AimFollowOffEye
+      parentName: WitchRig_Published:AimOffsetEye
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AimFollowOnEye
+      parentName: WitchRig_Published:AimOffsetEye
+      position: {x: -0.09119127, y: -0.21784689, z: 0.02915394}
+      rotation: {x: 0.1978916, y: -0.11644347, z: 0.049000494, w: 0.97204876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:BendSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:ConstraintSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:DrivingSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:Fingers_L
+      parentName: WitchRig_Published:DrivingSystem
+      position: {x: -0.33083212, y: 1.0012096, z: -0.41395214}
+      rotation: {x: 0.5915213, y: 0.71754456, z: -0.03196708, w: -0.36634743}
+      scale: {x: 18.587217, y: 9.293609, z: 1}
+    - name: WitchRig_Published:Fingers_R
+      parentName: WitchRig_Published:DrivingSystem
+      position: {x: 0.18837428, y: 1.0869873, z: 0.45698428}
+      rotation: {x: 0.21811098, y: 0.51428235, z: 0.3683595, w: 0.74313694}
+      scale: {x: 18.587217, y: 9.293609, z: 1}
+    - name: WitchRig_Published:DynamicSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKParentConstraintArm_L
+      parentName: WitchRig_Published:FKIKSystem
+      position: {x: -0.08544299, y: 1.4974421, z: -0.03469666}
+      rotation: {x: -0.08704316, y: 0.9812435, z: 0.026651647, w: 0.16992489}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKArm_L
+      parentName: WitchRig_Published:FKIKParentConstraintArm_L
+      position: {x: 0.22715276, y: -0.015611777, z: -0.08613777}
+      rotation: {x: -0.08135057, y: 0.9963922, z: -0.024087114, w: -0.002135371}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKParentConstraintArm_R
+      parentName: WitchRig_Published:FKIKSystem
+      position: {x: 0.055832412, y: 1.4976068, z: 0.013397311}
+      rotation: {x: -0.15533535, y: -0.053116865, z: 0.98373795, w: 0.07286436}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKArm_R
+      parentName: WitchRig_Published:FKIKParentConstraintArm_R
+      position: {x: -0.22715276, y: 0.015611777, z: 0.08613777}
+      rotation: {x: 0.002135371, y: 0.024087114, z: 0.9963922, w: -0.08135057}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKParentConstraintLeg_L
+      parentName: WitchRig_Published:FKIKSystem
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKLeg_L
+      parentName: WitchRig_Published:FKIKParentConstraintLeg_L
+      position: {x: -0.17338794, y: -0.13420296, z: 0.042471346}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKParentConstraintLeg_R
+      parentName: WitchRig_Published:FKIKSystem
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKLeg_R
+      parentName: WitchRig_Published:FKIKParentConstraintLeg_R
+      position: {x: 0.17338794, y: -0.13420296, z: 0.042471346}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKParentConstraintSpine_M
+      parentName: WitchRig_Published:FKIKSystem
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKSpine_M
+      parentName: WitchRig_Published:FKIKParentConstraintSpine_M
+      position: {x: -0.12358359, y: 1.7763568e-17, z: 0.19471672}
+      rotation: {x: -0.47563696, y: 0.52322984, z: 0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: -0.079140104, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetRoot_M
+      parentName: WitchRig_Published:FKSystem
+      position: {x: -1.9709482e-17, y: 1.0925603, z: -0.017717207}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraRoot_M
+      parentName: WitchRig_Published:FKOffsetRoot_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKRoot_M
+      parentName: WitchRig_Published:FKExtraRoot_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXRoot_M
+      parentName: WitchRig_Published:FKRoot_M
+      position: {x: -4.2632563e-16, y: 1.7763568e-17, z: -3.1554436e-32}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToRoot_M
+      parentName: WitchRig_Published:FKXRoot_M
+      position: {x: -0, y: 1.7763568e-17, z: 0}
+      rotation: {x: -0.47563696, y: 0.52322984, z: 0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetSpine1_M
+      parentName: WitchRig_Published:FKXRoot_M
+      position: {x: -0.25812313, y: 1.7763568e-17, z: -1.3390612e-16}
+      rotation: {x: 0, y: -0, z: -0.008105738, w: 0.99996716}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:HipSwingerStabilizer
+      parentName: WitchRig_Published:FKOffsetSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1.7347235e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraSpine1_M
+      parentName: WitchRig_Published:HipSwingerStabilizer
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKSpine1_M
+      parentName: WitchRig_Published:FKExtraSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.12056338, y: -0.000000097497214, z: 0.0000008048685, w: 0.99270564}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXSpine1_M
+      parentName: WitchRig_Published:FKSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetChest_M
+      parentName: WitchRig_Published:FKXSpine1_M
+      position: {x: -0.15516192, y: 0, z: -3.403778e-16}
+      rotation: {x: 0, y: -0, z: -0.076238744, w: 0.9970896}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraChest_M
+      parentName: WitchRig_Published:FKOffsetChest_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKChest_M
+      parentName: WitchRig_Published:FKExtraChest_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.04437238, y: -0.002810153, z: -0.06314164, w: 0.9970137}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXChest_M
+      parentName: WitchRig_Published:FKChest_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToChest_M
+      parentName: WitchRig_Published:FKXChest_M
+      position: {x: -0, y: 3.5527136e-17, z: 0}
+      rotation: {x: 0.5180611, y: -0.4812616, z: -0.5180611, w: -0.4812616}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:HipSwingerOffset_M
+      parentName: WitchRig_Published:FKRoot_M
+      position: {x: -0.12906156, y: 5.3290704e-17, z: -0.23799999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:HipSwinger_M
+      parentName: WitchRig_Published:HipSwingerOffset_M
+      position: {x: -0, y: 0, z: -6.310887e-32}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:HipSwingerStabilizerTarget
+      parentName: WitchRig_Published:FKRoot_M
+      position: {x: -0.25812313, y: 5.3290704e-17, z: -1.3390612e-16}
+      rotation: {x: 0, y: -0, z: -0.008105738, w: 0.99996716}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:HipSwingReverse
+      parentName: WitchRig_Published:FKRoot_M
+      position: {x: -0.25812313, y: 5.3290704e-17, z: -1.3390612e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:HipSwingReverseRoot
+      parentName: WitchRig_Published:HipSwingReverse
+      position: {x: 0.25812313, y: -3.5527136e-17, z: 1.3390612e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKParentConstraintToChest_M
+      parentName: WitchRig_Published:FKSystem
+      position: {x: 0.00000006014811, y: 1.5041919, z: -0.05450585}
+      rotation: {x: 0.63049096, y: -0.51343316, z: -0.451013, w: 0.36804193}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetNeck_M
+      parentName: WitchRig_Published:FKParentConstraintToChest_M
+      position: {x: -0.2189584, y: 4.2632563e-16, z: -1.8215706e-16}
+      rotation: {x: 0, y: 0, z: 0.12432167, w: 0.992242}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraNeck_M
+      parentName: WitchRig_Published:FKOffsetNeck_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKNeck_M
+      parentName: WitchRig_Published:FKExtraNeck_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: -0.047204535, w: 0.9988853}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXNeck_M
+      parentName: WitchRig_Published:FKNeck_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetHead_M
+      parentName: WitchRig_Published:FKXNeck_M
+      position: {x: -0.11545718, y: 1.4210854e-16, z: 1.4572418e-17}
+      rotation: {x: 0, y: 0, z: -0.15538613, w: 0.9878538}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKGlobalStaticHead_M
+      parentName: WitchRig_Published:FKOffsetHead_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKGlobalHead_M
+      parentName: WitchRig_Published:FKGlobalStaticHead_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraHead_M
+      parentName: WitchRig_Published:FKGlobalHead_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKHead_M
+      parentName: WitchRig_Published:FKExtraHead_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.046261877, y: 0.0043085353, z: -0.092631355, w: 0.9946159}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXHead_M
+      parentName: WitchRig_Published:FKHead_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKAimEye_L
+      parentName: WitchRig_Published:FKXHead_M
+      position: {x: -0.050292566, y: 0.09927271, z: 0.03423012}
+      rotation: {x: 0, y: 0, z: -0.65728927, w: 0.7536384}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetEye_L
+      parentName: WitchRig_Published:FKAimEye_L
+      position: {x: -8.881784e-18, y: 0, z: -4.440892e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraEye_L
+      parentName: WitchRig_Published:FKOffsetEye_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKEye_L
+      parentName: WitchRig_Published:FKExtraEye_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXEye_L
+      parentName: WitchRig_Published:FKEye_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKAimEye_R
+      parentName: WitchRig_Published:FKXHead_M
+      position: {x: -0.050292566, y: 0.09927271, z: -0.03423012}
+      rotation: {x: 0, y: 2.544266e-17, z: -0.65728927, w: 0.7536384}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetEye_R
+      parentName: WitchRig_Published:FKAimEye_R
+      position: {x: -0, y: 0, z: -4.440892e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraEye_R
+      parentName: WitchRig_Published:FKOffsetEye_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKEye_R
+      parentName: WitchRig_Published:FKExtraEye_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXEye_R
+      parentName: WitchRig_Published:FKEye_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetJaw_M
+      parentName: WitchRig_Published:FKXHead_M
+      position: {x: 0.022314334, y: 0.04399531, z: 3.528686e-16}
+      rotation: {x: 0, y: 0, z: -0.7962927, w: 0.60491157}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraJaw_M
+      parentName: WitchRig_Published:FKOffsetJaw_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKJaw_M
+      parentName: WitchRig_Published:FKExtraJaw_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXJaw_M
+      parentName: WitchRig_Published:FKJaw_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetScapula_L
+      parentName: WitchRig_Published:FKParentConstraintToChest_M
+      position: {x: -0.07059304, y: 0.03270213, z: 0.074618496}
+      rotation: {x: 0.5680414, y: -0.42592984, z: 0.48752704, w: 0.50816363}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraScapula_L
+      parentName: WitchRig_Published:FKOffsetScapula_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKScapula_L
+      parentName: WitchRig_Published:FKExtraScapula_L
+      position: {x: -0.0017810683, y: 0.009731092, z: 0.0008054743}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXScapula_L
+      parentName: WitchRig_Published:FKScapula_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetScapula_R
+      parentName: WitchRig_Published:FKParentConstraintToChest_M
+      position: {x: -0.07059304, y: 0.03270213, z: -0.074618496}
+      rotation: {x: 0.42592984, y: 0.5680414, z: 0.50816363, w: -0.48752704}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraScapula_R
+      parentName: WitchRig_Published:FKOffsetScapula_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKScapula_R
+      parentName: WitchRig_Published:FKExtraScapula_R
+      position: {x: 0.0014139574, y: -0.0098123485, z: -0.0008040882}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXScapula_R
+      parentName: WitchRig_Published:FKScapula_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKParentConstraintToRoot_M
+      parentName: WitchRig_Published:FKSystem
+      position: {x: -1.9709482e-17, y: 1.0925603, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetHip_L
+      parentName: WitchRig_Published:FKParentConstraintToRoot_M
+      position: {x: -0.0748791, y: -0.0086545795, z: -0.0053527146}
+      rotation: {x: 0.60794497, y: -0.5596202, z: 0.40591854, w: -0.3904592}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraHip_L
+      parentName: WitchRig_Published:FKOffsetHip_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKHip_L
+      parentName: WitchRig_Published:FKExtraHip_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXHip_L
+      parentName: WitchRig_Published:FKHip_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToHip_L
+      parentName: WitchRig_Published:FKXHip_L
+      position: {x: -1.4210854e-16, y: -1.3322676e-17, z: 0}
+      rotation: {x: 0.60794497, y: -0.5596202, z: 0.40591854, w: 0.3904592}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetKnee_L
+      parentName: WitchRig_Published:FKXHip_L
+      position: {x: 0.4453255, y: 3.9968027e-17, z: 9.325873e-17}
+      rotation: {x: 0, y: 0, z: 0.0489478, w: 0.99880135}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraKnee_L
+      parentName: WitchRig_Published:FKOffsetKnee_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKKnee_L
+      parentName: WitchRig_Published:FKExtraKnee_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXKnee_L
+      parentName: WitchRig_Published:FKKnee_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetAnkle_L
+      parentName: WitchRig_Published:FKXKnee_L
+      position: {x: 0.5808392, y: -4.751754e-16, z: -1.318945e-15}
+      rotation: {x: 0.1694666, y: 0.007602872, z: -0.016084712, w: 0.98537534}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraAnkle_L
+      parentName: WitchRig_Published:FKOffsetAnkle_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKAnkle_L
+      parentName: WitchRig_Published:FKExtraAnkle_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXAnkle_L
+      parentName: WitchRig_Published:FKAnkle_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToAnkle_L
+      parentName: WitchRig_Published:FKXAnkle_L
+      position: {x: 8.881784e-18, y: -2.220446e-18, z: 0}
+      rotation: {x: -0.50841874, y: 0.50841874, z: -0.49143705, w: -0.49143705}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetToes_L
+      parentName: WitchRig_Published:FKXAnkle_L
+      position: {x: 0.04469634, y: -0.04786527, z: -5.3290704e-17}
+      rotation: {x: 0.012690434, y: 0.011286631, z: -0.6644734, w: 0.7471189}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraToes_L
+      parentName: WitchRig_Published:FKOffsetToes_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKToes_L
+      parentName: WitchRig_Published:FKExtraToes_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXToes_L
+      parentName: WitchRig_Published:FKToes_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToToes_L
+      parentName: WitchRig_Published:FKXToes_L
+      position: {x: 4.440892e-18, y: 0, z: -8.881784e-18}
+      rotation: {x: 0.6938076, y: -0.04062086, z: 0.7177847, w: 0.042024665}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetHip_R
+      parentName: WitchRig_Published:FKParentConstraintToRoot_M
+      position: {x: 0.0748791, y: -0.0086545795, z: -0.0053527146}
+      rotation: {x: 0.3904592, y: 0.40591854, z: 0.5596202, w: 0.60794497}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraHip_R
+      parentName: WitchRig_Published:FKOffsetHip_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKHip_R
+      parentName: WitchRig_Published:FKExtraHip_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXHip_R
+      parentName: WitchRig_Published:FKHip_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToHip_R
+      parentName: WitchRig_Published:FKXHip_R
+      position: {x: -1.4210854e-16, y: 4.440892e-18, z: 8.881784e-18}
+      rotation: {x: -0.3904592, y: -0.40591854, z: -0.5596202, w: 0.60794497}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetKnee_R
+      parentName: WitchRig_Published:FKXHip_R
+      position: {x: -0.4453255, y: -3.774758e-16, z: -2.4868996e-16}
+      rotation: {x: 0, y: 0, z: 0.0489478, w: 0.99880135}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraKnee_R
+      parentName: WitchRig_Published:FKOffsetKnee_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKKnee_R
+      parentName: WitchRig_Published:FKExtraKnee_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXKnee_R
+      parentName: WitchRig_Published:FKKnee_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetAnkle_R
+      parentName: WitchRig_Published:FKXKnee_R
+      position: {x: -0.5808392, y: 8.5265126e-16, z: 1.0480505e-15}
+      rotation: {x: 0.1694666, y: 0.007602872, z: -0.016084712, w: 0.98537534}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraAnkle_R
+      parentName: WitchRig_Published:FKOffsetAnkle_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKAnkle_R
+      parentName: WitchRig_Published:FKExtraAnkle_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXAnkle_R
+      parentName: WitchRig_Published:FKAnkle_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToAnkle_R
+      parentName: WitchRig_Published:FKXAnkle_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.49143705, y: -0.49143705, z: -0.50841874, w: 0.50841874}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetToes_R
+      parentName: WitchRig_Published:FKXAnkle_R
+      position: {x: -0.04469634, y: 0.04786527, z: -8.881784e-18}
+      rotation: {x: 0.012687971, y: 0.01128444, z: -0.6644735, w: 0.74711895}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraToes_R
+      parentName: WitchRig_Published:FKOffsetToes_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKToes_R
+      parentName: WitchRig_Published:FKExtraToes_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXToes_R
+      parentName: WitchRig_Published:FKToes_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToToes_R
+      parentName: WitchRig_Published:FKXToes_R
+      position: {x: -0, y: 0, z: -8.881784e-18}
+      rotation: {x: -0.04202453, y: -0.71778244, z: -0.040621, w: 0.69381}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKParentConstraintToScapula_L
+      parentName: WitchRig_Published:FKSystem
+      position: {x: -0.08544299, y: 1.5765823, z: -0.03469666}
+      rotation: {x: -0.08704316, y: 0.9812435, z: 0.026651647, w: 0.16992489}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetShoulder_L
+      parentName: WitchRig_Published:FKParentConstraintToScapula_L
+      position: {x: 0.10201863, y: 4.263256e-15, z: -2.6645352e-17}
+      rotation: {x: -0.0008888791, y: -0.01430462, z: -0.06201331, w: 0.9979724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraShoulder_L
+      parentName: WitchRig_Published:FKOffsetShoulder_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKShoulder_L
+      parentName: WitchRig_Published:FKExtraShoulder_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.017402362, y: -0.3394795, z: -0.25699767, w: 0.9046563}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXShoulder_L
+      parentName: WitchRig_Published:FKShoulder_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToShoulder_L
+      parentName: WitchRig_Published:FKXShoulder_L
+      position: {x: 1.0658141e-16, y: 2.842171e-16, z: 0}
+      rotation: {x: -0.14332165, y: 0.98931795, z: -0.022121334, w: -0.01481802}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetElbow_L
+      parentName: WitchRig_Published:FKXShoulder_L
+      position: {x: 0.18009631, y: 2.842171e-16, z: -4.4408918e-17}
+      rotation: {x: 0, y: 0, z: -0.16215304, w: 0.9867656}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraElbow_L
+      parentName: WitchRig_Published:FKOffsetElbow_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKElbow_L
+      parentName: WitchRig_Published:FKExtraElbow_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000023949282, y: 0.17160562, z: 0.00000009208477, w: 0.9851657}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXElbow_L
+      parentName: WitchRig_Published:FKElbow_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetWrist_L
+      parentName: WitchRig_Published:FKXElbow_L
+      position: {x: 0.4436539, y: 3.126388e-15, z: -1.592504e-14}
+      rotation: {x: 0.6710874, y: -0.1437654, z: 0.011541948, w: 0.7272139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraWrist_L
+      parentName: WitchRig_Published:FKOffsetWrist_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKWrist_L
+      parentName: WitchRig_Published:FKExtraWrist_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXWrist_L
+      parentName: WitchRig_Published:FKWrist_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToWrist_L
+      parentName: WitchRig_Published:FKXWrist_L
+      position: {x: -0, y: -1.7763568e-17, z: -2.842171e-16}
+      rotation: {x: -0.20458543, y: 0.67866, z: -0.6136352, w: -0.34787557}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKParentConstraintToScapula_R
+      parentName: WitchRig_Published:FKSystem
+      position: {x: 0.055832412, y: 1.576747, z: 0.013397311}
+      rotation: {x: -0.15533535, y: -0.053116865, z: 0.98373795, w: 0.07286436}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetShoulder_R
+      parentName: WitchRig_Published:FKParentConstraintToScapula_R
+      position: {x: -0.10201863, y: -4.5474734e-15, z: -8.881784e-18}
+      rotation: {x: -0.0008888791, y: -0.01430462, z: -0.06201331, w: 0.9979724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraShoulder_R
+      parentName: WitchRig_Published:FKOffsetShoulder_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKShoulder_R
+      parentName: WitchRig_Published:FKExtraShoulder_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.008383118, y: 0.11064454, z: -0.2916749, w: 0.95005965}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXShoulder_R
+      parentName: WitchRig_Published:FKShoulder_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToShoulder_R
+      parentName: WitchRig_Published:FKXShoulder_R
+      position: {x: -0, y: -2.842171e-16, z: 0}
+      rotation: {x: 0.01481802, y: 0.022121334, z: 0.98931795, w: -0.14332165}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetElbow_R
+      parentName: WitchRig_Published:FKXShoulder_R
+      position: {x: -0.18009631, y: -2.842171e-16, z: -1.7763568e-17}
+      rotation: {x: 0, y: 0, z: -0.16215304, w: 0.9867656}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraElbow_R
+      parentName: WitchRig_Published:FKOffsetElbow_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKElbow_R
+      parentName: WitchRig_Published:FKExtraElbow_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.06423816, y: 0.4241839, z: -0.014642143, w: 0.9031761}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXElbow_R
+      parentName: WitchRig_Published:FKElbow_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetWrist_R
+      parentName: WitchRig_Published:FKXElbow_R
+      position: {x: -0.4436539, y: -1.9895197e-15, z: 1.6262546e-14}
+      rotation: {x: 0.6710874, y: -0.1437654, z: 0.011541948, w: 0.7272139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraWrist_R
+      parentName: WitchRig_Published:FKOffsetWrist_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKWrist_R
+      parentName: WitchRig_Published:FKExtraWrist_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXWrist_R
+      parentName: WitchRig_Published:FKWrist_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:AlignIKToWrist_R
+      parentName: WitchRig_Published:FKXWrist_R
+      position: {x: 7.105427e-17, y: 0, z: 0}
+      rotation: {x: 0.34787557, y: 0.6136352, z: 0.67866, w: -0.20458543}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKParentConstraintToWrist_L
+      parentName: WitchRig_Published:FKSystem
+      position: {x: -0.33083212, y: 1.0803497, z: -0.41395214}
+      rotation: {x: -0.11482333, y: 0.43236536, z: -0.54513127, w: 0.7090188}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetMiddleFinger1_L
+      parentName: WitchRig_Published:FKParentConstraintToWrist_L
+      position: {x: 0.06903065, y: 8.348877e-16, z: -1.7053025e-15}
+      rotation: {x: -0.017008783, y: 0.031825125, z: -0.05072041, w: 0.99806076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:SDK1FKMiddleFinger1_L
+      parentName: WitchRig_Published:FKOffsetMiddleFinger1_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraMiddleFinger1_L
+      parentName: WitchRig_Published:SDK1FKMiddleFinger1_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKMiddleFinger1_L
+      parentName: WitchRig_Published:FKExtraMiddleFinger1_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXMiddleFinger1_L
+      parentName: WitchRig_Published:FKMiddleFinger1_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetThumbFinger1_L
+      parentName: WitchRig_Published:FKParentConstraintToWrist_L
+      position: {x: 0.052710574, y: -0.054496024, z: -0.0054625445}
+      rotation: {x: -0.45773095, y: 0.08140731, z: -0.119925335, w: 0.87719625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraThumbFinger1_L
+      parentName: WitchRig_Published:FKOffsetThumbFinger1_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKThumbFinger1_L
+      parentName: WitchRig_Published:FKExtraThumbFinger1_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXThumbFinger1_L
+      parentName: WitchRig_Published:FKThumbFinger1_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKParentConstraintToWrist_R
+      parentName: WitchRig_Published:FKSystem
+      position: {x: 0.18837428, y: 1.1661274, z: 0.45698428}
+      rotation: {x: 0.13061032, y: 0.46817872, z: 0.42542183, w: 0.7633911}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetMiddleFinger1_R
+      parentName: WitchRig_Published:FKParentConstraintToWrist_R
+      position: {x: -0.06903065, y: -1.2434498e-16, z: 2.2737367e-15}
+      rotation: {x: -0.017008783, y: 0.031825125, z: -0.05072041, w: 0.99806076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:SDK1FKMiddleFinger1_R
+      parentName: WitchRig_Published:FKOffsetMiddleFinger1_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraMiddleFinger1_R
+      parentName: WitchRig_Published:SDK1FKMiddleFinger1_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKMiddleFinger1_R
+      parentName: WitchRig_Published:FKExtraMiddleFinger1_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXMiddleFinger1_R
+      parentName: WitchRig_Published:FKMiddleFinger1_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKOffsetThumbFinger1_R
+      parentName: WitchRig_Published:FKParentConstraintToWrist_R
+      position: {x: -0.052710574, y: 0.054496024, z: 0.0054625445}
+      rotation: {x: -0.45773095, y: 0.08140731, z: -0.119925335, w: 0.87719625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKExtraThumbFinger1_R
+      parentName: WitchRig_Published:FKOffsetThumbFinger1_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKThumbFinger1_R
+      parentName: WitchRig_Published:FKExtraThumbFinger1_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKXThumbFinger1_R
+      parentName: WitchRig_Published:FKThumbFinger1_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:GlobalSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:GlobalOffsetHead_M
+      parentName: WitchRig_Published:GlobalSystem
+      position: {x: 4.989993e-16, y: 1.8362374, z: -0.05857996}
+      rotation: {x: 0.5329028, y: -0.4647737, z: -0.5329028, w: 0.4647737}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:GlobalHead_M
+      parentName: WitchRig_Published:GlobalOffsetHead_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKCurve
+      parentName: WitchRig_Published:IKSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpineCurve_M
+      parentName: WitchRig_Published:IKCurve
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFollow
+      parentName: WitchRig_Published:IKSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetArm_LFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: -0.6715017, y: 1.1772338, z: -0.28569427}
+      rotation: {x: 0.06382842, y: -0.16295175, z: 0.011054314, w: 0.9845052}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetArm_LFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: -0.08544299, y: 1.4974421, z: -0.03469666}
+      rotation: {x: -0.08704316, y: 0.9812435, z: 0.026651647, w: 0.16992489}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetArm_RFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 0.6738892, y: 1.1786249, z: 0.17231306}
+      rotation: {x: 0.06382842, y: -0.16295175, z: 0.011054314, w: 0.9845052}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetArm_RFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 0.055832412, y: 1.4976068, z: 0.013397311}
+      rotation: {x: -0.15533535, y: -0.053116865, z: 0.98373795, w: 0.07286436}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_MFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 1.716207e-16, y: 1.219236, z: -0.03611141}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_MFollowFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 1.716207e-16, y: 1.219236, z: -0.03611141}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_MFollowFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 3.629509e-16, y: 1.4250518, z: -0.05450561}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_MFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_MStaticFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 1.716207e-16, y: 1.219236, z: -0.03611141}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_MStaticFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 3.629509e-16, y: 1.4250518, z: -0.05450561}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine3_MFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 3.629509e-16, y: 1.4250518, z: -0.05450561}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine3_MFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetArm_LFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: -0.6009328, y: 2.0279539, z: -0.050628193}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetArm_LFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: -0.7106068, y: 1.2489741, z: -0.02371376}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetArm_RFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 0.6009328, y: 2.0279539, z: -0.050628193}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetArm_RFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 0.7106068, y: 1.2489741, z: -0.02371376}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetLeg_LFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: -0.27943352, y: 0.4187774, z: 0.85312575}
+      rotation: {x: 0.08301919, y: -0.24277507, z: -0.11992084, w: 0.95905536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetLeg_LFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0.48425823, y: 0.25112873, z: 0.5669874, w: 0.6172144}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetLeg_RFollow
+      parentName: WitchRig_Published:IKFollow
+      position: {x: 0.30622482, y: 0.8579328, z: 1.0177057}
+      rotation: {x: -0.13275021, y: 0.27645144, z: 0.06175777, w: 0.9498095}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetLeg_RFollowNoScale
+      parentName: WitchRig_Published:IKFollow
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0.5023722, y: 0.71373445, z: 0.32588914, w: 0.3633203}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKHandle
+      parentName: WitchRig_Published:IKSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetArm_L
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -0.7106068, y: 1.2489741, z: -0.02371376}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtraArm_L
+      parentName: WitchRig_Published:IKOffsetArm_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKArm_L
+      parentName: WitchRig_Published:IKExtraArm_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKArmHandle_L
+      parentName: WitchRig_Published:IKArm_L
+      position: {x: -1.4210854e-16, y: 4.2632563e-16, z: -6.661338e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFKAlignedOffsetArm_L
+      parentName: WitchRig_Published:IKArm_L
+      position: {x: -0, y: 0, z: 1.7763568e-17}
+      rotation: {x: -0.20458543, y: 0.67866, z: -0.6136352, w: 0.34787557}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFKAlignedArm_L
+      parentName: WitchRig_Published:IKFKAlignedOffsetArm_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureConstrainToArm_L
+      parentName: WitchRig_Published:IKArm_L
+      position: {x: -1.4210854e-16, y: 4.2632563e-16, z: -6.661338e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetArm_R
+      parentName: WitchRig_Published:IKHandle
+      position: {x: 0.7106068, y: 1.2489741, z: -0.02371376}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtraArm_R
+      parentName: WitchRig_Published:IKOffsetArm_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKArm_R
+      parentName: WitchRig_Published:IKExtraArm_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKArmHandle_R
+      parentName: WitchRig_Published:IKArm_R
+      position: {x: -0, y: -1.4210854e-16, z: -3.1086245e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFKAlignedOffsetArm_R
+      parentName: WitchRig_Published:IKArm_R
+      position: {x: -0, y: 0, z: -4.8849813e-17}
+      rotation: {x: 0.34787557, y: 0.6136352, z: 0.67866, w: 0.20458543}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFKAlignedArm_R
+      parentName: WitchRig_Published:IKFKAlignedOffsetArm_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureConstrainToArm_R
+      parentName: WitchRig_Published:IKArm_R
+      position: {x: -0, y: -1.4210854e-16, z: -3.1086245e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetConstrainedSpine1_M
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine1_M
+      parentName: WitchRig_Published:IKOffsetConstrainedSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtraSpine1_M
+      parentName: WitchRig_Published:IKOffsetSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine1_M
+      parentName: WitchRig_Published:IKExtraSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_MFollowStatic
+      parentName: WitchRig_Published:IKSpine1_M
+      position: {x: 1.9133018e-16, y: 0.20581582, z: -0.0183942}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine1LocalOrient1_M
+      parentName: WitchRig_Published:IKSpine1_M
+      position: {x: -0, y: 0, z: 1.7763568e-17}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine1LocalOrient2_M
+      parentName: WitchRig_Published:IKSpine1LocalOrient1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine1LocalOrient3_M
+      parentName: WitchRig_Published:IKSpine1LocalOrient2_M
+      position: {x: -0, y: 3.5527136e-17, z: -6.310887e-32}
+      rotation: {x: 0, y: -0, z: -0.006086353, w: 0.9999815}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpineLocator0_M
+      parentName: WitchRig_Published:IKSpine1_M
+      position: {x: 7.888609e-33, y: 0, z: 2.6645352e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetcvSpine1_M
+      parentName: WitchRig_Published:IKHandle
+      position: {x: 1.2852358e-16, y: 1.219236, z: -0.03611141}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtracvSpine1_M
+      parentName: WitchRig_Published:IKOffsetcvSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKcvSpine1_M
+      parentName: WitchRig_Published:IKExtracvSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpineLocator1_M
+      parentName: WitchRig_Published:IKcvSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetLeg_L
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -0.050378278, y: 0.05925509, z: -0.017978901}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtraLeg_L
+      parentName: WitchRig_Published:IKOffsetLeg_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKLeg_L
+      parentName: WitchRig_Published:IKExtraLeg_L
+      position: {x: -0.18324338, y: 0, z: -0.24167296}
+      rotation: {x: 0, y: -0.25296104, z: -0, w: 0.9674765}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFKAlignedOffsetLeg_L
+      parentName: WitchRig_Published:IKLeg_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.50841874, y: -0.50841874, z: 0.49143705, w: -0.49143705}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFKAlignedLeg_L
+      parentName: WitchRig_Published:IKFKAlignedOffsetLeg_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKLegFootRoll_L
+      parentName: WitchRig_Published:IKLeg_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0.016981753, z: -0, w: 0.9998558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollOffsetHeel_L
+      parentName: WitchRig_Published:IKLeg_L
+      position: {x: 2.6645353e-15, y: -0.047307033, z: -0.028433558}
+      rotation: {x: 0, y: 0.016981753, z: -0, w: 0.9998558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollRollerHeel_L
+      parentName: WitchRig_Published:RollOffsetHeel_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollExtraHeel_L
+      parentName: WitchRig_Published:RollRollerHeel_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollHeel_L
+      parentName: WitchRig_Published:RollExtraHeel_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollOffsetToesEnd_L
+      parentName: WitchRig_Published:RollHeel_L
+      position: {x: -0.0017946565, y: -0.00025771855, z: 0.100680694}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollRollerToesEnd_L
+      parentName: WitchRig_Published:RollOffsetToesEnd_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollExtraToesEnd_L
+      parentName: WitchRig_Published:RollRollerToesEnd_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollToesEnd_L
+      parentName: WitchRig_Published:RollExtraToesEnd_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetToes_L
+      parentName: WitchRig_Published:RollToesEnd_L
+      position: {x: 0.00082909036, y: 0.0028684079, z: -0.024398267}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtraToes_L
+      parentName: WitchRig_Published:IKOffsetToes_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKToes_L
+      parentName: WitchRig_Published:IKExtraToes_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKToesHandle_L
+      parentName: WitchRig_Published:IKToes_L
+      position: {x: -0.00082909036, y: -0.0028684079, z: 0.024398267}
+      rotation: {x: 0.6938076, y: -0.04062086, z: 0.7177847, w: -0.042024665}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollOffsetToes_L
+      parentName: WitchRig_Published:RollToesEnd_L
+      position: {x: 0.00082909036, y: 0.0028684079, z: -0.024398267}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollRollerToes_L
+      parentName: WitchRig_Published:RollOffsetToes_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollExtraToes_L
+      parentName: WitchRig_Published:RollRollerToes_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollToes_L
+      parentName: WitchRig_Published:RollExtraToes_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAnkleHandle_L
+      parentName: WitchRig_Published:RollToes_L
+      position: {x: -3.5527136e-17, y: -1.4210854e-16, z: 1.6431301e-16}
+      rotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKLegHandle_L
+      parentName: WitchRig_Published:RollToes_L
+      position: {x: 0.0000000020922575, y: 0.04469634, z: -0.04786527}
+      rotation: {x: 0, y: -0.016981753, z: -0, w: 0.9998558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureConstrainToLeg_L
+      parentName: WitchRig_Published:RollToes_L
+      position: {x: 0.0000000020922575, y: 0.04469634, z: -0.04786527}
+      rotation: {x: 0, y: -0.016981753, z: -0, w: 0.9998558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetLeg_R
+      parentName: WitchRig_Published:IKHandle
+      position: {x: 0.050378278, y: 0.05925509, z: -0.017978901}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtraLeg_R
+      parentName: WitchRig_Published:IKOffsetLeg_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKLeg_R
+      parentName: WitchRig_Published:IKExtraLeg_R
+      position: {x: 0.18092103, y: 0, z: 0.19150291}
+      rotation: {x: 0, y: 0.27560872, z: -0, w: 0.9612699}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFKAlignedOffsetLeg_R
+      parentName: WitchRig_Published:IKLeg_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.49143705, y: 0.49143705, z: 0.50841874, w: 0.50841874}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFKAlignedLeg_R
+      parentName: WitchRig_Published:IKFKAlignedOffsetLeg_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKLegFootRoll_R
+      parentName: WitchRig_Published:IKLeg_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0.016981753, z: -0, w: 0.9998558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollOffsetHeel_R
+      parentName: WitchRig_Published:IKLeg_R
+      position: {x: -2.7267077e-15, y: -0.047307033, z: -0.028433558}
+      rotation: {x: 0, y: -0.016981753, z: -0, w: 0.9998558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollRollerHeel_R
+      parentName: WitchRig_Published:RollOffsetHeel_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollExtraHeel_R
+      parentName: WitchRig_Published:RollRollerHeel_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollHeel_R
+      parentName: WitchRig_Published:RollExtraHeel_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollOffsetToesEnd_R
+      parentName: WitchRig_Published:RollHeel_R
+      position: {x: 0.0017946565, y: -0.00025771855, z: 0.100680694}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollRollerToesEnd_R
+      parentName: WitchRig_Published:RollOffsetToesEnd_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollExtraToesEnd_R
+      parentName: WitchRig_Published:RollRollerToesEnd_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollToesEnd_R
+      parentName: WitchRig_Published:RollExtraToesEnd_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetToes_R
+      parentName: WitchRig_Published:RollToesEnd_R
+      position: {x: -0.00082909036, y: 0.0028684079, z: -0.024398267}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtraToes_R
+      parentName: WitchRig_Published:IKOffsetToes_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKToes_R
+      parentName: WitchRig_Published:IKExtraToes_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKToesHandle_R
+      parentName: WitchRig_Published:IKToes_R
+      position: {x: 0.00082909036, y: -0.0028684079, z: 0.024398267}
+      rotation: {x: 0.04202453, y: 0.71778244, z: 0.040621, w: 0.69381}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollOffsetToes_R
+      parentName: WitchRig_Published:RollToesEnd_R
+      position: {x: -0.00082909036, y: 0.0028684079, z: -0.024398267}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollRollerToes_R
+      parentName: WitchRig_Published:RollOffsetToes_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollExtraToes_R
+      parentName: WitchRig_Published:RollRollerToes_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RollToes_R
+      parentName: WitchRig_Published:RollExtraToes_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAnkleHandle_R
+      parentName: WitchRig_Published:RollToes_R
+      position: {x: 6.217249e-17, y: -2.753353e-16, z: -3.6859404e-16}
+      rotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKLegHandle_R
+      parentName: WitchRig_Published:RollToes_R
+      position: {x: -0.0000000020922575, y: 0.04469634, z: -0.04786527}
+      rotation: {x: 0, y: 0.016981753, z: -0, w: 0.9998558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureConstrainToLeg_R
+      parentName: WitchRig_Published:RollToes_R
+      position: {x: -0.0000000020922575, y: 0.04469634, z: -0.04786527}
+      rotation: {x: 0, y: 0.016981753, z: -0, w: 0.9998558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_M
+      parentName: WitchRig_Published:IKHandle
+      position: {x: 1.716207e-16, y: 1.219236, z: -0.03611141}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtraSpine2_M
+      parentName: WitchRig_Published:IKOffsetSpine2_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine2_M
+      parentName: WitchRig_Published:IKExtraSpine2_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine2LocalOrient1_M
+      parentName: WitchRig_Published:IKSpine2_M
+      position: {x: -3.1554436e-32, y: -2.842171e-16, z: 3.9968027e-17}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine2LocalOrient2_M
+      parentName: WitchRig_Published:IKSpine2LocalOrient1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine2LocalOrient3_M
+      parentName: WitchRig_Published:IKOffsetSpine2_M
+      position: {x: -3.1554436e-32, y: -2.842171e-16, z: 3.9968027e-17}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine3_M
+      parentName: WitchRig_Published:IKHandle
+      position: {x: 3.629509e-16, y: 1.4250518, z: -0.05450561}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKExtraSpine3_M
+      parentName: WitchRig_Published:IKOffsetSpine3_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine3_M
+      parentName: WitchRig_Published:IKExtraSpine3_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine3LocalOrient1_M
+      parentName: WitchRig_Published:IKSpine3_M
+      position: {x: -1.2621774e-31, y: 0, z: 0}
+      rotation: {x: 0.5180611, y: -0.4812616, z: -0.5180611, w: 0.4812616}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpine3LocalOrient2_M
+      parentName: WitchRig_Published:IKSpine3LocalOrient1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpineLocator2_M
+      parentName: WitchRig_Published:IKSpine3_M
+      position: {x: -8.619425e-17, y: -2.842171e-16, z: 1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKRootConstraint
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -0, y: -0.079140104, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKScalerChest_M
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKScalerRoot_M
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKScalerSpine1_M
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpineHandle_M
+      parentName: WitchRig_Published:IKHandle
+      position: {x: 2.767538e-16, y: 1.4250646, z: -0.054506745}
+      rotation: {x: 0.47457936, y: -0.52418935, z: -0.47457936, w: 0.52418935}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleAimLeg_L
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0.48425823, y: 0.25112873, z: 0.5669874, w: 0.6172144}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleAimLeg_R
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0.5023722, y: 0.71373445, z: 0.32588914, w: 0.3633203}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetArm_L
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -0.6009328, y: 2.0279539, z: -0.050628193}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleExtraArm_L
+      parentName: WitchRig_Published:PoleOffsetArm_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleArm_L
+      parentName: WitchRig_Published:PoleExtraArm_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetArm_R
+      parentName: WitchRig_Published:IKHandle
+      position: {x: 0.6009328, y: 2.0279539, z: -0.050628193}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleExtraArm_R
+      parentName: WitchRig_Published:PoleOffsetArm_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleArm_R
+      parentName: WitchRig_Published:PoleExtraArm_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetLeg_L
+      parentName: WitchRig_Published:IKHandle
+      position: {x: -0.27943352, y: 0.4187774, z: 0.85312575}
+      rotation: {x: 0.08301919, y: -0.24277507, z: -0.11992084, w: 0.95905536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleExtraLeg_L
+      parentName: WitchRig_Published:PoleOffsetLeg_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleLeg_L
+      parentName: WitchRig_Published:PoleExtraLeg_L
+      position: {x: -0.61363524, y: -0.0014747937, z: -0.0000028730008}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetLeg_R
+      parentName: WitchRig_Published:IKHandle
+      position: {x: 0.30622482, y: 0.8579328, z: 1.0177057}
+      rotation: {x: -0.13275021, y: 0.27645144, z: 0.06175777, w: 0.9498095}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleExtraLeg_R
+      parentName: WitchRig_Published:PoleOffsetLeg_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleLeg_R
+      parentName: WitchRig_Published:PoleExtraLeg_R
+      position: {x: 0.3994828, y: -0.0009601058, z: -0.0000018703528}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKJoints
+      parentName: WitchRig_Published:IKSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcSpineOffset2_M
+      parentName: WitchRig_Published:IKJoints
+      position: {x: -1.9709482e-17, y: 1.0925603, z: -0.017717207}
+      rotation: {x: 0.47722706, y: -0.52177995, z: -0.47722706, w: 0.52177995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcChestFollowOffset_M
+      parentName: WitchRig_Published:IKAcSpineOffset2_M
+      position: {x: -0.33444637, y: -0.0070448415, z: -1.6065646e-16}
+      rotation: {x: 0, y: -0, z: -0.08128563, w: 0.99669087}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcSpine1FollowOffset_M
+      parentName: WitchRig_Published:IKAcSpineOffset2_M
+      position: {x: -0.17929241, y: -0.00861587, z: 4.188492e-17}
+      rotation: {x: 0, y: -0, z: -0.00506261, w: 0.9999872}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcSpineOffset3_M
+      parentName: WitchRig_Published:IKJoints
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcPociXformChest_M
+      parentName: WitchRig_Published:IKAcSpineOffset3_M
+      position: {x: 2.7675663e-16, y: 1.4250518, z: -0.05450561}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcPociXformRoot_M
+      parentName: WitchRig_Published:IKAcSpineOffset3_M
+      position: {x: -1.9709457e-17, y: 1.0134202, z: -0.01771721}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcPociXformSpine1_M
+      parentName: WitchRig_Published:IKAcSpineOffset3_M
+      position: {x: 1.6545838e-16, y: 1.2705185, z: -0.040694635}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcSpineOffset_M
+      parentName: WitchRig_Published:IKJoints
+      position: {x: -1.9709482e-17, y: 1.0925603, z: -0.017717207}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcChest_M
+      parentName: WitchRig_Published:IKAcSpineOffset_M
+      position: {x: -0.33448306, y: -0.005009153, z: -3.7101435e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcRoot_M
+      parentName: WitchRig_Published:IKAcSpineOffset_M
+      position: {x: 0.07878155, y: -0.0075244736, z: 1.7075302e-17}
+      rotation: {x: 4.814848e-34, y: -4.695349e-16, z: -0.0030431908, w: 0.9999954}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcSpine1_M
+      parentName: WitchRig_Published:IKAcSpineOffset_M
+      position: {x: -0.1793367, y: -0.005953445, z: -2.253191e-16}
+      rotation: {x: 0, y: -0, z: -0.0030431908, w: 0.9999954}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKParentConstraintHip_L
+      parentName: WitchRig_Published:IKJoints
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKMessureFromHip_L
+      parentName: WitchRig_Published:IKParentConstraintHip_L
+      position: {x: -0.0748791, y: -0.0086545795, z: -0.0053527146}
+      rotation: {x: 0.60794497, y: -0.5596202, z: 0.40591854, w: -0.3904592}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXOffsetHip_L
+      parentName: WitchRig_Published:IKParentConstraintHip_L
+      position: {x: -0.0748791, y: -0.0086545795, z: -0.0053527146}
+      rotation: {x: 0.60794497, y: -0.5596202, z: 0.40591854, w: -0.3904592}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXHip_L
+      parentName: WitchRig_Published:IKXOffsetHip_L
+      position: {x: -1.4210854e-16, y: -1.3322676e-17, z: 0}
+      rotation: {x: 0.50071734, y: 0.21089146, z: -0.005416788, w: 0.8395103}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Hip_L
+      parentName: WitchRig_Published:IKXHip_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXKnee_L
+      parentName: WitchRig_Published:IKXHip_L
+      position: {x: 0.4453255, y: 3.9968027e-17, z: 7.105427e-17}
+      rotation: {x: 1.431891e-15, y: 5.1527183e-15, z: 0.2743186, w: 0.96163887}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Knee_L
+      parentName: WitchRig_Published:IKXKnee_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXAnkle_L
+      parentName: WitchRig_Published:IKXKnee_L
+      position: {x: 0.5808392, y: -5.950795e-16, z: -1.234568e-15}
+      rotation: {x: -0.15374362, y: -0.11879521, z: -0.16862431, w: 0.9663418}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Ankle_L
+      parentName: WitchRig_Published:IKXAnkle_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXToes_L
+      parentName: WitchRig_Published:IKXAnkle_L
+      position: {x: 0.04469634, y: -0.04786527, z: -9.7699626e-17}
+      rotation: {x: 0.012689935, y: 0.011281442, z: -0.6644724, w: 0.7471199}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Toes_L
+      parentName: WitchRig_Published:IKXToes_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXToesEnd_L
+      parentName: WitchRig_Published:IKXToes_L
+      position: {x: 0.024580287, y: 2.4202863e-16, z: -5.034749e-10}
+      rotation: {x: 0.00000057642967, y: 0.0000065548998, z: -3.7784385e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2ToesEnd_L
+      parentName: WitchRig_Published:IKXToesEnd_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleAnnotationLeg_L
+      parentName: WitchRig_Published:IKXKnee_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKParentConstraintHip_R
+      parentName: WitchRig_Published:IKJoints
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKMessureFromHip_R
+      parentName: WitchRig_Published:IKParentConstraintHip_R
+      position: {x: 0.0748791, y: -0.0086545795, z: -0.0053527146}
+      rotation: {x: 0.3904592, y: 0.40591854, z: 0.5596202, w: 0.60794497}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXOffsetHip_R
+      parentName: WitchRig_Published:IKParentConstraintHip_R
+      position: {x: 0.0748791, y: -0.0086545795, z: -0.0053527146}
+      rotation: {x: 0.3904592, y: 0.40591854, z: 0.5596202, w: 0.60794497}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXHip_R
+      parentName: WitchRig_Published:IKXOffsetHip_R
+      position: {x: -1.4210854e-16, y: 4.440892e-18, z: 8.881784e-18}
+      rotation: {x: 0.4354235, y: 0.17244613, z: -0.23670468, w: 0.8512577}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Hip_R
+      parentName: WitchRig_Published:IKXHip_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXKnee_R
+      parentName: WitchRig_Published:IKXHip_R
+      position: {x: -0.4453255, y: -1.3766766e-16, z: -6.5725204e-16}
+      rotation: {x: 1.4882718e-15, y: 5.918443e-15, z: 0.30446318, w: 0.9525241}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Knee_R
+      parentName: WitchRig_Published:IKXKnee_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXAnkle_R
+      parentName: WitchRig_Published:IKXKnee_R
+      position: {x: -0.5808392, y: 8.5709215e-16, z: 4.751754e-16}
+      rotation: {x: -0.03766551, y: -0.009438257, z: -0.0044413065, w: 0.999236}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Ankle_R
+      parentName: WitchRig_Published:IKXAnkle_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXToes_R
+      parentName: WitchRig_Published:IKXAnkle_R
+      position: {x: -0.04469634, y: 0.04786527, z: -8.881784e-18}
+      rotation: {x: 0.012687789, y: 0.011283489, z: -0.66446793, w: 0.7471239}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Toes_R
+      parentName: WitchRig_Published:IKXToes_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXToesEnd_R
+      parentName: WitchRig_Published:IKXToes_R
+      position: {x: -0.024580287, y: -6.2716495e-14, z: 0.00000016153136}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2ToesEnd_R
+      parentName: WitchRig_Published:IKXToesEnd_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleAnnotationLeg_R
+      parentName: WitchRig_Published:IKXKnee_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKParentConstraintRoot_M
+      parentName: WitchRig_Published:IKJoints
+      position: {x: -1.9709482e-17, y: 1.0925603, z: -0.017717207}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKfake0Spine_M
+      parentName: WitchRig_Published:IKParentConstraintRoot_M
+      position: {x: 0.07878158, y: -0.0075244736, z: 1.7075334e-17}
+      rotation: {x: -0.000000010536713, y: -2.099938e-16, z: -0.006086353, w: 0.9999815}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKFixedOrientRoot_M
+      parentName: WitchRig_Published:IKfake0Spine_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 9.540979e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKAcRootFollowOffset_M
+      parentName: WitchRig_Published:IKFixedOrientRoot_M
+      position: {x: -0, y: -6.217249e-17, z: 3.1554436e-32}
+      rotation: {x: 0, y: 0, z: 0.006086353, w: 0.9999815}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpRootFollowOffset_M
+      parentName: WitchRig_Published:IKFixedOrientRoot_M
+      position: {x: -0, y: -5.3290704e-17, z: 3.1554436e-32}
+      rotation: {x: 0, y: 0, z: 0.006086353, w: 0.9999815}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpSpine1_M
+      parentName: WitchRig_Published:IKfake0Spine_M
+      position: {x: -0.25811833, y: -0.0015710284, z: -1.3390612e-16}
+      rotation: {x: -9.73966e-18, y: 3.4957907e-16, z: 0.008105738, w: 0.99996716}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpChest_M
+      parentName: WitchRig_Published:IKSpSpine1_M
+      position: {x: -0.15515396, y: 0.0015710284, z: -2.5418358e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKfake1Spine_M
+      parentName: WitchRig_Published:IKSpChest_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXOffsetRoot_M
+      parentName: WitchRig_Published:IKParentConstraintRoot_M
+      position: {x: -0, y: 1.7763568e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXRoot_M
+      parentName: WitchRig_Published:IKXOffsetRoot_M
+      position: {x: 0.07878158, y: -0.0075244736, z: 1.7075334e-17}
+      rotation: {x: 0, y: -0, z: -1.7347235e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Root_M
+      parentName: WitchRig_Published:IKXRoot_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXSpine1_M
+      parentName: WitchRig_Published:IKXRoot_M
+      position: {x: -0.25812313, y: 7.105427e-17, z: -1.3390612e-16}
+      rotation: {x: 0, y: 0, z: -0.008105738, w: 0.99996716}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Spine1_M
+      parentName: WitchRig_Published:IKXSpine1_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXChest_M
+      parentName: WitchRig_Published:IKXSpine1_M
+      position: {x: -0.15516192, y: -5.3290704e-17, z: -3.403778e-16}
+      rotation: {x: 0, y: 0, z: -0.076238744, w: 0.9970896}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Chest_M
+      parentName: WitchRig_Published:IKXChest_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKParentConstraintShoulder_L
+      parentName: WitchRig_Published:IKJoints
+      position: {x: -0.08544299, y: 1.4974421, z: -0.03469666}
+      rotation: {x: -0.08704316, y: 0.9812435, z: 0.026651647, w: 0.16992489}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKMessureFromShoulder_L
+      parentName: WitchRig_Published:IKParentConstraintShoulder_L
+      position: {x: 0.10201863, y: 4.5474734e-15, z: -1.7763568e-17}
+      rotation: {x: -0.0008888791, y: -0.01430462, z: -0.06201331, w: 0.9979724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXOffsetShoulder_L
+      parentName: WitchRig_Published:IKParentConstraintShoulder_L
+      position: {x: 0.10201863, y: 4.263256e-15, z: -1.7763568e-17}
+      rotation: {x: -0.0008888791, y: -0.01430462, z: -0.06201331, w: 0.9979724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXShoulder_L
+      parentName: WitchRig_Published:IKXOffsetShoulder_L
+      position: {x: 1.0658141e-16, y: 2.842171e-16, z: 0}
+      rotation: {x: 0.044805665, y: 0.22006536, z: 0.23442352, w: 0.9458379}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Shoulder_L
+      parentName: WitchRig_Published:IKXShoulder_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXElbow_L
+      parentName: WitchRig_Published:IKXShoulder_L
+      position: {x: 0.18009631, y: 2.842171e-16, z: -3.5527136e-17}
+      rotation: {x: -1.1278538e-14, y: 2.5559026e-14, z: -0.40209332, w: 0.9155987}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Elbow_L
+      parentName: WitchRig_Published:IKXElbow_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXWrist_L
+      parentName: WitchRig_Published:IKXElbow_L
+      position: {x: 0.4436539, y: 3.410605e-15, z: -1.5889511e-14}
+      rotation: {x: 0.6999244, y: -0.16295987, z: 0.044025373, w: 0.69398254}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Wrist_L
+      parentName: WitchRig_Published:IKXWrist_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleAnnotationArm_L
+      parentName: WitchRig_Published:IKXElbow_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKParentConstraintShoulder_R
+      parentName: WitchRig_Published:IKJoints
+      position: {x: 0.055832412, y: 1.4976068, z: 0.013397311}
+      rotation: {x: -0.15533535, y: -0.053116865, z: 0.98373795, w: 0.07286436}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKMessureFromShoulder_R
+      parentName: WitchRig_Published:IKParentConstraintShoulder_R
+      position: {x: -0.10201863, y: -5.6843415e-15, z: 0}
+      rotation: {x: -0.0008888791, y: -0.01430462, z: -0.06201331, w: 0.9979724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXOffsetShoulder_R
+      parentName: WitchRig_Published:IKParentConstraintShoulder_R
+      position: {x: -0.10201863, y: -4.8316907e-15, z: 0}
+      rotation: {x: -0.0008888791, y: -0.01430462, z: -0.06201331, w: 0.9979724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXShoulder_R
+      parentName: WitchRig_Published:IKXOffsetShoulder_R
+      position: {x: -0, y: -2.842171e-16, z: 0}
+      rotation: {x: 0.104719535, y: -0.20122248, z: 0.110986665, w: 0.96758735}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Shoulder_R
+      parentName: WitchRig_Published:IKXShoulder_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXElbow_R
+      parentName: WitchRig_Published:IKXShoulder_R
+      position: {x: -0.18009631, y: 1.1368684e-15, z: -1.7763568e-17}
+      rotation: {x: -2.1521896e-15, y: 8.760234e-15, z: -0.23942024, w: 0.9709161}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Elbow_R
+      parentName: WitchRig_Published:IKXElbow_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKXWrist_R
+      parentName: WitchRig_Published:IKXElbow_R
+      position: {x: -0.4436539, y: -2.5579537e-15, z: 1.6191492e-14}
+      rotation: {x: 0.6380458, y: -0.1431204, z: -0.04327185, w: 0.7553421}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKX2Wrist_R
+      parentName: WitchRig_Published:IKXWrist_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleAnnotationArm_R
+      parentName: WitchRig_Published:IKXElbow_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpSpineOffset_M
+      parentName: WitchRig_Published:IKJoints
+      position: {x: -1.9709482e-17, y: 1.0925603, z: -0.017717207}
+      rotation: {x: 0.47722706, y: -0.52177995, z: -0.47722706, w: 0.52177995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpChestFollowOffset_M
+      parentName: WitchRig_Published:IKSpSpineOffset_M
+      position: {x: -0.33444637, y: -0.0070448415, z: -2.3570063e-16}
+      rotation: {x: 0, y: -0, z: -0.08128563, w: 0.99669087}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpRoot_M
+      parentName: WitchRig_Published:IKSpSpineOffset_M
+      position: {x: -0, y: 2.6645352e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKSpSpine1FollowOffset_M
+      parentName: WitchRig_Published:IKSpSpineOffset_M
+      position: {x: -0.17929241, y: -0.00861587, z: 1.1174502e-18}
+      rotation: {x: 0, y: -0, z: -0.00506261, w: 0.9999872}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKMessure
+      parentName: WitchRig_Published:IKSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKdistanceArm_L
+      parentName: WitchRig_Published:IKMessure
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKdistanceArm_R
+      parentName: WitchRig_Published:IKMessure
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKdistanceLeg_L
+      parentName: WitchRig_Published:IKMessure
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKdistanceLeg_R
+      parentName: WitchRig_Published:IKMessure
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureLoc1Arm_L
+      parentName: WitchRig_Published:IKMessure
+      position: {x: -0.18002425, y: 1.4809393, z: -0.06919069}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureLoc2Arm_L
+      parentName: WitchRig_Published:IKmessureLoc1Arm_L
+      position: {x: -0.53058255, y: -0.2319652, z: 0.045476932}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureLoc1Arm_R
+      parentName: WitchRig_Published:IKMessure
+      position: {x: 0.15184453, y: 1.4812981, z: 0.043786407}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureLoc2Arm_R
+      parentName: WitchRig_Published:IKmessureLoc1Arm_R
+      position: {x: 0.55876225, y: -0.23232396, z: -0.06750017}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureLoc1Leg_L
+      parentName: WitchRig_Published:IKMessure
+      position: {x: -0.0748791, y: 1.0047656, z: -0.023069922}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureLoc2Leg_L
+      parentName: WitchRig_Published:IKmessureLoc1Leg_L
+      position: {x: -0.15874255, y: -0.94551057, z: -0.23658195}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureLoc1Leg_R
+      parentName: WitchRig_Published:IKMessure
+      position: {x: 0.0748791, y: 1.0047656, z: -0.023069922}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKmessureLoc2Leg_R
+      parentName: WitchRig_Published:IKmessureLoc1Leg_R
+      position: {x: 0.1564202, y: -0.94551057, z: 0.19659393}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKStatic
+      parentName: WitchRig_Published:IKSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetArm_LStatic
+      parentName: WitchRig_Published:IKStatic
+      position: {x: -0.7106068, y: 1.2489741, z: -0.02371376}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetArm_RStatic
+      parentName: WitchRig_Published:IKStatic
+      position: {x: 0.7106068, y: 1.2489741, z: -0.02371376}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_MStatic
+      parentName: WitchRig_Published:IKStatic
+      position: {x: 1.716207e-16, y: 1.258806, z: -0.03611141}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine2_MStaticStatic
+      parentName: WitchRig_Published:IKStatic
+      position: {x: 1.716207e-16, y: 1.2983761, z: -0.03611141}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:IKOffsetSpine3_MStatic
+      parentName: WitchRig_Published:IKStatic
+      position: {x: 3.629509e-16, y: 1.5041919, z: -0.05450561}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetArm_LStatic
+      parentName: WitchRig_Published:IKStatic
+      position: {x: -0.6009328, y: 2.0279539, z: -0.050628193}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetArm_RStatic
+      parentName: WitchRig_Published:IKStatic
+      position: {x: 0.6009328, y: 2.0279539, z: -0.050628193}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetLeg_LStatic
+      parentName: WitchRig_Published:IKStatic
+      position: {x: 0.31047878, y: 0.6595858, z: 0.9342211}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:PoleOffsetLeg_RStatic
+      parentName: WitchRig_Published:IKStatic
+      position: {x: -0.31047878, y: 0.6595858, z: 0.9342211}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RootSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:LegLockConstrained
+      parentName: WitchRig_Published:RootSystem
+      position: {x: -1.9709482e-17, y: 1.0134201, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RootOffsetX_M
+      parentName: WitchRig_Published:RootSystem
+      position: {x: -1.9709482e-17, y: 1.0925603, z: -0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RootExtraX_M
+      parentName: WitchRig_Published:RootOffsetX_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RootX_M
+      parentName: WitchRig_Published:RootExtraX_M
+      position: {x: -0, y: -0.079140104, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RootSpineAligned
+      parentName: WitchRig_Published:RootX_M
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -1.110223e-16, y: 2.7755576e-17, z: -2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:RootZeroXform
+      parentName: WitchRig_Published:RootX_M
+      position: {x: 1.9709482e-17, y: -1.0925603, z: 0.017717207}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistSystem
+      parentName: WitchRig_Published:MotionSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKMixElbow_L
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: -0.2182385, y: 1.3809029, z: -0.21399075}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:FKIKMixElbow_R
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: 0.25138292, y: 1.3418803, z: 0.0993696}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowOffsetChest_M
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: 3.629509e-16, y: 1.5041919, z: -0.05450561}
+      rotation: {x: 0.5180611, y: -0.4812616, z: -0.5180611, w: 0.4812616}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowChest_M
+      parentName: WitchRig_Published:TwistFollowOffsetChest_M
+      position: {x: 0.07892576, y: 0.0058206785, z: 1.8494377e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistIKChest_M
+      parentName: WitchRig_Published:TwistFollowChest_M
+      position: {x: -0.11407551, y: -0.019919766, z: -7.9810435e-17}
+      rotation: {x: 0.5180611, y: -0.4812616, z: -0.5180611, w: -0.4812616}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowOffsetElbow_L
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: -0.34790435, y: 1.5044495, z: -0.020872662}
+      rotation: {x: -0.3018458, y: 0.95298487, z: -0.02423136, w: 0.011034871}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowElbow_L
+      parentName: WitchRig_Published:TwistFollowOffsetElbow_L
+      position: {x: -0.033626102, y: -0.16521175, z: 0.2023511}
+      rotation: {x: 0.21223576, y: -0.31632793, z: -0.21986562, w: 0.89808226}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistIKElbow_L
+      parentName: WitchRig_Published:TwistFollowElbow_L
+      position: {x: 0.11580164, y: 0, z: -6.217249e-17}
+      rotation: {x: -0.3018458, y: 0.95298487, z: -0.02423136, w: -0.011034871}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowOffsetElbow_R
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: 0.34790435, y: 1.5044495, z: -0.020872662}
+      rotation: {x: 0.011034871, y: 0.02423136, z: 0.95298487, w: 0.3018458}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowElbow_R
+      parentName: WitchRig_Published:TwistFollowOffsetElbow_R
+      position: {x: -0.013934732, y: 0.19458689, z: 0.11020463}
+      rotation: {x: -0.009402224, y: 0.5042373, z: -0.375446, w: 0.7776225}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistIKElbow_R
+      parentName: WitchRig_Published:TwistFollowElbow_R
+      position: {x: -0.11580164, y: -2.842171e-16, z: -1.7763568e-17}
+      rotation: {x: 0.011034871, y: 0.02423136, z: 0.95298487, w: -0.3018458}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowOffsetShoulder_L
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: -0.17528589, y: 1.5556395, z: -0.016734313}
+      rotation: {x: -0.14332165, y: 0.98931795, z: -0.022121334, w: 0.01481802}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowShoulder_L
+      parentName: WitchRig_Published:TwistFollowOffsetShoulder_L
+      position: {x: 0.026979536, y: -0.06769876, z: 0.055165377}
+      rotation: {x: 0.013299042, y: -0.49609557, z: -0.25302503, w: 0.8304762}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistIKShoulder_L
+      parentName: WitchRig_Published:TwistFollowShoulder_L
+      position: {x: 0.11580164, y: 5.684342e-16, z: 8.881784e-18}
+      rotation: {x: -0.14332165, y: 0.98931795, z: -0.022121334, w: -0.01481802}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowOffsetShoulder_R
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: 0.17528589, y: 1.5556395, z: -0.016734313}
+      rotation: {x: 0.01481802, y: 0.022121334, z: 0.98931795, w: 0.14332165}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowShoulder_R
+      parentName: WitchRig_Published:TwistFollowOffsetShoulder_R
+      position: {x: 0.0027281516, y: 0.08075272, z: 0.056660816}
+      rotation: {x: -0.15131664, y: 0.20924267, z: -0.29132822, w: 0.9211127}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistIKShoulder_R
+      parentName: WitchRig_Published:TwistFollowShoulder_R
+      position: {x: -0.11580164, y: -5.684342e-16, z: -8.881784e-18}
+      rotation: {x: 0.01481802, y: 0.022121334, z: 0.98931795, w: -0.14332165}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowOffsetSpine2_M
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: 1.716207e-16, y: 1.2983761, z: -0.03611141}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowSpine2_M
+      parentName: WitchRig_Published:TwistFollowOffsetSpine2_M
+      position: {x: 0.07878158, y: -0.0075244736, z: 1.7075334e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistIKSpine2_M
+      parentName: WitchRig_Published:TwistFollowSpine2_M
+      position: {x: -0.16477813, y: 1.7763568e-17, z: 1.2621774e-31}
+      rotation: {x: -0.47563696, y: 0.52322984, z: 0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentOffsetChest_M
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: -1.9709482e-17, y: 1.0925603, z: -0.017717207}
+      rotation: {x: 0.47722706, y: -0.52177995, z: -0.47722706, w: 0.52177995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentChest_M
+      parentName: WitchRig_Published:TwistFollowParentOffsetChest_M
+      position: {x: -0, y: 0, z: 6.310887e-32}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistChest_M
+      parentName: WitchRig_Published:TwistFollowParentChest_M
+      position: {x: -0.33444637, y: -0.0070448415, z: -2.3570063e-16}
+      rotation: {x: 0, y: 0, z: 0.00506261, w: 0.9999872}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistBalancerChest_M
+      parentName: WitchRig_Published:UnTwistChest_M
+      position: {x: -5.684342e-16, y: 0, z: 6.310887e-32}
+      rotation: {x: 0, y: 0, z: -0.08633045, w: 0.99626654}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistEndChest_M
+      parentName: WitchRig_Published:UnTwistChest_M
+      position: {x: -0.11580164, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentOffsetElbow_L
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: -0.17528589, y: 1.5556395, z: -0.016734313}
+      rotation: {x: -0.14332165, y: 0.98931795, z: -0.022121334, w: 0.01481802}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentElbow_L
+      parentName: WitchRig_Published:TwistFollowParentOffsetElbow_L
+      position: {x: 0.026979536, y: -0.06769876, z: 0.055165377}
+      rotation: {x: 0.013299042, y: -0.49609557, z: -0.25302503, w: 0.8304762}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistElbow_L
+      parentName: WitchRig_Published:TwistFollowParentElbow_L
+      position: {x: 0.18009631, y: 2.842171e-16, z: 1.4210854e-16}
+      rotation: {x: 0.02782637, y: 0.16933452, z: -0.15974753, w: 0.9721277}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistBalancerElbow_L
+      parentName: WitchRig_Published:UnTwistElbow_L
+      position: {x: -0, y: 0, z: -1.0658141e-16}
+      rotation: {x: 0.000000016030523, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterElbow0_L
+      parentName: WitchRig_Published:UnTwistElbow_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterElbow1_L
+      parentName: WitchRig_Published:UnTwistElbow_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000005343508, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterElbow2_L
+      parentName: WitchRig_Published:UnTwistElbow_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000010687016, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistEndElbow_L
+      parentName: WitchRig_Published:UnTwistElbow_L
+      position: {x: 0.11580164, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentOffsetElbow_R
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: 0.17528589, y: 1.5556395, z: -0.016734313}
+      rotation: {x: 0.01481802, y: 0.022121334, z: 0.98931795, w: 0.14332165}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentElbow_R
+      parentName: WitchRig_Published:TwistFollowParentOffsetElbow_R
+      position: {x: 0.0027281516, y: 0.08075272, z: 0.056660816}
+      rotation: {x: -0.15131664, y: 0.20924267, z: -0.29132822, w: 0.9211127}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistElbow_R
+      parentName: WitchRig_Published:TwistFollowParentElbow_R
+      position: {x: -0.18009631, y: -4.2632563e-16, z: 1.6653344e-17}
+      rotation: {x: 0.06877784, y: 0.41854042, z: -0.131539, w: 0.8959861}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistBalancerElbow_R
+      parentName: WitchRig_Published:UnTwistElbow_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.070945516, y: 0, z: -0, w: 0.9974802}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterElbow0_R
+      parentName: WitchRig_Published:UnTwistElbow_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterElbow1_R
+      parentName: WitchRig_Published:UnTwistElbow_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.023666177, y: -0, z: -0, w: 0.9997199}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterElbow2_R
+      parentName: WitchRig_Published:UnTwistElbow_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.047319096, y: -0, z: -0, w: 0.99887985}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistEndElbow_R
+      parentName: WitchRig_Published:UnTwistElbow_R
+      position: {x: -0.11580164, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentOffsetShoulder_L
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: -0.074618496, y: 1.5721885, z: -0.0167}
+      rotation: {x: -0.08135057, y: 0.9963922, z: -0.024087114, w: 0.002135371}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentShoulder_L
+      parentName: WitchRig_Published:TwistFollowParentOffsetShoulder_L
+      position: {x: 0.022812314, y: -0.07104656, z: 0.021449022}
+      rotation: {x: -0.036553208, y: -0.17148124, z: -0.0027544934, w: 0.9845052}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistShoulder_L
+      parentName: WitchRig_Published:TwistFollowParentShoulder_L
+      position: {x: 0.10201863, y: 3.694822e-15, z: -1.0658141e-16}
+      rotation: {x: -0.018576976, y: -0.35682705, z: -0.30571824, w: 0.88253367}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistBalancerShoulder_L
+      parentName: WitchRig_Published:UnTwistShoulder_L
+      position: {x: -4.2632563e-16, y: 2.842171e-16, z: 1.4210854e-16}
+      rotation: {x: -0.019232878, y: 0, z: -0, w: 0.99981505}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterShoulder0_L
+      parentName: WitchRig_Published:UnTwistShoulder_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterShoulder1_L
+      parentName: WitchRig_Published:UnTwistShoulder_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.006411305, y: 0, z: -0, w: 0.99997944}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterShoulder2_L
+      parentName: WitchRig_Published:UnTwistShoulder_L
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.012822347, y: 0, z: -0, w: 0.9999178}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistEndShoulder_L
+      parentName: WitchRig_Published:UnTwistShoulder_L
+      position: {x: 0.11580164, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentOffsetShoulder_R
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: 0.074618496, y: 1.5721885, z: -0.0167}
+      rotation: {x: 0.002135371, y: 0.024087114, z: 0.9963922, w: 0.08135057}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentShoulder_R
+      parentName: WitchRig_Published:TwistFollowParentOffsetShoulder_R
+      position: {x: 0.006448953, y: 0.07800676, z: 0.026354503}
+      rotation: {x: -0.089412846, y: 0.1507994, z: 0.0037980024, w: 0.9845052}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistShoulder_R
+      parentName: WitchRig_Published:TwistFollowParentShoulder_R
+      position: {x: -0.10201863, y: -4.5474734e-15, z: 1.7763568e-17}
+      rotation: {x: 0.010043151, y: 0.093996644, z: -0.35106114, w: 0.9315685}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistBalancerShoulder_R
+      parentName: WitchRig_Published:UnTwistShoulder_R
+      position: {x: -0, y: -1.4210854e-16, z: -1.04360964e-16}
+      rotation: {x: -0.008823436, y: 0, z: -0, w: 0.9999611}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterShoulder0_R
+      parentName: WitchRig_Published:UnTwistShoulder_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterShoulder1_R
+      parentName: WitchRig_Published:UnTwistShoulder_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.02072572, y: -0, z: -0, w: 0.9997852}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwisterShoulder2_R
+      parentName: WitchRig_Published:UnTwistShoulder_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.041442536, y: -0, z: -0, w: 0.9991409}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistEndShoulder_R
+      parentName: WitchRig_Published:UnTwistShoulder_R
+      position: {x: -0.11580164, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentOffsetSpine2_M
+      parentName: WitchRig_Published:TwistSystem
+      position: {x: 1.716207e-16, y: 1.2983761, z: -0.03611141}
+      rotation: {x: 0.47563696, y: -0.52322984, z: -0.47563696, w: 0.52322984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistFollowParentSpine2_M
+      parentName: WitchRig_Published:TwistFollowParentOffsetSpine2_M
+      position: {x: 0.07878158, y: -0.0075244736, z: 1.7075334e-17}
+      rotation: {x: -5.551115e-17, y: -2.7755576e-17, z: 8.326673e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistSpine2_M
+      parentName: WitchRig_Published:TwistFollowParentSpine2_M
+      position: {x: -0, y: 0, z: 1.8932661e-31}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:TwistBalancerSpine2_M
+      parentName: WitchRig_Published:UnTwistSpine2_M
+      position: {x: -0, y: 0, z: -6.310887e-32}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:UnTwistEndSpine2_M
+      parentName: WitchRig_Published:UnTwistSpine2_M
+      position: {x: -0.16477813, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:model:geo
+      parentName: witchMod(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WitchRig_Published:model:NEWWIZ
+      parentName: WitchRig_Published:model:geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: WitchRig_Published:Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

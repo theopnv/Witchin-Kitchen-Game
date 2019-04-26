@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2095327625284118410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095327625284118409}
+  - component: {fileID: 2095327625284118408}
+  m_Layer: 0
+  m_Name: ColorsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095327625284118409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095327625284118410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2095327625284118408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095327625284118410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40924781d754c2f46885b30e5b7f8ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerColorTextures:
+  - {fileID: 2800000, guid: de60af9fd16f96344913066d825d636e, type: 3}
+  - {fileID: 2800000, guid: 7fc3f23f55f04614593829b1dbba2bbe, type: 3}
+  - {fileID: 2800000, guid: 90632de47ceda0d47ba84fd1433ebd8d, type: 3}
+  - {fileID: 2800000, guid: be65bd163b8933345bc9e8172761ff47, type: 3}
+  PlayerNormalTextures:
+  - {fileID: 2800000, guid: 7cbb4bac40246db4a9e35fc48134bdf4, type: 3}
+  - {fileID: 2800000, guid: b172922668edcda45b45b8855a274576, type: 3}
+  - {fileID: 2800000, guid: 7cbb4bac40246db4a9e35fc48134bdf4, type: 3}
+  - {fileID: 2800000, guid: b172922668edcda45b45b8855a274576, type: 3}
+  PlayerOcclusionTextures:
+  - {fileID: 2800000, guid: 9ef03a491f721754ab87dbc88fa098a8, type: 3}
+  - {fileID: 2800000, guid: 1c3691af17af7b34f847b3a571a88774, type: 3}
+  - {fileID: 2800000, guid: 9ef03a491f721754ab87dbc88fa098a8, type: 3}
+  - {fileID: 2800000, guid: 1c3691af17af7b34f847b3a571a88774, type: 3}
+  PlayerRoughnessTextures:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PlayerMeshColors:
+  - {r: 0.9294118, g: 0.454902, b: 0.17254902, a: 1}
+  - {r: 0.3372549, g: 0.8235295, b: 0.75294125, a: 1}
+  - {r: 1, g: 0.96470594, b: 0.1137255, a: 1}
+  - {r: 0.8745099, g: 0.41176474, b: 0.5137255, a: 1}
+  CauldronLiquidColors:
+  - {r: 0.9294118, g: 0.454902, b: 0.17254902, a: 1}
+  - {r: 0.3372549, g: 0.8235295, b: 0.75294125, a: 1}
+  - {r: 1, g: 0.96470594, b: 0.1137255, a: 1}
+  - {r: 0.8745099, g: 0.41176474, b: 0.5137255, a: 1}
+  CauldronBubblesColors:
+  - {r: 3.3882353, g: 0.7058824, b: 0.09411765, a: 1}
+  - {r: 0.3764706, g: 2.572549, b: 2.101961, a: 1}
+  - {r: 2, g: 1.8431373, b: 0.023529412, a: 1}
+  - {r: 2.5672705, g: 0.491605, b: 0.7920303, a: 1}
+  PlayerAppColors:
+  - {r: 0.9294118, g: 0.454902, b: 0.17254902, a: 1}
+  - {r: 0.3372549, g: 0.8235295, b: 0.75294125, a: 1}
+  - {r: 1, g: 0.96470594, b: 0.1137255, a: 1}
+  - {r: 0.8745099, g: 0.41176474, b: 0.5137255, a: 1}
+  PlayerGiftColors:
+  - {r: 0.9294118, g: 0.454902, b: 0.17254902, a: 1}
+  - {r: 0.3372549, g: 0.8235295, b: 0.75294125, a: 1}
+  - {r: 1, g: 0.96470594, b: 0.1137255, a: 1}
+  - {r: 0.8745099, g: 0.41176474, b: 0.5137255, a: 1}
+  PlayerForceFieldColors:
+  - {r: 1.216786, g: 0.30578914, b: 0, a: 0}
+  - {r: 0.30578914, g: 1.1594505, b: 1.216786, a: 0}
+  - {r: 1.216786, g: 1.216786, b: 0, a: 0}
+  - {r: 1.216786, g: 0.30578914, b: 0.91099685, a: 0}
+  PlayerBorderColors:
+  - {r: 1.50324, g: 0.3541665, b: 0, a: 1}
+  - {r: 0.36990723, g: 1.416666, b: 1.50324, a: 1}
+  - {r: 1.50324, g: 1.50324, b: 0, a: 1}
+  - {r: 1.50324, g: 0.36990723, b: 1.1175921, a: 1}
