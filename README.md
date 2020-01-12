@@ -6,10 +6,11 @@ alt="https://theopnv.com/_next/static/img/menu-abdae051e05464b3e2d71f94af81b4e5.
 
 _Witchin'Kitchen_ is a prototype built for the Ubisoft Game Lab 2019 student competition in Montreal, QC. It received the __Jury's special prize__ award and was nominated for __Best Prototype__ and __Best Creativity and Integration of the Theme__. 
 
-This is the repository for the server app (Node.js).
-- The main game (Desktop) can be found here: https://github.com/theo-pnv/Witchin-Kitchen-Game
+This is the repository for the main game (desktop).
+- The server app (Node.js) can be found here: https://github.com/theo-pnv/Witchin-Kitchen-Server
 - The Audience App (Android) can be found here: https://github.com/theo-pnv/Witchin-Kitchen-Audience-App
 
+Made with Unity 2018.3.
 More info on this page: https://theopnv.com/projects/witchin-kitchen
 
 ## Game
