@@ -1,21 +1,19 @@
-This is the repository for the main game (desktop).
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=81MDJ7x3HHY
+" target="_blank"><img src="http://img.youtube.com/vi/81MDJ7x3HHY/0.jpg" 
+alt="https://theopnv.com/_next/static/img/menu-abdae051e05464b3e2d71f94af81b4e5.jpg" width="480" height="360" border="10" /></a>
 
-# Git rules
+## Context
 
-Code your feature on a dedicated branch. When it's done, start a pull request to merge it into `develop`.
-`master` is always up-to-date with the latest working version of the project.
+_Witchin'Kitchen_ is a prototype built for the Ubisoft Game Lab 2019 student competition in Montreal, QC. It received the __Jury's special prize__ award and was nominated for __Best Prototype__ and __Best Creativity and Integration of the Theme__. 
 
-# How to compile and run
+This is the repository for the server app (Node.js).
+- The main game (Desktop) can be found here: https://github.com/theo-pnv/Witchin-Kitchen-Game
+- The Audience App (Android) can be found here: https://github.com/theo-pnv/Witchin-Kitchen-Audience-App
 
-Unity version should be higher or equal to 2018.3. To compile it, just add the scenes to the build in the Build Settings.
+More info on this page: https://theopnv.com/projects/witchin-kitchen
 
-# Architecture
+## Game
 
-From the root (`Assets/`):
-- **Packages**: Folder to store the packages from the Asset Store. Please, try to categorize the packages you download into sub-folders
-  - **Networking**: Network-related packages. 
-  - ...
-- **Scenes**: Unity Scenes of the game.
-- **Scripts**: Various scripts attached to game objects. Please, try to categorize them into sub-folders.
-- **Prefabs**: Prefabs folder. Please try to categorize them into sub-folders.
-- **Models**: Where all the "raw" models are stored. Please, try to categorize them into sub-folders. When a model needs several files (UV, Height maps, textures...), put them in a folder with the associated model.
+The goal of the game is to collect and cook the most ingredients. Punch or throw fireballs at your competitors to get them out of the way!
+
+Meanwhile any amount of viewers can participate in the fun through a dedicated audience app. It lets viewers vote for arena-wide events or to target specific players with a variety of helpful or dangerous spells.
